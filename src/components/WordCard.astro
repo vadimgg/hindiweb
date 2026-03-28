@@ -1,0 +1,201 @@
+---
+import { highlight, parseCrossLangLabel } from '../utils/highlight';
+
+interface Example {
+  hindi: string;
+  romanisation: string;
+  english: string;
+  note: string;
+}
+
+interface Props {
+  hindi: string;
+  romanisation: string;
+  english: string;
+  origin_tag: string;
+  cross_language_connections: string[];
+  root_breakdown: string[];
+  etymology_story: string[];
+  pronunciation_guide: string[];
+  memory_hook: string[];
+  examples: Example[];
+  index: number;
+}
+
+const {
+  hindi,
+  romanisation,
+  english,
+  origin_tag,
+  cross_language_connections,
+  root_breakdown,
+  etymology_story,
+  pronunciation_guide,
+  memory_hook,
+  examples,
+  index,
+} = Astro.props;
+
+const cardId = `card-${index}`;
+
+const labelStyles = {
+  'TRUE RELATIVE': 'bg-sky-950 text-sky-400 border border-sky-800/60',
+  'USEFUL COINCIDENCE': 'bg-zinc-800 text-zinc-400 border border-zinc-700',
+} as const;
+---
+
+<article
+  id={cardId}
+  class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden transition-colors hover:border-zinc-700"
+>
+  <!-- Header -->
+  <div class="p-6 pb-5">
+    <div class="flex items-start justify-between gap-4 mb-3">
+      <div>
+        <h2 class="text-5xl font-bold text-amber-400 leading-none mb-2" lang="hi">
+          {hindi}
+        </h2>
+        <p class="text-xl text-teal-300/80 font-medium tracking-wide">{romanisation}</p>
+      </div>
+      <span class="mt-1 shrink-0 text-xs font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full bg-zinc-800 text-zinc-400 border border-zinc-700">
+        {origin_tag}
+      </span>
+    </div>
+    <p class="text-zinc-200 text-base leading-relaxed">{english}</p>
+  </div>
+
+  <!-- Expandable sections -->
+  <div class="border-t border-zinc-800 divide-y divide-zinc-800">
+
+    <!-- Pronunciation -->
+    <details class="group/det">
+      <summary class="flex items-center justify-between px-6 py-3.5 cursor-pointer list-none select-none text-sm font-medium text-zinc-400 hover:text-zinc-200 transition-colors">
+        <span class="flex items-center gap-2.5">
+          <span class="text-zinc-600 text-xs">◎</span>
+          Pronunciation
+        </span>
+        <span class="text-zinc-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
+      </summary>
+      <div class="px-6 pb-5 pt-2 space-y-2">
+        {pronunciation_guide.map((line, i) => (
+          <p
+            class:list={[
+              'text-sm leading-relaxed',
+              i === 0
+                ? 'text-zinc-200 font-medium'
+                : i === pronunciation_guide.length - 1
+                  ? 'text-teal-300/80 text-xs pt-1 border-t border-zinc-800'
+                  : 'text-zinc-400',
+            ]}
+            set:html={highlight(line)}
+          />
+        ))}
+      </div>
+    </details>
+
+    <!-- Memory Hook -->
+    <details class="group/det">
+      <summary class="flex items-center justify-between px-6 py-3.5 cursor-pointer list-none select-none text-sm font-medium text-zinc-400 hover:text-zinc-200 transition-colors">
+        <span class="flex items-center gap-2.5">
+          <span class="text-zinc-600 text-xs">◈</span>
+          Memory Hook
+        </span>
+        <span class="text-zinc-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
+      </summary>
+      <div class="px-6 pb-5 pt-2 space-y-2">
+        {memory_hook.map((line) => (
+          <p class="text-sm text-zinc-300 leading-relaxed" set:html={highlight(line)} />
+        ))}
+      </div>
+    </details>
+
+    <!-- Examples -->
+    <details class="group/det">
+      <summary class="flex items-center justify-between px-6 py-3.5 cursor-pointer list-none select-none text-sm font-medium text-zinc-400 hover:text-zinc-200 transition-colors">
+        <span class="flex items-center gap-2.5">
+          <span class="text-zinc-600 text-xs">◇</span>
+          Examples
+        </span>
+        <span class="text-zinc-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
+      </summary>
+      <div class="px-6 pb-5 pt-2 space-y-3">
+        {examples.map((ex) => (
+          <div class="rounded-xl bg-zinc-800/50 border border-zinc-700/40 p-4">
+            <p class="text-amber-300 text-base font-medium mb-1 leading-snug" lang="hi">{ex.hindi}</p>
+            <p class="text-teal-300/70 text-sm italic mb-2">{ex.romanisation}</p>
+            <p class="text-zinc-200 text-sm mb-0">{ex.english}</p>
+            <p class="text-zinc-500 text-xs leading-relaxed border-t border-zinc-700/60 pt-2 mt-2">{ex.note}</p>
+          </div>
+        ))}
+      </div>
+    </details>
+
+    <!-- Root & Origin -->
+    <details class="group/det">
+      <summary class="flex items-center justify-between px-6 py-3.5 cursor-pointer list-none select-none text-sm font-medium text-zinc-400 hover:text-zinc-200 transition-colors">
+        <span class="flex items-center gap-2.5">
+          <span class="text-zinc-600 text-xs">◉</span>
+          Root & Origin
+        </span>
+        <span class="text-zinc-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
+      </summary>
+      <div class="px-6 pb-5 pt-2 space-y-2">
+        {root_breakdown.map((line, i) => (
+          <p
+            class:list={[
+              'text-sm leading-relaxed',
+              i === 0 ? 'text-zinc-200 font-medium' : 'text-zinc-400',
+            ]}
+            set:html={highlight(line)}
+          />
+        ))}
+      </div>
+    </details>
+
+    <!-- Etymology Story -->
+    <details class="group/det">
+      <summary class="flex items-center justify-between px-6 py-3.5 cursor-pointer list-none select-none text-sm font-medium text-zinc-400 hover:text-zinc-200 transition-colors">
+        <span class="flex items-center gap-2.5">
+          <span class="text-zinc-600 text-xs">◌</span>
+          Etymology Story
+        </span>
+        <span class="text-zinc-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
+      </summary>
+      <div class="px-6 pb-5 pt-2 pl-10 border-l-2 border-amber-900/40 ml-6 space-y-3">
+        {etymology_story.map((para) => (
+          <p class="text-sm text-zinc-400 leading-relaxed italic" set:html={highlight(para)} />
+        ))}
+      </div>
+    </details>
+
+    <!-- Cross-Language Connections -->
+    <details class="group/det">
+      <summary class="flex items-center justify-between px-6 py-3.5 cursor-pointer list-none select-none text-sm font-medium text-zinc-400 hover:text-zinc-200 transition-colors">
+        <span class="flex items-center gap-2.5">
+          <span class="text-zinc-600 text-xs">⟷</span>
+          Cross-Language
+        </span>
+        <span class="text-zinc-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
+      </summary>
+      <div class="px-6 pb-5 pt-2 space-y-3">
+        {cross_language_connections.map((item) => {
+          const { label, text } = parseCrossLangLabel(item);
+          return (
+            <div class="flex gap-3 items-start">
+              {label && (
+                <span class:list={[
+                  'shrink-0 mt-0.5 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded',
+                  labelStyles[label],
+                ]}>
+                  {label === 'TRUE RELATIVE' ? 'relative' : 'coincidence'}
+                </span>
+              )}
+              <p class="text-sm text-zinc-400 leading-relaxed" set:html={highlight(text)} />
+            </div>
+          );
+        })}
+      </div>
+    </details>
+
+  </div>
+</article>

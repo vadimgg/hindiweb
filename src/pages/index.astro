@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WordCard from '../components/WordCard.astro';
+import { readdir, readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+
+// Read all JSON files from the vocab directory at project root
+const vocabDir = join(process.cwd(), 'vocab');
+const files = (await readdir(vocabDir)).filter(f => f.endsWith('.json')).sort();
+
+const allWords = (
+  await Promise.all(
+    files.map(async (file) => {
+      const raw = await readFile(join(vocabDir, file), 'utf-8');
+      return JSON.parse(raw);
+    })
+  )
+).flat();
+
+const totalWords = allWords.length;
+---
+
+<Layout title="Hindi Vocabulary">
+  <div class="max-w-3xl mx-auto px-4 py-16">
+
+    <!-- Header -->
+    <header class="mb-14">
+      <p class="text-xs font-semibold uppercase tracking-widest text-zinc-600 mb-3">Study companion</p>
+      <h1 class="text-4xl font-semibold text-zinc-100 tracking-tight mb-2">
+        Hindi Vocabulary
+      </h1>
+      <p class="text-zinc-500 text-sm">
+        {totalWords} {totalWords === 1 ? 'word' : 'words'} across {files.length} {files.length === 1 ? 'batch' : 'batches'}
+      </p>
+    </header>
+
+    <!-- Word list -->
+    <div class="space-y-5">
+      {allWords.map((word, i) => (
+        <WordCard
+          hindi={word.hindi}
+          romanisation={word.romanisation}
+          english={word.english}
+          origin_tag={word.origin_tag}
+          cross_language_connections={word.cross_language_connections}
+          root_breakdown={word.root_breakdown}
+          etymology_story={word.etymology_story}
+          pronunciation_guide={word.pronunciation_guide}
+          memory_hook={word.memory_hook}
+          examples={word.examples}
+          index={i}
+        />
+      ))}
+    </div>
+
+    <footer class="mt-20 text-center text-xs text-zinc-700">
+      Drop new <code class="text-zinc-600">*.json</code> files into the <code class="text-zinc-600">vocab/</code> folder to add more words.
+    </footer>
+  </div>
+</Layout>
