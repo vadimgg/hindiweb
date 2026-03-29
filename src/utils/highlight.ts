@@ -1,76 +1,59 @@
 const LANGUAGE_NAMES = [
-  'Proto-Indo-European',
-  'Sanskrit',
-  'English',
-  'Russian',
-  'Hebrew',
-  'Hindi',
-  'Urdu',
-  'Arabic',
-  'Persian',
-  'Latin',
-  'Greek',
-  'Prakrit',
-  'Apabhraṃśa',
-  'PIE',
-  'French',
-  'German',
-  'Italian',
-  'Spanish',
+  'Proto-Indo-European', 'Sanskrit', 'English', 'Russian', 'Hebrew',
+  'Hindi', 'Urdu', 'Arabic', 'Persian', 'Latin', 'Greek', 'Prakrit',
+  'Apabhraṃśa', 'PIE', 'French', 'German', 'Italian', 'Spanish',
 ];
 
-// Diacritics and special chars found in romanised Hindi/Sanskrit
+const COUNTRY_NAMES = [
+  'American', 'Indian', 'Gangetic', 'Iranian', 'Pakistani',
+  'Afghan', 'Israeli', 'British', 'European', 'Indic',
+];
+
+// Diacritics found in romanised Hindi/Sanskrit
 const ROMANISED_RE = /'([^']*[āīūṭḍṇśṣṃḥṛṝḷ√][^']*)'/g;
 
-const LANG_RE = new RegExp(`\\b(${LANGUAGE_NAMES.join('|')})\\b`, 'g');
+const LANG_RE    = new RegExp(`\\b(${LANGUAGE_NAMES.join('|')})\\b`, 'g');
+const COUNTRY_RE = new RegExp(`\\b(${COUNTRY_NAMES.join('|')})\\b`, 'g');
+
+// Matches "masculine", "masculine singular/plural/oblique", and feminine variants
+const MASC_RE = /\b(masculine(?:\s+(?:singular|plural|oblique|pl\.))?)\b/gi;
+const FEM_RE  = /\b(feminine(?:\s+(?:singular|plural|oblique|pl\.))?)\b/gi;
 
 export function highlight(text: string): string {
-  // 1. HTML-escape raw text first so later replacements insert safe HTML
+  // 1. HTML-escape first
   let h = text
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
 
-  // 2. Non-Latin scripts — each gets a distinct tint
-  // Devanagari (Hindi/Sanskrit)
-  h = h.replace(
-    /[\u0900-\u097F]+/g,
-    '<span class="text-amber-300 font-medium" lang="hi">$&</span>',
-  );
-  // Cyrillic (Russian)
-  h = h.replace(
-    /[\u0400-\u04FF]+/g,
-    '<span class="text-violet-300">$&</span>',
-  );
-  // Hebrew
-  h = h.replace(
-    /[\u0590-\u05FF\uFB1D-\uFB4E]+/g,
-    '<span class="text-emerald-300">$&</span>',
-  );
+  // 2. Non-Latin scripts
+  h = h.replace(/[\u0900-\u097F]+/g,
+    '<span class="hl-deva">$&</span>');
+  h = h.replace(/[\u0400-\u04FF]+/g,
+    '<span class="hl-cyrillic">$&</span>');
+  h = h.replace(/[\u0590-\u05FF\uFB1D-\uFB4E]+/g,
+    '<span class="hl-hebrew">$&</span>');
 
-  // 3. Language names — sky blue, slightly bold
-  // (Run after script replacement so we don't re-scan span tags —
-  //  language names are ASCII and won't appear inside our class strings)
-  h = h.replace(
-    LANG_RE,
-    '<span class="text-sky-400 font-medium">$1</span>',
-  );
+  // 3. Linguistic labels (language names and country adjectives)
+  h = h.replace(LANG_RE,    '<span class="hl-lang">$1</span>');
+  h = h.replace(COUNTRY_RE, '<span class="hl-country">$1</span>');
 
-  // 4. Romanised terms in single quotes (contain diacritics) — teal
-  h = h.replace(
-    ROMANISED_RE,
-    `<span class="text-teal-300">'$1'</span>`,
-  );
+  // 4. Grammatical gender labels
+  h = h.replace(MASC_RE, '<span class="hl-masc">$1</span>');
+  h = h.replace(FEM_RE,  '<span class="hl-fem">$1</span>');
+
+  // 5. Romanised terms in single quotes containing diacritics
+  h = h.replace(ROMANISED_RE, `<span class="hl-roman">'$1'</span>`);
 
   return h;
 }
 
-// For cross_language_connections items that start with a label
 export function parseCrossLangLabel(item: string): {
   label: 'TRUE RELATIVE' | 'USEFUL COINCIDENCE' | null;
   text: string;
 } {
-  const match = item.match(/^(TRUE RELATIVE|USEFUL COINCIDENCE):\s*/);
+  // Accept both "TRUE RELATIVE: text" and "TRUE RELATIVE — text" separators
+  const match = item.match(/^(TRUE RELATIVE|USEFUL COINCIDENCE)(?::\s*|\s*—\s*)/);
   if (!match) return { label: null, text: item };
   return {
     label: match[1] as 'TRUE RELATIVE' | 'USEFUL COINCIDENCE',

@@ -4,7 +4,6 @@ import WordCard from '../components/WordCard.astro';
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-// Read all JSON files from the vocab directory at project root
 const vocabDir = join(process.cwd(), 'vocab');
 const files = (await readdir(vocabDir)).filter(f => f.endsWith('.json')).sort();
 
@@ -17,44 +16,610 @@ const allWords = (
   )
 ).flat();
 
-const totalWords = allWords.length;
+// Lightweight search payload sent to the client
+const searchIndex = allWords.map((w, i) => ({
+  i,
+  h: w.hindi,
+  r: w.romanisation,
+  e: w.english,
+  d: w.date_added ?? '',
+}));
+
+// Unique dates sorted newest-first
+const uniqueDates: string[] = [...new Set(
+  allWords.map((w) => w.date_added).filter(Boolean)
+)].sort((a, b) => b.localeCompare(a));
+
+// Full data for hover-preview annotation
+const hoverData = allWords.map((w, i) => ({
+  i,
+  hindi:   w.hindi,
+  roman:   w.romanisation,
+  english: (w.english as string).split(',')[0].trim(),
+  forms:   (w.forms || []).map((f: { hindi: string; roman: string }) => ({ h: f.hindi, r: f.roman })),
+}));
+
+// Date-grouped index
+function fmtDate(iso: string): string {
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const [y, m, d] = iso.split('-');
+  return `${months[parseInt(m) - 1]} ${parseInt(d)}, ${y}`;
+}
+
+const wordsByDate = uniqueDates.map(date => ({
+  date,
+  label: fmtDate(date),
+  words: allWords.map((w, i) => ({ w, i })).filter(({ w }) => (w.date_added ?? '') === date),
+}));
+
+const undatedWords = allWords.map((w, i) => ({ w, i })).filter(({ w }) => !w.date_added);
+
 ---
 
 <Layout title="Hindi Vocabulary">
-  <div class="max-w-3xl mx-auto px-4 py-16">
+  <div class="lg:flex min-h-screen">
 
-    <!-- Header -->
-    <header class="mb-14">
-      <p class="text-xs font-semibold uppercase tracking-widest text-zinc-600 mb-3">Study companion</p>
-      <h1 class="text-4xl font-semibold text-zinc-100 tracking-tight mb-2">
-        Hindi Vocabulary
-      </h1>
-      <p class="text-zinc-500 text-sm">
-        {totalWords} {totalWords === 1 ? 'word' : 'words'} across {files.length} {files.length === 1 ? 'batch' : 'batches'}
+    <!-- ── Sidebar ─────────────────────────────────────────────────── -->
+    <aside class="hidden lg:flex flex-col w-72 xl:w-80 shrink-0 sticky top-0 h-screen bg-slate-950 border-r border-slate-800/50">
+
+      <!-- Branding -->
+      <div class="px-5 pt-7 pb-4">
+        <p class="text-[10px] font-title font-semibold uppercase tracking-[0.2em] text-zinc-600 mb-1">Study companion</p>
+        <h1 class="font-title text-2xl font-semibold text-zinc-100 leading-tight">Hindi<br/>Vocabulary</h1>
+      </div>
+
+      <!-- Search -->
+      <div class="px-4 pb-3 border-b border-slate-800/50">
+        <div class="relative">
+          <input
+            id="search"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Search words…"
+            class="w-full bg-slate-800/60 border border-slate-700/60 rounded-lg pl-3 pr-8 py-2 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-slate-500 transition-colors"
+          />
+          <button
+            id="search-clear"
+            class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-600 hover:text-slate-300 transition-colors hidden"
+            aria-label="Clear search"
+          >✕</button>
+        </div>
+        <p id="search-count" class="text-[11px] text-slate-600 mt-1.5 px-0.5">
+          {allWords.length} words
+        </p>
+      </div>
+
+      <!-- Word index (grouped by date) -->
+      <nav class="flex-1 overflow-y-auto py-2" id="index-list">
+
+        {wordsByDate.map(group => (
+          <div class="date-group" data-group={group.date}>
+
+            <!-- Date group header: [▾ collapse] label + count  [□ group checkbox] -->
+            <div class="date-group-hdr flex items-center gap-1.5 px-2 pt-3 pb-1">
+              <button class="collapse-btn shrink-0" data-collapse-group={group.date} aria-label="Collapse group">
+                <span class="chevron">▾</span>
+              </button>
+              <button class="date-group-toggle flex-1 text-left min-w-0" data-group-date={group.date}>
+                <span class="group-hdr-label font-title text-[10px] font-semibold uppercase tracking-widest text-zinc-500 transition-colors">
+                  {group.label}
+                </span>
+                <span class="text-[10px] text-zinc-700 ml-1.5">{group.words.length}</span>
+              </button>
+              <button class="idx-checkbox group-checkbox shrink-0" data-group-date={group.date} aria-label={`Select all from ${group.label}`}></button>
+            </div>
+
+            <!-- Word rows: indent aligns with label; checkbox on right -->
+            <div class="date-group-words">
+              {group.words.map(({ w, i }) => (
+                <div class="idx-row flex items-center gap-2 pl-8 pr-2 py-1.5 rounded-lg mx-1" data-index={i}>
+                  <div class="flex-1 min-w-0 cursor-pointer" data-scroll-to={i}>
+                    <div class="flex items-center gap-1.5 flex-wrap">
+                      <span class="text-amber-400 text-sm leading-none shrink-0" lang="hi">{w.hindi}</span>
+                      <span class="text-teal-300/60 text-[11px] shrink-0">{w.romanisation}</span>
+                      <span class="text-slate-200 text-[10px] bg-slate-700/50 px-1.5 py-0.5 rounded-md leading-none shrink-0">{w.english.split(',')[0].trim()}</span>
+                    </div>
+                  </div>
+                  <button class="idx-checkbox word-checkbox shrink-0" data-word-index={i} aria-label={`Select ${w.hindi}`}></button>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        ))}
+
+        {undatedWords.length > 0 && (
+          <div class="date-group" data-group="">
+            <div class="date-group-hdr flex items-center gap-1.5 px-2 pt-3 pb-1">
+              <button class="collapse-btn shrink-0" data-collapse-group="" aria-label="Collapse group">
+                <span class="chevron">▾</span>
+              </button>
+              <button class="date-group-toggle flex-1 text-left min-w-0" data-group-date="">
+                <span class="group-hdr-label font-title text-[10px] font-semibold uppercase tracking-widest text-zinc-500 transition-colors">Undated</span>
+                <span class="text-[10px] text-zinc-700 ml-1.5">{undatedWords.length}</span>
+              </button>
+              <button class="idx-checkbox group-checkbox shrink-0" data-group-date="" aria-label="Select all undated"></button>
+            </div>
+            <div class="date-group-words">
+              {undatedWords.map(({ w, i }) => (
+                <div class="idx-row flex items-center gap-2 pl-8 pr-2 py-1.5 rounded-lg mx-1" data-index={i}>
+                  <div class="flex-1 min-w-0 cursor-pointer" data-scroll-to={i}>
+                    <div class="flex items-center gap-1.5 flex-wrap">
+                      <span class="text-amber-400 text-sm leading-none shrink-0" lang="hi">{w.hindi}</span>
+                      <span class="text-teal-300/60 text-[11px] shrink-0">{w.romanisation}</span>
+                      <span class="text-slate-200 text-[10px] bg-slate-700/50 px-1.5 py-0.5 rounded-md leading-none shrink-0">{w.english.split(',')[0].trim()}</span>
+                    </div>
+                  </div>
+                  <button class="idx-checkbox word-checkbox shrink-0" data-word-index={i}></button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <p id="index-empty" class="hidden px-4 py-6 text-xs text-zinc-600 text-center">No matches</p>
+      </nav>
+
+    </aside>
+
+    <!-- ── Main content ─────────────────────────────────────────────── -->
+    <main class="flex-1 min-w-0 px-5 sm:px-8 py-14 max-w-3xl mx-auto lg:mx-0 lg:max-w-2xl xl:max-w-3xl">
+
+      <!-- Mobile header + search -->
+      <div class="lg:hidden mb-10">
+        <p class="font-title text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-600 mb-1">Study companion</p>
+        <h1 class="font-title text-3xl font-semibold text-zinc-100 mb-5">Hindi Vocabulary</h1>
+        <div class="relative">
+          <input
+            id="search-mobile"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Search words…"
+            class="w-full bg-slate-800/60 border border-slate-700/60 rounded-xl pl-4 pr-9 py-2.5 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-slate-500 transition-colors"
+          />
+          <button
+            id="search-clear-mobile"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-600 hover:text-zinc-300 transition-colors hidden"
+            aria-label="Clear search"
+          >✕</button>
+        </div>
+      </div>
+
+      <!-- Word count (desktop) -->
+      <p class="hidden lg:block text-xs text-zinc-600 mb-8 -mt-2">
+        {allWords.length} {allWords.length === 1 ? 'word' : 'words'} &middot; {files.length} {files.length === 1 ? 'batch' : 'batches'}
       </p>
-    </header>
 
-    <!-- Word list -->
-    <div class="space-y-5">
-      {allWords.map((word, i) => (
-        <WordCard
-          hindi={word.hindi}
-          romanisation={word.romanisation}
-          english={word.english}
-          origin_tag={word.origin_tag}
-          cross_language_connections={word.cross_language_connections}
-          root_breakdown={word.root_breakdown}
-          etymology_story={word.etymology_story}
-          pronunciation_guide={word.pronunciation_guide}
-          memory_hook={word.memory_hook}
-          examples={word.examples}
-          index={i}
-        />
-      ))}
-    </div>
+      <!-- Cards -->
+      <div class="space-y-5" id="cards-container">
+        {allWords.map((word, i) => (
+          <div data-card={i}>
+            <WordCard
+              hindi={word.hindi}
+              romanisation={word.romanisation}
+              english={word.english}
+              origin_language={word.origin_language}
+              in_hindi_via={word.in_hindi_via}
+              word_category={word.word_category}
+              date_added={word.date_added}
+              forms={word.forms}
+              cross_language_connections={word.cross_language_connections}
+              root_breakdown={word.root_breakdown}
+              root_parts={word.root_parts}
+              root_notes={word.root_notes}
+              root_and_origin_explanation={word.root_and_origin_explanation}
+              etymology_story={word.etymology_story}
+              pronunciation_guide={word.pronunciation_guide}
+              memory_hook={word.memory_hook}
+              sound_alikes={word.sound_alikes}
+              examples={word.examples}
+              index={i}
+            />
+          </div>
+        ))}
+      </div>
 
-    <footer class="mt-20 text-center text-xs text-zinc-700">
-      Drop new <code class="text-zinc-600">*.json</code> files into the <code class="text-zinc-600">vocab/</code> folder to add more words.
-    </footer>
+      <!-- No results -->
+      <div id="no-results" class="hidden py-20 text-center">
+        <p class="text-zinc-600 text-sm">No words match your search.</p>
+      </div>
+
+      <footer class="mt-20 text-xs text-zinc-700">
+        Drop new <code class="text-zinc-600">*.json</code> files into <code class="text-zinc-600">vocab/</code> to add words.
+      </footer>
+    </main>
   </div>
+
+  <!-- ── Selection bar ────────────────────────────────────────────────────── -->
+  <div
+    id="selection-bar"
+    class="hidden fixed bottom-0 inset-x-0 z-40 border-t border-slate-700/60 bg-slate-950/95 backdrop-blur px-6 py-3 flex items-center gap-4"
+  >
+    <span id="sel-count" class="text-sm text-slate-300 mr-auto"></span>
+    <button id="sel-all" class="text-xs text-slate-400 hover:text-slate-100 transition-colors">Show all</button>
+    <button id="sel-clear" class="text-xs text-slate-400 hover:text-slate-100 transition-colors">Hide all</button>
+    <button
+      id="sel-export"
+      disabled
+      class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/30 opacity-50 cursor-not-allowed"
+    >Export</button>
+  </div>
+
+  <!-- ── Hover preview tooltip ─────────────────────────────────────────── -->
+  <div
+    id="word-tooltip"
+    class="fixed z-50 hidden pointer-events-none"
+    style="top:0;left:0;visibility:hidden;"
+  >
+    <div class="bg-slate-800 border border-slate-700/60 rounded-xl p-3.5 shadow-2xl w-52">
+      <p
+        id="tip-hindi"
+        class="word-hindi font-bold leading-tight mb-1"
+        lang="hi"
+        style="font-family:'Tiro Devanagari Hindi',serif;font-size:1.6rem;"
+      ></p>
+      <p id="tip-roman" class="word-roman text-sm mb-1.5"></p>
+      <p id="tip-english" class="text-zinc-300 text-[13px] leading-snug"></p>
+    </div>
+  </div>
+
 </Layout>
+
+<script define:vars={{ searchIndex, hoverData }}>
+  // ── Diacritic normalisation ───────────────────────────────────────────────
+  function norm(str) {
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  }
+
+  // ── Fuzzy match ──────────────────────────────────────────────────────────
+  function fuzzyScore(needle, haystack) {
+    needle = norm(needle);
+    haystack = norm(haystack);
+    if (!needle) return 0;
+    if (haystack.includes(needle)) return 1000;
+
+    let score = 0, hi = 0, streak = 0;
+    for (let ni = 0; ni < needle.length; ni++) {
+      let found = false;
+      while (hi < haystack.length) {
+        if (haystack[hi] === needle[ni]) {
+          score += 1 + streak * 2; streak++; hi++; found = true; break;
+        }
+        streak = 0; hi++;
+      }
+      if (!found) return -1;
+    }
+    return score;
+  }
+
+  function bestScore(needle, word) {
+    return Math.max(
+      fuzzyScore(needle, word.e),
+      fuzzyScore(needle, word.r),
+      fuzzyScore(needle, word.h),
+    );
+  }
+
+  // ── DOM refs ──────────────────────────────────────────────────────────────
+  const inputs      = [document.getElementById('search'), document.getElementById('search-mobile')].filter(Boolean);
+  const clearBtns   = [document.getElementById('search-clear'), document.getElementById('search-clear-mobile')].filter(Boolean);
+  const cards       = document.querySelectorAll('[data-card]');
+  const indexEmpty  = document.getElementById('index-empty');
+  const noResults   = document.getElementById('no-results');
+  const searchCount = document.getElementById('search-count');
+  const indexList   = document.getElementById('index-list');
+
+  // Cache idx-row elements by word index for fast lookup
+  const idxRowMap = {};
+  document.querySelectorAll('.idx-row[data-index]').forEach(el => {
+    idxRowMap[parseInt(el.dataset.index)] = el;
+  });
+
+  // All words selected by default — mark checkboxes and rows as checked
+  document.querySelectorAll('.word-checkbox').forEach(cb => cb.classList.add('is-on'));
+  document.querySelectorAll('.idx-row').forEach(r => r.classList.add('is-sel'));
+  document.querySelectorAll('.group-checkbox').forEach(cb => cb.classList.add('is-on'));
+
+  // ── Selection state ───────────────────────────────────────────────────────
+  const selectedWords = new Set(searchIndex.map(w => w.i));
+  const selectionBar  = document.getElementById('selection-bar');
+  const selCount      = document.getElementById('sel-count');
+
+  function refreshSelectionBar() {
+    const total  = searchIndex.length;
+    const n      = selectedWords.size;
+    const hidden = total - n;
+    selectionBar.classList.toggle('hidden', hidden === 0);
+    if (selCount) selCount.textContent = `${hidden} hidden · ${n} of ${total} shown`;
+  }
+
+  function setSelected(idx, on) {
+    if (on) selectedWords.add(idx); else selectedWords.delete(idx);
+    // Update the word's checkbox in the index
+    document.querySelector(`.word-checkbox[data-word-index="${idx}"]`)?.classList.toggle('is-on', on);
+    // Highlight the index row
+    idxRowMap[idx]?.classList.toggle('is-sel', on);
+    refreshSelectionBar();
+  }
+
+  // Keep group checkbox in sync with its children
+  function syncGroupCheckbox(groupDate) {
+    const groupEl = document.querySelector(`.date-group[data-group="${groupDate}"]`);
+    if (!groupEl) return;
+    const rows = [...groupEl.querySelectorAll('.idx-row[data-index]')];
+    const cb   = groupEl.querySelector('.group-checkbox');
+    if (!cb || rows.length === 0) return;
+    cb.classList.toggle('is-on', rows.every(r => selectedWords.has(parseInt(r.dataset.index))));
+  }
+
+  // ── Core filter ───────────────────────────────────────────────────────────
+  // Index rows: filtered only by search query (selection never hides them)
+  // Cards: filtered by search AND selection
+  function applyFilter() {
+    const q = (inputs[0]?.value ?? '').trim();
+    clearBtns.forEach(btn => btn.classList.toggle('hidden', q.length === 0));
+
+    let searchMatches = 0;
+    let cardsVisible  = 0;
+
+    searchIndex.forEach((word) => {
+      const searchOk = !q || bestScore(q, word) >= 0;
+      const selOk    = selectedWords.has(word.i);
+
+      // Cards: need both
+      cards[word.i]?.classList.toggle('hidden', !(searchOk && selOk));
+
+      // Index rows: only search matters
+      idxRowMap[word.i]?.classList.toggle('hidden', !searchOk);
+
+      if (searchOk) searchMatches++;
+      if (searchOk && selOk) cardsVisible++;
+    });
+
+    // Hide date groups whose every index row is hidden (search filtered)
+    document.querySelectorAll('.date-group').forEach(group => {
+      const anyVisible = [...group.querySelectorAll('.idx-row')].some(r => !r.classList.contains('hidden'));
+      group.classList.toggle('hidden', !anyVisible);
+    });
+
+    if (searchCount) {
+      searchCount.textContent = q
+        ? `${searchMatches} of ${searchIndex.length} words`
+        : `${searchIndex.length} words`;
+    }
+
+    indexEmpty.classList.toggle('hidden', searchMatches > 0);
+    noResults.classList.toggle('hidden', cardsVisible > 0);
+  }
+
+  // ── Search inputs ─────────────────────────────────────────────────────────
+  inputs.forEach(input => {
+    input.addEventListener('input', () => {
+      inputs.forEach(other => { if (other !== input) other.value = input.value; });
+      applyFilter();
+    });
+  });
+  clearBtns.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      inputs.forEach(inp => { inp.value = ''; });
+      applyFilter();
+      inputs[i]?.focus();
+    });
+  });
+
+  // ── Click + drag on word checkboxes ──────────────────────────────────────
+  let isDragging = false;
+  let dragMode   = true;
+
+  indexList?.addEventListener('mousedown', (e) => {
+    const cb = e.target.closest('.word-checkbox');
+    if (!cb) return;
+    e.preventDefault(); // prevent text selection during drag
+    const idx = parseInt(cb.dataset.wordIndex);
+    dragMode = !selectedWords.has(idx);
+    setSelected(idx, dragMode);
+    isDragging = true;
+    syncGroupCheckbox(cb.closest('.date-group')?.dataset.group ?? '');
+    applyFilter();
+  });
+
+  indexList?.addEventListener('mouseover', (e) => {
+    if (!isDragging) return;
+    const cb = e.target.closest('.word-checkbox');
+    if (!cb) return;
+    const idx = parseInt(cb.dataset.wordIndex);
+    if (selectedWords.has(idx) === dragMode) return; // already in target state
+    setSelected(idx, dragMode);
+    syncGroupCheckbox(cb.closest('.date-group')?.dataset.group ?? '');
+    applyFilter();
+  });
+
+  document.addEventListener('mouseup', () => { isDragging = false; });
+
+  // ── Index click events ────────────────────────────────────────────────────
+  indexList?.addEventListener('click', (e) => {
+    // Word checkbox clicks are handled by mousedown — ignore here to avoid double-toggle
+    if (e.target.closest('.word-checkbox')) return;
+
+    // Group checkbox — toggle all words in that group
+    const gCb = e.target.closest('.group-checkbox');
+    if (gCb) {
+      const gDate   = gCb.dataset.groupDate;
+      const groupEl = document.querySelector(`.date-group[data-group="${gDate}"]`);
+      if (!groupEl) return;
+      const rows  = [...groupEl.querySelectorAll('.idx-row[data-index]')];
+      const allOn = rows.every(r => selectedWords.has(parseInt(r.dataset.index)));
+      rows.forEach(r => setSelected(parseInt(r.dataset.index), !allOn));
+      syncGroupCheckbox(gDate);
+      applyFilter();
+      return;
+    }
+
+    // Collapse button — toggle group visibility
+    const collapseBtn = e.target.closest('.collapse-btn');
+    if (collapseBtn) {
+      const groupEl = collapseBtn.closest('.date-group');
+      groupEl?.querySelector('.date-group-words')?.classList.toggle('collapsed');
+      collapseBtn.classList.toggle('is-collapsed');
+      return;
+    }
+
+    // Date label — also collapses/expands
+    const toggleBtn = e.target.closest('.date-group-toggle');
+    if (toggleBtn) {
+      const groupEl   = toggleBtn.closest('.date-group');
+      const colBtn    = groupEl?.querySelector('.collapse-btn');
+      groupEl?.querySelector('.date-group-words')?.classList.toggle('collapsed');
+      colBtn?.classList.toggle('is-collapsed');
+      return;
+    }
+
+    // Word text — scroll to card
+    const scrollEl = e.target.closest('[data-scroll-to]');
+    if (scrollEl) {
+      document.getElementById(`card-${scrollEl.dataset.scrollTo}`)
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
+  // ── Deselect button on cards ──────────────────────────────────────────────
+  document.getElementById('cards-container')?.addEventListener('click', (e) => {
+    const btn = e.target.closest('.deselect-btn');
+    if (!btn) return;
+    const idx = parseInt(btn.dataset.deselectIndex);
+    setSelected(idx, false);
+    syncGroupCheckbox(idxRowMap[idx]?.closest('.date-group')?.dataset.group ?? '');
+    applyFilter();
+  });
+
+  // ── Selection bar buttons ─────────────────────────────────────────────────
+  document.getElementById('sel-all')?.addEventListener('click', () => {
+    // Re-select all words (show all)
+    searchIndex.forEach(w => setSelected(w.i, true));
+    document.querySelectorAll('.date-group[data-group]').forEach(g => syncGroupCheckbox(g.dataset.group));
+    applyFilter();
+  });
+
+  document.getElementById('sel-clear')?.addEventListener('click', () => {
+    [...selectedWords].forEach(idx => setSelected(idx, false));
+    document.querySelectorAll('.group-checkbox').forEach(cb => cb.classList.remove('is-on'));
+    applyFilter();
+  });
+
+  // ── Active card highlight in sidebar ─────────────────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const idx = entry.target.dataset.cardIndex;
+      document.querySelectorAll('.idx-row').forEach(r => r.classList.remove('is-active'));
+      const row = idxRowMap[idx];
+      row?.classList.add('is-active');
+      row?.scrollIntoView({ block: 'nearest' });
+    });
+  }, { threshold: 0.4 });
+
+  cards.forEach((el, i) => {
+    const article = el.querySelector('article');
+    if (article) article.dataset.cardIndex = String(i);
+    observer.observe(el);
+  });
+
+  // ── Vocab hover preview ──────────────────────────────────────────────────
+
+  const hindiMap = {};
+  const romanMap = {};
+
+  hoverData.forEach(word => {
+    hindiMap[word.hindi] = word;
+    romanMap[norm(word.roman)] = word;
+    (word.forms || []).forEach(f => {
+      if (f.h) hindiMap[f.h] = word;
+      if (f.r) romanMap[norm(f.r)] = word;
+    });
+  });
+
+  function escAttr(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+  }
+
+  function annotateHindi(text, excludeSet) {
+    return text.replace(/[\u0900-\u097F]+/g, word => {
+      if (excludeSet.has(word)) return word;
+      const d = hindiMap[word];
+      if (!d) return word;
+      return `<span class="vocab-hint" data-h="${escAttr(d.hindi)}" data-r="${escAttr(d.roman)}" data-e="${escAttr(d.english)}">${word}</span>`;
+    });
+  }
+
+  function annotateRoman(text, excludeSet) {
+    return text.replace(/[a-zA-Zāīūṭḍṇśṣṃḥṛṝḷ]+/g, word => {
+      const key = norm(word);
+      if (excludeSet.has(key)) return word;
+      const d = romanMap[key];
+      if (!d) return word;
+      return `<span class="vocab-hint" data-h="${escAttr(d.hindi)}" data-r="${escAttr(d.roman)}" data-e="${escAttr(d.english)}">${word}</span>`;
+    });
+  }
+
+  document.querySelectorAll('[data-example-card]').forEach(container => {
+    const cardIdx = parseInt(container.dataset.exampleCard);
+    const cw = hoverData[cardIdx];
+    if (!cw) return;
+
+    const excludeHindi = new Set([cw.hindi, ...(cw.forms || []).map(f => f.h)]);
+    const excludeRoman = new Set([norm(cw.roman), ...(cw.forms || []).map(f => norm(f.r))]);
+
+    const hindiP = container.querySelector('[lang="hi"]');
+    if (hindiP) {
+      const orig = hindiP.textContent;
+      const annotated = annotateHindi(orig, excludeHindi);
+      if (annotated !== orig) hindiP.innerHTML = annotated;
+    }
+
+    const romanP = container.querySelector('p.word-roman');
+    if (romanP) {
+      const orig = romanP.textContent;
+      const annotated = annotateRoman(orig, excludeRoman);
+      if (annotated !== orig) romanP.innerHTML = annotated;
+    }
+  });
+
+  // ── Tooltip ──────────────────────────────────────────────────────────────
+  const tooltip    = document.getElementById('word-tooltip');
+  const tipHindi   = document.getElementById('tip-hindi');
+  const tipRoman   = document.getElementById('tip-roman');
+  const tipEnglish = document.getElementById('tip-english');
+
+  document.addEventListener('mouseover', e => {
+    const hint = e.target.closest('.vocab-hint');
+    if (!hint) {
+      tooltip.classList.add('hidden');
+      tooltip.style.visibility = 'hidden';
+      return;
+    }
+
+    tipHindi.textContent   = hint.dataset.h;
+    tipRoman.textContent   = hint.dataset.r;
+    tipEnglish.textContent = hint.dataset.e;
+
+    tooltip.style.visibility = 'hidden';
+    tooltip.classList.remove('hidden');
+
+    requestAnimationFrame(() => {
+      const hr = hint.getBoundingClientRect();
+      const tr = tooltip.getBoundingClientRect();
+
+      let top  = hr.top - tr.height - 10;
+      let left = hr.left + hr.width / 2 - tr.width / 2;
+
+      if (top < 8) top = hr.bottom + 10;
+      left = Math.max(8, Math.min(left, window.innerWidth - tr.width - 8));
+
+      tooltip.style.top        = `${top}px`;
+      tooltip.style.left       = `${left}px`;
+      tooltip.style.visibility = 'visible';
+    });
+  });
+</script>
