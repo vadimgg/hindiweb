@@ -4,6 +4,27 @@ const LANGUAGE_NAMES = [
   'Apabhraṃśa', 'PIE', 'French', 'German', 'Italian', 'Spanish',
 ];
 
+const LANG_COLOR_CLASS: Record<string, string> = {
+  'Proto-Indo-European': 'hl-lang-pie',
+  'PIE':                 'hl-lang-pie',
+  'Sanskrit':            'hl-lang-sanskrit',
+  'Prakrit':             'hl-lang-prakrit',
+  'Apabhraṃśa':          'hl-lang-prakrit',
+  'Hindi':               'hl-lang-hindi',
+  'Urdu':                'hl-lang-urdu',
+  'Arabic':              'hl-lang-arabic',
+  'Persian':             'hl-lang-persian',
+  'English':             'hl-lang-english',
+  'Russian':             'hl-lang-russian',
+  'Hebrew':              'hl-lang-hebrew',
+  'Latin':               'hl-lang-latin',
+  'Greek':               'hl-lang-greek',
+  'French':              'hl-lang-french',
+  'German':              'hl-lang-german',
+  'Italian':             'hl-lang-italian',
+  'Spanish':             'hl-lang-spanish',
+};
+
 const COUNTRY_NAMES = [
   'American', 'Indian', 'Gangetic', 'Iranian', 'Pakistani',
   'Afghan', 'Israeli', 'British', 'European', 'Indic',
@@ -35,7 +56,10 @@ export function highlight(text: string): string {
     '<span class="hl-hebrew">$&</span>');
 
   // 3. Linguistic labels (language names and country adjectives)
-  h = h.replace(LANG_RE,    '<span class="hl-lang">$1</span>');
+  h = h.replace(LANG_RE, (_, lang) => {
+    const cls = LANG_COLOR_CLASS[lang] ?? 'hl-lang';
+    return `<span class="${cls}">${lang}</span>`;
+  });
   h = h.replace(COUNTRY_RE, '<span class="hl-country">$1</span>');
 
   // 4. Grammatical gender labels

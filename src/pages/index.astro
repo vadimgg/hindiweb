@@ -484,8 +484,15 @@ const undatedWords = allWords.map((w, i) => ({ w, i })).filter(({ w }) => !w.dat
     }
   });
 
-  // ── Deselect button on cards ──────────────────────────────────────────────
+  // ── Card collapse / deselect buttons ─────────────────────────────────────
   document.getElementById('cards-container')?.addEventListener('click', (e) => {
+    // Clicking anywhere on the card header (except deselect) collapses/expands
+    const header = e.target.closest('.card-header');
+    if (header && !e.target.closest('.deselect-btn')) {
+      header.closest('article')?.classList.toggle('is-collapsed');
+      return;
+    }
+
     const btn = e.target.closest('.deselect-btn');
     if (!btn) return;
     const idx = parseInt(btn.dataset.deselectIndex);
