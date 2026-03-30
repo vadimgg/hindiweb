@@ -26,7 +26,7 @@ function renderItem(item, type) {
 
   // Meaning inside a darker rounded box
   const mean = item.meaning
-    ? `<div class="mean-box"><span>— ${esc(item.meaning)}</span></div>`
+    ? `<div class="mean-box"><span>${esc(item.meaning)}</span></div>`
     : '';
 
   const note = item.note
