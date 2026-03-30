@@ -18,11 +18,13 @@ export function langHex(lang) {
 
 export const capFirst = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
 
-export const aSection = (content, color) =>
-  `<div style="border-left:3px solid ${color};padding:.65rem 1rem;margin-bottom:.85rem;background:rgba(2,6,23,.5);border-radius:0 8px 8px 0;">${content}</div>`;
-
-export const aSectionLabel = text =>
-  `<p style="font-family:'Oswald',sans-serif;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#475569;margin:0 0 .45rem 0;">${text}</p>`;
+// Single section box: colored top border + rounded dark card + colored label
+// Usage: aSection('Section Title', htmlContent, '#14b8a6')
+export const aSection = (labelText, content, color) =>
+  `<div class="field-sec" style="border-top-color:${color};">` +
+  `<p class="field-label" style="color:${color};">${labelText}</p>` +
+  content +
+  `</div>`;
 
 export function ankiCategoryStyle(cat) {
   if (!cat) return '';

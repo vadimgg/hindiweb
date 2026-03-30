@@ -11,18 +11,16 @@ const { hookPrimary, hookByLanguage } = Astro.props;
 ---
 
 <details class="group/det">
-  <summary class="flex items-center justify-between px-7 py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
-    <span class="font-title text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Memory Hook</span>
+  <summary class="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
+    <span class="font-title text-xs sm:text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Memory Hook</span>
     <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
   </summary>
-  <div class="px-7 pb-6 pt-3 space-y-2.5">
+  <div class="border-l-2 border-violet-500/50 ml-4 sm:ml-6 mb-4 px-4 sm:px-5 py-3 sm:py-4 space-y-3">
     {hookPrimary && (
-      <div class="bg-slate-950/80 border-l-2 border-violet-500/60 rounded-r-xl px-5 py-4">
-        <p class="text-[15px] text-slate-200 leading-relaxed" set:html={highlight(hookPrimary)} />
-      </div>
+      <p class="text-[15px] text-slate-200 leading-relaxed" set:html={highlight(hookPrimary)} />
     )}
     {hookByLanguage.map(([lang, text]) => (
-      <div class="bg-slate-950/70 border-l-2 border-violet-400/30 rounded-r-xl px-5 py-3">
+      <div>
         <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wider mb-1.5 inline-block', langColor(cap(lang))]}>
           {cap(lang)}
         </span>

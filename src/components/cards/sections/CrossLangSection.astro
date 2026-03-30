@@ -15,36 +15,34 @@ const coincidenceStyle = 'bg-slate-800 text-slate-400 border border-slate-700/60
 ---
 
 <details class="group/det">
-  <summary class="flex items-center justify-between px-7 py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
-    <span class="font-title text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Cross-Language</span>
+  <summary class="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
+    <span class="font-title text-xs sm:text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Cross-Language</span>
     <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
   </summary>
-  <div class="px-7 pb-6 pt-3">
-    <div class="bg-slate-950/70 border-l-2 border-sky-500/40 rounded-r-xl px-5 py-4 space-y-5">
-      {trueRelatives.map((item) => (
-        <div>
-          <div class="flex items-center gap-2 flex-wrap mb-1.5">
-            <span class:list={['shrink-0 font-title text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded', relativeStyle]}>relative</span>
-            {item.language && <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wide', langColor(item.language)]}>{item.language}</span>}
-            {item.word && <span class="word-hindi text-base" lang="hi" set:html={highlight(item.word)} />}
-            {item.romanisation && <span class="word-roman text-sm">({item.romanisation})</span>}
-            {item.meaning && <span class="text-slate-400 text-sm">— {item.meaning}</span>}
-          </div>
-          {item.note && <p class="text-[15px] text-slate-300 leading-relaxed" set:html={highlight(item.note)} />}
+  <div class="border-l-2 border-sky-500/40 ml-4 sm:ml-6 mb-4 px-4 sm:px-5 py-3 sm:py-4 space-y-5">
+    {trueRelatives.map((item) => (
+      <div>
+        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+          <span class:list={['shrink-0 font-title text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded', relativeStyle]}>relative</span>
+          {item.language && <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wide', langColor(item.language)]}>{item.language}</span>}
+          {item.word && <span class="word-hindi text-base" lang="hi" set:html={highlight(item.word)} />}
+          {item.romanisation && <span class="word-roman text-sm">({item.romanisation})</span>}
+          {item.meaning && <span class="text-slate-400 text-sm">— {item.meaning}</span>}
         </div>
-      ))}
-      {usefulCoincidences.map((item) => (
-        <div>
-          <div class="flex items-center gap-2 flex-wrap mb-1.5">
-            <span class:list={['shrink-0 font-title text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded', coincidenceStyle]}>coincidence</span>
-            {item.language && <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wide', langColor(item.language)]}>{item.language}</span>}
-            {item.word && <span class="word-hindi text-base" lang="hi" set:html={highlight(item.word)} />}
-            {item.romanisation && <span class="word-roman text-sm">({item.romanisation})</span>}
-            {item.meaning && <span class="text-slate-400 text-sm">— {item.meaning}</span>}
-          </div>
-          {item.note && <p class="text-[15px] text-slate-300 leading-relaxed" set:html={highlight(item.note)} />}
+        {item.note && <p class="text-[14px] leading-relaxed text-slate-300" set:html={highlight(item.note)} />}
+      </div>
+    ))}
+    {usefulCoincidences.map((item) => (
+      <div>
+        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+          <span class:list={['shrink-0 font-title text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded', coincidenceStyle]}>coincidence</span>
+          {item.language && <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wide', langColor(item.language)]}>{item.language}</span>}
+          {item.word && <span class="word-hindi text-base" lang="hi" set:html={highlight(item.word)} />}
+          {item.romanisation && <span class="word-roman text-sm">({item.romanisation})</span>}
+          {item.meaning && <span class="text-slate-400 text-sm">— {item.meaning}</span>}
         </div>
-      ))}
-    </div>
+        {item.note && <p class="text-[14px] leading-relaxed text-slate-300" set:html={highlight(item.note)} />}
+      </div>
+    ))}
   </div>
 </details>

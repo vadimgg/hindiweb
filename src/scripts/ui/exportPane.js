@@ -1,19 +1,23 @@
 // Responsible for: export pane controller — word table, AnkiConnect status polling, export button
 
 import { checkAnkiConnect } from '../anki/connect.js';
-import { sendToAnki }       from '../anki/export.js';
+import { sendToAnki, overrideDeck } from '../anki/export.js';
 import { downloadAnkiTxt }  from '../anki/txtFallback.js';
 import { getSelectedWordObjects, getDefaultDeckName } from '../state/selection.js';
 
 let pollInterval = null;
 
 function updateStatusBadge(online) {
-  const badge = document.getElementById('export-anki-status');
-  const btn   = document.getElementById('export-btn');
+  const badge    = document.getElementById('export-anki-status');
+  const btn      = document.getElementById('export-btn');
+  const override = document.getElementById('export-override-toggle')?.checked ?? false;
   if (!badge) return;
   badge.textContent = online ? '● Online' : '● Offline';
   badge.className   = online ? 'text-sm font-semibold text-emerald-400' : 'text-sm font-semibold text-zinc-500';
-  if (btn) btn.disabled = !online;
+  if (btn) {
+    btn.disabled    = !online;
+    btn.textContent = online && override ? 'Replace Deck' : 'Export to Anki';
+  }
 }
 
 async function poll() { updateStatusBadge(await checkAnkiConnect()); }
@@ -68,20 +72,31 @@ export function initExportPane() {
   });
   document.getElementById('export-deck-input')?.addEventListener('input', e => { e.target.dataset.userEdited = '1'; });
 
+  document.getElementById('export-override-toggle')?.addEventListener('change', e => {
+    const btn = document.getElementById('export-btn');
+    if (btn && !btn.disabled) btn.textContent = e.target.checked ? 'Replace Deck' : 'Export to Anki';
+  });
+
   document.getElementById('export-btn')?.addEventListener('click', async () => {
     const words    = getSelectedWordObjects();
     const deckName = document.getElementById('export-deck-input')?.value.trim() || 'Hindi::Vocabulary';
+    const override = document.getElementById('export-override-toggle')?.checked ?? false;
     if (!words.length) { showFeedback('No words selected.', true); return; }
     const btn = document.getElementById('export-btn');
-    btn.disabled = true; btn.textContent = 'Exporting…';
+    btn.disabled = true; btn.textContent = override ? 'Replacing…' : 'Exporting…';
     document.getElementById('export-feedback')?.classList.add('hidden');
     try {
-      const { added, skipped } = await sendToAnki(words, deckName);
-      const msg = added === 0 && skipped > 0
-        ? `All ${skipped} card${skipped !== 1 ? 's' : ''} already exist in "${deckName}".`
-        : skipped > 0 ? `Done! ${added} card${added !== 1 ? 's' : ''} added · ${skipped} already existed.`
-        : `Done! ${added} card${added !== 1 ? 's' : ''} added to "${deckName}".`;
-      showFeedback(msg, false);
+      if (override) {
+        const { added, deleted } = await overrideDeck(words, deckName);
+        showFeedback(`Replaced! Removed ${deleted} old card${deleted !== 1 ? 's' : ''}, added ${added} new card${added !== 1 ? 's' : ''} to "${deckName}".`, false);
+      } else {
+        const { added, skipped } = await sendToAnki(words, deckName);
+        const msg = added === 0 && skipped > 0
+          ? `All ${skipped} card${skipped !== 1 ? 's' : ''} already exist in "${deckName}".`
+          : skipped > 0 ? `Done! ${added} card${added !== 1 ? 's' : ''} added · ${skipped} already existed.`
+          : `Done! ${added} card${added !== 1 ? 's' : ''} added to "${deckName}".`;
+        showFeedback(msg, false);
+      }
     } catch (err) {
       showFeedback(`Error: ${err.message}`, true);
     } finally {
