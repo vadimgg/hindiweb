@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(npm run:*)",
-      "Bash(find /Users/vadimgagarin/Projects/Learning/HindiWeb/src -name *.astro -o -name *.ts -o -name *.js)",
-      "Bash(grep -v \" total$\")"
-    ]
-  }
-}
