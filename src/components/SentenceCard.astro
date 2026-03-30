@@ -1,0 +1,16 @@
+---
+// Placeholder — sentence JSON format TBD.
+// Props will be filled in when sentences/*.json files are introduced.
+interface Props {
+  index: number;
+  [key: string]: unknown;
+}
+const { index } = Astro.props;
+---
+
+<article
+  id={`sentence-${index}`}
+  class="bg-slate-900 border border-slate-700/40 rounded-2xl p-6 text-slate-500 text-sm italic"
+>
+  Sentence card #{index} — not yet implemented.
+</article>

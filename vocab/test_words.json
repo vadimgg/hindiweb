@@ -1,0 +1,509 @@
+{
+  "title": "Core Function Words",
+  "words": [
+    {
+      "hindi": "एक",
+      "romanisation": "ek",
+      "english": "one; a, an (indefinite article)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        {"label": "base form", "hindi": "एक", "roman": "ek"},
+        {"label": "before masculine noun (oblique)", "hindi": "एक", "roman": "ek"},
+        {"label": "emphatic/alone", "hindi": "एक ही", "roman": "ek hī"}
+      ],
+      "urdu_punjabi": {
+        "urdu": {"script": "ایک", "romanisation": "ek", "note": "identical word, same script-equivalent sound, used the same way as both numeral 'one' and indefinite article; no difference in meaning or usage"},
+        "punjabi": {"script": "ਇੱਕ", "romanisation": "ikk", "note": "Gurmukhi form; the vowel is slightly shorter and the consonant doubled; means the same: 'one / a'"}
+      },
+      "cross_language_connections": {
+        "true_relatives": [
+          {"language": "Sanskrit", "word": "eka", "romanisation": "eka", "meaning": "one", "note": "direct source; Hindi ek is the regular reduction of Sanskrit eka"},
+          {"language": "English", "word": "each", "romanisation": "each", "meaning": "each", "note": "shares the Proto-Indo-European root *óikos meaning 'one / single'; distant but real ancestor"},
+          {"language": "Greek", "word": "oikos", "romanisation": "oikos", "meaning": "house/unit", "note": "same PIE root; the idea of a single unit underlies both"}
+        ],
+        "useful_coincidences": [
+          {"language": "Russian", "word": "э́ка", "romanisation": "éka", "meaning": "archaic exclamation, roughly 'what a…!'", "note": "sounds almost identical; useful as a sound anchor even though unrelated"},
+          {"language": "Hebrew", "word": "אֶחָד", "romanisation": "echad", "meaning": "one", "note": "not related, but echad and ek both start with a short 'e' sound and mean 'one'; useful pairing for Hebrew speakers"}
+        ]
+      },
+      "sound_alikes": [
+        {"word": "A", "language": "English", "note": "sounds exactly like the letter name 'A' said with a crisp k at the end — one sharp stroke, like writing the number 1 with one pen-lift"}
+      ],
+      "root_breakdown": {
+        "root": "the root eka in Sanskrit",
+        "evolution": "Sanskrit eka → Prakrit eka → Apabhraṃśa eka → Hindi ek (final vowel dropped)",
+        "logic": "the word has always meant a single unit; the simplification to one syllable mirrors the concept of oneness itself"
+      },
+      "etymology_story": "Ek goes back to the ancient Sanskrit eka, which itself descended from the Proto-Indo-European root meaning 'one.' That same root fathered the Latin unus and the English 'one.' In Hindi, ek does double duty as both the numeral 'one' and the indefinite article 'a/an', a role it inherited because saying 'one book' and 'a book' were once the same idea.",
+      "pronunciation_guide": {
+        "syllables": "ek",
+        "breakdown": [
+          {"syllable": "ek", "sound": "short 'e' as in English 'bed', followed by a clean hard 'k' — no vowel after the k"}
+        ],
+        "stress": "single syllable, no stress choice needed",
+        "extra_notes": [
+          {"language": "Russian", "note": "identical to the Russian word эк (ek), an old emphatic particle — treat that as your anchor"},
+          {"language": "Hebrew", "note": "think of the first syllable of אֶחָד (echad) but stop right after the vowel and add a k"}
+        ]
+      },
+      "memory_hook": {
+        "primary": "A giant numeral 1 carved from stone stands alone in an empty field — nothing beside it, not even a shadow. That solitary pillar IS ek.",
+        "russian": "the word эк written on a single finger held up — just one finger, just one syllable, ek."
+      },
+      "examples": [
+        {
+          "hindi": "मेरे पास एक किताब है।",
+          "romanisation": "mere pās ek kitāb hai.",
+          "english": "I have a book.",
+          "literal": "my near one book is",
+          "register": "casual",
+          "note": "ek functions as the indefinite article here; Hindi has no separate word for 'a/an'"
+        },
+        {
+          "hindi": "यहाँ एक दुकान है।",
+          "romanisation": "yahā̃ ek dukān hai.",
+          "english": "There is a shop here.",
+          "literal": "here one shop is",
+          "register": "casual",
+          "note": "ek placed before the noun, just like 'a' in English"
+        },
+        {
+          "hindi": "मैं एक बात कहना चाहता हूँ।",
+          "romanisation": "maiṃ ek bāt kahnā cāhtā hū̃.",
+          "english": "I want to say one thing.",
+          "literal": "I one thing say-to want am",
+          "register": "casual",
+          "note": "ek here means 'one' (numeral) rather than the article"
+        },
+        {
+          "hindi": "सिर्फ़ एक ही रास्ता है।",
+          "romanisation": "sirf ek hī rāstā hai.",
+          "english": "There is only one way.",
+          "literal": "only one-EMPH way is",
+          "register": "casual",
+          "note": "ek hī adds emphasis: 'one and only one'; hī is a common emphatic particle"
+        }
+      ]
+    },
+    {
+      "hindi": "और",
+      "romanisation": "aur",
+      "english": "and; more; also; else",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        {"label": "conjunction (and)", "hindi": "और", "roman": "aur"},
+        {"label": "adjective (more/additional)", "hindi": "और", "roman": "aur"},
+        {"label": "emphatic (even more)", "hindi": "और भी", "roman": "aur bhī"}
+      ],
+      "urdu_punjabi": {
+        "urdu": {"script": "اور", "romanisation": "aur", "note": "identical in every way: spelling, pronunciation, and all meanings (and / more / also); one of the most common words in both languages"},
+        "punjabi": {"script": "ਅਤੇ", "romanisation": "ate", "note": "Punjabi prefers ate for 'and' in formal/written contexts; aur is understood and used in spoken Punjabi influenced by Hindi/Urdu, but ate is the native form"}
+      },
+      "cross_language_connections": {
+        "true_relatives": [
+          {"language": "Sanskrit", "word": "avaraḥ", "romanisation": "avaraḥ", "meaning": "other/further", "note": "the distant Sanskrit ancestor; aur evolved through Prakrit forms of this root meaning 'further, additional'"},
+          {"language": "Hindi", "word": "apara", "romanisation": "apara", "meaning": "other/more", "note": "aur also connects to Sanskrit 'apara' via Prakrit condensation"}
+        ],
+        "useful_coincidences": [
+          {"language": "German", "word": "oder", "romanisation": "oder", "meaning": "or", "note": "sounds surprisingly close to aur; not related, but the similarity helps the word stick for anyone with German exposure"},
+          {"language": "English", "word": "or", "romanisation": "or", "meaning": "or", "note": "same sound cluster, though or means something opposite (choice vs. addition); the contrast itself makes aur memorable"}
+        ]
+      },
+      "sound_alikes": [
+        {"word": "our", "language": "English", "note": "sounds like the English word 'our' — imagine gathering more and more things and calling them 'ours AND ours AND ours'"}
+      ],
+      "root_breakdown": {
+        "root": "the root apara in Sanskrit, meaning 'other, further, additional'",
+        "evolution": "Sanskrit apara → Prakrit avara → Apabhraṃśa aura → Hindi aur",
+        "logic": "'further / additional' naturally shifted to mean 'and' — linking things that come after"
+      },
+      "etymology_story": "Aur traces back to the Sanskrit apara, meaning 'the other one' or 'the further one.' As the language simplified over centuries through Prakrit and Apabhraṃśa, apara shrank to aur. The original sense of 'something additional beyond what you already have' is still alive today: aur can mean 'and' (adding things together) or 'more' (asking for something additional).",
+      "pronunciation_guide": {
+        "syllables": "aur",
+        "breakdown": [
+          {"syllable": "aur", "sound": "open 'a' as in 'father', gliding into a short 'u/o' — similar to the English word 'our' or 'or' said with a slightly fuller 'a'"}
+        ],
+        "stress": "single syllable",
+        "extra_notes": [
+          {"language": "English", "note": "pronounce it exactly like the English word 'our' — that is close enough for native comprehension"},
+          {"language": "Russian", "note": "like аур said quickly as one syllable — not two"}
+        ]
+      },
+      "memory_hook": {
+        "primary": "A long dining table stretching into the distance, piled AND piled with more dishes, more food, more and more — the table just keeps extending. That endless addition is aur.",
+        "russian": "picture the Russian word ещё (yeshchyo, more) written on a plus-sign shaped like the letters A-U-R — both mean 'more', one Russian, one Hindi."
+      },
+      "examples": [
+        {
+          "hindi": "मैं और यहाँ नहीं रहूँगा।",
+          "romanisation": "maiṃ aur yahā̃ nahī̃ rahū̃gā.",
+          "english": "I won't stay here any longer.",
+          "literal": "I more here not will-stay",
+          "register": "casual",
+          "note": "aur here means 'any longer / anymore' — one of its less obvious uses"
+        },
+        {
+          "hindi": "एक किताब और दो।",
+          "romanisation": "ek kitāb aur do.",
+          "english": "Give one more book.",
+          "literal": "one book more give",
+          "register": "casual",
+          "note": "aur meaning 'more/another'; do here means 'give' (imperative), not 'two'"
+        },
+        {
+          "hindi": "मैं और वो यहाँ हैं।",
+          "romanisation": "maiṃ aur vo yahā̃ haiṃ.",
+          "english": "I and they are here.",
+          "literal": "I and they here are",
+          "register": "casual",
+          "note": "aur as a simple conjunction linking two subjects"
+        },
+        {
+          "hindi": "क्या और कुछ चाहिए?",
+          "romanisation": "kyā aur kuch cāhie?",
+          "english": "Do you need anything else?",
+          "literal": "what more something needed",
+          "register": "casual",
+          "note": "aur kuch together form a set phrase meaning 'anything else / something more'"
+        }
+      ]
+    },
+    {
+      "hindi": "यहाँ",
+      "romanisation": "yahā̃",
+      "english": "here; in this place",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        {"label": "base form", "hindi": "यहाँ", "roman": "yahā̃"},
+        {"label": "in/at here (same form)", "hindi": "यहाँ", "roman": "yahā̃"},
+        {"label": "from here", "hindi": "यहाँ से", "roman": "yahā̃ se"},
+        {"label": "up to here", "hindi": "यहाँ तक", "roman": "yahā̃ tak"}
+      ],
+      "urdu_punjabi": {
+        "urdu": {"script": "یہاں", "romanisation": "yahāṃ", "note": "identical in pronunciation and meaning; the Urdu script spells it یہاں; fully interchangeable with the Hindi form"},
+        "punjabi": {"script": "ਇੱਥੇ", "romanisation": "iththe", "note": "Punjabi uses a completely different word for 'here'; yahāṃ is understood in urban/spoken contexts but iththe is the standard Punjabi form"}
+      },
+      "cross_language_connections": {
+        "true_relatives": [
+          {"language": "Sanskrit", "word": "iha", "romanisation": "iha", "meaning": "here", "note": "the root that became yahāṃ; iha was extended with the locative suffix -hā and a nasalised long vowel in Prakrit"},
+          {"language": "Hindi", "word": "vahāṃ", "romanisation": "vahāṃ", "meaning": "there", "note": "a true twin: same structure, same suffix, but with the distal demonstrative va- instead of proximal ya-; knowing one makes the other automatic"}
+        ],
+        "useful_coincidences": [
+          {"language": "English", "word": "here", "romanisation": "here", "meaning": "here", "note": "not related, but both words are short and end in a vowel-like sound; English speakers can simply swap 'here' → yahāṃ as a direct mental replacement"},
+          {"language": "Hebrew", "word": "פֹּה", "romanisation": "po", "meaning": "here", "note": "unrelated but both are short location words; remembering that every language has a tiny word for 'here' helps fix yahāṃ as belonging to that category"}
+        ]
+      },
+      "sound_alikes": [
+        {"word": "yah!", "language": "English", "note": "sounds like saying 'yah!' followed by a drawn-out nasal 'anh' — imagine pointing dramatically right at the ground beneath your feet"}
+      ],
+      "root_breakdown": {
+        "root": "the Sanskrit demonstrative root ya- (this, which — proximal) combined with the locative particle -ha",
+        "evolution": "Sanskrit iha (here) → Prakrit iha / eha → merged with ya- demonstrative forms → Apabhraṃśa yahā → Hindi yahāṃ (with nasalisation added)",
+        "logic": "ya- points to something near (this/here), and the -hā suffix fixes it as a place; the nasal ending ṃ often marks location adverbs in Hindi (vahāṃ, kahāṃ, yahāṃ)"
+      },
+      "etymology_story": "Yahāṃ belongs to a neat family of place-words in Hindi: yahāṃ (here), vahāṃ (there), and kahāṃ (where) all share the same -hāṃ skeleton and differ only in their opening sound. The ya- comes from a Sanskrit demonstrative meaning 'this, near', the same root behind the relative pronoun jo. So yahāṃ literally encodes the idea of 'at this near place.'",
+      "pronunciation_guide": {
+        "syllables": "ya · hāṃ",
+        "breakdown": [
+          {"syllable": "ya", "sound": "like English 'yuh' — the y of 'yes' with a short a"},
+          {"syllable": "hāṃ", "sound": "long open 'aah' with a nasal hum at the end — the mouth stays open but the sound resonates through the nose; like 'hahn' without closing the n"}
+        ],
+        "stress": "second syllable — yahāṃ",
+        "extra_notes": [
+          {"language": "general", "note": "The nasal ending ṃ is not a full 'n' or 'm' — it is a nasalisation of the vowel itself; keep your mouth open and let the sound buzz slightly through your nose"},
+          {"language": "Russian", "note": "the ya- sounds exactly like Russian я (ya, I) — start with that sound and add hāṃ"}
+        ]
+      },
+      "memory_hook": {
+        "primary": "A large glowing arrow pointing straight down at a spot on the floor, with the word YAHĀṂ painted on that exact spot in bold letters — the arrow is nailed there, it is HERE and nowhere else.",
+        "russian": "picture the Russian letter Я (ya) stamped on the ground like a footprint — Я is 'I', and I am standing HERE, yahāṃ."
+      },
+      "examples": [
+        {
+          "hindi": "मैं यहाँ हूँ।",
+          "romanisation": "maiṃ yahā̃ hū̃.",
+          "english": "I am here.",
+          "literal": "I here am",
+          "register": "casual",
+          "note": "the most basic use; hū̃ is the first-person form of 'to be'"
+        },
+        {
+          "hindi": "किताब यहाँ रखो।",
+          "romanisation": "kitāb yahā̃ rakho.",
+          "english": "Put the book here.",
+          "literal": "book here put",
+          "register": "casual",
+          "note": "yahāṃ specifies location for the action; rakho is casual imperative 'put/place'"
+        },
+        {
+          "hindi": "यहाँ और वहाँ दोनों जगह देखो।",
+          "romanisation": "yahā̃ aur vahā̃ donõ jagah dekho.",
+          "english": "Look in both places — here and there.",
+          "literal": "here and there both place look",
+          "register": "casual",
+          "note": "yahāṃ aur vahāṃ is a natural paired expression; note how aur links the two location words"
+        },
+        {
+          "hindi": "क्या यहाँ एक अच्छा रेस्तराँ है?",
+          "romanisation": "kyā yahā̃ ek acchā restarā̃ hai?",
+          "english": "Is there a good restaurant here?",
+          "literal": "what here one good restaurant is",
+          "register": "casual",
+          "note": "kyā at the start turns the statement into a yes/no question; ek again acts as the indefinite article"
+        }
+      ]
+    },
+    {
+      "hindi": "क्योंकि",
+      "romanisation": "kyoṃki",
+      "english": "because; since (giving a reason)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        {"label": "base form (conjunction)", "hindi": "क्योंकि", "roman": "kyoṃki"},
+        {"label": "paired question word", "hindi": "क्यों", "roman": "kyõ (why)"}
+      ],
+      "urdu_punjabi": {
+        "urdu": {"script": "کیونکہ", "romanisation": "kyoṃkih", "note": "the Urdu form ends in kih (a Persian subordinating particle) rather than ki; the pronunciation is nearly identical and the meaning is exactly the same: 'because'"},
+        "punjabi": {"script": "ਕਿਉਂਕਿ", "romanisation": "kiuṃki", "note": "Gurmukhi spelling; pronounced almost identically to the Hindi; used the same way as a causal conjunction meaning 'because'"}
+      },
+      "cross_language_connections": {
+        "true_relatives": [
+          {"language": "Sanskrit", "word": "kim", "romanisation": "kim", "meaning": "what?", "note": "the question root ki-/kya- behind क्यों (why) traces to Sanskrit kim; kyoṃki is literally 'why-because', built from the question word for 'why' plus the particle ki"},
+          {"language": "Hindi", "word": "ki", "romanisation": "ki", "meaning": "that/which", "note": "the second half of kyoṃki is the subordinating conjunction ki, which appears everywhere in Hindi to introduce clauses; knowing ki helps decode the structure"}
+        ],
+        "useful_coincidences": [
+          {"language": "Russian", "word": "потому что", "romanisation": "potomu chto", "meaning": "because", "note": "not similar in sound, but both languages use a two-part causal conjunction where a question-like element is embedded; the grammar logic is parallel"},
+          {"language": "Hebrew", "word": "כִּי", "romanisation": "ki", "meaning": "because/that", "note": "the particle ki in Hebrew also introduces causal and subordinate clauses, just like the ki inside kyoṃki; striking functional parallel even without shared ancestry"}
+        ]
+      },
+      "sound_alikes": [
+        {"word": "quom-key", "language": "English", "note": "sounds like 'quom-key' — imagine a key that unlocks the reason behind a locked door: you ask 'why is it locked?' and the key (ki) reveals the because"}
+      ],
+      "root_breakdown": {
+        "root": "the root kim in Sanskrit, meaning 'what / why'",
+        "evolution": "Sanskrit kim → Prakrit kiṃ → Hindi kyõ (why); then kyõ + ki (subordinating particle) → kyoṃki (because)",
+        "logic": "'because' is literally 'why-that' in Hindi — the answer to the question 'why?' is introduced by ki; the word encodes the question and its answer together"
+      },
+      "etymology_story": "Kyoṃki is a compound born from a question and an answer fused together. Kyõ means 'why' and ki is the particle that introduces a clause (like 'that' in English). So kyoṃki literally means something like 'the reason being that.' It is as if the language decided: to explain a cause, you first gesture at the question 'why?' and then immediately supply the link to the answer.",
+      "pronunciation_guide": {
+        "syllables": "kyoṃ · ki",
+        "breakdown": [
+          {"syllable": "kyoṃ", "sound": "start with a 'k', quickly add a 'y' glide, then an 'o' that is nasalised — like 'kyohn' but without closing the n fully; the vowel hums through the nose"},
+          {"syllable": "ki", "sound": "short, crisp 'ki' as in 'key' said quickly"}
+        ],
+        "stress": "first syllable — kyoṃki",
+        "extra_notes": [
+          {"language": "general", "note": "The ṃ in kyoṃ is nasalisation, not a full consonant — keep the mouth in the 'o' position and let air out through the nose simultaneously"},
+          {"language": "Russian", "note": "the ki ending sounds like the Russian suffix -ки in words like реки (reki, rivers) — short and crisp"}
+        ]
+      },
+      "memory_hook": {
+        "primary": "A giant locked door with a question mark carved on it and a key hanging in the lock — on the door it says WHY, and the key is labelled BECAUSE. The key and the question mark are fused into one object: kyoṃki.",
+        "russian": "picture the word ПОТОМУ ЧТО (potomu chto, because) compressed into a tiny two-syllable key — that compressed key is kyoṃki."
+      },
+      "examples": [
+        {
+          "hindi": "मैं यहाँ हूँ क्योंकि मुझे किताब चाहिए।",
+          "romanisation": "maiṃ yahā̃ hū̃ kyoṃki mujhe kitāb cāhie.",
+          "english": "I am here because I need a book.",
+          "literal": "I here am because me-to book needed",
+          "register": "casual",
+          "note": "kyoṃki introduces the reason; mujhe cāhie is the standard way to say 'I need' — literally 'to me is needed'"
+        },
+        {
+          "hindi": "वो नहीं आया क्योंकि बारिश थी।",
+          "romanisation": "vo nahī̃ āyā kyoṃki bāriś thī.",
+          "english": "He didn't come because it was raining.",
+          "literal": "he not came because rain was",
+          "register": "casual",
+          "note": "kyoṃki always follows the main clause and precedes the reason clause"
+        },
+        {
+          "hindi": "मैं खुश हूँ क्योंकि यहाँ अच्छा है।",
+          "romanisation": "maiṃ khush hū̃ kyoṃki yahā̃ acchā hai.",
+          "english": "I am happy because it is nice here.",
+          "literal": "I happy am because here good is",
+          "register": "casual",
+          "note": "a simple two-clause sentence; yahāṃ acchā hai is a natural phrase meaning 'it's good here'"
+        },
+        {
+          "hindi": "यह ज़रूरी है क्योंकि और कोई रास्ता नहीं है।",
+          "romanisation": "yah zarūrī hai kyoṃki aur koī rāstā nahī̃ hai.",
+          "english": "This is necessary because there is no other way.",
+          "literal": "this necessary is because more-any way not is",
+          "register": "casual",
+          "note": "aur here means 'other/else'; aur koī rāstā = 'any other way'"
+        }
+      ]
+    },
+    {
+      "hindi": "किताब",
+      "romanisation": "kitāb",
+      "english": "book",
+      "origin_tag": "Perso-Arabic",
+      "forms": [
+        {"label": "singular", "hindi": "किताब", "roman": "kitāb"},
+        {"label": "plural", "hindi": "किताबें", "roman": "kitābẽ"},
+        {"label": "oblique plural", "hindi": "किताबों", "roman": "kitābõ"}
+      ],
+      "urdu_punjabi": {
+        "urdu": {"script": "کتاب", "romanisation": "kitāb", "note": "the same Arabic-origin word in Perso-Arabic script; Urdu uses this as the primary and most formal word for book; fully identical in meaning and usage"},
+        "punjabi": {"script": "ਕਿਤਾਬ", "romanisation": "kitāb", "note": "the same word is used in Punjabi and written in Gurmukhi; it is the standard everyday word for book in Punjabi as well"}
+      },
+      "cross_language_connections": {
+        "true_relatives": [
+          {"language": "Arabic", "word": "كِتَاب", "romanisation": "kitāb", "meaning": "book", "note": "direct source; Arabic kitāb comes from the root k-t-b (kataba, to write); the word literally means 'a thing written'"},
+          {"language": "Arabic", "word": "كَتَبَ", "romanisation": "kataba", "meaning": "he wrote", "note": "the verb root; kitāb = 'written thing'"},
+          {"language": "Hebrew", "word": "כָּתַב", "romanisation": "katav", "meaning": "he wrote", "note": "Hebrew and Arabic share the Semitic root k-t-b for writing; Hebrew ktav (writing/script) is a true relative of Arabic kitāb"},
+          {"language": "Turkish", "word": "kitap", "romanisation": "kitap", "meaning": "book", "note": "borrowed from the same Arabic source; found across languages that had contact with Islamic literary culture"}
+        ],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [
+        {"word": "key-taab", "language": "English", "note": "sounds like 'key-taab' — imagine a book whose cover is a giant golden key that you must turn to open the story inside"}
+      ],
+      "root_breakdown": {
+        "root": "the Semitic root k-t-b meaning 'to write'",
+        "evolution": "Arabic kataba (to write) → kātib (writer) → kitāb (thing written, book) → borrowed into Persian → entered Hindi/Urdu through Persian literary influence",
+        "logic": "a book is literally 'the written thing'; the Arabic pattern CiCāC applied to k-t-b produces kitāb — the noun of the act"
+      },
+      "etymology_story": "Kitāb arrived in Hindi through Persian, but its DNA is Arabic. The three-letter root k-t-b — to write — is one of the most productive roots in all Semitic languages, giving Arabic kataba (he wrote), kātib (scribe), and kitāb (book). When Persian adopted Arabic literary vocabulary and Mughal culture brought Persian to the Indian subcontinent, kitāb settled into Hindi and Urdu so completely that it now feels entirely native.",
+      "pronunciation_guide": {
+        "syllables": "ki · tāb",
+        "breakdown": [
+          {"syllable": "ki", "sound": "short crisp 'ki' as in 'key' — no elongation"},
+          {"syllable": "tāb", "sound": "long open 'aa' as in 'father', ending with a soft 'b' — the b is not fully released, it just closes the lips gently"}
+        ],
+        "stress": "second syllable — kitāb",
+        "extra_notes": [
+          {"language": "Hebrew", "note": "you already know the root כ-ת-ב (k-t-v/b) from Hebrew כָּתַב (katav, to write) and כְּתָב (ktav, script); kitāb is your Semitic cousin in Hindi"},
+          {"language": "general", "note": "The final b is soft — do not add a vowel after it; let the lips close and stop"}
+        ]
+      },
+      "memory_hook": {
+        "primary": "A massive ancient book chained shut with an enormous key through its lock — the key fits perfectly because books are the keys to knowledge. The key IS the book: kitāb.",
+        "russian": "picture a КИТ (kit, whale) sitting on a beach with an open book on its lap, flipping pages with its fin — КИТ + АБ → kitāb."
+      },
+      "examples": [
+        {
+          "hindi": "यह किताब बहुत अच्छी है।",
+          "romanisation": "yah kitāb bahut acchī hai.",
+          "english": "This book is very good.",
+          "literal": "this book very good is",
+          "register": "casual",
+          "note": "acchī is the feminine form of 'good' because kitāb is grammatically feminine in Hindi"
+        },
+        {
+          "hindi": "मुझे एक किताब चाहिए क्योंकि मैं पढ़ना चाहता हूँ।",
+          "romanisation": "mujhe ek kitāb cāhie kyoṃki maiṃ paṛhnā cāhtā hū̃.",
+          "english": "I need a book because I want to read.",
+          "literal": "me-to one book needed because I read-to want am",
+          "register": "casual",
+          "note": "combines several words from this set; mujhe cāhie = 'I need' (lit. 'to me is needed')"
+        },
+        {
+          "hindi": "किताबें यहाँ और वहाँ बिखरी हैं।",
+          "romanisation": "kitābẽ yahā̃ aur vahā̃ bikhṛī haiṃ.",
+          "english": "Books are scattered here and there.",
+          "literal": "books here and there scattered are",
+          "register": "casual",
+          "note": "kitābẽ is the plural; bikhṛī means 'scattered'"
+        },
+        {
+          "hindi": "क्या यह हिंदी की किताब है?",
+          "romanisation": "kyā yah hindī kī kitāb hai?",
+          "english": "Is this a Hindi book?",
+          "literal": "what this Hindi of book is",
+          "register": "casual",
+          "note": "kī is the feminine possessive/genitive marker agreeing with kitāb (feminine)"
+        }
+      ]
+    },
+    {
+      "hindi": "मैं",
+      "romanisation": "maiṃ",
+      "english": "I (first-person singular pronoun)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        {"label": "nominative (subject)", "hindi": "मैं", "roman": "maiṃ"},
+        {"label": "oblique/dative (to me)", "hindi": "मुझे / मुझको", "roman": "mujhe / mujhko"},
+        {"label": "genitive (my)", "hindi": "मेरा / मेरी / मेरे", "roman": "merā / merī / mere"},
+        {"label": "emphatic", "hindi": "मैं ही", "roman": "maiṃ hī"}
+      ],
+      "urdu_punjabi": {
+        "urdu": {"script": "میں", "romanisation": "maiṃ", "note": "identical: same pronunciation, same meaning, same grammatical behaviour; the Urdu script writes it میں; no difference whatsoever"},
+        "punjabi": {"script": "ਮੈਂ", "romanisation": "maiṃ", "note": "Gurmukhi spelling; identical pronunciation and meaning; 'I' is the same across all three languages in this case"}
+      },
+      "cross_language_connections": {
+        "true_relatives": [
+          {"language": "Sanskrit", "word": "aham", "romanisation": "aham", "meaning": "I", "note": "the classical Sanskrit first-person pronoun; maiṃ evolved from the oblique forms of aham through Prakrit mama/majha rather than the nominative"},
+          {"language": "English", "word": "me", "romanisation": "me", "meaning": "me", "note": "shares the Proto-Indo-European root *me- for the first-person pronoun; maiṃ and 'me' are distant cousins"},
+          {"language": "Russian", "word": "меня", "romanisation": "menya", "meaning": "of me / me", "note": "from the same PIE root *me-; the oblique forms across Indo-European languages show this family resemblance clearly"}
+        ],
+        "useful_coincidences": [
+          {"language": "English", "word": "mine", "romanisation": "mine", "meaning": "mine", "note": "maiṃ sounds like 'mine'; useful memory bridge: 'mine' starts with 'I', and maiṃ IS 'I'"},
+          {"language": "German", "word": "mein", "romanisation": "mein", "meaning": "my", "note": "pronounced almost identically to maiṃ; German mein means 'my' while Hindi maiṃ means 'I' — a one-step difference in meaning, same sound"}
+        ]
+      },
+      "sound_alikes": [
+        {"word": "mine", "language": "English", "note": "sounds like the English word 'mine' with the final sound softened — imagine pointing to yourself and claiming everything around you as 'mine' — that act of self-assertion IS maiṃ"}
+      ],
+      "root_breakdown": {
+        "root": "the Proto-Indo-European root *me- for the first person",
+        "evolution": "PIE *me- → Sanskrit aham (nominative) / mama (genitive) → Prakrit māhaṃ / majjhaṃ → Apabhraṃśa maïṃ → Hindi maiṃ",
+        "logic": "maiṃ did not come from Sanskrit aham (the direct 'I') but from the oblique/possessive stem mama (of me / my), which gradually took over all functions of the first-person pronoun"
+      },
+      "etymology_story": "The Hindi maiṃ is a fascinating case of a possessive form overthrowing a nominative. Classical Sanskrit used aham to say 'I', but in everyday spoken Prakrit, the form mama ('of me / mine') was so common that it gradually took on all first-person duties. Through centuries of phonetic compression — māhaṃ → maïṃ → maiṃ — the word that once meant 'mine' became the word for 'I'. In a sense, Hindi speakers say 'I' with a word that originally declared ownership.",
+      "pronunciation_guide": {
+        "syllables": "maiṃ",
+        "breakdown": [
+          {"syllable": "maiṃ", "sound": "like the English word 'main' or 'mine' but with a nasalised vowel — open the mouth to 'aa', let it glide toward 'e', and let it hum nasally; do not close to a full 'n'"}
+        ],
+        "stress": "single syllable",
+        "extra_notes": [
+          {"language": "English", "note": "it is very close to the English word 'mine' — say 'mine' slowly, stop just before the 'n' closes, and nasalise the vowel instead"},
+          {"language": "Russian", "note": "think of the Russian word мне (mne, to me) but opened up to a full vowel — маэн said in one short breath"},
+          {"language": "general", "note": "The nasalisation is crucial: without it, it can sound like mai (a different word); let the vowel hum through the nose"}
+        ]
+      },
+      "memory_hook": {
+        "primary": "A single pointing finger aimed directly at a mirror — in the mirror you see yourself pointing back. The finger, the person, and the reflection are all one: I, myself, maiṃ.",
+        "russian": "picture the Russian word МНЕ (mne, to me) inflated with air until it becomes a full round sound — МНЕ puffed up into МАIN is maiṃ."
+      },
+      "examples": [
+        {
+          "hindi": "मैं यहाँ हूँ।",
+          "romanisation": "maiṃ yahā̃ hū̃.",
+          "english": "I am here.",
+          "literal": "I here am",
+          "register": "casual",
+          "note": "the simplest complete sentence with maiṃ; hū̃ is the nasalised first-person form of 'to be'"
+        },
+        {
+          "hindi": "मैं एक किताब पढ़ रहा हूँ।",
+          "romanisation": "maiṃ ek kitāb paṛh rahā hū̃.",
+          "english": "I am reading a book.",
+          "literal": "I one book read going am",
+          "register": "casual",
+          "note": "rahā hū̃ forms the present continuous; paṛh is the verb stem of 'to read'"
+        },
+        {
+          "hindi": "मैं यहाँ हूँ क्योंकि मुझे यह पसंद है।",
+          "romanisation": "maiṃ yahā̃ hū̃ kyoṃki mujhe yah pasand hai.",
+          "english": "I am here because I like it.",
+          "literal": "I here am because me-to this pleasing is",
+          "register": "casual",
+          "note": "mujhe is the oblique form of maiṃ; mujhe pasand hai = 'I like' — literally 'to me it is pleasing'"
+        },
+        {
+          "hindi": "मैं और मेरा दोस्त यहाँ आए।",
+          "romanisation": "maiṃ aur merā dost yahā̃ āe.",
+          "english": "My friend and I came here.",
+          "literal": "I and my friend here came",
+          "register": "casual",
+          "note": "merā is the masculine genitive form of maiṃ ('my'); Hindi puts 'I' first in the list, unlike polite English usage"
+        }
+      ]
+    }
+  ]
+}

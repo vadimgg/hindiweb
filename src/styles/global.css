@@ -231,8 +231,6 @@ article.is-selected {
 
 /* ─── Card collapse ─────────────────────────────────────────────────────── */
 
-.card-collapse-btn .chevron { display: inline-block; transition: transform 0.15s; }
-article.is-collapsed .card-collapse-btn .chevron { transform: rotate(-90deg); }
 article.is-collapsed .card-expandable { display: none; }
 
 /* ─── Devanagari font applied to every lang="hi" element ────────────────── */
