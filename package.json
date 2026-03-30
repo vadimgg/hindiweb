@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "arch": "node scripts/arch.js",
+    "changelog": "node scripts/aggregate-changelog.js"
   },
   "dependencies": {
     "astro": "^5.0.0",
