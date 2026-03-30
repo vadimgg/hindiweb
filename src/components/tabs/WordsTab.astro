@@ -1,0 +1,38 @@
+---
+// Responsible for: Words tab content — meta line, word cards grid, empty state, footer
+import WordCard from '../WordCard.astro';
+
+interface Props {
+  allWords: any[];
+  vocabFilesCount: number;
+}
+const { allWords, vocabFilesCount } = Astro.props;
+---
+
+<div id="tab-words" class="px-5 sm:px-8 py-8 max-w-3xl mx-auto lg:mx-0 lg:max-w-2xl xl:max-w-3xl">
+  <p class="hidden lg:block text-xs text-zinc-600 mb-8" id="words-meta">
+    {allWords.length} {allWords.length === 1 ? 'word' : 'words'} &middot; {vocabFilesCount} {vocabFilesCount === 1 ? 'file' : 'files'}
+  </p>
+  <div class="space-y-5" id="cards-container">
+    {allWords.map((word, i) => (
+      <div data-word-card={i}>
+        <WordCard
+          hindi={word.hindi} romanisation={word.romanisation} english={word.english}
+          origin_language={word.origin_language ?? word.origin_tag}
+          in_hindi_via={word.in_hindi_via} word_category={word.word_category}
+          date_added={word.date_added} forms={word.forms}
+          cross_language_connections={word.cross_language_connections}
+          root_breakdown={word.root_breakdown} root_parts={word.root_parts}
+          root_notes={word.root_notes} root_and_origin_explanation={word.root_and_origin_explanation}
+          etymology_story={word.etymology_story} pronunciation_guide={word.pronunciation_guide}
+          memory_hook={word.memory_hook} urdu_punjabi={word.urdu_punjabi}
+          sound_alikes={word.sound_alikes} examples={word.examples} index={i}
+        />
+      </div>
+    ))}
+  </div>
+  <div id="words-no-results" class="hidden py-20 text-center">
+    <p class="text-zinc-600 text-sm">No words match your search.</p>
+  </div>
+  <footer class="mt-20 text-xs text-zinc-700">Drop <code class="text-zinc-600">*.json</code> files into <code class="text-zinc-600">vocab/</code> to add words.</footer>
+</div>

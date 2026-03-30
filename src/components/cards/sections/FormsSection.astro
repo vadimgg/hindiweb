@@ -1,0 +1,33 @@
+---
+// Responsible for: forms chips row + secondary meanings block inside a word card
+import { chipClass } from '../../../utils/cardHelpers';
+import type { Form } from '../../../utils/types';
+
+interface Props {
+  forms: Form[];
+  secondaryMeanings: string;
+}
+const { forms, secondaryMeanings } = Astro.props;
+---
+
+{(forms.length > 0 || secondaryMeanings) && (
+  <div class="px-5 pb-4 pt-1 space-y-3">
+    {forms.length > 0 && (
+      <div class="flex flex-wrap gap-2">
+        {forms.map((f) => (
+          <span class={chipClass(f.label)}>
+            <span class="font-title uppercase tracking-wide text-[10px]">{f.label}</span>
+            <span class="word-hindi" lang="hi" style="font-family:'Tiro Devanagari Hindi',serif;font-size:1.1em;">{f.hindi}</span>
+            <span>·</span>
+            <span>{f.roman}</span>
+          </span>
+        ))}
+      </div>
+    )}
+    {secondaryMeanings && (
+      <div class="bg-slate-800/50 rounded-xl px-4 py-2.5">
+        <p class="text-slate-300 text-sm leading-relaxed">{secondaryMeanings}</p>
+      </div>
+    )}
+  </div>
+)}

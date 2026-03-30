@@ -1,0 +1,69 @@
+---
+// Responsible for: Export/Delivery pane HTML — word summary table and Anki settings panel
+---
+
+<div id="tab-export" style="display:none; height:calc(100vh - 3.5rem);">
+  <div class="flex h-full">
+
+    <!-- Left panel: selected word table -->
+    <div class="flex-1 flex flex-col border-r border-zinc-800 min-w-0 bg-zinc-950">
+      <header class="flex items-center gap-3 px-6 py-4 border-b border-zinc-800/70 shrink-0">
+        <h2 class="font-title text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">Selected Words</h2>
+        <span id="export-word-count" class="text-xs font-semibold bg-zinc-800 text-zinc-300 px-2.5 py-0.5 rounded-full min-w-[1.5rem] text-center">0</span>
+      </header>
+      <div class="flex-1 overflow-y-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead class="sticky top-0 bg-zinc-950/95 backdrop-blur border-b border-zinc-800/70">
+            <tr>
+              <th class="text-left py-2.5 px-4 text-[9px] font-title font-semibold uppercase tracking-widest text-zinc-600">Hindi</th>
+              <th class="text-left py-2.5 px-4 text-[9px] font-title font-semibold uppercase tracking-widest text-zinc-600">Roman</th>
+              <th class="text-left py-2.5 px-4 text-[9px] font-title font-semibold uppercase tracking-widest text-zinc-600">English</th>
+              <th class="text-left py-2.5 px-4 text-[9px] font-title font-semibold uppercase tracking-widest text-zinc-600">Category</th>
+              <th class="text-left py-2.5 px-4 text-[9px] font-title font-semibold uppercase tracking-widest text-zinc-600">Origin</th>
+            </tr>
+          </thead>
+          <tbody id="export-word-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Right panel: settings -->
+    <div class="w-72 shrink-0 flex flex-col bg-zinc-950 border-l border-zinc-800">
+
+      <div class="p-6 border-b border-zinc-800/70">
+        <p class="text-[9px] font-title font-semibold uppercase tracking-[0.2em] text-zinc-600 mb-3">Deck Name</p>
+        <input
+          id="export-deck-input"
+          type="text"
+          placeholder="Hindi::Vocabulary"
+          class="w-full bg-zinc-900 border border-zinc-700/60 rounded-lg px-3 py-2 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-amber-500/50 transition-colors"
+        />
+        <p class="text-[11px] text-zinc-700 mt-1.5">Use <code class="text-zinc-600">::</code> for subdecks</p>
+      </div>
+
+      <div class="p-6 border-b border-zinc-800/70">
+        <p class="text-[9px] font-title font-semibold uppercase tracking-[0.2em] text-zinc-600 mb-3">AnkiConnect</p>
+        <span id="export-anki-status" class="text-sm font-semibold text-zinc-500">● Checking…</span>
+        <p class="text-[11px] text-zinc-700 mt-1.5">Requires Anki open + AnkiConnect add-on</p>
+      </div>
+
+      <div class="p-6 flex flex-col gap-3">
+        <button
+          id="export-btn"
+          disabled
+          class="w-full py-2.5 text-sm font-semibold rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 hover:bg-amber-500/30 transition-colors disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-amber-500/20"
+        >
+          Export to Anki
+        </button>
+        <button
+          id="export-txt-btn"
+          class="w-full py-2 text-xs text-zinc-600 hover:text-zinc-300 transition-colors"
+        >
+          Download .txt for manual import
+        </button>
+        <div id="export-feedback" class="hidden"></div>
+      </div>
+
+    </div>
+  </div>
+</div>

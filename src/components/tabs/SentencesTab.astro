@@ -1,0 +1,29 @@
+---
+// Responsible for: Sentences tab content — sentence cards grid, empty states
+import SentenceCard from '../SentenceCard.astro';
+
+interface DateGroup { date: string; label: string; items: { w: any; i: number }[]; }
+interface Props {
+  allSentences: any[];
+  sentencesByDate: DateGroup[];
+}
+const { allSentences, sentencesByDate } = Astro.props;
+---
+
+<div id="tab-sentences" class="hidden px-5 sm:px-8 py-8 max-w-3xl mx-auto lg:mx-0 lg:max-w-2xl xl:max-w-3xl">
+  {allSentences.length > 0 ? (
+    <div class="space-y-5" id="sentences-container">
+      {allSentences.map((sentence, i) => (
+        <div data-sentence-card={i}><SentenceCard index={i} {...sentence} /></div>
+      ))}
+    </div>
+  ) : (
+    <div class="py-24 text-center">
+      <p class="text-zinc-600 text-sm mb-2">No sentences loaded yet.</p>
+      <p class="text-zinc-700 text-xs">Drop <code class="text-zinc-600">*.json</code> files into <code class="text-zinc-600">sentences/</code>.</p>
+    </div>
+  )}
+  <div id="sentences-no-results" class="hidden py-20 text-center">
+    <p class="text-zinc-600 text-sm">No sentences match your search.</p>
+  </div>
+</div>

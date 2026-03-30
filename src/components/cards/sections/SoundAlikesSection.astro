@@ -1,0 +1,35 @@
+---
+// Responsible for: Sound Alikes expandable section inside a word card
+import { langColor } from '../../../utils/cardHelpers';
+import { highlight } from '../../../utils/highlight';
+import type { SoundAlike } from '../../../utils/types';
+
+interface Props { sound_alikes: SoundAlike[]; }
+const { sound_alikes } = Astro.props;
+---
+
+<details class="group/det">
+  <summary class="flex items-center justify-between px-7 py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
+    <span class="font-title text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Sound Alikes</span>
+    <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
+  </summary>
+  <div class="px-7 pb-6 pt-3">
+    <div class="bg-slate-950/70 border-l-2 border-rose-500/40 rounded-r-xl px-5 py-4 space-y-4">
+      {sound_alikes.map((sa) => (
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1.5">
+            {sa.language && (
+              <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wide', langColor(sa.language)]}>
+                {sa.language}
+              </span>
+            )}
+            {sa.word && <span class="word-hindi text-base" lang="hi" set:html={highlight(sa.word)} />}
+            {sa.romanisation && <span class="word-roman text-sm">({sa.romanisation})</span>}
+            {sa.meaning && <span class="text-slate-400 text-sm">— {sa.meaning}</span>}
+          </div>
+          {sa.note && <p class="text-[15px] text-slate-300 leading-relaxed" set:html={highlight(sa.note)} />}
+        </div>
+      ))}
+    </div>
+  </div>
+</details>

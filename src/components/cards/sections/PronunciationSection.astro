@@ -1,0 +1,44 @@
+---
+// Responsible for: Pronunciation expandable section inside a word card
+import { langColor } from '../../../utils/cardHelpers';
+import { highlight } from '../../../utils/highlight';
+import type { PronunciationGuide } from '../../../utils/types';
+
+interface Props {
+  pronunciation_guide: PronunciationGuide;
+}
+const { pronunciation_guide: pg } = Astro.props;
+---
+
+<details class="group/det">
+  <summary class="flex items-center justify-between px-7 py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
+    <span class="font-title text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Pronunciation</span>
+    <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
+  </summary>
+  <div class="px-7 pb-6 pt-3">
+    <div class="bg-slate-950/70 border-l-2 border-teal-500/50 rounded-r-xl px-5 py-4 space-y-3">
+      {pg.syllables && (
+        <p class="text-teal-300 text-lg font-semibold tracking-widest font-title">{pg.syllables}</p>
+      )}
+      {(pg.breakdown ?? []).map((item) => (
+        <div class="flex gap-3 items-start">
+          <span class="font-title font-semibold text-sm text-slate-100 shrink-0 w-12">{item.syllable}</span>
+          <p class="text-[15px] text-slate-300 leading-relaxed">{item.sound ?? item.note}</p>
+        </div>
+      ))}
+      {pg.stress && (
+        <p class="text-sm text-amber-400/80 italic border-t border-slate-800/60 pt-3">{pg.stress}</p>
+      )}
+      {(pg.extra_notes ?? []).map((item) => (
+        <div class="flex gap-3 items-start">
+          {item.language && (
+            <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wide shrink-0 mt-0.5', langColor(item.language)]}>
+              {item.language}
+            </span>
+          )}
+          <p class="text-[15px] text-slate-400 leading-relaxed" set:html={highlight(item.note)} />
+        </div>
+      ))}
+    </div>
+  </div>
+</details>

@@ -1,0 +1,68 @@
+---
+// Responsible for: Root & Origin and Etymology Story expandable sections inside a word card
+import { highlight } from '../../../utils/highlight';
+import type { RootBreakdown, RootPart } from '../../../utils/types';
+
+interface Props {
+  in_hindi_via?: string;
+  root_parts: RootPart[];
+  root_breakdown?: RootBreakdown;
+  root_notes: string[];
+  root_and_origin_explanation: string[];
+  etymology_story?: string;
+}
+const { in_hindi_via, root_parts, root_breakdown, root_notes, root_and_origin_explanation, etymology_story } = Astro.props;
+---
+
+<details class="group/det">
+  <summary class="flex items-center justify-between px-7 py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
+    <span class="font-title text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Root &amp; Origin</span>
+    <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
+  </summary>
+  <div class="px-7 pb-6 pt-3">
+    <div class="bg-slate-950/70 border-l-2 border-blue-500/40 rounded-r-xl px-5 py-4 space-y-3">
+      {in_hindi_via && <p class="text-[13px] text-blue-300/70 italic">{in_hindi_via}</p>}
+      {root_parts.length > 0 && (
+        <div class="space-y-2">
+          {root_parts.map((part) => (
+            <div class="flex items-baseline gap-2">
+              <span class="word-hindi text-base shrink-0" lang="hi">{part.script}</span>
+              <span class="word-roman text-sm shrink-0">{part.element}</span>
+              <span class="text-slate-400 text-sm">— {part.meaning}</span>
+            </div>
+          ))}
+        </div>
+      )}
+      {root_breakdown?.root && (
+        <p class="text-slate-100 text-base font-medium leading-relaxed" set:html={highlight(root_breakdown.root)} />
+      )}
+      {root_breakdown?.evolution && (
+        <p class="text-[14px] text-teal-300/70 font-mono tracking-wide leading-relaxed" set:html={highlight(root_breakdown.evolution)} />
+      )}
+      {root_breakdown?.logic && (
+        <p class="text-[15px] text-slate-400 italic leading-relaxed" set:html={highlight(root_breakdown.logic)} />
+      )}
+      {root_notes.map((line) => (
+        <p class="text-[15px] text-slate-300 leading-relaxed" set:html={highlight(line)} />
+      ))}
+      {root_and_origin_explanation.map((line, i) => (
+        <p class:list={['leading-relaxed', i === 0 ? 'text-slate-100 text-base font-medium' : 'text-[15px] text-slate-300']}
+          set:html={highlight(line)} />
+      ))}
+    </div>
+  </div>
+</details>
+
+{etymology_story && (
+  <details class="group/det">
+    <summary class="flex items-center justify-between px-7 py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
+      <span class="font-title text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Etymology Story</span>
+      <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
+    </summary>
+    <div class="px-7 pb-6 pt-3">
+      <div class="bg-slate-950/80 border-l-2 border-amber-500/50 rounded-r-xl px-5 py-4">
+        <p class="text-base text-slate-200 leading-relaxed" set:html={highlight(etymology_story)} />
+      </div>
+    </div>
+  </details>
+)}

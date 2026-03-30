@@ -1,596 +1,84 @@
 ---
-import { highlight } from '../utils/highlight';
-
-interface Example {
-  hindi: string;
-  romanisation: string;
-  english: string;
-  literal?: string;
-  register?: string;
-  note?: string;
-}
-
-interface Form {
-  label: string;
-  hindi: string;
-  roman: string;
-}
-
-interface RootPart {
-  element: string;
-  script: string;
-  meaning: string;
-}
-
-interface CrossLangItem {
-  language?: string;
-  word?: string;
-  romanisation?: string;
-  meaning?: string;
-  note?: string;
-}
-
-interface CrossLangConnections {
-  true_relatives?: CrossLangItem[];
-  useful_coincidences?: CrossLangItem[];
-}
-
-interface PronBreakdownItem {
-  syllable: string;
-  sound?: string;
-  note?: string;   // legacy fallback
-}
-
-interface PronExtraNote {
-  language: string;
-  note: string;
-}
-
-interface PronunciationGuide {
-  syllables?: string;
-  breakdown?: PronBreakdownItem[];
-  stress?: string;
-  extra_notes?: PronExtraNote[];
-}
-
-interface RootBreakdown {
-  root?: string;
-  evolution?: string;
-  logic?: string;
-}
-
-// memory_hook is an object: { primary, russian?, hebrew?, ... }
-type MemoryHook = Record<string, string>;
-
-interface UrduPunjabiEntry {
-  script?: string;
-  romanisation?: string;
-  note?: string;
-}
-
-interface UrduPunjabi {
-  urdu?: UrduPunjabiEntry;
-  punjabi?: UrduPunjabiEntry;
-}
-
-interface SoundAlike {
-  language?: string;
-  word?: string;
-  romanisation?: string;
-  meaning?: string;
-  note?: string;
-}
+// Responsible for: word card shell — header row + section delegation
+import { formatDate, categoryStyle } from '../utils/cardHelpers';
+import type { Form, CrossLangConnections, RootBreakdown, RootPart, PronunciationGuide, MemoryHook, UrduPunjabi, SoundAlike, Example } from '../utils/types';
+import FormsSection       from './cards/sections/FormsSection.astro';
+import PronunciationSection from './cards/sections/PronunciationSection.astro';
+import MemorySection      from './cards/sections/MemorySection.astro';
+import ExamplesSection    from './cards/sections/ExamplesSection.astro';
+import RootOriginSection  from './cards/sections/RootOriginSection.astro';
+import SoundAlikesSection from './cards/sections/SoundAlikesSection.astro';
+import UrduPunjabiSection from './cards/sections/UrduPunjabiSection.astro';
+import CrossLangSection   from './cards/sections/CrossLangSection.astro';
 
 interface Props {
-  hindi: string;
-  romanisation: string;
-  english: string;
-  origin_language?: string;
-  in_hindi_via?: string;
-  word_category?: string;
-  date_added?: string;
-  forms?: Form[];
-  cross_language_connections?: CrossLangConnections;
-  root_breakdown?: RootBreakdown;
-  root_parts?: RootPart[];
-  root_notes?: string[];
-  root_and_origin_explanation?: string[];
-  etymology_story?: string;
-  pronunciation_guide?: PronunciationGuide;
-  memory_hook?: MemoryHook;
-  urdu_punjabi?: UrduPunjabi;
-  sound_alikes?: SoundAlike[];
-  examples?: Example[];
-  index: number;
+  hindi: string; romanisation: string; english: string;
+  origin_language?: string; in_hindi_via?: string; word_category?: string; date_added?: string;
+  forms?: Form[]; cross_language_connections?: CrossLangConnections;
+  root_breakdown?: RootBreakdown; root_parts?: RootPart[]; root_notes?: string[];
+  root_and_origin_explanation?: string[]; etymology_story?: string;
+  pronunciation_guide?: PronunciationGuide; memory_hook?: MemoryHook;
+  urdu_punjabi?: UrduPunjabi; sound_alikes?: SoundAlike[]; examples?: Example[]; index: number;
 }
 
 const {
-  hindi,
-  romanisation,
-  english,
-  origin_language,
-  in_hindi_via,
-  word_category,
-  date_added,
-  forms = [],
-  cross_language_connections,
-  root_breakdown,
-  root_parts = [],
-  root_notes = [],
-  root_and_origin_explanation = [],
-  etymology_story,
-  pronunciation_guide,
-  memory_hook,
-  urdu_punjabi,
-  sound_alikes = [],
-  examples = [],
-  index,
+  hindi, romanisation, english, origin_language, in_hindi_via, word_category, date_added,
+  forms = [], cross_language_connections, root_breakdown, root_parts = [], root_notes = [],
+  root_and_origin_explanation = [], etymology_story, pronunciation_guide,
+  memory_hook, urdu_punjabi, sound_alikes = [], examples = [], index,
 } = Astro.props;
 
-// Format "2026-03-28" → "Mar 28, 2026"
-function formatDate(iso: string): string {
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const [y, m, d] = iso.split('-');
-  return `${months[parseInt(m) - 1]} ${parseInt(d)}, ${y}`;
-}
+const [primaryMeaning, ...rest] = english.split(',').map((s: string) => s.trim()).filter(Boolean);
+const secondaryMeanings = rest.join(', ');
 
-const [primaryMeaning, ...restMeanings] = english.split(',').map((s: string) => s.trim()).filter(Boolean);
-const secondaryMeanings = restMeanings.join(', ');
-
-// Capitalise first letter (for memory hook language keys: russian → Russian)
-const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-
-function chipClass(label: string): string {
-  const l = label.toLowerCase();
-  if (l.includes('feminine'))   return 'form-chip form-chip-fem';
-  if (l.includes('masculine'))  return 'form-chip form-chip-masc';
-  if (l.includes('oblique'))    return 'form-chip form-chip-indigo';
-  if (l.includes('invariable')) return 'form-chip form-chip-teal';
-  if (l.includes('adverb'))     return 'form-chip form-chip-sky';
-  if (l.includes('adjective'))  return 'form-chip form-chip-amber';
-  if (l.includes('noun'))       return 'form-chip form-chip-violet';
-  if (l.includes('number') || l.includes('cardinal') || l.includes('article')) return 'form-chip form-chip-emerald';
-  if (l.includes('compound'))   return 'form-chip form-chip-rose';
-  return 'form-chip';
-}
-
-function categoryStyle(cat: string): string {
-  const c = cat.toLowerCase();
-  if (c.includes('conjunction'))  return 'bg-emerald-900/30 text-emerald-400 border border-emerald-700/40';
-  if (c.includes('adverb'))       return 'bg-sky-900/30 text-sky-400 border border-sky-700/40';
-  if (c.includes('noun'))         return 'bg-violet-900/30 text-violet-400 border border-violet-700/40';
-  if (c.includes('adjective'))    return 'bg-amber-900/30 text-amber-500 border border-amber-700/40';
-  if (c.includes('verb'))         return 'bg-orange-900/30 text-orange-400 border border-orange-700/40';
-  if (c.includes('preposition') || c.includes('postposition')) return 'bg-rose-900/30 text-rose-400 border border-rose-700/40';
-  if (c.includes('particle'))     return 'bg-teal-900/30 text-teal-400 border border-teal-700/40';
-  if (c.includes('pronoun'))      return 'bg-indigo-900/30 text-indigo-400 border border-indigo-700/40';
-  return 'bg-slate-800/60 text-slate-400 border border-slate-600/40';
-}
-
-function registerStyle(reg: string): string {
-  const r = reg.toLowerCase();
-  if (r === 'standard')   return 'text-sky-400/70 bg-sky-950/50 border border-sky-800/30';
-  if (r === 'casual')     return 'text-amber-400/70 bg-amber-950/50 border border-amber-800/30';
-  if (r === 'colloquial') return 'text-rose-400/70 bg-rose-950/50 border border-rose-800/30';
-  if (r === 'formal')     return 'text-violet-400/70 bg-violet-950/50 border border-violet-800/30';
-  return 'text-slate-400/70 bg-slate-800/40 border border-slate-700/30';
-}
-
-const labelStyle = {
-  'TRUE RELATIVE':      'bg-sky-950 text-sky-400 border border-sky-800/50',
-  'USEFUL COINCIDENCE': 'bg-slate-800 text-slate-400 border border-slate-700/60',
-} as const;
-
-// Language badge colour for structured fields
-function langColor(lang: string): string {
-  const map: Record<string, string> = {
-    'Proto-Indo-European': 'text-teal-200/70',
-    'PIE':                 'text-teal-200/70',
-    'Sanskrit':            'text-amber-300/80',
-    'Prakrit':             'text-amber-200/65',
-    'Apabhraṃśa':          'text-amber-200/65',
-    'Hindi':               'text-amber-400/80',
-    'Urdu':                'text-orange-400/80',
-    'Punjabi':             'text-yellow-400/75',
-    'Arabic':              'text-orange-400/75',
-    'Persian':             'text-pink-400/70',
-    'English':             'text-sky-400/75',
-    'Russian':             'text-cyan-300/75',
-    'Hebrew':              'text-emerald-300/75',
-    'Latin':               'text-violet-300/70',
-    'Greek':               'text-indigo-400/70',
-    'French':              'text-violet-400/70',
-    'German':              'text-slate-400/70',
-    'Italian':             'text-green-300/70',
-    'Spanish':             'text-red-300/70',
-  };
-  return map[lang] ?? 'text-slate-400/70';
-}
-
-const trueRelatives      = cross_language_connections?.true_relatives    ?? [];
-const usefulCoincidences = cross_language_connections?.useful_coincidences ?? [];
-const hasCrossLang = trueRelatives.length > 0 || usefulCoincidences.length > 0;
-
-const hasPron = !!(
-  pronunciation_guide?.syllables ||
-  (pronunciation_guide?.breakdown ?? []).length > 0 ||
-  (pronunciation_guide?.extra_notes ?? []).length > 0
-);
-
-const hasRoot = !!(
-  root_breakdown?.root || root_breakdown?.evolution || root_breakdown?.logic ||
-  root_parts.length > 0 || root_notes.length > 0 || root_and_origin_explanation.length > 0
-);
-
-// Memory hook: separate primary from language-specific hooks
+const hasPron = !!(pronunciation_guide?.syllables || (pronunciation_guide?.breakdown ?? []).length > 0 || (pronunciation_guide?.extra_notes ?? []).length > 0);
+const hasRoot = !!(root_breakdown?.root || root_breakdown?.evolution || root_breakdown?.logic || root_parts.length > 0 || root_notes.length > 0 || root_and_origin_explanation.length > 0);
 const hookPrimary    = memory_hook?.primary ?? '';
 const hookByLanguage = Object.entries(memory_hook ?? {}).filter(([k]) => k !== 'primary') as [string, string][];
 const hasMemory      = !!(hookPrimary || hookByLanguage.length > 0);
-
-const hasUrduPunjabi = !!(urdu_punjabi?.urdu || urdu_punjabi?.punjabi);
+const trueRelatives      = cross_language_connections?.true_relatives    ?? [];
+const usefulCoincidences = cross_language_connections?.useful_coincidences ?? [];
 ---
 
-<article
-  id={`card-${index}`}
-  class="bg-slate-900 border border-slate-700/40 rounded-2xl overflow-hidden hover:border-slate-600/60 transition-colors is-collapsed"
->
+<article id={`card-${index}`} class="bg-slate-900 border border-slate-700/40 rounded-2xl overflow-hidden hover:border-slate-600/60 transition-colors is-collapsed">
 
-  <!-- ── Card header (click row to collapse/expand) ───────────────────── -->
   <div class="card-header flex items-center gap-3 px-5 py-4 cursor-pointer hover:bg-slate-800/20 transition-colors select-none">
-
     <h2 class="word-hindi text-3xl font-bold leading-none shrink-0" lang="hi">{hindi}</h2>
     <span class="text-slate-700 shrink-0">·</span>
     <span class="word-roman text-lg leading-none shrink-0">{romanisation}</span>
-    <span class="text-slate-200 text-sm bg-slate-800/70 px-2.5 py-1 rounded-lg border border-slate-700/50 shrink-0 leading-none">
-      {primaryMeaning}
-    </span>
-
+    <span class="text-slate-200 text-sm bg-slate-800/70 px-2.5 py-1 rounded-lg border border-slate-700/50 shrink-0 leading-none">{primaryMeaning}</span>
     <div class="flex-1 min-w-0"></div>
-
     {word_category && (
       <span class:list={['shrink-0 text-xs font-title font-semibold uppercase tracking-wider px-2.5 py-1 rounded-lg', categoryStyle(word_category)]}>
         {word_category}
       </span>
     )}
-
     {origin_language && (
       <span class="shrink-0 text-xs font-title font-semibold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-amber-900/20 text-amber-600/80 border border-amber-800/30 whitespace-nowrap">
         {origin_language}
       </span>
     )}
-
     <button class="deselect-btn shrink-0" data-deselect-index={index} aria-label="Deselect word">✕</button>
   </div>
 
-  <!-- ── Everything below the header ────────────────────────────────────── -->
   <div class="card-expandable">
+    <FormsSection forms={forms} secondaryMeanings={secondaryMeanings} />
 
-    <!-- Forms + secondary meanings -->
-    {(forms.length > 0 || secondaryMeanings) && (
-      <div class="px-5 pb-4 pt-1 space-y-3">
-        {forms.length > 0 && (
-          <div class="flex flex-wrap gap-2">
-            {forms.map((f) => (
-              <span class={chipClass(f.label)}>
-                <span class="font-title uppercase tracking-wide text-[10px]">{f.label}</span>
-                <span class="word-hindi" lang="hi" style="font-family:'Tiro Devanagari Hindi',serif;font-size:1.1em;">{f.hindi}</span>
-                <span>·</span>
-                <span>{f.roman}</span>
-              </span>
-            ))}
-          </div>
-        )}
-        {secondaryMeanings && (
-          <div class="bg-slate-800/50 rounded-xl px-4 py-2.5">
-            <p class="text-slate-300 text-sm leading-relaxed">{secondaryMeanings}</p>
-          </div>
-        )}
-      </div>
-    )}
-
-    <!-- ── Expandable sections ───────────────────────────────────────────── -->
     <div class="border-t border-slate-700/40 divide-y divide-slate-700/40">
-
-      <!-- Pronunciation -->
-      {hasPron && (
-        <details class="group/det">
-          <summary class="flex items-center justify-between px-7 py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
-            <span class="font-title text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Pronunciation</span>
-            <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
-          </summary>
-          <div class="px-7 pb-6 pt-3">
-            <div class="bg-slate-950/70 border-l-2 border-teal-500/50 rounded-r-xl px-5 py-4 space-y-3">
-              {pronunciation_guide!.syllables && (
-                <p class="text-teal-300 text-lg font-semibold tracking-widest font-title">{pronunciation_guide!.syllables}</p>
-              )}
-              {(pronunciation_guide!.breakdown ?? []).map((item) => (
-                <div class="flex gap-3 items-start">
-                  <span class="font-title font-semibold text-sm text-slate-100 shrink-0 w-12">{item.syllable}</span>
-                  <p class="text-[15px] text-slate-300 leading-relaxed">{item.sound ?? item.note}</p>
-                </div>
-              ))}
-              {pronunciation_guide!.stress && (
-                <p class="text-sm text-amber-400/80 italic border-t border-slate-800/60 pt-3">{pronunciation_guide!.stress}</p>
-              )}
-              {(pronunciation_guide!.extra_notes ?? []).map((item) => (
-                <div class="flex gap-3 items-start">
-                  {item.language && (
-                    <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wide shrink-0 mt-0.5', langColor(item.language)]}>
-                      {item.language}
-                    </span>
-                  )}
-                  <p class="text-[15px] text-slate-400 leading-relaxed" set:html={highlight(item.note)} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </details>
-      )}
-
-      <!-- Memory Hook -->
-      {hasMemory && (
-        <details class="group/det">
-          <summary class="flex items-center justify-between px-7 py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
-            <span class="font-title text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Memory Hook</span>
-            <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
-          </summary>
-          <div class="px-7 pb-6 pt-3 space-y-2.5">
-            {hookPrimary && (
-              <div class="bg-slate-950/80 border-l-2 border-violet-500/60 rounded-r-xl px-5 py-4">
-                <p class="text-[15px] text-slate-200 leading-relaxed" set:html={highlight(hookPrimary)} />
-              </div>
-            )}
-            {hookByLanguage.map(([lang, text]) => (
-              <div class="bg-slate-950/70 border-l-2 border-violet-400/30 rounded-r-xl px-5 py-3">
-                <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wider mb-1.5 inline-block', langColor(cap(lang))]}>
-                  {cap(lang)}
-                </span>
-                <p class="text-[14px] text-slate-300 leading-relaxed" set:html={highlight(text)} />
-              </div>
-            ))}
-          </div>
-        </details>
-      )}
-
-      <!-- Examples -->
-      {examples.length > 0 && (
-        <details class="group/det">
-          <summary class="flex items-center justify-between px-7 py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
-            <span class="font-title text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Examples</span>
-            <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
-          </summary>
-          <div class="px-7 pb-6 pt-3 space-y-3">
-            {examples.map((ex) => (
-              <div class="bg-slate-950/60 border border-slate-700/30 rounded-xl p-5" data-example-card={index}>
-                <div class="flex items-start justify-between gap-2 mb-1.5">
-                  <p class="word-hindi text-lg font-medium leading-snug" lang="hi">{ex.hindi}</p>
-                  {ex.register && (
-                    <span class:list={['shrink-0 text-[10px] font-title font-semibold uppercase tracking-wider px-2 py-0.5 rounded', registerStyle(ex.register)]}>
-                      {ex.register}
-                    </span>
-                  )}
-                </div>
-                <p class="word-roman text-sm italic mb-2">{ex.romanisation}</p>
-                <p class="text-[15px] text-slate-200">{ex.english}</p>
-                {ex.literal && (
-                  <p class="text-[13px] text-slate-500 italic mt-1">{ex.literal}</p>
-                )}
-                {ex.note && (
-                  <p class="text-sm text-slate-400 leading-relaxed border-t border-slate-700/40 pt-2.5 mt-2.5">{ex.note}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </details>
-      )}
-
-      <!-- Root & Origin -->
-      {hasRoot && (
-        <details class="group/det">
-          <summary class="flex items-center justify-between px-7 py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
-            <span class="font-title text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Root &amp; Origin</span>
-            <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
-          </summary>
-          <div class="px-7 pb-6 pt-3">
-            <div class="bg-slate-950/70 border-l-2 border-blue-500/40 rounded-r-xl px-5 py-4 space-y-3">
-              {in_hindi_via && (
-                <p class="text-[13px] text-blue-300/70 italic">{in_hindi_via}</p>
-              )}
-              {root_parts.length > 0 && (
-                <div class="space-y-2">
-                  {root_parts.map((part) => (
-                    <div class="flex items-baseline gap-2">
-                      <span class="word-hindi text-base shrink-0" lang="hi">{part.script}</span>
-                      <span class="word-roman text-sm shrink-0">{part.element}</span>
-                      <span class="text-slate-400 text-sm">— {part.meaning}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-              {/* New structured root_breakdown object */}
-              {root_breakdown?.root && (
-                <p class="text-slate-100 text-base font-medium leading-relaxed" set:html={highlight(root_breakdown.root)} />
-              )}
-              {root_breakdown?.evolution && (
-                <p class="text-[14px] text-teal-300/70 font-mono tracking-wide leading-relaxed"
-                  set:html={highlight(root_breakdown.evolution)} />
-              )}
-              {root_breakdown?.logic && (
-                <p class="text-[15px] text-slate-400 italic leading-relaxed" set:html={highlight(root_breakdown.logic)} />
-              )}
-              {root_notes.map((line) => (
-                <p class="text-[15px] text-slate-300 leading-relaxed" set:html={highlight(line)} />
-              ))}
-              {root_and_origin_explanation.map((line, i) => (
-                <p class:list={['leading-relaxed', i === 0 ? 'text-slate-100 text-base font-medium' : 'text-[15px] text-slate-300']}
-                  set:html={highlight(line)} />
-              ))}
-            </div>
-          </div>
-        </details>
-      )}
-
-      <!-- Etymology Story -->
-      {etymology_story && (
-        <details class="group/det">
-          <summary class="flex items-center justify-between px-7 py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
-            <span class="font-title text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Etymology Story</span>
-            <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
-          </summary>
-          <div class="px-7 pb-6 pt-3">
-            <div class="bg-slate-950/80 border-l-2 border-amber-500/50 rounded-r-xl px-5 py-4">
-              <p class="text-base text-slate-200 leading-relaxed" set:html={highlight(etymology_story)} />
-            </div>
-          </div>
-        </details>
-      )}
-
-      <!-- Sound Alikes -->
-      {sound_alikes.length > 0 && (
-        <details class="group/det">
-          <summary class="flex items-center justify-between px-7 py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
-            <span class="font-title text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Sound Alikes</span>
-            <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
-          </summary>
-          <div class="px-7 pb-6 pt-3">
-            <div class="bg-slate-950/70 border-l-2 border-rose-500/40 rounded-r-xl px-5 py-4 space-y-4">
-              {sound_alikes.map((sa) => (
-                <div>
-                  <div class="flex items-center gap-2 flex-wrap mb-1.5">
-                    {sa.language && (
-                      <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wide', langColor(sa.language)]}>
-                        {sa.language}
-                      </span>
-                    )}
-                    {sa.word && (
-                      <span class="word-hindi text-base" lang="hi" set:html={highlight(sa.word)} />
-                    )}
-                    {sa.romanisation && <span class="word-roman text-sm">({sa.romanisation})</span>}
-                    {sa.meaning && <span class="text-slate-400 text-sm">— {sa.meaning}</span>}
-                  </div>
-                  {sa.note && (
-                    <p class="text-[15px] text-slate-300 leading-relaxed" set:html={highlight(sa.note)} />
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </details>
-      )}
-
-      <!-- Urdu & Punjabi -->
-      {hasUrduPunjabi && (
-        <details class="group/det">
-          <summary class="flex items-center justify-between px-7 py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
-            <span class="font-title text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Urdu &amp; Punjabi</span>
-            <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
-          </summary>
-          <div class="px-7 pb-6 pt-3">
-            <div class="bg-slate-950/70 border-l-2 border-orange-500/40 rounded-r-xl px-5 py-4 space-y-4">
-              {urdu_punjabi!.urdu && (
-                <div>
-                  <div class="flex items-center gap-2 flex-wrap mb-1.5">
-                    <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wide', langColor('Urdu')]}>
-                      Urdu
-                    </span>
-                    {urdu_punjabi!.urdu.script && (
-                      <span class="text-xl text-amber-300/90 font-serif leading-none" dir="rtl" lang="ur">
-                        {urdu_punjabi!.urdu.script}
-                      </span>
-                    )}
-                    {urdu_punjabi!.urdu.romanisation && (
-                      <span class="word-roman text-sm">({urdu_punjabi!.urdu.romanisation})</span>
-                    )}
-                  </div>
-                  {urdu_punjabi!.urdu.note && (
-                    <p class="text-[15px] text-slate-300 leading-relaxed" set:html={highlight(urdu_punjabi!.urdu.note)} />
-                  )}
-                </div>
-              )}
-              {urdu_punjabi!.punjabi && (
-                <div>
-                  <div class="flex items-center gap-2 flex-wrap mb-1.5">
-                    <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wide', langColor('Punjabi')]}>
-                      Punjabi
-                    </span>
-                    {urdu_punjabi!.punjabi.script && (
-                      <span class="text-xl text-yellow-300/90 font-serif leading-none" lang="pa">
-                        {urdu_punjabi!.punjabi.script}
-                      </span>
-                    )}
-                    {urdu_punjabi!.punjabi.romanisation && (
-                      <span class="word-roman text-sm">({urdu_punjabi!.punjabi.romanisation})</span>
-                    )}
-                  </div>
-                  {urdu_punjabi!.punjabi.note && (
-                    <p class="text-[15px] text-slate-300 leading-relaxed" set:html={highlight(urdu_punjabi!.punjabi.note)} />
-                  )}
-                </div>
-              )}
-            </div>
-          </div>
-        </details>
-      )}
-
-      <!-- Cross-Language Connections -->
-      {hasCrossLang && (
-        <details class="group/det">
-          <summary class="flex items-center justify-between px-7 py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
-            <span class="font-title text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Cross-Language</span>
-            <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
-          </summary>
-          <div class="px-7 pb-6 pt-3">
-            <div class="bg-slate-950/70 border-l-2 border-sky-500/40 rounded-r-xl px-5 py-4 space-y-5">
-              {trueRelatives.map((item) => (
-                <div>
-                  <div class="flex items-center gap-2 flex-wrap mb-1.5">
-                    <span class:list={['shrink-0 font-title text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded', labelStyle['TRUE RELATIVE']]}>
-                      relative
-                    </span>
-                    {item.language && (
-                      <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wide', langColor(item.language)]}>
-                        {item.language}
-                      </span>
-                    )}
-                    {item.word && <span class="word-hindi text-base" lang="hi" set:html={highlight(item.word)} />}
-                    {item.romanisation && <span class="word-roman text-sm">({item.romanisation})</span>}
-                    {item.meaning && <span class="text-slate-400 text-sm">— {item.meaning}</span>}
-                  </div>
-                  {item.note && <p class="text-[15px] text-slate-300 leading-relaxed" set:html={highlight(item.note)} />}
-                </div>
-              ))}
-              {usefulCoincidences.map((item) => (
-                <div>
-                  <div class="flex items-center gap-2 flex-wrap mb-1.5">
-                    <span class:list={['shrink-0 font-title text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded', labelStyle['USEFUL COINCIDENCE']]}>
-                      coincidence
-                    </span>
-                    {item.language && (
-                      <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wide', langColor(item.language)]}>
-                        {item.language}
-                      </span>
-                    )}
-                    {item.word && <span class="word-hindi text-base" lang="hi" set:html={highlight(item.word)} />}
-                    {item.romanisation && <span class="word-roman text-sm">({item.romanisation})</span>}
-                    {item.meaning && <span class="text-slate-400 text-sm">— {item.meaning}</span>}
-                  </div>
-                  {item.note && <p class="text-[15px] text-slate-300 leading-relaxed" set:html={highlight(item.note)} />}
-                </div>
-              ))}
-            </div>
-          </div>
-        </details>
-      )}
-
+      {hasPron         && <PronunciationSection pronunciation_guide={pronunciation_guide!} />}
+      {hasMemory       && <MemorySection hookPrimary={hookPrimary} hookByLanguage={hookByLanguage} />}
+      {examples.length > 0 && <ExamplesSection examples={examples} index={index} />}
+      {hasRoot         && <RootOriginSection in_hindi_via={in_hindi_via} root_parts={root_parts} root_breakdown={root_breakdown} root_notes={root_notes} root_and_origin_explanation={root_and_origin_explanation} etymology_story={etymology_story} />}
+      {sound_alikes.length > 0  && <SoundAlikesSection sound_alikes={sound_alikes} />}
+      {urdu_punjabi && (urdu_punjabi.urdu || urdu_punjabi.punjabi) && <UrduPunjabiSection urdu_punjabi={urdu_punjabi} />}
+      {(trueRelatives.length > 0 || usefulCoincidences.length > 0) && <CrossLangSection trueRelatives={trueRelatives} usefulCoincidences={usefulCoincidences} />}
     </div>
 
-    <!-- ── Card footer: date ────────────────────────────────────────────── -->
     {date_added && (
       <div class="px-5 py-2.5 border-t border-slate-800/50">
         <p class="text-[11px] text-slate-700">{formatDate(date_added)}</p>
       </div>
     )}
-
-  </div>{/* end card-expandable */}
+  </div>
 
 </article>
