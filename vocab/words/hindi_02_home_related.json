@@ -1,0 +1,1967 @@
+{
+  "title": "home and household",
+  "words": [
+    {
+      "hindi": "घर",
+      "romanisation": "ghar",
+      "english": "home / house",
+      "english_usage": "always | dwelling place",
+      "origin_tag": "Sanskrit",
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "गृह्",
+          "romanisation": "gṛh",
+          "meaning": "house, home"
+        },
+        "evolution": [
+          {
+            "stage": "Sanskrit",
+            "form": "गृह (gṛha)",
+            "meaning": "house"
+          },
+          {
+            "stage": "Hindi",
+            "form": "घर (ghar)",
+            "meaning": "house, home"
+          }
+        ],
+        "logic": "Regular sound changes transformed Sanskrit gṛh to Hindi ghar"
+      },
+      "etymology_story": [
+        "घर comes from Sanskrit गृह (gṛha), meaning \"house\".",
+        "The Sanskrit retroflex vowel and consonants were simplified in Hindi evolution.",
+        "A fully native Sanskrit word with no foreign language influence."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ghar",
+        "stress": "single syllable with retroflex consonant",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "A house with a front door and windows, with smoke rising from the chimney.",
+        "connection": "घर is a house—the visual directly represents a dwelling and home."
+      },
+      "examples": []
+    },
+    {
+      "hindi": "रसोई",
+      "romanisation": "rasoī",
+      "english": "kitchen",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "बाथरूम",
+      "romanisation": "bāthrūm",
+      "english": "bathroom",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "शौचालय",
+      "romanisation": "śaucālay",
+      "english": "toilet",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "बगीचा",
+      "romanisation": "bagīcā",
+      "english": "garden",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "छत",
+      "romanisation": "chat",
+      "english": "roof / terrace",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "दरवाज़ा",
+      "romanisation": "darvāzā",
+      "english": "door",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "सीढ़ी",
+      "romanisation": "sīṛhī",
+      "english": "stairs / step",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "दीवार",
+      "romanisation": "dīvār",
+      "english": "wall",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "ज़मीन",
+      "romanisation": "zamīn",
+      "english": "floor / ground",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "छत",
+      "romanisation": "chhat",
+      "english": "ceiling",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "बिजली",
+      "romanisation": "bijlī",
+      "english": "electricity / light",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "पानी",
+      "romanisation": "pānī",
+      "english": "water",
+      "english_usage": "always | essential element",
+      "origin_tag": "Sanskrit",
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "पान्",
+          "romanisation": "pān",
+          "meaning": "water, to drink"
+        },
+        "evolution": [
+          {
+            "stage": "Sanskrit",
+            "form": "पानीय (pānīya)",
+            "meaning": "water, drinkable"
+          },
+          {
+            "stage": "Hindi",
+            "form": "पानी (pānī)",
+            "meaning": "water"
+          }
+        ],
+        "logic": "Sanskrit suffix dropped in Hindi; core noun contracted to modern form"
+      },
+      "etymology_story": [
+        "पानी derives from Sanskrit पान् (pān), related to \"to drink\".",
+        "The Sanskrit -ीय suffix was dropped, keeping the core पानी.",
+        "A native Sanskrit word essential to all life in India."
+      ],
+      "pronunciation_guide": {
+        "syllables": "pā · nī",
+        "stress": "stress on first syllable",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Crystal clear water in a glass, light reflecting and refracting through it.",
+        "connection": "पानी is water—the clear, flowing visual image anchors the word directly."
+      },
+      "examples": []
+    },
+    {
+      "hindi": "गैस",
+      "romanisation": "gais",
+      "english": "gas",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "नल",
+      "romanisation": "nal",
+      "english": "tap / faucet",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "बाल्टी",
+      "romanisation": "bāltī",
+      "english": "bucket",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "साबुन",
+      "romanisation": "sābun",
+      "english": "soap",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "तौलिया",
+      "romanisation": "tauliyā",
+      "english": "towel",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "झाड़ू",
+      "romanisation": "jhāṛū",
+      "english": "broom",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "पोंछा",
+      "romanisation": "põchā",
+      "english": "mop",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "कपड़ा",
+      "romanisation": "kaṛpā",
+      "english": "cloth / fabric / clothes",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "बर्तन",
+      "romanisation": "bartan",
+      "english": "utensil / vessel / dishes",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "थाली",
+      "romanisation": "thālī",
+      "english": "plate (large, traditional)",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "कटोरी",
+      "romanisation": "kaṭorī",
+      "english": "small bowl",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "गिलास",
+      "romanisation": "gilās",
+      "english": "glass (for drinking)",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "कप",
+      "romanisation": "kap",
+      "english": "cup",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "चम्मच",
+      "romanisation": "cammac",
+      "english": "spoon",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "काँटा",
+      "romanisation": "kā̃ṭā",
+      "english": "fork",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "छुरी",
+      "romanisation": "churī",
+      "english": "knife",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "तवा",
+      "romanisation": "tavā",
+      "english": "griddle / flat pan",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "कड़ाई",
+      "romanisation": "kaṛāī",
+      "english": "wok / deep pan",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "कुकर",
+      "romanisation": "kukar",
+      "english": "pressure cooker",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "फ्रिज",
+      "romanisation": "frij",
+      "english": "fridge",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "चूल्हा",
+      "romanisation": "cūlhā",
+      "english": "stove / cooking fire",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "ओवन",
+      "romanisation": "ovan",
+      "english": "oven",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "बिस्तर",
+      "romanisation": "bistar",
+      "english": "bed",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "तकिया",
+      "romanisation": "takiyā",
+      "english": "pillow",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "चादर",
+      "romanisation": "cādar",
+      "english": "bed sheet",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "कम्बल",
+      "romanisation": "kambal",
+      "english": "blanket",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "अलमारी",
+      "romanisation": "almārī",
+      "english": "cupboard / wardrobe",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "दराज़",
+      "romanisation": "darāz",
+      "english": "drawer",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "सोफ़ा",
+      "romanisation": "sofā",
+      "english": "sofa",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "काम",
+      "romanisation": "kām",
+      "english": "work / task",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "नौकर",
+      "romanisation": "naukar",
+      "english": "male servant",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "नौकरानी",
+      "romanisation": "naukrānī",
+      "english": "female servant",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "काम वाली",
+      "romanisation": "kām vālī",
+      "english": "maid / cleaning lady",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "धोबी",
+      "romanisation": "dhobī",
+      "english": "washerman / laundry person",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "माली",
+      "romanisation": "mālī",
+      "english": "gardener",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "चौकीदार",
+      "romanisation": "caukīdār",
+      "english": "watchman / guard",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "खाना",
+      "romanisation": "khānā",
+      "english": "food / to eat / to cook",
+      "english_usage": "universal | noun or verb depending on context",
+      "origin_tag": "Sanskrit",
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "खद्",
+          "romanisation": "khad",
+          "meaning": "to eat, to consume"
+        },
+        "evolution": [
+          {
+            "stage": "Sanskrit",
+            "form": "खादति (khādati)",
+            "meaning": "he/she eats"
+          },
+          {
+            "stage": "Hindi",
+            "form": "खाना (khānā)",
+            "meaning": "to eat / food"
+          }
+        ],
+        "logic": "Verb root evolved into infinitive form; can nominalize to mean food"
+      },
+      "etymology_story": [
+        "खाना comes from Sanskrit खद् (khad), meaning \"to eat\".",
+        "In Hindi, it functions as both verb and noun—a flexibility common in the language.",
+        "Context determines whether it means \"to eat,\" \"to cook,\" or \"food.\""
+      ],
+      "pronunciation_guide": {
+        "syllables": "khā · nā",
+        "stress": "stress on first syllable",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "A plate of rice, vegetables, and bread steaming hot on a wooden table.",
+        "connection": "खाना represents both the food and the act of eating—the plate embodies both meanings."
+      },
+      "examples": []
+    },
+    {
+      "hindi": "खाना बनाना",
+      "romanisation": "khānā banānā",
+      "english": "to cook food",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "खाना खाना",
+      "romanisation": "khānā khānā",
+      "english": "to eat food",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "पीना",
+      "romanisation": "pīnā",
+      "english": "to drink",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "धोना",
+      "romanisation": "dhonā",
+      "english": "to wash",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "साफ़ करना",
+      "romanisation": "sāf karnā",
+      "english": "to clean",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "झाड़ू लगाना",
+      "romanisation": "jhāṛū lagānā",
+      "english": "to sweep",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "पोंछा लगाना",
+      "romanisation": "põchā lagānā",
+      "english": "to mop",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "कपड़े धोना",
+      "romanisation": "kaṛpe dhonā",
+      "english": "to wash clothes",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "कपड़े प्रेस करना",
+      "romanisation": "kaṛpe pres karnā",
+      "english": "to iron clothes",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "बर्तन माँजना",
+      "romanisation": "bartan mā̃jnā",
+      "english": "to scrub dishes",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "सोना",
+      "romanisation": "sonā",
+      "english": "to sleep",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "उठना",
+      "romanisation": "uṭhnā",
+      "english": "to wake up / to get up",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "नहाना",
+      "romanisation": "nahānā",
+      "english": "to bathe / to shower",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "खिड़की खोलना",
+      "romanisation": "khiṛkī kholnā",
+      "english": "to open the window",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "दरवाज़ा बंद करना",
+      "romanisation": "darvāzā band karnā",
+      "english": "to close the door",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "बत्ती जलाना",
+      "romanisation": "battī jalānā",
+      "english": "to turn on the light",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "बत्ती बुझाना",
+      "romanisation": "battī bujhānā",
+      "english": "to turn off the light",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "पंखा चलाना",
+      "romanisation": "pankhā calānā",
+      "english": "to turn on the fan",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "गरम",
+      "romanisation": "garam",
+      "english": "hot / warm",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    },
+    {
+      "hindi": "ठंडा",
+      "romanisation": "ṭhaṇḍā",
+      "english": "cold",
+      "english_usage": null,
+      "origin_tag": null,
+      "grouped_with": null,
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": null,
+      "etymology_story": null,
+      "pronunciation_guide": {
+        "syllables": null,
+        "stress": null,
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": null,
+        "connection": null
+      },
+      "examples": []
+    }
+  ]
+}

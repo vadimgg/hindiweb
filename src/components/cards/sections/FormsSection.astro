@@ -9,7 +9,8 @@ interface Props {
   english_usage?: string;
   grouped_with?: GroupedWith[];
 }
-const { forms, secondaryMeanings, english_usage, grouped_with = [] } = Astro.props;
+const { forms, secondaryMeanings, english_usage, grouped_with: _grouped_with } = Astro.props;
+const grouped_with = _grouped_with ?? [];
 ---
 
 {(forms.length > 0 || secondaryMeanings || english_usage || grouped_with.length > 0) && (

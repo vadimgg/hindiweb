@@ -1,34 +1,52 @@
 {
-  "title": "test_sentences",
+  "title": "Everyday Affirmations and Descriptions",
   "sentences": [
     {
       "hindi": "जी हाँ, ज़रूर, दोनों अलमारियाँ ख़ाली हैं ।",
       "romanisation": "jī hā̃, zarūr, donõ almāriyā̃ khālī haĩ.",
       "english": "Yes, of course, both cupboards are empty.",
-      "grammar_note": "Three particles opening the sentence (jī hā̃, zarūr) act as emphatic affirmations. The main clause uses neuter plural agreement: दोनों (both) + feminine plural noun अलमारियाँ requires feminine plural adjective ख़ाली and plural copula हैं.",
       "gloss": [
         {
-          "hindi": "जी हाँ",
-          "romanisation": "jī hā̃",
-          "meaning": "yes (formal, emphatic affirmation)",
-          "fixed": true,
-          "fixed_note": "opening particle — always initial"
+          "hindi": "जी",
+          "romanisation": "jī",
+          "meaning": "yes (formal)",
+          "fixed": false,
+          "alternatives": [
+            {
+              "hindi": "हाँ",
+              "romanisation": "hā̃",
+              "meaning": "yes (casual)"
+            }
+          ]
+        },
+        {
+          "hindi": "हाँ",
+          "romanisation": "hā̃",
+          "meaning": "yes (emphatic, repetition)",
+          "fixed": false,
+          "alternatives": [
+            {
+              "hindi": "जी",
+              "romanisation": "jī",
+              "meaning": "yes (formal)"
+            }
+          ]
         },
         {
           "hindi": "ज़रूर",
           "romanisation": "zarūr",
-          "meaning": "of course, certainly",
+          "meaning": "definitely, of course",
           "fixed": false,
           "alternatives": [
             {
-              "hindi": "बिलकुल",
+              "hindi": "बिल्कुल",
               "romanisation": "bilkul",
               "meaning": "absolutely"
             },
             {
-              "hindi": "हाँ",
-              "romanisation": "hā̃",
-              "meaning": "yes"
+              "hindi": "हाँ हाँ",
+              "romanisation": "hā̃ hā̃",
+              "meaning": "yes yes (emphatic)"
             }
           ]
         },
@@ -39,57 +57,74 @@
           "fixed": false,
           "alternatives": [
             {
-              "hindi": "सभी",
-              "romanisation": "sabhī",
-              "meaning": "all"
-            },
-            {
               "hindi": "दोनों ही",
               "romanisation": "donõ hī",
               "meaning": "both indeed"
+            },
+            {
+              "hindi": "सभी",
+              "romanisation": "sabhī",
+              "meaning": "all"
             }
           ]
         },
         {
           "hindi": "अलमारियाँ",
           "romanisation": "almāriyā̃",
-          "meaning": "cupboards (feminine plural)",
+          "meaning": "cupboards (plural)",
           "fixed": false,
-          "alternatives": []
+          "alternatives": [
+            {
+              "hindi": "अलमारी",
+              "romanisation": "almārī",
+              "meaning": "cupboard (singular)"
+            },
+            {
+              "hindi": "बॉक्स",
+              "romanisation": "boks",
+              "meaning": "boxes"
+            }
+          ]
         },
         {
           "hindi": "ख़ाली",
           "romanisation": "khālī",
-          "meaning": "empty (feminine plural)",
+          "meaning": "empty",
           "fixed": false,
           "alternatives": [
             {
-              "hindi": "खाली",
-              "romanisation": "khālī",
-              "meaning": "empty (alternate spelling)"
+              "hindi": "भरी",
+              "romanisation": "bharī",
+              "meaning": "full"
+            },
+            {
+              "hindi": "साफ़",
+              "romanisation": "sāf",
+              "meaning": "clean"
             }
           ]
         },
         {
           "hindi": "हैं",
           "romanisation": "haĩ",
-          "meaning": "are (plural copula)",
+          "meaning": "are (plural)",
           "fixed": true,
-          "fixed_note": "verb — agrees with plural subject, always final"
+          "fixed_note": "verb — always last in simple present statements"
         }
       ],
+      "grammar_note": "Simple present statement with plural subject (both cupboards). The verb हैं (are) comes at the end. Adjective ख़ाली (empty) agrees with plural feminine noun अलमारियाँ. Introductory particles (जी हाँ, ज़रूर) set context without changing sentence structure.",
       "building_blocks": [
         {
-          "hindi": "दोनों ... ख़ाली हैं",
-          "romanisation": "donõ ... khālī haĩ",
-          "meaning": "both are empty",
-          "swap_note": "swappable plural subjects: दोनों कुर्सियाँ (both chairs), दोनों किताबें (both books)"
+          "hindi": "दोनों अलमारियाँ",
+          "romanisation": "donõ almāriyā̃",
+          "meaning": "both cupboards",
+          "swap_note": "any noun phrase with दोनों (both)"
         },
         {
-          "hindi": "जी हाँ, ज़रूर",
-          "romanisation": "jī hā̃, zarūr",
-          "meaning": "yes, of course (affirmative opening)",
-          "swap_note": "other openers: हाँ, बिलकुल (yes, absolutely); जी, हाँ (yes yes)"
+          "hindi": "ख़ाली हैं",
+          "romanisation": "khālī haĩ",
+          "meaning": "are empty",
+          "swap_note": "any adjective + हैं for describing plural objects"
         }
       ],
       "cultural_note": null,
@@ -97,56 +132,66 @@
         {
           "word_hindi": "जी हाँ",
           "word_roman": "jī hā̃",
-          "scene": "nodding head — yes, yes"
+          "scene": "You nod affirmatively, head tilting forward"
         },
         {
           "word_hindi": "ज़रूर",
           "word_roman": "zarūr",
-          "scene": "waving hand confidently — 'of course'"
+          "scene": "You gesture with both hands open, showing certainty"
         },
         {
           "word_hindi": "दोनों अलमारियाँ",
           "word_roman": "donõ almāriyā̃",
-          "scene": "two cupboards standing side by side"
+          "scene": "Two tall wooden cupboards stand before you side by side"
         },
         {
           "word_hindi": "ख़ाली",
           "word_roman": "khālī",
-          "scene": "inside them is empty, nothing there"
+          "scene": "The cupboard doors swing open to reveal nothing inside — bare shelves"
         },
         {
           "word_hindi": "हैं",
           "word_roman": "haĩ",
-          "scene": "affirmation — that's the state"
+          "scene": "You tap the empty shelves, confirming the emptiness"
         }
       ],
       "variations": [
         {
-          "hindi": "जी हाँ, दोनों अलमारियाँ ख़ाली हैं ।",
-          "romanisation": "jī hā̃, donõ almāriyā̃ khālī haĩ.",
-          "english": "Yes, both cupboards are empty.",
+          "hindi": "दोनों अलमारियाँ ख़ाली हैं ।",
+          "romanisation": "donõ almāriyā̃ khālī haĩ.",
+          "english": "Both cupboards are empty.",
           "tags": [
-            "casual"
+            "normal"
           ],
-          "note": "drops ज़रूर for a shorter affirmation"
-        },
-        {
-          "hindi": "जी, ज़रूर, दोनों अलमारियाँ बिलकुल ख़ाली हैं ।",
-          "romanisation": "jī, zarūr, donõ almāriyā̃ bilkul khālī haĩ.",
-          "english": "Yes, of course, both cupboards are completely empty.",
-          "tags": [
-            "emphatic"
-          ],
-          "note": "adds बिलकुल (completely) for stronger emphasis"
+          "note": null
         },
         {
           "hindi": "हाँ, दोनों अलमारियाँ ख़ाली हैं ।",
           "romanisation": "hā̃, donõ almāriyā̃ khālī haĩ.",
           "english": "Yes, both cupboards are empty.",
           "tags": [
-            "neutral"
+            "normal",
+            "casual"
           ],
-          "note": "simple affirmation without rhetorical opening"
+          "note": null
+        },
+        {
+          "hindi": "जी, सभी अलमारियाँ ख़ाली हैं ।",
+          "romanisation": "jī, sabhī almāriyā̃ khālī haĩ.",
+          "english": "Yes, all cupboards are empty.",
+          "tags": [
+            "formal"
+          ],
+          "note": "सभी (all) replaces दोनों (both) for broader reference"
+        },
+        {
+          "hindi": "दोनों अलमारियाँ भरी हैं ।",
+          "romanisation": "donõ almāriyā̃ bharī haĩ.",
+          "english": "Both cupboards are full.",
+          "tags": [
+            "normal"
+          ],
+          "note": "opposite adjective swapped in"
         }
       ]
     },
@@ -154,18 +199,17 @@
       "hindi": "अभी चौदह हैं – नौ लड़कियाँ और पाँच लड़के ।",
       "romanisation": "abhī caudah haĩ – nau laṛkiyā̃ aur pā̃c laṛke.",
       "english": "At the moment there are fourteen – nine girls and five boys.",
-      "grammar_note": "The main clause uses अभी (now, at this moment) + quantity + copula हैं (are). The dash introduces a breakdown. Note masculine plural agreement: लड़के (boys) uses masculine plural form, while लड़कियाँ (girls) uses feminine plural. The number लड़के stays in direct form because it's nominative.",
       "gloss": [
         {
           "hindi": "अभी",
           "romanisation": "abhī",
-          "meaning": "at the moment, right now",
+          "meaning": "now, at present, just now",
           "fixed": false,
           "alternatives": [
             {
               "hindi": "अब",
               "romanisation": "ab",
-              "meaning": "now"
+              "meaning": "now (simpler)"
             },
             {
               "hindi": "इस समय",
@@ -177,65 +221,121 @@
         {
           "hindi": "चौदह",
           "romanisation": "caudah",
-          "meaning": "fourteen (invariable number)",
-          "fixed": true,
-          "fixed_note": "number word — never changes form"
+          "meaning": "fourteen",
+          "fixed": false,
+          "alternatives": [
+            {
+              "hindi": "पंद्रह",
+              "romanisation": "pandrah",
+              "meaning": "fifteen"
+            },
+            {
+              "hindi": "बारह",
+              "romanisation": "bārah",
+              "meaning": "twelve"
+            }
+          ]
         },
         {
           "hindi": "हैं",
           "romanisation": "haĩ",
-          "meaning": "are (plural copula)",
+          "meaning": "are",
           "fixed": true,
-          "fixed_note": "verb — always final, agrees with plural"
+          "fixed_note": "verb — always comes early in this inverted structure (number + हैं)"
         },
         {
           "hindi": "नौ",
           "romanisation": "nau",
           "meaning": "nine",
-          "fixed": true,
-          "fixed_note": "number word — invariable"
+          "fixed": false,
+          "alternatives": [
+            {
+              "hindi": "आठ",
+              "romanisation": "āṭh",
+              "meaning": "eight"
+            },
+            {
+              "hindi": "दस",
+              "romanisation": "das",
+              "meaning": "ten"
+            }
+          ]
         },
         {
           "hindi": "लड़कियाँ",
           "romanisation": "laṛkiyā̃",
-          "meaning": "girls (feminine plural)",
+          "meaning": "girls",
           "fixed": false,
-          "alternatives": []
+          "alternatives": [
+            {
+              "hindi": "महिलाएँ",
+              "romanisation": "mahilāeñ",
+              "meaning": "women"
+            },
+            {
+              "hindi": "लड़कियों",
+              "romanisation": "laṛkiyõ",
+              "meaning": "girls (oblique)"
+            }
+          ]
         },
         {
           "hindi": "और",
           "romanisation": "aur",
-          "meaning": "and (conjunction)",
+          "meaning": "and",
           "fixed": true,
-          "fixed_note": "conjunction — connects coordinate clauses"
+          "fixed_note": "conjunction — joins two parts of enumeration, cannot move"
         },
         {
           "hindi": "पाँच",
           "romanisation": "pā̃c",
           "meaning": "five",
-          "fixed": true,
-          "fixed_note": "number word — invariable"
+          "fixed": false,
+          "alternatives": [
+            {
+              "hindi": "छः",
+              "romanisation": "chah",
+              "meaning": "six"
+            },
+            {
+              "hindi": "चार",
+              "romanisation": "chār",
+              "meaning": "four"
+            }
+          ]
         },
         {
           "hindi": "लड़के",
           "romanisation": "laṛke",
-          "meaning": "boys (masculine plural, nominative)",
+          "meaning": "boys",
           "fixed": false,
-          "alternatives": []
+          "alternatives": [
+            {
+              "hindi": "पुरुष",
+              "romanisation": "purush",
+              "meaning": "men"
+            },
+            {
+              "hindi": "आदमी",
+              "romanisation": "ādmī",
+              "meaning": "man/men"
+            }
+          ]
         }
       ],
+      "grammar_note": "Inverted structure: number + हैं (verb) comes before the subject enumeration. The dash (–) separates the total from its breakdown. Both gender groups use nominative forms (लड़कियाँ, लड़के) because they are in apposition to the number, not in a case-marked position.",
       "building_blocks": [
         {
-          "hindi": "अभी ... हैं",
-          "romanisation": "abhī ... haĩ",
-          "meaning": "at the moment there are (existential statement)",
-          "swap_note": "applies to counts: अभी तीन किताबें हैं (right now there are three books)"
+          "hindi": "अभी...हैं",
+          "romanisation": "abhī...haĩ",
+          "meaning": "there are (currently)",
+          "swap_note": "any number or countable noun in present-tense enumeration"
         },
         {
           "hindi": "नौ लड़कियाँ और पाँच लड़के",
           "romanisation": "nau laṛkiyā̃ aur pā̃c laṛke",
-          "meaning": "nine girls and five boys (enumeration with gender agreement)",
-          "swap_note": "generalizes to any paired count with gendered nouns"
+          "meaning": "nine girls and five boys (enumerated groups)",
+          "swap_note": "any paired numerals with nouns of different genders"
         }
       ],
       "cultural_note": null,
@@ -243,67 +343,91 @@
         {
           "word_hindi": "अभी",
           "word_roman": "abhī",
-          "scene": "clock showing present moment"
+          "scene": "You look at a clock showing the present moment"
         },
         {
           "word_hindi": "चौदह",
           "word_roman": "caudah",
-          "scene": "fourteen figures standing in a group"
-        },
-        {
-          "word_hindi": "नौ लड़कियाँ",
-          "word_roman": "nau laṛkiyā̃",
-          "scene": "nine girls on the left side"
-        },
-        {
-          "word_hindi": "और",
-          "word_roman": "aur",
-          "scene": "dividing line between groups"
-        },
-        {
-          "word_hindi": "पाँच लड़के",
-          "word_roman": "pā̃c laṛke",
-          "scene": "five boys on the right side"
+          "scene": "Fourteen people stand in a line before you"
         },
         {
           "word_hindi": "हैं",
           "word_roman": "haĩ",
-          "scene": "final confirmation — that's the count"
+          "scene": "They are present, standing still"
+        },
+        {
+          "word_hindi": "नौ लड़कियाँ",
+          "word_roman": "nau laṛkiyā̃",
+          "scene": "Nine girls in dresses, clustered on the left side"
+        },
+        {
+          "word_hindi": "पाँच लड़के",
+          "word_roman": "pā̃c laṛke",
+          "scene": "Five boys standing on the right side in a separate group"
         }
       ],
       "variations": [
         {
-          "hindi": "अभी कुल चौदह हैं – नौ लड़कियाँ और पाँच लड़के ।",
-          "romanisation": "abhī kul caudah haĩ – nau laṛkiyā̃ aur pā̃c laṛke.",
-          "english": "At the moment there are fourteen in total – nine girls and five boys.",
+          "hindi": "अभी चौदह हैं ।",
+          "romanisation": "abhī caudah haĩ.",
+          "english": "There are fourteen now.",
           "tags": [
-            "emphatic"
+            "normal"
           ],
-          "note": "adds कुल (total) for emphasis"
+          "note": null
         },
         {
-          "hindi": "अभी नौ लड़कियाँ और पाँच लड़के हैं ।",
-          "romanisation": "abhī nau laṛkiyā̃ aur pā̃c laṛke haĩ.",
-          "english": "At the moment there are nine girls and five boys.",
+          "hindi": "अभी कुल चौदह हैं – नौ लड़कियाँ और पाँच लड़के ।",
+          "romanisation": "abhī kul caudah haĩ – nau laṛkiyā̃ aur pā̃c laṛke.",
+          "english": "In total there are fourteen now – nine girls and five boys.",
           "tags": [
-            "neutral"
+            "formal"
           ],
-          "note": "omits the number breakdown (चौदह)"
+          "note": "कुल (total) added for emphasis"
+        },
+        {
+          "hindi": "अभी सोलह हैं – दस लड़कियाँ और छः लड़के ।",
+          "romanisation": "abhī solah haĩ – das laṛkiyā̃ aur chah laṛke.",
+          "english": "There are sixteen now – ten girls and six boys.",
+          "tags": [
+            "normal"
+          ],
+          "note": "numbers changed, plural feminine adjective दस carries over"
+        },
+        {
+          "hindi": "कुल चौदह हैं – नौ लड़कियाँ और पाँच लड़के ।",
+          "romanisation": "kul caudah haĩ – nau laṛkiyā̃ aur pā̃c laṛke.",
+          "english": "Total there are fourteen – nine girls and five boys.",
+          "tags": [
+            "normal",
+            "formal"
+          ],
+          "note": "अभी (now) removed; कुल replaces temporal focus with totality focus"
         }
       ]
     },
     {
-      "hindi": "हाँ, बुरी नहीं है । लेकिन सस्ती नहीं है, काफ़ी महँगी है ।",
-      "romanisation": "hā̃, burī nahī̃ hai. lekin sastī nahī̃ hai, kāfī mahãgī hai.",
-      "english": "Yes, it's not bad. But it's not cheap, it's quite expensive.",
-      "grammar_note": "Two sentences with parallel structure. First affirms negatively (बुरी नहीं है — not bad). Second contrasts two negative and positive statements with लेकिन (but). Note feminine agreement: बुरी, सस्ती, महँगी all feminine. The negation nahī̃ appears in both negative clauses; the positive clause uses the same adjective in positive form.",
+      "hindi": "हाँ, बुरी नहीं है ।",
+      "romanisation": "hā̃, burī nahī̃ hai.",
+      "english": "Yes, it's not bad.",
       "gloss": [
         {
           "hindi": "हाँ",
           "romanisation": "hā̃",
-          "meaning": "yes (affirmation)",
-          "fixed": true,
-          "fixed_note": "opening particle"
+          "meaning": "yes",
+          "fixed": false,
+          "alternatives": [
+            {
+              "hindi": "जी",
+              "romanisation": "jī",
+              "meaning": "yes (formal)"
+            },
+            {
+              "hindi": "हाँ हाँ",
+              "romanisation": "hā̃ hā̃",
+              "meaning": "yes indeed"
+            }
+          ]
         },
         {
           "hindi": "बुरी",
@@ -312,32 +436,120 @@
           "fixed": false,
           "alternatives": [
             {
-              "hindi": "बहुत बुरी",
-              "romanisation": "bahut burī",
-              "meaning": "very bad"
+              "hindi": "भद्दी",
+              "romanisation": "bhaddī",
+              "meaning": "ugly (feminine singular)"
+            },
+            {
+              "hindi": "खराब",
+              "romanisation": "khārāb",
+              "meaning": "bad/spoiled"
             }
           ]
         },
         {
           "hindi": "नहीं",
           "romanisation": "nahī̃",
-          "meaning": "not (negation)",
+          "meaning": "not, no",
           "fixed": true,
-          "fixed_note": "negation particle — always before copula"
+          "fixed_note": "adverb of negation — typically comes before the adjective it negates"
         },
         {
           "hindi": "है",
           "romanisation": "hai",
-          "meaning": "is (singular copula)",
+          "meaning": "is (singular, feminine or polite form)",
           "fixed": true,
-          "fixed_note": "copula — agrees with singular subject"
+          "fixed_note": "verb — always final position in simple present statement"
+        }
+      ],
+      "grammar_note": "Negation with adjective: the pattern is 'noun + adj + नहीं + है' (the thing is not bad). The feminine singular adjective बुरी agrees with an implied feminine noun. This is a litotes construction — saying 'not bad' as understatement for approval.",
+      "building_blocks": [
+        {
+          "hindi": "बुरी नहीं है",
+          "romanisation": "burī nahī̃ hai",
+          "meaning": "is not bad (understatement)",
+          "swap_note": "any adjective + नहीं + है to negate simple qualities"
         },
+        {
+          "hindi": "नहीं है",
+          "romanisation": "nahī̃ hai",
+          "meaning": "is not (simple negation)",
+          "swap_note": "most singular feminine or formal present-tense statements"
+        }
+      ],
+      "cultural_note": null,
+      "memory_hook": [
+        {
+          "word_hindi": "हाँ",
+          "word_roman": "hā̃",
+          "scene": "You nod your head in agreement, affirming"
+        },
+        {
+          "word_hindi": "बुरी",
+          "word_roman": "burī",
+          "scene": "Something sour or distasteful appears on your tongue"
+        },
+        {
+          "word_hindi": "नहीं",
+          "word_roman": "nahī̃",
+          "scene": "You wave your hand, pushing away the bad taste"
+        },
+        {
+          "word_hindi": "है",
+          "word_roman": "hai",
+          "scene": "The reality settles — it is (acceptable, not terrible)"
+        }
+      ],
+      "variations": [
+        {
+          "hindi": "यह बुरी नहीं है ।",
+          "romanisation": "yah burī nahī̃ hai.",
+          "english": "It is not bad.",
+          "tags": [
+            "normal"
+          ],
+          "note": "explicit यह (it) subject added"
+        },
+        {
+          "hindi": "अरे, बुरी नहीं है ।",
+          "romanisation": "are, burī nahī̃ hai.",
+          "english": "Well, it's not bad.",
+          "tags": [
+            "casual"
+          ],
+          "note": "interjection अरे for casual emphasis"
+        },
+        {
+          "hindi": "बिल्कुल बुरी नहीं है ।",
+          "romanisation": "bilkul burī nahī̃ hai.",
+          "english": "It's not bad at all.",
+          "tags": [
+            "normal"
+          ],
+          "note": "बिल्कुल (absolutely) intensifies negation"
+        },
+        {
+          "hindi": "हाँ, अच्छी है ।",
+          "romanisation": "hā̃, achhī hai.",
+          "english": "Yes, it's good.",
+          "tags": [
+            "normal"
+          ],
+          "note": "positive assertion instead of negation"
+        }
+      ]
+    },
+    {
+      "hindi": "लेकिन सस्ती नहीं है, काफ़ी महँगी है ।",
+      "romanisation": "lekin sastī nahī̃ hai, kāfī mahãgī hai.",
+      "english": "But it's not cheap, it's quite expensive.",
+      "gloss": [
         {
           "hindi": "लेकिन",
           "romanisation": "lekin",
-          "meaning": "but (conjunction)",
+          "meaning": "but, however",
           "fixed": true,
-          "fixed_note": "conjunction — introduces contrast"
+          "fixed_note": "conjunction — typically begins the sentence or clause, marks contrast"
         },
         {
           "hindi": "सस्ती",
@@ -348,14 +560,33 @@
             {
               "hindi": "सस्ता",
               "romanisation": "sastā",
-              "meaning": "cheap (masculine form)"
+              "meaning": "cheap (masculine singular)"
+            },
+            {
+              "hindi": "कम कीमत की",
+              "romanisation": "kam kīmat kī",
+              "meaning": "low-priced"
             }
           ]
         },
         {
+          "hindi": "नहीं",
+          "romanisation": "nahī̃",
+          "meaning": "not",
+          "fixed": true,
+          "fixed_note": "adverb of negation — precedes the adjective"
+        },
+        {
+          "hindi": "है",
+          "romanisation": "hai",
+          "meaning": "is",
+          "fixed": true,
+          "fixed_note": "verb — always final in its clause"
+        },
+        {
           "hindi": "काफ़ी",
           "romanisation": "kāfī",
-          "meaning": "quite, fairly (adverb/adjective)",
+          "meaning": "quite, pretty (intensifier)",
           "fixed": false,
           "alternatives": [
             {
@@ -364,9 +595,9 @@
               "meaning": "very"
             },
             {
-              "hindi": "ज्यादा",
-              "romanisation": "jyādā",
-              "meaning": "more"
+              "hindi": "अधिक",
+              "romanisation": "adhik",
+              "meaning": "more, excessive"
             }
           ]
         },
@@ -377,73 +608,104 @@
           "fixed": false,
           "alternatives": [
             {
-              "hindi": "मँहगा",
-              "romanisation": "mãhgā",
-              "meaning": "expensive (masculine form)"
+              "hindi": "महँगा",
+              "romanisation": "mahãgā",
+              "meaning": "expensive (masculine singular)"
+            },
+            {
+              "hindi": "कीमती",
+              "romanisation": "kīmatī",
+              "meaning": "expensive/precious"
             }
           ]
-        }
-      ],
-      "building_blocks": [
-        {
-          "hindi": "बुरी नहीं है",
-          "romanisation": "burī nahī̃ hai",
-          "meaning": "'not bad' (litotes — negating negative means positive)",
-          "swap_note": "applies to any quality: दिलचस्प नहीं है (not interesting), मुश्किल नहीं है (not difficult)"
         },
         {
-          "hindi": "लेकिन ... नहीं है, ... है",
-          "romanisation": "lekin ... nahī̃ hai, ... hai",
-          "meaning": "but it's not X, it's Y (contrast with negation + positive)",
-          "swap_note": "general pattern for contrasting states"
+          "hindi": "है",
+          "romanisation": "hai",
+          "meaning": "is",
+          "fixed": true,
+          "fixed_note": "verb — final in clause, parallel structure with first clause"
+        }
+      ],
+      "grammar_note": "Two-clause contrast with parallel structure: 'not cheap... but quite expensive.' The comma creates a pause between the negated quality and the affirmative quality. Both clauses end with है, and the implied feminine singular noun carries through (probably referring to an item previously mentioned).",
+      "building_blocks": [
+        {
+          "hindi": "सस्ती नहीं है",
+          "romanisation": "sastī nahī̃ hai",
+          "meaning": "is not cheap",
+          "swap_note": "any price-related adjective in negated form"
+        },
+        {
+          "hindi": "काफ़ी महँगी है",
+          "romanisation": "kāfī mahãgī hai",
+          "meaning": "is quite expensive",
+          "swap_note": "intensifier + price adjective for affirmative quality"
         }
       ],
       "cultural_note": null,
       "memory_hook": [
         {
-          "word_hindi": "हाँ",
-          "word_roman": "hā̃",
-          "scene": "nodding yes"
-        },
-        {
-          "word_hindi": "बुरी नहीं है",
-          "word_roman": "burī nahī̃ hai",
-          "scene": "something of moderate quality, not terrible"
-        },
-        {
           "word_hindi": "लेकिन",
           "word_roman": "lekin",
-          "scene": "turning to point out a problem — but..."
+          "scene": "You raise one hand to pause, signalling a contradiction coming"
         },
         {
-          "word_hindi": "सस्ती नहीं है",
-          "word_roman": "sastī nahī̃ hai",
-          "scene": "checking the price tag — it's not cheap"
+          "word_hindi": "सस्ती",
+          "word_roman": "sastī",
+          "scene": "An empty wallet appears on the ground, coins spilling out"
         },
         {
-          "word_hindi": "काफ़ी महँगी है",
-          "word_roman": "kāfī mahãgī hai",
-          "scene": "wallet feeling light — quite expensive"
+          "word_hindi": "नहीं",
+          "word_roman": "nahī̃",
+          "scene": "You shake your head — the wallet closes, the coins vanish"
+        },
+        {
+          "word_hindi": "काफ़ी",
+          "word_roman": "kāfī",
+          "scene": "A large stack of money bundles towers before you"
+        },
+        {
+          "word_hindi": "महँगी",
+          "word_roman": "mahãgī",
+          "scene": "A price tag marked with high numbers swings on the stack"
         }
       ],
       "variations": [
         {
-          "hindi": "हाँ, बहुत बुरी नहीं है, लेकिन काफ़ी महँगी है ।",
-          "romanisation": "hā̃, bahut burī nahī̃ hai, lekin kāfī mahãgī hai.",
-          "english": "Yes, not very bad, but quite expensive.",
+          "hindi": "लेकिन काफ़ी महँगी है ।",
+          "romanisation": "lekin kāfī mahãgī hai.",
+          "english": "But it's quite expensive.",
           "tags": [
-            "emphatic"
+            "normal"
           ],
-          "note": "adds बहुत (very) for stronger negation"
+          "note": null
         },
         {
-          "hindi": "यह बुरी नहीं है, लेकिन सस्ती नहीं है ।",
-          "romanisation": "yah burī nahī̃ hai, lekin sastī nahī̃ hai.",
-          "english": "It's not bad, but it's not cheap.",
+          "hindi": "लेकिन बहुत महँगी है, सस्ती नहीं है ।",
+          "romanisation": "lekin bahut mahãgī hai, sastī nahī̃ hai.",
+          "english": "But it's very expensive, it's not cheap.",
           "tags": [
-            "neutral"
+            "normal"
           ],
-          "note": "omits mahängī (expensive) from the second part"
+          "note": "word order reversed; बहुत (very) instead of काफ़ी"
+        },
+        {
+          "hindi": "लेकिन सस्ती नहीं है, बहुत महँगी है ।",
+          "romanisation": "lekin sastī nahī̃ hai, bahut mahãgī hai.",
+          "english": "But it's not cheap, it's very expensive.",
+          "tags": [
+            "normal"
+          ],
+          "note": "बहुत replaces काफ़ी for stronger intensity"
+        },
+        {
+          "hindi": "लेकिन सस्ती नहीं है, सामान्य कीमत की है ।",
+          "romanisation": "lekin sastī nahī̃ hai, sāmāny kīmat kī hai.",
+          "english": "But it's not cheap, it's a normal price.",
+          "tags": [
+            "formal"
+          ],
+          "note": "middle ground: neither cheap nor expensive"
         }
       ]
     }

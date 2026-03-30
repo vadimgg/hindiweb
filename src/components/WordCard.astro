@@ -24,11 +24,18 @@ interface Props {
 
 const {
   hindi, romanisation, english, origin_language, in_hindi_via, word_category, date_added,
-  english_usage, grouped_with = [],
-  forms = [], cross_language_connections, root_breakdown, root_parts = [], root_notes = [],
-  root_and_origin_explanation = [], etymology_story, pronunciation_guide,
-  memory_hook, urdu_punjabi, sound_alikes = [], examples = [], index,
+  english_usage, grouped_with: _grouped_with,
+  forms: _forms, cross_language_connections, root_breakdown, root_parts: _root_parts, root_notes: _root_notes,
+  root_and_origin_explanation: _roe, etymology_story, pronunciation_guide,
+  memory_hook, urdu_punjabi, sound_alikes: _sound_alikes, examples: _examples, index,
 } = Astro.props;
+const grouped_with  = _grouped_with  ?? [];
+const forms         = _forms         ?? [];
+const root_parts    = _root_parts    ?? [];
+const root_notes    = _root_notes    ?? [];
+const root_and_origin_explanation = _roe ?? [];
+const sound_alikes  = _sound_alikes  ?? [];
+const examples      = _examples      ?? [];
 
 const [primaryMeaning, ...rest] = english.split(',').map((s: string) => s.trim()).filter(Boolean);
 const secondaryMeanings = rest.join(', ');
