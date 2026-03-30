@@ -11,7 +11,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 // ── Load words ────────────────────────────────────────────────────────────────
-const vocabDir   = join(process.cwd(), 'vocab');
+const vocabDir   = join(process.cwd(), 'vocab', 'words');
 const vocabFiles = (await readdir(vocabDir)).filter(f => f.endsWith('.json')).sort();
 
 const allFiles = await Promise.all(

@@ -4,7 +4,7 @@ import { esc, langHex, aSection } from './utils.js';
 export function buildAnkiPronunciation(word) {
   const pg = word.pronunciation_guide;
   if (!pg) return '';
-  if (!pg.syllables && !(pg.breakdown || []).length && !(pg.extra_notes || []).length) return '';
+  if (!pg.syllables && !(pg.breakdown || []).length && !(pg.extra_notes || []).length && !(pg.tips || []).length) return '';
 
   let inner = '';
   if (pg.syllables) {
@@ -22,6 +22,16 @@ export function buildAnkiPronunciation(word) {
       ? `<span class="lang-label" style="color:${col};margin-bottom:.2rem;">${esc(item.language)}</span>`
       : '';
     inner += `<div style="margin-top:.55rem;">${lang}<p class="syl-desc">${esc(item.note)}</p></div>`;
+  });
+  (pg.tips || []).forEach(tip => {
+    const col  = langHex(tip.language || '');
+    const lang = tip.language
+      ? `<span class="lang-label" style="color:${col};margin-bottom:.2rem;">${esc(tip.language)}</span>`
+      : '';
+    const soundsLike = tip.sounds_like
+      ? `<span style="color:#f1f5f9;font-weight:600;margin-right:.35rem;">"${esc(tip.sounds_like)}"</span>`
+      : '';
+    inner += `<div style="margin-top:.55rem;">${lang}<p class="syl-desc">${soundsLike}${esc(tip.tip)}</p></div>`;
   });
 
   return aSection('Pronunciation', inner, '#14b8a6');

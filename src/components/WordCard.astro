@@ -1,7 +1,7 @@
 ---
 // Responsible for: word card shell — header row + section delegation
 import { formatDate, categoryStyle } from '../utils/cardHelpers';
-import type { Form, CrossLangConnections, RootBreakdown, RootPart, PronunciationGuide, MemoryHook, UrduPunjabi, SoundAlike, Example } from '../utils/types';
+import type { Form, GroupedWith, CrossLangConnections, RootBreakdown, RootPart, PronunciationGuide, MemoryHook, UrduPunjabi, SoundAlike, Example } from '../utils/types';
 import FormsSection       from './cards/sections/FormsSection.astro';
 import PronunciationSection from './cards/sections/PronunciationSection.astro';
 import MemorySection      from './cards/sections/MemorySection.astro';
@@ -14,15 +14,17 @@ import CrossLangSection   from './cards/sections/CrossLangSection.astro';
 interface Props {
   hindi: string; romanisation: string; english: string;
   origin_language?: string; in_hindi_via?: string; word_category?: string; date_added?: string;
+  english_usage?: string; grouped_with?: GroupedWith[];
   forms?: Form[]; cross_language_connections?: CrossLangConnections;
   root_breakdown?: RootBreakdown; root_parts?: RootPart[]; root_notes?: string[];
-  root_and_origin_explanation?: string[]; etymology_story?: string;
+  root_and_origin_explanation?: string[]; etymology_story?: string | string[];
   pronunciation_guide?: PronunciationGuide; memory_hook?: MemoryHook;
   urdu_punjabi?: UrduPunjabi; sound_alikes?: SoundAlike[]; examples?: Example[]; index: number;
 }
 
 const {
   hindi, romanisation, english, origin_language, in_hindi_via, word_category, date_added,
+  english_usage, grouped_with = [],
   forms = [], cross_language_connections, root_breakdown, root_parts = [], root_notes = [],
   root_and_origin_explanation = [], etymology_story, pronunciation_guide,
   memory_hook, urdu_punjabi, sound_alikes = [], examples = [], index,
@@ -31,11 +33,12 @@ const {
 const [primaryMeaning, ...rest] = english.split(',').map((s: string) => s.trim()).filter(Boolean);
 const secondaryMeanings = rest.join(', ');
 
-const hasPron = !!(pronunciation_guide?.syllables || (pronunciation_guide?.breakdown ?? []).length > 0 || (pronunciation_guide?.extra_notes ?? []).length > 0);
-const hasRoot = !!(root_breakdown?.root || root_breakdown?.evolution || root_breakdown?.logic || root_parts.length > 0 || root_notes.length > 0 || root_and_origin_explanation.length > 0);
+const hasPron = !!(pronunciation_guide?.syllables || (pronunciation_guide?.breakdown ?? []).length > 0 || (pronunciation_guide?.extra_notes ?? []).length > 0 || (pronunciation_guide?.tips ?? []).length > 0);
+const hasRoot = !!(root_breakdown?.root || root_breakdown?.evolution || root_breakdown?.logic || root_parts.length > 0 || root_notes.length > 0 || root_and_origin_explanation.length > 0 || (Array.isArray(etymology_story) ? etymology_story.length > 0 : !!etymology_story));
 const hookPrimary    = memory_hook?.primary ?? '';
-const hookByLanguage = Object.entries(memory_hook ?? {}).filter(([k]) => k !== 'primary') as [string, string][];
-const hasMemory      = !!(hookPrimary || hookByLanguage.length > 0);
+const hookConnection = memory_hook?.connection ?? '';
+const hookByLanguage = Object.entries(memory_hook ?? {}).filter(([k]) => k !== 'primary' && k !== 'connection') as [string, string][];
+const hasMemory      = !!(hookPrimary || hookConnection || hookByLanguage.length > 0);
 const trueRelatives      = cross_language_connections?.true_relatives    ?? [];
 const usefulCoincidences = cross_language_connections?.useful_coincidences ?? [];
 ---
@@ -62,11 +65,11 @@ const usefulCoincidences = cross_language_connections?.useful_coincidences ?? []
   </div>
 
   <div class="card-expandable">
-    <FormsSection forms={forms} secondaryMeanings={secondaryMeanings} />
+    <FormsSection forms={forms} secondaryMeanings={secondaryMeanings} english_usage={english_usage} grouped_with={grouped_with} />
 
     <div class="border-t border-slate-700/40 divide-y divide-slate-700/40">
       {hasPron         && <PronunciationSection pronunciation_guide={pronunciation_guide!} />}
-      {hasMemory       && <MemorySection hookPrimary={hookPrimary} hookByLanguage={hookByLanguage} />}
+      {hasMemory       && <MemorySection hookPrimary={hookPrimary} hookConnection={hookConnection} hookByLanguage={hookByLanguage} />}
       {examples.length > 0 && <ExamplesSection examples={examples} index={index} />}
       {hasRoot         && <RootOriginSection in_hindi_via={in_hindi_via} root_parts={root_parts} root_breakdown={root_breakdown} root_notes={root_notes} root_and_origin_explanation={root_and_origin_explanation} etymology_story={etymology_story} />}
       {sound_alikes.length > 0  && <SoundAlikesSection sound_alikes={sound_alikes} />}

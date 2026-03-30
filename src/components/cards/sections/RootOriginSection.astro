@@ -1,7 +1,7 @@
 ---
 // Responsible for: Root & Origin and Etymology Story expandable sections inside a word card
 import { highlight } from '../../../utils/highlight';
-import type { RootBreakdown, RootPart } from '../../../utils/types';
+import type { RootBreakdown, RootPart, RootRoot, RootEvolutionStep } from '../../../utils/types';
 
 interface Props {
   in_hindi_via?: string;
@@ -9,9 +9,18 @@ interface Props {
   root_breakdown?: RootBreakdown;
   root_notes: string[];
   root_and_origin_explanation: string[];
-  etymology_story?: string;
+  etymology_story?: string | string[];
 }
 const { in_hindi_via, root_parts, root_breakdown, root_notes, root_and_origin_explanation, etymology_story } = Astro.props;
+
+const rb = root_breakdown ?? {};
+const rootIsObject = rb.root && typeof rb.root === 'object';
+const rootIsString = rb.root && typeof rb.root === 'string';
+const evolutionIsArray = Array.isArray(rb.evolution);
+const evolutionIsString = rb.evolution && typeof rb.evolution === 'string';
+const etymologyLines: string[] = Array.isArray(etymology_story)
+  ? etymology_story
+  : etymology_story ? [etymology_story] : [];
 ---
 
 <details class="group/det">
@@ -32,14 +41,29 @@ const { in_hindi_via, root_parts, root_breakdown, root_notes, root_and_origin_ex
         ))}
       </div>
     )}
-    {root_breakdown?.root && (
-      <p class="text-slate-100 text-base font-medium leading-relaxed" set:html={highlight(root_breakdown.root)} />
+    {rootIsObject && (
+      <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+        <span class="word-hindi text-base font-medium" lang="hi">{(rb.root as RootRoot).word}</span>
+        <span class="word-roman text-sm">{(rb.root as RootRoot).romanisation}</span>
+        <span class="text-slate-400 text-sm">— {(rb.root as RootRoot).meaning}</span>
+        <span class="text-slate-600 text-xs">({(rb.root as RootRoot).language})</span>
+      </div>
     )}
-    {root_breakdown?.evolution && (
-      <p class="text-[14px] text-teal-300/70 font-mono tracking-wide leading-relaxed" set:html={highlight(root_breakdown.evolution)} />
+    {rootIsString && (
+      <p class="text-slate-100 text-base font-medium leading-relaxed" set:html={highlight(rb.root as string)} />
     )}
-    {root_breakdown?.logic && (
-      <p class="text-[15px] text-slate-400 italic leading-relaxed" set:html={highlight(root_breakdown.logic)} />
+    {evolutionIsArray && (rb.evolution as RootEvolutionStep[]).length > 0 && (
+      <p class="text-[13px] text-teal-300/70 font-mono tracking-wide leading-relaxed">
+        {(rb.evolution as RootEvolutionStep[]).map((s, i) => (
+          <>{i > 0 && <span class="text-slate-700 mx-1">→</span>}<span>{s.stage}: <span class="text-teal-200/90">{s.form}</span></span></>
+        ))}
+      </p>
+    )}
+    {evolutionIsString && (
+      <p class="text-[14px] text-teal-300/70 font-mono tracking-wide leading-relaxed" set:html={highlight(rb.evolution as string)} />
+    )}
+    {rb.logic && (
+      <p class="text-[15px] text-slate-400 italic leading-relaxed" set:html={highlight(rb.logic)} />
     )}
     {root_notes.map((line) => (
       <p class="text-[15px] text-slate-300 leading-relaxed" set:html={highlight(line)} />
@@ -51,14 +75,16 @@ const { in_hindi_via, root_parts, root_breakdown, root_notes, root_and_origin_ex
   </div>
 </details>
 
-{etymology_story && (
+{etymologyLines.length > 0 && (
   <details class="group/det">
     <summary class="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
       <span class="font-title text-xs sm:text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Etymology Story</span>
       <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
     </summary>
-    <div class="border-l-2 border-amber-500/50 ml-4 sm:ml-6 mb-4 px-4 sm:px-5 py-3 sm:py-4">
-      <p class="text-base text-slate-200 leading-relaxed" set:html={highlight(etymology_story)} />
+    <div class="border-l-2 border-amber-500/50 ml-4 sm:ml-6 mb-4 px-4 sm:px-5 py-3 sm:py-4 space-y-2">
+      {etymologyLines.map((para) => (
+        <p class="text-base text-slate-200 leading-relaxed" set:html={highlight(para)} />
+      ))}
     </div>
   </details>
 )}

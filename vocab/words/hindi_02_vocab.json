@@ -1,0 +1,2719 @@
+{
+  "title": "hindi_02_vocab",
+  "words": [
+    {
+      "hindi": "अध्यापक",
+      "romanisation": "adhyāpak",
+      "english": "teacher (male)",
+      "english_usage": "Used to refer to teacher (male).",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "अध्यापक",
+          "romanisation": "adhyāpak",
+          "meaning": "teacher (male)"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "adhyāpak",
+            "meaning": "teacher (male)"
+          }
+        ],
+        "logic": "The word अध्यापक directly means teacher (male)."
+      },
+      "etymology_story": [
+        "The word अध्यापक (adhyāpak) is used in Hindi to mean teacher (male)."
+      ],
+      "pronunciation_guide": {
+        "syllables": "adhyāpak",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember teacher (male) when you see अध्यापक.",
+        "connection": "The word अध्यापक directly represents teacher (male)."
+      },
+      "examples": [
+        {
+          "hindi": "यह अध्यापक है।",
+          "romanisation": "yah adhyāpak hai.",
+          "english": "This is a teacher (male).",
+          "literal": "this teacher (male) is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे अध्यापक चाहिए।",
+          "romanisation": "mujhe adhyāpak cāhie.",
+          "english": "I need a teacher (male).",
+          "literal": "me teacher (male) is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "विद्यार्थी",
+      "romanisation": "vidyārthī",
+      "english": "student",
+      "english_usage": "Used to refer to student.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "विद्यार्थी",
+          "romanisation": "vidyārthī",
+          "meaning": "student"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "vidyārthī",
+            "meaning": "student"
+          }
+        ],
+        "logic": "The word विद्यार्थी directly means student."
+      },
+      "etymology_story": [
+        "The word विद्यार्थी (vidyārthī) is used in Hindi to mean student."
+      ],
+      "pronunciation_guide": {
+        "syllables": "vidyārthī",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember student when you see विद्यार्थी.",
+        "connection": "The word विद्यार्थी directly represents student."
+      },
+      "examples": [
+        {
+          "hindi": "यह विद्यार्थी है।",
+          "romanisation": "yah vidyārthī hai.",
+          "english": "This is a student.",
+          "literal": "this student is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे विद्यार्थी चाहिए।",
+          "romanisation": "mujhe vidyārthī cāhie.",
+          "english": "I need a student.",
+          "literal": "me student is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "छात्र",
+      "romanisation": "chātr",
+      "english": "student (male, formal)",
+      "english_usage": "Used to refer to student (male, formal).",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "छात्र",
+          "romanisation": "chātr",
+          "meaning": "student (male, formal)"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "chātr",
+            "meaning": "student (male, formal)"
+          }
+        ],
+        "logic": "The word छात्र directly means student (male, formal)."
+      },
+      "etymology_story": [
+        "The word छात्र (chātr) is used in Hindi to mean student (male, formal)."
+      ],
+      "pronunciation_guide": {
+        "syllables": "chātr",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember student (male, formal) when you see छात्र.",
+        "connection": "The word छात्र directly represents student (male, formal)."
+      },
+      "examples": [
+        {
+          "hindi": "यह छात्र है।",
+          "romanisation": "yah chātr hai.",
+          "english": "This is a student (male, formal).",
+          "literal": "this student (male, formal) is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे छात्र चाहिए।",
+          "romanisation": "mujhe chātr cāhie.",
+          "english": "I need a student (male, formal).",
+          "literal": "me student (male, formal) is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "छात्रा",
+      "romanisation": "chātrā",
+      "english": "student (female, formal)",
+      "english_usage": "Used to refer to student (female, formal).",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "छात्रा",
+          "romanisation": "chātrā",
+          "meaning": "student (female, formal)"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "chātrā",
+            "meaning": "student (female, formal)"
+          }
+        ],
+        "logic": "The word छात्रा directly means student (female, formal)."
+      },
+      "etymology_story": [
+        "The word छात्रा (chātrā) is used in Hindi to mean student (female, formal)."
+      ],
+      "pronunciation_guide": {
+        "syllables": "chātrā",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember student (female, formal) when you see छात्रा.",
+        "connection": "The word छात्रा directly represents student (female, formal)."
+      },
+      "examples": [
+        {
+          "hindi": "यह छात्रा है।",
+          "romanisation": "yah chātrā hai.",
+          "english": "This is a student (female, formal).",
+          "literal": "this student (female, formal) is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे छात्रा चाहिए।",
+          "romanisation": "mujhe chātrā cāhie.",
+          "english": "I need a student (female, formal).",
+          "literal": "me student (female, formal) is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "किताब",
+      "romanisation": "kitāb",
+      "english": "book",
+      "english_usage": "Used to refer to book.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "किताब",
+          "romanisation": "kitāb",
+          "meaning": "book"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "kitāb",
+            "meaning": "book"
+          }
+        ],
+        "logic": "The word किताब directly means book."
+      },
+      "etymology_story": [
+        "The word किताब (kitāb) is used in Hindi to mean book."
+      ],
+      "pronunciation_guide": {
+        "syllables": "kitāb",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember book when you see किताब.",
+        "connection": "The word किताब directly represents book."
+      },
+      "examples": [
+        {
+          "hindi": "यह किताब है।",
+          "romanisation": "yah kitāb hai.",
+          "english": "This is a book.",
+          "literal": "this book is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे किताब चाहिए।",
+          "romanisation": "mujhe kitāb cāhie.",
+          "english": "I need a book.",
+          "literal": "me book is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "शब्दकोश",
+      "romanisation": "śabdkoś",
+      "english": "dictionary",
+      "english_usage": "Used to refer to dictionary.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "शब्दकोश",
+          "romanisation": "śabdkoś",
+          "meaning": "dictionary"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "śabdkoś",
+            "meaning": "dictionary"
+          }
+        ],
+        "logic": "The word शब्दकोश directly means dictionary."
+      },
+      "etymology_story": [
+        "The word शब्दकोश (śabdkoś) is used in Hindi to mean dictionary."
+      ],
+      "pronunciation_guide": {
+        "syllables": "śabdkoś",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember dictionary when you see शब्दकोश.",
+        "connection": "The word शब्दकोश directly represents dictionary."
+      },
+      "examples": [
+        {
+          "hindi": "यह शब्दकोश है।",
+          "romanisation": "yah śabdkoś hai.",
+          "english": "This is a dictionary.",
+          "literal": "this dictionary is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे शब्दकोश चाहिए।",
+          "romanisation": "mujhe śabdkoś cāhie.",
+          "english": "I need a dictionary.",
+          "literal": "me dictionary is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "अख़बार",
+      "romanisation": "akhbār",
+      "english": "newspaper",
+      "english_usage": "Used to refer to newspaper.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "अख़बार",
+          "romanisation": "akhbār",
+          "meaning": "newspaper"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "akhbār",
+            "meaning": "newspaper"
+          }
+        ],
+        "logic": "The word अख़बार directly means newspaper."
+      },
+      "etymology_story": [
+        "The word अख़बार (akhbār) is used in Hindi to mean newspaper."
+      ],
+      "pronunciation_guide": {
+        "syllables": "akhbār",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember newspaper when you see अख़बार.",
+        "connection": "The word अख़बार directly represents newspaper."
+      },
+      "examples": [
+        {
+          "hindi": "यह अख़बार है।",
+          "romanisation": "yah akhbār hai.",
+          "english": "This is a newspaper.",
+          "literal": "this newspaper is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे अख़बार चाहिए।",
+          "romanisation": "mujhe akhbār cāhie.",
+          "english": "I need a newspaper.",
+          "literal": "me newspaper is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "काग़ज़",
+      "romanisation": "kāgaz",
+      "english": "paper / a piece of paper",
+      "english_usage": "Used to refer to paper / a piece of paper.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "काग़ज़",
+          "romanisation": "kāgaz",
+          "meaning": "paper / a piece of paper"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "kāgaz",
+            "meaning": "paper / a piece of paper"
+          }
+        ],
+        "logic": "The word काग़ज़ directly means paper / a piece of paper."
+      },
+      "etymology_story": [
+        "The word काग़ज़ (kāgaz) is used in Hindi to mean paper / a piece of paper."
+      ],
+      "pronunciation_guide": {
+        "syllables": "kāgaz",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember paper / a piece of paper when you see काग़ज़.",
+        "connection": "The word काग़ज़ directly represents paper / a piece of paper."
+      },
+      "examples": [
+        {
+          "hindi": "यह काग़ज़ है।",
+          "romanisation": "yah kāgaz hai.",
+          "english": "This is a paper / a piece of paper.",
+          "literal": "this paper / a piece of paper is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे काग़ज़ चाहिए।",
+          "romanisation": "mujhe kāgaz cāhie.",
+          "english": "I need a paper / a piece of paper.",
+          "literal": "me paper / a piece of paper is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "चिट्ठी",
+      "romanisation": "ciṭṭhī",
+      "english": "letter / note / chit",
+      "english_usage": "Used to refer to letter / note / chit.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "चिट्ठी",
+          "romanisation": "ciṭṭhī",
+          "meaning": "letter / note / chit"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "ciṭṭhī",
+            "meaning": "letter / note / chit"
+          }
+        ],
+        "logic": "The word चिट्ठी directly means letter / note / chit."
+      },
+      "etymology_story": [
+        "The word चिट्ठी (ciṭṭhī) is used in Hindi to mean letter / note / chit."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ciṭṭhī",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember letter / note / chit when you see चिट्ठी.",
+        "connection": "The word चिट्ठी directly represents letter / note / chit."
+      },
+      "examples": [
+        {
+          "hindi": "यह चिट्ठी है।",
+          "romanisation": "yah ciṭṭhī hai.",
+          "english": "This is a letter / note / chit.",
+          "literal": "this letter / note / chit is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे चिट्ठी चाहिए।",
+          "romanisation": "mujhe ciṭṭhī cāhie.",
+          "english": "I need a letter / note / chit.",
+          "literal": "me letter / note / chit is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "जवाब",
+      "romanisation": "javāb",
+      "english": "answer",
+      "english_usage": "Used to refer to answer.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "जवाब",
+          "romanisation": "javāb",
+          "meaning": "answer"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "javāb",
+            "meaning": "answer"
+          }
+        ],
+        "logic": "The word जवाब directly means answer."
+      },
+      "etymology_story": [
+        "The word जवाब (javāb) is used in Hindi to mean answer."
+      ],
+      "pronunciation_guide": {
+        "syllables": "javāb",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember answer when you see जवाब.",
+        "connection": "The word जवाब directly represents answer."
+      },
+      "examples": [
+        {
+          "hindi": "यह जवाब है।",
+          "romanisation": "yah javāb hai.",
+          "english": "This is a answer.",
+          "literal": "this answer is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे जवाब चाहिए।",
+          "romanisation": "mujhe javāb cāhie.",
+          "english": "I need a answer.",
+          "literal": "me answer is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "सवाल",
+      "romanisation": "savāl",
+      "english": "question",
+      "english_usage": "Used to refer to question.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "सवाल",
+          "romanisation": "savāl",
+          "meaning": "question"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "savāl",
+            "meaning": "question"
+          }
+        ],
+        "logic": "The word सवाल directly means question."
+      },
+      "etymology_story": [
+        "The word सवाल (savāl) is used in Hindi to mean question."
+      ],
+      "pronunciation_guide": {
+        "syllables": "savāl",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember question when you see सवाल.",
+        "connection": "The word सवाल directly represents question."
+      },
+      "examples": [
+        {
+          "hindi": "यह सवाल है।",
+          "romanisation": "yah savāl hai.",
+          "english": "This is a question.",
+          "literal": "this question is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे सवाल चाहिए।",
+          "romanisation": "mujhe savāl cāhie.",
+          "english": "I need a question.",
+          "literal": "me question is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "हाल",
+      "romanisation": "hāl",
+      "english": "condition / state",
+      "english_usage": "Used to refer to condition / state.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "हाल",
+          "romanisation": "hāl",
+          "meaning": "condition / state"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "hāl",
+            "meaning": "condition / state"
+          }
+        ],
+        "logic": "The word हाल directly means condition / state."
+      },
+      "etymology_story": [
+        "The word हाल (hāl) is used in Hindi to mean condition / state."
+      ],
+      "pronunciation_guide": {
+        "syllables": "hāl",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember condition / state when you see हाल.",
+        "connection": "The word हाल directly represents condition / state."
+      },
+      "examples": [
+        {
+          "hindi": "यह हाल है।",
+          "romanisation": "yah hāl hai.",
+          "english": "This is a condition / state.",
+          "literal": "this condition / state is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे हाल चाहिए।",
+          "romanisation": "mujhe hāl cāhie.",
+          "english": "I need a condition / state.",
+          "literal": "me condition / state is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "बात",
+      "romanisation": "bāt",
+      "english": "matter / thing",
+      "english_usage": "Used to refer to matter / thing.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "बात",
+          "romanisation": "bāt",
+          "meaning": "matter / thing"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "bāt",
+            "meaning": "matter / thing"
+          }
+        ],
+        "logic": "The word बात directly means matter / thing."
+      },
+      "etymology_story": [
+        "The word बात (bāt) is used in Hindi to mean matter / thing."
+      ],
+      "pronunciation_guide": {
+        "syllables": "bāt",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember matter / thing when you see बात.",
+        "connection": "The word बात directly represents matter / thing."
+      },
+      "examples": [
+        {
+          "hindi": "यह बात है।",
+          "romanisation": "yah bāt hai.",
+          "english": "This is a matter / thing.",
+          "literal": "this matter / thing is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे बात चाहिए।",
+          "romanisation": "mujhe bāt cāhie.",
+          "english": "I need a matter / thing.",
+          "literal": "me matter / thing is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "मौसम",
+      "romanisation": "mausam",
+      "english": "weather",
+      "english_usage": "Used to refer to weather.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "मौसम",
+          "romanisation": "mausam",
+          "meaning": "weather"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "mausam",
+            "meaning": "weather"
+          }
+        ],
+        "logic": "The word मौसम directly means weather."
+      },
+      "etymology_story": [
+        "The word मौसम (mausam) is used in Hindi to mean weather."
+      ],
+      "pronunciation_guide": {
+        "syllables": "mausam",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember weather when you see मौसम.",
+        "connection": "The word मौसम directly represents weather."
+      },
+      "examples": [
+        {
+          "hindi": "यह मौसम है।",
+          "romanisation": "yah mausam hai.",
+          "english": "This is a weather.",
+          "literal": "this weather is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे मौसम चाहिए।",
+          "romanisation": "mujhe mausam cāhie.",
+          "english": "I need a weather.",
+          "literal": "me weather is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "हवा",
+      "romanisation": "havā",
+      "english": "air",
+      "english_usage": "Used to refer to air.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "हवा",
+          "romanisation": "havā",
+          "meaning": "air"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "havā",
+            "meaning": "air"
+          }
+        ],
+        "logic": "The word हवा directly means air."
+      },
+      "etymology_story": [
+        "The word हवा (havā) is used in Hindi to mean air."
+      ],
+      "pronunciation_guide": {
+        "syllables": "havā",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember air when you see हवा.",
+        "connection": "The word हवा directly represents air."
+      },
+      "examples": [
+        {
+          "hindi": "यह हवा है।",
+          "romanisation": "yah havā hai.",
+          "english": "This is a air.",
+          "literal": "this air is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे हवा चाहिए।",
+          "romanisation": "mujhe havā cāhie.",
+          "english": "I need a air.",
+          "literal": "me air is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "प्रदूषण",
+      "romanisation": "pradūṣaṇ",
+      "english": "pollution",
+      "english_usage": "Used to refer to pollution.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "प्रदूषण",
+          "romanisation": "pradūṣaṇ",
+          "meaning": "pollution"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "pradūṣaṇ",
+            "meaning": "pollution"
+          }
+        ],
+        "logic": "The word प्रदूषण directly means pollution."
+      },
+      "etymology_story": [
+        "The word प्रदूषण (pradūṣaṇ) is used in Hindi to mean pollution."
+      ],
+      "pronunciation_guide": {
+        "syllables": "pradūṣaṇ",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember pollution when you see प्रदूषण.",
+        "connection": "The word प्रदूषण directly represents pollution."
+      },
+      "examples": [
+        {
+          "hindi": "यह प्रदूषण है।",
+          "romanisation": "yah pradūṣaṇ hai.",
+          "english": "This is a pollution.",
+          "literal": "this pollution is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे प्रदूषण चाहिए।",
+          "romanisation": "mujhe pradūṣaṇ cāhie.",
+          "english": "I need a pollution.",
+          "literal": "me pollution is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "दिल्ली",
+      "romanisation": "dillī",
+      "english": "Delhi",
+      "english_usage": "Used to refer to delhi.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "दिल्ली",
+          "romanisation": "dillī",
+          "meaning": "Delhi"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "dillī",
+            "meaning": "Delhi"
+          }
+        ],
+        "logic": "The word दिल्ली directly means Delhi."
+      },
+      "etymology_story": [
+        "The word दिल्ली (dillī) is used in Hindi to mean Delhi."
+      ],
+      "pronunciation_guide": {
+        "syllables": "dillī",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember Delhi when you see दिल्ली.",
+        "connection": "The word दिल्ली directly represents Delhi."
+      },
+      "examples": [
+        {
+          "hindi": "यह दिल्ली है।",
+          "romanisation": "yah dillī hai.",
+          "english": "This is a delhi.",
+          "literal": "this delhi is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे दिल्ली चाहिए।",
+          "romanisation": "mujhe dillī cāhie.",
+          "english": "I need a delhi.",
+          "literal": "me delhi is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "सोमवार",
+      "romanisation": "somvār",
+      "english": "Monday",
+      "english_usage": "Used to refer to monday.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "सोमवार",
+          "romanisation": "somvār",
+          "meaning": "Monday"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "somvār",
+            "meaning": "Monday"
+          }
+        ],
+        "logic": "The word सोमवार directly means Monday."
+      },
+      "etymology_story": [
+        "The word सोमवार (somvār) is used in Hindi to mean Monday."
+      ],
+      "pronunciation_guide": {
+        "syllables": "somvār",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember Monday when you see सोमवार.",
+        "connection": "The word सोमवार directly represents Monday."
+      },
+      "examples": [
+        {
+          "hindi": "यह सोमवार है।",
+          "romanisation": "yah somvār hai.",
+          "english": "This is a monday.",
+          "literal": "this monday is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे सोमवार चाहिए।",
+          "romanisation": "mujhe somvār cāhie.",
+          "english": "I need a monday.",
+          "literal": "me monday is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "बहिन",
+      "romanisation": "bahin",
+      "english": "sister",
+      "english_usage": "Used to refer to sister.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "बहिन",
+          "romanisation": "bahin",
+          "meaning": "sister"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "bahin",
+            "meaning": "sister"
+          }
+        ],
+        "logic": "The word बहिन directly means sister."
+      },
+      "etymology_story": [
+        "The word बहिन (bahin) is used in Hindi to mean sister."
+      ],
+      "pronunciation_guide": {
+        "syllables": "bahin",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember sister when you see बहिन.",
+        "connection": "The word बहिन directly represents sister."
+      },
+      "examples": [
+        {
+          "hindi": "यह बहिन है।",
+          "romanisation": "yah bahin hai.",
+          "english": "This is a sister.",
+          "literal": "this sister is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे बहिन चाहिए।",
+          "romanisation": "mujhe bahin cāhie.",
+          "english": "I need a sister.",
+          "literal": "me sister is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "भाई",
+      "romanisation": "bhāī",
+      "english": "brother",
+      "english_usage": "Used to refer to brother.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "भाई",
+          "romanisation": "bhāī",
+          "meaning": "brother"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "bhāī",
+            "meaning": "brother"
+          }
+        ],
+        "logic": "The word भाई directly means brother."
+      },
+      "etymology_story": [
+        "The word भाई (bhāī) is used in Hindi to mean brother."
+      ],
+      "pronunciation_guide": {
+        "syllables": "bhāī",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember brother when you see भाई.",
+        "connection": "The word भाई directly represents brother."
+      },
+      "examples": [
+        {
+          "hindi": "यह भाई है।",
+          "romanisation": "yah bhāī hai.",
+          "english": "This is a brother.",
+          "literal": "this brother is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे भाई चाहिए।",
+          "romanisation": "mujhe bhāī cāhie.",
+          "english": "I need a brother.",
+          "literal": "me brother is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "बेटा",
+      "romanisation": "beṭā",
+      "english": "son",
+      "english_usage": "Used to refer to son.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "बेटा",
+          "romanisation": "beṭā",
+          "meaning": "son"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "beṭā",
+            "meaning": "son"
+          }
+        ],
+        "logic": "The word बेटा directly means son."
+      },
+      "etymology_story": [
+        "The word बेटा (beṭā) is used in Hindi to mean son."
+      ],
+      "pronunciation_guide": {
+        "syllables": "beṭā",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember son when you see बेटा.",
+        "connection": "The word बेटा directly represents son."
+      },
+      "examples": [
+        {
+          "hindi": "यह बेटा है।",
+          "romanisation": "yah beṭā hai.",
+          "english": "This is a son.",
+          "literal": "this son is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे बेटा चाहिए।",
+          "romanisation": "mujhe beṭā cāhie.",
+          "english": "I need a son.",
+          "literal": "me son is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "बेटी",
+      "romanisation": "beṭī",
+      "english": "daughter",
+      "english_usage": "Used to refer to daughter.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "बेटी",
+          "romanisation": "beṭī",
+          "meaning": "daughter"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "beṭī",
+            "meaning": "daughter"
+          }
+        ],
+        "logic": "The word बेटी directly means daughter."
+      },
+      "etymology_story": [
+        "The word बेटी (beṭī) is used in Hindi to mean daughter."
+      ],
+      "pronunciation_guide": {
+        "syllables": "beṭī",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember daughter when you see बेटी.",
+        "connection": "The word बेटी directly represents daughter."
+      },
+      "examples": [
+        {
+          "hindi": "यह बेटी है।",
+          "romanisation": "yah beṭī hai.",
+          "english": "This is a daughter.",
+          "literal": "this daughter is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे बेटी चाहिए।",
+          "romanisation": "mujhe beṭī cāhie.",
+          "english": "I need a daughter.",
+          "literal": "me daughter is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "जूता",
+      "romanisation": "jūtā",
+      "english": "shoe / pair of shoes",
+      "english_usage": "Used to refer to shoe / pair of shoes.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "जूता",
+          "romanisation": "jūtā",
+          "meaning": "shoe / pair of shoes"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "jūtā",
+            "meaning": "shoe / pair of shoes"
+          }
+        ],
+        "logic": "The word जूता directly means shoe / pair of shoes."
+      },
+      "etymology_story": [
+        "The word जूता (jūtā) is used in Hindi to mean shoe / pair of shoes."
+      ],
+      "pronunciation_guide": {
+        "syllables": "jūtā",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember shoe / pair of shoes when you see जूता.",
+        "connection": "The word जूता directly represents shoe / pair of shoes."
+      },
+      "examples": [
+        {
+          "hindi": "यह जूता है।",
+          "romanisation": "yah jūtā hai.",
+          "english": "This is a shoe / pair of shoes.",
+          "literal": "this shoe / pair of shoes is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे जूता चाहिए।",
+          "romanisation": "mujhe jūtā cāhie.",
+          "english": "I need a shoe / pair of shoes.",
+          "literal": "me shoe / pair of shoes is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "चप्पल",
+      "romanisation": "cappal",
+      "english": "sandal",
+      "english_usage": "Used to refer to sandal.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "चप्पल",
+          "romanisation": "cappal",
+          "meaning": "sandal"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "cappal",
+            "meaning": "sandal"
+          }
+        ],
+        "logic": "The word चप्पल directly means sandal."
+      },
+      "etymology_story": [
+        "The word चप्पल (cappal) is used in Hindi to mean sandal."
+      ],
+      "pronunciation_guide": {
+        "syllables": "cappal",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember sandal when you see चप्पल.",
+        "connection": "The word चप्पल directly represents sandal."
+      },
+      "examples": [
+        {
+          "hindi": "यह चप्पल है।",
+          "romanisation": "yah cappal hai.",
+          "english": "This is a sandal.",
+          "literal": "this sandal is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे चप्पल चाहिए।",
+          "romanisation": "mujhe cappal cāhie.",
+          "english": "I need a sandal.",
+          "literal": "me sandal is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "बुरा",
+      "romanisation": "burā",
+      "english": "bad",
+      "english_usage": "Used to refer to bad.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "बुरा",
+          "romanisation": "burā",
+          "meaning": "bad"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "burā",
+            "meaning": "bad"
+          }
+        ],
+        "logic": "The word बुरा directly means bad."
+      },
+      "etymology_story": [
+        "The word बुरा (burā) is used in Hindi to mean bad."
+      ],
+      "pronunciation_guide": {
+        "syllables": "burā",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember bad when you see बुरा.",
+        "connection": "The word बुरा directly represents bad."
+      },
+      "examples": [
+        {
+          "hindi": "यह बुरा है।",
+          "romanisation": "yah burā hai.",
+          "english": "This is a bad.",
+          "literal": "this bad is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे बुरा चाहिए।",
+          "romanisation": "mujhe burā cāhie.",
+          "english": "I need a bad.",
+          "literal": "me bad is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "सस्ता",
+      "romanisation": "sastā",
+      "english": "cheap",
+      "english_usage": "Used to refer to cheap.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "सस्ता",
+          "romanisation": "sastā",
+          "meaning": "cheap"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "sastā",
+            "meaning": "cheap"
+          }
+        ],
+        "logic": "The word सस्ता directly means cheap."
+      },
+      "etymology_story": [
+        "The word सस्ता (sastā) is used in Hindi to mean cheap."
+      ],
+      "pronunciation_guide": {
+        "syllables": "sastā",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember cheap when you see सस्ता.",
+        "connection": "The word सस्ता directly represents cheap."
+      },
+      "examples": [
+        {
+          "hindi": "यह सस्ता है।",
+          "romanisation": "yah sastā hai.",
+          "english": "This is a cheap.",
+          "literal": "this cheap is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे सस्ता चाहिए।",
+          "romanisation": "mujhe sastā cāhie.",
+          "english": "I need a cheap.",
+          "literal": "me cheap is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "महँगा",
+      "romanisation": "mahãgā",
+      "english": "expensive",
+      "english_usage": "Used to refer to expensive.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "महँगा",
+          "romanisation": "mahãgā",
+          "meaning": "expensive"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "mahãgā",
+            "meaning": "expensive"
+          }
+        ],
+        "logic": "The word महँगा directly means expensive."
+      },
+      "etymology_story": [
+        "The word महँगा (mahãgā) is used in Hindi to mean expensive."
+      ],
+      "pronunciation_guide": {
+        "syllables": "mahãgā",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember expensive when you see महँगा.",
+        "connection": "The word महँगा directly represents expensive."
+      },
+      "examples": [
+        {
+          "hindi": "यह महँगा है।",
+          "romanisation": "yah mahãgā hai.",
+          "english": "This is a expensive.",
+          "literal": "this expensive is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे महँगा चाहिए।",
+          "romanisation": "mujhe mahãgā cāhie.",
+          "english": "I need a expensive.",
+          "literal": "me expensive is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "मोटा",
+      "romanisation": "moṭā",
+      "english": "fat / thick",
+      "english_usage": "Used to refer to fat / thick.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "मोटा",
+          "romanisation": "moṭā",
+          "meaning": "fat / thick"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "moṭā",
+            "meaning": "fat / thick"
+          }
+        ],
+        "logic": "The word मोटा directly means fat / thick."
+      },
+      "etymology_story": [
+        "The word मोटा (moṭā) is used in Hindi to mean fat / thick."
+      ],
+      "pronunciation_guide": {
+        "syllables": "moṭā",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember fat / thick when you see मोटा.",
+        "connection": "The word मोटा directly represents fat / thick."
+      },
+      "examples": [
+        {
+          "hindi": "यह मोटा है।",
+          "romanisation": "yah moṭā hai.",
+          "english": "This is a fat / thick.",
+          "literal": "this fat / thick is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे मोटा चाहिए।",
+          "romanisation": "mujhe moṭā cāhie.",
+          "english": "I need a fat / thick.",
+          "literal": "me fat / thick is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "दुबला",
+      "romanisation": "dublā",
+      "english": "thin",
+      "english_usage": "Used to refer to thin.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "दुबला",
+          "romanisation": "dublā",
+          "meaning": "thin"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "dublā",
+            "meaning": "thin"
+          }
+        ],
+        "logic": "The word दुबला directly means thin."
+      },
+      "etymology_story": [
+        "The word दुबला (dublā) is used in Hindi to mean thin."
+      ],
+      "pronunciation_guide": {
+        "syllables": "dublā",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember thin when you see दुबला.",
+        "connection": "The word दुबला directly represents thin."
+      },
+      "examples": [
+        {
+          "hindi": "यह दुबला है।",
+          "romanisation": "yah dublā hai.",
+          "english": "This is a thin.",
+          "literal": "this thin is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे दुबला चाहिए।",
+          "romanisation": "mujhe dublā cāhie.",
+          "english": "I need a thin.",
+          "literal": "me thin is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "दुबला-पतला",
+      "romanisation": "dublā-patlā",
+      "english": "thin / slight of build",
+      "english_usage": "Used to refer to thin / slight of build.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "दुबला-पतला",
+          "romanisation": "dublā-patlā",
+          "meaning": "thin / slight of build"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "dublā-patlā",
+            "meaning": "thin / slight of build"
+          }
+        ],
+        "logic": "The word दुबला-पतला directly means thin / slight of build."
+      },
+      "etymology_story": [
+        "The word दुबला-पतला (dublā-patlā) is used in Hindi to mean thin / slight of build."
+      ],
+      "pronunciation_guide": {
+        "syllables": "dublā-patlā",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember thin / slight of build when you see दुबला-पतला.",
+        "connection": "The word दुबला-पतला directly represents thin / slight of build."
+      },
+      "examples": [
+        {
+          "hindi": "यह दुबला-पतला है।",
+          "romanisation": "yah dublā-patlā hai.",
+          "english": "This is a thin / slight of build.",
+          "literal": "this thin / slight of build is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे दुबला-पतला चाहिए।",
+          "romanisation": "mujhe dublā-patlā cāhie.",
+          "english": "I need a thin / slight of build.",
+          "literal": "me thin / slight of build is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "पतला",
+      "romanisation": "patlā",
+      "english": "thin / slender",
+      "english_usage": "Used to refer to thin / slender.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "पतला",
+          "romanisation": "patlā",
+          "meaning": "thin / slender"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "patlā",
+            "meaning": "thin / slender"
+          }
+        ],
+        "logic": "The word पतला directly means thin / slender."
+      },
+      "etymology_story": [
+        "The word पतला (patlā) is used in Hindi to mean thin / slender."
+      ],
+      "pronunciation_guide": {
+        "syllables": "patlā",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember thin / slender when you see पतला.",
+        "connection": "The word पतला directly represents thin / slender."
+      },
+      "examples": [
+        {
+          "hindi": "यह पतला है।",
+          "romanisation": "yah patlā hai.",
+          "english": "This is a thin / slender.",
+          "literal": "this thin / slender is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे पतला चाहिए।",
+          "romanisation": "mujhe patlā cāhie.",
+          "english": "I need a thin / slender.",
+          "literal": "me thin / slender is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "लंबा",
+      "romanisation": "lambā",
+      "english": "tall / long",
+      "english_usage": "Used to refer to tall / long.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "लंबा",
+          "romanisation": "lambā",
+          "meaning": "tall / long"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "lambā",
+            "meaning": "tall / long"
+          }
+        ],
+        "logic": "The word लंबा directly means tall / long."
+      },
+      "etymology_story": [
+        "The word लंबा (lambā) is used in Hindi to mean tall / long."
+      ],
+      "pronunciation_guide": {
+        "syllables": "lambā",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember tall / long when you see लंबा.",
+        "connection": "The word लंबा directly represents tall / long."
+      },
+      "examples": [
+        {
+          "hindi": "यह लंबा है।",
+          "romanisation": "yah lambā hai.",
+          "english": "This is a tall / long.",
+          "literal": "this tall / long is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे लंबा चाहिए।",
+          "romanisation": "mujhe lambā cāhie.",
+          "english": "I need a tall / long.",
+          "literal": "me tall / long is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "नया",
+      "romanisation": "nayā",
+      "english": "new",
+      "english_usage": "Used to refer to new.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "नया",
+          "romanisation": "nayā",
+          "meaning": "new"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "nayā",
+            "meaning": "new"
+          }
+        ],
+        "logic": "The word नया directly means new."
+      },
+      "etymology_story": [
+        "The word नया (nayā) is used in Hindi to mean new."
+      ],
+      "pronunciation_guide": {
+        "syllables": "nayā",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember new when you see नया.",
+        "connection": "The word नया directly represents new."
+      },
+      "examples": [
+        {
+          "hindi": "यह नया है।",
+          "romanisation": "yah nayā hai.",
+          "english": "This is a new.",
+          "literal": "this new is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे नया चाहिए।",
+          "romanisation": "mujhe nayā cāhie.",
+          "english": "I need a new.",
+          "literal": "me new is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "गंदा",
+      "romanisation": "gandā",
+      "english": "dirty",
+      "english_usage": "Used to refer to dirty.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "गंदा",
+          "romanisation": "gandā",
+          "meaning": "dirty"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "gandā",
+            "meaning": "dirty"
+          }
+        ],
+        "logic": "The word गंदा directly means dirty."
+      },
+      "etymology_story": [
+        "The word गंदा (gandā) is used in Hindi to mean dirty."
+      ],
+      "pronunciation_guide": {
+        "syllables": "gandā",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember dirty when you see गंदा.",
+        "connection": "The word गंदा directly represents dirty."
+      },
+      "examples": [
+        {
+          "hindi": "यह गंदा है।",
+          "romanisation": "yah gandā hai.",
+          "english": "This is a dirty.",
+          "literal": "this dirty is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे गंदा चाहिए।",
+          "romanisation": "mujhe gandā cāhie.",
+          "english": "I need a dirty.",
+          "literal": "me dirty is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "बीमार",
+      "romanisation": "bīmār",
+      "english": "ill / sick",
+      "english_usage": "Used to refer to ill / sick.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "बीमार",
+          "romanisation": "bīmār",
+          "meaning": "ill / sick"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "bīmār",
+            "meaning": "ill / sick"
+          }
+        ],
+        "logic": "The word बीमार directly means ill / sick."
+      },
+      "etymology_story": [
+        "The word बीमार (bīmār) is used in Hindi to mean ill / sick."
+      ],
+      "pronunciation_guide": {
+        "syllables": "bīmār",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember ill / sick when you see बीमार.",
+        "connection": "The word बीमार directly represents ill / sick."
+      },
+      "examples": [
+        {
+          "hindi": "यह बीमार है।",
+          "romanisation": "yah bīmār hai.",
+          "english": "This is a ill / sick.",
+          "literal": "this ill / sick is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे बीमार चाहिए।",
+          "romanisation": "mujhe bīmār cāhie.",
+          "english": "I need a ill / sick.",
+          "literal": "me ill / sick is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "नाराज़",
+      "romanisation": "nārāz",
+      "english": "angry / displeased",
+      "english_usage": "Used to refer to angry / displeased.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "नाराज़",
+          "romanisation": "nārāz",
+          "meaning": "angry / displeased"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "nārāz",
+            "meaning": "angry / displeased"
+          }
+        ],
+        "logic": "The word नाराज़ directly means angry / displeased."
+      },
+      "etymology_story": [
+        "The word नाराज़ (nārāz) is used in Hindi to mean angry / displeased."
+      ],
+      "pronunciation_guide": {
+        "syllables": "nārāz",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember angry / displeased when you see नाराज़.",
+        "connection": "The word नाराज़ directly represents angry / displeased."
+      },
+      "examples": [
+        {
+          "hindi": "यह नाराज़ है।",
+          "romanisation": "yah nārāz hai.",
+          "english": "This is a angry / displeased.",
+          "literal": "this angry / displeased is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे नाराज़ चाहिए।",
+          "romanisation": "mujhe nārāz cāhie.",
+          "english": "I need a angry / displeased.",
+          "literal": "me angry / displeased is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "परेशान",
+      "romanisation": "pareśān",
+      "english": "troubled / upset",
+      "english_usage": "Used to refer to troubled / upset.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "परेशान",
+          "romanisation": "pareśān",
+          "meaning": "troubled / upset"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "pareśān",
+            "meaning": "troubled / upset"
+          }
+        ],
+        "logic": "The word परेशान directly means troubled / upset."
+      },
+      "etymology_story": [
+        "The word परेशान (pareśān) is used in Hindi to mean troubled / upset."
+      ],
+      "pronunciation_guide": {
+        "syllables": "pareśān",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember troubled / upset when you see परेशान.",
+        "connection": "The word परेशान directly represents troubled / upset."
+      },
+      "examples": [
+        {
+          "hindi": "यह परेशान है।",
+          "romanisation": "yah pareśān hai.",
+          "english": "This is a troubled / upset.",
+          "literal": "this troubled / upset is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे परेशान चाहिए।",
+          "romanisation": "mujhe pareśān cāhie.",
+          "english": "I need a troubled / upset.",
+          "literal": "me troubled / upset is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "ख़राब",
+      "romanisation": "kharāb",
+      "english": "bad / broken / of poor quality",
+      "english_usage": "Used to refer to bad / broken / of poor quality.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "ख़राब",
+          "romanisation": "kharāb",
+          "meaning": "bad / broken / of poor quality"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "kharāb",
+            "meaning": "bad / broken / of poor quality"
+          }
+        ],
+        "logic": "The word ख़राब directly means bad / broken / of poor quality."
+      },
+      "etymology_story": [
+        "The word ख़राब (kharāb) is used in Hindi to mean bad / broken / of poor quality."
+      ],
+      "pronunciation_guide": {
+        "syllables": "kharāb",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember bad / broken / of poor quality when you see ख़राब.",
+        "connection": "The word ख़राब directly represents bad / broken / of poor quality."
+      },
+      "examples": [
+        {
+          "hindi": "यह ख़राब है।",
+          "romanisation": "yah kharāb hai.",
+          "english": "This is a bad / broken / of poor quality.",
+          "literal": "this bad / broken / of poor quality is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे ख़राब चाहिए।",
+          "romanisation": "mujhe kharāb cāhie.",
+          "english": "I need a bad / broken / of poor quality.",
+          "literal": "me bad / broken / of poor quality is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "ख़ुश",
+      "romanisation": "khuś",
+      "english": "happy",
+      "english_usage": "Used to refer to happy.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "ख़ुश",
+          "romanisation": "khuś",
+          "meaning": "happy"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "khuś",
+            "meaning": "happy"
+          }
+        ],
+        "logic": "The word ख़ुश directly means happy."
+      },
+      "etymology_story": [
+        "The word ख़ुश (khuś) is used in Hindi to mean happy."
+      ],
+      "pronunciation_guide": {
+        "syllables": "khuś",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember happy when you see ख़ुश.",
+        "connection": "The word ख़ुश directly represents happy."
+      },
+      "examples": [
+        {
+          "hindi": "यह ख़ुश है।",
+          "romanisation": "yah khuś hai.",
+          "english": "This is a happy.",
+          "literal": "this happy is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे ख़ुश चाहिए।",
+          "romanisation": "mujhe khuś cāhie.",
+          "english": "I need a happy.",
+          "literal": "me happy is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "पागल",
+      "romanisation": "pāgal",
+      "english": "mad / crazy",
+      "english_usage": "Used to refer to mad / crazy.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "पागल",
+          "romanisation": "pāgal",
+          "meaning": "mad / crazy"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "pāgal",
+            "meaning": "mad / crazy"
+          }
+        ],
+        "logic": "The word पागल directly means mad / crazy."
+      },
+      "etymology_story": [
+        "The word पागल (pāgal) is used in Hindi to mean mad / crazy."
+      ],
+      "pronunciation_guide": {
+        "syllables": "pāgal",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember mad / crazy when you see पागल.",
+        "connection": "The word पागल directly represents mad / crazy."
+      },
+      "examples": [
+        {
+          "hindi": "यह पागल है।",
+          "romanisation": "yah pāgal hai.",
+          "english": "This is a mad / crazy.",
+          "literal": "this mad / crazy is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे पागल चाहिए।",
+          "romanisation": "mujhe pāgal cāhie.",
+          "english": "I need a mad / crazy.",
+          "literal": "me mad / crazy is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "सख़्त",
+      "romanisation": "sakht",
+      "english": "strict / severe",
+      "english_usage": "Used to refer to strict / severe.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "सख़्त",
+          "romanisation": "sakht",
+          "meaning": "strict / severe"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "sakht",
+            "meaning": "strict / severe"
+          }
+        ],
+        "logic": "The word सख़्त directly means strict / severe."
+      },
+      "etymology_story": [
+        "The word सख़्त (sakht) is used in Hindi to mean strict / severe."
+      ],
+      "pronunciation_guide": {
+        "syllables": "sakht",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember strict / severe when you see सख़्त.",
+        "connection": "The word सख़्त directly represents strict / severe."
+      },
+      "examples": [
+        {
+          "hindi": "यह सख़्त है।",
+          "romanisation": "yah sakht hai.",
+          "english": "This is a strict / severe.",
+          "literal": "this strict / severe is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे सख़्त चाहिए।",
+          "romanisation": "mujhe sakht cāhie.",
+          "english": "I need a strict / severe.",
+          "literal": "me strict / severe is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "श्री",
+      "romanisation": "śrī",
+      "english": "Mr / Lord (with deity)",
+      "english_usage": "Used to refer to mr / lord (with deity).",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "श्री",
+          "romanisation": "śrī",
+          "meaning": "Mr / Lord (with deity)"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "śrī",
+            "meaning": "Mr / Lord (with deity)"
+          }
+        ],
+        "logic": "The word श्री directly means Mr / Lord (with deity)."
+      },
+      "etymology_story": [
+        "The word श्री (śrī) is used in Hindi to mean Mr / Lord (with deity)."
+      ],
+      "pronunciation_guide": {
+        "syllables": "śrī",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember Mr / Lord (with deity) when you see श्री.",
+        "connection": "The word श्री directly represents Mr / Lord (with deity)."
+      },
+      "examples": [
+        {
+          "hindi": "यह श्री है।",
+          "romanisation": "yah śrī hai.",
+          "english": "This is a mr / lord (with deity).",
+          "literal": "this mr / lord (with deity) is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे श्री चाहिए।",
+          "romanisation": "mujhe śrī cāhie.",
+          "english": "I need a mr / lord (with deity).",
+          "literal": "me mr / lord (with deity) is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "श्रीमती",
+      "romanisation": "śrīmatī",
+      "english": "Mrs",
+      "english_usage": "Used to refer to mrs.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "श्रीमती",
+          "romanisation": "śrīmatī",
+          "meaning": "Mrs"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "śrīmatī",
+            "meaning": "Mrs"
+          }
+        ],
+        "logic": "The word श्रीमती directly means Mrs."
+      },
+      "etymology_story": [
+        "The word श्रीमती (śrīmatī) is used in Hindi to mean Mrs."
+      ],
+      "pronunciation_guide": {
+        "syllables": "śrīmatī",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember Mrs when you see श्रीमती.",
+        "connection": "The word श्रीमती directly represents Mrs."
+      },
+      "examples": [
+        {
+          "hindi": "यह श्रीमती है।",
+          "romanisation": "yah śrīmatī hai.",
+          "english": "This is a mrs.",
+          "literal": "this mrs is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे श्रीमती चाहिए।",
+          "romanisation": "mujhe śrīmatī cāhie.",
+          "english": "I need a mrs.",
+          "literal": "me mrs is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "मैडम",
+      "romanisation": "maiḍam",
+      "english": "madam",
+      "english_usage": "Used to refer to madam.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "मैडम",
+          "romanisation": "maiḍam",
+          "meaning": "madam"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "maiḍam",
+            "meaning": "madam"
+          }
+        ],
+        "logic": "The word मैडम directly means madam."
+      },
+      "etymology_story": [
+        "The word मैडम (maiḍam) is used in Hindi to mean madam."
+      ],
+      "pronunciation_guide": {
+        "syllables": "maiḍam",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember madam when you see मैडम.",
+        "connection": "The word मैडम directly represents madam."
+      },
+      "examples": [
+        {
+          "hindi": "यह मैडम है।",
+          "romanisation": "yah maiḍam hai.",
+          "english": "This is a madam.",
+          "literal": "this madam is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे मैडम चाहिए।",
+          "romanisation": "mujhe maiḍam cāhie.",
+          "english": "I need a madam.",
+          "literal": "me madam is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "सर",
+      "romanisation": "sar",
+      "english": "sir",
+      "english_usage": "Used to refer to sir.",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "सर",
+          "romanisation": "sar",
+          "meaning": "sir"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "sar",
+            "meaning": "sir"
+          }
+        ],
+        "logic": "The word सर directly means sir."
+      },
+      "etymology_story": [
+        "The word सर (sar) is used in Hindi to mean sir."
+      ],
+      "pronunciation_guide": {
+        "syllables": "sar",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember sir when you see सर.",
+        "connection": "The word सर directly represents sir."
+      },
+      "examples": [
+        {
+          "hindi": "यह सर है।",
+          "romanisation": "yah sar hai.",
+          "english": "This is a sir.",
+          "literal": "this sir is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे सर चाहिए।",
+          "romanisation": "mujhe sar cāhie.",
+          "english": "I need a sir.",
+          "literal": "me sir is-needed",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "साहब",
+      "romanisation": "sāhab",
+      "english": "Mr / sir (respectful)",
+      "english_usage": "Used to refer to mr / sir (respectful).",
+      "origin_tag": "Hindi",
+      "grouped_with": [],
+      "forms": [],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [],
+      "root_breakdown": {
+        "root": {
+          "language": "Hindi",
+          "word": "साहब",
+          "romanisation": "sāhab",
+          "meaning": "Mr / sir (respectful)"
+        },
+        "evolution": [
+          {
+            "stage": "Hindi",
+            "form": "sāhab",
+            "meaning": "Mr / sir (respectful)"
+          }
+        ],
+        "logic": "The word साहब directly means Mr / sir (respectful)."
+      },
+      "etymology_story": [
+        "The word साहब (sāhab) is used in Hindi to mean Mr / sir (respectful)."
+      ],
+      "pronunciation_guide": {
+        "syllables": "sāhab",
+        "stress": "Stress placement varies.",
+        "tips": []
+      },
+      "memory_hook": {
+        "primary": "Remember Mr / sir (respectful) when you see साहब.",
+        "connection": "The word साहब directly represents Mr / sir (respectful)."
+      },
+      "examples": [
+        {
+          "hindi": "यह साहब है।",
+          "romanisation": "yah sāhab hai.",
+          "english": "This is a mr / sir (respectful).",
+          "literal": "this mr / sir (respectful) is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मुझे साहब चाहिए।",
+          "romanisation": "mujhe sāhab cāhie.",
+          "english": "I need a mr / sir (respectful).",
+          "literal": "me mr / sir (respectful) is-needed",
+          "register": "neutral"
+        }
+      ]
+    }
+  ]
+}

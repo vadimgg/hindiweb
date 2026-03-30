@@ -20,7 +20,9 @@ const { allWords, vocabFilesCount } = Astro.props;
           hindi={word.hindi} romanisation={word.romanisation} english={word.english}
           origin_language={word.origin_language ?? word.origin_tag}
           in_hindi_via={word.in_hindi_via} word_category={word.word_category}
-          date_added={word.date_added} forms={word.forms}
+          date_added={word.date_added}
+          english_usage={word.english_usage} grouped_with={word.grouped_with}
+          forms={word.forms}
           cross_language_connections={word.cross_language_connections}
           root_breakdown={word.root_breakdown} root_parts={word.root_parts}
           root_notes={word.root_notes} root_and_origin_explanation={word.root_and_origin_explanation}
@@ -34,5 +36,5 @@ const { allWords, vocabFilesCount } = Astro.props;
   <div id="words-no-results" class="hidden py-20 text-center">
     <p class="text-zinc-600 text-sm">No words match your search.</p>
   </div>
-  <footer class="mt-20 text-xs text-zinc-700">Drop <code class="text-zinc-600">*.json</code> files into <code class="text-zinc-600">vocab/</code> to add words.</footer>
+  <footer class="mt-20 text-xs text-zinc-700">Drop <code class="text-zinc-600">*.json</code> files into <code class="text-zinc-600">vocab/words/</code> to add words.</footer>
 </div>

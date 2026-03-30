@@ -38,5 +38,20 @@ const { pronunciation_guide: pg } = Astro.props;
         <p class="text-[15px] text-slate-400 leading-relaxed" set:html={highlight(item.note)} />
       </div>
     ))}
+    {(pg.tips ?? []).map((tip) => (
+      <div class="flex gap-3 items-start">
+        {tip.language && (
+          <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wide shrink-0 mt-0.5', langColor(tip.language)]}>
+            {tip.language}
+          </span>
+        )}
+        <div>
+          {tip.sounds_like && (
+            <span class="text-slate-100 text-sm font-semibold mr-2">"{tip.sounds_like}"</span>
+          )}
+          <span class="text-[14px] text-slate-400 leading-relaxed">{tip.tip}</span>
+        </div>
+      </div>
+    ))}
   </div>
 </details>

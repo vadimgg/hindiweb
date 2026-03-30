@@ -5,9 +5,10 @@ import { highlight } from '../../../utils/highlight';
 
 interface Props {
   hookPrimary: string;
+  hookConnection: string;
   hookByLanguage: [string, string][];
 }
-const { hookPrimary, hookByLanguage } = Astro.props;
+const { hookPrimary, hookConnection, hookByLanguage } = Astro.props;
 ---
 
 <details class="group/det">
@@ -18,6 +19,9 @@ const { hookPrimary, hookByLanguage } = Astro.props;
   <div class="border-l-2 border-violet-500/50 ml-4 sm:ml-6 mb-4 px-4 sm:px-5 py-3 sm:py-4 space-y-3">
     {hookPrimary && (
       <p class="text-[15px] text-slate-200 leading-relaxed" set:html={highlight(hookPrimary)} />
+    )}
+    {hookConnection && (
+      <p class="text-[13px] text-slate-500 leading-relaxed italic" set:html={highlight(hookConnection)} />
     )}
     {hookByLanguage.map(([lang, text]) => (
       <div>

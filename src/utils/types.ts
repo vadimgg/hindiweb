@@ -2,13 +2,17 @@
 
 export interface Example { hindi: string; romanisation: string; english: string; literal?: string; register?: string; note?: string; }
 export interface Form { label: string; hindi: string; roman: string; }
+export interface GroupedWith { hindi: string; romanisation: string; english: string; register_note?: string; }
 export interface RootPart { element: string; script: string; meaning: string; }
 export interface CrossLangItem { language?: string; word?: string; romanisation?: string; meaning?: string; note?: string; }
 export interface CrossLangConnections { true_relatives?: CrossLangItem[]; useful_coincidences?: CrossLangItem[]; }
 export interface PronBreakdownItem { syllable: string; sound?: string; note?: string; }
 export interface PronExtraNote { language: string; note: string; }
-export interface PronunciationGuide { syllables?: string; breakdown?: PronBreakdownItem[]; stress?: string; extra_notes?: PronExtraNote[]; }
-export interface RootBreakdown { root?: string; evolution?: string; logic?: string; }
+export interface PronTip { sounds_like?: string; language?: string; tip: string; }
+export interface PronunciationGuide { syllables?: string; breakdown?: PronBreakdownItem[]; stress?: string; extra_notes?: PronExtraNote[]; tips?: PronTip[]; }
+export interface RootEvolutionStep { stage: string; form: string; meaning: string; }
+export interface RootRoot { language: string; word: string; romanisation: string; meaning: string; }
+export interface RootBreakdown { root?: string | RootRoot; evolution?: string | RootEvolutionStep[]; logic?: string; }
 export type MemoryHook = Record<string, string>;
 export interface UrduPunjabiEntry { script?: string; romanisation?: string; note?: string; }
 export interface UrduPunjabi { urdu?: UrduPunjabiEntry; punjabi?: UrduPunjabiEntry; }

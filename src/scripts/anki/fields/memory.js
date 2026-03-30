@@ -2,14 +2,18 @@
 import { esc, langHex, capFirst, aSection } from './utils.js';
 
 export function buildAnkiMemory(word) {
-  const hook    = word.memory_hook || {};
-  const primary = hook.primary || '';
-  const byLang  = Object.entries(hook).filter(([k]) => k !== 'primary');
-  if (!primary && byLang.length === 0) return '';
+  const hook       = word.memory_hook || {};
+  const primary    = hook.primary || '';
+  const connection = hook.connection || '';
+  const byLang     = Object.entries(hook).filter(([k]) => k !== 'primary' && k !== 'connection');
+  if (!primary && !connection && byLang.length === 0) return '';
 
   let inner = '';
   if (primary) {
-    inner += `<p style="font-size:.9rem;color:#e2e8f0;line-height:1.7;margin:0 0 .75rem 0;">${esc(primary)}</p>`;
+    inner += `<p style="font-size:.9rem;color:#e2e8f0;line-height:1.7;margin:0 0 .5rem 0;">${esc(primary)}</p>`;
+  }
+  if (connection) {
+    inner += `<p style="font-size:.82rem;color:#64748b;font-style:italic;line-height:1.65;margin:0 0 .75rem 0;">${esc(connection)}</p>`;
   }
   byLang.forEach(([lang, text]) => {
     const col = langHex(capFirst(lang));
