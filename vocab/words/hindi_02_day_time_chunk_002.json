@@ -1,0 +1,536 @@
+{
+  "title": "day time",
+  "words": [
+    {
+      "hindi": "शनिवार",
+      "romanisation": "śanivār",
+      "english": "Saturday",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "invariable", "hindi": "शनिवार", "roman": "śanivār" },
+        { "label": "oblique (with postposition)", "hindi": "शनिवार को", "roman": "śanivār ko" },
+        { "label": "colloquial short form", "hindi": "शनि", "roman": "śani" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "शनिवासर",
+            "romanisation": "śanivāsara",
+            "meaning": "day of Saturn / day of the slow-moving one",
+            "note": "Direct source — शनि (Saturn; the slow-moving planet) + वासर (day)"
+          },
+          {
+            "language": "English",
+            "word": "Saturday",
+            "romanisation": "Saturday",
+            "meaning": "Saturn's day",
+            "note": "Both Saturday and शनिवार mean 'Saturn's day' — English preserved the Roman name Saturn, Hindi preserved the Sanskrit name Śani"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "shiny",
+            "romanisation": "shiny",
+            "meaning": "bright, gleaming",
+            "note": "śani sounds like 'shany/shiny' — though Saturn is actually the opposite (dark and slow), this sonic hook is useful for recall"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "shani",
+          "language": "English",
+          "note": "The name Shani is used in Indian English for the Saturn deity — knowing Saturday = Shani's day makes śanivār transparent"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "शनि",
+          "romanisation": "śani",
+          "meaning": "the slow-moving one; the planet Saturn; the deity of Saturn"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "śani-vāsara", "meaning": "Saturn-day" },
+          { "stage": "Prakrit / early Hindi", "form": "śanivāra", "meaning": "Saturn-day" },
+          { "stage": "Hindi", "form": "शनिवार", "meaning": "Saturday" }
+        ],
+        "logic": "शनि comes from a root meaning 'slow' — Saturn moves more slowly across the sky than any other visible planet, taking about 29 years to orbit the Sun. The day was named after this slow, weighty planet."
+      },
+      "etymology_story": [
+        "The Sanskrit name शनि derives from a root meaning 'slow-moving', describing Saturn's sluggish path across the sky compared to other planets.",
+        "Saturn was considered a powerful and somewhat inauspicious planet in Hindu astrology, and शनि became a deity associated with discipline and karma.",
+        "The day śanivāsara (Saturn's day) contracted to शनिवार, exactly parallel to English Saturday from Latin Saturni dies."
+      ],
+      "pronunciation_guide": {
+        "syllables": "śa · ni · vār",
+        "stress": "roughly even, with a slight lengthening on the final vār",
+        "tips": [
+          {
+            "sounds_like": "shani",
+            "language": "English",
+            "tip": "the first two syllables 'śani' are pronounced exactly like the Indian English name 'Shani'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A large ringed planet Saturn sitting heavily on a calendar page, its rings casting slow, wide shadows across Saturday's box",
+        "connection": "The ringed Saturn image directly encodes शनि (Sanskrit name for Saturn), and its slow, heavy presence matches the meaning — शनिवार is Saturn's day"
+      },
+      "examples": [
+        {
+          "hindi": "शनिवार को हम बाज़ार जाते हैं।",
+          "romanisation": "śanivār ko ham bāzār jāte haĩ.",
+          "english": "On Saturday we go to the market.",
+          "literal": "Saturday on we market go are",
+          "register": "casual"
+        },
+        {
+          "hindi": "शुक्रवार के बाद शनिवार होता है।",
+          "romanisation": "śukravār ke bād śanivār hotā hai.",
+          "english": "Saturday comes after Friday.",
+          "literal": "Friday after Saturday happens is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "इस शनिवार मेरी बहन का विवाह है।",
+          "romanisation": "is śanivār merī bahan kā vivāh hai.",
+          "english": "My sister's wedding is this Saturday.",
+          "literal": "this Saturday my sister's wedding is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "शनिवार और रविवार को दफ़्तर बंद रहता है।",
+          "romanisation": "śanivār aur ravivār ko daftar band rahtā hai.",
+          "english": "The office remains closed on Saturday and Sunday.",
+          "literal": "Saturday and Sunday on office closed remains is",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "रविवार",
+      "romanisation": "ravivār",
+      "english": "Sunday",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "invariable", "hindi": "रविवार", "roman": "ravivār" },
+        { "label": "oblique (with postposition)", "hindi": "रविवार को", "roman": "ravivār ko" },
+        { "label": "colloquial short form", "hindi": "रवि", "roman": "ravi" },
+        { "label": "alternative colloquial name", "hindi": "इतवार", "roman": "itvār" }
+      ],
+      "punjabi_note": "इतवार (itvār) is widely used in Delhi/NCR Punjabi-influenced speech as an informal alternative to रविवार. Both forms are understood everywhere.",
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "रविवासर",
+            "romanisation": "ravivāsara",
+            "meaning": "day of the Sun",
+            "note": "Direct source — रवि (the Sun) + वासर (day)"
+          },
+          {
+            "language": "English",
+            "word": "Sunday",
+            "romanisation": "Sunday",
+            "meaning": "Sun's day",
+            "note": "Both Sunday and रविवार mean 'the Sun's day' — exact parallel in concept across two unrelated language families"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "Ravi",
+            "romanisation": "Ravi",
+            "meaning": "a common Indian personal name meaning 'Sun'",
+            "note": "The name Ravi (Sun) is familiar to English speakers from Indian contexts — knowing रवि = Sun makes रविवार immediately transparent"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "Ravi",
+          "language": "English",
+          "note": "The Indian name Ravi (meaning 'Sun') is the first half of रविवार — Sunday is literally 'Ravi's day'"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "रवि",
+          "romanisation": "ravi",
+          "meaning": "the Sun; one of the names of the Sun deity"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "ravi-vāsara", "meaning": "Sun-day" },
+          { "stage": "Prakrit / early Hindi", "form": "ravivāra", "meaning": "Sun-day" },
+          { "stage": "Hindi", "form": "रविवार", "meaning": "Sunday" }
+        ],
+        "logic": "रवि is one of the Sanskrit names for the Sun, related to the idea of radiance and travel (the Sun 'travels' across the sky). Sunday, the Sun's day, was the first day of the ancient week."
+      },
+      "etymology_story": [
+        "रवि is a Sanskrit name for the Sun, related to the idea of radiance and constant motion across the sky.",
+        "In both Indian and Western traditions, the Sun was assigned the first day of the week, creating both Sunday and रविवार.",
+        "The formal रविवार coexists in Hindi with the colloquial इतवार (from Arabic ithnain influenced Urdu), but रविवार is the standard written form."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ra · vi · vār",
+        "stress": "roughly even; the 'v' in vār is soft, close to English 'v'",
+        "tips": [
+          {
+            "sounds_like": "Ravi",
+            "language": "English",
+            "tip": "the first two syllables 'ravi' are pronounced exactly like the Indian name 'Ravi'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A blazing Sun with radiant beams shining down on a calendar page, the word RAVI written in golden light across Sunday's square",
+        "connection": "रवि means the Sun — the Sun shining on the calendar directly encodes the word and its meaning as Sunday, the Sun's day"
+      },
+      "examples": [
+        {
+          "hindi": "रविवार को मैं देर तक सोता हूँ।",
+          "romanisation": "ravivār ko maĩ der tak sotā hū̃.",
+          "english": "On Sunday I sleep in late.",
+          "literal": "Sunday on I late until sleep am",
+          "register": "casual"
+        },
+        {
+          "hindi": "शनिवार और रविवार को दफ़्तर बंद रहता है।",
+          "romanisation": "śanivār aur ravivār ko daftar band rahtā hai.",
+          "english": "The office is closed on Saturday and Sunday.",
+          "literal": "Saturday and Sunday on office closed remains is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "हर रविवार को हम परिवार के साथ खाना खाते हैं।",
+          "romanisation": "har ravivār ko ham parivār ke sāth khānā khāte haĩ.",
+          "english": "Every Sunday we eat with the family.",
+          "literal": "every Sunday on we family with food eat are",
+          "register": "casual"
+        },
+        {
+          "hindi": "अगला रविवार बहुत व्यस्त रहेगा।",
+          "romanisation": "aglā ravivār bahut vyast rahegā.",
+          "english": "Next Sunday will be very busy.",
+          "literal": "next Sunday very busy will-remain",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "आज",
+      "romanisation": "āj",
+      "english": "today",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "base form (invariable adverb)", "hindi": "आज", "roman": "āj" },
+        { "label": "possessive / genitive (today's)", "hindi": "आज का / आज की", "roman": "āj kā / āj kī" },
+        { "label": "common collocation", "hindi": "आज भी", "roman": "āj bhī" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "अद्य",
+            "romanisation": "adya",
+            "meaning": "today",
+            "note": "आज is the Prakrit descendant of Sanskrit adya (today) — the 'd' softened and vowels shifted over centuries"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Hebrew",
+            "word": "היום",
+            "romanisation": "hayom",
+            "meaning": "today",
+            "note": "No shared ancestry, but both are single short words for 'today' — knowing the pattern of short time-adverbs in Hindi helps"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "age",
+          "language": "English",
+          "note": "'āj' sounds very close to 'age' — imagine 'today is the age of something' to anchor the sound to the meaning"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "अद्य",
+          "romanisation": "adya",
+          "meaning": "today, on this day"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "adya", "meaning": "today" },
+          { "stage": "Prakrit", "form": "ajja", "meaning": "today" },
+          { "stage": "Apabhraṁśa", "form": "āja", "meaning": "today" },
+          { "stage": "Hindi", "form": "आज", "meaning": "today" }
+        ],
+        "logic": "The Sanskrit adya ('this day') went through a series of sound changes — the 'd' weakened, vowels shifted — to arrive at the crisp modern आज."
+      },
+      "etymology_story": [
+        "The Sanskrit word adya meant 'on this day' and was built from a root referring to the present moment.",
+        "Through Prakrit it became ajja, then shortened further as the language evolved.",
+        "Modern Hindi आज preserves the ancient meaning perfectly — just in a much more compact form."
+      ],
+      "pronunciation_guide": {
+        "syllables": "āj",
+        "stress": "single syllable; the ā is long, like the 'a' in 'father'",
+        "tips": [
+          {
+            "sounds_like": "age",
+            "language": "English",
+            "tip": "'āj' sounds almost exactly like the English word 'age' — same vowel and ending"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A large calendar with today's date circled in red, a pointing finger pressed right on the circled square",
+        "connection": "The finger pointing at today's circled date is a purely visual 'this day right now' — exactly what आज means"
+      },
+      "examples": [
+        {
+          "hindi": "आज मौसम बहुत अच्छा है।",
+          "romanisation": "āj mausam bahut acchā hai.",
+          "english": "The weather is very nice today.",
+          "literal": "today weather very good is",
+          "register": "casual"
+        },
+        {
+          "hindi": "आज सोमवार है।",
+          "romanisation": "āj somvār hai.",
+          "english": "Today is Monday.",
+          "literal": "today Monday is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "आज का काम आज ही करो।",
+          "romanisation": "āj kā kām āj hī karo.",
+          "english": "Do today's work today itself.",
+          "literal": "today's work today only do",
+          "register": "proverb"
+        },
+        {
+          "hindi": "क्या तुम आज घर पर हो?",
+          "romanisation": "kyā tum āj ghar par ho?",
+          "english": "Are you at home today?",
+          "literal": "what you today home on are",
+          "register": "casual"
+        }
+      ]
+    },
+    {
+      "hindi": "कल",
+      "romanisation": "kal",
+      "english": "yesterday / tomorrow",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "base form (invariable adverb)", "hindi": "कल", "roman": "kal" },
+        { "label": "possessive — yesterday's / tomorrow's", "hindi": "कल का / कल की", "roman": "kal kā / kal kī" },
+        { "label": "clarified: yesterday", "hindi": "बीता कल", "roman": "bītā kal" },
+        { "label": "clarified: tomorrow", "hindi": "आने वाला कल", "roman": "āne vālā kal" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "कल्य",
+            "romanisation": "kalya",
+            "meaning": "the next day; tomorrow; the day before",
+            "note": "कल descends from Sanskrit kalya, which also referred to the adjacent day — the ambiguity between yesterday and tomorrow is ancient"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "calendar",
+            "romanisation": "calendar",
+            "meaning": "a system for tracking days",
+            "note": "Both 'kal' and 'calendar' relate to counting days — not shared ancestry, but the sonic link helps remember that कल is about days"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "call",
+          "language": "English",
+          "note": "'kal' sounds like 'call' — imagine calling someone about either yesterday's news or tomorrow's plans"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "कल्य",
+          "romanisation": "kalya",
+          "meaning": "the adjacent day (the day before or after today)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "kalya", "meaning": "the next/previous day" },
+          { "stage": "Prakrit", "form": "kalla", "meaning": "tomorrow / yesterday" },
+          { "stage": "Hindi", "form": "कल", "meaning": "yesterday / tomorrow" }
+        ],
+        "logic": "The original Sanskrit word referred to 'the adjacent day' without specifying direction — the ambiguity between past and future was built into the word from the start. Context (past/present tense) resolves it in speech."
+      },
+      "etymology_story": [
+        "The Sanskrit word kalya referred to 'the adjacent day' — the day neighbouring today, whether past or future.",
+        "This built-in ambiguity carried through Prakrit and into Hindi unchanged.",
+        "In modern Hindi, कल means both yesterday and tomorrow — the verb tense in the sentence tells you which direction in time."
+      ],
+      "pronunciation_guide": {
+        "syllables": "kal",
+        "stress": "single syllable; short 'a' as in 'cut'",
+        "tips": [
+          {
+            "sounds_like": "cull",
+            "language": "English",
+            "tip": "'kal' sounds like English 'cull' — same short vowel and 'l' ending"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A calendar page with today's date circled, and two arrows — one pointing left to yesterday's square, one pointing right to tomorrow's square — both labelled with the same question mark",
+        "connection": "The double arrow captures कल's unique ambiguity: the same word points both to yesterday and tomorrow — only context resolves the direction"
+      },
+      "examples": [
+        {
+          "hindi": "कल मैं दिल्ली गया था।",
+          "romanisation": "kal maĩ dillī gayā thā.",
+          "english": "Yesterday I went to Delhi.",
+          "literal": "yesterday I Delhi went was",
+          "register": "casual"
+        },
+        {
+          "hindi": "कल मेरा इंटरव्यू है।",
+          "romanisation": "kal merā iṇṭarvyu hai.",
+          "english": "Tomorrow I have an interview.",
+          "literal": "tomorrow my interview is",
+          "register": "casual"
+        },
+        {
+          "hindi": "कल का अखबार कहाँ है?",
+          "romanisation": "kal kā akhbār kahā̃ hai?",
+          "english": "Where is yesterday's newspaper?",
+          "literal": "yesterday's newspaper where is",
+          "register": "casual"
+        },
+        {
+          "hindi": "आज का काम कल पर मत छोड़ो।",
+          "romanisation": "āj kā kām kal par mat choṛo.",
+          "english": "Don't leave today's work for tomorrow.",
+          "literal": "today's work tomorrow on not leave",
+          "register": "proverb"
+        }
+      ]
+    },
+    {
+      "hindi": "परसों",
+      "romanisation": "parsõ",
+      "english": "day before yesterday / day after tomorrow",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "base form (invariable adverb)", "hindi": "परसों", "roman": "parsõ" },
+        { "label": "possessive (that day's)", "hindi": "परसों का / परसों की", "roman": "parsõ kā / parsõ kī" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "परश्वस्",
+            "romanisation": "paraśvas",
+            "meaning": "the day after tomorrow; two days away",
+            "note": "परसों descends from Sanskrit paraśvas, meaning the second day away from today — again with no directional specification"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Russian",
+            "word": "послезавтра",
+            "romanisation": "poslezavtra",
+            "meaning": "the day after tomorrow",
+            "note": "Russian has a single word for the day after tomorrow, just as Hindi does — both languages are more precise about near-future days than English"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "parson",
+          "language": "English",
+          "note": "'parsõ' sounds close to 'parson' (a vicar/priest) — imagine the parson arriving two days away, always just out of reach"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "परश्वस्",
+          "romanisation": "paraśvas",
+          "meaning": "two days from today (the day beyond the adjacent day)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "paraśvas", "meaning": "two days from today" },
+          { "stage": "Prakrit", "form": "parassu", "meaning": "two days from today" },
+          { "stage": "Hindi", "form": "परसों", "meaning": "day before yesterday / day after tomorrow" }
+        ],
+        "logic": "Like कल (the adjacent day), परसों referred to 'the day beyond the adjacent day' — two days away from today in either direction. Context and verb tense determine whether it is past or future."
+      },
+      "etymology_story": [
+        "The Sanskrit paraśvas meant 'the second day from today' — built from para (beyond, further) and śvas (the adjacent day).",
+        "This same dual-directional ambiguity that exists in कल (yesterday/tomorrow) was preserved in परसों for the two-days-away time point.",
+        "Modern Hindi uses परसों for both 'day before yesterday' and 'day after tomorrow', with the sentence's tense making the meaning clear."
+      ],
+      "pronunciation_guide": {
+        "syllables": "par · sõ",
+        "stress": "roughly even; the final syllable has a nasal quality (the tilde ̃ on o)",
+        "tips": [
+          {
+            "sounds_like": "parson",
+            "language": "English",
+            "tip": "'parsõ' sounds like 'parson' minus the final n — the nasal tilde replaces it"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A calendar showing today's date circled, with two identical arrows stretching two squares in each direction — left to 'day before yesterday', right to 'day after tomorrow' — both squares shaded the same colour",
+        "connection": "The twin two-square arrows capture परसों's symmetrical ambiguity — two days away in either direction, just like कल was one day away"
+      },
+      "examples": [
+        {
+          "hindi": "परसों मेरी फ़्लाइट है।",
+          "romanisation": "parsõ merī flāiṭ hai.",
+          "english": "My flight is the day after tomorrow.",
+          "literal": "day-after-tomorrow my flight is",
+          "register": "casual"
+        },
+        {
+          "hindi": "परसों बहुत तेज़ बारिश हुई थी।",
+          "romanisation": "parsõ bahut tez bāriś huī thī.",
+          "english": "The day before yesterday there was very heavy rain.",
+          "literal": "day-before-yesterday very hard rain happened was",
+          "register": "casual"
+        },
+        {
+          "hindi": "कल नहीं, परसों आना।",
+          "romanisation": "kal nahī̃, parsõ ānā.",
+          "english": "Don't come tomorrow, come the day after.",
+          "literal": "tomorrow not, day-after-tomorrow come",
+          "register": "casual"
+        },
+        {
+          "hindi": "परसों से परसों तक — यही हमारा शेड्यूल है।",
+          "romanisation": "parsõ se parsõ tak — yahī hamārā śeḍyūl hai.",
+          "english": "From day before yesterday to day after tomorrow — that is our schedule.",
+          "literal": "two-days-back from two-days-forward until — this our schedule is",
+          "register": "colloquial"
+        }
+      ]
+    }
+  ]
+}

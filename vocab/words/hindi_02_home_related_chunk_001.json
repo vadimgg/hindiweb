@@ -1,0 +1,550 @@
+{
+  "title": "home related",
+  "words": [
+    {
+      "hindi": "घर",
+      "romanisation": "ghar",
+      "english": "home / house",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "oblique singular", "hindi": "घर", "roman": "ghar" },
+        { "label": "plural", "hindi": "घर", "roman": "ghar" },
+        { "label": "oblique plural", "hindi": "घरों", "roman": "gharõ" },
+        { "label": "compound / possessive", "hindi": "घर का / घर की / घर के", "roman": "ghar kā / ghar kī / ghar ke" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "गृह",
+            "romanisation": "gṛha",
+            "meaning": "house, home",
+            "note": "घर is the direct Hindi descendant of Sanskrit गृह, with the consonant cluster simplified through Prakrit"
+          },
+          {
+            "language": "Punjabi",
+            "word": "ਘਰ",
+            "romanisation": "ghar",
+            "meaning": "home / house",
+            "note": "Identical in both form and meaning — shared inheritance from the same Sanskrit root"
+          },
+          {
+            "language": "Persian",
+            "word": "گر",
+            "romanisation": "gar",
+            "meaning": "dwelling, abode (poetic/archaic)",
+            "note": "Parallel development from a shared Indo-Iranian root, reinforcing the idea of a sheltered dwelling"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "garret",
+            "romanisation": "garret",
+            "meaning": "a room at the top of a house",
+            "note": "Sounds somewhat like 'ghar' and is also a domestic space — helps anchor the 'house' meaning without any etymological link"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "gar",
+          "language": "English",
+          "note": "'gar' as in 'garage' — a place where things are sheltered, just as a घर shelters a family"
+        },
+        {
+          "word": "גר",
+          "language": "Hebrew",
+          "note": "גר (gar) means 'he lives/dwells' — a helpful coincidence since घर is where one lives"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "गृह",
+          "romanisation": "gṛha",
+          "meaning": "house, home, dwelling"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "गृह (gṛha)", "meaning": "house, home" },
+          { "stage": "Prakrit", "form": "ghara", "meaning": "house" },
+          { "stage": "Apabhraṃśa", "form": "ghara", "meaning": "house" },
+          { "stage": "Hindi", "form": "घर (ghar)", "meaning": "home / house" }
+        ],
+        "logic": "The Sanskrit root gṛha referred to a built dwelling; as the word moved through Prakrit the cluster simplified to 'ghar', keeping the core meaning intact."
+      },
+      "etymology_story": [
+        "The word goes back to Sanskrit गृह (gṛha), the standard word for a house or home.",
+        "As Sanskrit evolved into Prakrit, the consonant cluster gṛ simplified into the easier 'ghar'.",
+        "The form passed unchanged through Apabhraṃśa into modern Hindi as घर, carrying the full warmth of 'home' along with the literal meaning of 'house'."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ghar",
+        "stress": "single syllable — said as one short, clear unit",
+        "tips": [
+          {
+            "sounds_like": "gar",
+            "language": "English",
+            "tip": "pronounce the 'g' exactly as in 'garden', then end with a soft 'r' — the 'a' is open like in 'car'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A warm, glowing house seen through a rain-streaked window — inside a family sits around a table, a single light bulb hanging overhead",
+        "connection": "The compact one-syllable shape of घर mirrors how home is the simplest, most central concept in life — and 'ghar' rhymes with the English word 'far', reminding you that home is always where you measure distance from"
+      },
+      "examples": [
+        {
+          "hindi": "मेरा घर बहुत बड़ा है।",
+          "romanisation": "merā ghar bahut baṛā hai.",
+          "english": "My house is very big.",
+          "literal": "my house very big is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "तुम घर कब आओगे?",
+          "romanisation": "tum ghar kab āoge?",
+          "english": "When will you come home?",
+          "literal": "you home when will-come",
+          "register": "casual"
+        },
+        {
+          "hindi": "उनके घर में एक सुंदर बगीचा है।",
+          "romanisation": "unke ghar mẽ ek sundar bagīcā hai.",
+          "english": "There is a beautiful garden in their house.",
+          "literal": "their house in one beautiful garden is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "घर के बाहर एक पुराना दरवाज़ा था।",
+          "romanisation": "ghar ke bāhar ek purānā darvāzā thā.",
+          "english": "There was an old door outside the house.",
+          "literal": "house of outside one old door was",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "रसोई",
+      "romanisation": "rasoī",
+      "english": "kitchen",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "direct singular", "hindi": "रसोई", "roman": "rasoī" },
+        { "label": "oblique singular", "hindi": "रसोई", "roman": "rasoī" },
+        { "label": "plural", "hindi": "रसोइयाँ", "roman": "rasoiyā̃" },
+        { "label": "compound", "hindi": "रसोई घर", "roman": "rasoī ghar" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "रसवती",
+            "romanisation": "rasavatī",
+            "meaning": "a place rich in flavours / a cooking room",
+            "note": "रसोई descends from Sanskrit रसवती, literally 'that which has rasa (flavour/juice)' — the place where flavours are created"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "sauce",
+            "romanisation": "sauce",
+            "meaning": "a liquid flavouring for food",
+            "note": "Both 'sauce' and रसोई share the idea of liquid flavour — रस means juice/flavour, and a sauce is the essence of kitchen cooking"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "rosy",
+          "language": "English",
+          "note": "'rasoī' sounds close to 'rosy' — imagine a rosy-cheeked cook in the kitchen"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "रस",
+          "romanisation": "rasa",
+          "meaning": "juice, flavour, essence, taste"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "रसवती (rasavatī)", "meaning": "place rich in flavour / cooking room" },
+          { "stage": "Prakrit", "form": "rasoi", "meaning": "kitchen" },
+          { "stage": "Hindi", "form": "रसोई (rasoī)", "meaning": "kitchen" }
+        ],
+        "logic": "The root rasa meant taste, juice, or essence — the kitchen is literally 'the place of flavours', where raw ingredients are transformed into something that has taste."
+      },
+      "etymology_story": [
+        "The word is built on Sanskrit रस (rasa), meaning juice, flavour, or the essential quality of something.",
+        "The suffix -vatī made it 'that which is full of rasa' — describing the kitchen as the room where taste is created.",
+        "Through Prakrit the form shortened to rasoī, arriving in Hindi as रसोई with the same core meaning: the room of flavours."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ra · so · ī",
+        "stress": "stress falls on the middle syllable 'so'; the final 'ī' is a distinct long vowel",
+        "tips": [
+          {
+            "sounds_like": "rosy",
+            "language": "English",
+            "tip": "the 'so·ī' ending sounds close to 'soee' — almost like 'rosy' said quickly"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A stone kitchen with copper pots bubbling over a fire, aromatic steam curling up from the rasa — the juice — of a rich curry",
+        "connection": "The image of steaming flavoured liquid (rasa) directly reflects the Sanskrit root of रसोई — the kitchen is the room where rasa is made"
+      },
+      "examples": [
+        {
+          "hindi": "रसोई में बहुत अच्छी खुशबू आ रही है।",
+          "romanisation": "rasoī mẽ bahut acchī khushbū ā rahī hai.",
+          "english": "A very nice smell is coming from the kitchen.",
+          "literal": "kitchen in very good smell coming is",
+          "register": "casual"
+        },
+        {
+          "hindi": "माँ रसोई में खाना बना रही हैं।",
+          "romanisation": "mā̃ rasoī mẽ khānā banā rahī haĩ.",
+          "english": "Mum is cooking in the kitchen.",
+          "literal": "mother kitchen in food making is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "हमारे घर की रसोई बहुत छोटी है।",
+          "romanisation": "hamāre ghar kī rasoī bahut choṭī hai.",
+          "english": "The kitchen in our house is very small.",
+          "literal": "our house of kitchen very small is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "रसोई का नल खराब हो गया है।",
+          "romanisation": "rasoī kā nal kharāb ho gayā hai.",
+          "english": "The kitchen tap has broken.",
+          "literal": "kitchen of tap broken become gone is",
+          "register": "casual"
+        }
+      ]
+    },
+    {
+      "hindi": "बाथरूम",
+      "romanisation": "bāthrūm",
+      "english": "bathroom",
+      "origin_tag": "English",
+      "forms": [
+        { "label": "direct singular", "hindi": "बाथरूम", "roman": "bāthrūm" },
+        { "label": "oblique singular", "hindi": "बाथरूम", "roman": "bāthrūm" },
+        { "label": "plural", "hindi": "बाथरूम", "roman": "bāthrūm" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "English",
+            "word": "bathroom",
+            "romanisation": "bathroom",
+            "meaning": "a room with a bath/shower and often a toilet",
+            "note": "Direct borrowing from English — the Hindi word is a phonetic adaptation of the English original"
+          }
+        ],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [
+        {
+          "word": "bathroom",
+          "language": "English",
+          "note": "Essentially the same word — 'bāthrūm' is the Indianised pronunciation of 'bathroom'"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "English",
+          "word": "bath + room",
+          "romanisation": "bath + room",
+          "meaning": "a room containing a bath"
+        },
+        "evolution": [
+          { "stage": "Old English", "form": "bæth", "meaning": "act of bathing, bathing water" },
+          { "stage": "English", "form": "bathroom", "meaning": "room with bathing facilities" },
+          { "stage": "Hindi (loanword)", "form": "बाथरूम (bāthrūm)", "meaning": "bathroom" }
+        ],
+        "logic": "Borrowed wholesale from English during the colonial period and later with Westernisation of Indian homes — the concept of a dedicated bathroom room was imported along with the word."
+      },
+      "etymology_story": [
+        "The Old English word bæth referred simply to bathing or the water used for bathing.",
+        "In English it combined with 'room' to describe a dedicated room for washing.",
+        "Hindi adopted the compound word bāthrūm directly, making it one of the clearest English loans in everyday Hindi domestic vocabulary."
+      ],
+      "pronunciation_guide": {
+        "syllables": "bāth · rūm",
+        "stress": "stress on the first syllable 'bāth'; the 'oo' in rūm is long",
+        "tips": [
+          {
+            "sounds_like": "bathroom",
+            "language": "English",
+            "tip": "pronounced almost identically to English 'bathroom' — the main difference is a slightly longer 'aa' in the first syllable"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A tiled room with a large copper bucket of water, a neatly folded towel on the rack, and a bar of soap on the ledge — unmistakably a bathroom in an Indian home",
+        "connection": "The image maps directly to an Indian-style बाथरूम — the bucket replaces the bathtub but the room is the same concept the English word describes"
+      },
+      "examples": [
+        {
+          "hindi": "बाथरूम में साबुन नहीं है।",
+          "romanisation": "bāthrūm mẽ sābun nahī̃ hai.",
+          "english": "There is no soap in the bathroom.",
+          "literal": "bathroom in soap not is",
+          "register": "casual"
+        },
+        {
+          "hindi": "बाथरूम का दरवाज़ा बंद था।",
+          "romanisation": "bāthrūm kā darvāzā band thā.",
+          "english": "The bathroom door was closed.",
+          "literal": "bathroom of door closed was",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मैंने बाथरूम में तौलिया छोड़ दिया।",
+          "romanisation": "maĩne bāthrūm mẽ tauliyā choṛ diyā.",
+          "english": "I left the towel in the bathroom.",
+          "literal": "I-by bathroom in towel leaving gave",
+          "register": "casual"
+        },
+        {
+          "hindi": "इस घर में दो बाथरूम हैं।",
+          "romanisation": "is ghar mẽ do bāthrūm haĩ.",
+          "english": "There are two bathrooms in this house.",
+          "literal": "this house in two bathroom are",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "शौचालय",
+      "romanisation": "śaucālay",
+      "english": "toilet",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "direct singular", "hindi": "शौचालय", "roman": "śaucālay" },
+        { "label": "oblique singular", "hindi": "शौचालय", "roman": "śaucālay" },
+        { "label": "plural", "hindi": "शौचालय", "roman": "śaucālay" },
+        { "label": "informal / colloquial equivalent", "hindi": "टॉयलेट", "roman": "ṭāyleṭ" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "शौच",
+            "romanisation": "śauca",
+            "meaning": "purity, cleanliness, purification (especially bodily)"
+          },
+          {
+            "language": "Sanskrit",
+            "word": "आलय",
+            "romanisation": "ālaya",
+            "meaning": "abode, place, house",
+            "note": "शौचालय is a compound of शौच (purification) + आलय (place) — 'the place of purification'"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "shower",
+            "romanisation": "shower",
+            "meaning": "a washing facility",
+            "note": "The śau- sound in शौचालय vaguely echoes 'shower' — both relate to cleansing the body"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "show",
+          "language": "English",
+          "note": "The first syllable 'śau' sounds close to 'show' — imagine a sign being shown at the entrance to the toilet facility"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "शुच्",
+          "romanisation": "śuc",
+          "meaning": "to be pure, to purify"
+        },
+        "evolution": [
+          { "stage": "Sanskrit root", "form": "śuc", "meaning": "to purify" },
+          { "stage": "Sanskrit noun", "form": "शौच (śauca)", "meaning": "purity, bodily purification" },
+          { "stage": "Sanskrit compound", "form": "शौचालय (śaucālaya)", "meaning": "place of purification" },
+          { "stage": "Hindi", "form": "शौचालय (śaucālay)", "meaning": "toilet, lavatory" }
+        ],
+        "logic": "The Sanskrit concept of śauca (ritual and physical cleanliness) was combined with ālaya (place) to create a formal, polite term for the place where bodily purification occurs — used in official, public, and written contexts."
+      },
+      "etymology_story": [
+        "The root śuc in Sanskrit means 'to be pure' or 'to purify'; from it came शौच (śauca), meaning purity and especially bodily cleanliness.",
+        "This was combined with आलय (ālaya, 'place' or 'abode') to form शौचालय — literally 'the abode of purification'.",
+        "In modern Hindi, शौचालय is the formal word for toilet, used on signs, in official settings, and in writing, while टॉयलेट is used in casual speech."
+      ],
+      "pronunciation_guide": {
+        "syllables": "śau · cā · lay",
+        "stress": "stress on the first syllable 'śau'; the final syllable 'lay' is light",
+        "tips": [
+          {
+            "sounds_like": "show",
+            "language": "English",
+            "tip": "the first syllable 'śau' sounds like the English word 'show'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A clean white-tiled room with a sign on the door showing a lotus flower — the Sanskrit symbol of purity — above the word शौचालय",
+        "connection": "The lotus (symbol of purity, śauca) on the door sign directly encodes the Sanskrit root of the word — शौचालय is 'the place of purity'"
+      },
+      "examples": [
+        {
+          "hindi": "स्कूल में नया शौचालय बनाया गया।",
+          "romanisation": "skūl mẽ nayā śaucālay banāyā gayā.",
+          "english": "A new toilet was built in the school.",
+          "literal": "school in new toilet built was-made",
+          "register": "formal"
+        },
+        {
+          "hindi": "शौचालय का दरवाज़ा बंद है।",
+          "romanisation": "śaucālay kā darvāzā band hai.",
+          "english": "The toilet door is closed.",
+          "literal": "toilet of door closed is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "यहाँ सार्वजनिक शौचालय कहाँ है?",
+          "romanisation": "yahā̃ sārvajanik śaucālay kahā̃ hai?",
+          "english": "Where is the public toilet here?",
+          "literal": "here public toilet where is",
+          "register": "formal"
+        },
+        {
+          "hindi": "घर में दो शौचालय होने चाहिए।",
+          "romanisation": "ghar mẽ do śaucālay hone cāhie.",
+          "english": "There should be two toilets in the house.",
+          "literal": "house in two toilet being should",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "बगीचा",
+      "romanisation": "bagīcā",
+      "english": "garden",
+      "origin_tag": "Perso-Arabic",
+      "forms": [
+        { "label": "direct singular", "hindi": "बगीचा", "roman": "bagīcā" },
+        { "label": "oblique singular", "hindi": "बगीचे", "roman": "bagīce" },
+        { "label": "plural", "hindi": "बगीचे", "roman": "bagīce" },
+        { "label": "oblique plural", "hindi": "बगीचों", "roman": "bagīcõ" },
+        { "label": "diminutive / small garden", "hindi": "बगिया", "roman": "bagiyā" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Persian",
+            "word": "باغیچه",
+            "romanisation": "bāghīcha",
+            "meaning": "small garden, little orchard",
+            "note": "बगीचा is directly borrowed from Persian باغیچه — the diminutive form of باغ (bāgh), meaning 'garden' or 'orchard'"
+          },
+          {
+            "language": "Persian",
+            "word": "باغ",
+            "romanisation": "bāgh",
+            "meaning": "garden, orchard, park",
+            "note": "The root form — Hindi also uses बाग़ (bāg) independently for a large garden or park"
+          },
+          {
+            "language": "Urdu",
+            "word": "باغیچہ",
+            "romanisation": "bāghīcha",
+            "meaning": "small garden",
+            "note": "Identical to Hindi बगीचा — shared borrowing from Persian into both languages"
+          }
+        ],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [
+        {
+          "word": "baggy",
+          "language": "English",
+          "note": "The first syllable 'bag' sounds like English 'baggy' — picture a gardener in baggy trousers tending a बगीचा"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Persian",
+          "word": "باغ",
+          "romanisation": "bāgh",
+          "meaning": "garden, orchard, park"
+        },
+        "evolution": [
+          { "stage": "Persian", "form": "باغ (bāgh)", "meaning": "garden, orchard" },
+          { "stage": "Persian diminutive", "form": "باغیچه (bāghīcha)", "meaning": "small garden" },
+          { "stage": "Urdu/Hindi", "form": "बगीचा (bagīcā)", "meaning": "garden" }
+        ],
+        "logic": "The Persian word for garden (bāgh) had a diminutive form bāghīcha meaning 'little garden'; in Hindi this became the standard word for any domestic garden, large or small."
+      },
+      "etymology_story": [
+        "The Persian word باغ (bāgh) meant a garden or orchard — a walled, cultivated green space.",
+        "Its diminutive form باغیچه (bāghīcha) meant a small or personal garden.",
+        "This word entered Hindi through Urdu, softening slightly in pronunciation to become बगीचा — now the everyday Hindi word for any garden."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ba · gī · cā",
+        "stress": "stress on the middle syllable 'gī', which has a long vowel",
+        "tips": [
+          {
+            "sounds_like": "baggy",
+            "language": "English",
+            "tip": "the first syllable 'ba' sounds exactly like the start of 'baggy'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A lush walled garden with Persian-style arched gateways, tiled pathways, and rose bushes in full bloom — the classic Mughal garden layout",
+        "connection": "The Mughal garden image directly reflects the Persian origin of बगीचा — the word arrived in Hindi with the Mughal love of formal walled gardens"
+      },
+      "examples": [
+        {
+          "hindi": "हमारे घर का बगीचा बहुत सुंदर है।",
+          "romanisation": "hamāre ghar kā bagīcā bahut sundar hai.",
+          "english": "The garden of our house is very beautiful.",
+          "literal": "our house of garden very beautiful is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "बगीचे में गुलाब के फूल खिले हैं।",
+          "romanisation": "bagīce mẽ gulāb ke phūl khile haĩ.",
+          "english": "Roses have bloomed in the garden.",
+          "literal": "garden in rose of flowers bloomed are",
+          "register": "neutral"
+        },
+        {
+          "hindi": "बच्चे बगीचे में खेल रहे हैं।",
+          "romanisation": "bacce bagīce mẽ khel rahe haĩ.",
+          "english": "The children are playing in the garden.",
+          "literal": "children garden in play doing are",
+          "register": "casual"
+        },
+        {
+          "hindi": "उस बगीचे में आम और नींबू के पेड़ थे।",
+          "romanisation": "us bagīce mẽ ām aur nīmbū ke peṛ the.",
+          "english": "That garden had mango and lemon trees.",
+          "literal": "that garden in mango and lemon of trees were",
+          "register": "neutral"
+        }
+      ]
+    }
+  ]
+}

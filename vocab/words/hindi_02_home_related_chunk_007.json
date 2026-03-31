@@ -1,0 +1,506 @@
+{
+  "title": "home related",
+  "words": [
+    {
+      "hindi": "कड़ाई",
+      "romanisation": "kaṛāī",
+      "english": "wok / deep pan",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "plural", "hindi": "कड़ाइयाँ", "roman": "kaṛāiyā̃" },
+        { "label": "oblique singular", "hindi": "कड़ाई", "roman": "kaṛāī" },
+        { "label": "oblique plural", "hindi": "कड़ाइयों", "roman": "kaṛāiyõ" },
+        { "label": "variant spelling", "hindi": "कढ़ाई", "roman": "kaṛhāī" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "कटाह",
+            "romanisation": "kaṭāha",
+            "meaning": "large cooking pot, cauldron",
+            "note": "The Sanskrit kaṭāha was a large iron vessel for cooking; कड़ाई is its direct descendant, still the deep iron pan used for frying and curries"
+          }
+        ],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [
+        {
+          "word": "karai",
+          "language": "English",
+          "note": "'Karahi' or 'karai' is how English menus spell this very vessel — the dish 'chicken karahi' is named after the कड़ाई it's cooked in"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "कटाह",
+          "romanisation": "kaṭāha",
+          "meaning": "large iron cooking vessel"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "kaṭāha", "meaning": "large cauldron" },
+          { "stage": "Prakrit", "form": "kaḍāha", "meaning": "deep cooking pot" },
+          { "stage": "Hindi", "form": "कड़ाई", "meaning": "wok / deep frying pan" }
+        ],
+        "logic": "The Sanskrit cauldron gradually became the iconic Indian deep-sided pan used for deep-frying and thick curries."
+      },
+      "etymology_story": [
+        "The Sanskrit kaṭāha was a large iron cauldron, the kind used for cooking at feasts or boiling large quantities.",
+        "Through Prakrit it became kaḍāha, retaining its sense of a deep, heavy vessel.",
+        "In Hindi it settled as कड़ाई — the round-bottomed, deep iron pan found in virtually every Indian kitchen."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ka · ṛā · ī",
+        "stress": "stress on the long second syllable ṛā",
+        "tips": [
+          {
+            "sounds_like": "karai",
+            "language": "English",
+            "tip": "English restaurant menus spell it 'karahi' or 'karai' — the pronunciation is almost identical"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A deep black iron pan with two handles, sitting over a flame with golden oil shimmering inside it",
+        "connection": "The deep shape and the two side-handles are the defining visual features of a कड़ाई, distinguishing it from the flat तवा"
+      },
+      "examples": [
+        {
+          "hindi": "कड़ाई में तेल गरम करो।",
+          "romanisation": "kaṛāī mẽ tel garam karo.",
+          "english": "Heat oil in the wok.",
+          "literal": "wok in oil hot do",
+          "register": "casual"
+        },
+        {
+          "hindi": "माँ ने कड़ाई में समोसे तले।",
+          "romanisation": "mā̃ ne kaṛāī mẽ samose tale.",
+          "english": "Mum fried samosas in the deep pan.",
+          "literal": "mother by wok in samosas fried",
+          "register": "casual"
+        },
+        {
+          "hindi": "यह कड़ाई बहुत भारी है।",
+          "romanisation": "yah kaṛāī bahut bhārī hai.",
+          "english": "This wok is very heavy.",
+          "literal": "this wok very heavy is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "कढ़ाई चिकन एक मशहूर पकवान है।",
+          "romanisation": "kaṛhāī cikan ek mashhūr pakvān hai.",
+          "english": "Karahi chicken is a famous dish.",
+          "literal": "karahi chicken one famous dish is",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "कुकर",
+      "romanisation": "kukar",
+      "english": "pressure cooker",
+      "origin_tag": "English",
+      "forms": [
+        { "label": "plural", "hindi": "कुकर", "roman": "kukar" },
+        { "label": "oblique plural", "hindi": "कुकरों", "roman": "kukrõ" },
+        { "label": "full colloquial form", "hindi": "प्रेशर कुकर", "roman": "preśar kukar" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "English",
+            "word": "cooker",
+            "romanisation": "cooker",
+            "meaning": "cooking appliance",
+            "note": "Direct borrowing from English 'cooker', specifically meaning a pressure cooker in Indian usage"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Russian",
+            "word": "кухня",
+            "romanisation": "kukhnya",
+            "meaning": "kitchen",
+            "note": "Both kuhnya and kukar share the same distant Proto-Indo-European cooking root — the ku/ku- sound links kitchen and cooking vessel across languages"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "cooker",
+          "language": "English",
+          "note": "कुकर is simply 'cooker' in English — identical meaning and almost identical sound"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Latin",
+          "word": "coquere",
+          "romanisation": "coquere",
+          "meaning": "to cook"
+        },
+        "evolution": [
+          { "stage": "Latin", "form": "coquere", "meaning": "to cook" },
+          { "stage": "Old English", "form": "coc", "meaning": "cook (person)" },
+          { "stage": "Modern English", "form": "cooker", "meaning": "cooking appliance" },
+          { "stage": "Hindi (loanword)", "form": "कुकर", "meaning": "pressure cooker" }
+        ],
+        "logic": "The Latin root for cooking passed through English into Hindi, where 'cooker' became specifically associated with the pressure cooker — the most iconic cooking appliance in Indian kitchens."
+      },
+      "etymology_story": [
+        "The word traces back to Latin coquere, meaning to cook, which gave English 'cook' and then 'cooker'.",
+        "British colonial influence brought English kitchen vocabulary into Indian everyday speech.",
+        "In Hindi, कुकर became the standard word for the whistling pressure cooker — an appliance so central to Indian cooking that it needs no qualifier."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ku · kar",
+        "stress": "stress on the first syllable",
+        "tips": [
+          {
+            "sounds_like": "cooker",
+            "language": "English",
+            "tip": "कुकर sounds just like the English 'cooker' — the only difference is Hindi uses a shorter 'u' vowel"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A silver pressure cooker with steam shooting from its weighted valve, sitting on a gas flame",
+        "connection": "The image is the object itself — the quintessential Indian pressure cooker — and its name कुकर is its English label worn daily"
+      },
+      "examples": [
+        {
+          "hindi": "कुकर में दाल बना रही हूँ।",
+          "romanisation": "kukar mẽ dāl banā rahī hū̃.",
+          "english": "I am making lentils in the pressure cooker.",
+          "literal": "cooker in lentils making am",
+          "register": "casual"
+        },
+        {
+          "hindi": "कुकर की सीटी बज गई।",
+          "romanisation": "kukar kī sīṭī baj gaī.",
+          "english": "The pressure cooker whistled.",
+          "literal": "cooker of whistle rang went",
+          "register": "casual"
+        },
+        {
+          "hindi": "कुकर चूल्हे पर रखा है।",
+          "romanisation": "kukar cūlhe par rakhā hai.",
+          "english": "The pressure cooker is on the stove.",
+          "literal": "cooker stove on placed is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "इस कुकर में चावल जल्दी बन जाते हैं।",
+          "romanisation": "is kukar mẽ cāval jaldī ban jāte haĩ.",
+          "english": "Rice gets cooked quickly in this pressure cooker.",
+          "literal": "this cooker in rice quickly become go",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "फ्रिज",
+      "romanisation": "frij",
+      "english": "fridge",
+      "origin_tag": "English",
+      "forms": [
+        { "label": "plural", "hindi": "फ्रिज", "roman": "frij" },
+        { "label": "oblique plural", "hindi": "फ्रिजों", "roman": "frijõ" },
+        { "label": "full form", "hindi": "रेफ्रिजरेटर", "roman": "rephrījarēṭar" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "English",
+            "word": "fridge",
+            "romanisation": "fridge",
+            "meaning": "refrigerator",
+            "note": "Direct borrowing of English 'fridge', the informal short form of 'refrigerator'"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Russian",
+            "word": "холодильник",
+            "romanisation": "kholodilnik",
+            "meaning": "refrigerator",
+            "note": "The Russian word is built from 'cold' (khólod), making its logic transparent; Hindi took the English abbreviation instead, showing two different paths to the same appliance"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "fridge",
+          "language": "English",
+          "note": "फ्रिज is simply the English 'fridge' — identical in sound and meaning"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Latin",
+          "word": "frigus",
+          "romanisation": "frigus",
+          "meaning": "cold, frost"
+        },
+        "evolution": [
+          { "stage": "Latin", "form": "frigus", "meaning": "cold" },
+          { "stage": "Latin", "form": "refrigerare", "meaning": "to cool again" },
+          { "stage": "Modern English", "form": "refrigerator → fridge", "meaning": "cooling appliance" },
+          { "stage": "Hindi (loanword)", "form": "फ्रिज", "meaning": "fridge" }
+        ],
+        "logic": "The Latin root for cold gave English 'refrigerator', which was shortened to 'fridge', then borrowed wholesale into Hindi."
+      },
+      "etymology_story": [
+        "Latin frigus meant cold or frost, and the word refrigerare meant to cool something down.",
+        "English formed 'refrigerator' from this root for the electric cooling appliance invented in the early twentieth century.",
+        "Hindi borrowed the colloquial English shortening 'fridge' directly, and फ्रिज is now universally understood across India."
+      ],
+      "pronunciation_guide": {
+        "syllables": "frij",
+        "stress": "single syllable, short and clipped",
+        "tips": [
+          {
+            "sounds_like": "fridge",
+            "language": "English",
+            "tip": "फ्रिज sounds exactly like the English 'fridge' — the same consonant cluster and the same short 'i'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A white refrigerator standing in a kitchen with the door open, cold air visibly misting out around shelves of vegetables and a jug of water",
+        "connection": "The image is the appliance itself — the visual of cold air pouring out locks in both the meaning and the sound फ्रिज"
+      },
+      "examples": [
+        {
+          "hindi": "दूध फ्रिज में रखो।",
+          "romanisation": "dūdh frij mẽ rakho.",
+          "english": "Put the milk in the fridge.",
+          "literal": "milk fridge in place",
+          "register": "casual"
+        },
+        {
+          "hindi": "फ्रिज खाली है, सब्ज़ी लानी होगी।",
+          "romanisation": "frij khālī hai, sabzī lānī hogī.",
+          "english": "The fridge is empty; I'll have to get vegetables.",
+          "literal": "fridge empty is, vegetables bring will-have",
+          "register": "casual"
+        },
+        {
+          "hindi": "क्या फ्रिज में ठंडा पानी है?",
+          "romanisation": "kyā frij mẽ ṭhaṃḍā pānī hai?",
+          "english": "Is there cold water in the fridge?",
+          "literal": "what fridge in cold water is",
+          "register": "casual"
+        },
+        {
+          "hindi": "रात को खाना फ्रिज में रख दिया।",
+          "romanisation": "rāt ko khānā frij mẽ rakh diyā.",
+          "english": "I put the food in the fridge at night.",
+          "literal": "night to food fridge in placed gave",
+          "register": "casual"
+        }
+      ]
+    },
+    {
+      "hindi": "चूल्हा",
+      "romanisation": "cūlhā",
+      "english": "stove / cooking fire",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "plural / oblique", "hindi": "चूल्हे", "roman": "cūlhe" },
+        { "label": "oblique plural", "hindi": "चूल्हों", "roman": "cūlhõ" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "चुल्ली",
+            "romanisation": "cullī",
+            "meaning": "fireplace, cooking hearth",
+            "note": "Hindi चूल्हा comes from the Sanskrit cullī — both describe the hearth or cooking fire, showing the unbroken connection between ancient and modern kitchens"
+          }
+        ],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [
+        {
+          "word": "cool",
+          "language": "English",
+          "note": "Ironically, चूल्हा starts with a 'cool' sound ('cū') yet means the hot stove — the irony is the hook: the 'cool' sound belongs to the hot place"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "चुल्ली",
+          "romanisation": "cullī",
+          "meaning": "cooking hearth, fireplace"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "cullī", "meaning": "cooking hearth" },
+          { "stage": "Prakrit", "form": "culha", "meaning": "cooking fire" },
+          { "stage": "Hindi", "form": "चूल्हा", "meaning": "stove, cooking fire (traditional or gas)" }
+        ],
+        "logic": "The Sanskrit hearth — originally a clay fireplace in a home — became चूल्हा in Hindi, a word now used for anything from a traditional wood fire to a modern gas burner."
+      },
+      "etymology_story": [
+        "The Sanskrit cullī was the traditional earthen cooking hearth, the centre of every ancient Indian home's kitchen.",
+        "As the word evolved through Prakrit into Hindi, it became चूल्हा, keeping its meaning of the cooking fire.",
+        "Today चूल्हा covers both the old clay woodfire stove and the modern gas burner — the heart of the kitchen, ancient or modern."
+      ],
+      "pronunciation_guide": {
+        "syllables": "cūl · hā",
+        "stress": "stress on the first long syllable",
+        "tips": [
+          {
+            "sounds_like": "cool",
+            "language": "English",
+            "tip": "the first syllable 'cūl' sounds like the English 'cool' — a long 'oo' sound, then add 'hā'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A traditional clay stove with orange flames licking out from under a black pot, set into a mud kitchen floor",
+        "connection": "The ancient clay hearth is the original meaning of चूल्हा — this image captures exactly what the word has meant for thousands of years"
+      },
+      "examples": [
+        {
+          "hindi": "चूल्हे पर तवा रखो।",
+          "romanisation": "cūlhe par tavā rakho.",
+          "english": "Put the griddle on the stove.",
+          "literal": "stove on griddle place",
+          "register": "casual"
+        },
+        {
+          "hindi": "गाँव में अभी भी लकड़ी का चूल्हा जलता है।",
+          "romanisation": "gā̃v mẽ abhī bhī lakṛī kā cūlhā jaltā hai.",
+          "english": "In the village they still use a wood-burning stove.",
+          "literal": "village in still also wood of stove burns",
+          "register": "neutral"
+        },
+        {
+          "hindi": "कुकर चूल्हे पर चढ़ाओ।",
+          "romanisation": "kukar cūlhe par caṛhāo.",
+          "english": "Put the pressure cooker on the stove.",
+          "literal": "cooker stove on place-up",
+          "register": "casual"
+        },
+        {
+          "hindi": "चूल्हा बंद करना मत भूलना।",
+          "romanisation": "cūlhā band karnā mat bhūlnā.",
+          "english": "Don't forget to turn off the stove.",
+          "literal": "stove off doing not forget",
+          "register": "casual"
+        }
+      ]
+    },
+    {
+      "hindi": "ओवन",
+      "romanisation": "ovan",
+      "english": "oven",
+      "origin_tag": "English",
+      "forms": [
+        { "label": "plural", "hindi": "ओवन", "roman": "ovan" },
+        { "label": "oblique plural", "hindi": "ओवनों", "roman": "ovanõ" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "English",
+            "word": "oven",
+            "romanisation": "oven",
+            "meaning": "oven",
+            "note": "Direct borrowing of English 'oven' into Hindi — same meaning, very similar sound"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Russian",
+            "word": "духовка",
+            "romanisation": "dukhovka",
+            "meaning": "oven",
+            "note": "Russian uses a completely different word for oven, making ओवन the recognisably English-origin term in Indian kitchens"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "oven",
+          "language": "English",
+          "note": "ओवन is the English word 'oven' — same sound, same meaning, making it immediately recognisable"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Proto-Indo-European",
+          "word": "*aukʷ-",
+          "romanisation": "aukw-",
+          "meaning": "cooking pot, vessel for heating"
+        },
+        "evolution": [
+          { "stage": "Proto-Germanic", "form": "*uhwaz", "meaning": "oven, kiln" },
+          { "stage": "Old English", "form": "ofen", "meaning": "oven, furnace" },
+          { "stage": "Modern English", "form": "oven", "meaning": "enclosed cooking appliance" },
+          { "stage": "Hindi (loanword)", "form": "ओवन", "meaning": "oven" }
+        ],
+        "logic": "The ancient Proto-Germanic heating vessel became the English oven, and was then borrowed into Hindi as modern appliances entered Indian homes."
+      },
+      "etymology_story": [
+        "The word oven is one of the oldest Germanic household words, going back to Proto-Germanic *uhwaz meaning a kiln or enclosed hearth.",
+        "Old English had ofen for the baking chamber, which became 'oven' in modern English.",
+        "As electric and gas ovens became common in Indian urban homes, Hindi adopted the English word ओवन directly."
+      ],
+      "pronunciation_guide": {
+        "syllables": "o · van",
+        "stress": "stress on the first syllable",
+        "tips": [
+          {
+            "sounds_like": "oven",
+            "language": "English",
+            "tip": "ओवन sounds like the English 'oven' — the 'o' is slightly longer in Hindi but otherwise identical"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A stainless steel oven door with a glass window, glowing orange inside, with a tray of bread visible through the glass",
+        "connection": "The glowing interior seen through the oven window is the defining visual of ओवन — the enclosed hot space that bakes"
+      },
+      "examples": [
+        {
+          "hindi": "ओवन में केक रखो।",
+          "romanisation": "ovan mẽ kek rakho.",
+          "english": "Put the cake in the oven.",
+          "literal": "oven in cake place",
+          "register": "casual"
+        },
+        {
+          "hindi": "ओवन दो सौ डिग्री पर गरम करो।",
+          "romanisation": "ovan do sau ḍigrī par garam karo.",
+          "english": "Heat the oven to two hundred degrees.",
+          "literal": "oven two hundred degrees on hot do",
+          "register": "neutral"
+        },
+        {
+          "hindi": "हमारे घर में ओवन नहीं है, चूल्हा है।",
+          "romanisation": "hamāre ghar mẽ ovan nahī̃ hai, cūlhā hai.",
+          "english": "We don't have an oven at home, we have a stove.",
+          "literal": "our home in oven not is, stove is",
+          "register": "casual"
+        },
+        {
+          "hindi": "ओवन में रोटी सेंकना नहीं, तवे पर सेंकना।",
+          "romanisation": "ovan mẽ roṭī sẽknā nahī̃, tave par sẽknā.",
+          "english": "Don't bake roti in the oven — bake it on the griddle.",
+          "literal": "oven in roti baking not, griddle on baking",
+          "register": "casual"
+        }
+      ]
+    }
+  ]
+}

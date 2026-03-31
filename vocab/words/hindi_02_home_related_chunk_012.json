@@ -1,0 +1,566 @@
+{
+  "title": "home related",
+  "words": [
+    {
+      "hindi": "झाड़ू लगाना",
+      "romanisation": "jhāṛū lagānā",
+      "english": "to sweep",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "infinitive", "hindi": "झाड़ू लगाना", "roman": "jhāṛū lagānā" },
+        { "label": "present continuous (m.sg.)", "hindi": "झाड़ू लगा रहा है", "roman": "jhāṛū lagā rahā hai" },
+        { "label": "present continuous (f.sg.)", "hindi": "झाड़ू लगा रही है", "roman": "jhāṛū lagā rahī hai" },
+        { "label": "past (m.sg.)", "hindi": "झाड़ू लगाया", "roman": "jhāṛū lagāyā" },
+        { "label": "past (f.sg.)", "hindi": "झाड़ू लगाई", "roman": "jhāṛū lagāī" },
+        { "label": "imperative (informal)", "hindi": "झाड़ू लगाओ", "roman": "jhāṛū lagāo" },
+        { "label": "imperative (formal)", "hindi": "झाड़ू लगाइए", "roman": "jhāṛū lagāie" },
+        { "label": "oblique infinitive", "hindi": "झाड़ू लगाने", "roman": "jhāṛū lagāne" },
+        { "label": "noun — broom", "hindi": "झाड़ू", "roman": "jhāṛū" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "झाट",
+            "romanisation": "jhāṭa",
+            "meaning": "bush, thicket, tangled growth",
+            "note": "The broom झाड़ू takes its name from झाड़ (bush/shrub) — a broom was originally a bundle of twigs or shrubby material bound together"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "jar",
+            "romanisation": "jar",
+            "meaning": "a shaking, jarring motion",
+            "note": "The 'jhār' syllable sounds close to the motion of jarring or shaking dust loose — helps anchor the sweeping action"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "jar",
+          "language": "English",
+          "note": "The first syllable 'jhāṛ' echoes the English word 'jar' — imagine the jarring, sweeping motion of a broom"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "झाड्",
+          "romanisation": "jhāḍ",
+          "meaning": "to shake off, to clear away"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "jhāḍ", "meaning": "to shake off, to clear" },
+          { "stage": "Hindi noun", "form": "झाड़ू", "meaning": "broom — the tool used for shaking/clearing" },
+          { "stage": "Hindi verb phrase", "form": "झाड़ू लगाना", "meaning": "to apply the broom; to sweep" }
+        ],
+        "logic": "A broom is literally 'the shaker-offer' — and the verb phrase झाड़ू लगाना (to apply/put the broom) is how Hindi expresses the act of sweeping."
+      },
+      "etymology_story": [
+        "The word झाड़ू comes from a Sanskrit root meaning to shake off or clear away — the same root gives झाड़ी (a bush or shrub).",
+        "A traditional broom was made by tying together dry twigs or grass, so the tool kept the name of the plant material.",
+        "The verb phrase झाड़ू लगाना literally means 'to apply the broom', following the common Hindi pattern of pairing a noun with लगाना to form a verb."
+      ],
+      "pronunciation_guide": {
+        "syllables": "jhā · ṛū la · gā · nā",
+        "stress": "light throughout; झाड़ू has a slightly longer ū at the end",
+        "tips": [
+          {
+            "sounds_like": "banana",
+            "language": "English",
+            "tip": "the second word लगाना ends with the same -nā sound as 'banana' — just the last two syllables"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A person dragging a bundle of dry twigs bound together across a dusty courtyard floor, leaving a clean stripe behind them",
+        "connection": "The bundle of twigs visually connects to झाड़ (shrub/twig) — the literal origin of झाड़ू — while the clean stripe shows sweeping in action"
+      },
+      "examples": [
+        {
+          "hindi": "रोज़ सुबह घर में झाड़ू लगाओ।",
+          "romanisation": "roz subah ghar mẽ jhāṛū lagāo.",
+          "english": "Sweep the house every morning.",
+          "literal": "daily morning house in broom apply",
+          "register": "casual"
+        },
+        {
+          "hindi": "उसने पूरे कमरे में झाड़ू लगाई।",
+          "romanisation": "usne pūre kamre mẽ jhāṛū lagāī.",
+          "english": "She swept the entire room.",
+          "literal": "she-ERG whole room in broom applied",
+          "register": "neutral"
+        },
+        {
+          "hindi": "पहले झाड़ू लगाओ, फिर पोंछा लगाओ।",
+          "romanisation": "pahle jhāṛū lagāo, phir põchā lagāo.",
+          "english": "Sweep first, then mop.",
+          "literal": "first broom apply, then mop apply",
+          "register": "casual"
+        },
+        {
+          "hindi": "क्या तुमने आज झाड़ू लगाया?",
+          "romanisation": "kyā tumne āj jhāṛū lagāyā?",
+          "english": "Did you sweep today?",
+          "literal": "what you-ERG today broom applied",
+          "register": "casual"
+        }
+      ]
+    },
+    {
+      "hindi": "पोंछा लगाना",
+      "romanisation": "põchā lagānā",
+      "english": "to mop",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "infinitive", "hindi": "पोंछा लगाना", "roman": "põchā lagānā" },
+        { "label": "present continuous (m.sg.)", "hindi": "पोंछा लगा रहा है", "roman": "põchā lagā rahā hai" },
+        { "label": "present continuous (f.sg.)", "hindi": "पोंछा लगा रही है", "roman": "põchā lagā rahī hai" },
+        { "label": "past (m.sg.)", "hindi": "पोंछा लगाया", "roman": "põchā lagāyā" },
+        { "label": "past (f.sg.)", "hindi": "पोंछा लगाई", "roman": "põchā lagāī" },
+        { "label": "imperative (informal)", "hindi": "पोंछा लगाओ", "roman": "põchā lagāo" },
+        { "label": "imperative (formal)", "hindi": "पोंछा लगाइए", "roman": "põchā lagāie" },
+        { "label": "oblique infinitive", "hindi": "पोंछा लगाने", "roman": "põchā lagāne" },
+        { "label": "related verb — to wipe", "hindi": "पोंछना", "roman": "põchnā" },
+        { "label": "noun — the mop / wet cloth", "hindi": "पोंछा", "roman": "põchā" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "पुञ्छ्",
+            "romanisation": "puñch",
+            "meaning": "to wipe, to clean by wiping",
+            "note": "Hindi पोंछना (to wipe) and पोंछा (mop) descend from Sanskrit puñch — the wipe/smear root"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "punch",
+            "romanisation": "punch",
+            "meaning": "a blow with the fist",
+            "note": "पोंछा sounds like 'ponch-a' which rhymes with 'punch' — imagine punching the floor with a wet cloth to mop it"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "poncho",
+          "language": "English",
+          "note": "पोंछा sounds very close to 'poncho' — picture someone wearing a wet poncho and dragging it across the floor to mop"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "पुञ्छ्",
+          "romanisation": "puñch",
+          "meaning": "to wipe, to sweep away"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "puñch", "meaning": "to wipe" },
+          { "stage": "Hindi verb", "form": "पोंछना", "meaning": "to wipe, to dry by wiping" },
+          { "stage": "Hindi noun", "form": "पोंछा", "meaning": "the wet cloth or mop used for wiping floors" },
+          { "stage": "Hindi verb phrase", "form": "पोंछा लगाना", "meaning": "to apply the mop; to mop the floor" }
+        ],
+        "logic": "The root idea is wiping — the noun पोंछा is the tool (a wet cloth), and the verb phrase says 'apply the tool to the floor'."
+      },
+      "etymology_story": [
+        "The root puñch in Sanskrit meant to wipe or sweep away moisture and dirt.",
+        "Hindi kept this root in the verb पोंछना (to wipe) and formed the noun पोंछा for the wet cloth or mop used on floors.",
+        "The verb phrase पोंछा लगाना follows the same pattern as झाड़ू लगाना — 'to apply the cleaning tool' — and means to mop."
+      ],
+      "pronunciation_guide": {
+        "syllables": "põ · chā la · gā · nā",
+        "stress": "light and even; the first syllable has a nasal ō (põ)",
+        "tips": [
+          {
+            "sounds_like": "poncho",
+            "language": "English",
+            "tip": "पोंछा sounds almost identical to 'poncho' — same vowels and consonants, almost identical stress"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A person wearing a soaking wet poncho, kneeling on the floor and wiping it with the hem of the poncho",
+        "connection": "पोंछा sounds just like 'poncho', and the wet fabric dragging across the floor visually encodes mopping"
+      },
+      "examples": [
+        {
+          "hindi": "झाड़ू लगाने के बाद पोंछा लगाओ।",
+          "romanisation": "jhāṛū lagāne ke bād põchā lagāo.",
+          "english": "After sweeping, mop the floor.",
+          "literal": "broom applying of after mop apply",
+          "register": "casual"
+        },
+        {
+          "hindi": "उसने पूरे घर में पोंछा लगाया।",
+          "romanisation": "usne pūre ghar mẽ põchā lagāyā.",
+          "english": "She mopped the entire house.",
+          "literal": "she-ERG whole house in mop applied",
+          "register": "neutral"
+        },
+        {
+          "hindi": "फ़र्श गंदा है, पोंछा लगाना ज़रूरी है।",
+          "romanisation": "farś gandā hai, põchā lagānā zarūrī hai.",
+          "english": "The floor is dirty, mopping is necessary.",
+          "literal": "floor dirty is, mop applying necessary is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "बच्चे ने पानी गिराया, इसलिए पोंछा लगाना पड़ा।",
+          "romanisation": "bacce ne pānī girāyā, islie põchā lagānā paṛā.",
+          "english": "The child spilled water, so we had to mop.",
+          "literal": "child ERG water spilled, therefore mop apply had-to",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "कपड़े धोना",
+      "romanisation": "kaṛpe dhonā",
+      "english": "to wash clothes",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "infinitive", "hindi": "कपड़े धोना", "roman": "kaṛpe dhonā" },
+        { "label": "present continuous (m.sg.)", "hindi": "कपड़े धो रहा है", "roman": "kaṛpe dho rahā hai" },
+        { "label": "present continuous (f.sg.)", "hindi": "कपड़े धो रही है", "roman": "kaṛpe dho rahī hai" },
+        { "label": "past (m.sg.)", "hindi": "कपड़े धोए", "roman": "kaṛpe dhoe" },
+        { "label": "past (f.sg.)", "hindi": "कपड़े धोईं", "roman": "kaṛpe dhoī̃" },
+        { "label": "imperative (informal)", "hindi": "कपड़े धोओ", "roman": "kaṛpe dhoo" },
+        { "label": "imperative (formal)", "hindi": "कपड़े धोइए", "roman": "kaṛpe dhoie" },
+        { "label": "noun — cloth / clothes (singular)", "hindi": "कपड़ा", "roman": "kaṛpā" },
+        { "label": "noun — clothes (plural)", "hindi": "कपड़े", "roman": "kaṛpe" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "कर्पट",
+            "romanisation": "karpaṭa",
+            "meaning": "a piece of cloth, a rag",
+            "note": "Hindi कपड़ा comes from Sanskrit karpaṭa, meaning cloth or rag; the same root is distantly echoed in the Hebrew קרפד (a worn fabric term)"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "carpet",
+            "romanisation": "carpet",
+            "meaning": "floor covering made of fabric",
+            "note": "Sanskrit karpaṭa (cloth) and English 'carpet' likely share a common ancestor — Hindi कपड़ा is a fabric cousin of 'carpet'"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "carpet",
+          "language": "English",
+          "note": "कपड़ा (cloth) sounds close to 'carpet' — both literally come from the same Sanskrit word for fabric; remembering one gives you the other"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "कर्पट",
+          "romanisation": "karpaṭa",
+          "meaning": "cloth, rag, piece of fabric"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "karpaṭa", "meaning": "cloth, rag" },
+          { "stage": "Prakrit", "form": "kapaḍa", "meaning": "cloth" },
+          { "stage": "Hindi", "form": "कपड़ा", "meaning": "cloth; garment; piece of fabric" },
+          { "stage": "Hindi plural / verb phrase", "form": "कपड़े धोना", "meaning": "to wash clothes" }
+        ],
+        "logic": "The word simply means a piece of cloth — and in everyday use, कपड़े (clothes) is the most common application, so कपड़े धोना became the standard phrase for doing the laundry."
+      },
+      "etymology_story": [
+        "The word कपड़ा descends from Sanskrit karpaṭa, a general term for cloth or a piece of fabric.",
+        "Passing through Prakrit it simplified into kapaḍa and eventually Hindi कपड़ा.",
+        "The same Sanskrit root likely also gave rise to the English word 'carpet' via an ancient trade route for textiles."
+      ],
+      "pronunciation_guide": {
+        "syllables": "kaṛ · pe dho · nā",
+        "stress": "light on both words; the ṛ in kaṛpe is a retroflex flap",
+        "tips": [
+          {
+            "sounds_like": "carpet",
+            "language": "English",
+            "tip": "the first word कपड़े sounds very close to 'carpet' — same consonants, just rearranged slightly"
+          },
+          {
+            "sounds_like": "dough",
+            "language": "English",
+            "tip": "the धो in धोना sounds just like English 'dough'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A person pulling a rolled-up carpet out of a washing tub, wringing water out of it with both hands",
+        "connection": "The carpet image locks in कपड़े (cloth/fabric, related to 'carpet'), and the washing tub encodes धोना (to wash)"
+      },
+      "examples": [
+        {
+          "hindi": "मुझे आज कपड़े धोने हैं।",
+          "romanisation": "mujhe āj kaṛpe dhone haĩ.",
+          "english": "I have to wash clothes today.",
+          "literal": "me-to today clothes washing are",
+          "register": "casual"
+        },
+        {
+          "hindi": "उसने मशीन में कपड़े धोए।",
+          "romanisation": "usne maśīn mẽ kaṛpe dhoe.",
+          "english": "She washed the clothes in the machine.",
+          "literal": "she-ERG machine in clothes washed",
+          "register": "neutral"
+        },
+        {
+          "hindi": "बारिश के बाद कपड़े धोना मुश्किल है।",
+          "romanisation": "bāriś ke bād kaṛpe dhonā muśkil hai.",
+          "english": "It's difficult to wash clothes after the rain.",
+          "literal": "rain of after clothes washing difficult is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "कपड़े प्रेस करने से पहले अच्छे से धोना।",
+          "romanisation": "kaṛpe pres karne se pahle acche se dhonā.",
+          "english": "Wash the clothes well before ironing.",
+          "literal": "clothes ironing doing from before well with wash",
+          "register": "casual"
+        }
+      ]
+    },
+    {
+      "hindi": "कपड़े प्रेस करना",
+      "romanisation": "kaṛpe pres karnā",
+      "english": "to iron clothes",
+      "origin_tag": "English",
+      "forms": [
+        { "label": "infinitive", "hindi": "कपड़े प्रेस करना", "roman": "kaṛpe pres karnā" },
+        { "label": "present continuous (m.sg.)", "hindi": "कपड़े प्रेस कर रहा है", "roman": "kaṛpe pres kar rahā hai" },
+        { "label": "present continuous (f.sg.)", "hindi": "कपड़े प्रेस कर रही है", "roman": "kaṛpe pres kar rahī hai" },
+        { "label": "past (m.sg.)", "hindi": "कपड़े प्रेस किए", "roman": "kaṛpe pres kie" },
+        { "label": "past (f.sg.)", "hindi": "कपड़े प्रेस कीं", "roman": "kaṛpe pres kī̃" },
+        { "label": "imperative (informal)", "hindi": "कपड़े प्रेस करो", "roman": "kaṛpe pres karo" },
+        { "label": "imperative (formal)", "hindi": "कपड़े प्रेस कीजिए", "roman": "kaṛpe pres kījie" },
+        { "label": "oblique infinitive", "hindi": "कपड़े प्रेस करने", "roman": "kaṛpe pres karne" },
+        { "label": "alternative — to iron (verb phrase)", "hindi": "इस्त्री करना", "roman": "istrī karnā" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "English",
+            "word": "press",
+            "romanisation": "press",
+            "meaning": "to push down, to apply pressure",
+            "note": "Hindi प्रेस is a direct loanword from English 'press' — to iron is literally to press the fabric flat"
+          },
+          {
+            "language": "Latin",
+            "word": "pressare",
+            "romanisation": "pressare",
+            "meaning": "to press repeatedly",
+            "note": "The English 'press' — and thus Hindi प्रेस — trace back to Latin pressare, to press"
+          }
+        ],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [
+        {
+          "word": "press",
+          "language": "English",
+          "note": "प्रेस is literally the English word 'press' — no translation needed, the action is identical"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Latin",
+          "word": "premere",
+          "romanisation": "premere",
+          "meaning": "to press, to push"
+        },
+        "evolution": [
+          { "stage": "Latin", "form": "premere / pressare", "meaning": "to press, to push down" },
+          { "stage": "Old French", "form": "presser", "meaning": "to press" },
+          { "stage": "English", "form": "press", "meaning": "to press; to iron clothes" },
+          { "stage": "Hindi loanword", "form": "प्रेस", "meaning": "iron (the appliance); to iron/press clothes" }
+        ],
+        "logic": "Ironing is pressing — you push a hot iron down onto fabric to smooth it. The English word captured this perfectly, and Hindi simply borrowed it."
+      },
+      "etymology_story": [
+        "The Latin root premere meant to push or press down — from which English got 'press', 'pressure', and 'impress'.",
+        "When electric irons became common, English used the verb 'to press' for ironing clothes because the action is pushing the iron flat onto fabric.",
+        "Hindi borrowed the English word directly as प्रेस, and the phrase कपड़े प्रेस करना means precisely 'to press the clothes'."
+      ],
+      "pronunciation_guide": {
+        "syllables": "kaṛ · pe pres kar · nā",
+        "stress": "प्रेस is said exactly like English 'press'",
+        "tips": [
+          {
+            "sounds_like": "press",
+            "language": "English",
+            "tip": "प्रेस is pronounced identically to English 'press' — no adjustment needed"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A large red 'PRESS' button on a wall, and below it a neatly ironed shirt hanging on a hanger",
+        "connection": "The PRESS button directly mirrors प्रेस (the loanword), and the ironed shirt shows the result — pressing clothes flat"
+      },
+      "examples": [
+        {
+          "hindi": "कल मीटिंग है, कपड़े प्रेस करो।",
+          "romanisation": "kal mīṭing hai, kaṛpe pres karo.",
+          "english": "There's a meeting tomorrow, iron your clothes.",
+          "literal": "tomorrow meeting is, clothes press do",
+          "register": "casual"
+        },
+        {
+          "hindi": "उसने सभी कपड़े प्रेस किए।",
+          "romanisation": "usne sabhī kaṛpe pres kie.",
+          "english": "He ironed all the clothes.",
+          "literal": "he-ERG all clothes pressed did",
+          "register": "neutral"
+        },
+        {
+          "hindi": "कपड़े धोने के बाद प्रेस करना मत भूलना।",
+          "romanisation": "kaṛpe dhone ke bād pres karnā mat bhūlnā.",
+          "english": "Don't forget to iron after washing the clothes.",
+          "literal": "clothes washing of after press doing not forget",
+          "register": "casual"
+        },
+        {
+          "hindi": "यह कमीज़ बहुत झुर्रीदार है, इसे प्रेस करना होगा।",
+          "romanisation": "yah kamīz bahut jhurrīdār hai, ise pres karnā hogā.",
+          "english": "This shirt is very wrinkled, it will have to be ironed.",
+          "literal": "this shirt very wrinkled is, it-to press doing will-be",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "बर्तन माँजना",
+      "romanisation": "bartan mā̃jnā",
+      "english": "to scrub dishes",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "infinitive", "hindi": "बर्तन माँजना", "roman": "bartan mā̃jnā" },
+        { "label": "present continuous (m.sg.)", "hindi": "बर्तन माँज रहा है", "roman": "bartan mā̃j rahā hai" },
+        { "label": "present continuous (f.sg.)", "hindi": "बर्तन माँज रही है", "roman": "bartan mā̃j rahī hai" },
+        { "label": "past (m.sg.)", "hindi": "बर्तन माँजे", "roman": "bartan mā̃je" },
+        { "label": "past (f.sg.)", "hindi": "बर्तन माँजीं", "roman": "bartan mā̃jī̃" },
+        { "label": "imperative (informal)", "hindi": "बर्तन माँजो", "roman": "bartan mā̃jo" },
+        { "label": "imperative (formal)", "hindi": "बर्तन माँजिए", "roman": "bartan mā̃jie" },
+        { "label": "oblique infinitive", "hindi": "बर्तन माँजने", "roman": "bartan mā̃jne" },
+        { "label": "noun — vessel / utensil (singular)", "hindi": "बर्तन", "roman": "bartan" },
+        { "label": "noun — vessels / utensils (plural)", "hindi": "बर्तन", "roman": "bartan" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "वर्तन",
+            "romanisation": "vartana",
+            "meaning": "a vessel, a receptacle, something that contains",
+            "note": "Hindi बर्तन comes from Sanskrit vartana — a container or vessel; the v→b shift is a common Indo-Aryan sound change"
+          },
+          {
+            "language": "Sanskrit",
+            "word": "मार्जन",
+            "romanisation": "mārjana",
+            "meaning": "cleansing, polishing, rubbing clean",
+            "note": "Hindi माँजना comes from Sanskrit mārjana, the act of rubbing or polishing clean — the same root gives मार्जार (cat — the self-cleaning animal)"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "margin",
+            "romanisation": "margin",
+            "meaning": "edge, border",
+            "note": "माँजना sounds faintly like 'manjan' — and scrubbing is exactly what you do at the edges of dirty dishes"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "munch",
+          "language": "English",
+          "note": "माँज (mā̃j) rhymes loosely with 'munch' — imagine munching sounds as you scrub plates hard"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "मार्ज्",
+          "romanisation": "mārj",
+          "meaning": "to wipe, to rub, to polish, to cleanse"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "mārj", "meaning": "to wipe clean, to rub" },
+          { "stage": "Prakrit", "form": "māja", "meaning": "to scrub, to polish" },
+          { "stage": "Hindi", "form": "माँजना", "meaning": "to scrub clean — specifically pots and pans" }
+        ],
+        "logic": "The Sanskrit root meant to rub and polish until clean — माँजना in Hindi is specifically that vigorous scrubbing motion used on metal pots and dishes."
+      },
+      "etymology_story": [
+        "The verb माँजना descends from Sanskrit mārj, meaning to rub or wipe until clean — the same root that gives mārjāra (cat), the animal that constantly grooms itself.",
+        "In Prakrit the word simplified and its meaning narrowed to hard scrubbing rather than gentle wiping.",
+        "In Hindi, माँजना is the specific word for scrubbing dishes, pots, and pans — more vigorous than धोना (to wash) and implying scrubbing away burned or crusted food."
+      ],
+      "pronunciation_guide": {
+        "syllables": "bar · tan mā̃j · nā",
+        "stress": "light throughout; the ā̃ in mā̃j is a nasalised long vowel",
+        "tips": [
+          {
+            "sounds_like": "bar",
+            "language": "English",
+            "tip": "the first syllable 'bar' in बर्तन is identical to the English word 'bar'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A person bent over a large metal pot, scrubbing it so hard with a steel wool pad that sparks fly off the surface",
+        "connection": "The intense, sparking scrub visually captures the vigour of माँजना — not just washing but aggressively scouring the vessel clean"
+      },
+      "examples": [
+        {
+          "hindi": "खाना खाने के बाद बर्तन माँजना।",
+          "romanisation": "khānā khāne ke bād bartan mā̃jnā.",
+          "english": "Scrub the dishes after eating.",
+          "literal": "food eating of after dishes scrub",
+          "register": "casual"
+        },
+        {
+          "hindi": "उसने सारे बर्तन साफ़ माँज दिए।",
+          "romanisation": "usne sāre bartan sāf mā̃j die.",
+          "english": "She scrubbed all the dishes clean.",
+          "literal": "she-ERG all dishes clean scrubbed gave",
+          "register": "neutral"
+        },
+        {
+          "hindi": "बर्तन माँजने के लिए साबुन चाहिए।",
+          "romanisation": "bartan mā̃jne ke lie sābun cāhie.",
+          "english": "You need soap to scrub the dishes.",
+          "literal": "dishes scrubbing of for soap needed",
+          "register": "neutral"
+        },
+        {
+          "hindi": "रोज़ बर्तन माँजना बहुत थकाने वाला काम है।",
+          "romanisation": "roz bartan mā̃jnā bahut thakāne vālā kām hai.",
+          "english": "Scrubbing dishes every day is a very tiring task.",
+          "literal": "daily dishes scrubbing very tiring work is",
+          "register": "neutral"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,589 @@
+{
+  "title": "pronouns and to be",
+  "words": [
+    {
+      "hindi": "यह",
+      "romanisation": "yah",
+      "english": "this / he / she (near)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "spoken/colloquial form", "hindi": "ये", "roman": "ye" },
+        { "label": "oblique (near singular)", "hindi": "इस", "roman": "is" },
+        { "label": "oblique with -को", "hindi": "इसे / इसको", "roman": "ise / isko" },
+        { "label": "oblique possessive stem", "hindi": "इस-", "roman": "is-" },
+        { "label": "possessive", "hindi": "इसका / इसकी / इसके", "roman": "iskā / iskī / iske" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "एष",
+            "romanisation": "eṣa",
+            "meaning": "this (masculine, near demonstrative)",
+            "note": "Sanskrit eṣa is the direct ancestor of Hindi यह — both are near demonstratives pointing to something close at hand"
+          },
+          {
+            "language": "Sanskrit",
+            "word": "इदम्",
+            "romanisation": "idam",
+            "meaning": "this (neuter demonstrative)",
+            "note": "The oblique forms of यह (इस, इसे) come from this Sanskrit demonstrative stem"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Hebrew",
+            "word": "זה",
+            "romanisation": "ze",
+            "meaning": "this (masculine)",
+            "note": "Hebrew זה (ze) means 'this' — unrelated historically but the semantic function is identical, making it a useful memory bridge for Hebrew speakers"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "yeah",
+          "language": "English",
+          "note": "'yeah' sounds very close to 'yah' — think of pointing at something and saying 'yeah, THAT one — this one here'"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "एष / अयम्",
+          "romanisation": "eṣa / ayam",
+          "meaning": "this (near demonstrative)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "एष / अयम् (eṣa / ayam)", "meaning": "this" },
+          { "stage": "Prakrit", "form": "एह (eha)", "meaning": "this" },
+          { "stage": "Apabhraṃśa", "form": "यहु (yahu)", "meaning": "this" },
+          { "stage": "Hindi", "form": "यह", "meaning": "this / he / she (near)" }
+        ],
+        "logic": "The near-demonstrative root pointing to something close evolved from Sanskrit's proximal demonstrative; in Hindi it also serves as a third-person pronoun for persons or things at close range."
+      },
+      "etymology_story": [
+        "The word descends from Sanskrit's near-demonstrative pronouns eṣa and ayam, both meaning 'this'.",
+        "Through Prakrit eha and Apabhraṃśa yahu, it settled into यह in Hindi.",
+        "Unusually, Hindi यह serves double duty: it means both 'this' (pointing at a nearby thing) and 'he/she' (for a nearby or just-mentioned person).",
+        "In fast spoken Hindi, यह often becomes ये, merging with the honorific/plural form."
+      ],
+      "pronunciation_guide": {
+        "syllables": "yah",
+        "stress": "single syllable — the 'h' at the end is a light breathy release, often nearly silent in natural speech",
+        "tips": [
+          {
+            "sounds_like": "yeah",
+            "language": "English",
+            "tip": "'yah' is very close to English 'yeah' — the vowel is the same open 'a' sound"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A person standing right in front of you, with a bright arrow pointing directly down at their feet",
+        "connection": "The arrow pointing right here, right now, captures the nearness that defines यह — it always points to something close, whether a thing or a nearby person"
+      },
+      "examples": [
+        {
+          "hindi": "यह क्या है?",
+          "romanisation": "yah kyā hai?",
+          "english": "What is this?",
+          "literal": "this what is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "यह मेरा दोस्त है।",
+          "romanisation": "yah merā dost hai.",
+          "english": "This is my friend.",
+          "literal": "this my friend is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "यह लड़का कौन है?",
+          "romanisation": "yah laṛkā kaun hai?",
+          "english": "Who is this boy?",
+          "literal": "this boy who is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "यह ठीक नहीं है।",
+          "romanisation": "yah ṭhīk nahī̃ hai.",
+          "english": "This is not right.",
+          "literal": "this right not is",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "ये",
+      "romanisation": "ye",
+      "english": "these / they / he / she (near or honorific)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "oblique (near plural)", "hindi": "इन", "roman": "in" },
+        { "label": "oblique with -को", "hindi": "इन्हें / इनको", "roman": "inhẽ / inko" },
+        { "label": "possessive (plural/honorific)", "hindi": "इनका / इनकी / इनके", "roman": "inkā / inkī / inke" },
+        { "label": "singular colloquial variant of यह", "hindi": "ये", "roman": "ye" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "एते",
+            "romanisation": "ete",
+            "meaning": "these (masculine plural near demonstrative)",
+            "note": "Sanskrit ete is the direct ancestor of Hindi ये — the near plural demonstrative"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "yea",
+            "romanisation": "yea",
+            "meaning": "yes (archaic/formal)",
+            "note": "Sounds nearly identical to Hindi ये — no connection in meaning, but the sound match helps fix the pronunciation"
+          },
+          {
+            "language": "Hebrew",
+            "word": "אלה",
+            "romanisation": "ele",
+            "meaning": "these",
+            "note": "Hebrew אלה (ele) means 'these' — the same plural demonstrative function as Hindi ये, useful as a conceptual bridge"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "yea",
+          "language": "English",
+          "note": "Archaic English 'yea' sounds like ye — imagine a crowd raising their hands saying 'yea' to these things pointed at"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "एते",
+          "romanisation": "ete",
+          "meaning": "these (plural, near)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "एते (ete)", "meaning": "these" },
+          { "stage": "Prakrit", "form": "एए (ee)", "meaning": "these" },
+          { "stage": "Apabhraṃśa", "form": "ये (ye)", "meaning": "these" },
+          { "stage": "Hindi", "form": "ये", "meaning": "these / they (near) / he/she (honorific)" }
+        ],
+        "logic": "The plural near-demonstrative of Sanskrit evolved into ये, which in Hindi also functions as an honorific singular — a person addressed or referred to respectfully becomes grammatically plural, similar to French 'vous' or Russian 'вы'."
+      },
+      "etymology_story": [
+        "ये comes from Sanskrit ete, the near plural demonstrative 'these'.",
+        "Through Prakrit and Apabhraṃśa the consonant cluster softened and the form compressed to ये.",
+        "Hindi ये is used both as the literal plural of यह ('these things') and as a pronoun for multiple nearby people ('they').",
+        "Importantly, ये is also the honorific third-person singular — referring to one respected person — parallel to how आप is used for 'you' in formal address."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ye",
+        "stress": "single syllable — a clear 'y' glide followed by a long 'e' vowel",
+        "tips": [
+          {
+            "sounds_like": "yea",
+            "language": "English",
+            "tip": "sounds like 'yea' — the same y-plus-long-e sound"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A group of people standing nearby, all lit up by a spotlight, with arrows pointing at each one of them",
+        "connection": "The spotlight on multiple nearby people captures the plural-and-near nature of ये — pointing at these people, right here"
+      },
+      "examples": [
+        {
+          "hindi": "ये कौन हैं?",
+          "romanisation": "ye kaun haĩ?",
+          "english": "Who are these people?",
+          "literal": "these who are",
+          "register": "neutral"
+        },
+        {
+          "hindi": "ये मेरे दोस्त हैं।",
+          "romanisation": "ye mere dost haĩ.",
+          "english": "These are my friends.",
+          "literal": "these my friends are",
+          "register": "neutral"
+        },
+        {
+          "hindi": "ये आप के घर में हैं।",
+          "romanisation": "ye āp ke ghar mẽ haĩ.",
+          "english": "They are in your house.",
+          "literal": "they your house in are",
+          "register": "formal"
+        },
+        {
+          "hindi": "ये लड़की बहुत होशियार है।",
+          "romanisation": "ye laṛkī bahut hośiyār hai.",
+          "english": "This girl is very smart (honorific reference).",
+          "literal": "she/this girl very smart is",
+          "register": "respectful"
+        }
+      ]
+    },
+    {
+      "hindi": "वह",
+      "romanisation": "vah",
+      "english": "that / he / she / it (remote)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "spoken/colloquial form", "hindi": "वो", "roman": "vo" },
+        { "label": "oblique (remote singular)", "hindi": "उस", "roman": "us" },
+        { "label": "oblique with -को", "hindi": "उसे / उसको", "roman": "use / usko" },
+        { "label": "possessive", "hindi": "उसका / उसकी / उसके", "roman": "uskā / uskī / uske" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "सः",
+            "romanisation": "saḥ",
+            "meaning": "he, that (remote demonstrative)",
+            "note": "Sanskrit saḥ is the root of the Hindi remote demonstrative system; the oblique forms us-, usse derive from this stem"
+          },
+          {
+            "language": "Sanskrit",
+            "word": "अदस्",
+            "romanisation": "adas",
+            "meaning": "that (remote demonstrative)",
+            "note": "The remote-pointing function of वह is inherited from Sanskrit's adas and related distal demonstratives"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Russian",
+            "word": "вон",
+            "romanisation": "von",
+            "meaning": "over there, yonder",
+            "note": "Russian вон points to something far away — exactly the function of Hindi वह, which always points to something remote or at a distance"
+          },
+          {
+            "language": "Hebrew",
+            "word": "הוא",
+            "romanisation": "hu",
+            "meaning": "he",
+            "note": "Hebrew הוא (hu) is the masculine third-person pronoun — the same semantic slot as Hindi वह when used for 'he'"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "vah",
+          "language": "Russian",
+          "note": "Russian вах (vakh) is an exclamation of surprise or admiration — imagine pointing at something impressive far away and saying 'vah!' — that distant impressive thing is वह"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "सः / तद्",
+          "romanisation": "saḥ / tad",
+          "meaning": "he / that (remote demonstrative)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "सः (saḥ) / तद् (tad)", "meaning": "he / that" },
+          { "stage": "Prakrit", "form": "सो (so) / वह (vaha)", "meaning": "he / that" },
+          { "stage": "Apabhraṃśa", "form": "वहु (vahu)", "meaning": "that, he/she" },
+          { "stage": "Hindi", "form": "वह / वो", "meaning": "that / he / she / it (remote)" }
+        ],
+        "logic": "The remote demonstrative in Sanskrit pointed to things or people away from the speaker; in Hindi this distance-pointing function survived, but the word now also serves as the everyday third-person pronoun for all genders."
+      },
+      "etymology_story": [
+        "वह descends from Sanskrit's remote demonstrative and third-person pronoun stems, particularly saḥ (he) and tad (that).",
+        "Through Prakrit and Apabhraṃśa, these forms blended and simplified into वह.",
+        "In modern Hindi, वह points to anything remote — a thing over there, or a person not present in the conversation.",
+        "In everyday spoken Hindi, वह is often shortened to वो (vo), which sounds more natural in colloquial speech."
+      ],
+      "pronunciation_guide": {
+        "syllables": "vah",
+        "stress": "single syllable — in careful speech the 'h' is lightly breathed; in fast speech it often becomes 'vo'",
+        "tips": [
+          {
+            "sounds_like": "vah",
+            "language": "Russian",
+            "tip": "Russian вах (an exclamation) — picture pointing at something distant and impressive"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A person standing at a window, pointing with one finger at something far away on the horizon, silhouetted against the light",
+        "connection": "The gesture of pointing at a distant, far-off thing captures the core meaning of वह — always pointing away, to something remote"
+      },
+      "examples": [
+        {
+          "hindi": "वह कौन है?",
+          "romanisation": "vah kaun hai?",
+          "english": "Who is that?",
+          "literal": "that who is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "वह लड़का मेरा भाई है।",
+          "romanisation": "vah laṛkā merā bhāī hai.",
+          "english": "That boy is my brother.",
+          "literal": "that boy my brother is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "वह ठीक है।",
+          "romanisation": "vah ṭhīk hai.",
+          "english": "He/She is fine.",
+          "literal": "he/she fine is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "वह वहाँ है, मैं यहाँ हूँ।",
+          "romanisation": "vah vahā̃ hai, maĩ yahā̃ hū̃.",
+          "english": "He/She is there, I am here.",
+          "literal": "he/she there is, I here am",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "वे",
+      "romanisation": "ve",
+      "english": "those / they / he / she (remote or honorific)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "spoken/colloquial form", "hindi": "वो", "roman": "vo" },
+        { "label": "oblique (remote plural)", "hindi": "उन", "roman": "un" },
+        { "label": "oblique with -को", "hindi": "उन्हें / उनको", "roman": "unhẽ / unko" },
+        { "label": "possessive", "hindi": "उनका / उनकी / उनके", "roman": "unkā / unkī / unke" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "ते",
+            "romanisation": "te",
+            "meaning": "they, those (remote plural)",
+            "note": "Sanskrit te is the direct ancestor of Hindi वे — the remote plural demonstrative/pronoun"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Russian",
+            "word": "вон те",
+            "romanisation": "von te",
+            "meaning": "those over there",
+            "note": "Russian вон те (those over there) combines a pointing word with te — structurally mirrors Hindi वे pointing at remote people"
+          },
+          {
+            "language": "French",
+            "word": "eux",
+            "romanisation": "eux",
+            "meaning": "them, they",
+            "note": "French eux is a remote/disjointed pronoun for 'they' — the same slot as Hindi वे in both remote pointing and respectful third-person singular use"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "veil",
+          "language": "English",
+          "note": "The 've' sound in 'veil' matches the start of वे — imagine a group of distant figures behind a veil, being referred to as 'they'"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "ते",
+          "romanisation": "te",
+          "meaning": "they, those (remote plural)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "ते (te)", "meaning": "they, those" },
+          { "stage": "Prakrit", "form": "ते (te)", "meaning": "they" },
+          { "stage": "Hindi", "form": "वे", "meaning": "those / they (remote) / he/she (honorific)" }
+        ],
+        "logic": "The remote plural of Sanskrit survived into Hindi as वे, functioning both as the plural of वह (those things/people over there) and as a respectful third-person singular — honouring a single person by treating them grammatically as plural."
+      },
+      "etymology_story": [
+        "वे comes directly from Sanskrit te, the remote plural demonstrative meaning 'those' or 'they'.",
+        "The initial 'v' was added during the transition through Prakrit to distinguish it more clearly from the near plural ये.",
+        "Like ये, Hindi वे serves double duty: as a literal plural (those people) and as an honorific singular (he/she, referring with respect).",
+        "In colloquial speech वे often merges with वो, the informal spoken variant of both वह and वे."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ve",
+        "stress": "single syllable — a 'v' followed by a long 'e' vowel, similar to the English word 'vey'",
+        "tips": [
+          {
+            "sounds_like": "way",
+            "language": "English",
+            "tip": "वे sounds like 'vay' — the same long-e vowel as in 'way', just with a v at the start"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A group of distant figures on a hillside, barely visible, with a telescope pointed toward them from the foreground",
+        "connection": "The distance of the figures and the need for a telescope to see them encodes the 'remote' quality of वे — it always refers to people or things at a distance"
+      },
+      "examples": [
+        {
+          "hindi": "वे कौन हैं?",
+          "romanisation": "ve kaun haĩ?",
+          "english": "Who are they?",
+          "literal": "they who are",
+          "register": "neutral"
+        },
+        {
+          "hindi": "वे वहाँ हैं।",
+          "romanisation": "ve vahā̃ haĩ.",
+          "english": "They are over there.",
+          "literal": "they there are",
+          "register": "neutral"
+        },
+        {
+          "hindi": "वे बहुत अच्छे इंसान हैं।",
+          "romanisation": "ve bahut acche insān haĩ.",
+          "english": "He/She is a very good person (with respect).",
+          "literal": "they very good person are",
+          "register": "respectful"
+        },
+        {
+          "hindi": "यह यहाँ है, वे वहाँ हैं।",
+          "romanisation": "yah yahā̃ hai, ve vahā̃ haĩ.",
+          "english": "This one is here, those are over there.",
+          "literal": "this here is, those there are",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "हूँ",
+      "romanisation": "hū̃",
+      "english": "am (to be — 1st person singular)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "subject pronoun", "hindi": "मैं ... हूँ", "roman": "maĩ ... hū̃" },
+        { "label": "negative", "hindi": "नहीं हूँ", "roman": "nahī̃ hū̃" },
+        { "label": "question form", "hindi": "क्या ... हूँ?", "roman": "kyā ... hū̃?" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "अस्मि",
+            "romanisation": "asmi",
+            "meaning": "I am (first-person singular of as, to be)",
+            "note": "Sanskrit asmi is the direct ancestor of Hindi हूँ — both mean 'I am', from the Sanskrit verb as- (to be)"
+          },
+          {
+            "language": "English",
+            "word": "am",
+            "romanisation": "am",
+            "meaning": "I am",
+            "note": "English 'am' and Sanskrit asmi (ancestor of हूँ) both descend from PIE *h₁es- (to be) — true cognates across 4,000 years"
+          },
+          {
+            "language": "Russian",
+            "word": "есмь",
+            "romanisation": "yesm'",
+            "meaning": "I am (archaic/Church Slavonic)",
+            "note": "Russian есмь (archaic) shares the same PIE *h₁es- root — Hindi हूँ is its living cousin"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Hebrew",
+            "word": "הוּ",
+            "romanisation": "hu",
+            "meaning": "he is (in Biblical usage)",
+            "note": "The Hebrew hoo/hu sound is close to Hindi hū̃ — both relate to being or existence in their respective grammars"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "who",
+          "language": "English",
+          "note": "हूँ sounds like 'who' with a nasal hum — 'I am who I am': the two sounds and the philosophical idea connect perfectly"
+        },
+        {
+          "word": "ху",
+          "language": "Russian",
+          "note": "The Russian syllable ху (khu) sounds similar to हूँ — both are single nasal syllables"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Proto-Indo-European",
+          "word": "*h₁es-",
+          "romanisation": "*h₁es-",
+          "meaning": "to be, to exist"
+        },
+        "evolution": [
+          { "stage": "Proto-Indo-European", "form": "*h₁es-mi", "meaning": "I am" },
+          { "stage": "Sanskrit", "form": "अस्मि (asmi)", "meaning": "I am" },
+          { "stage": "Prakrit", "form": "अम्हि (amhi)", "meaning": "I am" },
+          { "stage": "Apabhraṃśa", "form": "हूँ (hū̃)", "meaning": "I am" },
+          { "stage": "Hindi", "form": "हूँ", "meaning": "am (used only with मैं)" }
+        ],
+        "logic": "The PIE root for 'to be' gave Sanskrit asmi ('I am'), which through Prakrit erosion became the short, nasal hū̃ — one of the most ancient and universal concepts compressed into a single nasal syllable."
+      },
+      "etymology_story": [
+        "हूँ descends from the Proto-Indo-European root *h₁es-, meaning to be or to exist — the same root that gives English 'is', 'am', 'are', and 'was'.",
+        "In Sanskrit it appeared as asmi, the first-person singular of the verb as (to be).",
+        "Through Prakrit amhi and subsequent compression in Apabhraṃśa, the word shed its consonants and became the pure nasal syllable hū̃.",
+        "In Hindi, हूँ is used only with मैं (I) — every other pronoun has a different form of होना."
+      ],
+      "pronunciation_guide": {
+        "syllables": "hū̃",
+        "stress": "single syllable — starts with a light 'h' breath, then a long rounded 'oo' vowel with a strong nasal resonance felt in the nose",
+        "tips": [
+          {
+            "sounds_like": "who",
+            "language": "English",
+            "tip": "very close to English 'who' — same long 'oo' vowel, but with a nasal resonance that buzzes in the nose at the end"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A single figure standing alone in a spotlight on an empty stage, one hand on their chest, the other raised as if presenting themselves",
+        "connection": "The solitary figure presenting themselves captures हूँ perfectly — it is always and only used with मैं, making it the most personal, individual form of 'to be'"
+      },
+      "examples": [
+        {
+          "hindi": "मैं यहाँ हूँ।",
+          "romanisation": "maĩ yahā̃ hū̃.",
+          "english": "I am here.",
+          "literal": "I here am",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मैं ठीक हूँ।",
+          "romanisation": "maĩ ṭhīk hū̃.",
+          "english": "I am fine.",
+          "literal": "I fine am",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मैं भारत में हूँ।",
+          "romanisation": "maĩ bhārat mẽ hū̃.",
+          "english": "I am in India.",
+          "literal": "I India in am",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मैं तुम्हारे साथ हूँ।",
+          "romanisation": "maĩ tumhāre sāth hū̃.",
+          "english": "I am with you.",
+          "literal": "I your with am",
+          "register": "casual"
+        }
+      ]
+    }
+  ]
+}

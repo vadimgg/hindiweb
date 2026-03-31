@@ -1,0 +1,594 @@
+{
+  "title": "to be: present and past",
+  "words": [
+    {
+      "hindi": "है",
+      "romanisation": "hai",
+      "english": "is (to be — 3rd singular / intimate 2nd singular)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "used with", "hindi": "यह / वह / तू", "roman": "yah / vah / tū" },
+        { "label": "negative", "hindi": "नहीं है", "roman": "nahī̃ hai" },
+        { "label": "question marker combination", "hindi": "क्या ... है?", "roman": "kyā ... hai?" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "अस्ति",
+            "romanisation": "asti",
+            "meaning": "is (third-person singular of as, to be)",
+            "note": "Sanskrit asti is the direct ancestor of Hindi है — both mean 'is', from the same PIE root for to be"
+          },
+          {
+            "language": "English",
+            "word": "is",
+            "romanisation": "is",
+            "meaning": "is",
+            "note": "English 'is' and Sanskrit asti (ancestor of है) both descend from PIE *h₁es-ti — they are true cognates; hai and 'is' are the same ancient word in different clothes"
+          },
+          {
+            "language": "Russian",
+            "word": "есть",
+            "romanisation": "yest'",
+            "meaning": "is / there is",
+            "note": "Russian есть shares the same PIE *h₁es- root as है — both are third-person singular present-tense forms of 'to be'"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Hebrew",
+            "word": "יש",
+            "romanisation": "yesh",
+            "meaning": "there is / exists",
+            "note": "Hebrew יש (yesh) expresses existence — the same philosophical function as है, which asserts that something is or exists"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "hi",
+          "language": "English",
+          "note": "है sounds like a slightly prolonged 'hi' — imagine greeting someone and pointing at them: 'hi, you IS here!'"
+        },
+        {
+          "word": "hay",
+          "language": "English",
+          "note": "'hay' (dried grass) rhymes perfectly with है — picture a hay bale that simply IS there, existing in the field"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Proto-Indo-European",
+          "word": "*h₁es-ti",
+          "romanisation": "*h₁es-ti",
+          "meaning": "is (third-person singular of to be)"
+        },
+        "evolution": [
+          { "stage": "Proto-Indo-European", "form": "*h₁es-ti", "meaning": "is" },
+          { "stage": "Sanskrit", "form": "अस्ति (asti)", "meaning": "is" },
+          { "stage": "Prakrit", "form": "अत्थि / अत्थे (atthi / atthe)", "meaning": "is" },
+          { "stage": "Apabhraṃśa", "form": "है / हइ (hai)", "meaning": "is" },
+          { "stage": "Hindi", "form": "है", "meaning": "is (3rd singular present; also 2nd intimate singular)" }
+        ],
+        "logic": "The PIE third-person 'is' compressed through Sanskrit asti → Prakrit atthi → Hindi है, shedding all but the essential 'h' breath and the 'ai' vowel — one of the most ancient words in any language, stripped to its barest form."
+      },
+      "etymology_story": [
+        "है shares its ancestry with English 'is', Russian есть, and Latin est — all descend from the Proto-Indo-European *h₁es-ti, meaning 'is'.",
+        "Sanskrit preserved this as asti, a full two-syllable word used extensively in texts.",
+        "Through Prakrit and Apabhraṃśa it wore down to the single syllable hai.",
+        "In Hindi, है is used with यह, वह (singular things and people), and with तू (intimate second-person) — the workhorse of the present tense."
+      ],
+      "pronunciation_guide": {
+        "syllables": "hai",
+        "stress": "single syllable — a light 'h' followed by the 'ai' diphthong, similar to saying 'hi' but with a fuller 'ai' at the end",
+        "tips": [
+          {
+            "sounds_like": "hay",
+            "language": "English",
+            "tip": "है sounds exactly like English 'hay' — same vowel, same light h at the start"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A single hay bale sitting in an empty golden field — solid, present, undeniably there",
+        "connection": "The hay bale simply IS there — it exists, it is present — capturing the core meaning of है as the most basic assertion of being"
+      },
+      "examples": [
+        {
+          "hindi": "यह क्या है?",
+          "romanisation": "yah kyā hai?",
+          "english": "What is this?",
+          "literal": "this what is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "वह लड़का कहाँ है?",
+          "romanisation": "vah laṛkā kahā̃ hai?",
+          "english": "Where is that boy?",
+          "literal": "that boy where is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "तू ठीक है ना?",
+          "romanisation": "tū ṭhīk hai nā?",
+          "english": "You're okay, right?",
+          "literal": "you fine is, right",
+          "register": "intimate"
+        },
+        {
+          "hindi": "मेरा घर यहाँ है।",
+          "romanisation": "merā ghar yahā̃ hai.",
+          "english": "My house is here.",
+          "literal": "my house here is",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "हो",
+      "romanisation": "ho",
+      "english": "are (to be — informal 2nd person)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "used with", "hindi": "तुम", "roman": "tum" },
+        { "label": "negative", "hindi": "नहीं हो", "roman": "nahī̃ ho" },
+        { "label": "subjunctive / optative mood (3rd person)", "hindi": "हो", "roman": "ho" },
+        { "label": "imperative / wish construction", "hindi": "हो जाए", "roman": "ho jāe" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "भवसि",
+            "romanisation": "bhavasi",
+            "meaning": "you are (from bhū, to become/be)",
+            "note": "Hindi हो descends from the Sanskrit root bhū (to be, to become) via Prakrit — a different Sanskrit root from asti, giving a distinct set of conjugated forms"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "ho",
+            "romanisation": "ho",
+            "meaning": "exclamation of attention (westward ho!)",
+            "note": "English 'ho!' (a call to attention) is spelled identically — imagine calling out 'ho!' to a friend informally, the way you'd use तुम and हो"
+          },
+          {
+            "language": "Russian",
+            "word": "хо",
+            "romanisation": "kho",
+            "meaning": "syllable used in laughter (хо-хо)",
+            "note": "The Russian laughter syllable хо has the same sound — light, casual, friendly — matching the informal register of हो"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "ho",
+          "language": "English",
+          "note": "Identical in spelling and sound to English exclamation 'ho' — a casual, friendly call that matches the informal register of हो perfectly"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "भू",
+          "romanisation": "bhū",
+          "meaning": "to be, to become, to exist"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "भवसि (bhavasi)", "meaning": "you are" },
+          { "stage": "Prakrit", "form": "होसि (hosi)", "meaning": "you are" },
+          { "stage": "Apabhraṃśa", "form": "हो (ho)", "meaning": "you are" },
+          { "stage": "Hindi", "form": "हो", "meaning": "are (with तुम); also used in subjunctive" }
+        ],
+        "logic": "Sanskrit bhū (to become) gave a parallel set of 'to be' forms alongside asti/है — these bhū-derived forms handle the informal second person and the subjunctive mood in Hindi."
+      },
+      "etymology_story": [
+        "हो comes from the Sanskrit root bhū, meaning to be or to become — a slightly more dynamic root than the pure asti ('to be' in a static sense).",
+        "Sanskrit bhavasi ('you are') compressed through Prakrit hosi to the single syllable ho.",
+        "In Hindi, हो is used specifically with तुम — the informal second person — making it the casual, everyday 'you are'.",
+        "The same form हो also appears in the subjunctive mood, expressing wishes, possibilities, and conditions."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ho",
+        "stress": "single syllable — a rounded, open 'o' sound with a clear 'h' breath at the start",
+        "tips": [
+          {
+            "sounds_like": "ho",
+            "language": "English",
+            "tip": "sounds exactly like the English exclamation 'ho' — same vowel, same consonant"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "Two friends at a crossroads, one casually raising a hand to the other with a relaxed wave",
+        "connection": "The relaxed, casual wave between friends captures the informal register of हो — used with तुम, among people who are comfortable with each other but not intimately close"
+      },
+      "examples": [
+        {
+          "hindi": "तुम कहाँ हो?",
+          "romanisation": "tum kahā̃ ho?",
+          "english": "Where are you?",
+          "literal": "you where are",
+          "register": "casual"
+        },
+        {
+          "hindi": "तुम बहुत अच्छे हो।",
+          "romanisation": "tum bahut acche ho.",
+          "english": "You are very good.",
+          "literal": "you very good are",
+          "register": "casual"
+        },
+        {
+          "hindi": "क्या तुम ठीक हो?",
+          "romanisation": "kyā tum ṭhīk ho?",
+          "english": "Are you okay?",
+          "literal": "Q you fine are",
+          "register": "casual"
+        },
+        {
+          "hindi": "जो भी हो, हम साथ हैं।",
+          "romanisation": "jo bhī ho, ham sāth haĩ.",
+          "english": "Whatever happens, we are together.",
+          "literal": "whatever be, we together are",
+          "register": "neutral / colloquial"
+        }
+      ]
+    },
+    {
+      "hindi": "हैं",
+      "romanisation": "haĩ",
+      "english": "are (to be — formal 2nd person / plural 3rd person)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "used with", "hindi": "आप / हम / ये / वे", "roman": "āp / ham / ye / ve" },
+        { "label": "negative", "hindi": "नहीं हैं", "roman": "nahī̃ haĩ" },
+        { "label": "question form", "hindi": "क्या ... हैं?", "roman": "kyā ... haĩ?" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "सन्ति",
+            "romanisation": "santi",
+            "meaning": "they are (plural third-person of as, to be)",
+            "note": "Sanskrit santi is the plural ancestor of Hindi हैं — both are the plural/formal present of 'to be'"
+          },
+          {
+            "language": "English",
+            "word": "are",
+            "romanisation": "are",
+            "meaning": "are (plural/formal to be)",
+            "note": "English 'are' fills the same grammatical slot as Hindi हैं — the plural or formal second-person present tense of 'to be'"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Hebrew",
+            "word": "הן",
+            "romanisation": "hen",
+            "meaning": "they are (feminine plural)",
+            "note": "Hebrew הן (hen) means 'they are' — the same plural third-person function as Hindi हैं when used with वे"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "haĩ",
+          "language": "Hindi",
+          "note": "हैं and है differ only in nasality — है (hai) for singular intimate, हैं (haĩ) for plural and formal; the nasal hum signals plurality and formality"
+        },
+        {
+          "word": "hayne",
+          "language": "English",
+          "note": "The nasal ending of हैं rhymes loosely with 'hayne' or 'hain' — the buzzing nasal is the key distinguishing feature from है"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Proto-Indo-European",
+          "word": "*h₁s-énti",
+          "romanisation": "*h₁s-énti",
+          "meaning": "they are (plural of to be)"
+        },
+        "evolution": [
+          { "stage": "Proto-Indo-European", "form": "*h₁s-énti", "meaning": "they are" },
+          { "stage": "Sanskrit", "form": "सन्ति (santi)", "meaning": "they are" },
+          { "stage": "Prakrit", "form": "सन्ति / अत्थि (santi / atthi)", "meaning": "they are" },
+          { "stage": "Apabhraṃśa", "form": "हैं (haĩ)", "meaning": "they/you (formal) are" },
+          { "stage": "Hindi", "form": "हैं", "meaning": "are (with आप, हम, ये, वे)" }
+        ],
+        "logic": "The plural of 'to be' from PIE compressed into Hindi हैं — the nasal ending (the anusvara ँ) is the sonic marker of plurality, carrying the sense of 'more than one' or 'formal address' in a single nasal buzz."
+      },
+      "etymology_story": [
+        "हैं shares its roots with Sanskrit santi (they are) and ultimately with PIE *h₁s-énti, the plural of 'to be'.",
+        "Through Prakrit and Apabhraṃśa, the form compressed into the single nasal syllable haĩ.",
+        "The nasal ending (written as ँ in Devanagari) is the crucial marker — it distinguishes हैं (plural/formal) from है (singular/intimate).",
+        "In Hindi, हैं is used with आप (formal you), हम (we), ये (these/they, near), and वे (those/they, remote)."
+      ],
+      "pronunciation_guide": {
+        "syllables": "haĩ",
+        "stress": "single syllable — like है (hay) but with the vowel resonating through the nose at the end; the nasal hum is the key distinguishing feature",
+        "tips": [
+          {
+            "sounds_like": "hay",
+            "language": "English",
+            "tip": "start with the 'hay' sound as in है, then let it resonate nasally through your nose — that nasal hum at the end is हैं"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A crowd of people all standing together, each with a small humming tuning fork held up, all vibrating in unison",
+        "connection": "The shared nasal vibration of the crowd captures the nasal ending of हैं — that buzz in the nose marks plurality and formality, the thing that separates हैं from है"
+      },
+      "examples": [
+        {
+          "hindi": "आप कहाँ हैं?",
+          "romanisation": "āp kahā̃ haĩ?",
+          "english": "Where are you?",
+          "literal": "you(formal) where are",
+          "register": "formal"
+        },
+        {
+          "hindi": "हम यहाँ हैं।",
+          "romanisation": "ham yahā̃ haĩ.",
+          "english": "We are here.",
+          "literal": "we here are",
+          "register": "neutral"
+        },
+        {
+          "hindi": "वे बहुत अच्छे हैं।",
+          "romanisation": "ve bahut acche haĩ.",
+          "english": "They are very good.",
+          "literal": "they very good are",
+          "register": "neutral"
+        },
+        {
+          "hindi": "ये लड़के कहाँ हैं?",
+          "romanisation": "ye laṛke kahā̃ haĩ?",
+          "english": "Where are these boys?",
+          "literal": "these boys where are",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "था",
+      "romanisation": "thā",
+      "english": "was (masculine singular)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "feminine singular", "hindi": "थी", "roman": "thī" },
+        { "label": "masculine plural / honorific", "hindi": "थे", "roman": "the" },
+        { "label": "feminine plural / honorific", "hindi": "थीं", "roman": "thī̃" },
+        { "label": "used with (masculine singular subjects)", "hindi": "मैं / तू / वह / यह / लड़का", "roman": "maĩ / tū / vah / yah / laṛkā" },
+        { "label": "negative", "hindi": "नहीं था", "roman": "nahī̃ thā" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "अभूत्",
+            "romanisation": "abhūt",
+            "meaning": "was, became (past of bhū, to be)",
+            "note": "Hindi था descends from the Sanskrit past forms of bhū (to be/become) — the same root that gives होना and all the ho- forms"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Russian",
+            "word": "тот",
+            "romanisation": "tot",
+            "meaning": "that (masculine demonstrative)",
+            "note": "Russian тот (that, masculine) begins with 'то' — sounds like the start of था, and like था it is a masculine form; helps fix the masculine gender agreement of था"
+          },
+          {
+            "language": "English",
+            "word": "thaw",
+            "romanisation": "thaw",
+            "meaning": "to melt from frozen state",
+            "note": "था sounds like 'thaw' — the past melting away like था, which refers to what has already gone"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "thaw",
+          "language": "English",
+          "note": "'thaw' rhymes with था — like how the past thaws away and is gone, था marks what was but is no more"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "भू",
+          "romanisation": "bhū",
+          "meaning": "to be, to become"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "अभूत् (abhūt) / आसीत् (āsīt)", "meaning": "was / he was" },
+          { "stage": "Prakrit", "form": "आसि / होइ past", "meaning": "was" },
+          { "stage": "Apabhraṃśa", "form": "था (thā)", "meaning": "was (masculine)" },
+          { "stage": "Hindi", "form": "था", "meaning": "was (masculine singular past)" }
+        ],
+        "logic": "The Sanskrit past tense of bhū (to be) evolved through Prakrit into the था/थी/थे/थीं paradigm — a fully gender-agreeing past tense unique to the 'to be' verb in Hindi."
+      },
+      "etymology_story": [
+        "था comes from Sanskrit bhū (to be/become), specifically its past forms, which expressed a state that existed at a prior time.",
+        "Through Prakrit and Apabhraṃśa the past forms developed the distinctive 'th' initial consonant still present today.",
+        "In Hindi, था always agrees with the grammatical gender and number of the subject: था for masculine singular, थी for feminine singular.",
+        "This gender agreement of the past tense of होना is one of Hindi's most important grammatical features."
+      ],
+      "pronunciation_guide": {
+        "syllables": "thā",
+        "stress": "single syllable — the 'th' is aspirated (a puff of air follows the t), then a long open 'aa' vowel",
+        "tips": [
+          {
+            "sounds_like": "thaw",
+            "language": "English",
+            "tip": "था sounds very much like English 'thaw' — the same aspirated 'th' sound at the start and a similar open vowel"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A melting ice sculpture of a man — solid and present in the past, now slowly becoming water and disappearing",
+        "connection": "The masculine figure of ice that WAS solid but is now melting captures था — the masculine singular past, something that existed but is now gone"
+      },
+      "examples": [
+        {
+          "hindi": "वह यहाँ था।",
+          "romanisation": "vah yahā̃ thā.",
+          "english": "He was here.",
+          "literal": "he here was",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मैं ठीक था।",
+          "romanisation": "maĩ ṭhīk thā.",
+          "english": "I was fine.",
+          "literal": "I fine was",
+          "register": "neutral"
+        },
+        {
+          "hindi": "वह लड़का मेरा दोस्त था।",
+          "romanisation": "vah laṛkā merā dost thā.",
+          "english": "That boy was my friend.",
+          "literal": "that boy my friend was",
+          "register": "neutral"
+        },
+        {
+          "hindi": "क्या तू वहाँ था?",
+          "romanisation": "kyā tū vahā̃ thā?",
+          "english": "Were you there?",
+          "literal": "Q you there was",
+          "register": "intimate"
+        }
+      ]
+    },
+    {
+      "hindi": "थी",
+      "romanisation": "thī",
+      "english": "was (feminine singular)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "masculine singular counterpart", "hindi": "था", "roman": "thā" },
+        { "label": "masculine plural / honorific", "hindi": "थे", "roman": "the" },
+        { "label": "feminine plural / honorific", "hindi": "थीं", "roman": "thī̃" },
+        { "label": "used with (feminine singular subjects)", "hindi": "मैं / तू / वह / यह / लड़की", "roman": "maĩ / tū / vah / yah / laṛkī" },
+        { "label": "negative", "hindi": "नहीं थी", "roman": "nahī̃ thī" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "भू",
+            "romanisation": "bhū",
+            "meaning": "to be, to become",
+            "note": "The same Sanskrit root bhū that gave था (masculine) also gave थी (feminine) — the suffix -ī marks feminine in the past tense across Hindi"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "thee",
+            "romanisation": "thee",
+            "meaning": "you (archaic object form)",
+            "note": "थी sounds like archaic English 'thee' — both are small, intimate words; the 'thee/thī' pairing can help fix the feminine past 'was'"
+          },
+          {
+            "language": "Russian",
+            "word": "ты была",
+            "romanisation": "ty byla",
+            "meaning": "you were (feminine)",
+            "note": "Russian была (byla) is the feminine past form of 'to be' — exactly the same grammatical function as थी; both languages mark feminine past distinctly"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "thee",
+          "language": "English",
+          "note": "थी sounds like archaic English 'thee' — imagine 'thee was here' as an old-fashioned feminine past, anchoring the feminine and past meanings together"
+        },
+        {
+          "word": "tea",
+          "language": "English",
+          "note": "थी sounds exactly like 'tea' — picture a woman's tea cup that WAS here but is now empty and gone"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "भू",
+          "romanisation": "bhū",
+          "meaning": "to be, to become"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "आसीत् / अभूत् feminine", "meaning": "she was" },
+          { "stage": "Prakrit", "form": "past feminine forms of hoi-", "meaning": "she was" },
+          { "stage": "Apabhraṃśa", "form": "थी (thī)", "meaning": "was (feminine)" },
+          { "stage": "Hindi", "form": "थी", "meaning": "was (feminine singular past)" }
+        ],
+        "logic": "The feminine suffix -ī is systematic in Hindi past tense — just as लड़की is feminine लड़का, थी is the feminine counterpart to था; the -ī ending is the universal feminine marker in Hindi's past tense system."
+      },
+      "etymology_story": [
+        "थी shares its root with था — both come from Sanskrit bhū (to be) — but carries the feminine suffix -ī that marks the speaker or subject as feminine.",
+        "This gender agreement in past tense is a defining feature of Hindi grammar, absent from English but present in Russian (была vs. был).",
+        "A woman saying 'I was fine' says मैं ठीक थी — the थी tells us immediately that the speaker is female.",
+        "Likewise, referring to a girl or any feminine noun in the past requires थी — the word itself encodes both past tense and feminine gender."
+      ],
+      "pronunciation_guide": {
+        "syllables": "thī",
+        "stress": "single syllable — aspirated 'th' at the start, then a long 'ee' vowel",
+        "tips": [
+          {
+            "sounds_like": "tea",
+            "language": "English",
+            "tip": "थी sounds exactly like English 'tea' — same long 'ee' vowel, the 'th' is just slightly more aspirated than the English 't'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "An empty tea cup left on a table, with a faint impression of lipstick on the rim — someone feminine was here, but is now gone",
+        "connection": "The empty tea cup and the lipstick trace encode both the feminine gender and the past tense of थी — she WAS here, now she is gone"
+      },
+      "examples": [
+        {
+          "hindi": "वह यहाँ थी।",
+          "romanisation": "vah yahā̃ thī.",
+          "english": "She was here.",
+          "literal": "she here was",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मैं ठीक थी।",
+          "romanisation": "maĩ ṭhīk thī.",
+          "english": "I was fine. (speaker is female)",
+          "literal": "I fine was",
+          "register": "neutral"
+        },
+        {
+          "hindi": "वह लड़की बहुत होशियार थी।",
+          "romanisation": "vah laṛkī bahut hośiyār thī.",
+          "english": "That girl was very smart.",
+          "literal": "that girl very smart was",
+          "register": "neutral"
+        },
+        {
+          "hindi": "क्या तू वहाँ थी?",
+          "romanisation": "kyā tū vahā̃ thī?",
+          "english": "Were you there? (asking a female)",
+          "literal": "Q you there was(fem)",
+          "register": "intimate"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,576 @@
+{
+  "title": "to be",
+  "words": [
+    {
+      "hindi": "इसकी",
+      "romanisation": "iskī",
+      "english": "this one's / its (feminine)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "masculine singular", "hindi": "इसका", "roman": "iskā" },
+        { "label": "masculine plural / oblique", "hindi": "इसके", "roman": "iske" },
+        { "label": "feminine plural / oblique", "hindi": "इसकी", "roman": "iskī" },
+        { "label": "plural/near equivalent", "hindi": "इनकी", "roman": "inkī" },
+        { "label": "singular/distant equivalent", "hindi": "उसकी", "roman": "uskī" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "एतद् / इदम्",
+            "romanisation": "etad / idam",
+            "meaning": "this (proximate demonstrative)",
+            "note": "Same root as इसका; the near-demonstrative Sanskrit base gives Hindi इस- its 'right here' proximity meaning"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "is",
+            "romanisation": "is",
+            "meaning": "third person singular present of 'to be'",
+            "note": "'is' sounds exactly like the first syllable of इसकी — 'is-key', which sounds like 'is-this-one's-key', a ready-made mnemonic"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "is-key",
+          "language": "English",
+          "note": "'iskī' sounds like 'is-key' — imagine the key belonging to the thing right in front of you to lock in the near-demonstrative possessive meaning"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "इदम्",
+          "romanisation": "idam",
+          "meaning": "this (proximate demonstrative pronoun)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "इदम् (idam) / अस्याः (asyāḥ)", "meaning": "this / of this (feminine genitive)" },
+          { "stage": "Prakrit", "form": "ima- / isa-", "meaning": "this (near)" },
+          { "stage": "Hindi oblique", "form": "इस (is)", "meaning": "oblique of यह (this)" },
+          { "stage": "Hindi", "form": "इसकी (iskī)", "meaning": "of this one / its (near, feminine)" }
+        ],
+        "logic": "Identical to इसका except for the feminine suffix -kī; the possessive agrees with the noun owned, not with the referent यह itself."
+      },
+      "etymology_story": [
+        "इसकी is the feminine counterpart of इसका, built from the same oblique base इस- plus the genitive suffix -kī.",
+        "इस- comes from Sanskrit idam, one of the proximate demonstrative pronouns meaning 'this thing close by'.",
+        "The suffix -kī (feminine) vs. -kā (masculine) follows the standard Hindi possessive agreement pattern.",
+        "So इसकी means 'of this one' when the noun it modifies is grammatically feminine — for example, इसकी किताब (this one's book)."
+      ],
+      "pronunciation_guide": {
+        "syllables": "is · kī",
+        "stress": "even; '-kī' rhymes with 'key'",
+        "tips": [
+          {
+            "sounds_like": "is",
+            "language": "English",
+            "tip": "the first syllable sounds exactly like the English word 'is'"
+          },
+          {
+            "sounds_like": "key",
+            "language": "English",
+            "tip": "the ending '-kī' sounds exactly like the English word 'key'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A woman holding up a key labelled 'THIS ONE'S' — it belongs to the small shop right next to her",
+        "connection": "The key ('-kī' = 'key') right next to the shop (proximity = near demonstrative) with a woman holding it (feminine agreement) captures all three layers of इसकी"
+      },
+      "examples": [
+        {
+          "hindi": "इसकी किताब मेज़ पर है।",
+          "romanisation": "iskī kitāb mez par hai.",
+          "english": "This one's book is on the table.",
+          "literal": "this-one's book table on is",
+          "register": "casual"
+        },
+        {
+          "hindi": "यह बिल्ली है — इसकी आँखें नीली हैं।",
+          "romanisation": "yah billī hai — iskī ā̃kheñ nīlī haĩ.",
+          "english": "This is a cat — its eyes are blue.",
+          "literal": "this cat is — its eyes blue are",
+          "register": "casual"
+        },
+        {
+          "hindi": "इसकी माँ कौन है?",
+          "romanisation": "iskī mā̃ kaun hai?",
+          "english": "Who is this one's mother?",
+          "literal": "this-one's mother who is?",
+          "register": "casual"
+        },
+        {
+          "hindi": "इसकी कीमत क्या है?",
+          "romanisation": "iskī kīmat kyā hai?",
+          "english": "What is the price of this?",
+          "literal": "this-one's price what is?",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "उसका",
+      "romanisation": "uskā",
+      "english": "his / her / its (masculine)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "feminine", "hindi": "उसकी", "roman": "uskī" },
+        { "label": "masculine plural / oblique", "hindi": "उसके", "roman": "uske" },
+        { "label": "feminine plural / oblique", "hindi": "उसकी", "roman": "uskī" },
+        { "label": "plural/distant equivalent", "hindi": "उनका", "roman": "unkā" },
+        { "label": "near/proximate equivalent", "hindi": "इसका", "roman": "iskā" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "अदस् / अमुम्",
+            "romanisation": "adas / amum",
+            "meaning": "that (distal demonstrative)",
+            "note": "उस- is the oblique form of वह (that/he/she), descending from Sanskrit's distal demonstrative root; it refers to something farther away or already mentioned"
+          },
+          {
+            "language": "Russian",
+            "word": "его",
+            "romanisation": "yevo",
+            "meaning": "his / its (genitive)",
+            "note": "Both उसका and его are singular third-person possessives covering 'his', 'her', and 'its' depending on context — the same ambiguity exists in both languages"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "us",
+            "romanisation": "us",
+            "meaning": "us (first person plural object)",
+            "note": "'us' sounds like the first syllable of उसका — a false friend but a useful sound hook; just remember उस- points away from the speaker"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "us-car",
+          "language": "English",
+          "note": "'uskā' sounds like 'us-car' — imagine pointing at a car across the street (away from you, hence distant/distal) saying 'that one's car'"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "अमुम् / तद्",
+          "romanisation": "amum / tad",
+          "meaning": "that (distal or anaphoric demonstrative)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "तद् (tad) / तस्य (tasya)", "meaning": "that / of that (genitive)" },
+          { "stage": "Prakrit", "form": "usa / u-", "meaning": "that (distant demonstrative)" },
+          { "stage": "Hindi oblique", "form": "उस (us)", "meaning": "oblique form of वह (that/he/she)" },
+          { "stage": "Hindi", "form": "उसका (uskā)", "meaning": "of that one / his / her / its (masculine)" }
+        ],
+        "logic": "The distal root (pointing away) gave Hindi वह (that/he/she) and its oblique stem उस-; adding -kā creates the possessive 'belonging to that one', which serves as 'his', 'her', or 'its' for any singular non-honorific referent."
+      },
+      "etymology_story": [
+        "उसका is formed from उस, the oblique stem of वह (that / he / she), plus the possessive suffix -kā.",
+        "वह descends from Sanskrit's distal demonstrative pronouns — words that point to something away from the speaker.",
+        "In Hindi, one word covers 'his', 'her', and 'its' for singular non-honorific third persons — context always makes the meaning clear.",
+        "The suffix -kā (masculine) changes to -kī (feminine) or -ke (oblique/plural) depending only on the gender of the noun owned."
+      ],
+      "pronunciation_guide": {
+        "syllables": "us · kā",
+        "stress": "even; 'us' rhymes with English 'bus', '-kā' is long",
+        "tips": [
+          {
+            "sounds_like": "bus",
+            "language": "English",
+            "tip": "the first syllable 'us' sounds like the English word 'bus' without the 'b'"
+          },
+          {
+            "sounds_like": "car",
+            "language": "English",
+            "tip": "the '-kā' sounds like 'car' without the r"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A person on a street corner pointing across the road at a parked car — on the windshield is a sign reading 'HIS / HERS'",
+        "connection": "Pointing across the street (distance = distal, 'that over there') mirrors उस-'s distal meaning; the 'his/hers' sign captures उसका's gender-neutral third-person possessive role"
+      },
+      "examples": [
+        {
+          "hindi": "उसका घर बहुत बड़ा है।",
+          "romanisation": "uskā ghar bahut baṛā hai.",
+          "english": "His / her house is very big.",
+          "literal": "his/her house very big is",
+          "register": "casual"
+        },
+        {
+          "hindi": "उसका नाम राज है।",
+          "romanisation": "uskā nām Rāj hai.",
+          "english": "His name is Raj.",
+          "literal": "his name Raj is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "यह कुत्ता है — उसका खाना कहाँ है?",
+          "romanisation": "yah kuttā hai — uskā khānā kahā̃ hai?",
+          "english": "This is a dog — where is its food?",
+          "literal": "this dog is — its food where is?",
+          "register": "casual"
+        },
+        {
+          "hindi": "उसका जवाब सही था।",
+          "romanisation": "uskā javāb sahī thā.",
+          "english": "His / her answer was correct.",
+          "literal": "his/her answer correct was",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "उसकी",
+      "romanisation": "uskī",
+      "english": "his / her / its (feminine)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "masculine singular", "hindi": "उसका", "roman": "uskā" },
+        { "label": "masculine plural / oblique", "hindi": "उसके", "roman": "uske" },
+        { "label": "feminine plural / oblique", "hindi": "उसकी", "roman": "uskī" },
+        { "label": "plural/distant equivalent", "hindi": "उनकी", "roman": "unkī" },
+        { "label": "near/proximate equivalent", "hindi": "इसकी", "roman": "iskī" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "तस्याः",
+            "romanisation": "tasyāḥ",
+            "meaning": "of her / of that (feminine genitive)",
+            "note": "Sanskrit tasyāḥ was the feminine genitive of the distal demonstrative; Hindi reduced this to the single form उसकी for all genders of referent, changing only the possessed noun's gender"
+          },
+          {
+            "language": "Russian",
+            "word": "её",
+            "romanisation": "yeyo",
+            "meaning": "her / its (genitive/accusative of она)",
+            "note": "Both उसकी and её can mean 'her' or 'its' for a feminine thing; the possessive agrees with the owned noun in Hindi but with the owner in Russian — a key contrast"
+          }
+        ],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [
+        {
+          "word": "husky",
+          "language": "English",
+          "note": "'uskī' is close to 'husky' without the 'h' — picture a husky dog and 'its (feminine) breed' to hook the sound"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "तद्",
+          "romanisation": "tad",
+          "meaning": "that (distal demonstrative)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "तस्याः (tasyāḥ)", "meaning": "of her / of that (feminine genitive)" },
+          { "stage": "Prakrit", "form": "usa / u-", "meaning": "that (distal)" },
+          { "stage": "Hindi oblique", "form": "उस (us)", "meaning": "oblique of वह" },
+          { "stage": "Hindi", "form": "उसकी (uskī)", "meaning": "of that one / his/her/its (feminine)" }
+        ],
+        "logic": "Identical to उसका in ancestry; -kī replaces -kā to agree with the feminine noun being possessed — the referent's gender is irrelevant."
+      },
+      "etymology_story": [
+        "उसकी is the feminine form of उसका and shares its full history from Sanskrit's distal demonstrative pronoun tad.",
+        "In Hindi, the possessive suffix agrees with the noun owned: -kā for masculine nouns, -kī for feminine nouns.",
+        "This means उसकी can mean 'his book', 'her voice', 'its tail' — any singular non-honorific third person, as long as the owned thing is feminine.",
+        "Context (or the surrounding sentence) always makes clear whether 'his', 'her', or 'its' is meant."
+      ],
+      "pronunciation_guide": {
+        "syllables": "us · kī",
+        "stress": "even; '-kī' rhymes with 'key'",
+        "tips": [
+          {
+            "sounds_like": "bus",
+            "language": "English",
+            "tip": "the first syllable 'us' sounds like 'bus' without the 'b'"
+          },
+          {
+            "sounds_like": "key",
+            "language": "English",
+            "tip": "the ending '-kī' sounds exactly like the English word 'key'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A person across the road pointing to a key hanging on a hook outside a door — a small sign next to the key reads 'HIS / HERS'",
+        "connection": "Distance (across the road) signals the distal उस-, the key (-kī) signals the feminine suffix, and 'his/hers' captures the ambiguous third-person meaning"
+      },
+      "examples": [
+        {
+          "hindi": "उसकी किताब बहुत अच्छी है।",
+          "romanisation": "uskī kitāb bahut acchī hai.",
+          "english": "His / her book is very good.",
+          "literal": "his/her book very good is",
+          "register": "casual"
+        },
+        {
+          "hindi": "उसकी माँ दिल्ली में हैं।",
+          "romanisation": "uskī mā̃ dillī mẽ haĩ.",
+          "english": "His / her mother is in Delhi.",
+          "literal": "his/her mother Delhi in are",
+          "register": "neutral"
+        },
+        {
+          "hindi": "बिल्ली की आँखें देखो — उसकी आँखें हरी हैं।",
+          "romanisation": "billī kī ā̃kheñ dekho — uskī ā̃kheñ harī haĩ.",
+          "english": "Look at the cat's eyes — its eyes are green.",
+          "literal": "cat's eyes look — its eyes green are",
+          "register": "casual"
+        },
+        {
+          "hindi": "उसकी आवाज़ बहुत मीठी है।",
+          "romanisation": "uskī āvāz bahut mīṭhī hai.",
+          "english": "His / her voice is very sweet.",
+          "literal": "his/her voice very sweet is",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "हमारा",
+      "romanisation": "hamārā",
+      "english": "our (masculine)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "feminine", "hindi": "हमारी", "roman": "hamārī" },
+        { "label": "masculine plural / oblique", "hindi": "हमारे", "roman": "hamāre" },
+        { "label": "feminine plural / oblique", "hindi": "हमारी", "roman": "hamārī" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "अस्माकम्",
+            "romanisation": "asmākam",
+            "meaning": "of us (first person plural genitive)",
+            "note": "Sanskrit asmākam is the direct ancestor; the ham- stem comes from a Prakrit reduction of asma- (us)"
+          },
+          {
+            "language": "Russian",
+            "word": "наш",
+            "romanisation": "nash",
+            "meaning": "our",
+            "note": "Both हमारा and наш are the first-person plural possessives descending from PIE *nos- / *nes- (us); they serve the exact same grammatical role"
+          },
+          {
+            "language": "English",
+            "word": "our",
+            "romanisation": "our",
+            "meaning": "belonging to us",
+            "note": "English 'our' and Hindi हमारा share PIE ancestry through the first-person plural pronoun *nos-"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Arabic",
+            "word": "حمار",
+            "romanisation": "ḥimār",
+            "meaning": "donkey",
+            "note": "हमारा sounds very close to Arabic ḥimār (donkey) — a memorable false friend; remember: हमारा means 'ours', not a donkey"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "hammer",
+          "language": "English",
+          "note": "'hamārā' starts with 'ham-' like 'hammer' — imagine a group hammering together to build something: 'our project'"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "अस्मद्",
+          "romanisation": "asmad",
+          "meaning": "we / us (first person plural pronoun)"
+        },
+        "evolution": [
+          { "stage": "Proto-Indo-European", "form": "*nos- / *nes-", "meaning": "us (first person plural)" },
+          { "stage": "Sanskrit", "form": "अस्माकम् (asmākam)", "meaning": "of us (genitive)" },
+          { "stage": "Prakrit", "form": "amba / hama-", "meaning": "we, us" },
+          { "stage": "Apabhraṁśa", "form": "hamāra", "meaning": "our (possessive)" },
+          { "stage": "Hindi", "form": "हमारा (hamārā)", "meaning": "our (masculine)" }
+        ],
+        "logic": "The ancient PIE first-person plural root evolved through Sanskrit's long genitive form (asmākam) into the compact Hindi possessive हमारा; the -rā suffix marks masculine agreement, parallel to मेरा and तेरा."
+      },
+      "etymology_story": [
+        "हमारा descends from the Sanskrit first-person plural pronoun asmad, whose genitive was the long form asmākam (of us).",
+        "Through Prakrit this compressed dramatically into the stem hama-, losing the elaborate Sanskrit endings.",
+        "Apabhraṁśa added the possessive suffix -āra to produce hamāra, meaning 'belonging to us'.",
+        "Modern Hindi uses हमारा as the masculine form of 'our', with हमारी and हमारे for feminine and oblique contexts."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ha · mā · rā",
+        "stress": "slight stress on the second syllable 'mā'; both long ā's carry the word",
+        "tips": [
+          {
+            "sounds_like": "hum",
+            "language": "English",
+            "tip": "the first syllable 'ha' is close to 'hum' — 'ha-mā-rā'"
+          },
+          {
+            "sounds_like": "нам",
+            "language": "Russian",
+            "tip": "the 'ha-' opening is reminiscent of Russian нам (nam, 'to us') — both point to the first person plural"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A group of people surrounding a large table, all placing their hands on it at once — on the table is a sign that reads 'OURS'",
+        "connection": "Multiple hands on the same table (collective, plural ownership) captures हमारा's first-person plural meaning; the scene anchors 'we/us' as the owners"
+      },
+      "examples": [
+        {
+          "hindi": "यह हमारा घर है।",
+          "romanisation": "yah hamārā ghar hai.",
+          "english": "This is our house.",
+          "literal": "this our house is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "हमारा देश बहुत बड़ा है।",
+          "romanisation": "hamārā deś bahut baṛā hai.",
+          "english": "Our country is very big.",
+          "literal": "our country very big is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "क्या यह हमारा बैग है?",
+          "romanisation": "kyā yah hamārā baig hai?",
+          "english": "Is this our bag?",
+          "literal": "question this our bag is?",
+          "register": "casual"
+        },
+        {
+          "hindi": "हमारा काम खत्म हो गया।",
+          "romanisation": "hamārā kām khatm ho gayā.",
+          "english": "Our work is done.",
+          "literal": "our work finished be went",
+          "register": "casual"
+        }
+      ]
+    },
+    {
+      "hindi": "हमारी",
+      "romanisation": "hamārī",
+      "english": "our (feminine)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "masculine singular", "hindi": "हमारा", "roman": "hamārā" },
+        { "label": "masculine plural / oblique", "hindi": "हमारे", "roman": "hamāre" },
+        { "label": "feminine plural / oblique", "hindi": "हमारी", "roman": "hamārī" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "अस्माकम्",
+            "romanisation": "asmākam",
+            "meaning": "of us (first person plural genitive)",
+            "note": "Same root as हमारा; -ī suffix marks feminine noun agreement"
+          },
+          {
+            "language": "Russian",
+            "word": "наша",
+            "romanisation": "nasha",
+            "meaning": "our (feminine form)",
+            "note": "Russian наша is exactly the feminine form of наш (our), paralleling how हमारी is the feminine of हमारा — both languages make the possessive agree with the noun owned"
+          }
+        ],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [
+        {
+          "word": "hammer-ee",
+          "language": "English",
+          "note": "'hamārī' sounds like 'hammer-ee' — the group hammer image from हमारा now ends in the feminine '-ī' suffix, signalling a feminine noun is owned"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "अस्मद्",
+          "romanisation": "asmad",
+          "meaning": "we / us (first person plural)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "अस्माकम् (asmākam)", "meaning": "of us (genitive)" },
+          { "stage": "Prakrit", "form": "hama-", "meaning": "we, us" },
+          { "stage": "Apabhraṁśa", "form": "hamāri", "meaning": "our (feminine)" },
+          { "stage": "Hindi", "form": "हमारी (hamārī)", "meaning": "our (feminine)" }
+        ],
+        "logic": "Identical ancestry to हमारा; the only change is the final vowel — -ā becomes -ī to agree with a feminine noun, following the same pattern as all Hindi possessives."
+      },
+      "etymology_story": [
+        "हमारी shares every step of its history with हमारा — both derive from the Sanskrit first-person plural genitive asmākam.",
+        "The feminine ending -ī was simply substituted for the masculine -ā to make the possessive agree with a feminine noun.",
+        "This -ā / -ī / -e pattern runs across all Hindi possessive pronouns: मेरा/मेरी, तेरा/तेरी, हमारा/हमारी.",
+        "हमारी is used whenever the thing owned is grammatically feminine: हमारी माँ (our mother), हमारी भाषा (our language)."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ha · mā · rī",
+        "stress": "slight stress on 'mā'; '-rī' rhymes with 'free'",
+        "tips": [
+          {
+            "sounds_like": "hum",
+            "language": "English",
+            "tip": "the first syllable 'ha' is close to 'hum'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A group of women standing in a circle, all holding the same banner that reads 'OURS' — their collective ownership is the scene's centrepiece",
+        "connection": "The group of women (plural, feminine) holding a shared banner captures both the collective first-person plural 'our' and the feminine agreement of हमारी"
+      },
+      "examples": [
+        {
+          "hindi": "यह हमारी भाषा है।",
+          "romanisation": "yah hamārī bhāṣā hai.",
+          "english": "This is our language.",
+          "literal": "this our language is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "हमारी माँ बहुत अच्छी हैं।",
+          "romanisation": "hamārī mā̃ bahut acchī haĩ.",
+          "english": "Our mother is very kind.",
+          "literal": "our mother very kind are",
+          "register": "neutral"
+        },
+        {
+          "hindi": "हमारी टीम जीत गई।",
+          "romanisation": "hamārī ṭīm jīt gaī.",
+          "english": "Our team won.",
+          "literal": "our team win went",
+          "register": "casual"
+        },
+        {
+          "hindi": "क्या यह हमारी गाड़ी है?",
+          "romanisation": "kyā yah hamārī gāṛī hai?",
+          "english": "Is this our car?",
+          "literal": "question this our car is?",
+          "register": "casual"
+        }
+      ]
+    }
+  ]
+}

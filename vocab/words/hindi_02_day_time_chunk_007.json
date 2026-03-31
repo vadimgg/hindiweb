@@ -1,0 +1,543 @@
+{
+  "title": "day time",
+  "words": [
+    {
+      "hindi": "कितने बजे",
+      "romanisation": "kitne baje",
+      "english": "at what time / what o'clock",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "question phrase — fixed", "hindi": "कितने बजे", "roman": "kitne baje" },
+        { "label": "alternative phrasing", "hindi": "क्या समय है", "roman": "kyā samay hai" },
+        { "label": "colloquial variant", "hindi": "कितने बज रहे हैं", "roman": "kitne baj rahe haĩ" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "कति",
+            "romanisation": "kati",
+            "meaning": "how many",
+            "note": "Hindi कितने descends from Sanskrit kati (how many) — the same word used to ask 'how many bells have struck'"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Russian",
+            "word": "который час",
+            "romanisation": "kotoryy chas",
+            "meaning": "what time (literally: which hour)",
+            "note": "Russian uses 'which hour' to ask the time; Hindi uses 'how many o'clock' — both languages frame time-asking through the clock unit rather than an abstract 'time' word"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "kitten",
+          "language": "English",
+          "note": "'kitne' starts like 'kitten' — imagine a kitten sitting on a clock asking 'how many?'"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "कति",
+          "romanisation": "kati",
+          "meaning": "how many, how much"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "kati", "meaning": "how many" },
+          { "stage": "Prakrit", "form": "ketti / kita", "meaning": "how many" },
+          { "stage": "Hindi", "form": "कितना / कितने", "meaning": "how many / how much" },
+          { "stage": "Hindi phrase", "form": "कितने बजे", "meaning": "at what time (how many o'clock)" }
+        ],
+        "logic": "The phrase asks 'how many bell-strikes?' — since बजे comes from बजना (to ring), कितने बजे literally asks 'how many have rung?', i.e., what time is it."
+      },
+      "etymology_story": [
+        "कितने comes from Sanskrit kati, meaning 'how many', preserved across two thousand years of language change.",
+        "बजे comes from बजना (to ring), reflecting the tradition of striking a bell for each hour.",
+        "Together, कितने बजे means 'how many have rung?' — a beautifully concrete way to ask the time.",
+        "The phrase is the standard conversational question for asking what time something happens or is happening now."
+      ],
+      "pronunciation_guide": {
+        "syllables": "kit · ne · ba · je",
+        "stress": "light stress on 'kit'; the phrase flows as two words",
+        "tips": [
+          {
+            "sounds_like": "kit",
+            "language": "English",
+            "tip": "'kit' at the start of कितने sounds like the English word 'kit'"
+          },
+          {
+            "sounds_like": "beige",
+            "language": "English",
+            "tip": "'baje' at the end rhymes with 'beige' — the 'j' has a soft 'zh' quality"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A cartoon clock face with a giant question mark where the hands should be, surrounded by small ringing bells — each bell has a number on it (1, 2, 3...), and they are all mid-ring.",
+        "connection": "The question mark on the clock face represents कितने (how many), and the ringing bells represent बजे (o'clock, from 'to ring') — together encoding 'how many rings = what time?'"
+      },
+      "examples": [
+        {
+          "hindi": "तुम्हारी ट्रेन कितने बजे है?",
+          "romanisation": "tumhārī ṭren kitne baje hai?",
+          "english": "What time is your train?",
+          "literal": "your train how-many o'clock is",
+          "register": "casual"
+        },
+        {
+          "hindi": "मीटिंग कितने बजे शुरू होती है?",
+          "romanisation": "miṭiṃg kitne baje śurū hotī hai?",
+          "english": "What time does the meeting start?",
+          "literal": "meeting how-many o'clock start happens is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "तुम कल कितने बजे आओगे?",
+          "romanisation": "tum kal kitne baje āoge?",
+          "english": "What time will you come tomorrow?",
+          "literal": "you tomorrow how-many o'clock will-come",
+          "register": "casual"
+        },
+        {
+          "hindi": "दुकान कितने बजे बंद होती है?",
+          "romanisation": "dukān kitne baje band hotī hai?",
+          "english": "What time does the shop close?",
+          "literal": "shop how-many o'clock closed happens is",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "आधा",
+      "romanisation": "ādhā",
+      "english": "half (as in half past)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "masculine singular", "hindi": "आधा", "roman": "ādhā" },
+        { "label": "feminine singular", "hindi": "आधी", "roman": "ādhī" },
+        { "label": "plural / oblique", "hindi": "आधे", "roman": "ādhe" },
+        { "label": "time use (half past X)", "hindi": "साढ़े X बजे", "roman": "sāṛhe X baje" },
+        { "label": "half of a noun", "hindi": "आधा X", "roman": "ādhā X" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "अर्ध",
+            "romanisation": "ardha",
+            "meaning": "half",
+            "note": "Hindi आधा comes directly from Sanskrit ardha (half) — one of the most ancient and stable words in the language"
+          },
+          {
+            "language": "Persian",
+            "word": "نیم",
+            "romanisation": "nīm",
+            "meaning": "half",
+            "note": "Persian uses نیم (nīm) for half, which appears in Hindi compounds like नीम-रात (midnight, literally half-night) — a parallel concept"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Hebrew",
+            "word": "חצי",
+            "romanisation": "khatsi",
+            "meaning": "half",
+            "note": "No shared ancestry, but both Hebrew khatsi and Hindi ādhā are single short words for 'half' — the simplicity helps anchor the concept"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "ardha",
+          "language": "Sanskrit / Telugu / Kannada",
+          "note": "In South Indian languages and in Sanskrit, ardha means half — near-identical in meaning, and audibly close to ādhā"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "अर्ध",
+          "romanisation": "ardha",
+          "meaning": "half"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "ardha", "meaning": "half" },
+          { "stage": "Prakrit", "form": "addha", "meaning": "half" },
+          { "stage": "Apabhraṁśa", "form": "ādha", "meaning": "half" },
+          { "stage": "Hindi", "form": "आधा", "meaning": "half" }
+        ],
+        "logic": "The Sanskrit 'r' in ardha softened and disappeared through Prakrit and Apabhraṁśa, leaving the smooth ādhā. The meaning remained perfectly stable."
+      },
+      "etymology_story": [
+        "The word goes back to Sanskrit ardha, one of the basic mathematical vocabulary words of ancient India.",
+        "Through Prakrit it became addha, then smoothed further into ādha in later medieval speech.",
+        "Modern Hindi आधा retains the same meaning without any drift — half is half.",
+        "In time expressions, आधा appears in compounds: आधा घंटा (half an hour), डेढ़ (one and a half), and ढाई (two and a half)."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ā · dhā",
+        "stress": "both syllables are long vowels; stress is equal and gentle",
+        "tips": [
+          {
+            "sounds_like": "ardha",
+            "language": "Sanskrit",
+            "tip": "if you know the Sanskrit ardha (half), ādhā is simply ardha with the 'r' softened away"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A pizza sliced perfectly in two halves — one half sitting on a plate, the other half still in the air, frozen mid-fall. The cut is razor-straight.",
+        "connection": "The clean split of the pizza into two equal halves is the most direct image of आधा — the Sanskrit root ardha meant exactly 'one of two equal parts'."
+      },
+      "examples": [
+        {
+          "hindi": "मुझे आधा घंटा और चाहिए।",
+          "romanisation": "mujhe ādhā ghaṇṭā aur cāhie.",
+          "english": "I need another half an hour.",
+          "literal": "me-to half hour more need",
+          "register": "casual"
+        },
+        {
+          "hindi": "आधी रोटी मेरे लिए काफ़ी है।",
+          "romanisation": "ādhī roṭī mere lie kāfī hai.",
+          "english": "Half a flatbread is enough for me.",
+          "literal": "half flatbread for-me enough is",
+          "register": "casual"
+        },
+        {
+          "hindi": "वह आधे रास्ते में रुक गया।",
+          "romanisation": "vah ādhe rāste mẽ ruk gayā.",
+          "english": "He stopped halfway.",
+          "literal": "he half road in stopped went",
+          "register": "neutral"
+        },
+        {
+          "hindi": "साढ़े तीन बजे मिलते हैं।",
+          "romanisation": "sāṛhe tīn baje milte haĩ.",
+          "english": "Let's meet at half past three.",
+          "literal": "half-past three o'clock meet are",
+          "register": "casual"
+        }
+      ]
+    },
+    {
+      "hindi": "पौने",
+      "romanisation": "paune",
+      "english": "quarter to",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "fixed time modifier", "hindi": "पौने", "roman": "paune" },
+        { "label": "time expression (quarter to X)", "hindi": "पौने X बजे", "roman": "paune X baje" },
+        { "label": "example: quarter to four", "hindi": "पौने चार बजे", "roman": "paune cār baje" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "पादोन",
+            "romanisation": "pādona",
+            "meaning": "minus a quarter-foot / minus one fourth",
+            "note": "पौने comes from Sanskrit pādona: pāda (foot / quarter) + ūna (minus, lacking). So पौने means 'one quarter lacking' = quarter to."
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "pawn",
+            "romanisation": "pawn",
+            "meaning": "smallest chess piece / to pledge",
+            "note": "Sounds similar to 'paune' — imagine a pawn piece pointing to the 'quarter to' position on a clock"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "pawn",
+          "language": "English",
+          "note": "'paune' sounds like 'pawn' with an extra vowel — a chess pawn standing at the quarter-to position on a clock"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "पादोन",
+          "romanisation": "pādona",
+          "meaning": "minus one quarter (pāda = quarter; ūna = minus/lacking)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "pādona", "meaning": "one quarter less" },
+          { "stage": "Prakrit / Apabhraṁśa", "form": "pāuna", "meaning": "three-quarters, quarter-to" },
+          { "stage": "Hindi", "form": "पौने", "meaning": "quarter to (used before the hour)" }
+        ],
+        "logic": "pāda meant 'foot' but was also the Sanskrit word for one-quarter. ūna means 'lacking/minus'. So pādona = minus a quarter = three-quarters = quarter to the next hour."
+      },
+      "etymology_story": [
+        "The word comes from Sanskrit pādona: pāda (a quarter) + ūna (lacking, minus).",
+        "It originally described any quantity that was one-quarter less than a whole — 'lacking a fourth'.",
+        "In time-telling, it came to mean the moment when a quarter-hour is still lacking before the next hour.",
+        "Today पौने always precedes the next hour: पौने चार = quarter to four (i.e., 3:45)."
+      ],
+      "pronunciation_guide": {
+        "syllables": "pau · ne",
+        "stress": "stress on the first syllable 'pau'; the 'au' is a rounded 'ow' sound",
+        "tips": [
+          {
+            "sounds_like": "pawn",
+            "language": "English",
+            "tip": "the first syllable 'pau' sounds like the English word 'pawn' — same rounded vowel"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A clock showing 3:45, with a chess pawn piece placed on the clock face right at the 45-minute mark, pointing upward toward the 12.",
+        "connection": "The pawn (paune sounds like 'pawn') sits at the quarter-to position — 15 minutes before the hour — visually encoding both the sound and the meaning of पौने."
+      },
+      "examples": [
+        {
+          "hindi": "वह पौने नौ बजे आया।",
+          "romanisation": "vah paune nau baje āyā.",
+          "english": "He came at quarter to nine.",
+          "literal": "he quarter-to nine o'clock came",
+          "register": "neutral"
+        },
+        {
+          "hindi": "ट्रेन पौने आठ बजे रवाना होगी।",
+          "romanisation": "ṭren paune āṭh baje ravānā hogī.",
+          "english": "The train will depart at quarter to eight.",
+          "literal": "train quarter-to eight o'clock depart will-be",
+          "register": "neutral"
+        },
+        {
+          "hindi": "पौने तीन बजे तक काम ख़त्म करो।",
+          "romanisation": "paune tīn baje tak kām khatm karo.",
+          "english": "Finish the work by quarter to three.",
+          "literal": "quarter-to three o'clock until work finish do",
+          "register": "casual"
+        },
+        {
+          "hindi": "मेरी घड़ी में पौने बारह बज रहे हैं।",
+          "romanisation": "merī ghaṛī mẽ paune bārah baj rahe haĩ.",
+          "english": "My watch shows quarter to twelve.",
+          "literal": "my watch in quarter-to twelve ringing are",
+          "register": "casual"
+        }
+      ]
+    },
+    {
+      "hindi": "सवा",
+      "romanisation": "savā",
+      "english": "quarter past",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "fixed time modifier", "hindi": "सवा", "roman": "savā" },
+        { "label": "time expression (quarter past X)", "hindi": "सवा X बजे", "roman": "savā X baje" },
+        { "label": "example: quarter past one", "hindi": "सवा एक बजे", "roman": "savā ek baje" },
+        { "label": "example: quarter past two", "hindi": "सवा दो बजे", "roman": "savā do baje" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "सपाद",
+            "romanisation": "sapāda",
+            "meaning": "one and a quarter (sa = with; pāda = quarter)",
+            "note": "सवा comes from Sanskrit sapāda, meaning 'with a quarter added' — one whole plus one quarter"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "savvy",
+            "romanisation": "savvy",
+            "meaning": "knowledgeable, sharp",
+            "note": "No shared meaning, but the sound resemblance to 'savā' can help anchor the word phonetically"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "savvy",
+          "language": "English",
+          "note": "'savā' sounds like the first part of 'savvy' — a 'savvy' person always knows exactly what time it is, right down to the quarter-hour"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "सपाद",
+          "romanisation": "sapāda",
+          "meaning": "with a quarter added (sa = with; pāda = quarter/foot)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "sapāda", "meaning": "with a quarter (1¼)" },
+          { "stage": "Prakrit", "form": "savāda / savā", "meaning": "one and a quarter" },
+          { "stage": "Hindi", "form": "सवा", "meaning": "quarter past (the stated hour)" }
+        ],
+        "logic": "Where पौने means 'one quarter less', सवा means 'one quarter more' — the mirror image. It always refers to the hour just stated plus fifteen minutes."
+      },
+      "etymology_story": [
+        "सवा comes from Sanskrit sapāda, a mathematical term meaning 'one and a quarter' (sa = with, pāda = quarter).",
+        "Prakrit simplified it to savā, preserving the meaning of 'something plus a quarter portion'.",
+        "In time-telling, 'quarter past' is exactly one hour plus one quarter-hour — so सवा became the standard term.",
+        "It is the mirror image of पौने (quarter to): पौने takes away a quarter, सवा adds one."
+      ],
+      "pronunciation_guide": {
+        "syllables": "sa · vā",
+        "stress": "stress on the second syllable 'vā' (long vowel); first syllable is light",
+        "tips": [
+          {
+            "sounds_like": "savvy",
+            "language": "English",
+            "tip": "the first syllable 'sa' is the same as the 'sa' in English 'savvy'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A clock showing 1:15, with a golden quarter-circle wedge added to the right side of the clock face, like an extra slice of pie being slipped in after the main hour.",
+        "connection": "The wedge added to the clock represents the Sanskrit sapāda meaning 'with a quarter added' — visually showing how सवा = the hour plus a quarter."
+      },
+      "examples": [
+        {
+          "hindi": "वह सवा दस बजे आया।",
+          "romanisation": "vah savā das baje āyā.",
+          "english": "He arrived at quarter past ten.",
+          "literal": "he quarter-past ten o'clock arrived",
+          "register": "neutral"
+        },
+        {
+          "hindi": "बस सवा तीन बजे मिलेगी।",
+          "romanisation": "bas savā tīn baje milegī.",
+          "english": "The bus will come at quarter past three.",
+          "literal": "bus quarter-past three o'clock will-meet",
+          "register": "neutral"
+        },
+        {
+          "hindi": "सवा एक बजे खाना खाते हैं।",
+          "romanisation": "savā ek baje khānā khāte haĩ.",
+          "english": "We eat lunch at quarter past one.",
+          "literal": "quarter-past one o'clock food eat are",
+          "register": "casual"
+        },
+        {
+          "hindi": "दफ़्तर सवा नौ बजे खुलता है।",
+          "romanisation": "daftar savā nau baje khultā hai.",
+          "english": "The office opens at quarter past nine.",
+          "literal": "office quarter-past nine o'clock opens is",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "डेढ़ बजे",
+      "romanisation": "ḍeṛh baje",
+      "english": "at half past one",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "fixed time expression", "hindi": "डेढ़ बजे", "roman": "ḍeṛh baje" },
+        { "label": "standalone number (one and a half)", "hindi": "डेढ़", "roman": "ḍeṛh" },
+        { "label": "contrast: two and a half", "hindi": "ढाई", "roman": "ḍhāī" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "अर्धद्वितीय",
+            "romanisation": "ardhadvitiīya",
+            "meaning": "one and a half (literally: half of the second = 1.5)",
+            "note": "Hindi डेढ़ is a heavily contracted descendant of this Sanskrit compound meaning 'one plus half of the next'"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Russian",
+            "word": "полвторого",
+            "romanisation": "polvtorogo",
+            "meaning": "half past one (literally: half of the second hour)",
+            "note": "Russian expresses half past one as 'half of the second', using the same logic as the Sanskrit source of डेढ़ — both count the half-unit of the upcoming hour"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "dare",
+          "language": "English",
+          "note": "ḍeṛh sounds a bit like 'dare' — it takes daring to remember that this unique word means only 1.5, nothing else"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "अर्धद्वितीय",
+          "romanisation": "ardhadvitiīya",
+          "meaning": "half of the second (= one and a half)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "ardhadvitiīya", "meaning": "one and a half" },
+          { "stage": "Prakrit", "form": "aḍḍhaṃ", "meaning": "one and a half" },
+          { "stage": "Apabhraṁśa", "form": "ḍeḍha", "meaning": "one and a half" },
+          { "stage": "Hindi", "form": "डेढ़", "meaning": "one and a half (1.5)" }
+        ],
+        "logic": "The Sanskrit form used a fractional counting system: 'half of the second unit' = one full + half of one = 1.5. The massive contraction over centuries produced the short, unique word डेढ़."
+      },
+      "etymology_story": [
+        "The Sanskrit source was ardhadvitiīya, a mathematical phrase meaning 'half of the second' — i.e., one whole plus half the next unit.",
+        "This fractional counting system (similar to how Russian says 'half of the second hour' for 1:30) was once common across Indian languages.",
+        "Through Prakrit and Apabhraṁśa, the long compound contracted dramatically, shedding syllables over centuries.",
+        "The result is the unique Hindi word डेढ़ — used only for 1.5, never for any other quantity."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ḍeṛh",
+        "stress": "single syllable; the ḍ is retroflex (tongue curled back); the ṛh is a breathy retroflex flap",
+        "tips": [
+          {
+            "sounds_like": "dare",
+            "language": "English",
+            "tip": "start like English 'dare' but retroflex the 'd' (curl tongue back) and end with a breathy 'rh' flap"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A clock showing exactly 1:30, with the minute hand pointing straight down to the 6. The hour hand stands at 1, and a thick red line bisects the space between 1 and 2 — showing the halfway point.",
+        "connection": "The bisected space between 1 and 2 on the clock face mirrors the Sanskrit meaning of डेढ़: 'half of the second' = one and a half, fixed permanently at 1:30."
+      },
+      "examples": [
+        {
+          "hindi": "वह डेढ़ बजे आएगा।",
+          "romanisation": "vah ḍeṛh baje āegā.",
+          "english": "He will come at half past one.",
+          "literal": "he one-and-a-half o'clock will-come",
+          "register": "neutral"
+        },
+        {
+          "hindi": "डेढ़ बजे खाना तैयार होगा।",
+          "romanisation": "ḍeṛh baje khānā taiyār hogā.",
+          "english": "The food will be ready at half past one.",
+          "literal": "one-thirty o'clock food ready will-be",
+          "register": "casual"
+        },
+        {
+          "hindi": "दोपहर के बाद डेढ़ बजे से मीटिंग है।",
+          "romanisation": "dopahar ke bād ḍeṛh baje se miṭiṃg hai.",
+          "english": "The meeting is from half past one in the afternoon.",
+          "literal": "noon after one-thirty o'clock from meeting is",
+          "register": "formal"
+        },
+        {
+          "hindi": "डेढ़ घंटे में काम ख़त्म हो जाएगा।",
+          "romanisation": "ḍeṛh ghaṇṭe mẽ kām khatm ho jāegā.",
+          "english": "The work will be done in an hour and a half.",
+          "literal": "one-and-a-half hour in work finish become will-go",
+          "register": "casual"
+        }
+      ]
+    }
+  ]
+}

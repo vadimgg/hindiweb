@@ -1,0 +1,589 @@
+{
+  "title": "to be",
+  "words": [
+    {
+      "hindi": "होंगी",
+      "romanisation": "hõgī",
+      "english": "will be (feminine plural / honorific)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "masculine singular / plural", "hindi": "होंगे", "roman": "hõge" },
+        { "label": "feminine singular", "hindi": "होगी", "roman": "hogī" },
+        { "label": "masculine singular (formal)", "hindi": "होंगे", "roman": "hõge" },
+        { "label": "first/second person singular future", "hindi": "होऊँगा / होऊँगी", "roman": "hoūgā / hoūgī" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "भू",
+            "romanisation": "bhū",
+            "meaning": "to be, to become",
+            "note": "होंगी descends from the Sanskrit root bhū (to be), the same root that gives हो- its core form"
+          },
+          {
+            "language": "Russian",
+            "word": "быть",
+            "romanisation": "byt'",
+            "meaning": "to be",
+            "note": "Both share the Proto-Indo-European root *bʰuH- (to be, to grow); the Russian future 'будет' (budet) parallels हो + गा/गी as a separate be-root future"
+          },
+          {
+            "language": "English",
+            "word": "be",
+            "romanisation": "be",
+            "meaning": "to be",
+            "note": "Shares the same PIE root *bʰuH-; English 'be' and Hindi हो- are distant cousins"
+          }
+        ],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [
+        {
+          "word": "hungry",
+          "language": "English",
+          "note": "The 'hõ' opening of होंगी is close to the 'hun' in 'hungry' — picture being hungry in the future to hook the sound"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "भू",
+          "romanisation": "bhū",
+          "meaning": "to be, to exist, to become"
+        },
+        "evolution": [
+          { "stage": "Proto-Indo-European", "form": "*bʰuH-", "meaning": "to be, to grow, to become" },
+          { "stage": "Sanskrit", "form": "भू (bhū) → भव (bhava)", "meaning": "to be / existence" },
+          { "stage": "Prakrit / Apabhraṁśa", "form": "ho-", "meaning": "to be" },
+          { "stage": "Hindi", "form": "होंगी (hõgī)", "meaning": "will be (feminine plural)" }
+        ],
+        "logic": "The root 'to become / to grow into being' evolved into a simple copula; the future suffix -गी marks feminine and the nasal in हों marks plural/honorific agreement."
+      },
+      "etymology_story": [
+        "होंगी comes from the ancient Sanskrit root bhū, meaning to be or to become, which is one of the oldest Indo-European roots still alive in Hindi.",
+        "Over centuries, bhū simplified through Prakrit into the stem हो- used across Hindi's 'to be' family.",
+        "The future tense suffix -गी was then added to mark feminine gender, and the nasal (ँ) on हों signals that the subject is plural or honorific.",
+        "The result is a single word that packs together future tense, feminine gender, and plural or polite number — all in four letters."
+      ],
+      "pronunciation_guide": {
+        "syllables": "hõ · gī",
+        "stress": "even, with a light stress on the first syllable; the nasal 'õ' is held briefly",
+        "tips": [
+          {
+            "sounds_like": "home",
+            "language": "English",
+            "tip": "the 'hõ' is like the start of 'home' but nasalised — let the sound come through your nose slightly"
+          },
+          {
+            "sounds_like": "гее (ghee)",
+            "language": "English",
+            "tip": "the ending '-gī' sounds just like 'ghee', the clarified butter"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A group of women in colourful saris standing in front of a glowing doorway that is slightly open into the future — on the door is written 'WILL BE'",
+        "connection": "The group of women (feminine plural) standing at the threshold of a future door encodes both the feminine-plural agreement and the future meaning of होंगी"
+      },
+      "examples": [
+        {
+          "hindi": "वे सब वहाँ होंगी।",
+          "romanisation": "ve sab vahā̃ hõgī.",
+          "english": "They (feminine) will all be there.",
+          "literal": "they all there will-be(f.pl.)",
+          "register": "neutral"
+        },
+        {
+          "hindi": "आपकी बहनें कल घर पर होंगी।",
+          "romanisation": "āpkī bahneñ kal ghar par hõgī.",
+          "english": "Your sisters will be home tomorrow.",
+          "literal": "your sisters tomorrow home on will-be(f.pl.)",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मेरी किताबें मेज़ पर होंगी।",
+          "romanisation": "merī kitābeñ mez par hõgī.",
+          "english": "My books will be on the table.",
+          "literal": "my books table on will-be(f.pl.)",
+          "register": "casual"
+        },
+        {
+          "hindi": "क्या वे लड़कियाँ स्कूल में होंगी?",
+          "romanisation": "kyā ve laṛkiyā̃ skūl mẽ hõgī?",
+          "english": "Will those girls be at school?",
+          "literal": "question those girls school in will-be(f.pl.)?",
+          "register": "casual"
+        }
+      ]
+    },
+    {
+      "hindi": "मेरा",
+      "romanisation": "merā",
+      "english": "my (masculine)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "feminine", "hindi": "मेरी", "roman": "merī" },
+        { "label": "masculine plural / oblique", "hindi": "मेरे", "roman": "mere" },
+        { "label": "feminine plural / oblique", "hindi": "मेरी", "roman": "merī" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "मम",
+            "romanisation": "mama",
+            "meaning": "my, of me",
+            "note": "Sanskrit mama is the genitive of the first-person pronoun; Hindi मेरा evolved from this through Prakrit forms"
+          },
+          {
+            "language": "Russian",
+            "word": "мне",
+            "romanisation": "mne",
+            "meaning": "to me / for me (dative of я)",
+            "note": "Both derive from the same PIE first-person root *me-; the shared 'me-' sound across Hindi and Russian reflects a truly ancient kinship"
+          },
+          {
+            "language": "English",
+            "word": "me",
+            "romanisation": "me",
+            "meaning": "me (first person object pronoun)",
+            "note": "English 'me', Hindi मे- (in मेरा), and Russian мне all trace back to PIE *me-, making them true distant relatives"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Spanish",
+            "word": "mi",
+            "romanisation": "mi",
+            "meaning": "my",
+            "note": "Spanish 'mi' (my) sounds like the 'me' in मेरा and has the same meaning — a useful bridge even though the routes differ"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "mayor",
+          "language": "English",
+          "note": "'merā' sounds like 'may-rah'; imagine a mayor proudly pointing to his chest saying 'mine!' — linking sound to meaning"
+        },
+        {
+          "word": "мера",
+          "language": "Russian",
+          "note": "Russian мера (mera) means 'measure' — same sound, different meaning; but the coincidence makes the pronunciation stick"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Proto-Indo-European",
+          "word": "*me-",
+          "romanisation": "*me-",
+          "meaning": "me, myself (first person pronoun root)"
+        },
+        "evolution": [
+          { "stage": "Proto-Indo-European", "form": "*me-", "meaning": "first person oblique/genitive" },
+          { "stage": "Sanskrit", "form": "मम (mama)", "meaning": "my, of me" },
+          { "stage": "Prakrit", "form": "मज्झ / मम → mera", "meaning": "my" },
+          { "stage": "Apabhraṁśa", "form": "mera", "meaning": "my (masculine)" },
+          { "stage": "Hindi", "form": "मेरा (merā)", "meaning": "my (masculine)" }
+        ],
+        "logic": "The ancient first-person root 'me-' has carried the sense of self-possession across thousands of years; the ending -rā adds the genitive / possessive layer, and agreement suffixes change with gender."
+      },
+      "etymology_story": [
+        "मेरा traces back to the Proto-Indo-European root *me-, the ancient stem for 'me' that appears across dozens of languages.",
+        "In Sanskrit this became mama (meaning 'my' or 'of me'), the genitive of the first-person pronoun.",
+        "Through Prakrit and Apabhraṁśa the form simplified and the suffix -rā was added to mark masculine possessive agreement.",
+        "Modern Hindi kept मेरा as the masculine form of 'my', with मेरी and मेरे for other gender and number agreements."
+      ],
+      "pronunciation_guide": {
+        "syllables": "me · rā",
+        "stress": "even stress; the second syllable 'rā' is held slightly longer due to the long vowel",
+        "tips": [
+          {
+            "sounds_like": "may",
+            "language": "English",
+            "tip": "the first syllable 'me' sounds exactly like 'may' in English"
+          },
+          {
+            "sounds_like": "ра (ra)",
+            "language": "Russian",
+            "tip": "the second syllable '-rā' is the same as the Russian syllable 'ра' in words like рад — a clear, open 'ra'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A person standing in front of a mirror, pointing at their own reflection with both hands, with the word 'MINE' glowing on the glass",
+        "connection": "The mirror image ('me'-rā) reflects ownership — the visual of pointing at oneself locks in both the 'me-' sound and the meaning 'my'"
+      },
+      "examples": [
+        {
+          "hindi": "यह मेरा घर है।",
+          "romanisation": "yah merā ghar hai.",
+          "english": "This is my house.",
+          "literal": "this my house is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मेरा भाई दिल्ली में रहता है।",
+          "romanisation": "merā bhāī dillī mẽ rahtā hai.",
+          "english": "My brother lives in Delhi.",
+          "literal": "my brother Delhi in lives is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "क्या यह बैग मेरा है?",
+          "romanisation": "kyā yah baig merā hai?",
+          "english": "Is this bag mine?",
+          "literal": "question this bag my is?",
+          "register": "casual"
+        },
+        {
+          "hindi": "मेरा नाम वादिम है।",
+          "romanisation": "merā nām Vadim hai.",
+          "english": "My name is Vadim.",
+          "literal": "my name Vadim is",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "मेरी",
+      "romanisation": "merī",
+      "english": "my (feminine)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "masculine singular", "hindi": "मेरा", "roman": "merā" },
+        { "label": "masculine plural / oblique", "hindi": "मेरे", "roman": "mere" },
+        { "label": "feminine plural / oblique", "hindi": "मेरी", "roman": "merī" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "मम",
+            "romanisation": "mama",
+            "meaning": "my, of me",
+            "note": "Same ancestral root as मेरा; the feminine ending -ī marks agreement with a feminine noun"
+          },
+          {
+            "language": "Russian",
+            "word": "мне",
+            "romanisation": "mne",
+            "meaning": "to me / for me",
+            "note": "Shares the PIE root *me- with मेरी; the 'me-' sound is the same ancient first-person marker"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Spanish",
+            "word": "mi",
+            "romanisation": "mi",
+            "meaning": "my",
+            "note": "Spanish 'mi' (my) is nearly identical in sound and meaning to the 'me-' in मेरी — an easy bridge"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "Mary",
+          "language": "English",
+          "note": "'merī' sounds almost exactly like the name 'Mary' — imagine Mary owning something feminine to remember this is the feminine 'my'"
+        },
+        {
+          "word": "море",
+          "language": "Russian",
+          "note": "Russian море (more, 'sea') shares the 'me-re' sound; though unrelated in meaning it helps the sound stick"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Proto-Indo-European",
+          "word": "*me-",
+          "romanisation": "*me-",
+          "meaning": "me, myself (first person pronoun root)"
+        },
+        "evolution": [
+          { "stage": "Proto-Indo-European", "form": "*me-", "meaning": "first person oblique/genitive" },
+          { "stage": "Sanskrit", "form": "मम (mama)", "meaning": "my, of me" },
+          { "stage": "Prakrit / Apabhraṁśa", "form": "mera / meri", "meaning": "my (gendered forms)" },
+          { "stage": "Hindi", "form": "मेरी (merī)", "meaning": "my (feminine)" }
+        ],
+        "logic": "Identical to मेरा in origin; the only difference is the final vowel — -ā for masculine, -ī for feminine — mirroring Hindi's general adjective agreement pattern."
+      },
+      "etymology_story": [
+        "मेरी shares its full ancestry with मेरा — both come from the same Proto-Indo-European root *me- for 'me'.",
+        "In Sanskrit the possessive was mama, later evolving through Prakrit into gendered forms.",
+        "Hindi uses the -ā / -ī / -e endings to make possessive pronouns agree with the noun they modify — a system shared with adjectives.",
+        "So मेरी simply means 'my' when the thing owned is grammatically feminine."
+      ],
+      "pronunciation_guide": {
+        "syllables": "me · rī",
+        "stress": "even stress; the '-rī' ending rhymes with the English word 'free'",
+        "tips": [
+          {
+            "sounds_like": "Mary",
+            "language": "English",
+            "tip": "'merī' sounds almost identical to the English name 'Mary'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A woman named Mary holding a glowing sign that says 'MINE' while standing next to a stack of feminine-labelled boxes",
+        "connection": "The name 'Mary' sounds like 'merī', and the feminine scene locks in the gender agreement — मेरी is the feminine form of 'my'"
+      },
+      "examples": [
+        {
+          "hindi": "यह मेरी किताब है।",
+          "romanisation": "yah merī kitāb hai.",
+          "english": "This is my book.",
+          "literal": "this my book is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मेरी माँ बहुत अच्छी हैं।",
+          "romanisation": "merī mā̃ bahut acchī haĩ.",
+          "english": "My mother is very good.",
+          "literal": "my mother very good are",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मेरी कार कहाँ है?",
+          "romanisation": "merī kār kahā̃ hai?",
+          "english": "Where is my car?",
+          "literal": "my car where is?",
+          "register": "casual"
+        },
+        {
+          "hindi": "वह मेरी दोस्त है।",
+          "romanisation": "vah merī dost hai.",
+          "english": "She is my friend.",
+          "literal": "she my friend is",
+          "register": "casual"
+        }
+      ]
+    },
+    {
+      "hindi": "तेरा",
+      "romanisation": "terā",
+      "english": "your — intimate (masculine)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "feminine", "hindi": "तेरी", "roman": "terī" },
+        { "label": "masculine plural / oblique", "hindi": "तेरे", "roman": "tere" },
+        { "label": "feminine plural / oblique", "hindi": "तेरी", "roman": "terī" }
+      ],
+      "punjabi_note": "तेरा is very common in Delhi street and Punjabi-inflected Hindi, often used more freely between friends than in standard Hindi where it might sound too blunt",
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "तव",
+            "romanisation": "tava",
+            "meaning": "your (genitive of tvam, 'you')",
+            "note": "Sanskrit tava is the formal ancestor; the Hindi तू/तेरा line comes through Prakrit simplification of the second-person pronoun"
+          },
+          {
+            "language": "Russian",
+            "word": "твой",
+            "romanisation": "tvoy",
+            "meaning": "your (intimate/singular)",
+            "note": "Both Hindi तेरा and Russian твой are the intimate singular possessives descended from the PIE second-person root *tu-; they occupy the exact same register — used only with very close friends or family"
+          },
+          {
+            "language": "English",
+            "word": "thy",
+            "romanisation": "thy",
+            "meaning": "your (archaic intimate)",
+            "note": "Old English 'thy' was the intimate 'your', exactly like तेरा — both descend from PIE *tu- and both are now restricted to intimate or poetic use"
+          }
+        ],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [
+        {
+          "word": "terra",
+          "language": "English / Latin",
+          "note": "Latin/English 'terra' (earth) sounds just like तेरा — imagine your personal plot of earth to link the sound to 'yours'"
+        },
+        {
+          "word": "терра",
+          "language": "Russian",
+          "note": "Russian терра (terra, 'earth/land') has the same sound as तेरा; picture your own land to remember 'yours (intimate)'"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Proto-Indo-European",
+          "word": "*tu-",
+          "romanisation": "*tu-",
+          "meaning": "you (second person singular)"
+        },
+        "evolution": [
+          { "stage": "Proto-Indo-European", "form": "*tu-", "meaning": "you (singular)" },
+          { "stage": "Sanskrit", "form": "तव (tava) / तुव (tuva)", "meaning": "your (genitive)" },
+          { "stage": "Prakrit", "form": "tua / tera", "meaning": "your (intimate)" },
+          { "stage": "Hindi", "form": "तेरा (terā)", "meaning": "your (intimate, masculine)" }
+        ],
+        "logic": "The second-person root *tu- (you) gained a genitive/possessive suffix in Sanskrit; through Prakrit this simplified to the te- stem, with -rā marking masculine agreement — exactly paralleling मेरा."
+      },
+      "etymology_story": [
+        "तेरा descends from the Proto-Indo-European root *tu-, the ancient word for 'you' (singular), which appears across nearly every Indo-European language.",
+        "In Sanskrit the possessive form was tava (meaning 'your'), which through Prakrit contracted and shifted to tera-.",
+        "Hindi inherited this form as तेरा, pairing it with the intimate pronoun तू — used only between very close equals, children, or in prayer.",
+        "Its masculine-gendered ending -ā follows the same pattern as मेरा (my) and हमारा (our)."
+      ],
+      "pronunciation_guide": {
+        "syllables": "te · rā",
+        "stress": "light and even; the 'te' is like the English word 'tay', the '-rā' like a long 'ra'",
+        "tips": [
+          {
+            "sounds_like": "terra",
+            "language": "English",
+            "tip": "'terā' sounds almost exactly like 'terra' — the Latin/English word for earth"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A child planting a tiny flag in a patch of earth labelled 'YOURS', looking up at a close friend",
+        "connection": "'terra' (earth) sounds like तेरा, and the intimate child-friend scene captures the close, personal register of this word — it is only used with people you are very close to"
+      },
+      "examples": [
+        {
+          "hindi": "यह तेरा घर है।",
+          "romanisation": "yah terā ghar hai.",
+          "english": "This is your house.",
+          "literal": "this your(intimate) house is",
+          "register": "intimate / casual"
+        },
+        {
+          "hindi": "तेरा नाम क्या है?",
+          "romanisation": "terā nām kyā hai?",
+          "english": "What is your name?",
+          "literal": "your(intimate) name what is?",
+          "register": "intimate / casual"
+        },
+        {
+          "hindi": "तेरा भाई कहाँ है?",
+          "romanisation": "terā bhāī kahā̃ hai?",
+          "english": "Where is your brother?",
+          "literal": "your(intimate) brother where is?",
+          "register": "intimate / casual"
+        },
+        {
+          "hindi": "तेरा दिल बहुत अच्छा है।",
+          "romanisation": "terā dil bahut acchā hai.",
+          "english": "Your heart is very good.",
+          "literal": "your(intimate) heart very good is",
+          "register": "colloquial / affectionate"
+        }
+      ]
+    },
+    {
+      "hindi": "तेरी",
+      "romanisation": "terī",
+      "english": "your — intimate (feminine)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "masculine singular", "hindi": "तेरा", "roman": "terā" },
+        { "label": "masculine plural / oblique", "hindi": "तेरे", "roman": "tere" },
+        { "label": "feminine plural / oblique", "hindi": "तेरी", "roman": "terī" }
+      ],
+      "punjabi_note": "Common in Delhi/Punjabi-inflected speech between friends; तेरी माँ is also a well-known expletive component — learners should be aware",
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "तव",
+            "romanisation": "tava",
+            "meaning": "your (genitive of tvam)",
+            "note": "Same root as तेरा; -ī ending marks feminine noun agreement"
+          },
+          {
+            "language": "Russian",
+            "word": "твоя",
+            "romanisation": "tvoya",
+            "meaning": "your (intimate feminine form)",
+            "note": "Russian твоя is the feminine form of твой (your, intimate) — exactly mirroring how तेरी is the feminine form of तेरा"
+          }
+        ],
+        "useful_coincidences": []
+      },
+      "sound_alikes": [
+        {
+          "word": "theory",
+          "language": "English",
+          "note": "'terī' sounds like the first two syllables of 'theory' (thee-ree) — imagine someone presenting 'your theory' to remember this"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Proto-Indo-European",
+          "word": "*tu-",
+          "romanisation": "*tu-",
+          "meaning": "you (second person singular)"
+        },
+        "evolution": [
+          { "stage": "Proto-Indo-European", "form": "*tu-", "meaning": "you (singular)" },
+          { "stage": "Sanskrit", "form": "तव (tava)", "meaning": "your (genitive)" },
+          { "stage": "Prakrit", "form": "tera / teri", "meaning": "your (gendered forms)" },
+          { "stage": "Hindi", "form": "तेरी (terī)", "meaning": "your (intimate, feminine)" }
+        ],
+        "logic": "Identical ancestry to तेरा; the -ī suffix is the feminine agreement marker, following the same -ā / -ī / -e adjective pattern used throughout Hindi."
+      },
+      "etymology_story": [
+        "तेरी is the feminine counterpart of तेरा, sharing the same Proto-Indo-European root *tu- (you).",
+        "Sanskrit's genitive tava evolved through Prakrit into a paired system of gendered possessives.",
+        "Hindi settled on तेरा (masculine) and तेरी (feminine) as the intimate 'your', matching the noun's gender rather than the owner's.",
+        "The result mirrors exactly how मेरा / मेरी work — only the initial consonant changes (m- → t-)."
+      ],
+      "pronunciation_guide": {
+        "syllables": "te · rī",
+        "stress": "even; '-rī' rhymes with English 'free'",
+        "tips": [
+          {
+            "sounds_like": "theory",
+            "language": "English",
+            "tip": "'terī' sounds like the beginning of 'theory' — 'te-ri'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A young woman pointing at a blackboard where someone has written 'YOUR THEORY' — she circles the words proudly",
+        "connection": "'theory' sounds like 'terī', and because it is a woman at the board the feminine agreement is visually reinforced — तेरी is the feminine intimate 'your'"
+      },
+      "examples": [
+        {
+          "hindi": "तेरी किताब मेज़ पर है।",
+          "romanisation": "terī kitāb mez par hai.",
+          "english": "Your book is on the table.",
+          "literal": "your(intimate) book table on is",
+          "register": "intimate / casual"
+        },
+        {
+          "hindi": "तेरी आवाज़ बहुत मीठी है।",
+          "romanisation": "terī āvāz bahut mīṭhī hai.",
+          "english": "Your voice is very sweet.",
+          "literal": "your(intimate) voice very sweet is",
+          "register": "affectionate"
+        },
+        {
+          "hindi": "तेरी माँ कहाँ हैं?",
+          "romanisation": "terī mā̃ kahā̃ haĩ?",
+          "english": "Where is your mother?",
+          "literal": "your(intimate) mother where are?",
+          "register": "intimate / casual"
+        },
+        {
+          "hindi": "क्या यह तेरी साइकिल है?",
+          "romanisation": "kyā yah terī sāikal hai?",
+          "english": "Is this your bicycle?",
+          "literal": "question this your(intimate) bicycle is?",
+          "register": "casual"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,525 @@
+{
+  "title": "day time",
+  "words": [
+    {
+      "hindi": "नरसों",
+      "romanisation": "narsõ",
+      "english": "two days before / two days after",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "base form (invariable adverb)", "hindi": "नरसों", "roman": "narsõ" },
+        { "label": "possessive (that day's)", "hindi": "नरसों का / नरसों की", "roman": "narsõ kā / narsõ kī" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "नान्वश्वस् / परस्परश्वस्",
+            "romanisation": "nānvaśvas / parasparaśvas",
+            "meaning": "three days from today",
+            "note": "नरसों likely derives from a further extension of the Sanskrit paraśvas system — it marks three days away from today in either direction"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Russian",
+            "word": "три дня",
+            "romanisation": "tri dnya",
+            "meaning": "three days",
+            "note": "Russian has no single word for 'three days from now'; Hindi's compact नरसों is more expressive, making it worth memorising as a uniquely useful item"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "narrows",
+          "language": "English",
+          "note": "'narsõ' sounds close to 'narrows' — picture time narrowing down to a specific point three days away"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "परश्वस्",
+          "romanisation": "paraśvas",
+          "meaning": "two days from today"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "extended form of paraśvas", "meaning": "three days from today" },
+          { "stage": "Prakrit", "form": "narassu / narsõ precursor", "meaning": "three days away" },
+          { "stage": "Hindi", "form": "नरसों", "meaning": "three days before / three days after (= two days beyond परसों)" }
+        ],
+        "logic": "Hindi has a rare system of named relative days: आज (today) → कल (±1 day) → परसों (±2 days) → नरसों (±3 days). Each step goes one day further, with the same past/future ambiguity resolved by context."
+      },
+      "etymology_story": [
+        "Hindi preserves an ancient Sanskrit system of naming days relative to today, extending outward one step at a time.",
+        "Where परसों covers two days away, नरसों covers three days away — the next step in the same symmetrical system.",
+        "Like कल and परसों, नरसों is bidirectional: it means both three days ago and three days from now, with tense clarifying which."
+      ],
+      "pronunciation_guide": {
+        "syllables": "nar · sõ",
+        "stress": "roughly even; the final syllable has the same nasal quality as परसों",
+        "tips": [
+          {
+            "sounds_like": "narrows",
+            "language": "English",
+            "tip": "'narsõ' sounds like 'narrows' with the final 'ws' replaced by a nasal 'õ'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A calendar with three squares highlighted in each direction from today — the third square on each side glowing with the same colour, labelled with matching arrows pointing both ways",
+        "connection": "The symmetrical three-square arrows encode the core logic of नरसों: three days out in either direction, with no inherent past/future bias"
+      },
+      "examples": [
+        {
+          "hindi": "नरसों मेरा जन्मदिन है।",
+          "romanisation": "narsõ merā janmadin hai.",
+          "english": "My birthday is three days from now.",
+          "literal": "three-days-from-now my birthday is",
+          "register": "casual"
+        },
+        {
+          "hindi": "नरसों बहुत बड़ी बारिश हुई थी।",
+          "romanisation": "narsõ bahut baṛī bāriś huī thī.",
+          "english": "Three days ago there was very heavy rain.",
+          "literal": "three-days-ago very big rain happened was",
+          "register": "casual"
+        },
+        {
+          "hindi": "परसों नहीं, नरसों आना।",
+          "romanisation": "parsõ nahī̃, narsõ ānā.",
+          "english": "Not the day after tomorrow — come three days from now.",
+          "literal": "two-days-forward not, three-days-forward come",
+          "register": "casual"
+        },
+        {
+          "hindi": "नरसों से ट्रेनिंग शुरू होगी।",
+          "romanisation": "narsõ se ṭreiniṅg śurū hogī.",
+          "english": "Training will begin three days from now.",
+          "literal": "three-days-from-now from training start will-happen",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "अभी",
+      "romanisation": "abhī",
+      "english": "right now / just now",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "base form (invariable adverb)", "hindi": "अभी", "roman": "abhī" },
+        { "label": "emphatic compound", "hindi": "अभी-अभी", "roman": "abhī-abhī" },
+        { "label": "combined with भी", "hindi": "अभी भी", "roman": "abhī bhī" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "अभी",
+            "romanisation": "abhī",
+            "meaning": "right now, immediately, at this very moment",
+            "note": "Direct inheritance — अभी is unchanged from Sanskrit, built from अभि (towards, upon) + the present time marker"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Hebrew",
+            "word": "עכשיו",
+            "romanisation": "akhshav",
+            "meaning": "now, right now",
+            "note": "No ancestry connection, but the learner's Hebrew akhshav is the closest functional parallel — both mean 'right this moment'"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "a bee",
+          "language": "English",
+          "note": "'abhī' sounds like saying 'a bee' quickly — picture a bee buzzing right in front of your face right now"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "अभि",
+          "romanisation": "abhi",
+          "meaning": "towards, upon, right at (a prefix of immediacy and presence)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "abhi + hī (emphatic)", "meaning": "right at this moment" },
+          { "stage": "Sanskrit", "form": "abhī", "meaning": "right now, immediately" },
+          { "stage": "Hindi", "form": "अभी", "meaning": "right now / just now" }
+        ],
+        "logic": "The Sanskrit prefix अभि means 'right at, towards' — combined with an emphatic particle, it created अभी meaning 'at this exact moment'. The immediacy of अभि is still felt in the word's urgency."
+      },
+      "etymology_story": [
+        "The Sanskrit prefix अभि (abhi) conveyed immediacy and presence — 'right at, towards, upon this very thing'.",
+        "Combined with an emphatic particle, it formed अभी — meaning 'at this very moment, right now'.",
+        "Modern Hindi preserves it unchanged, and अभी-अभी (reduplicated) intensifies the meaning to 'just this instant'."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ab · hī",
+        "stress": "stress on the second syllable — ab·HĪ; the ī is long",
+        "tips": [
+          {
+            "sounds_like": "a bee",
+            "language": "English",
+            "tip": "'abhī' sounds like saying 'a bee' — two syllables, stress on the second, same vowel quality"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A bee hovering directly in front of a person's face, wings blurring with speed, the person frozen mid-step — the moment captured in absolute stillness",
+        "connection": "The bee right in your face right this instant encodes 'abhī' through sound, and the frozen immediate-present moment encodes the meaning 'right now'"
+      },
+      "examples": [
+        {
+          "hindi": "मैं अभी आता हूँ।",
+          "romanisation": "maĩ abhī ātā hū̃.",
+          "english": "I'm coming right now.",
+          "literal": "I right-now come am",
+          "register": "casual"
+        },
+        {
+          "hindi": "वह अभी-अभी गया है।",
+          "romanisation": "vah abhī-abhī gayā hai.",
+          "english": "He has just left this very moment.",
+          "literal": "he just-just gone is",
+          "register": "casual"
+        },
+        {
+          "hindi": "अभी मेरे पास वक़्त नहीं है।",
+          "romanisation": "abhī mere pās vaqt nahī̃ hai.",
+          "english": "Right now I don't have time.",
+          "literal": "right-now my near time not is",
+          "register": "casual"
+        },
+        {
+          "hindi": "क्या तुम अभी घर पर हो?",
+          "romanisation": "kyā tum abhī ghar par ho?",
+          "english": "Are you at home right now?",
+          "literal": "what you right-now home on are",
+          "register": "casual"
+        }
+      ]
+    },
+    {
+      "hindi": "अभी भी",
+      "romanisation": "abhī bhī",
+      "english": "still / even now",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "base form (invariable adverbial phrase)", "hindi": "अभी भी", "roman": "abhī bhī" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "अभी + भी",
+            "romanisation": "abhī + bhī",
+            "meaning": "right now + also/even",
+            "note": "Both components are Sanskrit; भी is the Sanskrit emphatic/additive particle api, meaning 'also, even, too'"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Hebrew",
+            "word": "עדיין",
+            "romanisation": "adayin",
+            "meaning": "still, yet",
+            "note": "Hebrew adayin is the closest functional parallel — both express that a state which started in the past continues into the present"
+          },
+          {
+            "language": "Russian",
+            "word": "всё ещё",
+            "romanisation": "vsyo yeshchyo",
+            "meaning": "still, even now",
+            "note": "Russian vsyo yeshchyo has the same meaning — both are two-word phrases expressing continuation into the present"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "a bee be",
+          "language": "English",
+          "note": "'abhī bhī' sounds like 'a-bee-bee' — picture a bee that is still there, still buzzing, refusing to leave"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "अभि + अपि",
+          "romanisation": "abhi + api",
+          "meaning": "right now + even/also"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "abhī + api", "meaning": "right now + even" },
+          { "stage": "Prakrit", "form": "abhī + vi", "meaning": "right now + also" },
+          { "stage": "Hindi", "form": "अभी भी", "meaning": "still / even now" }
+        ],
+        "logic": "The phrase combines अभी (right now) with भी (also/even). Together they mean 'even right now' — stressing that a state continues into the present despite expectation that it might have ended."
+      },
+      "etymology_story": [
+        "अभी (right now) comes from the Sanskrit prefix abhi (immediacy), while भी comes from Sanskrit api (also, even).",
+        "The combination अभी भी emerged as a natural phrase to emphasise continuation — 'even now, at this very moment'.",
+        "It functions like English 'still' — implying slight surprise that something has not changed or ended."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ab · hī · bhī",
+        "stress": "stress on the middle syllable (hī); भी receives secondary stress",
+        "tips": [
+          {
+            "sounds_like": "a bee",
+            "language": "English",
+            "tip": "the first two syllables 'abhī' sound like 'a bee', and then 'bhī' adds another 'bee' — 'a-bee-bee'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A bee that was there an hour ago, still hovering in exactly the same spot, wings still blurring, not having moved at all — a frozen insistence on staying",
+        "connection": "The bee from अभी (right now) is still there — अभी भी (still/even now) — the persistence of the bee encodes the meaning of continuation"
+      },
+      "examples": [
+        {
+          "hindi": "वह अभी भी दिल्ली में है।",
+          "romanisation": "vah abhī bhī dillī mẽ hai.",
+          "english": "He is still in Delhi.",
+          "literal": "he still Delhi in is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "क्या तुम अभी भी सो रहे हो?",
+          "romanisation": "kyā tum abhī bhī so rahe ho?",
+          "english": "Are you still sleeping?",
+          "literal": "what you still sleep doing are",
+          "register": "casual"
+        },
+        {
+          "hindi": "मुझे अभी भी उस दिन याद है।",
+          "romanisation": "mujhe abhī bhī us din yād hai.",
+          "english": "I still remember that day.",
+          "literal": "me-to still that day memory is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "वह काम अभी भी नहीं हुआ।",
+          "romanisation": "vah kām abhī bhī nahī̃ huā.",
+          "english": "That work still hasn't been done.",
+          "literal": "that work still not happened",
+          "register": "casual"
+        }
+      ]
+    },
+    {
+      "hindi": "अब",
+      "romanisation": "ab",
+      "english": "now",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "base form (invariable adverb)", "hindi": "अब", "roman": "ab" },
+        { "label": "emphatic / from now on", "hindi": "अब से", "roman": "ab se" },
+        { "label": "common collocation", "hindi": "अब तक", "roman": "ab tak" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "अव",
+            "romanisation": "ava",
+            "meaning": "now, at this time (a Sanskrit particle of present time)",
+            "note": "अब descends from the Sanskrit particle ava, which indicated the present moment or current situation"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Hebrew",
+            "word": "עב",
+            "romanisation": "av",
+            "meaning": "cloud / father (different words)",
+            "note": "Not useful for meaning, but 'av' / 'ab' are near-identical sounds across distant languages — the shortness of अब mirrors the shortness of the Hebrew equivalents"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "up",
+          "language": "English",
+          "note": "'ab' sounds like a short, punchy 'up' — both are crisp, immediate, forward-pointing words"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "अव",
+          "romanisation": "ava",
+          "meaning": "down, off, away; also: now, at this point (in context)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "ava / abi", "meaning": "now, at this moment" },
+          { "stage": "Prakrit", "form": "ahu / aba", "meaning": "now" },
+          { "stage": "Hindi", "form": "अब", "meaning": "now" }
+        ],
+        "logic": "The Sanskrit particle evolved through Prakrit into अब, shedding its other meanings and settling firmly on 'now' — the present moment, the current state of affairs."
+      },
+      "etymology_story": [
+        "The Sanskrit particle ava had a range of uses, including indicating the current moment or current state.",
+        "Through Prakrit the form simplified and the meaning narrowed to 'now' — the present time.",
+        "Modern Hindi अब is one of the most basic time words, contrasting with तब (then) in the same way English 'now' contrasts with 'then'."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ab",
+        "stress": "single syllable; short 'a' as in 'cut', crisp 'b' at the end",
+        "tips": [
+          {
+            "sounds_like": "up",
+            "language": "English",
+            "tip": "'ab' has the same crisp energy as 'up' — short, immediate, no trailing vowel"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A large clock with its hands pointing straight up to 12 — the NOW position — with the word AB printed across the clock face in bold letters",
+        "connection": "The clock frozen at 12 (the universal 'right now') encodes the concept of present time, and the two letters AB on the face anchor the sound of अब"
+      },
+      "examples": [
+        {
+          "hindi": "अब हमें जाना चाहिए।",
+          "romanisation": "ab hamẽ jānā cāhie.",
+          "english": "Now we should go.",
+          "literal": "now us-to go should",
+          "register": "casual"
+        },
+        {
+          "hindi": "अब तक कोई नहीं आया।",
+          "romanisation": "ab tak koī nahī̃ āyā.",
+          "english": "No one has come until now.",
+          "literal": "now until no-one not came",
+          "register": "neutral"
+        },
+        {
+          "hindi": "अब से ऐसा मत करना।",
+          "romanisation": "ab se aisā mat karnā.",
+          "english": "Don't do this from now on.",
+          "literal": "now from like-this not do",
+          "register": "casual"
+        },
+        {
+          "hindi": "अब क्या करें?",
+          "romanisation": "ab kyā karẽ?",
+          "english": "Now what should we do?",
+          "literal": "now what do-we",
+          "register": "colloquial"
+        }
+      ]
+    },
+    {
+      "hindi": "तब",
+      "romanisation": "tab",
+      "english": "then / at that time",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "base form (invariable adverb)", "hindi": "तब", "roman": "tab" },
+        { "label": "common collocation — until then", "hindi": "तब तक", "roman": "tab tak" },
+        { "label": "common collocation — from then", "hindi": "तब से", "roman": "tab se" },
+        { "label": "correlative pair", "hindi": "जब … तब", "roman": "jab … tab" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "तदा",
+            "romanisation": "tadā",
+            "meaning": "then, at that time",
+            "note": "तब descends from Sanskrit tadā — the demonstrative pronoun base tat (that) + the time suffix dā"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "then",
+            "romanisation": "then",
+            "meaning": "at that time",
+            "note": "तब and 'then' are functional mirrors — both contrast with 'now/अब' and both are used in if-then / when-then constructions"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "tab",
+          "language": "English",
+          "note": "'तब' is pronounced exactly like the English word 'tab' — picture keeping a 'tab' on the past, tracking what happened 'then'"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "तत्",
+          "romanisation": "tat",
+          "meaning": "that (the demonstrative pronoun — referring to something away from the speaker)"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "tadā", "meaning": "at that time, then" },
+          { "stage": "Prakrit", "form": "tada / tava", "meaning": "then" },
+          { "stage": "Hindi", "form": "तब", "meaning": "then / at that time" }
+        ],
+        "logic": "तब is built on the Sanskrit demonstrative base tat (that) — so it literally means 'at that (time)'. It is the natural pair to अब (now) and to जब (when), forming the correlative जब … तब (when … then)."
+      },
+      "etymology_story": [
+        "The Sanskrit demonstrative tat (that) combined with a time suffix to create tadā — 'at that time, then'.",
+        "Through Prakrit the form contracted to तब, shedding syllables while keeping its core pointing-to-the-past meaning.",
+        "In Hindi, तब pairs naturally with जब (when) in correlative sentences: जब मैं छोटा था, तब… (when I was small, then…)."
+      ],
+      "pronunciation_guide": {
+        "syllables": "tab",
+        "stress": "single syllable; exactly like the English word 'tab'",
+        "tips": [
+          {
+            "sounds_like": "tab",
+            "language": "English",
+            "tip": "'तब' is pronounced identically to the English word 'tab' — same vowel, same consonants"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A dusty, yellowed calendar from years past lying open, a finger pointing at one faded date — capturing a specific moment frozen in the past",
+        "connection": "The old calendar with a pointing finger at a past date is the visual for 'at that time' — तब always points to a moment away from now, just as a pointing finger on an old calendar does"
+      },
+      "examples": [
+        {
+          "hindi": "जब मैं बच्चा था, तब हम दिल्ली में रहते थे।",
+          "romanisation": "jab maĩ baccā thā, tab ham dillī mẽ rahte the.",
+          "english": "When I was a child, we lived in Delhi.",
+          "literal": "when I child was, then we Delhi in lived were",
+          "register": "casual"
+        },
+        {
+          "hindi": "तब तक मुझे इंतज़ार करना होगा।",
+          "romanisation": "tab tak mujhe intazār karnā hogā.",
+          "english": "I will have to wait until then.",
+          "literal": "then until me-to wait do will-be",
+          "register": "neutral"
+        },
+        {
+          "hindi": "अब और तब में बहुत फ़र्क है।",
+          "romanisation": "ab aur tab mẽ bahut fark hai.",
+          "english": "There is a big difference between now and then.",
+          "literal": "now and then in very difference is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "तब से वह यहाँ नहीं आया।",
+          "romanisation": "tab se vah yahā̃ nahī̃ āyā.",
+          "english": "He hasn't come here since then.",
+          "literal": "then from he here not came",
+          "register": "casual"
+        }
+      ]
+    }
+  ]
+}

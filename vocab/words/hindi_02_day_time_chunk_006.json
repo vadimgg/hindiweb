@@ -1,0 +1,556 @@
+{
+  "title": "day time",
+  "words": [
+    {
+      "hindi": "दोपहर से पहले",
+      "romanisation": "dopahar se pahle",
+      "english": "before noon / a.m.",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "phrase — fixed", "hindi": "दोपहर से पहले", "roman": "dopahar se pahle" },
+        { "label": "abbreviated colloquial", "hindi": "सुबह के वक़्त", "roman": "subah ke vaqt" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "द्विप्रहर",
+            "romanisation": "dviprahara",
+            "meaning": "midday, double-watch",
+            "note": "दोपहर descends from Sanskrit dviprahara (two watches of the day = midday); 'से पहले' means 'before', so the full phrase means 'before the middle of the day'"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "a.m.",
+            "romanisation": "a.m.",
+            "meaning": "ante meridiem — before midday",
+            "note": "Latin ante meridiem and Hindi 'dopahar se pahle' share the exact same logical structure: both mean 'before the midpoint of the day'"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "do",
+          "language": "English",
+          "note": "'do' starts दोपहर — imagine doing something before noon, in the 'do' half of the day"
+        },
+        {
+          "word": "pahle",
+          "language": "Hindi",
+          "note": "pahle means 'before / first' and appears independently — knowing it helps decode the full phrase"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "द्विप्रहर",
+          "romanisation": "dviprahara",
+          "meaning": "two watches of the day, midday"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "dviprahara", "meaning": "two time-watches = midday" },
+          { "stage": "Prakrit / Apabhraṁśa", "form": "dopahara", "meaning": "midday" },
+          { "stage": "Hindi", "form": "दोपहर", "meaning": "noon / midday" },
+          { "stage": "Hindi phrase", "form": "दोपहर से पहले", "meaning": "before noon" }
+        ],
+        "logic": "दो (two) + पहर (watch of the day) = the two-watch mark = noon. Adding 'से पहले' (from before) makes it 'before noon'."
+      },
+      "etymology_story": [
+        "The core word दोपहर comes from Sanskrit dviprahara, meaning the point where two watches of the traditional Indian day meet — midday.",
+        "In classical India, the day was divided into praharas (roughly three-hour watches), so the second watch's midpoint was noon.",
+        "Hindi added the postpositional phrase से पहले (from before) to create an expression meaning 'before noon'.",
+        "The result maps exactly onto the English 'a.m.' — the anti-noon half of the day."
+      ],
+      "pronunciation_guide": {
+        "syllables": "do · pa · har · se · pah · le",
+        "stress": "mild stress on 'do' and on 'pah' of pahle; the whole phrase flows evenly",
+        "tips": [
+          {
+            "sounds_like": "do",
+            "language": "English",
+            "tip": "the first syllable 'do' sounds exactly like the English word 'do'"
+          },
+          {
+            "sounds_like": "par",
+            "language": "English",
+            "tip": "'pahar' ends with a sound close to English 'par' — keep the 'a' open and short"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A large clock tower showing 11:00, with the sun still low on the left side of the sky. A banner across the clock reads 'DO' in big letters, and the door to the tower is shut with a sign 'BEFORE NOON'.",
+        "connection": "The 'DO' banner echoes the opening sound 'do' of दोपहर, and the clock frozen before 12 locks in the meaning 'before noon'."
+      },
+      "examples": [
+        {
+          "hindi": "मेरी मीटिंग दोपहर से पहले है।",
+          "romanisation": "merī miṭiṃg dopahar se pahle hai.",
+          "english": "My meeting is before noon.",
+          "literal": "my meeting noon from before is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "वह हर दिन दोपहर से पहले काम शुरू करता है।",
+          "romanisation": "vah har din dopahar se pahle kām śurū kartā hai.",
+          "english": "He starts work before noon every day.",
+          "literal": "he every day noon from before work start does is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "दोपहर से पहले बाज़ार जाना बेहतर है।",
+          "romanisation": "dopahar se pahle bāzār jānā behtar hai.",
+          "english": "It is better to go to the market before noon.",
+          "literal": "noon from before market going better is",
+          "register": "casual"
+        },
+        {
+          "hindi": "क्या तुम दोपहर से पहले फ़ोन कर सकते हो?",
+          "romanisation": "kyā tum dopahar se pahle fon kar sakte ho?",
+          "english": "Can you call before noon?",
+          "literal": "what you noon from before phone do can are",
+          "register": "casual"
+        }
+      ]
+    },
+    {
+      "hindi": "दोपहर के बाद",
+      "romanisation": "dopahar ke bād",
+      "english": "after noon / p.m.",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "phrase — fixed", "hindi": "दोपहर के बाद", "roman": "dopahar ke bād" },
+        { "label": "common synonym", "hindi": "शाम से पहले", "roman": "śām se pahle" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "द्विप्रहर",
+            "romanisation": "dviprahara",
+            "meaning": "midday",
+            "note": "Same Sanskrit root as दोपहर; 'के बाद' adds the sense of 'after', creating the afternoon expression"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "p.m.",
+            "romanisation": "p.m.",
+            "meaning": "post meridiem — after midday",
+            "note": "Latin post meridiem and Hindi 'dopahar ke bād' are structural twins: both mean 'after the midpoint of the day'"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "bad",
+          "language": "English",
+          "note": "'bād' sounds like English 'bad' — remember: after noon things go 'bad' (get hot in India!)"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "द्विप्रहर",
+          "romanisation": "dviprahara",
+          "meaning": "midday"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "dviprahara", "meaning": "midday" },
+          { "stage": "Prakrit / Apabhraṁśa", "form": "dopahara", "meaning": "midday" },
+          { "stage": "Hindi", "form": "दोपहर", "meaning": "noon" },
+          { "stage": "Hindi phrase", "form": "दोपहर के बाद", "meaning": "after noon" }
+        ],
+        "logic": "दोपहर = noon (two watches of the day). 'के बाद' (after) turns it into 'past noon' — the afternoon half."
+      },
+      "etymology_story": [
+        "दोपहर is the same noon-word from Sanskrit dviprahara as in 'before noon', marking the midday boundary.",
+        "The postposition के बाद means 'after' and comes from the Sanskrit word vāda, carrying the sense of something that follows.",
+        "Together, दोपहर के बाद became the standard Hindi way to say 'afternoon / p.m.'.",
+        "It mirrors the Latin logic of post meridiem perfectly, though the two phrases arose independently."
+      ],
+      "pronunciation_guide": {
+        "syllables": "do · pa · har · ke · bād",
+        "stress": "light stress on 'do' and on 'bād'; the phrase flows as one unit",
+        "tips": [
+          {
+            "sounds_like": "bad",
+            "language": "English",
+            "tip": "'bād' at the end sounds exactly like English 'bad' with a long 'a'"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A noon-time clock showing 12:00, and on the right side the sun is blazing high and harsh; a figure sits in the shade with a wilted plant — everything looks scorched after the midday peak.",
+        "connection": "The scorched scene happens after noon (दोपहर के बाद), and the harsh 'bad' heat links to the sound 'bād' at the end of the phrase."
+      },
+      "examples": [
+        {
+          "hindi": "वह दोपहर के बाद घर आएगा।",
+          "romanisation": "vah dopahar ke bād ghar āegā.",
+          "english": "He will come home after noon.",
+          "literal": "he noon after home will-come",
+          "register": "neutral"
+        },
+        {
+          "hindi": "दोपहर के बाद बाहर बहुत गर्मी होती है।",
+          "romanisation": "dopahar ke bād bāhar bahut garmī hotī hai.",
+          "english": "It is very hot outside in the afternoon.",
+          "literal": "noon after outside very heat happens is",
+          "register": "casual"
+        },
+        {
+          "hindi": "मेरी क्लास दोपहर के बाद तीन बजे है।",
+          "romanisation": "merī klās dopahar ke bād tīn baje hai.",
+          "english": "My class is at three o'clock in the afternoon.",
+          "literal": "my class noon after three o'clock is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "दोपहर के बाद हम साथ में चाय पियेंगे।",
+          "romanisation": "dopahar ke bād ham sāth mẽ cāy piyẽge.",
+          "english": "We will drink tea together in the afternoon.",
+          "literal": "noon after we together tea will-drink",
+          "register": "casual"
+        }
+      ]
+    },
+    {
+      "hindi": "घंटा",
+      "romanisation": "ghaṇṭā",
+      "english": "hour",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "masculine singular direct", "hindi": "घंटा", "roman": "ghaṇṭā" },
+        { "label": "masculine plural / oblique singular", "hindi": "घंटे", "roman": "ghaṇṭe" },
+        { "label": "also means", "hindi": "घंटा (bell)", "roman": "ghaṇṭā" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "घण्ट",
+            "romanisation": "ghaṇṭa",
+            "meaning": "bell, gong",
+            "note": "Hours were traditionally announced by striking a bell or gong — the instrument became the unit of time it measured"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "gong",
+            "romanisation": "gong",
+            "meaning": "a struck bell instrument",
+            "note": "A gong marks time — connecting the sound of 'ghaṇṭā' to the bell origin of the word"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "ganta",
+          "language": "Telugu / Kannada",
+          "note": "In South Indian languages, ganta also means hour — shared Sanskrit origin makes this a genuine cognate and a strong memory bridge"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "घण्ट",
+          "romanisation": "ghaṇṭa",
+          "meaning": "bell, gong"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "ghaṇṭa", "meaning": "bell, gong" },
+          { "stage": "Prakrit", "form": "ghaṃṭa", "meaning": "bell" },
+          { "stage": "Hindi", "form": "घंटा", "meaning": "bell; hour" }
+        ],
+        "logic": "Bells were struck to announce the passing of each hour in temples and town squares — the bell became the name for the hour it announced."
+      },
+      "etymology_story": [
+        "The root comes from Sanskrit ghaṇṭa, the word for a bell or gong.",
+        "In Indian timekeeping, a bell was struck at every hour to announce its passing.",
+        "Over time, the instrument that marked the hour lent its name to the unit itself.",
+        "So in modern Hindi, घंटा means both 'bell' and 'hour', preserving this ancient connection."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ghaṇ · ṭā",
+        "stress": "stress on the first syllable; the ṇ is retroflex — tongue curls back slightly",
+        "tips": [
+          {
+            "sounds_like": "gun",
+            "language": "English",
+            "tip": "the 'gha' opening is like a breathy 'ga' — similar to the 'gu' in 'gun' but with an 'a' vowel"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A giant ornate brass temple bell hanging in an archway, with the number '1 HR' engraved on its surface, and a clock face visible through the bell's mouth.",
+        "connection": "The bell image directly reflects the Sanskrit origin — ghaṇṭa meant bell, and the bell became the hour. The clock face inside the bell seals the meaning."
+      },
+      "examples": [
+        {
+          "hindi": "मुझे एक घंटे में पहुँचना है।",
+          "romanisation": "mujhe ek ghaṇṭe mẽ pahũcnā hai.",
+          "english": "I have to arrive within one hour.",
+          "literal": "me-to one hour in arrive-to is",
+          "register": "neutral"
+        },
+        {
+          "hindi": "यह फ़िल्म तीन घंटे लंबी है।",
+          "romanisation": "yah film tīn ghaṇṭe lambī hai.",
+          "english": "This film is three hours long.",
+          "literal": "this film three hours long is",
+          "register": "casual"
+        },
+        {
+          "hindi": "दोपहर के बाद दो घंटे आराम करो।",
+          "romanisation": "dopahar ke bād do ghaṇṭe ārām karo.",
+          "english": "Rest for two hours after noon.",
+          "literal": "noon after two hours rest do",
+          "register": "casual"
+        },
+        {
+          "hindi": "घंटा बज गया — चलते हैं।",
+          "romanisation": "ghaṇṭā baj gayā — calte haĩ.",
+          "english": "The bell rang — let's go.",
+          "literal": "bell rang went — going are",
+          "register": "colloquial"
+        }
+      ]
+    },
+    {
+      "hindi": "मिनट",
+      "romanisation": "minaṭ",
+      "english": "minute",
+      "origin_tag": "English",
+      "forms": [
+        { "label": "singular", "hindi": "मिनट", "roman": "minaṭ" },
+        { "label": "plural (same form)", "hindi": "मिनट", "roman": "minaṭ" },
+        { "label": "oblique", "hindi": "मिनट में", "roman": "minaṭ mẽ" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "English",
+            "word": "minute",
+            "romanisation": "minute",
+            "meaning": "one sixtieth of an hour",
+            "note": "Hindi मिनट is a direct borrowing from English 'minute', which itself came from Latin minuta (small part)"
+          },
+          {
+            "language": "Latin",
+            "word": "minuta",
+            "romanisation": "minuta",
+            "meaning": "small, tiny division",
+            "note": "The ultimate source — Latin minuta pars (small part) was the medieval term for one sixtieth of an hour"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "Russian",
+            "word": "минута",
+            "romanisation": "minuta",
+            "meaning": "minute",
+            "note": "Russian минута sounds almost identical to Hindi मिनट — both borrowed from the same Latin/European source"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "minute",
+          "language": "English",
+          "note": "मिनट is simply the English word 'minute' adapted to Hindi phonology — no memory work needed"
+        },
+        {
+          "word": "минута",
+          "language": "Russian",
+          "note": "Russian минута (minuta) is audibly similar — reinforces the word from two directions"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Latin",
+          "word": "minuta",
+          "romanisation": "minuta",
+          "meaning": "small, tiny"
+        },
+        "evolution": [
+          { "stage": "Latin", "form": "minuta pars", "meaning": "tiny part (of an hour)" },
+          { "stage": "Old French", "form": "minute", "meaning": "small unit of time" },
+          { "stage": "English", "form": "minute", "meaning": "one sixtieth of an hour" },
+          { "stage": "Hindi", "form": "मिनट", "meaning": "minute" }
+        ],
+        "logic": "Latin's 'tiny part' became the medieval name for the sixtieth of an hour, entered English, and was then borrowed into Hindi during British colonial contact."
+      },
+      "etymology_story": [
+        "The word traces back to Latin minuta pars, meaning 'tiny part' — the sixtieth division of an hour.",
+        "It passed through Old French and into English as 'minute'.",
+        "During British rule in India, English technical and time vocabulary was adopted into Hindi.",
+        "मिनट is the result — the English word 'minute' with a Hindi retroflex ending."
+      ],
+      "pronunciation_guide": {
+        "syllables": "mi · naṭ",
+        "stress": "stress on first syllable; the final ṭ is retroflex — tip of tongue curled back",
+        "tips": [
+          {
+            "sounds_like": "minute",
+            "language": "English",
+            "tip": "sounds almost identical to English 'minute' — just shorten the vowels and add a retroflex ṭ at the end"
+          },
+          {
+            "sounds_like": "минута",
+            "language": "Russian",
+            "tip": "Russian минута begins the same way as मिनट — 'mi-na' is shared between both"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A tiny (miniature) clock, small enough to fit on a fingertip, with the minute hand pointing straight up — engraved with the word 'MINI' on its face.",
+        "connection": "The 'mini' in the image echoes the Latin minuta (tiny) root of मिनट, and the clock's minute hand directly represents the meaning."
+      },
+      "examples": [
+        {
+          "hindi": "बस पाँच मिनट रुको।",
+          "romanisation": "bas pāc minaṭ ruko.",
+          "english": "Just wait five minutes.",
+          "literal": "just five minutes wait",
+          "register": "casual"
+        },
+        {
+          "hindi": "मीटिंग में पंद्रह मिनट बचे हैं।",
+          "romanisation": "miṭiṃg mẽ pandrah minaṭ bace haĩ.",
+          "english": "Fifteen minutes are left in the meeting.",
+          "literal": "meeting in fifteen minutes remain are",
+          "register": "neutral"
+        },
+        {
+          "hindi": "खाना बीस मिनट में तैयार हो जाएगा।",
+          "romanisation": "khānā bīs minaṭ mẽ taiyār ho jāegā.",
+          "english": "The food will be ready in twenty minutes.",
+          "literal": "food twenty minutes in ready become will-go",
+          "register": "casual"
+        },
+        {
+          "hindi": "एक घंटे में साठ मिनट होते हैं।",
+          "romanisation": "ek ghaṇṭe mẽ sāṭh minaṭ hote haĩ.",
+          "english": "There are sixty minutes in one hour.",
+          "literal": "one hour in sixty minutes happen are",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "hindi": "बजे",
+      "romanisation": "baje",
+      "english": "o'clock (telling time)",
+      "origin_tag": "Sanskrit",
+      "forms": [
+        { "label": "verb root", "hindi": "बजना", "roman": "bajnā" },
+        { "label": "present tense (it rings)", "hindi": "बजता है", "roman": "bajtā hai" },
+        { "label": "past tense (it rang)", "hindi": "बजा", "roman": "bajā" },
+        { "label": "time expression (at X o'clock)", "hindi": "X बजे", "roman": "X baje" },
+        { "label": "imperative (play/ring!)", "hindi": "बजाओ", "roman": "bajāo" }
+      ],
+      "punjabi_note": null,
+      "cross_language_connections": {
+        "true_relatives": [
+          {
+            "language": "Sanskrit",
+            "word": "वाद्य",
+            "romanisation": "vādya",
+            "meaning": "musical instrument, something to be played",
+            "note": "The root vaj / vad- relating to sound and striking underlies बजना — to ring, strike, or play"
+          }
+        ],
+        "useful_coincidences": [
+          {
+            "language": "English",
+            "word": "buzz",
+            "romanisation": "buzz",
+            "meaning": "a sound",
+            "note": "'baj' has the same buzzy, ringing quality as 'buzz' — useful for remembering the sound-related origin of the word"
+          }
+        ]
+      },
+      "sound_alikes": [
+        {
+          "word": "badge",
+          "language": "English",
+          "note": "'baje' sounds like 'badge' — imagine a clock badge that rings on the hour"
+        }
+      ],
+      "root_breakdown": {
+        "root": {
+          "language": "Sanskrit",
+          "word": "वज्",
+          "romanisation": "vaj",
+          "meaning": "to sound, to strike, to resound"
+        },
+        "evolution": [
+          { "stage": "Sanskrit", "form": "vaj / vādya", "meaning": "to sound, musical instrument" },
+          { "stage": "Prakrit", "form": "bajja", "meaning": "to ring, strike" },
+          { "stage": "Hindi verb", "form": "बजना", "meaning": "to ring, to be played (of instruments or bells)" },
+          { "stage": "Hindi time expression", "form": "बजे", "meaning": "o'clock (the bell has struck X times)" }
+        ],
+        "logic": "Clocks and temple bells struck once for each hour — so 'the bell has struck three times' became 'three o'clock'. बजे is the oblique form of the past participle of बजना."
+      },
+      "etymology_story": [
+        "The verb बजना comes from a Sanskrit root meaning 'to sound' or 'to strike', related to the ringing of bells and instruments.",
+        "In traditional Indian timekeeping, a bell or gong was struck once for each hour of the day.",
+        "The phrase 'teen baje' literally means 'three have struck', i.e., the bell struck three times.",
+        "So बजे became the standard Hindi equivalent of 'o'clock' — always used after the number of the hour."
+      ],
+      "pronunciation_guide": {
+        "syllables": "ba · je",
+        "stress": "both syllables are light and equal; the 'j' is like the 's' in 'measure'",
+        "tips": [
+          {
+            "sounds_like": "beige",
+            "language": "English",
+            "tip": "'baje' rhymes closely with 'beige' — same 'zh' sound in the middle"
+          }
+        ]
+      },
+      "memory_hook": {
+        "primary": "A grandfather clock with a large bell on top; the bell is mid-swing, visibly vibrating, with the number '3' displayed on the clock face and three ripple lines radiating outward from the bell.",
+        "connection": "The ringing bell encodes the etymology of बजे — it comes from बजना (to ring), and telling time in Hindi is literally saying how many times the bell has struck."
+      },
+      "examples": [
+        {
+          "hindi": "अभी चार बजे हैं।",
+          "romanisation": "abhī cār baje haĩ.",
+          "english": "It is four o'clock now.",
+          "literal": "now four o'clock are",
+          "register": "neutral"
+        },
+        {
+          "hindi": "मीटिंग नौ बजे शुरू होगी।",
+          "romanisation": "miṭiṃg nau baje śurū hogī.",
+          "english": "The meeting will start at nine o'clock.",
+          "literal": "meeting nine o'clock start will-be",
+          "register": "formal"
+        },
+        {
+          "hindi": "दोपहर से पहले दस बजे मिलते हैं।",
+          "romanisation": "dopahar se pahle das baje milte haĩ.",
+          "english": "Let's meet at ten o'clock in the morning.",
+          "literal": "noon from before ten o'clock meet are",
+          "register": "casual"
+        },
+        {
+          "hindi": "घड़ी में कितने बजे हैं?",
+          "romanisation": "ghaṛī mẽ kitne baje haĩ?",
+          "english": "What time is it on the clock?",
+          "literal": "clock in how-many o'clock are",
+          "register": "casual"
+        }
+      ]
+    }
+  ]
+}
