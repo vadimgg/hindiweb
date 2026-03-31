@@ -27,12 +27,20 @@ const allWords = allFiles.flatMap(f => f.words);
 
 const wordGroups = (() => {
   let offset = 0;
-  return allFiles.filter(f => f.words.length > 0).map((file, fi) => {
-    const group = { id: String(fi), title: file.title,
-      words: file.words.map((w: any, li: number) => ({ w, i: offset + li })) };
-    offset += file.words.length;
-    return group;
-  });
+  const merged = new Map<string, { id: string; title: string; words: { w: any; i: number }[] }>();
+  let groupIndex = 0;
+
+  for (const file of allFiles.filter(f => f.words.length > 0)) {
+    if (!merged.has(file.title)) {
+      merged.set(file.title, { id: String(groupIndex++), title: file.title, words: [] });
+    }
+    const group = merged.get(file.title)!;
+    for (const w of file.words) {
+      group.words.push({ w, i: offset++ });
+    }
+  }
+
+  return [...merged.values()];
 })();
 
 // ── Load sentences (graceful — dir may not exist yet) ─────────────────────────
