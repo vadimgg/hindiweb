@@ -64,44 +64,47 @@ function annotateRoman(text, excludeSet, romanMap) {
 }
 
 /**
- * Initialises tooltip functionality:
- *   1. Builds Hindi and romanisation lookup maps from hover data.
- *   2. Annotates all example card paragraphs with vocab-hint spans.
- *   3. Wires a document-level mouseover handler to show/position the tooltip.
+ * Builds Hindi and romanisation lookup maps from hover data, including inflected forms.
  *
- * Must be called after DOMContentLoaded.
- *
- * @returns {void}
+ * @param {object[]} hoverData - Array of hover entries from getHoverData().
+ * @returns {{ hindiMap: Record<string,object>, romanMap: Record<string,object> }}
  */
-export function initTooltip() {
-  const hoverData = getHoverData();
-  const hindiMap  = {};
-  const romanMap  = {};
-
-  // Build lookup maps — include all inflected forms of each word
+function buildLookupMaps(hoverData) {
+  const hindiMap = {};
+  const romanMap = {};
   hoverData.forEach(word => {
-    hindiMap[word.hindi]        = word;
-    romanMap[norm(word.roman)]  = word;
+    hindiMap[word.hindi]       = word;
+    romanMap[norm(word.roman)] = word;
     (word.forms || []).forEach(form => {
-      if (form.h) hindiMap[form.h]        = word;
-      if (form.r) romanMap[norm(form.r)]  = word;
+      if (form.h) hindiMap[form.h]       = word;
+      if (form.r) romanMap[norm(form.r)] = word;
     });
   });
+  return { hindiMap, romanMap };
+}
 
-  // Annotate example card paragraphs with vocab-hint spans
+/**
+ * Annotates all example card paragraphs with vocab-hint spans, skipping the card's
+ * own word and its inflected forms to avoid self-annotation.
+ *
+ * @param {object[]}             hoverData - Array of hover entries from getHoverData().
+ * @param {Record<string,object>} hindiMap  - Devanagari token → hover entry map.
+ * @param {Record<string,object>} romanMap  - Normalised roman token → hover entry map.
+ * @returns {void}
+ */
+function annotateExampleCards(hoverData, hindiMap, romanMap) {
   document.querySelectorAll('[data-example-card]').forEach(container => {
     const cardIndex = parseInt(container.dataset.exampleCard);
     const cardWord  = hoverData[cardIndex];
     if (!cardWord) return;
 
-    // Exclude the card's own word and its forms from annotation
     const excludeHindi = new Set([cardWord.hindi, ...(cardWord.forms || []).map(f => f.h)]);
     const excludeRoman = new Set([norm(cardWord.roman), ...(cardWord.forms || []).map(f => norm(f.r))]);
 
     const hindiPara = container.querySelector('[lang="hi"]');
     if (hindiPara) {
-      const original   = hindiPara.textContent;
-      const annotated  = annotateHindi(original, excludeHindi, hindiMap);
+      const original  = hindiPara.textContent;
+      const annotated = annotateHindi(original, excludeHindi, hindiMap);
       if (annotated !== original) hindiPara.innerHTML = annotated;
     }
 
@@ -112,14 +115,18 @@ export function initTooltip() {
       if (annotated !== original) romanPara.innerHTML = annotated;
     }
   });
+}
 
-  // Wire tooltip show/position on hover
-  const tooltip    = document.getElementById('word-tooltip');
-  const tipHindi   = document.getElementById('tip-hindi');
-  const tipRoman   = document.getElementById('tip-roman');
-  const tipEnglish = document.getElementById('tip-english');
-  if (!tooltip) return;
-
+/**
+ * Wires the document-level mouseover handler that shows and positions the tooltip.
+ *
+ * @param {Element} tooltip    - The tooltip container element.
+ * @param {Element} tipHindi   - Element to receive the Hindi text.
+ * @param {Element} tipRoman   - Element to receive the romanisation text.
+ * @param {Element} tipEnglish - Element to receive the English text.
+ * @returns {void}
+ */
+function wireTooltipHover(tooltip, tipHindi, tipRoman, tipEnglish) {
   document.addEventListener('mouseover', e => {
     const hint = e.target.closest('.vocab-hint');
     if (!hint) {
@@ -146,4 +153,27 @@ export function initTooltip() {
       tooltip.style.visibility = 'visible';
     });
   });
+}
+
+/**
+ * Initialises tooltip functionality:
+ *   1. Builds Hindi and romanisation lookup maps from hover data.
+ *   2. Annotates all example card paragraphs with vocab-hint spans.
+ *   3. Wires a document-level mouseover handler to show/position the tooltip.
+ *
+ * Must be called after DOMContentLoaded.
+ *
+ * @returns {void}
+ */
+export function initTooltip() {
+  const hoverData = getHoverData();
+  const { hindiMap, romanMap } = buildLookupMaps(hoverData);
+  annotateExampleCards(hoverData, hindiMap, romanMap);
+
+  const tooltip    = document.getElementById('word-tooltip');
+  const tipHindi   = document.getElementById('tip-hindi');
+  const tipRoman   = document.getElementById('tip-roman');
+  const tipEnglish = document.getElementById('tip-english');
+  if (!tooltip) return;
+  wireTooltipHover(tooltip, tipHindi, tipRoman, tipEnglish);
 }

@@ -22,6 +22,9 @@ import { getSelectedWordObjects, getDefaultDeckName }    from '../state/selectio
 /** @type {number|null} setInterval handle; non-null while polling is active. */
 let pollInterval = null;
 
+/** Returns 's' when n !== 1 — used for pluralising feedback messages. */
+const plural = n => (n !== 1 ? 's' : '');
+
 /**
  * Updates the AnkiConnect status badge and export button state.
  *
@@ -120,6 +123,101 @@ function showFeedback(message, isError) {
 }
 
 /**
+ * Builds the success feedback message for an incremental Anki export.
+ *
+ * @param {number} added   - Number of cards actually added.
+ * @param {number} skipped - Number of cards skipped (already exist).
+ * @param {string} deckName - Target deck name for display in the message.
+ * @returns {string} Human-readable result message.
+ */
+function buildSendMessage(added, skipped, deckName) {
+  if (added === 0 && skipped > 0) return `All ${skipped} card${plural(skipped)} already exist in "${deckName}".`;
+  if (skipped > 0) return `Done! ${added} card${plural(added)} added · ${skipped} already existed.`;
+  return `Done! ${added} card${plural(added)} added to "${deckName}".`;
+}
+
+/**
+ * Handles the export button click: validates, runs the export/override API call,
+ * and shows the result feedback.
+ *
+ * @returns {Promise<void>}
+ */
+async function handleExportClick() {
+  const words      = getSelectedWordObjects();
+  const deckName   = document.getElementById('export-deck-input')?.value.trim() || 'Hindi::Vocabulary';
+  const isOverride = document.getElementById('export-override-toggle')?.checked ?? false;
+  if (!words.length) { showFeedback('No words selected.', true); return; }
+
+  const exportBtn       = document.getElementById('export-btn');
+  exportBtn.disabled    = true;
+  exportBtn.textContent = isOverride ? 'Replacing…' : 'Exporting…';
+  document.getElementById('export-feedback')?.classList.add('hidden');
+
+  try {
+    if (isOverride) {
+      const { added, deleted } = await overrideDeck(words, deckName);
+      showFeedback(`Replaced! Removed ${deleted} old card${plural(deleted)}, added ${added} new card${plural(added)} to "${deckName}".`, false);
+    } else {
+      const { added, skipped } = await sendToAnki(words, deckName);
+      showFeedback(buildSendMessage(added, skipped, deckName), false);
+    }
+  } catch (err) {
+    showFeedback(`Error: ${err.message}`, true);
+  } finally {
+    exportBtn.textContent = 'Export to Anki';
+    pollAnkiStatus();
+  }
+}
+
+/**
+ * Wires window-level event listeners for tab changes and selection changes.
+ *
+ * @returns {void}
+ */
+function wireWindowListeners() {
+  window.addEventListener('tabchange', e => {
+    if (e.detail.tab === 'export') { populateWordTable(); startPolling(); }
+    else stopPolling();
+  });
+
+  window.addEventListener('selectionchange', () => {
+    const exportTab = document.getElementById('tab-export');
+    if (!exportTab || exportTab.style.display === 'none' || exportTab.style.display === '') return;
+    populateWordTable();
+    const deckInput = document.getElementById('export-deck-input');
+    if (deckInput && !deckInput.dataset.userEdited) deckInput.value = getDefaultDeckName();
+  });
+}
+
+/**
+ * Wires DOM element listeners for the deck input, override toggle, export button,
+ * and .txt download button.
+ *
+ * @returns {void}
+ */
+function wireControlListeners() {
+  document.getElementById('export-deck-input')?.addEventListener('input', e => {
+    e.target.dataset.userEdited = '1';
+  });
+
+  document.getElementById('export-override-toggle')?.addEventListener('change', e => {
+    const exportBtn = document.getElementById('export-btn');
+    if (exportBtn && !exportBtn.disabled) {
+      exportBtn.textContent = e.target.checked ? 'Replace Deck' : 'Export to Anki';
+    }
+  });
+
+  document.getElementById('export-btn')?.addEventListener('click', handleExportClick);
+
+  document.getElementById('export-txt-btn')?.addEventListener('click', () => {
+    const words    = getSelectedWordObjects();
+    const deckName = document.getElementById('export-deck-input')?.value.trim() || 'Hindi::Vocabulary';
+    downloadAnkiTxt(words, deckName);
+    showFeedback('Downloading .txt file for manual Anki import…', false);
+  });
+}
+
+/**
  * Initialises the export pane.
  *
  * Wires all event listeners: tab switching (start/stop polling), selection
@@ -131,75 +229,6 @@ function showFeedback(message, isError) {
  * @returns {void}
  */
 export function initExportPane() {
-  // Start/stop polling when the Export tab is activated or left
-  window.addEventListener('tabchange', e => {
-    if (e.detail.tab === 'export') { populateWordTable(); startPolling(); }
-    else stopPolling();
-  });
-
-  // Re-populate table and sync deck name whenever selection changes
-  window.addEventListener('selectionchange', () => {
-    const exportTab = document.getElementById('tab-export');
-    if (!exportTab || exportTab.style.display === 'none' || exportTab.style.display === '') return;
-    populateWordTable();
-    const deckInput = document.getElementById('export-deck-input');
-    if (deckInput && !deckInput.dataset.userEdited) deckInput.value = getDefaultDeckName();
-  });
-
-  // Mark deck name input as user-edited once the user types in it
-  document.getElementById('export-deck-input')?.addEventListener('input', e => {
-    e.target.dataset.userEdited = '1';
-  });
-
-  // Update button label when override toggle changes
-  document.getElementById('export-override-toggle')?.addEventListener('change', e => {
-    const exportBtn = document.getElementById('export-btn');
-    if (exportBtn && !exportBtn.disabled) {
-      exportBtn.textContent = e.target.checked ? 'Replace Deck' : 'Export to Anki';
-    }
-  });
-
-  // Export to Anki (incremental or override)
-  document.getElementById('export-btn')?.addEventListener('click', async () => {
-    const words      = getSelectedWordObjects();
-    const deckName   = document.getElementById('export-deck-input')?.value.trim() || 'Hindi::Vocabulary';
-    const isOverride = document.getElementById('export-override-toggle')?.checked ?? false;
-    if (!words.length) { showFeedback('No words selected.', true); return; }
-
-    const exportBtn      = document.getElementById('export-btn');
-    exportBtn.disabled   = true;
-    exportBtn.textContent = isOverride ? 'Replacing…' : 'Exporting…';
-    document.getElementById('export-feedback')?.classList.add('hidden');
-
-    try {
-      if (isOverride) {
-        const { added, deleted } = await overrideDeck(words, deckName);
-        showFeedback(
-          `Replaced! Removed ${deleted} old card${deleted !== 1 ? 's' : ''}, added ${added} new card${added !== 1 ? 's' : ''} to "${deckName}".`,
-          false,
-        );
-      } else {
-        const { added, skipped } = await sendToAnki(words, deckName);
-        const msg = added === 0 && skipped > 0
-          ? `All ${skipped} card${skipped !== 1 ? 's' : ''} already exist in "${deckName}".`
-          : skipped > 0
-            ? `Done! ${added} card${added !== 1 ? 's' : ''} added · ${skipped} already existed.`
-            : `Done! ${added} card${added !== 1 ? 's' : ''} added to "${deckName}".`;
-        showFeedback(msg, false);
-      }
-    } catch (err) {
-      showFeedback(`Error: ${err.message}`, true);
-    } finally {
-      exportBtn.textContent = 'Export to Anki';
-      pollAnkiStatus();
-    }
-  });
-
-  // .txt fallback download
-  document.getElementById('export-txt-btn')?.addEventListener('click', () => {
-    const words    = getSelectedWordObjects();
-    const deckName = document.getElementById('export-deck-input')?.value.trim() || 'Hindi::Vocabulary';
-    downloadAnkiTxt(words, deckName);
-    showFeedback('Downloading .txt file for manual Anki import…', false);
-  });
+  wireWindowListeners();
+  wireControlListeners();
 }

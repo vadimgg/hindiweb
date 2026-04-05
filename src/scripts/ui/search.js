@@ -120,6 +120,58 @@ export function initSearch() {
 }
 
 /**
+ * Applies the search filter to the words tab: shows/hides cards and sidebar rows,
+ * collapses empty groups, and updates the count label and empty-state messages.
+ *
+ * @param {string} query - Normalised search query (may be empty).
+ * @returns {void}
+ */
+function filterWords(query) {
+  let matchCount = 0, visibleCount = 0;
+  getWordSearchIndex().forEach(word => {
+    const passesSearch = !query || bestScore(query, word) >= 0;
+    wordCards[word.i]?.classList.toggle('hidden', !(passesSearch && hasWord(word.i)));
+    wordRowMap[word.i]?.classList.toggle('hidden', !passesSearch);
+    if (passesSearch) matchCount++;
+    if (passesSearch && hasWord(word.i)) visibleCount++;
+  });
+  document.querySelectorAll('#idx-words .date-group').forEach(group => {
+    group.classList.toggle('hidden', [...group.querySelectorAll('.idx-row')].every(r => r.classList.contains('hidden')));
+  });
+  const total = getWordSearchIndex().length;
+  const countEl = document.getElementById('search-count');
+  if (countEl) countEl.textContent = query ? `${matchCount} of ${total} words` : `${total} words`;
+  document.getElementById('words-index-empty')?.classList.toggle('hidden', matchCount > 0);
+  document.getElementById('words-no-results')?.classList.toggle('hidden', visibleCount > 0);
+}
+
+/**
+ * Applies the search filter to the sentences tab: shows/hides cards and sidebar rows,
+ * collapses empty groups, and updates the count label and empty-state messages.
+ *
+ * @param {string} query - Normalised search query (may be empty).
+ * @returns {void}
+ */
+function filterSentences(query) {
+  let matchCount = 0, visibleCount = 0;
+  getSentenceIndex().forEach(sentence => {
+    const passesSearch = !query || bestScore(query, sentence) >= 0;
+    sentCards[sentence.i]?.classList.toggle('hidden', !(passesSearch && hasSentence(sentence.i)));
+    sentRowMap[sentence.i]?.classList.toggle('hidden', !passesSearch);
+    if (passesSearch) matchCount++;
+    if (passesSearch && hasSentence(sentence.i)) visibleCount++;
+  });
+  document.querySelectorAll('#idx-sentences .sentence-group').forEach(group => {
+    group.classList.toggle('hidden', [...group.querySelectorAll('.idx-row')].every(r => r.classList.contains('hidden')));
+  });
+  const total = getSentenceIndex().length;
+  const countEl = document.getElementById('search-count');
+  if (countEl) countEl.textContent = query ? `${matchCount} of ${total} sentences` : `${total} sentences`;
+  document.getElementById('sentences-index-empty')?.classList.toggle('hidden', matchCount > 0);
+  document.getElementById('sentences-no-results')?.classList.toggle('hidden', visibleCount > 0);
+}
+
+/**
  * Applies the current search query and selection state to show/hide cards and rows.
  *
  * A word card is visible when it passes the search filter AND is selected.
@@ -134,40 +186,6 @@ export function applyFilter() {
 
   const activeTab = getActiveTab();
   if (activeTab === 'export') return;
-
-  if (activeTab === 'words') {
-    let matchCount = 0, visibleCount = 0;
-    getWordSearchIndex().forEach(word => {
-      const passesSearch = !query || bestScore(query, word) >= 0;
-      wordCards[word.i]?.classList.toggle('hidden', !(passesSearch && hasWord(word.i)));
-      wordRowMap[word.i]?.classList.toggle('hidden', !passesSearch);
-      if (passesSearch) matchCount++;
-      if (passesSearch && hasWord(word.i)) visibleCount++;
-    });
-    document.querySelectorAll('#idx-words .date-group').forEach(group => {
-      group.classList.toggle('hidden', [...group.querySelectorAll('.idx-row')].every(r => r.classList.contains('hidden')));
-    });
-    const searchCountEl = document.getElementById('search-count');
-    const total = getWordSearchIndex().length;
-    if (searchCountEl) searchCountEl.textContent = query ? `${matchCount} of ${total} words` : `${total} words`;
-    document.getElementById('words-index-empty')?.classList.toggle('hidden', matchCount > 0);
-    document.getElementById('words-no-results')?.classList.toggle('hidden', visibleCount > 0);
-  } else {
-    let matchCount = 0, visibleCount = 0;
-    getSentenceIndex().forEach(sentence => {
-      const passesSearch = !query || bestScore(query, sentence) >= 0;
-      sentCards[sentence.i]?.classList.toggle('hidden', !(passesSearch && hasSentence(sentence.i)));
-      sentRowMap[sentence.i]?.classList.toggle('hidden', !passesSearch);
-      if (passesSearch) matchCount++;
-      if (passesSearch && hasSentence(sentence.i)) visibleCount++;
-    });
-    document.querySelectorAll('#idx-sentences .sentence-group').forEach(group => {
-      group.classList.toggle('hidden', [...group.querySelectorAll('.idx-row')].every(r => r.classList.contains('hidden')));
-    });
-    const searchCountEl = document.getElementById('search-count');
-    const total = getSentenceIndex().length;
-    if (searchCountEl) searchCountEl.textContent = query ? `${matchCount} of ${total} sentences` : `${total} sentences`;
-    document.getElementById('sentences-index-empty')?.classList.toggle('hidden', matchCount > 0);
-    document.getElementById('sentences-no-results')?.classList.toggle('hidden', visibleCount > 0);
-  }
+  if (activeTab === 'words') filterWords(query);
+  else filterSentences(query);
 }

@@ -86,7 +86,6 @@ export function hasWord(idx) { return selectedWords.has(idx); }
  */
 export function hasSentence(idx) { return selectedSentences.has(idx); }
 
-/** @returns {number[]} Array of all currently selected word indices. */
 /**
  * Returns an array of all currently selected word indices.
  * @returns {number[]}

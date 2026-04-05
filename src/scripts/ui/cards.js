@@ -6,12 +6,43 @@
  * IntersectionObserver to highlight the corresponding sidebar row as the user
  * scrolls through the card list.
  *
- * Dependencies: state/selection.js, ui/search.js.
+ * Filter re-application after deselect is handled by the 'selectionchange'
+ * CustomEvent that selection.js dispatches — no direct call to search.js needed.
+ *
+ * Dependencies: state/selection.js.
  */
 // Responsible for: word card collapse/expand toggling and deselect button handling
 
 import { setWordSelected, syncGroupCheckbox } from '../state/selection.js';
-import { getWordRowMap, applyFilter }          from './search.js';
+
+/**
+ * Sets up an IntersectionObserver that highlights the matching sidebar row whenever
+ * a word card scrolls into view.
+ *
+ * Assigns a sequential data-card-index attribute to each card article so the
+ * observer can look up the sidebar row by index.
+ *
+ * @returns {void}
+ */
+function initScrollHighlight() {
+  const wordCards = [...document.querySelectorAll('[data-word-card]')];
+  const observer  = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const cardIndex = entry.target.dataset.cardIndex;
+      document.querySelectorAll('#idx-words .idx-row').forEach(r => r.classList.remove('is-active'));
+      const activeRow = document.querySelector(`#idx-words .idx-row[data-index="${cardIndex}"]`);
+      activeRow?.classList.add('is-active');
+      activeRow?.scrollIntoView({ block: 'nearest' });
+    });
+  }, { threshold: 0.4 });
+
+  wordCards.forEach((wrapper, i) => {
+    const article = wrapper.querySelector('article');
+    if (article) article.dataset.cardIndex = String(i);
+    observer.observe(wrapper);
+  });
+}
 
 /**
  * Initialises card interactions:
@@ -33,31 +64,13 @@ export function initCards() {
     const deselectBtn = e.target.closest('.deselect-btn');
     if (!deselectBtn) return;
     const wordIndex = parseInt(deselectBtn.dataset.deselectIndex);
-    const rowMap    = getWordRowMap();
+    // Look up the sidebar row directly to find its group — avoids cross-ui import
+    const groupDate = document.querySelector(`#idx-words .idx-row[data-index="${wordIndex}"]`)
+      ?.closest('.date-group')?.dataset.group ?? '';
     setWordSelected(wordIndex, false);
-    syncGroupCheckbox(rowMap[wordIndex]?.closest('.date-group')?.dataset.group ?? '');
-    applyFilter();
+    syncGroupCheckbox(groupDate);
+    // applyFilter() fires automatically via 'selectionchange' event.
   });
 
-  // Highlight the active sidebar row using IntersectionObserver so we don't
-  // need scroll event listeners
-  const wordCards = [...document.querySelectorAll('[data-word-card]')];
-  const rowMap    = getWordRowMap();
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const cardIndex = entry.target.dataset.cardIndex;
-      document.querySelectorAll('#idx-words .idx-row').forEach(r => r.classList.remove('is-active'));
-      const activeRow = rowMap[cardIndex];
-      activeRow?.classList.add('is-active');
-      activeRow?.scrollIntoView({ block: 'nearest' });
-    });
-  }, { threshold: 0.4 });
-
-  wordCards.forEach((wrapper, i) => {
-    const article = wrapper.querySelector('article');
-    if (article) article.dataset.cardIndex = String(i);
-    observer.observe(wrapper);
-  });
+  initScrollHighlight();
 }

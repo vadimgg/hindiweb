@@ -1,6 +1,6 @@
 # Architecture
 
-_Generated 2026-04-04 by `npm run arch`._
+_Generated 2026-04-05 by `npm run arch`._
 
 ---
 
@@ -27,13 +27,13 @@ _Generated 2026-04-04 by `npm run arch`._
 | `src/layouts/Layout.astro` | 28 | root HTML shell — doctype, meta tags, font imports, global CSS, slot |
 | `src/pages/index.astro` | 109 | page entry point — loads vocab data, passes it to components, renders app shell |
 | `src/scripts/anki/fields/category.js` | 25 | building the Anki Category HTML field |
-| `src/scripts/anki/fields/crossLang.js` | 73 | building the Anki Cross-Language HTML field |
+| `src/scripts/anki/fields/crossLang.js` | 56 | building the Anki Cross-Language HTML field |
 | `src/scripts/anki/fields/examples.js` | 33 | building the Anki Examples HTML field |
 | `src/scripts/anki/fields/forms.js` | 47 | building the Anki Forms HTML field (chips + secondary meanings) |
 | `src/scripts/anki/fields/index.js` | 47 | assembling wordToAnkiFields() from all individual field builders |
 | `src/scripts/anki/fields/memory.js` | 45 | building the Anki Memory Hook HTML field |
-| `src/scripts/anki/fields/pronunciation.js` | 54 | building the Anki Pronunciation HTML field |
-| `src/scripts/anki/fields/rootOrigin.js` | 81 | building the Anki Root & Origin and Etymology Story HTML fields |
+| `src/scripts/anki/fields/pronunciation.js` | 56 | building the Anki Pronunciation HTML field |
+| `src/scripts/anki/fields/rootOrigin.js` | 104 | building the Anki Root & Origin and Etymology Story HTML fields |
 | `src/scripts/anki/fields/soundAlikes.js` | 48 | building the Anki Sound Alikes HTML field |
 | `src/scripts/anki/fields/urduPunjabi.js` | 63 | building the Anki Urdu & Punjabi HTML field |
 | `src/scripts/anki/fields/utils.js` | 109 | shared HTML-building utilities for Anki card field builders |
@@ -42,13 +42,13 @@ _Generated 2026-04-04 by `npm run arch`._
 | `src/scripts/anki/noteType.js` | 96 | Anki note type definition — CSS, front/back card templates, field list |
 | `src/scripts/anki/tagUtils.js` | 34 | shared Anki tag-building utility used by export.js and txtFallback.js |
 | `src/scripts/anki/txtFallback.js` | 50 | generating and triggering browser download of a .txt file for manual Anki import |
-| `src/scripts/state/selection.js` | 142 | word and sentence selection state and change notifications via CustomEvents |
-| `src/scripts/state/tabs.js` | 80 | active tab state, DOM panel switching, and tabchange event dispatch |
-| `src/scripts/ui/cards.js` | 64 | word card collapse/expand toggling and deselect button handling |
-| `src/scripts/ui/exportPane.js` | 206 | export pane controller — word table, AnkiConnect status polling, export button |
-| `src/scripts/ui/indexSidebar.js` | 112 | sidebar interactions — drag-select checkboxes, group collapse, scroll-to-card |
-| `src/scripts/ui/search.js` | 174 | fuzzy search scoring and filtering word/sentence card visibility |
-| `src/scripts/ui/tooltip.js` | 150 | vocab-hint span annotation in example cards and tooltip positioning |
+| `src/scripts/state/selection.js` | 141 | word and sentence selection state and change notifications via CustomEvents |
+| `src/scripts/state/tabs.js` | 88 | active tab state, DOM panel switching, and tabchange event dispatch |
+| `src/scripts/ui/cards.js` | 77 | word card collapse/expand toggling and deselect button handling |
+| `src/scripts/ui/exportPane.js` | 235 | export pane controller — word table, AnkiConnect status polling, export button |
+| `src/scripts/ui/indexSidebar.js` | 120 | sidebar interactions — drag-select checkboxes, group collapse, scroll-to-card |
+| `src/scripts/ui/search.js` | 192 | fuzzy search scoring and filtering word/sentence card visibility |
+| `src/scripts/ui/tooltip.js` | 180 | vocab-hint span annotation in example cards and tooltip positioning |
 | `src/scripts/utils/stringUtils.js` | 28 | shared diacritic-stripping norm() utility used by search.js and tooltip.js |
 | `src/scripts/data.js` | 43 | lazy read-only accessors for window.__APP_DATA__ (set by define:vars in index.astro) |
 | `src/scripts/main.js` | 34 | bootstrapper — imports all modules and initialises them after DOMContentLoaded |
@@ -256,7 +256,7 @@ _Generated 2026-04-04 by `npm run arch`._
 
 #### `crossLang.js`
 **Responsibility:** building the Anki Cross-Language HTML field  
-**Lines:** 73
+**Lines:** 56
 **Depends on:** `./utils.js`
 **Exports:** `buildAnkiCrossLang`
 **Functions:**
@@ -297,18 +297,22 @@ _Generated 2026-04-04 by `npm run arch`._
 
 #### `pronunciation.js`
 **Responsibility:** building the Anki Pronunciation HTML field  
-**Lines:** 54
+**Lines:** 56
 **Depends on:** `./utils.js`
 **Exports:** `buildAnkiPronunciation`
 **Functions:**
+- `renderTip()` _(internal)_ — Renders a single pronunciation tip row (optional language label + sounds-like + tip text).
 - `buildAnkiPronunciation()` — Builds the Anki Pronunciation field HTML for a word.
 
 #### `rootOrigin.js`
 **Responsibility:** building the Anki Root & Origin and Etymology Story HTML fields  
-**Lines:** 81
+**Lines:** 104
 **Depends on:** `./utils.js`
 **Exports:** `buildAnkiRootOrigin`
 **Functions:**
+- `renderRootHeader()` _(internal)_ — Renders root parts list, optional "via" note, and the root object/string.
+- `renderEvolution()` _(internal)_ — Renders the evolution chain (array of steps or a plain string).
+- `renderEtymology()` _(internal)_ — Renders the etymology story block (heading + one paragraph per line).
 - `buildAnkiRootOrigin()` — Builds the Anki RootOrigin field HTML for a word.
 
 #### `soundAlikes.js`
@@ -344,7 +348,7 @@ _Generated 2026-04-04 by `npm run arch`._
 
 #### `selection.js`
 **Responsibility:** word and sentence selection state and change notifications via CustomEvents  
-**Lines:** 142
+**Lines:** 141
 **Depends on:** `../data.js`
 **Exports:** `getDefaultDeckName`, `getSelectedSentenceIndices`, `getSelectedWordIndices`, `getSelectedWordObjects`, `hasSentence`, `hasWord`, `initSelection`, `setSentenceSelected`, `setWordSelected`, `syncGroupCheckbox`
 **Functions:**
@@ -362,26 +366,28 @@ _Generated 2026-04-04 by `npm run arch`._
 
 #### `tabs.js`
 **Responsibility:** active tab state, DOM panel switching, and tabchange event dispatch  
-**Lines:** 80
+**Lines:** 88
 **Exports:** `getActiveTab`, `initTabs`, `switchTab`
 **Functions:**
 - `getActiveTab()` — Returns the currently active tab name.
 - `initTabs()` — Wires click handlers on all [data-tab] buttons and activates the Words tab.
+- `updateTabBarButtons()` _(internal)_ — Updates [data-tab] button styling to reflect which tab is now active.
 - `switchTab()` — Activates a tab by name: shows its content panel, hides the others,
 
 ### `src/scripts/ui/`
 
 #### `cards.js`
 **Responsibility:** word card collapse/expand toggling and deselect button handling  
-**Lines:** 64
-**Depends on:** `../state/selection.js`, `./search.js`
+**Lines:** 77
+**Depends on:** `../state/selection.js`
 **Exports:** `initCards`
 **Functions:**
+- `initScrollHighlight()` _(internal)_ — Sets up an IntersectionObserver that highlights the matching sidebar row whenever
 - `initCards()` — Initialises card interactions:
 
 #### `exportPane.js`
 **Responsibility:** export pane controller — word table, AnkiConnect status polling, export button  
-**Lines:** 206
+**Lines:** 235
 **Depends on:** `../anki/connect.js`, `../anki/export.js`, `../anki/txtFallback.js`, `../state/selection.js`
 **Exports:** `initExportPane`
 **Functions:**
@@ -391,19 +397,25 @@ _Generated 2026-04-04 by `npm run arch`._
 - `stopPolling()` _(internal)_ — Stops the AnkiConnect poll interval.
 - `populateWordTable()` _(internal)_ — Rebuilds the selected-word table in the export panel.
 - `showFeedback()` _(internal)_ — Displays a success or error message below the export buttons.
+- `buildSendMessage()` _(internal)_ — Builds the success feedback message for an incremental Anki export.
+- `handleExportClick()` _(internal)_ — Handles the export button click: validates, runs the export/override API call,
+- `wireWindowListeners()` _(internal)_ — Wires window-level event listeners for tab changes and selection changes.
+- `wireControlListeners()` _(internal)_ — Wires DOM element listeners for the deck input, override toggle, export button,
 - `initExportPane()` — Initialises the export pane.
+- `plural()` _(internal)_ — Returns 's' when n !== 1 — used for pluralising feedback messages.
 
 #### `indexSidebar.js`
 **Responsibility:** sidebar interactions — drag-select checkboxes, group collapse, scroll-to-card  
-**Lines:** 112
-**Depends on:** `../state/selection.js`, `./search.js`
+**Lines:** 120
+**Depends on:** `../state/selection.js`
 **Exports:** `initSidebar`
 **Functions:**
+- `handleSidebarClick()` _(internal)_ — Handles a delegated click inside the words index sidebar.
 - `initSidebar()` — Initialises all sidebar event listeners on the #idx-words element.
 
 #### `search.js`
 **Responsibility:** fuzzy search scoring and filtering word/sentence card visibility  
-**Lines:** 174
+**Lines:** 192
 **Depends on:** `../data.js`, `../state/selection.js`, `../state/tabs.js`, `../utils/stringUtils.js`
 **Exports:** `applyFilter`, `getWordRowMap`, `initSearch`
 **Functions:**
@@ -411,17 +423,22 @@ _Generated 2026-04-04 by `npm run arch`._
 - `bestScore()` _(internal)_ — Returns the best fuzzy score for a needle against all searchable fields
 - `getWordRowMap()` — Returns the word-index → sidebar-row DOM map built during {@link initSearch}.
 - `initSearch()` — Initialises search by caching DOM elements and wiring input/clear event listeners.
+- `filterWords()` _(internal)_ — Applies the search filter to the words tab: shows/hides cards and sidebar rows,
+- `filterSentences()` _(internal)_ — Applies the search filter to the sentences tab: shows/hides cards and sidebar rows,
 - `applyFilter()` — Applies the current search query and selection state to show/hide cards and rows.
 
 #### `tooltip.js`
 **Responsibility:** vocab-hint span annotation in example cards and tooltip positioning  
-**Lines:** 150
+**Lines:** 180
 **Depends on:** `../data.js`, `../utils/stringUtils.js`
 **Exports:** `initTooltip`
 **Functions:**
 - `escAttr()` _(internal)_ — Escapes a string for safe use as an HTML attribute value.
 - `annotateHindi()` _(internal)_ — Wraps Devanagari words in text with .vocab-hint spans if they exist in hindiMap.
 - `annotateRoman()` _(internal)_ — Wraps romanised words in text with .vocab-hint spans if they exist in romanMap.
+- `buildLookupMaps()` _(internal)_ — Builds Hindi and romanisation lookup maps from hover data, including inflected forms.
+- `annotateExampleCards()` _(internal)_ — Annotates all example card paragraphs with vocab-hint spans, skipping the card's
+- `wireTooltipHover()` _(internal)_ — Wires the document-level mouseover handler that shows and positions the tooltip.
 - `initTooltip()` — Initialises tooltip functionality:
 
 ### `src/scripts/utils/`

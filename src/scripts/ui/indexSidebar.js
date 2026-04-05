@@ -7,12 +7,14 @@
  *   - Group collapse: hide/show the word list inside a group.
  *   - Row click: smoothly scroll the main content to the corresponding card.
  *
- * Dependencies: state/selection.js, ui/search.js.
+ * Filter re-application after selection changes is handled by the 'selectionchange'
+ * CustomEvent that selection.js dispatches — no direct call to search.js needed.
+ *
+ * Dependencies: state/selection.js.
  */
 // Responsible for: sidebar interactions — drag-select checkboxes, group collapse, scroll-to-card
 
 import { setWordSelected, hasWord, syncGroupCheckbox } from '../state/selection.js';
-import { applyFilter }                                 from './search.js';
 
 /**
  * Whether a drag-select gesture is currently in progress.
@@ -27,6 +29,52 @@ let isDragging = false;
  * @type {boolean}
  */
 let dragSelectMode = true;
+
+/**
+ * Handles a delegated click inside the words index sidebar.
+ * Dispatches to: group-checkbox toggle, collapse button, group-header toggle, scroll-to-card.
+ * Word-checkbox clicks are handled by the mousedown handler instead.
+ *
+ * @param {MouseEvent} e - The click event from the delegated listener.
+ * @returns {void}
+ */
+function handleSidebarClick(e) {
+  if (e.target.closest('.word-checkbox')) return;  // handled by mousedown
+
+  const groupCheckbox = e.target.closest('.group-checkbox');
+  if (groupCheckbox) {
+    const groupDate = groupCheckbox.dataset.groupDate;
+    const groupEl   = document.querySelector(`#idx-words .date-group[data-group="${groupDate}"]`);
+    if (!groupEl) return;
+    const rows  = [...groupEl.querySelectorAll('.idx-row[data-index]')];
+    const allOn = rows.every(r => hasWord(parseInt(r.dataset.index)));
+    rows.forEach(r => setWordSelected(parseInt(r.dataset.index), !allOn));
+    syncGroupCheckbox(groupDate);
+    // applyFilter() fires automatically via 'selectionchange' event.
+    return;
+  }
+
+  const collapseBtn = e.target.closest('.collapse-btn');
+  if (collapseBtn) {
+    collapseBtn.closest('.date-group')?.querySelector('.date-group-words')?.classList.toggle('collapsed');
+    collapseBtn.classList.toggle('is-collapsed');
+    return;
+  }
+
+  const groupToggle = e.target.closest('.date-group-toggle');
+  if (groupToggle) {
+    const group = groupToggle.closest('.date-group');
+    group?.querySelector('.date-group-words')?.classList.toggle('collapsed');
+    group?.querySelector('.collapse-btn')?.classList.toggle('is-collapsed');
+    return;
+  }
+
+  const scrollTarget = e.target.closest('[data-scroll-to]');
+  if (scrollTarget) {
+    document.getElementById(`card-${scrollTarget.dataset.scrollTo}`)
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
 
 /**
  * Initialises all sidebar event listeners on the #idx-words element.
@@ -51,7 +99,7 @@ export function initSidebar() {
     setWordSelected(wordIndex, dragSelectMode);
     isDragging = true;
     syncGroupCheckbox(checkbox.closest('.date-group')?.dataset.group ?? '');
-    applyFilter();
+    // applyFilter() fires automatically via 'selectionchange' event.
   });
 
   // Drag-select: extend to hovered checkboxes while dragging
@@ -63,49 +111,9 @@ export function initSidebar() {
     if (hasWord(wordIndex) === dragSelectMode) return;  // already in target state
     setWordSelected(wordIndex, dragSelectMode);
     syncGroupCheckbox(checkbox.closest('.date-group')?.dataset.group ?? '');
-    applyFilter();
+    // applyFilter() fires automatically via 'selectionchange' event.
   });
 
-  // Drag-select: end on mouseup anywhere
   document.addEventListener('mouseup', () => { isDragging = false; });
-
-  // Click delegation: group checkbox, collapse button, group header toggle, scroll-to-card
-  idxWords?.addEventListener('click', e => {
-    if (e.target.closest('.word-checkbox')) return;  // handled by mousedown above
-
-    const groupCheckbox = e.target.closest('.group-checkbox');
-    if (groupCheckbox) {
-      const groupDate = groupCheckbox.dataset.groupDate;
-      const groupEl   = document.querySelector(`#idx-words .date-group[data-group="${groupDate}"]`);
-      if (!groupEl) return;
-      const rows  = [...groupEl.querySelectorAll('.idx-row[data-index]')];
-      const allOn = rows.every(r => hasWord(parseInt(r.dataset.index)));
-      rows.forEach(r => setWordSelected(parseInt(r.dataset.index), !allOn));
-      syncGroupCheckbox(groupDate);
-      applyFilter();
-      return;
-    }
-
-    const collapseBtn = e.target.closest('.collapse-btn');
-    if (collapseBtn) {
-      const group = collapseBtn.closest('.date-group');
-      group?.querySelector('.date-group-words')?.classList.toggle('collapsed');
-      collapseBtn.classList.toggle('is-collapsed');
-      return;
-    }
-
-    const groupToggle = e.target.closest('.date-group-toggle');
-    if (groupToggle) {
-      const group = groupToggle.closest('.date-group');
-      group?.querySelector('.date-group-words')?.classList.toggle('collapsed');
-      group?.querySelector('.collapse-btn')?.classList.toggle('is-collapsed');
-      return;
-    }
-
-    const scrollTarget = e.target.closest('[data-scroll-to]');
-    if (scrollTarget) {
-      document.getElementById(`card-${scrollTarget.dataset.scrollTo}`)
-        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
+  idxWords?.addEventListener('click', handleSidebarClick);
 }

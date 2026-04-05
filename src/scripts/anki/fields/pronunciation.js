@@ -10,6 +10,19 @@
 import { esc, langHex, aSection } from './utils.js';
 
 /**
+ * Renders a single pronunciation tip row (optional language label + sounds-like + tip text).
+ *
+ * @param {object} tip - Tip object: { language?, sounds_like?, tip }.
+ * @returns {string} HTML div string for the tip row.
+ */
+function renderTip(tip) {
+  const col       = langHex(tip.language || '');
+  const lang      = tip.language ? `<span class="lang-label" style="color:${col};margin-bottom:.2rem;">${esc(tip.language)}</span>` : '';
+  const soundsLike = tip.sounds_like ? `<span style="color:#f1f5f9;font-weight:600;margin-right:.35rem;">"${esc(tip.sounds_like)}"</span>` : '';
+  return `<div style="margin-top:.55rem;">${lang}<p class="syl-desc">${soundsLike}${esc(tip.tip)}</p></div>`;
+}
+
+/**
  * Builds the Anki Pronunciation field HTML for a word.
  *
  * @param {object} word                        - Vocabulary word object.
@@ -33,21 +46,10 @@ export function buildAnkiPronunciation(word) {
   }
   (pg.extra_notes || []).forEach(item => {
     const col  = langHex(item.language);
-    const lang = item.language
-      ? `<span class="lang-label" style="color:${col};margin-bottom:.2rem;">${esc(item.language)}</span>`
-      : '';
+    const lang = item.language ? `<span class="lang-label" style="color:${col};margin-bottom:.2rem;">${esc(item.language)}</span>` : '';
     inner += `<div style="margin-top:.55rem;">${lang}<p class="syl-desc">${esc(item.note)}</p></div>`;
   });
-  (pg.tips || []).forEach(tip => {
-    const col  = langHex(tip.language || '');
-    const lang = tip.language
-      ? `<span class="lang-label" style="color:${col};margin-bottom:.2rem;">${esc(tip.language)}</span>`
-      : '';
-    const soundsLike = tip.sounds_like
-      ? `<span style="color:#f1f5f9;font-weight:600;margin-right:.35rem;">"${esc(tip.sounds_like)}"</span>`
-      : '';
-    inner += `<div style="margin-top:.55rem;">${lang}<p class="syl-desc">${soundsLike}${esc(tip.tip)}</p></div>`;
-  });
+  (pg.tips || []).forEach(tip => { inner += renderTip(tip); });
 
   return aSection('Pronunciation', inner, '#14b8a6');
 }

@@ -38,6 +38,24 @@ export function initTabs() {
 }
 
 /**
+ * Updates [data-tab] button styling to reflect which tab is now active.
+ *
+ * @param {'words'|'sentences'|'export'} name - The newly active tab name.
+ * @returns {void}
+ */
+function updateTabBarButtons(name) {
+  document.querySelectorAll('[data-tab]').forEach(btn => {
+    const isActive = btn.dataset.tab === name;
+    btn.classList.toggle('text-amber-400',     isActive);
+    btn.classList.toggle('border-amber-400',   isActive);
+    btn.classList.toggle('border-t-2',         isActive);
+    btn.classList.toggle('-mt-px',             isActive);
+    btn.classList.toggle('text-zinc-500',      !isActive);
+    btn.classList.toggle('border-transparent', !isActive);
+  });
+}
+
+/**
  * Activates a tab by name: shows its content panel, hides the others,
  * updates sidebar visibility, refreshes tab bar styling, and dispatches
  * a 'tabchange' event.
@@ -60,18 +78,8 @@ export function switchTab(name) {
   document.getElementById('idx-words')?.classList.toggle('hidden', name !== 'words');
   document.getElementById('idx-sentences')?.classList.toggle('hidden', name !== 'sentences');
 
-  // Update tab bar button active styling
-  document.querySelectorAll('[data-tab]').forEach(btn => {
-    const isActive = btn.dataset.tab === name;
-    btn.classList.toggle('text-amber-400',    isActive);
-    btn.classList.toggle('border-amber-400',  isActive);
-    btn.classList.toggle('border-t-2',        isActive);
-    btn.classList.toggle('-mt-px',            isActive);
-    btn.classList.toggle('text-zinc-500',     !isActive);
-    btn.classList.toggle('border-transparent', !isActive);
-  });
+  updateTabBarButtons(name);
 
-  // Update search placeholder to match the active content type
   const placeholder = name === 'sentences' ? 'Search sentences…' : 'Search words…';
   document.querySelectorAll('[data-search-input]').forEach(inp => { inp.placeholder = placeholder; });
 
