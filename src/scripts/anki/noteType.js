@@ -1,3 +1,15 @@
+/**
+ * Anki note type definition — field list, card CSS, and front/back templates.
+ *
+ * Responsible for: exporting all constants that define the 'Hindi Vocabulary'
+ * Anki note type: the ordered field list, the card stylesheet (dark theme
+ * matching the website), and the front/back Mustache templates.
+ *
+ * These constants are consumed by export.js (to create/sync the note type)
+ * and by txtFallback.js (for the #notetype and #columns headers).
+ *
+ * No dependencies on other project modules.
+ */
 // Responsible for: Anki note type definition — CSS, front/back card templates, field list
 
 export const ANKI_NOTE_TYPE = 'Hindi Vocabulary';

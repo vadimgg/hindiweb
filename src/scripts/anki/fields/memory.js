@@ -1,6 +1,23 @@
+/**
+ * Anki Memory Hook field builder.
+ *
+ * Responsible for: rendering the primary memory hook, the optional connection note,
+ * and any language-specific memory variants keyed by language name.
+ *
+ * Dependencies: anki/fields/utils.js.
+ */
 // Responsible for: building the Anki Memory Hook HTML field
 import { esc, langHex, capFirst, aSection } from './utils.js';
 
+/**
+ * Builds the Anki Memory field HTML for a word.
+ *
+ * @param {object} word              - Vocabulary word object.
+ * @param {object} [word.memory_hook] - Map of memory entries; 'primary' and
+ *                                      'connection' are special keys; all others
+ *                                      are treated as language-specific variants.
+ * @returns {string} HTML section, or empty string if no memory data.
+ */
 export function buildAnkiMemory(word) {
   const hook       = word.memory_hook || {};
   const primary    = hook.primary || '';

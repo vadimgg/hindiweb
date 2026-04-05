@@ -1,6 +1,22 @@
+/**
+ * Anki Cross-Language field builder.
+ *
+ * Responsible for: rendering true cognates (true_relatives) and useful
+ * coincidences (useful_coincidences) as badged item cards with language
+ * accent colours, word forms, meaning boxes, and notes.
+ *
+ * Dependencies: anki/fields/utils.js.
+ */
 // Responsible for: building the Anki Cross-Language HTML field
 import { esc, langHex, aSection } from './utils.js';
 
+/**
+ * Renders a single cross-language item (relative or coincidence) as an HTML card.
+ *
+ * @param {object} item           - Cross-language item: { language?, word?, romanisation?, meaning?, note? }
+ * @param {'relative'|'coincidence'} type - Determines badge style and label.
+ * @returns {string} HTML string for the clang-item card.
+ */
 function renderItem(item, type) {
   const isRel = type === 'relative';
   // Badge: blue tint for relative, neutral for coincidence — matching website
@@ -36,6 +52,13 @@ function renderItem(item, type) {
   return `<div class="clang-item">${badge}${lang}${wordRow}${mean}${note}</div>`;
 }
 
+/**
+ * Builds the Anki CrossLanguage field HTML for a word.
+ *
+ * @param {object} word                               - Vocabulary word object.
+ * @param {object} [word.cross_language_connections]  - { true_relatives?, useful_coincidences? }
+ * @returns {string} HTML section, or empty string if no cross-language data.
+ */
 export function buildAnkiCrossLang(word) {
   const clc = word.cross_language_connections;
   if (!clc) return '';

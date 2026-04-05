@@ -1,3 +1,18 @@
+/**
+ * Rich text highlighting for vocabulary card content.
+ *
+ * Responsible for: wrapping recognised patterns in text with HTML span elements
+ * that carry CSS classes for visual highlighting — Devanagari script, Cyrillic,
+ * Hebrew, language names, country adjectives, grammatical gender labels, and
+ * romanised terms in single quotes.
+ *
+ * Also exports parseCrossLangLabel() which parses legacy string-format
+ * cross-language entries (before they were migrated to structured objects).
+ *
+ * No dependencies on other project modules.
+ */
+// Responsible for: rich text highlighting for vocabulary card text content
+
 const LANGUAGE_NAMES = [
   'Proto-Indo-European', 'Sanskrit', 'English', 'Russian', 'Hebrew',
   'Hindi', 'Urdu', 'Arabic', 'Persian', 'Latin', 'Greek', 'Prakrit',
@@ -40,6 +55,15 @@ const COUNTRY_RE = new RegExp(`\\b(${COUNTRY_NAMES.join('|')})\\b`, 'g');
 const MASC_RE = /\b(masculine(?:\s+(?:singular|plural|oblique|pl\.))?)\b/gi;
 const FEM_RE  = /\b(feminine(?:\s+(?:singular|plural|oblique|pl\.))?)\b/gi;
 
+/**
+ * Applies inline HTML highlighting to a plain-text vocabulary description.
+ *
+ * Processes in order: HTML-escape → Devanagari → Cyrillic → Hebrew →
+ * language names → country adjectives → gender labels → romanised terms.
+ *
+ * @param text - Raw text content from a vocabulary field.
+ * @returns HTML string with recognised patterns wrapped in styled spans.
+ */
 export function highlight(text: string): string {
   // 1. HTML-escape first
   let h = text
@@ -72,6 +96,16 @@ export function highlight(text: string): string {
   return h;
 }
 
+/**
+ * Parses a legacy string-format cross-language entry into a label + text pair.
+ *
+ * Accepts both colon and em-dash separators:
+ *   "TRUE RELATIVE: …"  or  "TRUE RELATIVE — …"
+ *
+ * @param item - Raw cross-language entry string.
+ * @returns Object with a label ('TRUE RELATIVE' | 'USEFUL COINCIDENCE' | null)
+ *          and the remaining text after the separator.
+ */
 export function parseCrossLangLabel(item: string): {
   label: 'TRUE RELATIVE' | 'USEFUL COINCIDENCE' | null;
   text: string;

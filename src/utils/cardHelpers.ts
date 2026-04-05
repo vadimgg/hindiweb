@@ -1,13 +1,31 @@
+/**
+ * Pure helper functions shared across WordCard section Astro components.
+ *
+ * Responsible for: date formatting, CSS class lookups for form chips,
+ * category badges, register badges, and per-language text colours used
+ * in the website's card UI.
+ *
+ * These are build-time utilities (used in Astro component frontmatter).
+ * They have no runtime dependencies and no side effects.
+ *
+ * No dependencies on other project modules.
+ */
 // Responsible for: pure helper functions shared across WordCard section components
 
+/**
+ * Formats an ISO date string (YYYY-MM-DD) as a human-readable label.
+ * @example formatDate('2026-03-28') → 'Mar 28, 2026'
+ */
 export function formatDate(iso: string): string {
   const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const [y, m, d] = iso.split('-');
   return `${months[parseInt(m) - 1]} ${parseInt(d)}, ${y}`;
 }
 
+/** Capitalises the first character of a string. */
 export const cap = (s: string) => s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
 
+/** Returns the Tailwind CSS class string for a form chip based on its label. */
 export function chipClass(label: string): string {
   const l = label.toLowerCase();
   if (l.includes('feminine'))   return 'form-chip form-chip-fem';
@@ -22,6 +40,7 @@ export function chipClass(label: string): string {
   return 'form-chip';
 }
 
+/** Returns the Tailwind CSS class string for a word-category badge. */
 export function categoryStyle(cat: string): string {
   const c = cat.toLowerCase();
   if (c.includes('conjunction'))  return 'bg-emerald-900/30 text-emerald-400 border border-emerald-700/40';
@@ -35,6 +54,7 @@ export function categoryStyle(cat: string): string {
   return 'bg-slate-800/60 text-slate-400 border border-slate-600/40';
 }
 
+/** Returns the Tailwind CSS class string for an example-sentence register badge. */
 export function registerStyle(reg: string): string {
   const r = reg.toLowerCase();
   if (r === 'standard')   return 'text-sky-400/70 bg-sky-950/50 border border-sky-800/30';
@@ -44,6 +64,7 @@ export function registerStyle(reg: string): string {
   return 'text-slate-400/70 bg-slate-800/40 border border-slate-700/30';
 }
 
+/** Returns a Tailwind text-colour class for a given language name. */
 export function langColor(lang: string): string {
   const map: Record<string, string> = {
     'Proto-Indo-European': 'text-teal-200/70', 'PIE': 'text-teal-200/70',

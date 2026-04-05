@@ -1,6 +1,21 @@
+/**
+ * Anki Examples field builder.
+ *
+ * Responsible for: rendering example sentences with register badges, romanisation,
+ * English translation, optional literal translation, and an optional note.
+ *
+ * Dependencies: anki/fields/utils.js.
+ */
 // Responsible for: building the Anki Examples HTML field
 import { esc, aSection } from './utils.js';
 
+/**
+ * Builds the Anki Examples field HTML for a word.
+ *
+ * @param {object}   word            - Vocabulary word object.
+ * @param {object[]} [word.examples] - Array of example sentence objects.
+ * @returns {string} HTML section with example cards, or empty string if no examples.
+ */
 export function buildAnkiExamples(word) {
   const exs = word.examples || [];
   if (exs.length === 0) return '';

@@ -1,6 +1,21 @@
+/**
+ * Anki Pronunciation field builder.
+ *
+ * Responsible for: rendering the syllable string, per-syllable breakdown rows,
+ * stress note, extra language-specific notes, and pronunciation tips.
+ *
+ * Dependencies: anki/fields/utils.js.
+ */
 // Responsible for: building the Anki Pronunciation HTML field
 import { esc, langHex, aSection } from './utils.js';
 
+/**
+ * Builds the Anki Pronunciation field HTML for a word.
+ *
+ * @param {object} word                        - Vocabulary word object.
+ * @param {object} [word.pronunciation_guide]  - Pronunciation guide sub-object.
+ * @returns {string} HTML section, or empty string if no pronunciation data.
+ */
 export function buildAnkiPronunciation(word) {
   const pg = word.pronunciation_guide;
   if (!pg) return '';

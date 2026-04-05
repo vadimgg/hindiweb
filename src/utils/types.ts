@@ -1,3 +1,12 @@
+/**
+ * Shared TypeScript type definitions for the Hindi Vocabulary app.
+ *
+ * Responsible for: declaring all interfaces and types used in Astro component
+ * props, utility functions, and client-side scripts. Centralising them here
+ * ensures that the shape of vocabulary JSON data is documented in one place.
+ *
+ * No runtime code — types only. No dependencies on other project modules.
+ */
 // Responsible for: shared TypeScript interfaces used across Astro components and client scripts
 
 export interface Example { hindi: string; romanisation: string; english: string; literal?: string; register?: string; note?: string; }

@@ -1,8 +1,25 @@
+/**
+ * Anki export orchestration — deck creation, note type sync, and card addition.
+ *
+ * Responsible for: coordinating the full export pipeline from a word array to
+ * Anki cards. Handles two modes — incremental (skip duplicates) and override
+ * (wipe deck then re-add). Does NOT build HTML field content or generate tags;
+ * those concerns live in fields/index.js and tagUtils.js respectively.
+ *
+ * Dependencies: anki/connect.js, anki/noteType.js, anki/fields/index.js, anki/tagUtils.js.
+ */
 // Responsible for: orchestrating Anki deck creation, note type verification, and card addition
-import { ankiRequest }                                from './connect.js';
+import { ankiRequest }                                           from './connect.js';
 import { ANKI_NOTE_TYPE, ANKI_FIELDS, ANKI_CSS, ANKI_FRONT, ANKI_BACK } from './noteType.js';
-import { wordToAnkiFields }                           from './fields/index.js';
+import { wordToAnkiFields }                                      from './fields/index.js';
+import { buildWordTags }                                         from './tagUtils.js';
 
+/**
+ * Creates the note type if it does not exist, or syncs its CSS and templates if it does.
+ * Called before every export so design changes on the website propagate to Anki on re-export.
+ *
+ * @returns {Promise<void>}
+ */
 async function ensureNoteType() {
   const models = await ankiRequest('modelNames', {});
   if (!models.includes(ANKI_NOTE_TYPE)) {
@@ -23,20 +40,31 @@ async function ensureNoteType() {
   }
 }
 
+/**
+ * Converts an array of vocabulary words into Anki note objects ready for the API.
+ *
+ * @param {object[]} words          - Vocabulary word objects.
+ * @param {string}   deckName       - Target Anki deck name.
+ * @param {boolean}  [allowDuplicate=false] - Whether Anki should accept duplicate notes.
+ * @returns {object[]} Array of Anki note objects.
+ */
 function buildNotes(words, deckName, allowDuplicate = false) {
-  const today = new Date().toISOString().split('T')[0].replace(/-/g, '');
-  return words.map(word => {
-    const f      = wordToAnkiFields(word);
-    const catTag = ((word.word_category || 'unknown').split(' ')[0]).toLowerCase().replace(/[^a-z]/g, '');
-    const origin = (word.origin_language || word.origin_tag || 'unknown').toLowerCase().replace(/[^a-z]/g, '');
-    return {
-      deckName, modelName: ANKI_NOTE_TYPE, fields: f,
-      tags: ['hindi', catTag, origin, `added:${today}`].filter(Boolean),
-      options: { allowDuplicate, duplicateScope: 'deck' },
-    };
-  });
+  return words.map(word => ({
+    deckName,
+    modelName: ANKI_NOTE_TYPE,
+    fields:    wordToAnkiFields(word),
+    tags:      buildWordTags(word),
+    options:   { allowDuplicate, duplicateScope: 'deck' },
+  }));
 }
 
+/**
+ * Exports selected words to Anki, skipping cards that already exist in the deck.
+ *
+ * @param {object[]} words    - Vocabulary word objects to export.
+ * @param {string}   deckName - Target Anki deck name (created if it does not exist).
+ * @returns {Promise<{ added: number, skipped: number }>} Counts of added and skipped cards.
+ */
 export async function sendToAnki(words, deckName) {
   await ankiRequest('createDeck', { deck: deckName });
   await ensureNoteType();
@@ -52,13 +80,22 @@ export async function sendToAnki(words, deckName) {
   return { added, skipped };
 }
 
+/**
+ * Replaces all cards in the target deck with the given words.
+ *
+ * Deletes every existing note in the deck first, then adds all selected words
+ * with duplicate checking disabled (since the deck was just cleared).
+ *
+ * @param {object[]} words    - Vocabulary word objects to export.
+ * @param {string}   deckName - Target Anki deck name.
+ * @returns {Promise<{ added: number, deleted: number }>} Counts of added and deleted cards.
+ */
 export async function overrideDeck(words, deckName) {
   await ankiRequest('createDeck', { deck: deckName });
   await ensureNoteType();
-  // Delete every existing note in the deck
   const existingIds = await ankiRequest('findNotes', { query: `deck:"${deckName}"` });
   if (existingIds.length > 0) await ankiRequest('deleteNotes', { notes: existingIds });
-  // Add all selected words, duplicates allowed since we just cleared the deck
+  // Duplicates allowed since we just cleared the deck
   const notes   = buildNotes(words, deckName, true);
   const results = await ankiRequest('addNotes', { notes });
   const added   = results.filter(r => r !== null).length;

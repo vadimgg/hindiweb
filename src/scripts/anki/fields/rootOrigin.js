@@ -1,6 +1,23 @@
+/**
+ * Anki Root & Origin field builder.
+ *
+ * Responsible for: rendering root parts, root breakdown (string or object),
+ * evolution chain (string or array of steps), logic note, root notes,
+ * root-and-origin explanation paragraphs, and the etymology story block.
+ *
+ * Dependencies: anki/fields/utils.js.
+ */
 // Responsible for: building the Anki Root & Origin and Etymology Story HTML fields
 import { esc, aSection } from './utils.js';
 
+/**
+ * Builds the Anki RootOrigin field HTML for a word.
+ *
+ * Handles both string and structured-object variants of root_breakdown and evolution.
+ *
+ * @param {object} word - Vocabulary word object.
+ * @returns {string} HTML section, or empty string if no root/etymology data.
+ */
 export function buildAnkiRootOrigin(word) {
   const rb  = word.root_breakdown || {};
   const rp  = word.root_parts || [];

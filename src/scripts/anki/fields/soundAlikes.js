@@ -1,6 +1,21 @@
+/**
+ * Anki Sound Alikes field builder.
+ *
+ * Responsible for: rendering confusable words from other languages with their
+ * language label, native script, romanisation, meaning, and note.
+ *
+ * Dependencies: anki/fields/utils.js.
+ */
 // Responsible for: building the Anki Sound Alikes HTML field
 import { esc, langHex, aSection } from './utils.js';
 
+/**
+ * Builds the Anki SoundAlikes field HTML for a word.
+ *
+ * @param {object}   word              - Vocabulary word object.
+ * @param {object[]} [word.sound_alikes] - Array of sound-alike entries.
+ * @returns {string} HTML section, or empty string if no sound-alikes.
+ */
 export function buildAnkiSoundAlikes(word) {
   const sa = word.sound_alikes || [];
   if (!sa.length) return '';
