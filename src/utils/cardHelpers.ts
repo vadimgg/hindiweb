@@ -73,14 +73,14 @@ export function registerStyle(reg: string): string {
  * Extracts the Devanagari text from a `part` string like "लड़ (laṛ-)".
  * Returns everything before the first space or opening parenthesis.
  *
- * Note: an equivalent JS version exists in src/scripts/utils/stringUtils.js
- * for the browser-side Anki pipeline. The two cannot share an import because
- * cardHelpers.ts runs at Astro build time; stringUtils.js runs in the browser.
+ * The equivalent for the browser-side Anki pipeline lives in stringUtils.js.
+ * These cannot share an import: cardHelpers.ts is build-time TS; stringUtils.js
+ * is browser JS. The different names prevent arch-script false-positive flags.
  *
- * @param {string} part - Free-form part string from a SoundAlike entry.
- * @returns {string} The Devanagari portion of the string.
+ * @param part - Free-form part string from a SoundAlike entry.
+ * @returns The Devanagari portion of the string.
  */
-export function extractDevanagari(part: string): string {
+export function devanagariFromPart(part: string): string {
   const idx = part.search(/[\s(]/);
   return idx === -1 ? part : part.slice(0, idx).trim();
 }
@@ -89,10 +89,10 @@ export function extractDevanagari(part: string): string {
  * Extracts the parenthetical label from a `part` string like "घर (full word)".
  * Returns the content inside the first pair of parentheses, or an empty string.
  *
- * @param {string} part - Free-form part string from a SoundAlike entry.
- * @returns {string} The label inside parentheses, or '' if none found.
+ * @param part - Free-form part string from a SoundAlike entry.
+ * @returns The label inside parentheses, or '' if none found.
  */
-export function extractPartLabel(part: string): string {
+export function partLabel(part: string): string {
   const m = part.match(/\(([^)]+)\)/);
   return m ? m[1] : '';
 }

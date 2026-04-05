@@ -449,14 +449,14 @@ _Generated 2026-04-05 by `npm run arch`._
 #### `cardHelpers.ts`
 **Responsibility:** pure helper functions shared across WordCard section components  
 **Lines:** 114
-**Exports:** `cap`, `categoryStyle`, `chipClass`, `extractDevanagari`, `extractPartLabel`, `formatDate`, `langColor`, `registerStyle`
+**Exports:** `cap`, `categoryStyle`, `chipClass`, `devanagariFromPart`, `formatDate`, `langColor`, `partLabel`, `registerStyle`
 **Functions:**
 - `formatDate()` — Formats an ISO date string (YYYY-MM-DD) as a human-readable label.
 - `chipClass()` — Returns the Tailwind CSS class string for a form chip based on its label.
 - `categoryStyle()` — Returns the Tailwind CSS class string for a word-category badge.
 - `registerStyle()` — Returns the Tailwind CSS class string for an example-sentence register badge.
-- `extractDevanagari()` — Extracts the Devanagari text from a `part` string like "लड़ (laṛ-)".
-- `extractPartLabel()` — Extracts the parenthetical label from a `part` string like "घर (full word)".
+- `devanagariFromPart()` — Extracts the Devanagari text from a `part` string like "लड़ (laṛ-)".
+- `partLabel()` — Extracts the parenthetical label from a `part` string like "घर (full word)".
 - `langColor()` — Returns a Tailwind text-colour class for a given language name.
 - `cap()` — Capitalises the first character of a string.
 
@@ -478,6 +478,4 @@ _Generated 2026-04-05 by `npm run arch`._
 ## Auto-detected Improvement Notes
 
 - **Functions with the same name in multiple files** (review for shared-util extraction):
-  - `extractDevanagari` in `src/scripts/utils/stringUtils.js` and `src/utils/cardHelpers.ts`
-  - `extractPartLabel` in `src/scripts/utils/stringUtils.js` and `src/utils/cardHelpers.ts`
   - `main` in `scripts/aggregate-changelog.js` and `scripts/arch.js`

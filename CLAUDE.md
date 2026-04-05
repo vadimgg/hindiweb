@@ -6,71 +6,100 @@ Dark-mode Hindi vocabulary study app: browse word cards with etymology/pronuncia
 ## Commands
 ```sh
 npm run dev       # dev server → localhost:4321
-npm run build     # build to dist/ ← run this to verify after any Tech Lead implementation
-npm run arch      # regenerate ARCHITECTURE.md ← run after any JS/TS/Astro change
+npm run build     # verify the build compiles clean — run after every implementation
+npm run arch      # regenerate ARCHITECTURE.md — run after any JS/TS/Astro change
 npm run changelog # aggregate changelog/ entries into CHANGELOG.md
 ```
 
 ---
 
-## Open work — read this at session start
+## Session startup — do this first
 
-- **`BACKLOG.md`** — all pending improvements suggested by agents. Check this before starting new work.
-- **Known arch flag:** `extractDevanagari`/`extractPartLabel` appear in both `stringUtils.js` (browser) and `cardHelpers.ts` (build-time) — intentional, different runtimes, not a real duplicate.
-- **`DESIGN_SPEC_NEW_FORMAT.md`** — spec for the new vocab format (implemented 2026-04-05). Can be archived to `specs/` once verified.
+1. Read **`BACKLOG.md`** — "Next Up" section tells you what to work on.
+2. Read **`ARCHITECTURE.md`** — orientation for the full codebase (auto-generated, always current).
+3. Check `specs/active/` — any in-progress design specs the last session left open.
+4. Read `CODE.md` before writing code. Read `STYLE.md` before touching UI.
+
+**Do NOT re-read all source files.** Use ARCHITECTURE.md as the index, then read only what the task requires.
 
 ---
 
-## Living documents — read these, don't duplicate them
+## Living documents
 
 | File | What it contains | When to read |
 |---|---|---|
+| `BACKLOG.md` | Pending improvements, prioritised by role | Every session start |
 | `ARCHITECTURE.md` | Auto-generated: every file, its responsibility, exports, imports | Start of any coding session |
 | `CODE.md` | Naming, SRP, DIP, JSDoc, function size, module boundaries | Before writing any code |
 | `STYLE.md` | Tailwind recipes, colour system, components, Anki card design | Before touching any UI |
 | `README.md` | Vocab JSON format, AnkiConnect setup, export workflow | When working on data or Anki |
-
-**Session startup checklist:**
-1. Read `ARCHITECTURE.md` for codebase orientation (auto-generated, always current)
-2. Read `CODE.md` before writing code
-3. Read `STYLE.md` before touching UI
-4. Run `npm run arch` after changes; fix all warnings in "Auto-detected Improvement Notes"
+| `specs/active/` | Design specs currently being implemented | When the task involves a spec |
+| `specs/archive/` | Implemented specs — reference only, do not act on them | If you need historical context |
 
 ---
 
 ## Team workflow
 
-This project uses a **project manager + specialist agent** model. You (Claude) act as PM. Two specialist roles exist:
+You (Claude) are the **PM**. Two specialist agents do the work:
 
-### Role: UI/UX Designer
-**Scope:** Visual design and UX specs only. Does NOT write code.
-- Owns `STYLE.md` — the single source of truth for all visual decisions
-- Reviews design, identifies UX gaps, writes improvement suggestions
-- Outputs design specs that engineers implement
-- Launch with: `Agent(subagent_type="general-purpose")`, brief as UI/UX Designer, point them at `STYLE.md`, `ARCHITECTURE.md`, and relevant component files
+### UI/UX Designer
+- Owns `STYLE.md` and `specs/active/*.md`
+- Reviews designs, identifies UX gaps, writes specs
+- Does **not** write code
+- Output: a spec file in `specs/active/`
 
-### Role: Technical Lead
-**Scope:** All code changes. Follows `CODE.md` and `STYLE.md`.
-- Owns code quality, module boundaries, documentation completeness
-- Runs `npm run arch` after every change; fixes all warnings
-- Never changes Tailwind classes without a STYLE.md reference
-- Launch with: `Agent(subagent_type="general-purpose")`, brief as Tech Lead, give them the specific task + files to touch
+### Technical Lead
+- Owns all source code changes
+- Follows `CODE.md` and `STYLE.md` / active specs exactly
+- Runs `npm run build && npm run arch` as final step — must be clean before done
+- Appends improvement suggestions to their output
 
 ### Handoff flow
 ```
-PM (you) receives a request
-  → if UI/design: spawn UI/UX Designer to spec it → Designer outputs spec
-  → PM reviews spec → spawn Tech Lead to implement it
-  → if pure code change: spawn Tech Lead directly
-  → PM reviews result and reports to user
+User request
+  → if UI/design → spawn UI/UX Designer → spec lands in specs/active/
+  → PM reviews spec → spawn Tech Lead to implement
+  → Tech Lead confirms build clean → PM moves spec to specs/archive/
+  → if pure code fix → spawn Tech Lead directly
 ```
 
 ### When to use agents vs inline
-- **Use agents** for: multi-file changes, full audits, document rewrites, anything that would fill context
-- **Do inline** with your own tools: single-file edits, quick lookups, answering questions, running `npm run arch`
+- **Use agents:** multi-file changes, full audits, document rewrites, anything > ~5 file edits
+- **Do inline:** single-file edits, quick lookups, running commands, answering questions
 
 ### Parallel agents
-Spawn UI/UX Designer and Tech Lead in parallel when their work doesn't overlap (e.g. design review + code audit at the same time).
+Spawn agents in parallel when their file scopes don't overlap.  
+Always include an explicit **"do NOT touch"** list in each prompt when running in parallel.
+
+---
+
+## Agent briefing template
+
+Use this structure for every agent prompt — it keeps prompts short and prevents token waste:
+
+```
+Role: [UI/UX Designer | Technical Lead]
+Scope: [what you own]
+Do NOT touch: [explicit list of files/dirs for parallel safety]
+
+Read first (file paths only — use Read tool):
+- path/to/file1
+- path/to/file2
+
+Tasks:
+1. ...
+2. ...
+
+Verify:
+- npm run build (Tech Lead only)
+- npm run arch (Tech Lead only)
+
+Output:
+- [what to report back — changes made, files touched]
+- [Improvement suggestions: 3–5 items in your domain]
+```
+
+**Do not paste file contents into prompts.** Give paths and let the agent read.
 
 ---
 
@@ -92,10 +121,13 @@ src/components/
   ui/              ← TabBar
 
 src/utils/         ← Shared TypeScript: cardHelpers.ts, highlight.ts, types.ts
+specs/
+  active/          ← In-progress design specs (hand to Tech Lead)
+  archive/         ← Implemented specs (reference only)
 ```
 
 **Event buses:**
-- `selectionchange` — fired by `selection.js` when word/sentence selection changes
+- `selectionchange` — fired by `selection.js` when selection changes
 - `tabchange` — fired by `tabs.js` when active tab switches
 
 **Dependency flow (never reverse this):**
@@ -115,26 +147,44 @@ export.js → anki/fields/* → anki/utils.js
 - `utils/` files are pure: no DOM access, no event dispatching
 - No exported mutable state — only getter functions
 - All imports: relative paths with `.js` extension
-- No `var`, no `console.log` in committed code
 
 ---
 
 ## Style rules (summary — full rules in STYLE.md)
 
 Three surface levels: `slate-950` (page) → `slate-900` (cards) → `slate-800` (inputs/overlays)  
-Amber = Hindi word / active state. Teal = romanisation. Never invert or reuse these.  
+Amber = Hindi word / active state. Teal = romanisation. Never swap or reuse these.  
 Labels/headings: `font-title uppercase`. Body copy: `font-sans` (Poppins).  
 All transitions: `transition-colors` (never bare `transition`).  
 Max border-radius: `rounded-2xl` on cards, `rounded-xl` inner, `rounded-lg` badges.
 
 ---
 
-## Token-efficient session recovery
+## Known arch flag (not a real issue)
 
-If context was lost mid-task:
-1. Run `git diff --stat` to see what changed
-2. Run `git diff` on the specific files to understand the state
-3. Read `ARCHITECTURE.md` overview table — it reflects the current file structure
-4. Check `STYLE.md` "Design Improvement Suggestions" section for pending design work
+`devanagariFromPart`/`extractDevanagari` and `partLabel`/`extractPartLabel` exist in both:
+- `src/utils/cardHelpers.ts` — build-time TypeScript for Astro components
+- `src/scripts/utils/stringUtils.js` — browser-side JS for the Anki pipeline
 
-Do NOT re-read the entire codebase. Use `ARCHITECTURE.md` as the index, then read only the specific files relevant to the task.
+Different runtime environments; cannot share an import. Not a duplicate to fix.
+
+---
+
+## Session closeout checklist
+
+Before ending a session:
+- [ ] `npm run build` — passes clean?
+- [ ] `npm run arch` — no new warnings beyond the known flag?
+- [ ] `BACKLOG.md` updated with any new suggestions from agents?
+- [ ] Any completed specs moved from `specs/active/` to `specs/archive/`?
+- [ ] `CLAUDE.md` "Open work" / "Next Up" (BACKLOG) reflects current state?
+
+---
+
+## Context recovery (mid-task reset)
+
+1. `git diff --stat` — see what changed
+2. `git diff <file>` — understand specific file state
+3. Read `BACKLOG.md` "Next Up" — what was in progress
+4. Check `specs/active/` — any open spec?
+5. Read only the specific files relevant to the task — not the whole codebase

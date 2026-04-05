@@ -4,11 +4,11 @@
  *
  * Responsible for: rendering the sound alikes expandable section with part-based mnemonic items.
  *
- * Dependencies: cardHelpers.ts (extractDevanagari, extractPartLabel, langColor),
+ * Dependencies: cardHelpers.ts (devanagariFromPart, partLabel, langColor),
  *               highlight.ts (text highlighting utility), types.ts (SoundAlike interface).
  */
 // Responsible for: Sound Alikes expandable section inside a word card
-import { extractDevanagari, extractPartLabel, langColor } from '../../../utils/cardHelpers';
+import { devanagariFromPart, partLabel, langColor } from '../../../utils/cardHelpers';
 import { highlight } from '../../../utils/highlight';
 import type { SoundAlike } from '../../../utils/types';
 
@@ -25,9 +25,9 @@ const { sound_alikes } = Astro.props;
     {sound_alikes.map((sa) => (
       <div class="bg-slate-800/40 rounded-xl p-3 sm:p-4 border border-slate-700/30">
         <div class="flex flex-wrap items-center gap-1.5 mb-1">
-          <span class="word-hindi text-base leading-none" lang="hi">{extractDevanagari(sa.part)}</span>
-          {extractPartLabel(sa.part) && (
-            <span class="text-slate-600 text-[11px] font-title uppercase tracking-wide">{extractPartLabel(sa.part)}</span>
+          <span class="word-hindi text-base leading-none" lang="hi">{devanagariFromPart(sa.part)}</span>
+          {partLabel(sa.part) && (
+            <span class="text-slate-600 text-[11px] font-title uppercase tracking-wide">{partLabel(sa.part)}</span>
           )}
           <span class="text-slate-700 mx-0.5">→</span>
           {sa.language && (
