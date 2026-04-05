@@ -114,9 +114,9 @@ const secondaryMeanings = rest.join(', ');
 
     <div class="border-t border-slate-700/40 divide-y divide-slate-700/40">
       {usage_notes                  && <UsageNotesSection usageNotes={usage_notes} />}
-      {collocations.length > 0      && <CollocationsSection collocations={collocations} />}
       {related_words.length > 0     && <RelatedWordsSection relatedWords={related_words} />}
       {sound_alikes.length > 0      && <SoundAlikesSection sound_alikes={sound_alikes} />}
+      {collocations.length > 0      && <CollocationsSection collocations={collocations} />}
       {etymology_journey.length > 0 && <EtymologySection etymologyJourney={etymology_journey} originNote={origin_note} />}
     </div>
 

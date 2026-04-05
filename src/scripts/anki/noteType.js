@@ -96,8 +96,8 @@ export const ANKI_BACK = `<div class="card-wrap">
     {{#Forms}}<div style="margin-top:.9rem;">{{Forms}}</div>{{/Forms}}
   </div>
   {{#UsageNotes}}<div>{{UsageNotes}}</div>{{/UsageNotes}}
-  {{#Collocations}}<div>{{Collocations}}</div>{{/Collocations}}
   {{#RelatedWords}}<div>{{RelatedWords}}</div>{{/RelatedWords}}
   {{#SoundAlikes}}<div>{{SoundAlikes}}</div>{{/SoundAlikes}}
+  {{#Collocations}}<div>{{Collocations}}</div>{{/Collocations}}
   {{#Etymology}}<div>{{Etymology}}</div>{{/Etymology}}
 </div>`;

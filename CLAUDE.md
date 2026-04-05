@@ -103,6 +103,29 @@ Output:
 
 ---
 
+## Web ↔ Anki parity rule
+
+**Every word card change must be applied to both surfaces simultaneously.**
+
+The web card (`src/components/cards/sections/`) and the Anki card (`src/scripts/anki/fields/` + `noteType.js`) are parallel representations of the same data. They must always stay in sync.
+
+| When you change... | You must also update... |
+|---|---|
+| Section order in `WordCard.astro` | Section order in `ANKI_BACK` template in `noteType.js` |
+| Add a new section component | Add a matching field builder in `anki/fields/`, add field to `ANKI_FIELDS`, wire in `fields/index.js` |
+| Remove a section component | Delete the matching field builder, remove from `ANKI_FIELDS` and `fields/index.js` |
+| Change section content/layout | Update the matching field builder to match |
+| Change section accent colour | Update the matching hex in the field builder's `aSection()` call |
+
+**Section order is defined in two places — keep them identical:**
+- `src/components/WordCard.astro` (web, Tailwind)
+- `ANKI_BACK` template in `src/scripts/anki/noteType.js` (Anki, Mustache)
+
+If a task only mentions one surface, ask: *does the other surface need the same change?*  
+The answer is almost always yes.
+
+---
+
 ## Architecture quick reference
 
 ```
@@ -175,6 +198,8 @@ Different runtime environments; cannot share an import. Not a duplicate to fix.
 Before ending a session:
 - [ ] `npm run build` — passes clean?
 - [ ] `npm run arch` — no new warnings beyond the known flag?
+- [ ] Web card sections and Anki sections are in the same order?
+- [ ] Every new/removed section has a matching Anki field builder change?
 - [ ] `BACKLOG.md` updated with any new suggestions from agents?
 - [ ] Any completed specs moved from `specs/active/` to `specs/archive/`?
 - [ ] `CLAUDE.md` "Open work" / "Next Up" (BACKLOG) reflects current state?
