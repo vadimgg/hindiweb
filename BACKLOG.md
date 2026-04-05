@@ -13,7 +13,9 @@ These are the highest-value items to pick up in the next session:
 
 1. **[Tech Lead / P1]** Define a `Word` interface in `types.ts` — the core data type is currently `any`, which means zero type safety across the whole pipeline.
 2. **[Tech Lead / P1]** Fix `tagUtils.js` fallback — references `origin_language`/`origin_tag`, both removed from the new data format.
-3. **[Tech Lead / P2]** Add `ANKI_FIELDS`/`wordToAnkiFields` sync assertion — a 3-line check that catches mismatches at export time with no dependencies.
+3. **[Tech Lead / P1]** Remove `sentencesByDate` prop from `SentencesTab` — it's now unused (replaced by chapter grouping) and the `DateGroup` interface it pulls in is dead code.
+4. **[Tech Lead / P2]** Add sentence chapter to search index — add `ch` field to `sentenceSearchIndex` so users can filter by chapter name.
+5. **[Tech Lead / P2]** Add `ANKI_FIELDS`/`wordToAnkiFields` sync assertion — a 3-line check that catches mismatches at export time with no dependencies.
 
 ---
 
@@ -46,9 +48,32 @@ These are the highest-value items to pick up in the next session:
 
 ---
 
+## Code Quality — Sentences (from 2026-04-05)
+
+| Item | Owner | Priority | Status |
+|---|---|---|---|
+| Remove `sentencesByDate` prop + `DateGroup` interface from `SentencesTab` — now unused | Tech Lead | P1 | open |
+| Add `ch` (chapter) to `sentenceSearchIndex` in `index.astro` for chapter-scoped search filtering | Tech Lead | P2 | open |
+| Add `data-sentence-index` on `<article>` in `SentenceCard` — aligns with `WordCard`'s pattern | Tech Lead | P2 | open |
+| Refactor `globalIndex` mutation in `SentenceList.astro` to a pre-computed flat array in frontmatter | Tech Lead | P3 | open |
+| Clean `ANKI_SENTENCE_CSS` composition — use template literal instead of double-join | Tech Lead | P3 | open |
+
+## Design — Sentences (from 2026-04-05)
+
+| Item | Owner | Priority | Status |
+|---|---|---|---|
+| Inline token highlighting: hover a breakdown row → highlight matching token in header sentence | UI/UX Designer | P2 | open |
+| Audio playback affordance: speaker icon in header for TTS / pre-recorded audio (`audio_url?` field) | UI/UX Designer | P3 | open |
+| Chapter count badge: promote muted count to pill badge matching sidebar pattern | UI/UX Designer | P3 | open |
+| "Copy Hindi" micro-action: clipboard icon next to sentence in header | UI/UX Designer | P3 | open |
+| Future: Anki cloze scaffold for long sentences — `FirstWord` field between Romanisation and Literal | UI/UX Designer | P3 | open |
+
+---
+
 ## Resolved
 
 | Item | Resolved |
 |---|---|
 | `extractDevanagari`/`extractPartLabel` arch flag — renamed to `devanagariFromPart`/`partLabel` in TS; JS versions kept in `stringUtils.js` | 2026-04-05 |
 | Implement new vocab format (web + Anki) per `DESIGN_SPEC_NEW_FORMAT.md` | 2026-04-05 |
+| Implement sentence cards (web + Anki) per `DESIGN_SPEC_SENTENCES.md` | 2026-04-05 |

@@ -18,9 +18,8 @@ npm run changelog # aggregate changelog/ entries into CHANGELOG.md
 1. Read **`BACKLOG.md`** — "Next Up" section tells you what to work on.
 2. Read **`ARCHITECTURE.md`** — orientation for the full codebase (auto-generated, always current).
 3. Check `specs/active/` — any in-progress design specs the last session left open.
-4. Read `CODE.md` before writing code. Read `STYLE.md` before touching UI.
 
-**Do NOT re-read all source files.** Use ARCHITECTURE.md as the index, then read only what the task requires.
+**As PM you read documentation only — never read source files directly.** Use ARCHITECTURE.md as the index and brief agents with file paths.
 
 ---
 
@@ -34,33 +33,63 @@ npm run changelog # aggregate changelog/ entries into CHANGELOG.md
 | `STYLE.md` | Tailwind recipes, colour system, components, Anki card design | Before touching any UI |
 | `README.md` | Vocab JSON format, AnkiConnect setup, export workflow | When working on data or Anki |
 | `specs/active/` | Design specs currently being implemented | When the task involves a spec |
+| `specs/demo/` | Designer's HTML/CSS/JS demos — visual proof-of-concept for new patterns | Before implementing any new UI pattern |
 | `specs/archive/` | Implemented specs — reference only, do not act on them | If you need historical context |
 
 ---
 
 ## Team workflow
 
-You (Claude) are the **PM**. Two specialist agents do the work:
+You (Claude) are the **PM**. You coordinate two specialist agents:
+
+- Read `BACKLOG.md`, `ARCHITECTURE.md`, `STYLE.md`, `CODE.md`, and specs — never source files.
+- Translate user intent into clear agent briefs.
+- Review agent output summaries and decide next steps.
+- Never write or edit source code yourself.
+
+---
 
 ### UI/UX Designer
-- Owns `STYLE.md` and `specs/active/*.md`
-- Reviews designs, identifies UX gaps, writes specs
-- Does **not** write code
-- Output: a spec file in `specs/active/`
+
+**What they own:**
+- `STYLE.md` — kept as framework-agnostic design guidelines (colours, typography, spacing, component patterns). Not Astro-specific.
+- `specs/active/*.md` — design specs for features in progress.
+- `specs/demo/*.html` — standalone HTML/CSS/JS demos that visualise a design idea.
+
+**What they do:**
+- Identify UX gaps, suggest design improvements, write specs.
+- When a new visual pattern is needed: produce a **self-contained HTML/CSS/JS demo** (`specs/demo/<feature>.html`) that demonstrates the idea with dummy data (one word card + one sentence card is enough). The demo must render correctly when opened directly in a browser — no build step.
+- Update `STYLE.md` when new patterns or rules emerge.
+- Does **not** write Astro, TypeScript, or any application code.
+
+**Output:** updated `STYLE.md` + (when applicable) a demo file in `specs/demo/` + a written summary of decisions.
+
+---
 
 ### Technical Lead
-- Owns all source code changes
-- Follows `CODE.md` and `STYLE.md` / active specs exactly
-- Runs `npm run build && npm run arch` as final step — must be clean before done
-- Appends improvement suggestions to their output
+
+**What they own:**
+- All source code under `src/` and any config files.
+- Keeping documentation in sync: after every change, runs `npm run build && npm run arch` and updates `BACKLOG.md` with any improvement suggestions.
+
+**What they do:**
+- Read `STYLE.md`, active specs, and the designer's demo (if one exists) before implementing UI changes.
+- Implement designs in Astro/Tailwind/TypeScript/vanilla JS.
+- Never change `STYLE.md` — that belongs to the designer.
+
+**Output:** list of files changed + build/arch confirmation + improvement suggestions.
+
+---
 
 ### Handoff flow
 ```
 User request
-  → if UI/design → spawn UI/UX Designer → spec lands in specs/active/
-  → PM reviews spec → spawn Tech Lead to implement
-  → Tech Lead confirms build clean → PM moves spec to specs/archive/
-  → if pure code fix → spawn Tech Lead directly
+  → design/UX change?
+      → spawn Designer → STYLE.md updated + demo in specs/demo/ (if visual pattern)
+      → PM reviews → spawn Tech Lead with demo path + STYLE.md
+      → Tech Lead implements → build clean → PM archives spec
+  → pure code fix / refactor?
+      → spawn Tech Lead directly
 ```
 
 ### When to use agents vs inline
@@ -90,9 +119,9 @@ Tasks:
 1. ...
 2. ...
 
-Verify:
-- npm run build (Tech Lead only)
-- npm run arch (Tech Lead only)
+Verify (Tech Lead only):
+- npm run build
+- npm run arch
 
 Output:
 - [what to report back — changes made, files touched]
@@ -100,6 +129,22 @@ Output:
 ```
 
 **Do not paste file contents into prompts.** Give paths and let the agent read.
+
+### Designer demo format
+
+When the designer produces a demo, brief them with:
+
+```
+Produce a self-contained specs/demo/<name>.html that demonstrates [design idea].
+Requirements:
+- Opens directly in a browser, no build step.
+- Dummy data only: one word card (e.g. "पानी / paanī / water") + one sentence card.
+- Dark background (#020617) to match app.
+- Use plain HTML + a <style> block + optional inline <script>.
+- Goal is to communicate the visual pattern, not pixel-perfect parity.
+```
+
+The Tech Lead then reads `specs/demo/<name>.html` and `STYLE.md` and implements in Astro.
 
 ---
 
@@ -173,13 +218,14 @@ export.js → anki/fields/* → anki/utils.js
 
 ---
 
-## Style rules (summary — full rules in STYLE.md)
+## Style rules (summary — full rules in STYLE.md, owned by Designer)
 
 Three surface levels: `slate-950` (page) → `slate-900` (cards) → `slate-800` (inputs/overlays)  
 Amber = Hindi word / active state. Teal = romanisation. Never swap or reuse these.  
 Labels/headings: `font-title uppercase`. Body copy: `font-sans` (Poppins).  
 All transitions: `transition-colors` (never bare `transition`).  
-Max border-radius: `rounded-2xl` on cards, `rounded-xl` inner, `rounded-lg` badges.
+Max border-radius: `rounded-2xl` on cards, `rounded-xl` inner, `rounded-lg` badges.  
+Min text size: `text-[11px]`. No colored left-border section accents. Romanisation in dense sections: `text-[13px]` min.
 
 ---
 

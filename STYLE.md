@@ -31,6 +31,114 @@ This is a study tool used in repeated daily sessions. Novelty (animations, visua
 
 ---
 
+## Visual Density & Readability Rules
+
+These rules exist to prevent visual strain during repeated daily study sessions. They are hard limits — not suggestions. When any rule below conflicts with a more general principle elsewhere in this guide, the rule below wins.
+
+### Text size floor
+
+**Minimum readable size at laptop arm's-length is `text-[11px]`.**
+
+No text in this UI may be set smaller than `text-[11px]`. This applies to every element: stage labels, column headers, tiny meta labels, hint text, badge text. If a design requires going smaller, the design is wrong — find a layout solution instead (truncate, abbreviate, hide behind progressive disclosure).
+
+| Context | Minimum size |
+|---|---|
+| Any label, header, meta, hint | `text-[11px]` |
+| Romanisation in dense sections / sidebar rows | `text-[13px]` |
+| Body / explanation copy | `text-[15px]` |
+
+### No colored left-border accents on card sections
+
+**Prohibition: do not apply a colored `border-l-*` to any expandable card section.**
+
+Left-border accent colours on sections (violet for memory hook, rose for sound-alikes, blue for etymology, teal for breakdown, etc.) are decorative, not semantic. They add hue noise without communicating meaning — the colour does not tell the reader anything they cannot already understand from the section label. This pattern is removed from the guidelines and must not be reintroduced.
+
+Sections are separated structurally by `divide-y`. That is sufficient. If a section needs visual weight, increase the inner content's contrast — do not reach for a border colour.
+
+```html
+<!-- WRONG: colored left border accent adds noise, not meaning -->
+<div class="border-l-2 border-violet-500/40 ml-4 px-4 py-3 space-y-3">...</div>
+
+<!-- RIGHT: plain padding, structure from divide-y on parent -->
+<div class="px-4 sm:px-6 pb-4 space-y-3">...</div>
+```
+
+### Grammar badges — single consolidated row
+
+**Consolidate all grammar metadata (POS, gender, transitivity) into a single flex row.** Do not stack separate badges vertically or show three distinct pill elements side by side with equal visual weight.
+
+Rules:
+- One `flex items-center gap-2 flex-wrap` row beneath the Hindi word
+- Show only what is contextually meaningful: transitivity only for verbs and verb phrases; gender only for nouns and adjectives
+- Use the existing `bg-{hue}-900/30 text-{hue}-400 border border-{hue}-700/40` badge recipe
+- All badges in the row use the same `rounded-lg px-2.5 py-1 text-xs font-title font-semibold uppercase tracking-wider` sizing
+
+```html
+<!-- WRONG: three separate stacked badges with equal weight -->
+<div class="flex flex-col gap-1">
+  <span class="badge">verb</span>
+  <span class="badge">masculine</span>
+  <span class="badge">transitive</span>
+</div>
+
+<!-- RIGHT: single flex row, show only contextually relevant items -->
+<div class="flex items-center gap-2 flex-wrap">
+  <span class="font-title text-xs font-semibold uppercase tracking-wider
+               px-2.5 py-1 rounded-lg bg-orange-900/30 text-orange-400 border border-orange-700/40">
+    verb
+  </span>
+  <!-- transitivity shown only because this is a verb -->
+  <span class="font-title text-xs font-semibold uppercase tracking-wider
+               px-2.5 py-1 rounded-lg bg-slate-800/60 text-slate-400 border border-slate-600/40">
+    transitive
+  </span>
+</div>
+```
+
+### Spacing floor for list/table sections
+
+**Minimum `py-3` per row in any list or table section.**
+
+`py-2.5` (10px top + bottom) is too compressed for comfortable scanning at arm's length. Every row in a breakdown table, collocation list, forms table, or any other list-style section must use at least `py-3` (12px).
+
+| Context | Minimum row padding |
+|---|---|
+| Any list/table section row | `py-3` |
+| Card section summary toggle | `py-3 sm:py-4` |
+
+### No per-row dividers in list sections
+
+**Use `space-y-3` spacing instead of `border-b` on every row in list sections.**
+
+`border-b` on every row creates visual noise — the eye reads the borders as competing structure rather than content. Spacing communicates the same grouping without adding lines.
+
+```html
+<!-- WRONG: border on every row creates line noise -->
+<div class="border-b border-slate-700/40 py-2.5">row content</div>
+<div class="border-b border-slate-700/40 py-2.5">row content</div>
+
+<!-- RIGHT: space-y-3 on the container, no per-row borders -->
+<div class="space-y-3">
+  <div class="py-3">row content</div>
+  <div class="py-3">row content</div>
+</div>
+```
+
+### Etymology chain nodes — slate-200, not amber
+
+**Etymology chain nodes (Sanskrit/Persian/Arabic/etc. ancestor forms) use `text-slate-200`, not amber.**
+
+Amber means "the current Hindi word". Applying amber to etymological ancestors implies they are all equally "the word" — which confuses the semantic signal. Ancestor forms in an etymology chain are supporting context, not the primary word.
+
+| Element | Colour |
+|---|---|
+| Current Hindi word | `text-amber-400` (amber — always) |
+| Etymology ancestor forms | `text-slate-200` |
+| Language-path "via" labels | `text-blue-300/70` (existing rule, unchanged) |
+| Romanisation of ancestor forms | `text-teal-300/70` |
+
+---
+
 ## Core Patterns
 
 There are three patterns that generate the entire visual language of this UI.  
@@ -96,9 +204,11 @@ The tracking and colour vary by the label's level in the hierarchy:
 |---|---|---|
 | Page heading | `font-title text-2xl font-semibold text-zinc-100 leading-tight` | App title in sidebar |
 | Section label | `font-title text-xs sm:text-sm font-medium tracking-wider uppercase text-slate-400` | Card section toggles ("Examples", "Memory Hook") |
-| Group header | `font-title text-[10px] font-semibold uppercase tracking-widest text-zinc-500` | Sidebar group titles, export panel field labels |
-| Column header | `font-title text-[9px] font-semibold uppercase tracking-widest text-zinc-600` | Table column headers |
-| Tiny meta label | `font-title text-[9px] font-semibold uppercase tracking-[0.2em] text-zinc-600` | "Study companion" subheading, export section names |
+| Group header | `font-title text-[11px] font-semibold uppercase tracking-widest text-zinc-500` | Sidebar group titles, export panel field labels |
+| Column header | `font-title text-[11px] font-semibold uppercase tracking-widest text-zinc-600` | Table column headers |
+| Tiny meta label | `font-title text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-600` | "Study companion" subheading, export section names |
+
+**Size floor reminder:** `text-[9px]` and `text-[10px]` are prohibited. Minimum is `text-[11px]` for any label or meta text. See the Visual Density & Readability Rules section.
 
 **The rule:** never use Oswald (`font-title`) for body copy, explanations, or anything the user reads for meaning — only for structure and taxonomy. Never use Poppins for a label or heading.
 
@@ -178,12 +288,14 @@ Never add a new shade of grey. If you need something between two steps, you are 
 
 | Colour | Class | Meaning — use ONLY for this |
 |---|---|---|
-| Amber | `text-amber-400` | Hindi Devanagari word; active/selected state; primary action |
+| Amber | `text-amber-400` | The *current* Hindi Devanagari word; active/selected state; primary action |
 | Teal | `text-teal-300` | Romanisation (transliteration) |
 | Emerald | `text-emerald-400` | Success; online status |
 | Red | `text-red-300` / `bg-red-700/70` | Destructive action; error |
 | Blue | `text-blue-300/70` | "via" language path, secondary etymology note |
-| Violet / sky / orange / rose… | section accent colours | Each card section has one — see section table |
+| `text-slate-200` | Etymology ancestor forms | Sanskrit/Persian/Arabic/etc. forms in an etymology chain — **not amber** |
+
+**Prohibition:** Do not apply amber to etymology ancestor nodes, section border accents, or hover decorations. Amber = the current Hindi word only.
 
 ### Linguistic highlight colours
 
@@ -268,7 +380,12 @@ word-roman text-base sm:text-lg leading-none
 
 **Romanisation in sidebar row** (de-emphasised)
 ```
-text-teal-300/60 text-[11px] shrink-0
+text-teal-300/60 text-[13px] shrink-0
+```
+
+**Romanisation in dense sections** (word breakdown, collocations, etymology chain)
+```
+text-teal-300/70 text-[13px]
 ```
 
 **Body / explanation paragraph**
@@ -290,11 +407,13 @@ text-[13px] sm:text-[14px] text-teal-300/70 font-mono tracking-wide leading-rela
 ```
 text-[11px] text-slate-600
 ```
+(This is the absolute minimum — do not go smaller.)
 
 **Helper / hint text** (below inputs, below badges)
 ```
 text-[11px] text-zinc-700
 ```
+(This is the absolute minimum — do not go smaller.)
 
 ### Leading (line-height)
 
@@ -323,6 +442,8 @@ Tailwind's 4px grid. Key values:
 | `space-y-3` | 12 | Between items within a section |
 | `space-y-5` | 20 | Between word cards |
 | `py-8` | 32 | Main content top padding |
+
+**Row spacing floor:** every row in a list or table section must use at least `py-3` (12px). `py-2.5` or smaller is prohibited in list/table rows. Use `space-y-3` on the container and `py-3` per row — never `border-b` on individual rows.
 
 **Rule of thumb:** padding inside a card section = `px-4 sm:px-6` (shrinks on mobile). Gap between sections = let the `divide-y` handle it (no extra margin).
 
@@ -395,9 +516,8 @@ const { yourProp } = Astro.props;
 
   <!--
     Content wrapper.
-    For sections with a strong narrative accent, add a left border:
-    <div class="border-l-2 border-YOUR_ACCENT/40 ml-4 sm:ml-6 mb-4 px-4 sm:px-5 py-3 sm:py-4 space-y-3">
-    For simple list sections, just use padding:
+    Always use plain padding — no colored left-border accents.
+    Sections are separated structurally by divide-y on the parent; that is sufficient.
   -->
   <div class="px-4 sm:px-6 pb-4 space-y-3">
 
@@ -411,18 +531,9 @@ const { yourProp } = Astro.props;
 </details>
 ```
 
-**Section accent colours (pick one that isn't already taken):**
+**Section accent colours — prohibited.**
 
-| Section | Accent |
-|---|---|
-| Root & Origin | `border-blue-500/40` |
-| Etymology Story | `border-amber-500/50` |
-| Memory Hook | `border-violet-500/40` |
-| Examples | `border-blue-500/30` |
-| Pronunciation | `border-teal-500/40` |
-| Sound Alikes | `border-rose-500/40` |
-| Urdu & Punjabi | `border-orange-500/40` |
-| Cross-Language | `border-sky-500/40` |
+Do not add a colored left-border (`border-l-*`) to any card section. This pattern is removed. Sections use `divide-y` on the parent container for visual separation — no per-section accent borders. See the Visual Density & Readability Rules section for the full rationale.
 
 ---
 
@@ -491,6 +602,42 @@ Do not add `mt-*` or `mb-*` to sections. Let `divide-y` handle the gaps.
 
 ### Badges and chips
 
+#### Grammar metadata row (word card header)
+
+All grammar metadata (part of speech, gender, transitivity) must be consolidated into **one flex row** directly beneath the Hindi word. Do not stack badges vertically or show them as three independent pill elements at equal weight.
+
+Show only what is contextually meaningful:
+- **POS badge** — always shown
+- **Gender badge** — only for nouns and adjectives
+- **Transitivity badge** — only for verbs and verb phrases
+
+```html
+<!-- RIGHT: single consolidated grammar row -->
+<div class="flex items-center gap-2 flex-wrap mt-1">
+  <!-- POS badge — always present -->
+  <span class="font-title text-xs font-semibold uppercase tracking-wider
+               px-2.5 py-1 rounded-lg
+               bg-orange-900/30 text-orange-400 border border-orange-700/40">
+    verb
+  </span>
+  <!-- transitivity — only because this is a verb -->
+  <span class="font-title text-xs font-semibold uppercase tracking-wider
+               px-2.5 py-1 rounded-lg
+               bg-slate-800/60 text-slate-400 border border-slate-600/40">
+    transitive
+  </span>
+</div>
+
+<!-- WRONG: three separate stacked/independent badges -->
+<div class="flex flex-col gap-1">
+  <span class="badge">verb</span>
+  <span class="badge">masculine</span>
+  <span class="badge">transitive</span>
+</div>
+```
+
+#### Individual badge (category, any single-purpose label)
+
 ```html
 <!-- Category badge (rounded-lg) -->
 <span class="text-xs font-title font-semibold uppercase tracking-wider
@@ -498,7 +645,11 @@ Do not add `mt-*` or `mb-*` to sections. Let `divide-y` handle the gaps.
              bg-violet-900/30 text-violet-400 border border-violet-700/40">
   noun
 </span>
+```
 
+#### Form chip
+
+```html
 <!-- Form chip (rounded-full) — use .form-chip + .form-chip-{variant} from global.css -->
 <span class="form-chip form-chip-masc">
   <span>masculine</span>
@@ -506,7 +657,11 @@ Do not add `mt-*` or `mb-*` to sections. Let `divide-y` handle the gaps.
   <span>·</span>
   <span>baṛā</span>
 </span>
+```
 
+#### Count pill
+
+```html
 <!-- Count / number pill -->
 <span class="text-xs font-semibold bg-zinc-800 text-zinc-300
              px-2.5 py-0.5 rounded-full">
@@ -1018,16 +1173,29 @@ Before marking any UI work as done, go through this list:
 
 ### Colour and surface
 - [ ] Does every new background use only `slate-950`, `slate-900`, or `slate-800/N`?
-- [ ] Is amber used *only* for the Hindi word, active states, and primary actions?
+- [ ] Is amber used *only* for the current Hindi word, active states, and primary actions? (Not etymology ancestors, not section borders)
 - [ ] Is teal used *only* for romanisation?
 - [ ] Are borders `border-slate-700/40` (not `/30` and not solid)?
 - [ ] Do de-emphasised elements use `/60` or similar — never a new colour?
+- [ ] Do etymology chain ancestor forms use `text-slate-200` (not amber)?
 
 ### Typography
 - [ ] Are all labels and headings `font-title uppercase`?
 - [ ] Is all body copy Poppins (`font-sans`, the default)?
 - [ ] Does every Devanagari element have `lang="hi"` (which auto-applies the correct font)?
 - [ ] Does any text field go through `highlight()` via `set:html` to get script colouring?
+- [ ] Does any text go below `text-[11px]`? If yes, fix it — `text-[11px]` is the absolute floor.
+- [ ] Is romanisation in any dense section or sidebar row at least `text-[13px]`?
+
+### Spacing and density
+- [ ] Do list/table section rows use at least `py-3` per row?
+- [ ] Does any list section use `border-b` on individual rows? If yes, replace with `space-y-3` on the container.
+- [ ] Does any card section have a colored `border-l-*` accent? If yes, remove it.
+
+### Grammar badges
+- [ ] Are grammar metadata badges (POS, gender, transitivity) consolidated into a single flex row?
+- [ ] Is transitivity shown only for verbs/verb phrases?
+- [ ] Is gender shown only for nouns/adjectives?
 
 ### Interactions and accessibility
 - [ ] Does every clickable element have a `hover:` state?

@@ -45,7 +45,7 @@ function initScrollHighlight() {
 }
 
 /**
- * Initialises card interactions:
+ * Initialises word card interactions:
  *   - Delegated click handler on #cards-container for header collapse and deselect.
  *   - IntersectionObserver that highlights the active sidebar row as cards scroll into view.
  *
@@ -54,23 +54,24 @@ function initScrollHighlight() {
  * @returns {void}
  */
 export function initCards() {
-  document.getElementById('cards-container')?.addEventListener('click', e => {
-    const header = e.target.closest('.card-header');
-    if (header && !e.target.closest('.deselect-btn')) {
-      header.closest('article')?.classList.toggle('is-collapsed');
-      return;
-    }
+  const wordsContainer = document.getElementById('cards-container');
+  if (wordsContainer) {
+    wordsContainer.addEventListener('click', e => {
+      const header = e.target.closest('.card-header');
+      if (header && !e.target.closest('.deselect-btn')) {
+        header.closest('article')?.classList.toggle('is-collapsed');
+        return;
+      }
 
-    const deselectBtn = e.target.closest('.deselect-btn');
-    if (!deselectBtn) return;
-    const wordIndex = parseInt(deselectBtn.dataset.deselectIndex);
-    // Look up the sidebar row directly to find its group — avoids cross-ui import
-    const groupDate = document.querySelector(`#idx-words .idx-row[data-index="${wordIndex}"]`)
-      ?.closest('.date-group')?.dataset.group ?? '';
-    setWordSelected(wordIndex, false);
-    syncGroupCheckbox(groupDate);
-    // applyFilter() fires automatically via 'selectionchange' event.
-  });
+      const deselectBtn = e.target.closest('.deselect-btn');
+      if (!deselectBtn) return;
+      const wordIndex = parseInt(deselectBtn.dataset.deselectIndex);
+      const groupDate = document.querySelector(`#idx-words .idx-row[data-index="${wordIndex}"]`)
+        ?.closest('.date-group')?.dataset.group ?? '';
+      setWordSelected(wordIndex, false);
+      syncGroupCheckbox(groupDate);
+    });
+  }
 
   initScrollHighlight();
 }

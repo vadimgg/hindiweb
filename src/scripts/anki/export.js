@@ -6,13 +6,21 @@
  * (wipe deck then re-add). Does NOT build HTML field content or generate tags;
  * those concerns live in fields/index.js and tagUtils.js respectively.
  *
- * Dependencies: anki/connect.js, anki/noteType.js, anki/fields/index.js, anki/tagUtils.js.
+ * Dependencies: anki/connect.js, anki/noteType.js, anki/sentenceNoteType.js,
+ *               anki/fields/index.js, anki/fields/sentenceBreakdown.js,
+ *               anki/fields/utils.js, anki/tagUtils.js.
  */
 // Responsible for: orchestrating Anki deck creation, note type verification, and card addition
 import { ankiRequest }                                           from './connect.js';
 import { ANKI_NOTE_TYPE, ANKI_FIELDS, ANKI_CSS, ANKI_FRONT, ANKI_BACK } from './noteType.js';
+import {
+  ANKI_SENTENCE_NOTE_TYPE, ANKI_SENTENCE_FIELDS,
+  ANKI_SENTENCE_CSS, ANKI_SENTENCE_FRONT, ANKI_SENTENCE_BACK,
+} from './sentenceNoteType.js';
 import { wordToAnkiFields }                                      from './fields/index.js';
+import { buildWordBreakdown }                                    from './fields/sentenceBreakdown.js';
 import { buildWordTags }                                         from './tagUtils.js';
+import { esc }                                                   from './fields/utils.js';
 
 /**
  * Creates the note type if it does not exist, or syncs its CSS and templates if it does.
@@ -56,6 +64,51 @@ function buildNotes(words, deckName, allowDuplicate = false) {
     tags:      buildWordTags(word),
     options:   { allowDuplicate, duplicateScope: 'deck' },
   }));
+}
+
+/**
+ * Creates the Hindi Sentence note type if it does not exist, or syncs its CSS and
+ * templates if it does. Called before every sentence export.
+ *
+ * @returns {Promise<void>}
+ */
+export async function ensureSentenceNoteType() {
+  const models = await ankiRequest('modelNames', {});
+  if (!models.includes(ANKI_SENTENCE_NOTE_TYPE)) {
+    await ankiRequest('createModel', {
+      modelName: ANKI_SENTENCE_NOTE_TYPE, inOrderFields: ANKI_SENTENCE_FIELDS,
+      css: ANKI_SENTENCE_CSS, isCloze: false,
+      cardTemplates: [{ Name: 'Production', Front: ANKI_SENTENCE_FRONT, Back: ANKI_SENTENCE_BACK }],
+    });
+  } else {
+    await ankiRequest('updateModelStyling', { model: { name: ANKI_SENTENCE_NOTE_TYPE, css: ANKI_SENTENCE_CSS } });
+    await ankiRequest('updateModelTemplates', {
+      model: {
+        name: ANKI_SENTENCE_NOTE_TYPE,
+        templates: { Production: { Front: ANKI_SENTENCE_FRONT, Back: ANKI_SENTENCE_BACK } },
+      },
+    });
+  }
+}
+
+/**
+ * Converts a sentence object into the Anki fields object for the Hindi Sentence note type.
+ *
+ * @param {object} sentence - Sentence object with {hindi, romanisation, english, literal?, register?, words?, anki_tags?}.
+ * @param {string} chapter  - Chapter label to populate the Chapter field.
+ * @returns {object} Fields object keyed by ANKI_SENTENCE_FIELDS names.
+ */
+export function sentenceToAnkiFields(sentence, chapter) {
+  return {
+    English:       esc(sentence.english ?? ''),
+    Hindi:         esc(sentence.hindi ?? ''),
+    Romanisation:  esc(sentence.romanisation ?? ''),
+    Literal:       esc(sentence.literal ?? ''),
+    Register:      esc(sentence.register ?? ''),
+    WordBreakdown: buildWordBreakdown(sentence.words),
+    Chapter:       esc(chapter ?? ''),
+    Tags:          (sentence.anki_tags ?? []).join(' '),
+  };
 }
 
 /**

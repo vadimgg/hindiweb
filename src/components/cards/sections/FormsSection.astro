@@ -23,7 +23,7 @@ const { forms, english_usage } = Astro.props;
       <div class="flex flex-wrap gap-2">
         {forms.map((f) => (
           <span class={chipClass(f.label)}>
-            <span class="font-title uppercase tracking-wide text-[10px]">{f.label}</span>
+            <span class="font-title uppercase tracking-wide text-[11px]">{f.label}</span>
             <span class="word-hindi" lang="hi" style="font-family:'Tiro Devanagari Hindi',serif;font-size:1.1em;">{f.hindi}</span>
             <span>·</span>
             <span>{f.roman}</span>

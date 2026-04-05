@@ -81,7 +81,7 @@ const secondaryMeanings = rest.join(', ');
         )}
       </div>
       <!-- Row 3: grammar badges -->
-      <div class="flex flex-wrap items-center gap-1.5 mt-0.5">
+      <div class="flex items-center gap-2 flex-wrap mt-0.5">
         {pos && (
           <span class:list={['text-xs font-title font-semibold uppercase tracking-wider px-2.5 py-1 rounded-lg', categoryStyle(pos)]}>
             {pos}
@@ -97,7 +97,7 @@ const secondaryMeanings = rest.join(', ');
             f
           </span>
         )}
-        {transitivity && (
+        {transitivity && pos && pos.toLowerCase().includes('verb') && (
           <span class="text-xs font-title font-semibold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-slate-800/60 text-slate-400 border border-slate-700/40">
             {transitivity === 'transitive' ? 'trans.' : 'intrans.'}
           </span>

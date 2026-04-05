@@ -14,16 +14,18 @@ _Generated 2026-04-05 by `npm run arch`._
 | `src/components/cards/sections/RelatedWordsSection.astro` | 35 | Related Words expandable section inside a word card |
 | `src/components/cards/sections/SoundAlikesSection.astro` | 48 | Sound Alikes expandable section inside a word card |
 | `src/components/cards/sections/UsageNotesSection.astro` | 27 | Usage Notes expandable section inside a word card, open by default |
+| `src/components/cards/sections/WordBreakdownSection.astro` | 130 | Word Breakdown expandable section inside a sentence card |
 | `src/components/sidebar/AppSidebar.astro` | 86 | desktop sidebar — logo, search bar, words index nav, sentences index nav |
 | `src/components/tabs/ExportTab.astro` | 81 | Export/Delivery pane HTML — word summary table and Anki settings panel |
-| `src/components/tabs/SentencesTab.astro` | 30 | Sentences tab content — sentence cards grid, empty states |
+| `src/components/tabs/SentencesTab.astro` | 38 | Sentences tab content — sentence cards grid, empty states |
 | `src/components/tabs/WordsTab.astro` | 53 | Words tab content — meta line, word cards grid, empty state, footer |
 | `src/components/ui/TabBar.astro` | 28 | DaVinci Resolve-style bottom-fixed tab bar (Words | Sentences | Export) |
 | `src/components/MobileHeader.astro` | 13 | mobile-only page header with title and search input (hidden on lg+) |
-| `src/components/SentenceCard.astro` | 18 | sentence card placeholder — to be implemented once sentences/*.json format is defined |
+| `src/components/SentenceCard.astro` | 100 | rendering a single sentence card with header and expandable detail sections |
+| `src/components/SentenceList.astro` | 40 | chapter-grouped sentence list with group headers |
 | `src/components/WordCard.astro` | 131 | word card shell — header row + section delegation |
 | `src/layouts/Layout.astro` | 28 | root HTML shell — doctype, meta tags, font imports, global CSS, slot |
-| `src/pages/index.astro` | 110 | page entry point — loads vocab data, passes it to components, renders app shell |
+| `src/pages/index.astro` | 120 | page entry point — loads vocab data, passes it to components, renders app shell |
 | `src/scripts/anki/fields/category.js` | 25 | building the Anki Category HTML field |
 | `src/scripts/anki/fields/collocations.js` | 42 | building the Anki Collocations HTML field |
 | `src/scripts/anki/fields/etymology.js` | 53 | building the Anki Etymology HTML field |
@@ -31,29 +33,32 @@ _Generated 2026-04-05 by `npm run arch`._
 | `src/scripts/anki/fields/gender.js` | 24 | building the Anki Gender HTML field |
 | `src/scripts/anki/fields/index.js` | 49 | assembling wordToAnkiFields() from all individual field builders |
 | `src/scripts/anki/fields/relatedWords.js` | 42 | building the Anki RelatedWords HTML field |
+| `src/scripts/anki/fields/sentenceBreakdown.js` | 50 | WordBreakdown Anki field HTML for Hindi Sentence note type |
 | `src/scripts/anki/fields/soundAlikes.js` | 63 | building the Anki Sound Alikes HTML field |
 | `src/scripts/anki/fields/syllables.js` | 19 | building the Anki Syllables plain-text field |
 | `src/scripts/anki/fields/transitivity.js` | 24 | building the Anki Transitivity HTML field |
 | `src/scripts/anki/fields/usageNotes.js` | 26 | building the Anki UsageNotes HTML field |
 | `src/scripts/anki/fields/utils.js` | 109 | shared HTML-building utilities for Anki card field builders |
 | `src/scripts/anki/connect.js` | 43 | AnkiConnect HTTP API wrapper and connection status check |
-| `src/scripts/anki/export.js` | 104 | orchestrating Anki deck creation, note type verification, and card addition |
+| `src/scripts/anki/export.js` | 157 | orchestrating Anki deck creation, note type verification, and card addition |
 | `src/scripts/anki/noteType.js` | 104 | Anki note type definition — CSS, front/back card templates, field list |
+| `src/scripts/anki/sentenceNoteType.js` | 91 | Anki sentence note type definition — CSS, templates, field list |
 | `src/scripts/anki/tagUtils.js` | 39 | shared Anki tag-building utility used by export.js and txtFallback.js |
 | `src/scripts/anki/txtFallback.js` | 50 | generating and triggering browser download of a .txt file for manual Anki import |
 | `src/scripts/state/selection.js` | 141 | word and sentence selection state and change notifications via CustomEvents |
 | `src/scripts/state/tabs.js` | 88 | active tab state, DOM panel switching, and tabchange event dispatch |
-| `src/scripts/ui/cards.js` | 77 | word card collapse/expand toggling and deselect button handling |
+| `src/scripts/ui/cards.js` | 78 | word card collapse/expand toggling and deselect button handling |
 | `src/scripts/ui/exportPane.js` | 235 | export pane controller — word table, AnkiConnect status polling, export button |
 | `src/scripts/ui/indexSidebar.js` | 120 | sidebar interactions — drag-select checkboxes, group collapse, scroll-to-card |
 | `src/scripts/ui/search.js` | 192 | fuzzy search scoring and filtering word/sentence card visibility |
+| `src/scripts/ui/sentenceCards.js` | 29 | sentence card collapse/expand toggling |
 | `src/scripts/ui/tooltip.js` | 180 | vocab-hint span annotation in example cards and tooltip positioning |
 | `src/scripts/utils/stringUtils.js` | 52 | shared string utilities — norm(), extractDevanagari(), extractPartLabel() |
 | `src/scripts/data.js` | 43 | lazy read-only accessors for window.__APP_DATA__ (set by define:vars in index.astro) |
-| `src/scripts/main.js` | 34 | bootstrapper — imports all modules and initialises them after DOMContentLoaded |
-| `src/utils/cardHelpers.ts` | 114 | pure helper functions shared across WordCard section components |
+| `src/scripts/main.js` | 36 | bootstrapper — imports all modules and initialises them after DOMContentLoaded |
+| `src/utils/cardHelpers.ts` | 119 | pure helper functions shared across WordCard section components |
 | `src/utils/highlight.ts` | 121 | rich text highlighting for vocabulary card text content |
-| `src/utils/types.ts` | 20 | shared TypeScript interfaces used across Astro components and client scripts |
+| `src/utils/types.ts` | 44 | shared TypeScript interfaces used across Astro components and client scripts |
 | `scripts/aggregate-changelog.js` | 54 | aggregating individual changelog/ entries into CHANGELOG.md |
 | `scripts/arch.js` | 364 | scanning src/ source files and generating ARCHITECTURE.md |
 | `scripts/new-changelog.js` | 55 | creating a new individual changelog entry file in changelog/ |
@@ -93,8 +98,14 @@ _Generated 2026-04-05 by `npm run arch`._
 **Lines:** 13
 
 #### `SentenceCard.astro`
-**Responsibility:** sentence card placeholder — to be implemented once sentences/*.json format is defined  
-**Lines:** 18
+**Responsibility:** rendering a single sentence card with header and expandable detail sections  
+**Lines:** 100
+**Depends on:** `../utils/cardHelpers`, `../utils/types`, `./cards/sections/WordBreakdownSection.astro`
+
+#### `SentenceList.astro`
+**Responsibility:** chapter-grouped sentence list with group headers  
+**Lines:** 40
+**Depends on:** `./SentenceCard.astro`, `../utils/types`
 
 #### `WordCard.astro`
 **Responsibility:** word card shell — header row + section delegation  
@@ -133,6 +144,11 @@ _Generated 2026-04-05 by `npm run arch`._
 **Lines:** 27
 **Depends on:** `../../../utils/highlight`
 
+#### `WordBreakdownSection.astro`
+**Responsibility:** Word Breakdown expandable section inside a sentence card  
+**Lines:** 130
+**Depends on:** `../../../utils/types`
+
 ### `src/components/sidebar/`
 
 #### `AppSidebar.astro`
@@ -147,8 +163,8 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `SentencesTab.astro`
 **Responsibility:** Sentences tab content — sentence cards grid, empty states  
-**Lines:** 30
-**Depends on:** `../SentenceCard.astro`
+**Lines:** 38
+**Depends on:** `../SentenceList.astro`, `../../utils/types`
 
 #### `WordsTab.astro`
 **Responsibility:** Words tab content — meta line, word cards grid, empty state, footer  
@@ -171,7 +187,7 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `index.astro`
 **Responsibility:** page entry point — loads vocab data, passes it to components, renders app shell  
-**Lines:** 110
+**Lines:** 120
 **Depends on:** `../layouts/Layout.astro`, `../components/sidebar/AppSidebar.astro`, `../components/tabs/WordsTab.astro`, `../components/tabs/SentencesTab.astro`, `../components/tabs/ExportTab.astro`, `../components/ui/TabBar.astro`, `../components/MobileHeader.astro`
 
 ### `src/scripts/`
@@ -189,8 +205,8 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `main.js`
 **Responsibility:** bootstrapper — imports all modules and initialises them after DOMContentLoaded  
-**Lines:** 34
-**Depends on:** `./state/selection.js`, `./state/tabs.js`, `./ui/search.js`, `./ui/cards.js`, `./ui/indexSidebar.js`, `./ui/tooltip.js`, `./ui/exportPane.js`
+**Lines:** 36
+**Depends on:** `./state/selection.js`, `./state/tabs.js`, `./ui/search.js`, `./ui/cards.js`, `./ui/sentenceCards.js`, `./ui/indexSidebar.js`, `./ui/tooltip.js`, `./ui/exportPane.js`
 
 ### `src/scripts/anki/`
 
@@ -204,12 +220,14 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `export.js`
 **Responsibility:** orchestrating Anki deck creation, note type verification, and card addition  
-**Lines:** 104
-**Depends on:** `./connect.js`, `./noteType.js`, `./fields/index.js`, `./tagUtils.js`
-**Exports:** `overrideDeck`, `sendToAnki`
+**Lines:** 157
+**Depends on:** `./connect.js`, `./noteType.js`, `./fields/index.js`, `./fields/sentenceBreakdown.js`, `./tagUtils.js`, `./fields/utils.js`
+**Exports:** `ensureSentenceNoteType`, `overrideDeck`, `sendToAnki`, `sentenceToAnkiFields`
 **Functions:**
 - `ensureNoteType()` _(internal)_ — Creates the note type if it does not exist, or syncs its CSS and templates if it does.
 - `buildNotes()` _(internal)_ — Converts an array of vocabulary words into Anki note objects ready for the API.
+- `ensureSentenceNoteType()` — Creates the Hindi Sentence note type if it does not exist, or syncs its CSS and
+- `sentenceToAnkiFields()` — Converts a sentence object into the Anki fields object for the Hindi Sentence note type.
 - `sendToAnki()` — Exports selected words to Anki, skipping cards that already exist in the deck.
 - `overrideDeck()` — Replaces all cards in the target deck with the given words.
 
@@ -217,6 +235,12 @@ _Generated 2026-04-05 by `npm run arch`._
 **Responsibility:** Anki note type definition — CSS, front/back card templates, field list  
 **Lines:** 104
 **Exports:** `ANKI_BACK`, `ANKI_CSS`, `ANKI_FIELDS`, `ANKI_FRONT`, `ANKI_NOTE_TYPE`
+
+#### `sentenceNoteType.js`
+**Responsibility:** Anki sentence note type definition — CSS, templates, field list  
+**Lines:** 91
+**Depends on:** `./noteType.js`
+**Exports:** `ANKI_SENTENCE_BACK`, `ANKI_SENTENCE_CSS`, `ANKI_SENTENCE_FIELDS`, `ANKI_SENTENCE_FRONT`, `ANKI_SENTENCE_NOTE_TYPE`
 
 #### `tagUtils.js`
 **Responsibility:** shared Anki tag-building utility used by export.js and txtFallback.js  
@@ -292,6 +316,13 @@ _Generated 2026-04-05 by `npm run arch`._
 **Functions:**
 - `renderRelatedWord()` _(internal)_ — Renders a single related word as a chip card.
 - `buildAnkiRelatedWords()` — Builds the Anki RelatedWords field HTML for a word.
+
+#### `sentenceBreakdown.js`
+**Responsibility:** WordBreakdown Anki field HTML for Hindi Sentence note type  
+**Lines:** 50
+**Exports:** `buildWordBreakdown`
+**Functions:**
+- `buildWordBreakdown()` — Builds the WordBreakdown HTML field for an Anki sentence note.
 
 #### `soundAlikes.js`
 **Responsibility:** building the Anki Sound Alikes HTML field  
@@ -370,12 +401,12 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `cards.js`
 **Responsibility:** word card collapse/expand toggling and deselect button handling  
-**Lines:** 77
+**Lines:** 78
 **Depends on:** `../state/selection.js`
 **Exports:** `initCards`
 **Functions:**
 - `initScrollHighlight()` _(internal)_ — Sets up an IntersectionObserver that highlights the matching sidebar row whenever
-- `initCards()` — Initialises card interactions:
+- `initCards()` — Initialises word card interactions:
 
 #### `exportPane.js`
 **Responsibility:** export pane controller — word table, AnkiConnect status polling, export button  
@@ -419,6 +450,13 @@ _Generated 2026-04-05 by `npm run arch`._
 - `filterSentences()` _(internal)_ — Applies the search filter to the sentences tab: shows/hides cards and sidebar rows,
 - `applyFilter()` — Applies the current search query and selection state to show/hide cards and rows.
 
+#### `sentenceCards.js`
+**Responsibility:** sentence card collapse/expand toggling  
+**Lines:** 29
+**Exports:** `initSentenceCards`
+**Functions:**
+- `initSentenceCards()` — Initialises sentence card interactions:
+
 #### `tooltip.js`
 **Responsibility:** vocab-hint span annotation in example cards and tooltip positioning  
 **Lines:** 180
@@ -448,13 +486,13 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `cardHelpers.ts`
 **Responsibility:** pure helper functions shared across WordCard section components  
-**Lines:** 114
+**Lines:** 119
 **Exports:** `cap`, `categoryStyle`, `chipClass`, `devanagariFromPart`, `formatDate`, `langColor`, `partLabel`, `registerStyle`
 **Functions:**
 - `formatDate()` — Formats an ISO date string (YYYY-MM-DD) as a human-readable label.
 - `chipClass()` — Returns the Tailwind CSS class string for a form chip based on its label.
 - `categoryStyle()` — Returns the Tailwind CSS class string for a word-category badge.
-- `registerStyle()` — Returns the Tailwind CSS class string for an example-sentence register badge.
+- `registerStyle()` — Returns the Tailwind CSS class string for a sentence register badge.
 - `devanagariFromPart()` — Extracts the Devanagari text from a `part` string like "लड़ (laṛ-)".
 - `partLabel()` — Extracts the parenthetical label from a `part` string like "घर (full word)".
 - `langColor()` — Returns a Tailwind text-colour class for a given language name.
@@ -470,8 +508,8 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `types.ts`
 **Responsibility:** shared TypeScript interfaces used across Astro components and client scripts  
-**Lines:** 20
-**Exports:** `Collocation`, `EtymologyStage`, `Form`, `HoverEntry`, `RelatedWord`, `SearchEntry`, `SoundAlike`, `WordGroup`
+**Lines:** 44
+**Exports:** `Collocation`, `EtymologyStage`, `Form`, `HoverEntry`, `RelatedWord`, `SearchEntry`, `Sentence`, `SentenceChapter`, `SentenceWord`, `SoundAlike`, `WordGroup`
 
 ---
 

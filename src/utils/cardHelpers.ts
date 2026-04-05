@@ -59,14 +59,19 @@ export function categoryStyle(pos: string): string {
   return 'bg-slate-800/60 text-slate-400 border border-slate-600/40';
 }
 
-/** Returns the Tailwind CSS class string for an example-sentence register badge. */
-export function registerStyle(reg: string): string {
-  const r = reg.toLowerCase();
-  if (r === 'standard')   return 'text-sky-400/70 bg-sky-950/50 border border-sky-800/30';
-  if (r === 'casual')     return 'text-amber-400/70 bg-amber-950/50 border border-amber-800/30';
-  if (r === 'colloquial') return 'text-rose-400/70 bg-rose-950/50 border border-rose-800/30';
-  if (r === 'formal')     return 'text-violet-400/70 bg-violet-950/50 border border-violet-800/30';
-  return 'text-slate-400/70 bg-slate-800/40 border border-slate-700/30';
+/**
+ * Returns the Tailwind CSS class string for a sentence register badge.
+ * @param register - Register string from a Sentence object.
+ * @returns Tailwind class string for the badge.
+ */
+export function registerStyle(register: string): string {
+  const map: Record<string, string> = {
+    formal:     'bg-violet-900/30 text-violet-400 border border-violet-700/40',
+    standard:   'bg-sky-900/30 text-sky-400 border border-sky-700/40',
+    casual:     'bg-amber-500/20 text-amber-400 border border-amber-500/30',
+    colloquial: 'bg-rose-900/30 text-rose-400 border border-rose-700/40',
+  };
+  return map[register] ?? 'bg-slate-800/60 text-slate-400 border border-slate-700/40';
 }
 
 /**

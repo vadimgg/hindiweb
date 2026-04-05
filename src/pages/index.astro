@@ -46,11 +46,21 @@ const wordGroups = (() => {
 
 // ── Load sentences (graceful — dir may not exist yet) ─────────────────────────
 let allSentences: any[] = [];
+let sentenceChapters: { chapter: string; sentences: any[] }[] = [];
 try {
-  const sentDir   = join(process.cwd(), 'sentences');
+  const sentDir   = join(process.cwd(), 'vocab', 'sentences');
   const sentFiles = (await readdir(sentDir)).filter(f => f.endsWith('.json')).sort();
-  allSentences = (await Promise.all(sentFiles.map(async f => JSON.parse(await readFile(join(sentDir, f), 'utf-8'))))).flat();
-} catch { /* sentences/ dir doesn't exist yet */ }
+  const rawSentenceFiles = await Promise.all(
+    sentFiles.map(async f => JSON.parse(await readFile(join(sentDir, f), 'utf-8')))
+  );
+  // Each file is { chapter, sentences[] }
+  sentenceChapters = rawSentenceFiles.map(data =>
+    typeof data === 'object' && !Array.isArray(data) && data.sentences
+      ? { chapter: data.chapter ?? '', sentences: data.sentences }
+      : { chapter: '', sentences: Array.isArray(data) ? data : [] }
+  );
+  allSentences = sentenceChapters.flatMap(c => c.sentences);
+} catch { /* vocab/sentences/ dir doesn't exist yet */ }
 
 // ── Group sentences by date ───────────────────────────────────────────────────
 function fmtDate(iso: string): string {
@@ -84,7 +94,7 @@ wordGroups.forEach(g => g.words.forEach(({ i }) => { wordGroupTitles[i] = g.titl
     <main class="flex-1 min-w-0">
       <MobileHeader />
       <WordsTab allWords={allWords} vocabFilesCount={vocabFiles.length} />
-      <SentencesTab allSentences={allSentences} sentencesByDate={sentencesByDate} />
+      <SentencesTab allSentences={allSentences} sentencesByDate={sentencesByDate} sentenceChapters={sentenceChapters} />
       <ExportTab />
     </main>
   </div>

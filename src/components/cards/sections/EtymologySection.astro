@@ -21,15 +21,15 @@ const { etymologyJourney, originNote } = Astro.props;
     <span class="font-title text-xs sm:text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Etymology</span>
     <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
   </summary>
-  <div class="border-l-2 border-blue-500/40 ml-4 sm:ml-6 mb-4 px-4 sm:px-5 py-3 sm:py-4 space-y-3">
+  <div class="px-4 sm:px-6 pb-4 pt-1 space-y-3">
     <div class="flex flex-wrap items-start gap-y-2">
       {etymologyJourney.map((stage, i) => (
         <>
           {i > 0 && <span class="text-slate-700 mx-2 mt-1 text-xs self-start">→</span>}
           <div class="flex flex-col gap-0.5">
-            <span class="font-title text-[9px] font-semibold uppercase tracking-widest text-zinc-600">{stage.stage}</span>
-            <span class="word-hindi text-base leading-none" lang="hi">{stage.form}</span>
-            <span class="text-teal-300/60 text-[12px] font-mono">{stage.roman}</span>
+            <span class="font-title text-[11px] font-semibold uppercase tracking-widest text-zinc-600">{stage.stage}</span>
+            <span class="text-slate-200 text-base leading-none font-bold" lang="hi">{stage.form}</span>
+            <span class="text-teal-300/60 text-[13px] font-mono">{stage.roman}</span>
             <span class="text-slate-500 text-[12px] italic leading-snug">{stage.meaning}</span>
           </div>
         </>

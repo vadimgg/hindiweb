@@ -17,3 +17,27 @@ export interface Collocation { hindi: string; roman: string; english: string; }
 export interface RelatedWord { hindi: string; roman: string; english: string; }
 export interface EtymologyStage { stage: string; form: string; roman: string; meaning: string; }
 export interface SoundAlike { part: string; association: string; roman?: string; language?: string; note?: string; }
+
+export interface SentenceWord {
+  hindi: string;
+  roman: string;
+  meaning: string;
+  note?: string;
+  gender?: 'masculine' | 'feminine';
+  number?: 'singular' | 'plural';
+}
+
+export interface Sentence {
+  hindi: string;
+  romanisation: string;
+  english: string;
+  literal?: string;
+  register?: 'formal' | 'standard' | 'casual' | 'colloquial';
+  words?: SentenceWord[];
+  anki_tags?: string[];
+}
+
+export interface SentenceChapter {
+  chapter: string;
+  sentences: Sentence[];
+}
