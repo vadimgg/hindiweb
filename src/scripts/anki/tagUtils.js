@@ -13,21 +13,26 @@
 /**
  * Builds the Anki tag list for a single vocabulary word.
  *
- * Tags produced:
+ * When the word has an explicit anki_tags array, each tag is namespaced under
+ * 'Hindi::' and returned directly. Otherwise falls back to derived slugs:
  *   - 'hindi'                       — fixed namespace tag
- *   - category slug                 — first word of word_category, letters only
+ *   - category slug                 — first word of pos, letters only
  *   - origin slug                   — origin_language or origin_tag, letters only
  *   - 'added:YYYYMMDD'              — today's date in compact ISO format
  *
- * @param {object}  word                  - Vocabulary word object.
- * @param {string}  [word.word_category]  - e.g. "adjective", "noun plural".
- * @param {string}  [word.origin_language] - e.g. "Sanskrit", "Arabic".
- * @param {string}  [word.origin_tag]     - Fallback if origin_language is absent.
+ * @param {object}   word              - Vocabulary word object.
+ * @param {string[]} [word.anki_tags]  - Explicit tag list from the vocab JSON.
+ * @param {string}   [word.pos]        - Part of speech, e.g. "adjective", "noun".
+ * @param {string}   [word.origin_language] - e.g. "Sanskrit", "Arabic".
+ * @param {string}   [word.origin_tag]      - Fallback if origin_language is absent.
  * @returns {string[]} Non-empty tag strings ready for the Anki API or .txt header.
  */
 export function buildWordTags(word) {
+  if (word.anki_tags?.length) {
+    return word.anki_tags.map(t => `Hindi::${t}`);
+  }
   const today   = new Date().toISOString().split('T')[0].replace(/-/g, '');
-  const catSlug = ((word.word_category || 'unknown').split(' ')[0]).toLowerCase().replace(/[^a-z]/g, '');
+  const catSlug = ((word.pos || 'unknown').split(' ')[0]).toLowerCase().replace(/[^a-z]/g, '');
   const origin  = (word.origin_language || word.origin_tag || 'unknown').toLowerCase().replace(/[^a-z]/g, '');
   return ['hindi', catSlug, origin, `added:${today}`].filter(Boolean);
 }

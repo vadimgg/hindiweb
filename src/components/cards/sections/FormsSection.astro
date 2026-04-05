@@ -1,19 +1,23 @@
 ---
-// Responsible for: forms chips row + secondary meanings + usage note + grouped words inside a word card
+/**
+ * WordCard section: Forms chips row, usage note, and grouped words.
+ *
+ * Responsible for: forms chips row + usage note + grouped words inside a word card.
+ *
+ * Dependencies: cardHelpers.ts (chipClass), types.ts (Form interface).
+ */
+// Responsible for: forms chips row + usage note + grouped words inside a word card
 import { chipClass } from '../../../utils/cardHelpers';
-import type { Form, GroupedWith } from '../../../utils/types';
+import type { Form } from '../../../utils/types';
 
 interface Props {
   forms: Form[];
-  secondaryMeanings: string;
   english_usage?: string;
-  grouped_with?: GroupedWith[];
 }
-const { forms, secondaryMeanings, english_usage, grouped_with: _grouped_with } = Astro.props;
-const grouped_with = _grouped_with ?? [];
+const { forms, english_usage } = Astro.props;
 ---
 
-{(forms.length > 0 || secondaryMeanings || english_usage || grouped_with.length > 0) && (
+{(forms.length > 0 || english_usage) && (
   <div class="px-4 sm:px-6 pb-3 pt-1 space-y-2.5">
     {forms.length > 0 && (
       <div class="flex flex-wrap gap-2">
@@ -25,26 +29,6 @@ const grouped_with = _grouped_with ?? [];
             <span>{f.roman}</span>
           </span>
         ))}
-      </div>
-    )}
-    {grouped_with.length > 0 && (
-      <div class="space-y-1.5">
-        {grouped_with.map((g) => (
-          <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-            <span class="word-hindi text-base font-medium" lang="hi" style="font-family:'Tiro Devanagari Hindi',serif;">{g.hindi}</span>
-            <span class="word-roman text-sm">{g.romanisation}</span>
-            <span class="text-slate-500 text-xs">·</span>
-            <span class="text-slate-300 text-sm">{g.english}</span>
-            {g.register_note && (
-              <span class="text-slate-600 text-xs italic">— {g.register_note}</span>
-            )}
-          </div>
-        ))}
-      </div>
-    )}
-    {secondaryMeanings && (
-      <div class="bg-slate-800/40 rounded-lg px-3 py-2">
-        <p class="text-slate-300 text-sm leading-relaxed">{secondaryMeanings}</p>
       </div>
     )}
     {english_usage && (

@@ -8,16 +8,17 @@
  * Dependencies: all files in anki/fields/.
  */
 // Responsible for: assembling wordToAnkiFields() from all individual field builders
-import { buildAnkiCategory }      from './category.js';
-import { buildAnkiForms }         from './forms.js';
-import { buildAnkiExamples }      from './examples.js';
-import { buildAnkiMemory }        from './memory.js';
-import { buildAnkiRootOrigin }    from './rootOrigin.js';
-import { buildAnkiSoundAlikes }   from './soundAlikes.js';
-import { buildAnkiUrduPunjabi }   from './urduPunjabi.js';
-import { buildAnkiCrossLang }     from './crossLang.js';
-import { buildAnkiPronunciation } from './pronunciation.js';
-import { esc }                    from './utils.js';
+import { buildAnkiCategory }     from './category.js';
+import { buildAnkiGender }       from './gender.js';
+import { buildAnkiTransitivity } from './transitivity.js';
+import { buildAnkiSyllables }    from './syllables.js';
+import { buildAnkiForms }        from './forms.js';
+import { buildAnkiUsageNotes }   from './usageNotes.js';
+import { buildAnkiCollocations } from './collocations.js';
+import { buildAnkiRelatedWords } from './relatedWords.js';
+import { buildAnkiSoundAlikes }  from './soundAlikes.js';
+import { buildAnkiEtymology }    from './etymology.js';
+import { esc }                   from './utils.js';
 
 /**
  * Converts a vocabulary word object into a complete Anki fields object.
@@ -30,17 +31,18 @@ import { esc }                    from './utils.js';
  */
 export function wordToAnkiFields(word) {
   return {
-    English:       esc(word.english || ''),
-    Category:      buildAnkiCategory(word),
-    Hindi:         esc(word.hindi || ''),
-    Romanisation:  esc(word.romanisation || ''),
-    Forms:         buildAnkiForms(word),
-    Pronunciation: buildAnkiPronunciation(word),
-    Memory:        buildAnkiMemory(word),
-    Examples:      buildAnkiExamples(word),
-    RootOrigin:    buildAnkiRootOrigin(word),
-    SoundAlikes:   buildAnkiSoundAlikes(word),
-    UrduPunjabi:   buildAnkiUrduPunjabi(word),
-    CrossLanguage: buildAnkiCrossLang(word),
+    English:      esc(word.english || ''),
+    Hindi:        esc(word.hindi || ''),
+    Romanisation: esc(word.romanisation || ''),
+    Syllables:    buildAnkiSyllables(word),
+    Category:     buildAnkiCategory(word),
+    Gender:       buildAnkiGender(word),
+    Transitivity: buildAnkiTransitivity(word),
+    Forms:        buildAnkiForms(word),
+    UsageNotes:   buildAnkiUsageNotes(word),
+    Collocations: buildAnkiCollocations(word),
+    RelatedWords: buildAnkiRelatedWords(word),
+    SoundAlikes:  buildAnkiSoundAlikes(word),
+    Etymology:    buildAnkiEtymology(word),
   };
 }

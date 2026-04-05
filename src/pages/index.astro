@@ -17,8 +17,9 @@ const vocabFiles = (await readdir(vocabDir)).filter(f => f.endsWith('.json')).so
 const allFiles = await Promise.all(
   vocabFiles.map(async (f) => {
     const data  = JSON.parse(await readFile(join(vocabDir, f), 'utf-8'));
-    const title = (typeof data === 'object' && !Array.isArray(data) && data.title)
-      ? data.title : f.replace('.json', '').replace(/_/g, ' ');
+    const title = (typeof data === 'object' && !Array.isArray(data))
+      ? (data.chapter ?? data.title ?? f.replace('.json', '').replace(/_/g, ' '))
+      : f.replace('.json', '').replace(/_/g, ' ');
     const words = Array.isArray(data) ? data : (data.words ?? []);
     return { title, words };
   })

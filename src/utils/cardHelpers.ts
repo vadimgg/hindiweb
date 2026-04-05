@@ -40,9 +40,14 @@ export function chipClass(label: string): string {
   return 'form-chip';
 }
 
-/** Returns the Tailwind CSS class string for a word-category badge. */
-export function categoryStyle(cat: string): string {
-  const c = cat.toLowerCase();
+/**
+ * Returns the Tailwind CSS class string for a word-category badge.
+ *
+ * @param {string} pos - The part-of-speech string (e.g. "noun", "verb").
+ * @returns {string} Tailwind class string for the badge.
+ */
+export function categoryStyle(pos: string): string {
+  const c = pos.toLowerCase();
   if (c.includes('conjunction'))  return 'bg-emerald-900/30 text-emerald-400 border border-emerald-700/40';
   if (c.includes('adverb'))       return 'bg-sky-900/30 text-sky-400 border border-sky-700/40';
   if (c.includes('noun'))         return 'bg-violet-900/30 text-violet-400 border border-violet-700/40';
@@ -62,6 +67,34 @@ export function registerStyle(reg: string): string {
   if (r === 'colloquial') return 'text-rose-400/70 bg-rose-950/50 border border-rose-800/30';
   if (r === 'formal')     return 'text-violet-400/70 bg-violet-950/50 border border-violet-800/30';
   return 'text-slate-400/70 bg-slate-800/40 border border-slate-700/30';
+}
+
+/**
+ * Extracts the Devanagari text from a `part` string like "लड़ (laṛ-)".
+ * Returns everything before the first space or opening parenthesis.
+ *
+ * Note: an equivalent JS version exists in src/scripts/utils/stringUtils.js
+ * for the browser-side Anki pipeline. The two cannot share an import because
+ * cardHelpers.ts runs at Astro build time; stringUtils.js runs in the browser.
+ *
+ * @param {string} part - Free-form part string from a SoundAlike entry.
+ * @returns {string} The Devanagari portion of the string.
+ */
+export function extractDevanagari(part: string): string {
+  const idx = part.search(/[\s(]/);
+  return idx === -1 ? part : part.slice(0, idx).trim();
+}
+
+/**
+ * Extracts the parenthetical label from a `part` string like "घर (full word)".
+ * Returns the content inside the first pair of parentheses, or an empty string.
+ *
+ * @param {string} part - Free-form part string from a SoundAlike entry.
+ * @returns {string} The label inside parentheses, or '' if none found.
+ */
+export function extractPartLabel(part: string): string {
+  const m = part.match(/\(([^)]+)\)/);
+  return m ? m[1] : '';
 }
 
 /** Returns a Tailwind text-colour class for a given language name. */

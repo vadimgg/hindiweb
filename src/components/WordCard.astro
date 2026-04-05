@@ -1,87 +1,123 @@
 ---
+/**
+ * Word card shell — header row and section delegation.
+ *
+ * Responsible for: rendering the full word card with header, grammar badges, and expandable sections.
+ *
+ * Dependencies: cardHelpers.ts (formatDate, categoryStyle),
+ *               types.ts (Form, Collocation, RelatedWord, SoundAlike, EtymologyStage),
+ *               FormsSection, UsageNotesSection, CollocationsSection,
+ *               RelatedWordsSection, SoundAlikesSection, EtymologySection.
+ */
 // Responsible for: word card shell — header row + section delegation
 import { formatDate, categoryStyle } from '../utils/cardHelpers';
-import type { Form, GroupedWith, CrossLangConnections, RootBreakdown, RootPart, PronunciationGuide, MemoryHook, UrduPunjabi, SoundAlike, Example } from '../utils/types';
+import type { Form, Collocation, RelatedWord, SoundAlike, EtymologyStage } from '../utils/types';
 import FormsSection       from './cards/sections/FormsSection.astro';
-import PronunciationSection from './cards/sections/PronunciationSection.astro';
-import MemorySection      from './cards/sections/MemorySection.astro';
-import ExamplesSection    from './cards/sections/ExamplesSection.astro';
-import RootOriginSection  from './cards/sections/RootOriginSection.astro';
+import UsageNotesSection  from './cards/sections/UsageNotesSection.astro';
+import CollocationsSection from './cards/sections/CollocationsSection.astro';
+import RelatedWordsSection from './cards/sections/RelatedWordsSection.astro';
 import SoundAlikesSection from './cards/sections/SoundAlikesSection.astro';
-import UrduPunjabiSection from './cards/sections/UrduPunjabiSection.astro';
-import CrossLangSection   from './cards/sections/CrossLangSection.astro';
+import EtymologySection   from './cards/sections/EtymologySection.astro';
 
 interface Props {
-  hindi: string; romanisation: string; english: string;
-  origin_language?: string; in_hindi_via?: string; word_category?: string; date_added?: string;
-  english_usage?: string; grouped_with?: GroupedWith[];
-  forms?: Form[]; cross_language_connections?: CrossLangConnections;
-  root_breakdown?: RootBreakdown; root_parts?: RootPart[]; root_notes?: string[];
-  root_and_origin_explanation?: string[]; etymology_story?: string | string[];
-  pronunciation_guide?: PronunciationGuide; memory_hook?: MemoryHook;
-  urdu_punjabi?: UrduPunjabi; sound_alikes?: SoundAlike[]; examples?: Example[]; index: number;
+  hindi: string;
+  romanisation: string;
+  english: string;
+  date_added?: string;
+  english_usage?: string;
+  forms?: Form[];
+  pos?: string;
+  gender?: string;
+  transitivity?: string;
+  syllables?: string;
+  collocations?: Collocation[];
+  usage_notes?: string;
+  related_words?: RelatedWord[];
+  sound_alikes?: SoundAlike[];
+  etymology_journey?: EtymologyStage[];
+  origin_note?: string;
+  index: number;
 }
 
 const {
-  hindi, romanisation, english, origin_language, in_hindi_via, word_category, date_added,
-  english_usage, grouped_with: _grouped_with,
-  forms: _forms, cross_language_connections, root_breakdown, root_parts: _root_parts, root_notes: _root_notes,
-  root_and_origin_explanation: _roe, etymology_story, pronunciation_guide,
-  memory_hook, urdu_punjabi, sound_alikes: _sound_alikes, examples: _examples, index,
+  hindi, romanisation, english, date_added, english_usage,
+  forms: _forms, pos, gender, transitivity, syllables,
+  collocations: _collocations, usage_notes,
+  related_words: _related_words, sound_alikes: _sound_alikes,
+  etymology_journey: _etymology_journey, origin_note, index,
 } = Astro.props;
-const grouped_with  = _grouped_with  ?? [];
-const forms         = _forms         ?? [];
-const root_parts    = _root_parts    ?? [];
-const root_notes    = _root_notes    ?? [];
-const root_and_origin_explanation = _roe ?? [];
-const sound_alikes  = _sound_alikes  ?? [];
-const examples      = _examples      ?? [];
+
+const forms           = _forms           ?? [];
+const collocations    = _collocations    ?? [];
+const related_words   = _related_words   ?? [];
+const sound_alikes    = _sound_alikes    ?? [];
+const etymology_journey = _etymology_journey ?? [];
 
 const [primaryMeaning, ...rest] = english.split(',').map((s: string) => s.trim()).filter(Boolean);
 const secondaryMeanings = rest.join(', ');
-
-const hasPron = !!(pronunciation_guide?.syllables || (pronunciation_guide?.breakdown ?? []).length > 0 || (pronunciation_guide?.extra_notes ?? []).length > 0 || (pronunciation_guide?.tips ?? []).length > 0);
-const hasRoot = !!(root_breakdown?.root || root_breakdown?.evolution || root_breakdown?.logic || root_parts.length > 0 || root_notes.length > 0 || root_and_origin_explanation.length > 0 || (Array.isArray(etymology_story) ? etymology_story.length > 0 : !!etymology_story));
-const hookPrimary    = memory_hook?.primary ?? '';
-const hookConnection = memory_hook?.connection ?? '';
-const hookByLanguage = Object.entries(memory_hook ?? {}).filter(([k]) => k !== 'primary' && k !== 'connection') as [string, string][];
-const hasMemory      = !!(hookPrimary || hookConnection || hookByLanguage.length > 0);
-const trueRelatives      = cross_language_connections?.true_relatives    ?? [];
-const usefulCoincidences = cross_language_connections?.useful_coincidences ?? [];
 ---
 
 <article id={`card-${index}`} class="bg-slate-900 border border-slate-700/40 rounded-2xl overflow-hidden hover:border-slate-600/60 transition-colors is-collapsed">
 
-  <div class="card-header flex flex-wrap items-center gap-2 px-4 sm:px-5 py-3 sm:py-4 cursor-pointer hover:bg-slate-800/20 transition-colors select-none">
-    <h2 class="word-hindi text-2xl sm:text-3xl font-bold leading-none shrink-0" lang="hi">{hindi}</h2>
-    <span class="text-slate-700 shrink-0">·</span>
-    <span class="word-roman text-base sm:text-lg leading-none shrink-0">{romanisation}</span>
-    <span class="text-slate-200 text-xs bg-slate-800/70 px-2.5 py-1 rounded-lg border border-slate-700/50 shrink-0 leading-none">{primaryMeaning}</span>
-    <div class="flex-1 min-w-0"></div>
-    {word_category && (
-      <span class:list={['shrink-0 text-xs font-title font-semibold uppercase tracking-wider px-2.5 py-1 rounded-lg', categoryStyle(word_category)]}>
-        {word_category}
-      </span>
-    )}
-    {origin_language && (
-      <span class="shrink-0 text-xs font-title font-semibold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-amber-900/20 text-amber-600/80 border border-amber-800/30 whitespace-nowrap">
-        {origin_language}
-      </span>
-    )}
-    <button class="deselect-btn shrink-0 text-xs text-slate-600 hover:text-slate-300 w-5 h-5 flex items-center justify-center" data-deselect-index={index} aria-label="Deselect word">✕</button>
+  <div class="card-header flex px-4 sm:px-5 py-3 sm:py-4 gap-2 cursor-pointer hover:bg-slate-800/20 transition-colors select-none">
+    <div class="flex-1 min-w-0 flex flex-col gap-1.5 py-1">
+      <!-- Row 1: phonetic identity -->
+      <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+        <h2 class="word-hindi text-2xl sm:text-3xl font-bold leading-none shrink-0" lang="hi">{hindi}</h2>
+        <span class="text-slate-700 shrink-0">·</span>
+        <span class="word-roman text-base sm:text-lg leading-none shrink-0">{romanisation}</span>
+        {syllables && (
+          <>
+            <span class="text-slate-700 shrink-0">·</span>
+            <span class="text-teal-300/60 text-sm font-mono tracking-widest shrink-0">{syllables}</span>
+          </>
+        )}
+      </div>
+      <!-- Row 2: meaning -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="text-slate-200 text-sm leading-none">{primaryMeaning}</span>
+        {secondaryMeanings && (
+          <span class="text-slate-500 text-xs leading-none">{secondaryMeanings}</span>
+        )}
+      </div>
+      <!-- Row 3: grammar badges -->
+      <div class="flex flex-wrap items-center gap-1.5 mt-0.5">
+        {pos && (
+          <span class:list={['text-xs font-title font-semibold uppercase tracking-wider px-2.5 py-1 rounded-lg', categoryStyle(pos)]}>
+            {pos}
+          </span>
+        )}
+        {gender === 'masculine' && (
+          <span class="text-xs font-title font-semibold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-blue-900/20 text-blue-300/80 border border-blue-700/30">
+            m
+          </span>
+        )}
+        {gender === 'feminine' && (
+          <span class="text-xs font-title font-semibold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-pink-900/20 text-pink-300/80 border border-pink-700/30">
+            f
+          </span>
+        )}
+        {transitivity && (
+          <span class="text-xs font-title font-semibold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-slate-800/60 text-slate-400 border border-slate-700/40">
+            {transitivity === 'transitive' ? 'trans.' : 'intrans.'}
+          </span>
+        )}
+      </div>
+    </div>
+    <div class="shrink-0 flex items-start">
+      <button class="deselect-btn text-xs text-slate-600 hover:text-slate-300 w-5 h-5 flex items-center justify-center mt-1 transition-colors" data-deselect-index={index} aria-label="Deselect word">✕</button>
+    </div>
   </div>
 
   <div class="card-expandable">
-    <FormsSection forms={forms} secondaryMeanings={secondaryMeanings} english_usage={english_usage} grouped_with={grouped_with} />
+    <FormsSection forms={forms} english_usage={english_usage} />
 
     <div class="border-t border-slate-700/40 divide-y divide-slate-700/40">
-      {hasPron         && <PronunciationSection pronunciation_guide={pronunciation_guide!} />}
-      {hasMemory       && <MemorySection hookPrimary={hookPrimary} hookConnection={hookConnection} hookByLanguage={hookByLanguage} />}
-      {examples.length > 0 && <ExamplesSection examples={examples} index={index} />}
-      {hasRoot         && <RootOriginSection in_hindi_via={in_hindi_via} root_parts={root_parts} root_breakdown={root_breakdown} root_notes={root_notes} root_and_origin_explanation={root_and_origin_explanation} etymology_story={etymology_story} />}
-      {sound_alikes.length > 0  && <SoundAlikesSection sound_alikes={sound_alikes} />}
-      {urdu_punjabi && (urdu_punjabi.urdu || urdu_punjabi.punjabi) && <UrduPunjabiSection urdu_punjabi={urdu_punjabi} />}
-      {(trueRelatives.length > 0 || usefulCoincidences.length > 0) && <CrossLangSection trueRelatives={trueRelatives} usefulCoincidences={usefulCoincidences} />}
+      {usage_notes                  && <UsageNotesSection usageNotes={usage_notes} />}
+      {collocations.length > 0      && <CollocationsSection collocations={collocations} />}
+      {related_words.length > 0     && <RelatedWordsSection relatedWords={related_words} />}
+      {sound_alikes.length > 0      && <SoundAlikesSection sound_alikes={sound_alikes} />}
+      {etymology_journey.length > 0 && <EtymologySection etymologyJourney={etymology_journey} originNote={origin_note} />}
     </div>
 
     {date_added && (

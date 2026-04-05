@@ -8,39 +8,38 @@ _Generated 2026-04-05 by `npm run arch`._
 
 | File | Lines | Responsible for |
 |---|---|---|
-| `src/components/cards/sections/CrossLangSection.astro` | 49 | Cross-Language Connections expandable section inside a word card |
-| `src/components/cards/sections/ExamplesSection.astro` | 43 | Examples expandable section inside a word card |
-| `src/components/cards/sections/FormsSection.astro` | 55 | forms chips row + secondary meanings + usage note + grouped words inside a word card |
-| `src/components/cards/sections/MemorySection.astro` | 36 | Memory Hook expandable section inside a word card |
-| `src/components/cards/sections/PronunciationSection.astro` | 58 | Pronunciation expandable section inside a word card |
-| `src/components/cards/sections/RootOriginSection.astro` | 91 | Root & Origin and Etymology Story expandable sections inside a word card |
-| `src/components/cards/sections/SoundAlikesSection.astro` | 34 | Sound Alikes expandable section inside a word card |
-| `src/components/cards/sections/UrduPunjabiSection.astro` | 51 | Urdu & Punjabi expandable section inside a word card |
+| `src/components/cards/sections/CollocationsSection.astro` | 35 | Collocations expandable section inside a word card |
+| `src/components/cards/sections/EtymologySection.astro` | 45 | Etymology expandable section inside a word card |
+| `src/components/cards/sections/FormsSection.astro` | 39 | forms chips row + usage note + grouped words inside a word card |
+| `src/components/cards/sections/RelatedWordsSection.astro` | 35 | Related Words expandable section inside a word card |
+| `src/components/cards/sections/SoundAlikesSection.astro` | 48 | Sound Alikes expandable section inside a word card |
+| `src/components/cards/sections/UsageNotesSection.astro` | 27 | Usage Notes expandable section inside a word card, open by default |
 | `src/components/sidebar/AppSidebar.astro` | 86 | desktop sidebar — logo, search bar, words index nav, sentences index nav |
 | `src/components/tabs/ExportTab.astro` | 81 | Export/Delivery pane HTML — word summary table and Anki settings panel |
 | `src/components/tabs/SentencesTab.astro` | 30 | Sentences tab content — sentence cards grid, empty states |
-| `src/components/tabs/WordsTab.astro` | 41 | Words tab content — meta line, word cards grid, empty state, footer |
+| `src/components/tabs/WordsTab.astro` | 53 | Words tab content — meta line, word cards grid, empty state, footer |
 | `src/components/ui/TabBar.astro` | 28 | DaVinci Resolve-style bottom-fixed tab bar (Words | Sentences | Export) |
 | `src/components/MobileHeader.astro` | 13 | mobile-only page header with title and search input (hidden on lg+) |
 | `src/components/SentenceCard.astro` | 18 | sentence card placeholder — to be implemented once sentences/*.json format is defined |
-| `src/components/WordCard.astro` | 95 | word card shell — header row + section delegation |
+| `src/components/WordCard.astro` | 131 | word card shell — header row + section delegation |
 | `src/layouts/Layout.astro` | 28 | root HTML shell — doctype, meta tags, font imports, global CSS, slot |
-| `src/pages/index.astro` | 109 | page entry point — loads vocab data, passes it to components, renders app shell |
+| `src/pages/index.astro` | 110 | page entry point — loads vocab data, passes it to components, renders app shell |
 | `src/scripts/anki/fields/category.js` | 25 | building the Anki Category HTML field |
-| `src/scripts/anki/fields/crossLang.js` | 56 | building the Anki Cross-Language HTML field |
-| `src/scripts/anki/fields/examples.js` | 33 | building the Anki Examples HTML field |
-| `src/scripts/anki/fields/forms.js` | 47 | building the Anki Forms HTML field (chips + secondary meanings) |
-| `src/scripts/anki/fields/index.js` | 47 | assembling wordToAnkiFields() from all individual field builders |
-| `src/scripts/anki/fields/memory.js` | 45 | building the Anki Memory Hook HTML field |
-| `src/scripts/anki/fields/pronunciation.js` | 56 | building the Anki Pronunciation HTML field |
-| `src/scripts/anki/fields/rootOrigin.js` | 104 | building the Anki Root & Origin and Etymology Story HTML fields |
-| `src/scripts/anki/fields/soundAlikes.js` | 48 | building the Anki Sound Alikes HTML field |
-| `src/scripts/anki/fields/urduPunjabi.js` | 63 | building the Anki Urdu & Punjabi HTML field |
+| `src/scripts/anki/fields/collocations.js` | 42 | building the Anki Collocations HTML field |
+| `src/scripts/anki/fields/etymology.js` | 53 | building the Anki Etymology HTML field |
+| `src/scripts/anki/fields/forms.js` | 36 | building the Anki Forms HTML field (inflected form chips) |
+| `src/scripts/anki/fields/gender.js` | 24 | building the Anki Gender HTML field |
+| `src/scripts/anki/fields/index.js` | 49 | assembling wordToAnkiFields() from all individual field builders |
+| `src/scripts/anki/fields/relatedWords.js` | 42 | building the Anki RelatedWords HTML field |
+| `src/scripts/anki/fields/soundAlikes.js` | 63 | building the Anki Sound Alikes HTML field |
+| `src/scripts/anki/fields/syllables.js` | 19 | building the Anki Syllables plain-text field |
+| `src/scripts/anki/fields/transitivity.js` | 24 | building the Anki Transitivity HTML field |
+| `src/scripts/anki/fields/usageNotes.js` | 26 | building the Anki UsageNotes HTML field |
 | `src/scripts/anki/fields/utils.js` | 109 | shared HTML-building utilities for Anki card field builders |
 | `src/scripts/anki/connect.js` | 43 | AnkiConnect HTTP API wrapper and connection status check |
 | `src/scripts/anki/export.js` | 104 | orchestrating Anki deck creation, note type verification, and card addition |
-| `src/scripts/anki/noteType.js` | 96 | Anki note type definition — CSS, front/back card templates, field list |
-| `src/scripts/anki/tagUtils.js` | 34 | shared Anki tag-building utility used by export.js and txtFallback.js |
+| `src/scripts/anki/noteType.js` | 104 | Anki note type definition — CSS, front/back card templates, field list |
+| `src/scripts/anki/tagUtils.js` | 39 | shared Anki tag-building utility used by export.js and txtFallback.js |
 | `src/scripts/anki/txtFallback.js` | 50 | generating and triggering browser download of a .txt file for manual Anki import |
 | `src/scripts/state/selection.js` | 141 | word and sentence selection state and change notifications via CustomEvents |
 | `src/scripts/state/tabs.js` | 88 | active tab state, DOM panel switching, and tabchange event dispatch |
@@ -49,12 +48,12 @@ _Generated 2026-04-05 by `npm run arch`._
 | `src/scripts/ui/indexSidebar.js` | 120 | sidebar interactions — drag-select checkboxes, group collapse, scroll-to-card |
 | `src/scripts/ui/search.js` | 192 | fuzzy search scoring and filtering word/sentence card visibility |
 | `src/scripts/ui/tooltip.js` | 180 | vocab-hint span annotation in example cards and tooltip positioning |
-| `src/scripts/utils/stringUtils.js` | 28 | shared diacritic-stripping norm() utility used by search.js and tooltip.js |
+| `src/scripts/utils/stringUtils.js` | 52 | shared string utilities — norm(), extractDevanagari(), extractPartLabel() |
 | `src/scripts/data.js` | 43 | lazy read-only accessors for window.__APP_DATA__ (set by define:vars in index.astro) |
 | `src/scripts/main.js` | 34 | bootstrapper — imports all modules and initialises them after DOMContentLoaded |
-| `src/utils/cardHelpers.ts` | 81 | pure helper functions shared across WordCard section components |
+| `src/utils/cardHelpers.ts` | 114 | pure helper functions shared across WordCard section components |
 | `src/utils/highlight.ts` | 121 | rich text highlighting for vocabulary card text content |
-| `src/utils/types.ts` | 32 | shared TypeScript interfaces used across Astro components and client scripts |
+| `src/utils/types.ts` | 20 | shared TypeScript interfaces used across Astro components and client scripts |
 | `scripts/aggregate-changelog.js` | 54 | aggregating individual changelog/ entries into CHANGELOG.md |
 | `scripts/arch.js` | 364 | scanning src/ source files and generating ARCHITECTURE.md |
 | `scripts/new-changelog.js` | 55 | creating a new individual changelog entry file in changelog/ |
@@ -99,50 +98,40 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `WordCard.astro`
 **Responsibility:** word card shell — header row + section delegation  
-**Lines:** 95
-**Depends on:** `../utils/cardHelpers`, `../utils/types`, `./cards/sections/FormsSection.astro`, `./cards/sections/PronunciationSection.astro`, `./cards/sections/MemorySection.astro`, `./cards/sections/ExamplesSection.astro`, `./cards/sections/RootOriginSection.astro`, `./cards/sections/SoundAlikesSection.astro`, `./cards/sections/UrduPunjabiSection.astro`, `./cards/sections/CrossLangSection.astro`
+**Lines:** 131
+**Depends on:** `../utils/cardHelpers`, `../utils/types`, `./cards/sections/FormsSection.astro`, `./cards/sections/UsageNotesSection.astro`, `./cards/sections/CollocationsSection.astro`, `./cards/sections/RelatedWordsSection.astro`, `./cards/sections/SoundAlikesSection.astro`, `./cards/sections/EtymologySection.astro`
 
 ### `src/components/cards/sections/`
 
-#### `CrossLangSection.astro`
-**Responsibility:** Cross-Language Connections expandable section inside a word card  
-**Lines:** 49
-**Depends on:** `../../../utils/cardHelpers`, `../../../utils/highlight`, `../../../utils/types`
+#### `CollocationsSection.astro`
+**Responsibility:** Collocations expandable section inside a word card  
+**Lines:** 35
+**Depends on:** `../../../utils/types`
 
-#### `ExamplesSection.astro`
-**Responsibility:** Examples expandable section inside a word card  
-**Lines:** 43
-**Depends on:** `../../../utils/cardHelpers`, `../../../utils/highlight`, `../../../utils/types`
+#### `EtymologySection.astro`
+**Responsibility:** Etymology expandable section inside a word card  
+**Lines:** 45
+**Depends on:** `../../../utils/types`
 
 #### `FormsSection.astro`
-**Responsibility:** forms chips row + secondary meanings + usage note + grouped words inside a word card  
-**Lines:** 55
+**Responsibility:** forms chips row + usage note + grouped words inside a word card  
+**Lines:** 39
 **Depends on:** `../../../utils/cardHelpers`, `../../../utils/types`
 
-#### `MemorySection.astro`
-**Responsibility:** Memory Hook expandable section inside a word card  
-**Lines:** 36
-**Depends on:** `../../../utils/cardHelpers`, `../../../utils/highlight`
-
-#### `PronunciationSection.astro`
-**Responsibility:** Pronunciation expandable section inside a word card  
-**Lines:** 58
-**Depends on:** `../../../utils/cardHelpers`, `../../../utils/highlight`, `../../../utils/types`
-
-#### `RootOriginSection.astro`
-**Responsibility:** Root & Origin and Etymology Story expandable sections inside a word card  
-**Lines:** 91
-**Depends on:** `../../../utils/highlight`, `../../../utils/types`
+#### `RelatedWordsSection.astro`
+**Responsibility:** Related Words expandable section inside a word card  
+**Lines:** 35
+**Depends on:** `../../../utils/types`
 
 #### `SoundAlikesSection.astro`
 **Responsibility:** Sound Alikes expandable section inside a word card  
-**Lines:** 34
+**Lines:** 48
 **Depends on:** `../../../utils/cardHelpers`, `../../../utils/highlight`, `../../../utils/types`
 
-#### `UrduPunjabiSection.astro`
-**Responsibility:** Urdu & Punjabi expandable section inside a word card  
-**Lines:** 51
-**Depends on:** `../../../utils/cardHelpers`, `../../../utils/highlight`, `../../../utils/types`
+#### `UsageNotesSection.astro`
+**Responsibility:** Usage Notes expandable section inside a word card, open by default  
+**Lines:** 27
+**Depends on:** `../../../utils/highlight`
 
 ### `src/components/sidebar/`
 
@@ -163,7 +152,7 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `WordsTab.astro`
 **Responsibility:** Words tab content — meta line, word cards grid, empty state, footer  
-**Lines:** 41
+**Lines:** 53
 **Depends on:** `../WordCard.astro`
 
 ### `src/components/ui/`
@@ -182,7 +171,7 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `index.astro`
 **Responsibility:** page entry point — loads vocab data, passes it to components, renders app shell  
-**Lines:** 109
+**Lines:** 110
 **Depends on:** `../layouts/Layout.astro`, `../components/sidebar/AppSidebar.astro`, `../components/tabs/WordsTab.astro`, `../components/tabs/SentencesTab.astro`, `../components/tabs/ExportTab.astro`, `../components/ui/TabBar.astro`, `../components/MobileHeader.astro`
 
 ### `src/scripts/`
@@ -226,12 +215,12 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `noteType.js`
 **Responsibility:** Anki note type definition — CSS, front/back card templates, field list  
-**Lines:** 96
+**Lines:** 104
 **Exports:** `ANKI_BACK`, `ANKI_CSS`, `ANKI_FIELDS`, `ANKI_FRONT`, `ANKI_NOTE_TYPE`
 
 #### `tagUtils.js`
 **Responsibility:** shared Anki tag-building utility used by export.js and txtFallback.js  
-**Lines:** 34
+**Lines:** 39
 **Exports:** `buildWordTags`
 **Functions:**
 - `buildWordTags()` — Builds the Anki tag list for a single vocabulary word.
@@ -254,83 +243,86 @@ _Generated 2026-04-05 by `npm run arch`._
 **Functions:**
 - `buildAnkiCategory()` — Builds the Anki Category field HTML for a word.
 
-#### `crossLang.js`
-**Responsibility:** building the Anki Cross-Language HTML field  
-**Lines:** 56
+#### `collocations.js`
+**Responsibility:** building the Anki Collocations HTML field  
+**Lines:** 42
 **Depends on:** `./utils.js`
-**Exports:** `buildAnkiCrossLang`
+**Exports:** `buildAnkiCollocations`
 **Functions:**
-- `renderItem()` _(internal)_ — Renders a single cross-language item (relative or coincidence) as an HTML card.
-- `buildAnkiCrossLang()` — Builds the Anki CrossLanguage field HTML for a word.
+- `renderCollocation()` _(internal)_ — Renders a single collocation as an HTML row.
+- `buildAnkiCollocations()` — Builds the Anki Collocations field HTML for a word.
 
-#### `examples.js`
-**Responsibility:** building the Anki Examples HTML field  
-**Lines:** 33
+#### `etymology.js`
+**Responsibility:** building the Anki Etymology HTML field  
+**Lines:** 53
 **Depends on:** `./utils.js`
-**Exports:** `buildAnkiExamples`
+**Exports:** `buildAnkiEtymology`
 **Functions:**
-- `buildAnkiExamples()` — Builds the Anki Examples field HTML for a word.
+- `renderStage()` _(internal)_ — Renders a single etymology stage as a vertical column for the chain.
+- `buildAnkiEtymology()` — Builds the Anki Etymology field HTML for a word.
 
 #### `forms.js`
-**Responsibility:** building the Anki Forms HTML field (chips + secondary meanings)  
-**Lines:** 47
+**Responsibility:** building the Anki Forms HTML field (inflected form chips)  
+**Lines:** 36
 **Depends on:** `./utils.js`
 **Exports:** `buildAnkiForms`
 **Functions:**
 - `buildAnkiForms()` — Builds the Anki Forms field HTML for a word.
 
+#### `gender.js`
+**Responsibility:** building the Anki Gender HTML field  
+**Lines:** 24
+**Exports:** `buildAnkiGender`
+**Functions:**
+- `buildAnkiGender()` — Builds the Anki Gender field HTML for a word.
+
 #### `index.js`
 **Responsibility:** assembling wordToAnkiFields() from all individual field builders  
-**Lines:** 47
-**Depends on:** `./category.js`, `./forms.js`, `./examples.js`, `./memory.js`, `./rootOrigin.js`, `./soundAlikes.js`, `./urduPunjabi.js`, `./crossLang.js`, `./pronunciation.js`, `./utils.js`
+**Lines:** 49
+**Depends on:** `./category.js`, `./gender.js`, `./transitivity.js`, `./syllables.js`, `./forms.js`, `./usageNotes.js`, `./collocations.js`, `./relatedWords.js`, `./soundAlikes.js`, `./etymology.js`, `./utils.js`
 **Exports:** `wordToAnkiFields`
 **Functions:**
 - `wordToAnkiFields()` — Converts a vocabulary word object into a complete Anki fields object.
 
-#### `memory.js`
-**Responsibility:** building the Anki Memory Hook HTML field  
-**Lines:** 45
+#### `relatedWords.js`
+**Responsibility:** building the Anki RelatedWords HTML field  
+**Lines:** 42
 **Depends on:** `./utils.js`
-**Exports:** `buildAnkiMemory`
+**Exports:** `buildAnkiRelatedWords`
 **Functions:**
-- `buildAnkiMemory()` — Builds the Anki Memory field HTML for a word.
-
-#### `pronunciation.js`
-**Responsibility:** building the Anki Pronunciation HTML field  
-**Lines:** 56
-**Depends on:** `./utils.js`
-**Exports:** `buildAnkiPronunciation`
-**Functions:**
-- `renderTip()` _(internal)_ — Renders a single pronunciation tip row (optional language label + sounds-like + tip text).
-- `buildAnkiPronunciation()` — Builds the Anki Pronunciation field HTML for a word.
-
-#### `rootOrigin.js`
-**Responsibility:** building the Anki Root & Origin and Etymology Story HTML fields  
-**Lines:** 104
-**Depends on:** `./utils.js`
-**Exports:** `buildAnkiRootOrigin`
-**Functions:**
-- `renderRootHeader()` _(internal)_ — Renders root parts list, optional "via" note, and the root object/string.
-- `renderEvolution()` _(internal)_ — Renders the evolution chain (array of steps or a plain string).
-- `renderEtymology()` _(internal)_ — Renders the etymology story block (heading + one paragraph per line).
-- `buildAnkiRootOrigin()` — Builds the Anki RootOrigin field HTML for a word.
+- `renderRelatedWord()` _(internal)_ — Renders a single related word as a chip card.
+- `buildAnkiRelatedWords()` — Builds the Anki RelatedWords field HTML for a word.
 
 #### `soundAlikes.js`
 **Responsibility:** building the Anki Sound Alikes HTML field  
-**Lines:** 48
-**Depends on:** `./utils.js`
+**Lines:** 63
+**Depends on:** `./utils.js`, `../../utils/stringUtils.js`
 **Exports:** `buildAnkiSoundAlikes`
 **Functions:**
+- `renderSoundAlike()` _(internal)_ — Renders a single sound-alike entry as a clang-item card.
 - `buildAnkiSoundAlikes()` — Builds the Anki SoundAlikes field HTML for a word.
 
-#### `urduPunjabi.js`
-**Responsibility:** building the Anki Urdu & Punjabi HTML field  
-**Lines:** 63
-**Depends on:** `./utils.js`
-**Exports:** `buildAnkiUrduPunjabi`
+#### `syllables.js`
+**Responsibility:** building the Anki Syllables plain-text field  
+**Lines:** 19
+**Exports:** `buildAnkiSyllables`
 **Functions:**
-- `renderLang()` _(internal)_ — Renders a single Urdu or Punjabi entry as a clang-item card.
-- `buildAnkiUrduPunjabi()` — Builds the Anki UrduPunjabi field HTML for a word.
+- `buildAnkiSyllables()` — Returns the syllables string for the Anki answer header.
+
+#### `transitivity.js`
+**Responsibility:** building the Anki Transitivity HTML field  
+**Lines:** 24
+**Exports:** `buildAnkiTransitivity`
+**Functions:**
+- `buildAnkiTransitivity()` — Builds the Anki Transitivity field HTML for a word.
+
+#### `usageNotes.js`
+**Responsibility:** building the Anki UsageNotes HTML field  
+**Lines:** 26
+**Depends on:** `./utils.js`
+**Exports:** `buildAnkiUsageNotes`
+**Functions:**
+- `buildAnkiUsageNotes()` — Builds the Anki UsageNotes field HTML for a word.
 
 #### `utils.js`
 **Responsibility:** shared HTML-building utilities for Anki card field builders  
@@ -444,23 +436,27 @@ _Generated 2026-04-05 by `npm run arch`._
 ### `src/scripts/utils/`
 
 #### `stringUtils.js`
-**Responsibility:** shared diacritic-stripping norm() utility used by search.js and tooltip.js  
-**Lines:** 28
-**Exports:** `norm`
+**Responsibility:** shared string utilities — norm(), extractDevanagari(), extractPartLabel()  
+**Lines:** 52
+**Exports:** `extractDevanagari`, `extractPartLabel`, `norm`
 **Functions:**
 - `norm()` — Strips diacritical marks and lowercases a string for diacritic-insensitive comparison.
+- `extractDevanagari()` — Extracts the Devanagari text from a sound-alike `part` string.
+- `extractPartLabel()` — Extracts the parenthetical label from a sound-alike `part` string.
 
 ### `src/utils/`
 
 #### `cardHelpers.ts`
 **Responsibility:** pure helper functions shared across WordCard section components  
-**Lines:** 81
-**Exports:** `cap`, `categoryStyle`, `chipClass`, `formatDate`, `langColor`, `registerStyle`
+**Lines:** 114
+**Exports:** `cap`, `categoryStyle`, `chipClass`, `extractDevanagari`, `extractPartLabel`, `formatDate`, `langColor`, `registerStyle`
 **Functions:**
 - `formatDate()` — Formats an ISO date string (YYYY-MM-DD) as a human-readable label.
 - `chipClass()` — Returns the Tailwind CSS class string for a form chip based on its label.
 - `categoryStyle()` — Returns the Tailwind CSS class string for a word-category badge.
 - `registerStyle()` — Returns the Tailwind CSS class string for an example-sentence register badge.
+- `extractDevanagari()` — Extracts the Devanagari text from a `part` string like "लड़ (laṛ-)".
+- `extractPartLabel()` — Extracts the parenthetical label from a `part` string like "घर (full word)".
 - `langColor()` — Returns a Tailwind text-colour class for a given language name.
 - `cap()` — Capitalises the first character of a string.
 
@@ -474,12 +470,14 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `types.ts`
 **Responsibility:** shared TypeScript interfaces used across Astro components and client scripts  
-**Lines:** 32
-**Exports:** `CrossLangConnections`, `CrossLangItem`, `Example`, `Form`, `GroupedWith`, `HoverEntry`, `MemoryHook`, `PronBreakdownItem`, `PronExtraNote`, `PronTip`, `PronunciationGuide`, `RootBreakdown`, `RootEvolutionStep`, `RootPart`, `RootRoot`, `SearchEntry`, `SoundAlike`, `UrduPunjabi`, `UrduPunjabiEntry`, `WordGroup`
+**Lines:** 20
+**Exports:** `Collocation`, `EtymologyStage`, `Form`, `HoverEntry`, `RelatedWord`, `SearchEntry`, `SoundAlike`, `WordGroup`
 
 ---
 
 ## Auto-detected Improvement Notes
 
 - **Functions with the same name in multiple files** (review for shared-util extraction):
+  - `extractDevanagari` in `src/scripts/utils/stringUtils.js` and `src/utils/cardHelpers.ts`
+  - `extractPartLabel` in `src/scripts/utils/stringUtils.js` and `src/utils/cardHelpers.ts`
   - `main` in `scripts/aggregate-changelog.js` and `scripts/arch.js`

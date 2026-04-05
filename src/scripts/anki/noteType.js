@@ -15,9 +15,8 @@
 export const ANKI_NOTE_TYPE = 'Hindi Vocabulary';
 
 export const ANKI_FIELDS = [
-  'English','Category','Hindi','Romanisation','Forms',
-  'Pronunciation','Memory','Examples','RootOrigin',
-  'SoundAlikes','UrduPunjabi','CrossLanguage',
+  'English', 'Hindi', 'Romanisation', 'Syllables', 'Category', 'Gender', 'Transitivity',
+  'Forms', 'UsageNotes', 'Collocations', 'RelatedWords', 'SoundAlikes', 'Etymology',
 ];
 
 export const ANKI_CSS = [
@@ -61,6 +60,12 @@ export const ANKI_CSS = [
   '.pron-row{display:flex;gap:.75rem;align-items:flex-start;margin-bottom:.55rem;}',
   '.syl-label{font-family:"Oswald",sans-serif;font-weight:600;font-size:.88rem;color:#f1f5f9;min-width:3rem;flex-shrink:0;}',
   '.syl-desc{font-size:.86rem;color:#cbd5e1;line-height:1.6;margin:0;}',
+  // Syllables inline header
+  '.syl-inline{font-size:1.1rem;font-weight:600;color:#5eead4;opacity:.6;font-family:monospace;letter-spacing:.15em;margin:0 0 .4rem 0;}',
+  // Gender / transitivity badges
+  '.badge-masc{background:rgba(30,58,138,.25);color:#93c5fd;border:1px solid rgba(59,130,246,.25);font-family:"Oswald",sans-serif;font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;padding:.18rem .5rem;border-radius:6px;}',
+  '.badge-fem{background:rgba(131,24,67,.25);color:#f9a8d4;border:1px solid rgba(236,72,153,.25);font-family:"Oswald",sans-serif;font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;padding:.18rem .5rem;border-radius:6px;}',
+  '.badge-neutral{background:rgba(30,41,59,.6);color:#94a3b8;border:1px solid rgba(51,65,85,.4);font-family:"Oswald",sans-serif;font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;padding:.18rem .5rem;border-radius:6px;}',
   // Mobile
   '@media(max-width:520px){',
   '.card-wrap{padding:.9rem .9rem 2.5rem;}',
@@ -81,15 +86,18 @@ export const ANKI_BACK = `<div class="card-wrap">
   <div class="answer-header">
     <p class="hindi" lang="hi">{{Hindi}}</p>
     <p class="roman">{{Romanisation}}</p>
+    {{#Syllables}}<p class="syl-inline">{{Syllables}}</p>{{/Syllables}}
     <p class="meaning-reveal">{{English}}</p>
-    {{#Category}}<div class="header-chips">{{Category}}</div>{{/Category}}
+    <div class="header-chips">
+      {{#Category}}{{Category}}{{/Category}}
+      {{#Gender}}{{Gender}}{{/Gender}}
+      {{#Transitivity}}{{Transitivity}}{{/Transitivity}}
+    </div>
     {{#Forms}}<div style="margin-top:.9rem;">{{Forms}}</div>{{/Forms}}
   </div>
-  {{#Pronunciation}}<div>{{Pronunciation}}</div>{{/Pronunciation}}
-  {{#Memory}}<div>{{Memory}}</div>{{/Memory}}
-  {{#Examples}}<div>{{Examples}}</div>{{/Examples}}
-  {{#RootOrigin}}<div>{{RootOrigin}}</div>{{/RootOrigin}}
+  {{#UsageNotes}}<div>{{UsageNotes}}</div>{{/UsageNotes}}
+  {{#Collocations}}<div>{{Collocations}}</div>{{/Collocations}}
+  {{#RelatedWords}}<div>{{RelatedWords}}</div>{{/RelatedWords}}
   {{#SoundAlikes}}<div>{{SoundAlikes}}</div>{{/SoundAlikes}}
-  {{#UrduPunjabi}}<div>{{UrduPunjabi}}</div>{{/UrduPunjabi}}
-  {{#CrossLanguage}}<div>{{CrossLanguage}}</div>{{/CrossLanguage}}
+  {{#Etymology}}<div>{{Etymology}}</div>{{/Etymology}}
 </div>`;

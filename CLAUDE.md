@@ -6,10 +6,18 @@ Dark-mode Hindi vocabulary study app: browse word cards with etymology/pronuncia
 ## Commands
 ```sh
 npm run dev       # dev server → localhost:4321
-npm run build     # build to dist/
+npm run build     # build to dist/ ← run this to verify after any Tech Lead implementation
 npm run arch      # regenerate ARCHITECTURE.md ← run after any JS/TS/Astro change
 npm run changelog # aggregate changelog/ entries into CHANGELOG.md
 ```
+
+---
+
+## Open work — read this at session start
+
+- **`BACKLOG.md`** — all pending improvements suggested by agents. Check this before starting new work.
+- **Known arch flag:** `extractDevanagari`/`extractPartLabel` appear in both `stringUtils.js` (browser) and `cardHelpers.ts` (build-time) — intentional, different runtimes, not a real duplicate.
+- **`DESIGN_SPEC_NEW_FORMAT.md`** — spec for the new vocab format (implemented 2026-04-05). Can be archived to `specs/` once verified.
 
 ---
 

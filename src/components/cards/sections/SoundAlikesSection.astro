@@ -1,6 +1,14 @@
 ---
+/**
+ * WordCard section: Sound Alikes.
+ *
+ * Responsible for: rendering the sound alikes expandable section with part-based mnemonic items.
+ *
+ * Dependencies: cardHelpers.ts (extractDevanagari, extractPartLabel, langColor),
+ *               highlight.ts (text highlighting utility), types.ts (SoundAlike interface).
+ */
 // Responsible for: Sound Alikes expandable section inside a word card
-import { langColor } from '../../../utils/cardHelpers';
+import { extractDevanagari, extractPartLabel, langColor } from '../../../utils/cardHelpers';
 import { highlight } from '../../../utils/highlight';
 import type { SoundAlike } from '../../../utils/types';
 
@@ -15,18 +23,24 @@ const { sound_alikes } = Astro.props;
   </summary>
   <div class="border-l-2 border-rose-500/40 ml-4 sm:ml-6 mb-4 px-4 sm:px-5 py-3 sm:py-4 space-y-4">
     {sound_alikes.map((sa) => (
-      <div>
-        <div class="flex flex-wrap items-center gap-1.5 mb-1.5">
-          {sa.language && (
-            <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wide', langColor(sa.language)]}>
-              {sa.language}
-            </span>
+      <div class="bg-slate-800/40 rounded-xl p-3 sm:p-4 border border-slate-700/30">
+        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+          <span class="word-hindi text-base leading-none" lang="hi">{extractDevanagari(sa.part)}</span>
+          {extractPartLabel(sa.part) && (
+            <span class="text-slate-600 text-[11px] font-title uppercase tracking-wide">{extractPartLabel(sa.part)}</span>
           )}
-          {sa.word && <span class="word-hindi text-base" lang="hi" set:html={highlight(sa.word)} />}
-          {sa.romanisation && <span class="word-roman text-sm">({sa.romanisation})</span>}
-          {sa.meaning && <span class="text-slate-400 text-sm">— {sa.meaning}</span>}
+          <span class="text-slate-700 mx-0.5">→</span>
+          {sa.language && (
+            <span class:list={['text-[11px] font-title font-semibold uppercase tracking-wide', langColor(sa.language)]}>{sa.language}</span>
+          )}
+          <span class="text-slate-200 text-sm font-semibold">"{sa.association}"</span>
+          {sa.roman && sa.roman !== sa.association && (
+            <span class="word-roman text-sm">({sa.roman})</span>
+          )}
         </div>
-        {sa.note && <p class="text-[14px] leading-relaxed text-slate-300" set:html={highlight(sa.note)} />}
+        {sa.note && (
+          <p class="text-[14px] leading-relaxed text-slate-300 ml-1" set:html={highlight(sa.note)} />
+        )}
       </div>
     ))}
   </div>

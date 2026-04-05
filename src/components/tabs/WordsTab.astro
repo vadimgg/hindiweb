@@ -1,4 +1,11 @@
 ---
+/**
+ * Words tab content — meta line, word cards grid, empty state, footer.
+ *
+ * Responsible for: Words tab content — meta line, word cards grid, empty state, footer.
+ *
+ * Dependencies: WordCard.astro.
+ */
 // Responsible for: Words tab content — meta line, word cards grid, empty state, footer
 import WordCard from '../WordCard.astro';
 
@@ -17,18 +24,23 @@ const { allWords, vocabFilesCount } = Astro.props;
     {allWords.map((word, i) => (
       <div data-word-card={i}>
         <WordCard
-          hindi={word.hindi} romanisation={word.romanisation} english={word.english}
-          origin_language={word.origin_language ?? word.origin_tag}
-          in_hindi_via={word.in_hindi_via} word_category={word.word_category}
+          hindi={word.hindi}
+          romanisation={word.romanisation}
+          english={word.english}
           date_added={word.date_added}
-          english_usage={word.english_usage} grouped_with={word.grouped_with}
+          english_usage={word.english_usage}
           forms={word.forms}
-          cross_language_connections={word.cross_language_connections}
-          root_breakdown={word.root_breakdown} root_parts={word.root_parts}
-          root_notes={word.root_notes} root_and_origin_explanation={word.root_and_origin_explanation}
-          etymology_story={word.etymology_story} pronunciation_guide={word.pronunciation_guide}
-          memory_hook={word.memory_hook} urdu_punjabi={word.urdu_punjabi}
-          sound_alikes={word.sound_alikes} examples={word.examples} index={i}
+          pos={word.pos}
+          gender={word.gender}
+          transitivity={word.transitivity}
+          syllables={word.syllables}
+          collocations={word.collocations}
+          usage_notes={word.usage_notes}
+          related_words={word.related_words}
+          sound_alikes={word.sound_alikes}
+          etymology_journey={word.etymology_journey}
+          origin_note={word.origin_note}
+          index={i}
         />
       </div>
     ))}
