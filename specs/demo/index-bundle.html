@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HindiWeb — Design Demo</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Oswald:wght@400;600;700&family=Poppins:wght@400;500;600&family=PT+Mono&display=swap" rel="stylesheet">
+
+  <!-- Component styles injected here at runtime -->
+  <style id="component-styles"></style>
+</head>
+<body>
+  <div class="demo-page">
+
+    <!-- Page header -->
+    <header class="demo-page-header">
+      <h1>HindiWeb — Design Demo</h1>
+      <p>Component sandbox — open directly in browser, no build step needed.</p>
+    </header>
+
+    <!-- Word Card -->
+    <section class="demo-section">
+      <p class="demo-section-label">Word Card</p>
+      <div id="demo-word"></div>
+    </section>
+
+    <!-- Sentence Card -->
+    <section class="demo-section">
+      <p class="demo-section-label">Sentence Card</p>
+      <div id="demo-sentence"></div>
+    </section>
+
+    <!-- Anki Card -->
+    <section class="demo-section">
+      <p class="demo-section-label">Anki Card — Front &amp; Back</p>
+      <div id="demo-anki"></div>
+    </section>
+
+  </div>
+
+  <!-- Load components (order matters — shared-styles first, data last) -->
+  <script>
+/* inlined: components/shared-styles.js */
+// Shared design tokens and base CSS used across all demo components.
+// Fonts are loaded in index.html <head>.
+
+window.SharedStyles = `
+  /* ── Reset ─────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ── Base ───────────────────────────────────────────────── */
+  body {
+    background: #020617;   /* slate-950 — page bg */
+    color: #e2e8f0;         /* slate-200 — default text */
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── Surface tokens ─────────────────────────────────────── */
+  /* slate-950 = #020617 | slate-900 = #0f172a | slate-800 = #1e293b */
+
+  /* ── Typography ─────────────────────────────────────────── */
+  [lang="hi"] { font-family: 'Tiro Devanagari Hindi', serif; }
+
+  .font-title {
+    font-family: 'Oswald', sans-serif;
+  }
+
+  .font-mono-sm {
+    font-family: 'PT Mono', monospace;
+    font-size: 0.85rem;
+  }
+
+  /* ── Colour helpers ─────────────────────────────────────── */
+  .word-hindi  { color: #fbbf24; }              /* amber-400 */
+  .word-roman  { color: #5eead4; }              /* teal-300  */
+  .word-roman-muted { color: rgba(94,234,212,.6); }  /* teal-300/60 */
+  .text-slate-200 { color: #e2e8f0; }
+  .text-slate-400 { color: #94a3b8; }
+  .text-slate-500 { color: #64748b; }
+
+  /* ── Badge base ─────────────────────────────────────────── */
+  .badge {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.18rem 0.55rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    line-height: 1.4;
+  }
+
+  .badge-masc {
+    background: rgba(30,58,138,.25);
+    color: #93c5fd;
+    border: 1px solid rgba(59,130,246,.25);
+  }
+
+  .badge-noun {
+    background: rgba(120,53,15,.25);
+    color: #fcd34d;
+    border: 1px solid rgba(251,191,36,.25);
+  }
+
+  .badge-standard {
+    background: rgba(12,74,110,.25);
+    color: #7dd3fc;
+    border: 1px solid rgba(14,165,233,.25);
+  }
+
+  /* ── Demo page layout ───────────────────────────────────── */
+  .demo-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 5rem;
+  }
+
+  .demo-page-header {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(51,65,85,.4);
+    padding-bottom: 1.5rem;
+  }
+
+  .demo-page-header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #fbbf24;
+    margin-bottom: 0.25rem;
+  }
+
+  .demo-page-header p {
+    font-size: 0.85rem;
+    color: #64748b;
+  }
+
+  .demo-section {
+    margin-bottom: 4rem;
+  }
+
+  .demo-section-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #64748b;
+    margin-bottom: 1rem;
+  }
+`;
+
+</script>
+  <script>
+/* inlined: components/word-card.js */
+// WordCard component — renders a fully expanded Hindi vocabulary word card.
+// Register: window.WordCard(word) → HTML string
+// Styles:   window.WordCardStyles → CSS string
+
+window.WordCardStyles = `
+  /* ── Word Card shell ────────────────────────────────────── */
+  .wc-card {
+    background: #0f172a;
+    border: 1px solid rgba(51,65,85,.4);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  /* ── Card header (always visible) ──────────────────────── */
+  .wc-header {
+    padding: 1.25rem 1.25rem 1rem;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .wc-header:hover {
+    background: rgba(30,41,59,.3);
+  }
+
+  .wc-header-content {
+    flex: 1;
+  }
+
+  .wc-hindi {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fbbf24;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+    display: block;
+  }
+
+  .wc-roman {
+    font-size: 1.1rem;
+    color: #5eead4;
+    margin-bottom: 0.2rem;
+    display: block;
+  }
+
+  .wc-syllables {
+    font-family: 'PT Mono', monospace;
+    font-size: 0.85rem;
+    color: rgba(94,234,212,.6);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .wc-grammar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .wc-collapse-icon {
+    font-size: 0.75rem;
+    color: #64748b;
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+    transition: transform 0.2s ease;
+  }
+
+  .wc-card.is-collapsed .wc-collapse-icon {
+    transform: rotate(-90deg);
+  }
+
+  /* ── Collapsible body ───────────────────────────────────── */
+  .wc-body {
+    border-top: 1px solid rgba(51,65,85,.4);
+  }
+
+  .wc-card.is-collapsed .wc-body {
+    display: none;
+  }
+
+  /* ── Section (uses <details>) ───────────────────────────── */
+  .wc-section {
+    border-top: 1px solid rgba(51,65,85,.4);
+  }
+
+  .wc-section:first-child {
+    border-top: none;
+  }
+
+  .wc-section > summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .wc-section > summary::-webkit-details-marker { display: none; }
+
+  .wc-section > summary:hover {
+    background: rgba(30,41,59,.3);
+  }
+
+  .wc-section-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #64748b;
+  }
+
+  .wc-section-chevron {
+    font-size: 0.6rem;
+    color: #475569;
+    transition: transform 0.2s ease;
+  }
+
+  .wc-section[open] > summary .wc-section-chevron {
+    transform: rotate(180deg);
+  }
+
+  .wc-section-body {
+    padding: 0 1.25rem 1rem;
+  }
+
+  /* ── Forms section ──────────────────────────────────────── */
+  .wc-forms-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .wc-form-chip {
+    background: #1e293b;
+    border: 1px solid rgba(51,65,85,.5);
+    border-radius: 8px;
+    padding: 0.4rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .wc-form-chip-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #64748b;
+  }
+
+  .wc-form-chip-hindi {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1rem;
+    color: #fbbf24;
+    line-height: 1.3;
+  }
+
+  .wc-form-chip-roman {
+    font-size: 0.8rem;
+    color: rgba(94,234,212,.7);
+    font-family: 'PT Mono', monospace;
+  }
+
+  /* ── Usage notes ────────────────────────────────────────── */
+  .wc-usage-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .wc-usage-note {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    line-height: 1.65;
+  }
+
+  /* ── Related words ──────────────────────────────────────── */
+  .wc-related-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .wc-related-chip {
+    background: #1e293b;
+    border: 1px solid rgba(51,65,85,.5);
+    border-radius: 8px;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .wc-related-hindi {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1rem;
+    color: #fbbf24;
+    display: block;
+    line-height: 1.3;
+  }
+
+  .wc-related-roman {
+    font-size: 0.78rem;
+    color: rgba(94,234,212,.7);
+    display: block;
+    font-family: 'PT Mono', monospace;
+  }
+
+  .wc-related-english {
+    font-size: 0.78rem;
+    color: #64748b;
+    display: block;
+  }
+
+  /* ── Sound-alikes ───────────────────────────────────────── */
+  .wc-soundalike {
+    background: #1e293b;
+    border: 1px solid rgba(51,65,85,.5);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+  }
+
+  .wc-soundalike-top {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .wc-soundalike-hindi {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.05rem;
+    color: #fbbf24;
+  }
+
+  .wc-soundalike-via {
+    font-size: 0.75rem;
+    color: #64748b;
+  }
+
+  .wc-soundalike-assoc {
+    font-size: 0.88rem;
+    color: #cbd5e1;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* ── Collocations ───────────────────────────────────────── */
+  .wc-colloc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .wc-colloc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.75rem 0;
+  }
+
+  .wc-colloc-row + .wc-colloc-row {
+    border-top: 1px solid rgba(51,65,85,.25);
+  }
+
+  .wc-colloc-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .wc-colloc-hindi {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1rem;
+    color: #fbbf24;
+    line-height: 1.3;
+  }
+
+  .wc-colloc-roman {
+    font-family: 'PT Mono', monospace;
+    font-size: 0.78rem;
+    color: rgba(94,234,212,.6);
+  }
+
+  .wc-colloc-english {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* ── Etymology chain ────────────────────────────────────── */
+  .wc-etym-chain {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .wc-etym-stage {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+  }
+
+  .wc-etym-stage + .wc-etym-stage {
+    border-top: 1px solid rgba(51,65,85,.25);
+  }
+
+  .wc-etym-label-col {
+    min-width: 5rem;
+    flex-shrink: 0;
+  }
+
+  .wc-etym-stage-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #64748b;
+  }
+
+  .wc-etym-content {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .wc-etym-hindi {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.05rem;
+    color: #e2e8f0;  /* slate-200, NOT amber — ancestors are supporting context */
+    line-height: 1.3;
+  }
+
+  /* last stage is the current Hindi word — amber */
+  .wc-etym-stage:last-child .wc-etym-hindi {
+    color: #fbbf24;
+  }
+
+  .wc-etym-roman {
+    font-family: 'PT Mono', monospace;
+    font-size: 0.78rem;
+    color: rgba(94,234,212,.6);
+  }
+
+  .wc-etym-meaning {
+    font-size: 0.8rem;
+    color: #64748b;
+  }
+
+  .wc-origin-note {
+    margin-top: 0.85rem;
+    font-size: 0.85rem;
+    color: #64748b;
+    font-style: italic;
+    line-height: 1.6;
+  }
+`;
+
+/**
+ * Render a full word card article element.
+ * @param {object} word - word object from demoWord
+ * @returns {string} HTML string
+ */
+window.WordCard = function (word) {
+  const formsHtml = (word.forms || []).map(f => `
+    <div class="wc-form-chip">
+      <span class="wc-form-chip-label">${f.label}</span>
+      <span class="wc-form-chip-hindi" lang="hi">${f.hindi}</span>
+      <span class="wc-form-chip-roman">${f.roman}</span>
+    </div>
+  `).join('');
+
+  const usageHtml = (word.usage_notes || []).map(n => `
+    <p class="wc-usage-note">${n}</p>
+  `).join('');
+
+  const relatedHtml = (word.related_words || []).map(r => `
+    <div class="wc-related-chip">
+      <span class="wc-related-hindi" lang="hi">${r.hindi}</span>
+      <span class="wc-related-roman">${r.roman}</span>
+      <span class="wc-related-english">${r.english}</span>
+    </div>
+  `).join('');
+
+  const soundalikesHtml = (word.sound_alikes || []).map(s => `
+    <div class="wc-soundalike">
+      <div class="wc-soundalike-top">
+        <span class="wc-soundalike-hindi" lang="hi">${s.hindi}</span>
+        <span class="wc-soundalike-via">via ${s.language}</span>
+      </div>
+      <p class="wc-soundalike-assoc">${s.association}</p>
+    </div>
+  `).join('');
+
+  const collocsHtml = (word.collocations || []).map(c => `
+    <div class="wc-colloc-row">
+      <div class="wc-colloc-left">
+        <span class="wc-colloc-hindi" lang="hi">${c.hindi}</span>
+        <span class="wc-colloc-roman">${c.roman}</span>
+      </div>
+      <span class="wc-colloc-english">${c.english}</span>
+    </div>
+  `).join('');
+
+  const etymHtml = (word.etymology || []).map(e => `
+    <div class="wc-etym-stage">
+      <div class="wc-etym-label-col">
+        <span class="wc-etym-stage-label">${e.label}</span>
+      </div>
+      <div class="wc-etym-content">
+        <span class="wc-etym-hindi" lang="hi">${e.hindi}</span>
+        <span class="wc-etym-roman">${e.roman}</span>
+        ${e.meaning ? `<span class="wc-etym-meaning">— ${e.meaning}</span>` : ''}
+      </div>
+    </div>
+  `).join('');
+
+  const genderBadgeClass = word.gender === 'masculine' ? 'badge badge-masc' : 'badge badge-noun';
+  const genderLabel = word.gender === 'masculine' ? 'masc.' : word.gender;
+
+  return `
+<article class="wc-card">
+  <!-- Header — click to collapse/expand body -->
+  <div class="wc-header card-header" role="button" aria-expanded="true">
+    <div class="wc-header-content">
+      <span class="wc-hindi" lang="hi">${word.hindi}</span>
+      <span class="wc-roman">${word.roman}</span>
+      <span class="wc-syllables">${word.syllables}</span>
+      <div class="wc-grammar-row">
+        <span class="badge badge-noun">${word.pos}</span>
+        ${word.gender ? `<span class="${genderBadgeClass}">${genderLabel}</span>` : ''}
+      </div>
+    </div>
+    <span class="wc-collapse-icon">▾</span>
+  </div>
+
+  <!-- Collapsible body -->
+  <div class="wc-body">
+
+    <!-- Forms -->
+    <details class="wc-section" open>
+      <summary>
+        <span class="wc-section-label">Forms</span>
+        <span class="wc-section-chevron">▾</span>
+      </summary>
+      <div class="wc-section-body">
+        <div class="wc-forms-row">${formsHtml}</div>
+      </div>
+    </details>
+
+    <!-- Usage Notes — open by default -->
+    <details class="wc-section" open>
+      <summary>
+        <span class="wc-section-label">Usage Notes</span>
+        <span class="wc-section-chevron">▾</span>
+      </summary>
+      <div class="wc-section-body">
+        <div class="wc-usage-list">${usageHtml}</div>
+      </div>
+    </details>
+
+    <!-- Related Words -->
+    <details class="wc-section" open>
+      <summary>
+        <span class="wc-section-label">Related Words</span>
+        <span class="wc-section-chevron">▾</span>
+      </summary>
+      <div class="wc-section-body">
+        <div class="wc-related-list">${relatedHtml}</div>
+      </div>
+    </details>
+
+    <!-- Sound Alikes -->
+    <details class="wc-section" open>
+      <summary>
+        <span class="wc-section-label">Sound Alikes</span>
+        <span class="wc-section-chevron">▾</span>
+      </summary>
+      <div class="wc-section-body">${soundalikesHtml}</div>
+    </details>
+
+    <!-- Collocations -->
+    <details class="wc-section" open>
+      <summary>
+        <span class="wc-section-label">Collocations</span>
+        <span class="wc-section-chevron">▾</span>
+      </summary>
+      <div class="wc-section-body">
+        <div class="wc-colloc-list">${collocsHtml}</div>
+      </div>
+    </details>
+
+    <!-- Etymology -->
+    <details class="wc-section" open>
+      <summary>
+        <span class="wc-section-label">Etymology</span>
+        <span class="wc-section-chevron">▾</span>
+      </summary>
+      <div class="wc-section-body">
+        <div class="wc-etym-chain">${etymHtml}</div>
+        ${word.origin_note ? `<p class="wc-origin-note">${word.origin_note}</p>` : ''}
+      </div>
+    </details>
+
+  </div>
+</article>
+  `.trim();
+};
+
+</script>
+  <script>
+/* inlined: components/sentence-card.js */
+// SentenceCard component — renders a Hindi sentence card with word breakdown.
+// Register: window.SentenceCard(sentence) → HTML string
+// Styles:   window.SentenceCardStyles → CSS string
+
+window.SentenceCardStyles = `
+  /* ── Sentence Card shell ────────────────────────────────── */
+  .sc-card {
+    background: #0f172a;
+    border: 1px solid rgba(51,65,85,.4);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  /* ── Card header (always visible) ──────────────────────── */
+  .sc-header {
+    padding: 1.25rem 1.25rem 1rem;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .sc-header:hover {
+    background: rgba(30,41,59,.3);
+  }
+
+  .sc-header-content {
+    flex: 1;
+  }
+
+  .sc-hindi {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #fbbf24;
+    line-height: 1.35;
+    margin-bottom: 0.3rem;
+    display: block;
+  }
+
+  .sc-roman {
+    font-size: 0.9rem;
+    color: #5eead4;
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+
+  .sc-english {
+    font-size: 0.9rem;
+    color: #e2e8f0;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .sc-register-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .sc-collapse-icon {
+    font-size: 0.75rem;
+    color: #64748b;
+    flex-shrink: 0;
+    margin-top: 0.4rem;
+    transition: transform 0.2s ease;
+  }
+
+  .sc-card.is-collapsed .sc-collapse-icon {
+    transform: rotate(-90deg);
+  }
+
+  /* ── Expandable body ────────────────────────────────────── */
+  .sc-body {
+    border-top: 1px solid rgba(51,65,85,.4);
+  }
+
+  .sc-card.is-collapsed .sc-body {
+    display: none;
+  }
+
+  /* ── Literal gloss ──────────────────────────────────────── */
+  .sc-gloss {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+    color: #64748b;
+    font-style: italic;
+    border-bottom: 1px solid rgba(51,65,85,.4);
+  }
+
+  /* ── Word breakdown ─────────────────────────────────────── */
+  .sc-breakdown {
+    padding: 0.25rem 0 0.5rem;
+  }
+
+  .sc-breakdown-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0.5rem 1.25rem;
+    border-bottom: 1px solid rgba(51,65,85,.3);
+  }
+
+  .sc-col-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #475569;
+  }
+
+  .sc-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    gap: 1rem;
+    transition: background 0.15s ease;
+  }
+
+  .sc-row:hover {
+    background: rgba(30,41,59,.3);
+  }
+
+  .sc-row + .sc-row {
+    border-top: 1px solid rgba(51,65,85,.2);
+  }
+
+  .sc-token-hindi {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1rem;
+    color: #fbbf24;
+    line-height: 1.3;
+    display: block;
+  }
+
+  .sc-token-roman {
+    font-family: 'PT Mono', monospace;
+    font-size: 0.78rem;
+    color: rgba(94,234,212,.7);
+    display: block;
+  }
+
+  .sc-meaning-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .sc-meaning-text {
+    font-size: 0.9rem;
+    color: #e2e8f0;
+  }
+
+  .sc-gender-badge {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.15rem 0.45rem;
+    border-radius: 5px;
+    background: rgba(30,58,138,.25);
+    color: #93c5fd;
+    border: 1px solid rgba(59,130,246,.25);
+    white-space: nowrap;
+  }
+`;
+
+/**
+ * Render a sentence card article element.
+ * @param {object} sentence - sentence object from demoSentence
+ * @returns {string} HTML string
+ */
+window.SentenceCard = function (sentence) {
+  const rowsHtml = (sentence.words || []).map(w => {
+    const genderBadge = w.gender
+      ? `<span class="sc-gender-badge">${w.gender === 'm' ? 'masc.' : 'fem.'}</span>`
+      : '';
+    return `
+      <div class="sc-row">
+        <div>
+          <span class="sc-token-hindi" lang="hi">${w.hindi}</span>
+          <span class="sc-token-roman">${w.roman}</span>
+        </div>
+        <div class="sc-meaning-cell">
+          <span class="sc-meaning-text">${w.meaning}</span>
+          ${genderBadge}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  return `
+<article class="sc-card">
+  <!-- Header — click to collapse/expand -->
+  <div class="sc-header card-header" role="button" aria-expanded="true">
+    <div class="sc-header-content">
+      <span class="sc-hindi" lang="hi">${sentence.hindi}</span>
+      <span class="sc-roman">${sentence.roman}</span>
+      <span class="sc-english">${sentence.english}</span>
+      <div class="sc-register-row">
+        <span class="badge badge-standard">${sentence.register}</span>
+      </div>
+    </div>
+    <span class="sc-collapse-icon">▾</span>
+  </div>
+
+  <!-- Collapsible body -->
+  <div class="sc-body">
+    <!-- Literal gloss -->
+    <p class="sc-gloss">Literal: "${sentence.literal}"</p>
+
+    <!-- Word breakdown -->
+    <div class="sc-breakdown">
+      <div class="sc-breakdown-header">
+        <span class="sc-col-label">Token</span>
+        <span class="sc-col-label">Meaning</span>
+      </div>
+      ${rowsHtml}
+    </div>
+  </div>
+</article>
+  `.trim();
+};
+
+</script>
+  <script>
+/* inlined: components/anki-card.js */
+// AnkiCard component — renders a side-by-side Anki front/back demo panel.
+// Replicates the exact ANKI_CSS class names and structure from noteType.js.
+// Register: window.AnkiCard(word) → HTML string
+// Styles:   window.AnkiCardStyles → CSS string
+
+window.AnkiCardStyles = `
+  /* ── Anki demo wrapper ──────────────────────────────────── */
+  .anki-demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 580px) {
+    .anki-demo { grid-template-columns: 1fr; }
+  }
+
+  .anki-panel-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── Anki card shell — matches Anki renderer context ──── */
+  .anki-shell {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(51,65,85,.4);
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     ANKI CSS — replicated verbatim from noteType.js ANKI_CSS
+     ───────────────────────────────────────────────────────── */
+  .card {
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .card-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 2rem;
+  }
+
+  /* Front */
+  .front-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .meaning {
+    font-size: 1.55rem;
+    font-weight: 500;
+    color: #e2e8f0;
+    margin: 0 0 1.1rem 0;
+    line-height: 1.3;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
+  }
+
+  /* Back answer header */
+  .answer-header {
+    border-bottom: 1px solid rgba(148,163,184,.15);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
+    text-align: center;
+  }
+
+  .hindi {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 3rem;
+    color: #fbbf24;
+    margin: 0 0 .4rem 0;
+    line-height: 1.2;
+  }
+
+  .roman {
+    font-size: 1.2rem;
+    color: #5eead4;
+    margin: 0 0 .55rem 0;
+  }
+
+  .meaning-reveal {
+    font-size: .95rem;
+    color: #94a3b8;
+    margin: 0 0 .85rem 0;
+  }
+
+  .header-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
+  }
+
+  .syl-inline {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #5eead4;
+    opacity: .6;
+    font-family: monospace;
+    letter-spacing: .15em;
+    margin: 0 0 .4rem 0;
+  }
+
+  /* Section boxes */
+  .field-sec {
+    border-top: 3px solid #334155;
+    padding: 1rem 1.2rem 1.2rem;
+    margin-bottom: 1.25rem;
+    background: #1e293b;
+    border-radius: 12px;
+  }
+
+  .field-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: .6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    margin: 0 0 .85rem 0;
+    display: block;
+  }
+
+  /* Example cards */
+  .ex-card {
+    background: #0f172a;
+    border: 1px solid rgba(51,65,85,.55);
+    border-radius: 10px;
+    padding: .9rem 1rem;
+    margin-bottom: .7rem;
+    text-align: center;
+  }
+
+  .ex-card:last-child { margin-bottom: 0; }
+
+  .ex-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .35rem;
+    margin-bottom: .45rem;
+  }
+
+  .ex-hindi {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.15rem;
+    color: #fbbf24;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .reg {
+    font-size: .58rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #64748b;
+    padding: .18rem .5rem;
+    border: 1px solid rgba(100,116,139,.35);
+    border-radius: 6px;
+    white-space: nowrap;
+    order: -1;
+  }
+
+  /* Cross-lang / sound-alikes */
+  .clang-item {
+    margin-bottom: .75rem;
+    padding: .85rem 1rem;
+    background: #0f172a;
+    border: 1px solid rgba(51,65,85,.55);
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .clang-item:last-child { margin-bottom: 0; }
+
+  .meta-badge {
+    display: inline-block;
+    font-size: .58rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    padding: .2rem .55rem;
+    border-radius: 6px;
+    margin-bottom: .45rem;
+  }
+
+  .lang-label {
+    display: block;
+    font-size: .63rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    margin-bottom: .3rem;
+  }
+
+  .word-row {
+    display: flex;
+    gap: .5rem;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: .35rem;
+    justify-content: center;
+  }
+
+  .word-text {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.1rem;
+    color: #fbbf24;
+  }
+
+  .word-rom {
+    color: #5eead4;
+    font-size: .83rem;
+  }
+
+  .mean-box {
+    background: #080d18;
+    border: 1px solid rgba(51,65,85,.5);
+    border-radius: 8px;
+    padding: .35rem .75rem;
+    margin-top: .35rem;
+    display: inline-block;
+  }
+
+  .mean-box span {
+    color: #94a3b8;
+    font-size: .82rem;
+  }
+
+  .item-note {
+    font-size: .85rem;
+    color: #cbd5e1;
+    line-height: 1.65;
+    margin: .4rem 0 0 0;
+  }
+
+  /* Pronunciation */
+  .pron-row {
+    display: flex;
+    gap: .75rem;
+    align-items: flex-start;
+    margin-bottom: .55rem;
+  }
+
+  .syl-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: .88rem;
+    color: #f1f5f9;
+    min-width: 3rem;
+    flex-shrink: 0;
+  }
+
+  .syl-desc {
+    font-size: .86rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Gender / transitivity badges */
+  .badge-masc-anki {
+    background: rgba(30,58,138,.25);
+    color: #93c5fd;
+    border: 1px solid rgba(59,130,246,.25);
+    font-family: 'Oswald', sans-serif;
+    font-size: .58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    padding: .18rem .5rem;
+    border-radius: 6px;
+    display: inline-block;
+  }
+
+  .badge-neutral-anki {
+    background: rgba(30,41,59,.6);
+    color: #94a3b8;
+    border: 1px solid rgba(51,65,85,.4);
+    font-family: 'Oswald', sans-serif;
+    font-size: .58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    padding: .18rem .5rem;
+    border-radius: 6px;
+    display: inline-block;
+  }
+
+  /* Collocation rows inside field-sec */
+  .coll-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: .65rem 0;
+    border-bottom: 1px solid rgba(51,65,85,.25);
+  }
+
+  .coll-row:last-child { border-bottom: none; }
+
+  .coll-hindi {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1rem;
+    color: #fbbf24;
+    line-height: 1.3;
+  }
+
+  .coll-rom {
+    font-family: monospace;
+    font-size: .78rem;
+    color: rgba(94,234,212,.6);
+  }
+
+  .coll-eng {
+    font-size: .88rem;
+    color: #94a3b8;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* Etymology chain in Anki back */
+  .etym-stage {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .6rem 0;
+    border-bottom: 1px solid rgba(51,65,85,.25);
+  }
+
+  .etym-stage:last-child { border-bottom: none; }
+
+  .etym-lang {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    color: #64748b;
+    min-width: 4.5rem;
+    flex-shrink: 0;
+  }
+
+  .etym-word {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1rem;
+    color: #e2e8f0; /* ancestor — slate-200, NOT amber */
+    line-height: 1.3;
+  }
+
+  .etym-stage:last-child .etym-word {
+    color: #fbbf24; /* current Hindi — amber */
+  }
+
+  .etym-rom {
+    font-family: monospace;
+    font-size: .78rem;
+    color: rgba(94,234,212,.6);
+  }
+`;
+
+/**
+ * Render the Anki card demo — front + back panels side by side.
+ * @param {object} word - word object from demoWord
+ * @returns {string} HTML string
+ */
+window.AnkiCard = function (word) {
+  // ── Front panel ──────────────────────────────────────────
+  const frontHtml = `
+    <div class="anki-shell">
+      <div class="card">
+        <div class="card-wrap front-face">
+          <p class="meaning">${word.english}</p>
+          <div class="chips">
+            <span class="badge-neutral-anki">${word.pos}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // ── Back panel ───────────────────────────────────────────
+  const usageNotesHtml = (word.usage_notes || []).map(n => `
+    <div class="ex-card">
+      <p class="item-note">${n}</p>
+    </div>
+  `).join('');
+
+  const relatedHtml = (word.related_words || []).map(r => `
+    <div class="clang-item">
+      <div class="word-row">
+        <span class="word-text" lang="hi">${r.hindi}</span>
+        <span class="word-rom">${r.roman}</span>
+      </div>
+      <div class="mean-box"><span>${r.english}</span></div>
+    </div>
+  `).join('');
+
+  const soundAlikesHtml = (word.sound_alikes || []).map(s => `
+    <div class="clang-item">
+      <span class="lang-label" style="color:#7dd3fc;">${s.language}</span>
+      <div class="word-row">
+        <span class="word-text" lang="hi">${s.hindi}</span>
+      </div>
+      <p class="item-note">${s.association}</p>
+    </div>
+  `).join('');
+
+  const collocHtml = (word.collocations || []).map(c => `
+    <div class="coll-row">
+      <div>
+        <div class="coll-hindi" lang="hi">${c.hindi}</div>
+        <div class="coll-rom">${c.roman}</div>
+      </div>
+      <div class="coll-eng">${c.english}</div>
+    </div>
+  `).join('');
+
+  const etymHtml = (word.etymology || []).map(e => `
+    <div class="etym-stage">
+      <span class="etym-lang">${e.label}</span>
+      <span class="etym-word" lang="hi">${e.hindi}</span>
+      <span class="etym-rom">${e.roman}</span>
+    </div>
+  `).join('');
+
+  const backHtml = `
+    <div class="anki-shell" style="overflow-y: auto; max-height: 600px;">
+      <div class="card">
+        <div class="card-wrap">
+          <div class="answer-header">
+            <p class="hindi" lang="hi">${word.hindi}</p>
+            <p class="roman">${word.roman}</p>
+            <p class="syl-inline">${word.syllables}</p>
+            <p class="meaning-reveal">${word.english}</p>
+            <div class="header-chips">
+              <span class="badge-neutral-anki">${word.pos}</span>
+              <span class="badge-masc-anki">${word.gender}</span>
+            </div>
+          </div>
+
+          <div class="field-sec">
+            <span class="field-label" style="color:#fbbf24;">Usage Notes</span>
+            ${usageNotesHtml}
+          </div>
+
+          <div class="field-sec">
+            <span class="field-label" style="color:#86efac;">Related Words</span>
+            ${relatedHtml}
+          </div>
+
+          <div class="field-sec">
+            <span class="field-label" style="color:#fda4af;">Sound Alikes</span>
+            ${soundAlikesHtml}
+          </div>
+
+          <div class="field-sec">
+            <span class="field-label" style="color:#93c5fd;">Collocations</span>
+            ${collocHtml}
+          </div>
+
+          <div class="field-sec">
+            <span class="field-label" style="color:#c4b5fd;">Etymology</span>
+            ${etymHtml}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  return `
+<div class="anki-demo">
+  <div>
+    <p class="anki-panel-label">Front (Question)</p>
+    ${frontHtml}
+  </div>
+  <div>
+    <p class="anki-panel-label">Back (Answer)</p>
+    ${backHtml}
+  </div>
+</div>
+  `.trim();
+};
+
+</script>
+  <script>
+/* inlined: demo-data.js */
+// Demo data for HindiWeb design demo — dummy word and sentence objects.
+
+window.demoWord = {
+  hindi: 'पानी',
+  roman: 'paanī',
+  syllables: 'paa·nī',
+  english: 'water',
+  pos: 'noun',
+  gender: 'masculine',
+  forms: [
+    { label: 'Oblique', hindi: 'पानी', roman: 'paanī' },
+    { label: 'Plural', hindi: 'पानियाँ', roman: 'paaniyāṃ' },
+  ],
+  usage_notes: [
+    'पानी is the everyday colloquial word for water in Hindi, used in all informal and most formal contexts.',
+    'In highly formal or literary settings, the Sanskrit-derived जल (jal) may be preferred, but पानी is universally understood.',
+  ],
+  related_words: [
+    { hindi: 'जल', roman: 'jal', english: 'water (formal/literary)' },
+    { hindi: 'नीर', roman: 'nīr', english: 'water (poetic)' },
+    { hindi: 'बारिश', roman: 'bāriś', english: 'rain' },
+  ],
+  sound_alikes: [
+    {
+      hindi: 'पानी',
+      part: 'noun',
+      association: 'Sounds like "pa-knee" — imagine water splashing on your knee.',
+      language: 'English',
+    },
+  ],
+  collocations: [
+    { hindi: 'पानी पीना', roman: 'paanī pīnā', english: 'to drink water' },
+    { hindi: 'पानी भरना', roman: 'paanī bharnā', english: 'to fill water' },
+    { hindi: 'पानी बहाना', roman: 'paanī bahānā', english: 'to waste water / shed tears' },
+  ],
+  etymology: [
+    { label: 'Sanskrit', hindi: 'पानीय', roman: 'pānīya', meaning: 'drinkable' },
+    { label: 'Prakrit', hindi: 'पाणी', roman: 'pāṇī', meaning: 'water' },
+    { label: 'Hindi', hindi: 'पानी', roman: 'paanī', meaning: 'water' },
+  ],
+  origin_note: 'From Sanskrit पानीय (pānīya), a verbal adjective meaning "drinkable", derived from the root पा (pā, to drink).',
+};
+
+window.demoSentence = {
+  hindi: 'वह रोज़ पानी पीता है।',
+  roman: 'vah roz paanī pītā hai.',
+  english: 'He drinks water every day.',
+  register: 'standard',
+  literal: 'He daily water drinks is.',
+  words: [
+    { hindi: 'वह', roman: 'vah', meaning: 'he / she / it' },
+    { hindi: 'रोज़', roman: 'roz', meaning: 'every day, daily' },
+    { hindi: 'पानी', roman: 'paanī', meaning: 'water', gender: 'm' },
+    { hindi: 'पीता', roman: 'pītā', meaning: 'drinks (m. sg.)', gender: 'm', number: 'sg' },
+    { hindi: 'है', roman: 'hai', meaning: 'is (present copula)' },
+  ],
+};
+
+</script>
+
+  <script>
+    // ── Inject all component styles into the <style> tag ──
+    document.getElementById('component-styles').textContent =
+      (window.SharedStyles      || '') +
+      (window.WordCardStyles    || '') +
+      (window.SentenceCardStyles || '') +
+      (window.AnkiCardStyles    || '');
+
+    // ── Render components with demo data ──────────────────
+    document.getElementById('demo-word').innerHTML =
+      window.WordCard(window.demoWord);
+
+    document.getElementById('demo-sentence').innerHTML =
+      window.SentenceCard(window.demoSentence);
+
+    document.getElementById('demo-anki').innerHTML =
+      window.AnkiCard(window.demoWord, window.demoSentence);
+
+    // ── Wire collapse/expand for card headers ─────────────
+    // Card headers toggle the is-collapsed class on the parent article
+    document.querySelectorAll('.card-header').forEach(function (header) {
+      header.addEventListener('click', function () {
+        var card = header.closest('article');
+        if (card) {
+          var expanded = !card.classList.contains('is-collapsed');
+          card.classList.toggle('is-collapsed');
+          header.setAttribute('aria-expanded', String(!expanded));
+        }
+      });
+    });
+
+    // <details> sections use native browser open/close — no JS needed.
+    // The chevron rotation is handled via CSS [open] selector.
+  </script>
+</body>
+</html>

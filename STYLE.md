@@ -37,15 +37,22 @@ These rules exist to prevent visual strain during repeated daily study sessions.
 
 ### Text size floor
 
-**Minimum readable size at laptop arm's-length is `text-[11px]`.**
+**Minimum readable size at laptop arm's-length is `text-[12px]`.**
 
-No text in this UI may be set smaller than `text-[11px]`. This applies to every element: stage labels, column headers, tiny meta labels, hint text, badge text. If a design requires going smaller, the design is wrong — find a layout solution instead (truncate, abbreviate, hide behind progressive disclosure).
+No text in this UI may be set smaller than `text-[12px]`. This applies to every element: stage labels, column headers, tiny meta labels, hint text, badge text. If a design requires going smaller, the design is wrong — find a layout solution instead (truncate, abbreviate, hide behind progressive disclosure).
 
 | Context | Minimum size |
 |---|---|
-| Any label, header, meta, hint | `text-[11px]` |
-| Romanisation in dense sections / sidebar rows | `text-[13px]` |
-| Body / explanation copy | `text-[15px]` |
+| Section labels (FORMS, USAGE NOTES, etc.) | `text-[13px]` |
+| Grammar badges / POS / gender | `text-[12px]` |
+| Etymology stage labels | `text-[12px]` |
+| Form chip labels | `text-[12px]` |
+| Column headers in tables | `text-[12px]` |
+| Any other label, header, meta, hint | `text-[12px]` |
+| Romanisation in dense sections / sidebar rows | `text-[14px]` |
+| Hindi tokens in breakdown rows | `text-[18px]` (1.125rem) |
+| Meaning text in breakdown rows | `text-[15px]` |
+| Body / explanation copy / usage notes | `text-[15px]` |
 
 ### No colored left-border accents on card sections
 
@@ -635,6 +642,38 @@ Show only what is contextually meaningful:
   <span class="badge">transitive</span>
 </div>
 ```
+
+#### Gender indicator in sentence word breakdown
+
+**Use a small color dot (6×6px circle) in the left column of the breakdown table — never a badge in the right column.**
+
+The dot sits directly left of the Hindi token, vertically aligned to the cap-height of the first line. It requires no reading — the eye registers it instantly as a color signal. The right column (meaning) stays completely clean.
+
+```html
+<!-- Token cell with gender dot -->
+<div class="flex items-start gap-2">
+  <!-- blue-300 for masculine, pink-300 for feminine; omit span entirely if no gender -->
+  <span class="w-1.5 h-1.5 rounded-full shrink-0 mt-1.5 bg-blue-300"
+        title="masculine"></span>
+  <div>
+    <span class="wc-token-hindi" lang="hi">बड़ा</span>
+    <span class="wc-token-roman">baṛā</span>
+  </div>
+</div>
+<!-- Right column: meaning only — no badge, no label -->
+<span class="wc-meaning-text">big / large</span>
+```
+
+**Colour mapping:**
+
+| Gender | Dot colour | Hex | Class |
+|---|---|---|---|
+| Masculine | `blue-300` | `#93c5fd` | `bg-blue-300` |
+| Feminine | `pink-300` | `#f9a8d4` | `bg-pink-300` |
+
+**Rationale:** A badge in the meaning column (right) clutters the reading flow. Alternatives like a superscript symbol or a row border tint add noise without the semantic clarity of a dedicated color that already exists in the system (`hl-masc` = blue-300, `hl-fem` = pink-300). The dot is the most minimal treatment — 6px, no text, no border, no layout cost.
+
+---
 
 #### Individual badge (category, any single-purpose label)
 
@@ -1373,3 +1412,119 @@ This animates the reveal at 200ms — consistent with the `transition-transform 
 **Observation:** `SentenceCard.astro` and the Sentences tab currently show an empty state / placeholder. When the Sentences feature is implemented, it will need a visual design that parallels the Words tab.
 
 **Suggestion:** Before implementing, establish: (a) what is the primary unit of a sentence card — should it mirror the word card structure, or be a simpler two-sided format? (b) does the sidebar need a parallel sentences index with the same group/checkbox model? (c) should sentence examples that reference known vocabulary words show `.vocab-hint` tooltips (the tooltip system already supports this)? Design these decisions before writing any HTML to avoid a retrofit.
+
+---
+
+## Visual Polish (Demo)
+
+These rules apply to `specs/demo/` — the static component sandbox. They document premium visual upgrades made to the demo layer and serve as a reference for when similar polish is brought into the main Astro app.
+
+### Font pairing
+
+| Role | Family | Rationale |
+|---|---|---|
+| Body / reading copy | **Plus Jakarta Sans** | Warm humanist geometry — readable for long study sessions without the coldness of Inter or the roundness of Nunito. Excellent at small weights. |
+| Labels / headings | **Barlow Condensed** | Sharp, purposeful, high tracking capacity at 11px label sizes. Tighter visual rhythm than Oswald, pairs cleanly with Jakarta Sans. |
+| Hindi script | **Tiro Devanagari Hindi** | Kept — best available Google Font for Devanagari study contexts. |
+| Monospace (romanisation in dense sections) | **DM Mono** | More refined than PT Mono; same rhythm, better letter-spacing at 13px. |
+
+Google Fonts import string:
+```
+Tiro+Devanagari+Hindi | Barlow+Condensed:wght@400;600;700 | Plus+Jakarta+Sans:wght@400;500;600 | DM+Mono
+```
+
+### Card elevation recipe
+
+Cards use a barely-perceptible gradient instead of a flat background, combined with a dual-layer shadow that separates them from the page:
+
+```css
+/* Card background — angle chosen so gradient reads as depth, not decoration */
+background: linear-gradient(145deg, #131f35 0%, #0f172a 100%);
+
+/* Box shadow — inner ring defines the card edge; outer shadow lifts it off page */
+box-shadow: 0 0 0 1px rgba(51,65,85,0.5), 0 4px 24px rgba(0,0,0,0.4);
+```
+
+The `#131f35` value is a mid-point between `slate-900` (`#0f172a`) and `slate-800` (`#1e293b`) biased toward a faint blue-navy — it adds warmth without being perceptible as a colour choice.
+
+### Header hover tint
+
+Card headers on hover receive a near-invisible amber wash instead of a slate tint:
+```css
+.wc-header:hover { background: rgba(255,191,36,0.03); }
+```
+At 3% opacity this is sub-perceptual on most monitors but adds warmth that complements the amber Hindi word above it. Does not violate the "amber = Hindi word" semantic rule because it is not a text colour.
+
+### Hindi word gradient text
+
+The main Hindi word in card headers and Anki panels uses a subtle amber-to-orange gradient fill:
+```css
+background: linear-gradient(135deg, #fbbf24, #f97316);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+```
+Decision rationale: tested in the demo at 2rem (word card) and 3rem (Anki back). The gradient reads as depth and warmth, not as decoration — the colour range stays firmly in the amber semantic zone. If brought into the main app, check browser compatibility for `background-clip: text` (supported in all modern browsers; Anki webview may need the `-webkit-` prefix).
+
+### Teal romanisation glow
+
+Romanisation lines receive a faint bloom:
+```css
+text-shadow: 0 0 20px rgba(94,234,212,0.2);
+```
+At 20% opacity this is invisible in isolation and only readable as "luminance" when the eye moves from Hindi to romanisation — matching the perceptual relationship between the two.
+
+### Section hover pattern
+
+`<details>` summary rows transition in a left amber accent on hover:
+```css
+summary {
+  border-left: 2px solid transparent;
+  transition: background 0.15s ease, border-left-color 0.15s ease;
+}
+summary:hover {
+  background: rgba(255,255,255,0.02);
+  border-left-color: rgba(251,191,36,0.2);
+}
+```
+The default state has `border-left: 2px solid transparent` (not `none`) so the content does not shift on hover — the space is always reserved.
+
+### Page background
+
+```css
+background: radial-gradient(ellipse at 30% 20%, #0d1829 0%, #020617 70%);
+background-attachment: fixed;
+```
+The gradient is centred top-left, which is where the eye lands first when scanning from the browser chrome. At 70% falloff to `#020617` the gradient is effectively invisible at the card area — its only effect is subtle depth near the page header.
+
+### Grammar badge elevation
+
+Badges use directional gradient fills instead of flat opacity:
+```css
+/* Masculine */
+background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(37,99,235,0.08));
+border: 1px solid rgba(147,197,253,0.2);
+
+/* POS / noun */
+background: linear-gradient(135deg, rgba(180,83,9,0.2), rgba(120,53,15,0.12));
+border: 1px solid rgba(251,191,36,0.2);
+```
+The gradient simulates a slight highlight on the top-left corner — consistent with the card's `145deg` background gradient direction.
+
+### Anki flip divider
+
+Replaced the plain line-and-label with an amber gradient line and a labelled amber pill:
+```css
+/* Line: fades to transparent at edges */
+background: linear-gradient(90deg, transparent, rgba(251,191,36,0.25), transparent);
+
+/* Label: faint amber border pill */
+color: rgba(251,191,36,0.5);
+border: 1px solid rgba(251,191,36,0.15);
+border-radius: 4px;
+```
+
+### Effects skipped and why
+
+- **CSS noise texture** — tested a pseudo-element SVG noise pattern on the page background. At the scale needed to be visible, it introduced banding artefacts on LCD screens. Skipped.
+- **`.field-sec` section gradient** — the Anki back panel sections received `background: rgba(30,41,59,0.5)` (semi-transparent) rather than a directional gradient. The section already sits inside the card gradient, so a second gradient layered on top created colour banding. Semi-transparent flat fill achieves the same "lifted panel" effect without the banding.

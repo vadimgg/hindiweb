@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HindiWeb — Design Demo</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!--
+    Font pairing (see STYLE.md Visual Polish section):
+    - Plus Jakarta Sans (body) — warm humanist sans, excellent legibility for long sessions
+    - Barlow Condensed (labels/headings) — sharp, purposeful, pairs tightly with Jakarta Sans
+    - Tiro Devanagari Hindi (Hindi script) — kept, it's excellent
+    - DM Mono (romanisation/mono) — more refined than PT Mono, same rhythm
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Barlow+Condensed:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&family=DM+Mono&display=swap" rel="stylesheet">
+
+  <!-- Component styles injected at runtime -->
+  <style id="component-styles"></style>
+</head>
+<body>
+
+  <!-- App chrome: nav bar + page content -->
+  <div class="app-chrome">
+
+    <!-- Persistent top navigation bar -->
+    <div id="app-nav"></div>
+
+    <!-- Single page content container — JS swaps pages here -->
+    <main class="page-content" id="page-content">
+      <!-- Pages rendered by JS below -->
+      <div id="page-words-mount"></div>
+      <div id="page-sentences-mount"></div>
+      <div id="page-deliver-mount"></div>
+    </main>
+
+  </div>
+
+  <!-- ── Load components (order matters — shared-styles first, data last) ── -->
+  <script src="components/shared-styles.js"></script>
+  <script src="components/nav-bar.js"></script>
+  <script src="components/filter-panel.js"></script>
+  <script src="components/word-card.js"></script>
+  <script src="components/sentence-card.js"></script>
+  <script src="components/anki-card.js"></script>
+  <script src="components/page-words.js"></script>
+  <script src="components/page-sentences.js"></script>
+  <script src="components/page-deliver.js"></script>
+  <script src="demo-data.js"></script>
+
+  <script>
+    // ── 1. Inject all component styles ───────────────────────
+    document.getElementById('component-styles').textContent =
+      (window.SharedStyles            || '') +
+      (window.NavBarStyles            || '') +
+      (window.FilterPanelStyles       || '') +
+      (window.WordCardStyles          || '') +
+      (window.SentenceCardStyles      || '') +
+      (window.AnkiCardStyles          || '') +
+      (window.AnkiSentenceCardStyles  || '') +
+      (window.PageWordsStyles         || '') +
+      (window.PageSentencesStyles     || '') +
+      (window.PageDeliverStyles       || '');
+
+    // ── 2. Render nav bar ─────────────────────────────────────
+    document.getElementById('app-nav').innerHTML = window.NavBar();
+
+    // ── 3. Render pages into their mounts ─────────────────────
+    document.getElementById('page-words-mount').innerHTML =
+      window.PageWords(window.demoWord);
+
+    document.getElementById('page-sentences-mount').innerHTML =
+      window.PageSentences(window.demoSentence);
+
+    document.getElementById('page-deliver-mount').innerHTML =
+      window.PageDeliver();
+
+    // ── 4. Page switching ─────────────────────────────────────
+    var PAGES = ['words', 'sentences', 'deliver'];
+
+    /**
+     * Switch the visible page and update nav active state.
+     * @param {string} name - one of 'words' | 'sentences' | 'deliver'
+     */
+    function switchPage(name) {
+      PAGES.forEach(function (p) {
+        // Toggle page visibility
+        var pageEl = document.getElementById('page-' + p);
+        if (pageEl) {
+          pageEl.classList.toggle('is-active', p === name);
+        }
+        // Toggle nav item active state
+        var navEl = document.getElementById('nav-' + p);
+        if (navEl) {
+          navEl.classList.toggle('is-active', p === name);
+          navEl.setAttribute('aria-current', p === name ? 'page' : 'false');
+        }
+      });
+      // Scroll to top of content on page switch
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Expose globally so onclick attributes can reach it
+    window.switchPage = switchPage;
+
+    // ── 4b. View mode toggle (Web / Anki) ─────────────────────
+    /**
+     * Switch between Web and Anki view modes on a given page.
+     * Toggles .mode-web / .mode-anki on the page root element.
+     * Updates the segmented button active state.
+     * @param {string} page - 'words' | 'sentences'
+     * @param {string} mode - 'web' | 'anki'
+     */
+    function setViewMode(page, mode) {
+      var pageEl = document.getElementById('page-' + page);
+      if (!pageEl) return;
+      pageEl.classList.toggle('mode-web',  mode === 'web');
+      pageEl.classList.toggle('mode-anki', mode === 'anki');
+
+      // Update segmented button states
+      var prefix = page === 'words' ? 'pw' : 'ps';
+      var webBtn  = document.getElementById(prefix + '-mode-web');
+      var ankiBtn = document.getElementById(prefix + '-mode-anki');
+      if (webBtn)  { webBtn.classList.toggle('is-active',  mode === 'web');  webBtn.setAttribute('aria-pressed',  String(mode === 'web')); }
+      if (ankiBtn) { ankiBtn.classList.toggle('is-active', mode === 'anki'); ankiBtn.setAttribute('aria-pressed', String(mode === 'anki')); }
+
+      // Re-initialise flip card heights when entering Anki mode
+      if (mode === 'anki') {
+        var areaId = page === 'words' ? 'pw-anki-area' : 'ps-anki-area';
+        var area = document.getElementById(areaId);
+        if (area) {
+          area.querySelectorAll('.anki-flip-card').forEach(function (card) {
+            var front = card.querySelector('.anki-flip-front');
+            if (front) card.style.height = front.scrollHeight + 'px';
+          });
+        }
+      }
+    }
+
+    window.setViewMode = setViewMode;
+
+    // ── 5. Card collapse/expand ───────────────────────────────
+    // Delegate to document level so it covers all pages without needing
+    // per-page wiring. Ignore clicks on sel-circle (handled separately).
+    document.addEventListener('click', function (e) {
+      var header = e.target.closest('.card-header');
+      if (!header) return;
+      // Don't collapse when clicking the selection circle
+      if (e.target.closest('.sel-circle')) return;
+
+      var card = header.closest('article');
+      if (!card) return;
+      var expanded = !card.classList.contains('is-collapsed');
+      card.classList.toggle('is-collapsed', expanded);
+      header.setAttribute('aria-expanded', String(!expanded));
+    });
+
+    // ── 6. Word card selection toggle ────────────────────────
+    /**
+     * Toggle selection state on a word card.
+     * @param {HTMLElement} circle - the .sel-circle button
+     * @param {string}      cardId - the article element id
+     */
+    function toggleWordSelection(circle, cardId) {
+      var card = document.getElementById(cardId);
+      if (!card) return;
+      var selected = circle.classList.toggle('is-selected');
+      card.classList.toggle('is-selected', selected);
+      circle.setAttribute('aria-label',
+        selected
+          ? 'Deselect ' + (card.querySelector('.wc-hindi') || {}).textContent
+          : 'Select '   + (card.querySelector('.wc-hindi') || {}).textContent
+      );
+    }
+    window.toggleWordSelection = toggleWordSelection;
+
+    // ── 7. Sentence card selection toggle ────────────────────
+    /**
+     * Toggle selection state on a sentence card.
+     * @param {HTMLElement} circle - the .sel-circle button
+     * @param {string}      cardId - the article element id
+     */
+    function toggleSentenceSelection(circle, cardId) {
+      var card = document.getElementById(cardId);
+      if (!card) return;
+      var selected = circle.classList.toggle('is-selected');
+      card.classList.toggle('is-selected', selected);
+    }
+    window.toggleSentenceSelection = toggleSentenceSelection;
+
+    // ── 8. Words page filter panel ────────────────────────────
+    var pwFilterPanel = document.getElementById('pw-filter-panel');
+    var pwFilterBtn   = document.getElementById('pw-filter-btn');
+    var pwPanelOpen   = false;
+
+    function setPwFilterOpen(open) {
+      pwPanelOpen = open;
+      if (pwFilterPanel) pwFilterPanel.classList.toggle('is-hidden', !open);
+      if (pwFilterBtn)   pwFilterBtn.classList.toggle('is-active', open);
+      if (pwFilterBtn)   pwFilterBtn.setAttribute('aria-expanded', String(open));
+    }
+
+    if (pwFilterBtn) {
+      pwFilterBtn.addEventListener('click', function () {
+        setPwFilterOpen(!pwPanelOpen);
+      });
+    }
+
+    // ── 9. Sentences page filter panel ───────────────────────
+    var psFilterPanel = document.getElementById('ps-filter-panel');
+    var psFilterBtn   = document.getElementById('ps-filter-btn');
+    var psPanelOpen   = false;
+
+    function setPsFilterOpen(open) {
+      psPanelOpen = open;
+      if (psFilterPanel) psFilterPanel.classList.toggle('is-hidden', !open);
+      if (psFilterBtn)   psFilterBtn.classList.toggle('is-active', open);
+      if (psFilterBtn)   psFilterBtn.setAttribute('aria-expanded', String(open));
+    }
+
+    if (psFilterBtn) {
+      psFilterBtn.addEventListener('click', function () {
+        setPsFilterOpen(!psPanelOpen);
+      });
+    }
+
+    // ── 10. Send to Anki button — demo feedback ───────────────
+    var sendBtn = document.getElementById('send-anki-btn');
+    if (sendBtn) {
+      sendBtn.addEventListener('click', function () {
+        var original = sendBtn.innerHTML;
+        sendBtn.innerHTML = '<span class="send-btn-icon">✓</span><span class="send-btn-text">Sent!</span>';
+        sendBtn.style.background = 'linear-gradient(135deg,#4ade80,#22c55e)';
+        sendBtn.disabled = true;
+        setTimeout(function () {
+          sendBtn.innerHTML = original;
+          sendBtn.style.background = '';
+          sendBtn.disabled = false;
+        }, 2000);
+      });
+    }
+
+    // ── 11. Anki card flip (height-matched) ──────────────────
+    // The outer .anki-flip-card wrapper drives height explicitly so the back
+    // face (position:absolute inside the inner) never overlaps cards below.
+    // On flip: set wrapper height to the incoming face's scrollHeight.
+    // On load: set wrapper height to the front face's scrollHeight.
+    //
+    // Back-face injection: AnkiCard() / AnkiSentenceCard() are called here
+    // (after all components have loaded) and the back-face shell is extracted
+    // and injected into the placeholder divs in the Anki mode areas.
+
+    /**
+     * Extract the back-face .anki-shell from AnkiCard/AnkiSentenceCard output.
+     * Finds the second occurrence of class="anki-shell".
+     * @param {string} html - full output of AnkiCard() or AnkiSentenceCard()
+     * @returns {string} HTML string
+     */
+    function extractBackShell(html) {
+      var first  = html.indexOf('class="anki-shell"');
+      if (first  === -1) return html;
+      var second = html.indexOf('class="anki-shell"', first + 1);
+      if (second === -1) return html;
+      var divStart = html.lastIndexOf('<div', second);
+      return html.substring(divStart).trim();
+    }
+
+    // Inject back faces for Words page flip cards
+    var w2 = {
+      hindi: 'बारिश', roman: 'bāriś', syllables: 'bā·riś', english: 'rain',
+      pos: 'noun', gender: 'feminine',
+      usage_notes: ['बारिश is the colloquial word for rain in Hindi, derived from Persian. Used across all registers.'],
+      related_words: [{ hindi: 'वर्षा', roman: 'varṣā', english: 'rain (formal/Sanskrit)' }],
+      sound_alikes: [],
+      collocations: [
+        { hindi: 'बारिश होना', roman: 'bāriś honā', english: 'to rain' },
+        { hindi: 'बारिश में', roman: 'bāriś mẽ', english: 'in the rain' },
+      ],
+      etymology: [
+        { label: 'Persian', hindi: 'بارش', roman: 'bāriś', meaning: 'rainfall' },
+        { label: 'Hindi', hindi: 'बारिश', roman: 'bāriś', meaning: 'rain' },
+      ],
+    };
+    var s2 = {
+      hindi: 'मेरा नाम राज है।', roman: 'merā nām rāj hai.', english: 'My name is Raj.',
+      register: 'standard', literal: 'My name Raj is.',
+      words: [
+        { hindi: 'मेरा', roman: 'merā', meaning: 'my' },
+        { hindi: 'नाम', roman: 'nām', meaning: 'name' },
+        { hindi: 'राज', roman: 'rāj', meaning: 'Raj (name)', gender: 'm' },
+        { hindi: 'है', roman: 'hai', meaning: 'is (present copula)' },
+      ],
+    };
+
+    if (window.AnkiCard) {
+      var b1 = document.getElementById('pw-flip-1-back');
+      var b2 = document.getElementById('pw-flip-2-back');
+      if (b1) b1.innerHTML = extractBackShell(window.AnkiCard(window.demoWord));
+      if (b2) b2.innerHTML = extractBackShell(window.AnkiCard(w2));
+    }
+    if (window.AnkiSentenceCard) {
+      var sb1 = document.getElementById('ps-flip-1-back');
+      var sb2 = document.getElementById('ps-flip-2-back');
+      if (sb1) sb1.innerHTML = extractBackShell(window.AnkiSentenceCard(window.demoSentence, 'Basics'));
+      if (sb2) sb2.innerHTML = extractBackShell(window.AnkiSentenceCard(s2, 'Greetings'));
+    }
+
+    // Wire up click-to-flip with height-matched wrapper
+    function initFlipCard(card) {
+      // Set initial height to front face
+      var front = card.querySelector('.anki-flip-front');
+      if (front) card.style.height = front.scrollHeight + 'px';
+
+      card.addEventListener('click', function () {
+        card.classList.toggle('is-flipped');
+        var activeFace = card.classList.contains('is-flipped')
+          ? card.querySelector('.anki-flip-back')
+          : card.querySelector('.anki-flip-front');
+        if (activeFace) card.style.height = activeFace.scrollHeight + 'px';
+      });
+    }
+
+    document.querySelectorAll('.anki-flip-card').forEach(initFlipCard);
+
+    // ── 12. Collapsible group sections ───────────────────────
+    /**
+     * Toggle collapse state on a card group.
+     * The .card-group-wrapper sibling CSS hides the following .card-list.
+     * @param {string} wrapperId - id of the .card-group-wrapper element
+     */
+    function toggleGroupCollapse(wrapperId) {
+      var wrapper = document.getElementById(wrapperId);
+      if (!wrapper) return;
+      wrapper.classList.toggle('is-collapsed');
+    }
+    window.toggleGroupCollapse = toggleGroupCollapse;
+
+    // ── 13. Group-level checkbox ──────────────────────────────
+    /**
+     * Toggle all sel-circle buttons within a group's card-list.
+     * Checkbox cycles: indeterminate / unchecked → checked → unchecked.
+     * @param {HTMLElement} checkbox - the .card-group-checkbox element
+     * @param {string}      wrapperId - id of the .card-group-wrapper
+     */
+    function toggleGroupCheckbox(checkbox, wrapperId) {
+      var isChecked = checkbox.classList.contains('is-checked');
+
+      // Determine new state: any non-fully-checked state → checked; checked → unchecked
+      var goChecked = !isChecked;
+
+      checkbox.classList.remove('is-checked', 'is-indeterminate');
+      if (goChecked) {
+        checkbox.classList.add('is-checked');
+        checkbox.setAttribute('aria-checked', 'true');
+      } else {
+        checkbox.setAttribute('aria-checked', 'false');
+      }
+
+      // Find the sibling card-list for this group
+      var wrapper = document.getElementById(wrapperId);
+      if (!wrapper) return;
+      var cardList = wrapper.nextElementSibling;
+      while (cardList && !cardList.classList.contains('card-list')) {
+        cardList = cardList.nextElementSibling;
+      }
+      if (!cardList) return;
+
+      // Apply selection to all sel-circle + parent card elements
+      var circles = cardList.querySelectorAll('.sel-circle');
+      circles.forEach(function (circle) {
+        if (goChecked) {
+          circle.classList.add('is-selected');
+        } else {
+          circle.classList.remove('is-selected');
+        }
+        var card = circle.closest('article');
+        if (card) card.classList.toggle('is-selected', goChecked);
+      });
+    }
+    window.toggleGroupCheckbox = toggleGroupCheckbox;
+
+    // ── 14. Drag-to-select ────────────────────────────────────
+    // Only active on words and sentences pages. A lasso rectangle follows
+    // the drag; cards intersecting the lasso gain .drag-hover; on mouseup
+    // they become .is-selected.
+
+    var lasso = document.createElement('div');
+    lasso.id = 'drag-lasso';
+    lasso.style.cssText = [
+      'position:fixed',
+      'z-index:100',
+      'pointer-events:none',
+      'display:none',
+      'background:rgba(251,191,36,0.06)',
+      'border:1.5px solid rgba(251,191,36,0.35)',
+      'border-radius:4px',
+    ].join(';');
+    document.body.appendChild(lasso);
+
+    var dragState = {
+      active:   false,
+      startX:   0,
+      startY:   0,
+      currentX: 0,
+      currentY: 0,
+    };
+
+    /** Return true when the current page is words or sentences */
+    function isDragEligiblePage() {
+      var wordsEl = document.getElementById('page-words');
+      var sentEl  = document.getElementById('page-sentences');
+      return (wordsEl && wordsEl.classList.contains('is-active')) ||
+             (sentEl  && sentEl.classList.contains('is-active'));
+    }
+
+    /** Position and size the lasso div from drag start to current mouse pos */
+    function updateLasso() {
+      var x1 = Math.min(dragState.startX, dragState.currentX);
+      var y1 = Math.min(dragState.startY, dragState.currentY);
+      var x2 = Math.max(dragState.startX, dragState.currentX);
+      var y2 = Math.max(dragState.startY, dragState.currentY);
+      lasso.style.left   = x1 + 'px';
+      lasso.style.top    = y1 + 'px';
+      lasso.style.width  = (x2 - x1) + 'px';
+      lasso.style.height = (y2 - y1) + 'px';
+    }
+
+    /** Check if two rects (DOMRect-like) intersect */
+    function rectsIntersect(a, b) {
+      return !(a.right < b.left || a.left > b.right ||
+               a.bottom < b.top || a.top > b.bottom);
+    }
+
+    /** Highlight cards inside the lasso */
+    function highlightLassoCards() {
+      var lassoRect = lasso.getBoundingClientRect();
+      // Cards on both pages
+      document.querySelectorAll('.wc-card, .sc-card').forEach(function (card) {
+        var cardRect = card.getBoundingClientRect();
+        if (rectsIntersect(lassoRect, cardRect)) {
+          card.classList.add('drag-hover');
+        } else {
+          card.classList.remove('drag-hover');
+        }
+      });
+    }
+
+    document.addEventListener('mousedown', function (e) {
+      if (!isDragEligiblePage()) return;
+      // Guard: don't start drag on interactive elements
+      if (e.target.closest('.card-header, .sel-circle, .card-group-header, .card-group-checkbox, .page-filter-btn, .pw-filter-panel, .ps-filter-panel')) return;
+      // Only left mouse button
+      if (e.button !== 0) return;
+
+      dragState.active   = true;
+      dragState.startX   = e.clientX;
+      dragState.startY   = e.clientY;
+      dragState.currentX = e.clientX;
+      dragState.currentY = e.clientY;
+
+      lasso.style.display = 'block';
+      updateLasso();
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', function (e) {
+      if (!dragState.active) return;
+      dragState.currentX = e.clientX;
+      dragState.currentY = e.clientY;
+      updateLasso();
+      highlightLassoCards();
+    });
+
+    document.addEventListener('mouseup', function (e) {
+      if (!dragState.active) return;
+      dragState.active = false;
+
+      // Convert drag-hover → is-selected
+      document.querySelectorAll('.wc-card.drag-hover, .sc-card.drag-hover').forEach(function (card) {
+        card.classList.remove('drag-hover');
+        card.classList.add('is-selected');
+        var circle = card.querySelector('.sel-circle');
+        if (circle) circle.classList.add('is-selected');
+      });
+
+      lasso.style.display = 'none';
+      lasso.style.width   = '0';
+      lasso.style.height  = '0';
+    });
+  </script>
+</body>
+</html>
