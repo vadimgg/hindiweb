@@ -933,6 +933,91 @@ Empty states are understated — muted text, centred, no illustration, no icon.
 
 ---
 
+### Deliver page — Replace Deck and .txt fallback placement
+
+#### Design decision
+
+The Deliver page deck configuration section now uses both slots of its two-column grid — Words Deck on the left, Sentences Deck on the right. The old design placed an "Options" block in the right slot, which contained a Replace Deck toggle and a .txt download fallback link. Both controls must be reintroduced without compressing or overloading the deck config blocks.
+
+**Chosen placement: Option C — a low-key options row in the deliver-action area, above the Send button.**
+
+Rationale (UX Principles 3 and 4):
+
+- **Progressive disclosure (Principle 3):** Replace Deck is a destructive, infrequent operation. Surfacing it inside every deck config block (Option B) makes it visible on every export, adding cognitive noise to the common case. A third full-width block (Option A) elevates it to the same visual weight as deck naming, which misrepresents how often it is used. Placing it above the Send button means it appears only when the user is about to act — at the moment it is actually relevant.
+- **Reduce cognitive load (Principle 4):** Deck naming is a configuration task; Replace and .txt fallback are action modifiers. Mixing them in the config blocks combines two distinct decision types in one surface. Keeping them adjacent to the Send button groups all action-time decisions together and preserves the config blocks as pure naming controls.
+- **Restraint (Principle 5):** One slim row above the button adds minimal visual weight. A third block would add a third "card" to a section that currently reads as a clean 2-up grid — breaking a pattern without sufficient reason.
+
+#### Replace Deck toggle — visual spec
+
+The toggle uses the standard Tailwind peer-checked pattern. It is displayed as a compact labeled row, visually subordinate to the Send button.
+
+```html
+<!-- Replace Deck toggle row — sits directly above the Send button in .deliver-action -->
+<div class="flex items-center justify-center gap-3 mb-5">
+  <label class="flex items-center gap-2.5 cursor-pointer select-none group">
+    <!-- Hidden checkbox — drives peer-checked states -->
+    <input type="checkbox" class="peer sr-only" id="replace-deck-toggle" />
+
+    <!-- Track -->
+    <span class="relative inline-flex h-5 w-9 shrink-0 rounded-full
+                 bg-slate-700/60 border border-slate-600/40
+                 transition-colors
+                 peer-checked:bg-amber-500/30 peer-checked:border-amber-500/40
+                 peer-focus-visible:ring-2 peer-focus-visible:ring-amber-500/50">
+      <!-- Thumb -->
+      <span class="absolute top-0.5 left-0.5 h-4 w-4 rounded-full
+                   bg-slate-500 transition-all
+                   peer-checked:translate-x-4 peer-checked:bg-amber-400"></span>
+    </span>
+
+    <!-- Label text -->
+    <span class="font-title text-[12px] font-semibold uppercase tracking-wider
+                 text-slate-500 transition-colors
+                 group-has-[:checked]:text-slate-300">
+      Replace deck
+    </span>
+  </label>
+
+  <!-- Tooltip hint — appears on hover of the label -->
+  <span class="text-[11px] text-slate-600 leading-tight max-w-[16rem] hidden sm:block">
+    Wipe existing deck and rebuild from scratch
+  </span>
+</div>
+```
+
+Colour rules:
+- **Off state:** track `bg-slate-700/60`, thumb `bg-slate-500`, label `text-slate-500` — low-visibility, does not compete with the Send button.
+- **On state:** track `bg-amber-500/30 border-amber-500/40`, thumb `bg-amber-400`, label `text-slate-300` — amber signals "active modifier", consistent with the app's amber = active convention.
+- Do **not** use a red track for the on state. Replace Deck is a powerful operation, but framing it as destructive/dangerous at the toggle level adds unnecessary alarm. The confirmation summary lines below the toggle (showing deck names) provide the reassurance.
+
+#### .txt fallback link — visual spec
+
+The .txt download link is a ghost-text link. It is placed below the Send button, in the `.deliver-action-meta` area that already exists for the card count summary. It must remain low-visibility — users who need it will look for it; users who don't need it should not be distracted by it.
+
+```html
+<!-- Inside .deliver-action, after the Send button -->
+<p class="deliver-action-meta">
+  <strong>5 cards</strong> across 2 decks
+</p>
+
+<!-- .txt fallback — ghost link, same vertical rhythm as deliver-action-meta -->
+<p class="mt-2 text-[12px] text-slate-600 text-center">
+  AnkiConnect not working?
+  <a href="#" class="text-slate-500 underline underline-offset-2
+                     hover:text-slate-300 transition-colors">
+    Download as .txt
+  </a>
+</p>
+```
+
+Class recipe:
+- Wrapper: `mt-2 text-[12px] text-slate-600 text-center`
+- Link: `text-slate-500 underline underline-offset-2 hover:text-slate-300 transition-colors`
+- Never use amber or teal on this link — those colours carry semantic meaning (Hindi word / romanisation). Ghost-style slate is correct.
+- The prompt text ("AnkiConnect not working?") is part of the affordance — it frames the link as a fallback, not a primary action.
+
+---
+
 ## Interaction Patterns
 
 ### How to write hover states

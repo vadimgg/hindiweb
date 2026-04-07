@@ -25,7 +25,7 @@ const allDates = [...new Set(allWords.map(w => w.date_added).filter(Boolean) as 
 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const dateChips = [...new Map(allDates.map(d => {
   const [y, mo] = d.split('-');
-  return [d.slice(0, 7), `${months[parseInt(mo) - 1]} ${y}`];
+  return [d.slice(0, 7), { prefix: d.slice(0, 7), label: `${months[parseInt(mo) - 1]} ${y}` }];
 })).values()];
 ---
 
@@ -77,8 +77,8 @@ const dateChips = [...new Map(allDates.map(d => {
       {dateChips.length > 0 && (
         <div class="pw-filter-group-row" id="pw-filter-chips">
           <button class="pw-filter-chip is-active" data-date-chip="all">All</button>
-          {dateChips.map(label => (
-            <button class="pw-filter-chip" data-date-chip={label}>{label}</button>
+          {dateChips.map(chip => (
+            <button class="pw-filter-chip" data-date-chip={chip.label} data-date-prefix={chip.prefix}>{chip.label}</button>
           ))}
         </div>
       )}
@@ -120,6 +120,7 @@ const dateChips = [...new Map(allDates.map(d => {
               id={`card-${i}`}
               class="wc-card is-collapsed"
               data-word-card={i}
+              data-word-date={w.date_added ? w.date_added.slice(0, 7) : ''}
               style="background: linear-gradient(145deg, #131f35 0%, #0f172a 100%); box-shadow: 0 0 0 1px rgba(51,65,85,0.5), 0 4px 24px rgba(0,0,0,0.4); border-radius: 1rem; overflow: hidden; border: 1px solid rgba(51,65,85,0.4);"
             >
               {/* Card header */}

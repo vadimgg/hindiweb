@@ -11,8 +11,8 @@ Update status: `open` → `in-progress` → `done`.
 
 These are the highest-value items to pick up in the next session:
 
-1. **[Tech Lead / P1]** Wire filter-panel date chips and chapter chips to actually filter cards — currently the chip buttons are rendered but clicks don't trigger any filter logic.
-2. **[Tech Lead / P1]** Wire the Deliver page to show/hide the empty state — when `getSelectedWordObjects().length === 0`, show `#deliver-empty` and hide `#deliver-main`.
+1. ~~**[Tech Lead / P1]** Wire filter-panel date chips and chapter chips to actually filter cards~~ — done 2026-04-06.
+2. ~~**[Tech Lead / P1]** Wire the Deliver page to show/hide the empty state~~ — done 2026-04-06; also added sentence rows, sentences deck config, and sentence export to Anki.
 3. **[Tech Lead / P1]** Define a `Word` interface in `types.ts` — the core data type is currently `any`, which means zero type safety across the whole pipeline.
 4. **[Tech Lead / P2]** Add sentence chapter to search index — add `ch` field to `sentenceSearchIndex` so users can filter by chapter name.
 5. **[Tech Lead / P2]** Add `ANKI_FIELDS`/`wordToAnkiFields` sync assertion — a 3-line check that catches mismatches at export time with no dependencies.
@@ -43,7 +43,7 @@ These are the highest-value items to pick up in the next session:
 | Item | Owner | Priority | Status |
 |---|---|---|---|
 | Sidebar checkbox affordance — drag-select is not discoverable | UI/UX Designer | P2 | open |
-| Export empty state — guide user back to Words tab when nothing selected | UI/UX Designer | P2 | open |
+| Export empty state — guide user back to Words tab when nothing selected | UI/UX Designer | P2 | done |
 | AnkiConnect offline recovery — include install link in offline state UI | UI/UX Designer | P2 | open |
 | Search empty state — add inline "clear search" link | UI/UX Designer | P2 | open |
 | Collapsed card affordance — section count badge or visible chevron hint | UI/UX Designer | P3 | open |

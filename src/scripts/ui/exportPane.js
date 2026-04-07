@@ -1,23 +1,24 @@
 /**
- * Export pane controller — selected-word list, AnkiConnect status polling, export actions.
+ * Export pane controller — selected-word list, sentence list, AnkiConnect status polling, export actions.
  *
  * Responsible for: keeping the Deliver page's UI in sync with the current word
- * selection, polling AnkiConnect every 3 seconds while the Deliver tab is open,
- * handling the "Send to Anki" and "Replace Deck" button actions, and
+ * and sentence selection, polling AnkiConnect every 3 seconds while the Deliver
+ * tab is open, handling the "Send to Anki" and "Replace Deck" button actions, and
  * triggering the .txt fallback download.
  *
  * Does NOT perform the actual Anki API calls (anki/export.js) or selection
  * state management (state/selection.js) — it coordinates them.
  *
  * Dependencies: anki/connect.js, anki/export.js, anki/txtFallback.js,
- *               state/selection.js.
+ *               state/selection.js, data.js.
  */
-// Responsible for: deliver page controller — word list, AnkiConnect polling, export button
+// Responsible for: deliver page controller — word list, sentence list, AnkiConnect polling, export button
 
-import { checkAnkiConnect }                              from '../anki/connect.js';
-import { sendToAnki, overrideDeck }                      from '../anki/export.js';
+import { checkAnkiConnect, ankiRequest }                  from '../anki/connect.js';
+import { sendToAnki, overrideDeck, ensureSentenceNoteType, sentenceToAnkiFields } from '../anki/export.js';
 import { downloadAnkiTxt }                               from '../anki/txtFallback.js';
-import { getSelectedWordObjects }                        from '../state/selection.js';
+import { getSelectedWordObjects, getSelectedSentenceIndices } from '../state/selection.js';
+import { getAllSentences }                                from '../data.js';
 
 /** @type {number|null} setInterval handle; non-null while polling is active. */
 let pollInterval = null;
@@ -26,7 +27,7 @@ let pollInterval = null;
 const plural = n => (n !== 1 ? 's' : '');
 
 /**
- * Returns the current deck name from the deck inputs (main::sub).
+ * Returns the current words deck name from the deck inputs (main::sub).
  *
  * @returns {string} Deck name in the form 'Main::Sub'.
  */
@@ -37,7 +38,18 @@ function getDeckName() {
 }
 
 /**
- * Syncs the deck preview text and confirm-deck label to the current input values.
+ * Returns the current sentences deck name from the sentences deck inputs (main::sub).
+ *
+ * @returns {string} Deck name in the form 'Main::Sub'.
+ */
+function getSentenceDeckName() {
+  const main = document.getElementById('export-sent-deck-main')?.value.trim() || 'Hindi';
+  const sub  = document.getElementById('export-sent-deck-sub')?.value.trim() || 'Sentences01';
+  return sub ? `${main}::${sub}` : main;
+}
+
+/**
+ * Syncs the words deck preview text and confirm-deck label to the current input values.
  *
  * @returns {void}
  */
@@ -46,6 +58,19 @@ function syncDeckPreview() {
   const preview = document.getElementById('export-deck-preview');
   if (preview) preview.textContent = name;
   const confirmDeck = document.getElementById('deliver-confirm-deck');
+  if (confirmDeck) confirmDeck.textContent = name;
+}
+
+/**
+ * Syncs the sentences deck preview text and confirm-deck label to the current input values.
+ *
+ * @returns {void}
+ */
+function syncSentenceDeckPreview() {
+  const name = getSentenceDeckName();
+  const preview = document.getElementById('export-sent-deck-preview');
+  if (preview) preview.textContent = name;
+  const confirmDeck = document.getElementById('deliver-confirm-sent-deck');
   if (confirmDeck) confirmDeck.textContent = name;
 }
 
@@ -121,30 +146,81 @@ function stopPolling() {
  * @returns {void}
  */
 function populateWordTable() {
-  const words   = getSelectedWordObjects();
-  const rows    = document.getElementById('export-word-rows');
-  const countEl = document.getElementById('export-word-count');
-  const metaEl  = document.getElementById('deliver-action-meta');
-  const confirmCount = document.getElementById('deliver-confirm-word-count');
+  const words        = getSelectedWordObjects();
+  const sentIndices  = getSelectedSentenceIndices();
+  const allSents     = getAllSentences();
+  const sentences    = sentIndices.map(i => allSents[i]).filter(Boolean);
 
-  if (countEl) countEl.textContent = String(words.length);
-  if (confirmCount) confirmCount.textContent = `${words.length} word card${plural(words.length)}`;
-  if (metaEl) metaEl.textContent = words.length > 0
-    ? `${words.length} card${plural(words.length)} ready to export`
-    : 'Select words on the Words page to begin';
+  const wordRows     = document.getElementById('export-word-rows');
+  const sentRows     = document.getElementById('export-sent-rows');
+  const wordCountEl  = document.getElementById('export-word-count');
+  const sentCountEl  = document.getElementById('export-sent-count');
+  const metaEl       = document.getElementById('deliver-action-meta');
+  const confirmWordCount = document.getElementById('deliver-confirm-word-count');
+  const confirmSentLine  = document.getElementById('deliver-confirm-sent-line');
+  const confirmSentCount = document.getElementById('deliver-confirm-sent-count');
+  const deliverMain  = document.getElementById('deliver-main');
+  const deliverEmpty = document.getElementById('deliver-empty');
+
+  // Update counts
+  if (wordCountEl)  wordCountEl.textContent  = String(words.length);
+  if (sentCountEl)  sentCountEl.textContent  = String(sentences.length);
+  if (confirmWordCount) confirmWordCount.textContent = `${words.length} word card${plural(words.length)}`;
+  if (confirmSentCount) confirmSentCount.textContent = `${sentences.length} sentence card${plural(sentences.length)}`;
+
+  // Show/hide sentences confirm line
+  if (confirmSentLine) confirmSentLine.style.display = sentences.length > 0 ? '' : 'none';
+
+  // Update meta line
+  const total = words.length + sentences.length;
+  if (metaEl) {
+    if (total === 0) {
+      metaEl.textContent = 'Select words or sentences to begin';
+    } else if (words.length > 0 && sentences.length > 0) {
+      metaEl.innerHTML = `<strong>${total} cards</strong> across 2 decks`;
+    } else {
+      metaEl.textContent = `${total} card${plural(total)} ready to export`;
+    }
+  }
+
+  // Show/hide empty state
+  if (deliverMain && deliverEmpty) {
+    const isEmpty = total === 0;
+    deliverMain.style.display  = isEmpty ? 'none' : '';
+    deliverEmpty.style.display = isEmpty ? ''     : 'none';
+  }
 
   syncDeckPreview();
+  syncSentenceDeckPreview();
 
-  if (!rows) return;
-  rows.innerHTML = words.map(w => `
-    <div class="deliver-row">
-      <span class="deliver-row-hindi" lang="hi">${w.hindi || ''}</span>
-      <span class="deliver-row-sep">·</span>
-      <span class="deliver-row-roman">${w.romanisation || ''}</span>
-      <span class="deliver-row-sep">·</span>
-      <span class="deliver-row-english">${(w.english || '').split(',')[0].trim()}</span>
-      <span class="deliver-row-meta">${[w.pos, w.gender ? (w.gender === 'masculine' ? 'masc.' : 'fem.') : ''].filter(Boolean).join(' · ')}</span>
-    </div>`).join('');
+  // Populate word rows
+  if (wordRows) {
+    wordRows.innerHTML = words.map(w => `
+      <div class="deliver-row">
+        <span class="deliver-row-hindi" lang="hi">${w.hindi || ''}</span>
+        <span class="deliver-row-sep">·</span>
+        <span class="deliver-row-roman">${w.romanisation || ''}</span>
+        <span class="deliver-row-sep">·</span>
+        <span class="deliver-row-english">${(w.english || '').split(',')[0].trim()}</span>
+        <span class="deliver-row-meta">${[w.pos, w.gender ? (w.gender === 'masculine' ? 'masc.' : 'fem.') : ''].filter(Boolean).join(' · ')}</span>
+      </div>`).join('');
+  }
+
+  // Populate sentence rows
+  if (sentRows) {
+    sentRows.innerHTML = sentences.map(s => {
+      const badge = s.register
+        ? `<span class="deliver-row-badge"><span class="reg reg-${s.register}" style="font-size:11px;padding:0.1rem 0.45rem;">${s.register}</span></span>`
+        : '';
+      return `
+        <div class="deliver-row">
+          <span class="deliver-row-hindi" lang="hi">${s.hindi || ''}</span>
+          <span class="deliver-row-sep">·</span>
+          <span class="deliver-row-english">${s.english || ''}</span>
+          ${badge}
+        </div>`;
+    }).join('');
+  }
 }
 
 /**
@@ -181,16 +257,49 @@ function buildSendMessage(added, skipped, deckName) {
 }
 
 /**
- * Handles the export button click: validates, runs the export/override API call,
- * and shows the result feedback.
+ * Exports selected sentences to Anki incrementally (skipping duplicates).
+ *
+ * @param {object[]} sentences - Sentence objects to export.
+ * @param {string}   deckName  - Target Anki deck name.
+ * @returns {Promise<{ added: number, skipped: number }>}
+ */
+async function sendSentencesToAnki(sentences, deckName) {
+  await ankiRequest('createDeck', { deck: deckName });
+  await ensureSentenceNoteType();
+  const notes  = sentences.map(s => ({
+    deckName,
+    modelName: 'Hindi Sentence',
+    fields:    sentenceToAnkiFields(s, s.chapter ?? ''),
+    tags:      s.anki_tags ?? [],
+    options:   { allowDuplicate: false, duplicateScope: 'deck' },
+  }));
+  const canAdd  = await ankiRequest('canAddNotes', { notes });
+  const toAdd   = notes.filter((_, i) => canAdd[i]);
+  const skipped = notes.length - toAdd.length;
+  let added = 0;
+  if (toAdd.length > 0) {
+    const results = await ankiRequest('addNotes', { notes: toAdd });
+    added = results.filter(r => r !== null).length;
+  }
+  return { added, skipped };
+}
+
+/**
+ * Handles the export button click: validates, runs the export/override API call
+ * for both words and sentences, and shows the result feedback.
  *
  * @returns {Promise<void>}
  */
 async function handleExportClick() {
-  const words      = getSelectedWordObjects();
-  const deckName   = getDeckName();
-  const isOverride = document.getElementById('export-override-toggle')?.checked ?? false;
-  if (!words.length) { showFeedback('No words selected.', true); return; }
+  const words        = getSelectedWordObjects();
+  const sentIndices  = getSelectedSentenceIndices();
+  const allSents     = getAllSentences();
+  const sentences    = sentIndices.map(i => allSents[i]).filter(Boolean);
+  const deckName     = getDeckName();
+  const sentDeckName = getSentenceDeckName();
+  const isOverride   = document.getElementById('export-override-toggle')?.checked ?? false;
+
+  if (!words.length && !sentences.length) { showFeedback('No words or sentences selected.', true); return; }
 
   const exportBtn = document.getElementById('export-btn');
   if (exportBtn) {
@@ -200,13 +309,32 @@ async function handleExportClick() {
   document.getElementById('export-feedback')?.classList.add('hidden');
 
   try {
-    if (isOverride) {
-      const { added, deleted } = await overrideDeck(words, deckName);
-      showFeedback(`Replaced! Removed ${deleted} old card${plural(deleted)}, added ${added} new card${plural(added)} to "${deckName}".`, false);
-    } else {
-      const { added, skipped } = await sendToAnki(words, deckName);
-      showFeedback(buildSendMessage(added, skipped, deckName), false);
+    const messages = [];
+
+    // Export words
+    if (words.length > 0) {
+      if (isOverride) {
+        const { added, deleted } = await overrideDeck(words, deckName);
+        messages.push(`Words: removed ${deleted} old, added ${added} new to "${deckName}".`);
+      } else {
+        const { added, skipped } = await sendToAnki(words, deckName);
+        messages.push(buildSendMessage(added, skipped, deckName));
+      }
     }
+
+    // Export sentences
+    if (sentences.length > 0) {
+      const { added, skipped } = await sendSentencesToAnki(sentences, sentDeckName);
+      if (skipped > 0 && added === 0) {
+        messages.push(`Sentences: all ${skipped} already exist in "${sentDeckName}".`);
+      } else if (skipped > 0) {
+        messages.push(`Sentences: ${added} added · ${skipped} already existed in "${sentDeckName}".`);
+      } else {
+        messages.push(`Sentences: ${added} card${plural(added)} added to "${sentDeckName}".`);
+      }
+    }
+
+    showFeedback(messages.join(' '), false);
   } catch (err) {
     showFeedback(`Error: ${err.message}`, true);
   } finally {
@@ -243,6 +371,8 @@ function wireWindowListeners() {
 function wireControlListeners() {
   document.getElementById('export-deck-main')?.addEventListener('input', syncDeckPreview);
   document.getElementById('export-deck-sub')?.addEventListener('input', syncDeckPreview);
+  document.getElementById('export-sent-deck-main')?.addEventListener('input', syncSentenceDeckPreview);
+  document.getElementById('export-sent-deck-sub')?.addEventListener('input', syncSentenceDeckPreview);
 
   document.getElementById('export-override-toggle')?.addEventListener('change', e => {
     const exportBtn = document.getElementById('export-btn');

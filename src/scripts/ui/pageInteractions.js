@@ -346,6 +346,99 @@ function handlePageClick(e) {
   handleCardHeaderClick(e);
 }
 
+// ── Filter chip filtering ─────────────────────────────────────────────────────
+
+/**
+ * Wires date-chip buttons in `#pw-filter-chips` to filter word card groups.
+ *
+ * Each chip carries `data-date-chip` (month-year label, e.g. "Jan 2026") and
+ * `data-date-prefix` (YYYY-MM, e.g. "2026-01"). "all" shows every group; any
+ * other chip shows only groups that contain at least one card whose
+ * `data-word-date` attribute starts with the chip's YYYY-MM prefix.
+ *
+ * @returns {void}
+ */
+function wireWordFilterChips() {
+  const container = document.getElementById('pw-filter-chips');
+  if (!container) return;
+
+  container.addEventListener('click', e => {
+    const chip = e.target.closest('.pw-filter-chip');
+    if (!chip) return;
+
+    // Update active chip
+    container.querySelectorAll('.pw-filter-chip').forEach(c => c.classList.remove('is-active'));
+    chip.classList.add('is-active');
+
+    const prefix = chip.dataset.datePrefix ?? '';  // YYYY-MM or '' for "all"
+    const isAll  = chip.dataset.dateChip === 'all';
+
+    // Show/hide card-group-wrappers + their card-list siblings
+    document.querySelectorAll('#page-words .card-group-wrapper').forEach(wrapper => {
+      const cardList = wrapper.nextElementSibling;
+      const show = isAll || (cardList && [...cardList.querySelectorAll('[data-word-card]')].some(
+        card => (card.dataset.wordDate ?? '').startsWith(prefix)
+      ));
+      if (wrapper)  wrapper.style.display  = show ? '' : 'none';
+      if (cardList) cardList.style.display = show ? '' : 'none';
+    });
+
+    // Update count label
+    const countEl = document.getElementById('pw-filter-count');
+    if (countEl) {
+      const visibleCards = [...document.querySelectorAll('#page-words [data-word-card]')]
+        .filter(card => !card.classList.contains('hidden') && card.closest('.card-list')?.style.display !== 'none');
+      const total = document.querySelectorAll('#page-words [data-word-card]').length;
+      countEl.innerHTML = isAll
+        ? `Showing <strong>${total}</strong> words`
+        : `Showing <strong>${visibleCards.length}</strong> of ${total} words`;
+    }
+  });
+}
+
+/**
+ * Wires chapter-chip buttons in `#ps-filter-chips` to filter sentence card groups.
+ *
+ * Each chip has a `data-chapter-chip` attribute. "all" shows every chapter group;
+ * any other value shows only the group whose chapter name matches that chip value.
+ *
+ * @returns {void}
+ */
+function wireSentenceFilterChips() {
+  const container = document.getElementById('ps-filter-chips');
+  if (!container) return;
+
+  container.addEventListener('click', e => {
+    const chip = e.target.closest('.pw-filter-chip');
+    if (!chip) return;
+
+    // Update active chip
+    container.querySelectorAll('.pw-filter-chip').forEach(c => c.classList.remove('is-active'));
+    chip.classList.add('is-active');
+
+    const value = chip.dataset.chapterChip ?? 'all';
+
+    // Show/hide chapter group-wrappers and their card-list siblings
+    document.querySelectorAll('#page-sentences .card-group-wrapper').forEach(wrapper => {
+      const label = wrapper.querySelector('.card-group-label')?.textContent?.trim() ?? '';
+      const show = value === 'all' || label === value;
+      const cardList = wrapper.nextElementSibling;
+      if (wrapper)  wrapper.style.display  = show ? '' : 'none';
+      if (cardList) cardList.style.display = show ? '' : 'none';
+    });
+
+    // Update count label
+    const countEl = document.getElementById('ps-filter-count');
+    if (countEl) {
+      const visibleCount = document.querySelectorAll('#page-sentences [data-sentence-card]:not(.hidden)').length;
+      const total        = document.querySelectorAll('#page-sentences [data-sentence-card]').length;
+      countEl.innerHTML  = value === 'all'
+        ? `Showing <strong>${total}</strong> sentences`
+        : `Showing <strong>${visibleCount}</strong> of ${total} sentences`;
+    }
+  });
+}
+
 // ── Initialise pre-selected state ─────────────────────────────────────────────
 
 /**
@@ -401,6 +494,10 @@ export function initPageInteractions() {
   // Filter panels
   wireFilterPanel('pw-filter-btn', 'pw-filter-panel');
   wireFilterPanel('ps-filter-btn', 'ps-filter-panel');
+
+  // Filter chips
+  wireWordFilterChips();
+  wireSentenceFilterChips();
 
   // View mode toggles
   wireViewMode('words',     'pw');

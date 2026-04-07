@@ -18,9 +18,9 @@ _Generated 2026-04-07 by `npm run arch`._
 | `src/components/cards/sections/UsageNotesSection.astro` | 27 | Usage Notes expandable section inside a word card, open by default |
 | `src/components/cards/sections/WordBreakdownSection.astro` | 130 | Word Breakdown expandable section inside a sentence card |
 | `src/components/sidebar/AppSidebar.astro` | 86 | desktop sidebar — logo, search bar, words index nav, sentences index nav |
-| `src/components/tabs/ExportTab.astro` | 141 | Deliver/Export page — AnkiConnect status, deck config, selected items, send button |
+| `src/components/tabs/ExportTab.astro` | 184 | Deliver/Export page — AnkiConnect status, deck config, selected items, send button |
 | `src/components/tabs/SentencesTab.astro` | 154 | Sentences page content — header, filter panel, chapter dividers, sentence cards |
-| `src/components/tabs/WordsTab.astro` | 228 | Words page content — header, filter panel, group dividers, word cards |
+| `src/components/tabs/WordsTab.astro` | 229 | Words page content — header, filter panel, group dividers, word cards |
 | `src/components/ui/TabBar.astro` | 28 | DaVinci Resolve-style bottom-fixed tab bar (Words | Sentences | Export) |
 | `src/components/MobileHeader.astro` | 13 | mobile-only page header with title and search input (hidden on lg+) |
 | `src/components/NavBar.astro` | 60 | sticky top nav bar with brand mark and page-switching buttons |
@@ -52,14 +52,14 @@ _Generated 2026-04-07 by `npm run arch`._
 | `src/scripts/state/selection.js` | 136 | word and sentence selection state and change notifications via CustomEvents |
 | `src/scripts/state/tabs.js` | 87 | active tab state, DOM panel switching, and tabchange event dispatch |
 | `src/scripts/ui/cards.js` | 78 | word card collapse/expand toggling and deselect button handling |
-| `src/scripts/ui/exportPane.js` | 276 | deliver page controller — word list, AnkiConnect polling, export button |
+| `src/scripts/ui/exportPane.js` | 406 | deliver page controller — word list, sentence list, AnkiConnect polling, export button |
 | `src/scripts/ui/indexSidebar.js` | 120 | sidebar interactions — drag-select checkboxes, group collapse, scroll-to-card |
-| `src/scripts/ui/pageInteractions.js` | 421 | page-level interactions — filter panel, group collapse, sel-circle, drag-select |
-| `src/scripts/ui/search.js` | 199 | fuzzy search scoring and filtering word/sentence card visibility |
+| `src/scripts/ui/pageInteractions.js` | 518 | page-level interactions — filter panel, group collapse, sel-circle, drag-select |
+| `src/scripts/ui/search.js` | 198 | fuzzy search scoring and filtering word/sentence card visibility |
 | `src/scripts/ui/sentenceCards.js` | 29 | sentence card collapse/expand toggling |
 | `src/scripts/ui/tooltip.js` | 180 | vocab-hint span annotation in example cards and tooltip positioning |
 | `src/scripts/utils/stringUtils.js` | 52 | shared string utilities — norm(), extractDevanagari(), extractPartLabel() |
-| `src/scripts/data.js` | 43 | lazy read-only accessors for window.__APP_DATA__ (set by define:vars in index.astro) |
+| `src/scripts/data.js` | 49 | lazy read-only accessors for window.__APP_DATA__ (set by define:vars in index.astro) |
 | `src/scripts/main.js` | 35 | bootstrapper — imports all modules and initialises them after DOMContentLoaded |
 | `src/utils/cardHelpers.ts` | 119 | pure helper functions shared across WordCard section components |
 | `src/utils/highlight.ts` | 121 | rich text highlighting for vocabulary card text content |
@@ -177,7 +177,7 @@ _Generated 2026-04-07 by `npm run arch`._
 
 #### `ExportTab.astro`
 **Responsibility:** Deliver/Export page — AnkiConnect status, deck config, selected items, send button  
-**Lines:** 141
+**Lines:** 184
 
 #### `SentencesTab.astro`
 **Responsibility:** Sentences page content — header, filter panel, chapter dividers, sentence cards  
@@ -186,7 +186,7 @@ _Generated 2026-04-07 by `npm run arch`._
 
 #### `WordsTab.astro`
 **Responsibility:** Words page content — header, filter panel, group dividers, word cards  
-**Lines:** 228
+**Lines:** 229
 **Depends on:** `../WordCard.astro`, `../../utils/cardHelpers`
 
 ### `src/components/ui/`
@@ -212,14 +212,15 @@ _Generated 2026-04-07 by `npm run arch`._
 
 #### `data.js`
 **Responsibility:** lazy read-only accessors for window.__APP_DATA__ (set by define:vars in index.astro)  
-**Lines:** 43
-**Exports:** `getAllWords`, `getHoverData`, `getSentenceIndex`, `getWordGroupTitles`, `getWordSearchIndex`
+**Lines:** 49
+**Exports:** `getAllSentences`, `getAllWords`, `getHoverData`, `getSentenceIndex`, `getWordGroupTitles`, `getWordSearchIndex`
 **Functions:**
 - `getAllWords()` — Returns the full array of all vocabulary word objects across all loaded JSON files.
 - `getWordGroupTitles()` — Returns a sparse array mapping word index → source file title (used for deck name defaults).
 - `getWordSearchIndex()` — Returns the compact search index for words: [{ i, h, r, e, d }].
 - `getSentenceIndex()` — Returns the compact search index for sentences: [{ i, h, r, e, d }].
 - `getHoverData()` — Returns minimal hover data for each word: [{ i, hindi, roman, english, forms }].
+- `getAllSentences()` — Returns the full array of all sentence objects across all loaded sentence JSON files.
 
 #### `main.js`
 **Responsibility:** bootstrapper — imports all modules and initialises them after DOMContentLoaded  
@@ -435,13 +436,15 @@ _Generated 2026-04-07 by `npm run arch`._
 - `initCards()` — Initialises word card interactions:
 
 #### `exportPane.js`
-**Responsibility:** deliver page controller — word list, AnkiConnect polling, export button  
-**Lines:** 276
-**Depends on:** `../anki/connect.js`, `../anki/export.js`, `../anki/txtFallback.js`, `../state/selection.js`
+**Responsibility:** deliver page controller — word list, sentence list, AnkiConnect polling, export button  
+**Lines:** 406
+**Depends on:** `../anki/connect.js`, `../anki/export.js`, `../anki/txtFallback.js`, `../state/selection.js`, `../data.js`
 **Exports:** `initExportPane`
 **Functions:**
-- `getDeckName()` _(internal)_ — Returns the current deck name from the deck inputs (main::sub).
-- `syncDeckPreview()` _(internal)_ — Syncs the deck preview text and confirm-deck label to the current input values.
+- `getDeckName()` _(internal)_ — Returns the current words deck name from the deck inputs (main::sub).
+- `getSentenceDeckName()` _(internal)_ — Returns the current sentences deck name from the sentences deck inputs (main::sub).
+- `syncDeckPreview()` _(internal)_ — Syncs the words deck preview text and confirm-deck label to the current input values.
+- `syncSentenceDeckPreview()` _(internal)_ — Syncs the sentences deck preview text and confirm-deck label to the current input values.
 - `updateStatusBadge()` _(internal)_ — Updates the AnkiConnect status bar and export button state.
 - `pollAnkiStatus()` _(internal)_ — Checks AnkiConnect status and updates the badge with the result.
 - `startPolling()` _(internal)_ — Starts polling AnkiConnect every 3 seconds. No-op if already polling.
@@ -449,7 +452,8 @@ _Generated 2026-04-07 by `npm run arch`._
 - `populateWordTable()` _(internal)_ — Rebuilds the selected-word list in the deliver panel.
 - `showFeedback()` _(internal)_ — Displays a success or error message below the export button.
 - `buildSendMessage()` _(internal)_ — Builds the success feedback message for an incremental Anki export.
-- `handleExportClick()` _(internal)_ — Handles the export button click: validates, runs the export/override API call,
+- `sendSentencesToAnki()` _(internal)_ — Exports selected sentences to Anki incrementally (skipping duplicates).
+- `handleExportClick()` _(internal)_ — Handles the export button click: validates, runs the export/override API call
 - `wireWindowListeners()` _(internal)_ — Wires window-level event listeners for tab changes and selection changes.
 - `wireControlListeners()` _(internal)_ — Wires DOM element listeners for the deck inputs, override toggle, export button,
 - `initExportPane()` — Initialises the export/deliver pane.
@@ -466,7 +470,7 @@ _Generated 2026-04-07 by `npm run arch`._
 
 #### `pageInteractions.js`
 **Responsibility:** page-level interactions — filter panel, group collapse, sel-circle, drag-select  
-**Lines:** 421
+**Lines:** 518
 **Depends on:** `../state/selection.js`
 **Exports:** `initPageInteractions`
 **Functions:**
@@ -480,14 +484,16 @@ _Generated 2026-04-07 by `npm run arch`._
 - `handleCardHeaderClick()` _(internal)_ — Handles clicks on a card header to toggle collapse state.
 - `initDragSelect()` _(internal)_ — Sets up the drag-to-select lasso on the document.
 - `handlePageClick()` _(internal)_ — Single delegated click handler for the entire document covering both pages.
+- `wireWordFilterChips()` _(internal)_ — Wires date-chip buttons in `#pw-filter-chips` to filter word card groups.
+- `wireSentenceFilterChips()` _(internal)_ — Wires chapter-chip buttons in `#ps-filter-chips` to filter sentence card groups.
 - `syncInitialSelection()` _(internal)_ — Syncs the sel-circle and article.is-selected state to match
 - `wireSelectionChangeListener()` _(internal)_ — Keeps sel-circles and badges in sync when selection changes externally
 - `initPageInteractions()` — Initialises all page-level interactions.
 
 #### `search.js`
 **Responsibility:** fuzzy search scoring and filtering word/sentence card visibility  
-**Lines:** 199
-**Depends on:** `../data.js`, `../state/selection.js`, `../state/tabs.js`, `../utils/stringUtils.js`
+**Lines:** 198
+**Depends on:** `../data.js`, `../state/tabs.js`, `../utils/stringUtils.js`
 **Exports:** `applyFilter`, `getWordRowMap`, `initSearch`
 **Functions:**
 - `fuzzyScore()` _(internal)_ — Scores how well a search needle fuzzy-matches a single haystack string.

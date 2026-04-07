@@ -40,3 +40,9 @@ export const getSentenceIndex = () => window.__APP_DATA__?.sentenceSearchIndex ?
  * @returns {{ i: number, hindi: string, roman: string, english: string, forms: {h:string,r:string}[] }[]}
  */
 export const getHoverData = () => window.__APP_DATA__?.hoverData ?? [];
+
+/**
+ * Returns the full array of all sentence objects across all loaded sentence JSON files.
+ * @returns {object[]}
+ */
+export const getAllSentences = () => window.__APP_DATA__?.allSentences ?? [];
