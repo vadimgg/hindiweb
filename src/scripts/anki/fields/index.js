@@ -5,9 +5,10 @@
  * vocabulary word to a complete Anki fields object. Each field is produced by
  * a dedicated builder module; this file only wires them together.
  *
- * Dependencies: all files in anki/fields/.
+ * Dependencies: all files in anki/fields/, noteType.js (ANKI_FIELDS).
  */
 // Responsible for: assembling wordToAnkiFields() from all individual field builders
+import { ANKI_FIELDS }           from '../noteType.js';
 import { buildAnkiCategory }     from './category.js';
 import { buildAnkiGender }       from './gender.js';
 import { buildAnkiTransitivity } from './transitivity.js';
@@ -47,4 +48,12 @@ export function wordToAnkiFields(word) {
     SoundAlikes:  buildAnkiSoundAlikes(word),
     Etymology:    buildAnkiEtymology(word),
   };
+}
+
+// Sync assertion: wordToAnkiFields keys must exactly match ANKI_FIELDS (same order).
+const _actualKeys = Object.keys(wordToAnkiFields({}));
+if (JSON.stringify(_actualKeys) !== JSON.stringify(ANKI_FIELDS)) {
+  throw new Error(
+    `wordToAnkiFields/ANKI_FIELDS mismatch.\n  ANKI_FIELDS: ${ANKI_FIELDS.join(', ')}\n  wordToAnkiFields: ${_actualKeys.join(', ')}`
+  );
 }

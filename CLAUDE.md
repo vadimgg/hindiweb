@@ -77,7 +77,7 @@ You (Claude) are the **PM**. You coordinate two specialist agents:
 - Implement designs in Astro/Tailwind/TypeScript/vanilla JS.
 - Never change `STYLE.md` — that belongs to the designer.
 
-**Output:** list of files changed + build/arch confirmation + improvement suggestions.
+**Output:** files changed (every file) + `npm run build && npm run arch` result (non-optional) + acceptance criteria met + improvement suggestions (3–5 items).
 
 ---
 
@@ -94,11 +94,18 @@ User request
 
 ### When to use agents vs inline
 - **Use agents:** multi-file changes, full audits, document rewrites, anything > ~5 file edits
-- **Do inline:** single-file edits, quick lookups, running commands, answering questions
+- **Do inline:** single-file edits (< 5 lines, trivial), quick lookups, running commands, answering questions
+
+**PM role — inline exceptions:** The PM never edits source code. If an edit is truly trivial (typo fix, removing one dead import), do it inline and prefix the response with `[inline — trivial]`. Any ambiguity → brief an agent.
 
 ### Parallel agents
 Spawn agents in parallel when their file scopes don't overlap.  
 Always include an explicit **"do NOT touch"** list in each prompt when running in parallel.
+
+**Example parallel pattern:**
+- Designer updating `STYLE.md` + writing `specs/demo/X.html`
+- Tech Lead implementing an already-specced feature in `src/`
+These can run simultaneously because they own different file sets.
 
 ---
 
@@ -119,16 +126,33 @@ Tasks:
 1. ...
 2. ...
 
-Verify (Tech Lead only):
+Acceptance criteria:
+- [Specific element IDs, function names, class names, or behaviours that must be present when done]
+- [E.g. "#deliver-confirm-sent-line hides when sentences.length === 0"]
+- [E.g. "npm run build exits 0 with no type errors"]
+
+Verify (Tech Lead only — non-optional):
 - npm run build
 - npm run arch
 
 Output:
-- [what to report back — changes made, files touched]
-- [Improvement suggestions: 3–5 items in your domain]
+- Files changed (list every file)
+- Build result (pass/fail)
+- Acceptance criteria met? (yes/no per item)
+- Improvement suggestions: 3–5 items in your domain
 ```
 
 **Do not paste file contents into prompts.** Give paths and let the agent read.
+
+### Token efficiency rules
+These apply to every agent spawn and every inline action:
+
+- **Read ARCHITECTURE.md first, source files second.** Agents should orient from the architecture doc, then read only the specific files named in the brief.
+- **Use offset/limit when reading large files.** If you need lines 40–80, pass `offset: 39, limit: 41`. Do not read a 300-line file to inspect one function.
+- **Use the Explore agent for discovery, not general-purpose.** When searching for a pattern across the codebase, use `subagent_type: Explore`. Reserve general-purpose for implementation.
+- **One concern per agent.** Split unrelated tasks across separate agents rather than dumping everything into one brief. Focused agents produce shorter, more useful outputs.
+- **No confirmation padding.** Agents must not restate the brief or summarise what they did beyond the Output section. Terse is correct.
+- **PM reads summaries, not diffs.** The PM never reads source files. If the agent's output summary is insufficient to review, ask for a tighter summary — don't read the file yourself.
 
 ### Designer demo format
 
@@ -241,14 +265,17 @@ Different runtime environments; cannot share an import. Not a duplicate to fix.
 
 ## Session closeout checklist
 
-Before ending a session:
+**Run this before every session end — not optional.**
+
 - [ ] `npm run build` — passes clean?
 - [ ] `npm run arch` — no new warnings beyond the known flag?
 - [ ] Web card sections and Anki sections are in the same order?
 - [ ] Every new/removed section has a matching Anki field builder change?
-- [ ] `BACKLOG.md` updated with any new suggestions from agents?
+- [ ] `BACKLOG.md` — completed items marked `done`, new suggestions added?
 - [ ] Any completed specs moved from `specs/active/` to `specs/archive/`?
-- [ ] `CLAUDE.md` "Open work" / "Next Up" (BACKLOG) reflects current state?
+- [ ] Memory updated? (`/Users/vadimgagarin/.claude/projects/.../memory/`)
+
+If the session ended mid-task, add a `## Open work` section at the top of `BACKLOG.md` with one sentence describing exact stopping point.
 
 ---
 

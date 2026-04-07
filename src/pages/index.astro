@@ -60,9 +60,14 @@ try {
   allSentences = sentenceChapters.flatMap(c => c.sentences);
 } catch { /* vocab/sentences/ dir doesn't exist yet */ }
 
+// Build a parallel array mapping sentence index → chapter name for search filtering
+const sentenceChapterNames: string[] = sentenceChapters.flatMap(c =>
+  c.sentences.map(() => c.chapter)
+);
+
 // ── Client-side search + hover payloads ──────────────────────────────────────
 const wordSearchIndex     = allWords.map((w, i) => ({ i, h: w.hindi, r: w.romanisation, e: w.english, d: w.date_added ?? '' }));
-const sentenceSearchIndex = allSentences.map((s, i) => ({ i, h: s.hindi ?? '', r: s.romanisation ?? '', e: s.english ?? '', d: s.date_added ?? '' }));
+const sentenceSearchIndex = allSentences.map((s, i) => ({ i, h: s.hindi ?? '', r: s.romanisation ?? '', e: s.english ?? '', d: s.date_added ?? '', ch: sentenceChapterNames[i] ?? '' }));
 const hoverData           = allWords.map((w, i) => ({
   i, hindi: w.hindi, roman: w.romanisation,
   english: (w.english as string).split(',')[0].trim(),

@@ -37,29 +37,11 @@ export const ANKI_CSS = [
   // Section boxes — slate-800 (#1e293b) bg, colored top border, fully rounded
   '.field-sec{border-top:3px solid #334155;padding:1rem 1.2rem 1.2rem;margin-bottom:1.25rem;background:#1e293b;border-radius:12px;}',
   '.field-label{font-family:"Barlow Condensed",sans-serif;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;margin:0 0 .85rem 0;display:block;}',
-  // Example cards — darker inner boxes (slate-900 level), rounded, centered
-  '.ex-card{background:#0f172a;border:1px solid rgba(51,65,85,.55);border-radius:10px;padding:.9rem 1rem;margin-bottom:.7rem;text-align:center;}',
-  '.ex-card:last-child{margin-bottom:0;}',
-  // Stack reg badge above hindi, both centered
-  '.ex-header{display:flex;flex-direction:column;align-items:center;gap:.35rem;margin-bottom:.45rem;}',
-  '.ex-hindi{font-family:"Tiro Devanagari Hindi",serif;font-size:1.15rem;color:#fbbf24;margin:0;line-height:1.4;}',
-  '.reg{font-size:.58rem;font-family:"Barlow Condensed",sans-serif;font-weight:700;text-transform:uppercase;color:#64748b;padding:.18rem .5rem;border:1px solid rgba(100,116,139,.35);border-radius:6px;white-space:nowrap;order:-1;}',
   // Cross-lang / sound-alikes / urdu-punjabi item cards — centered
   '.clang-item{margin-bottom:.75rem;padding:.85rem 1rem;background:#0f172a;border:1px solid rgba(51,65,85,.55);border-radius:10px;text-align:center;}',
   '.clang-item:last-child{margin-bottom:0;}',
   '.meta-badge{display:inline-block;font-size:.58rem;font-family:"Barlow Condensed",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.2rem .55rem;border-radius:6px;margin-bottom:.45rem;}',
-  '.lang-label{display:block;font-size:.63rem;font-family:"Barlow Condensed",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.3rem;}',
-  '.word-row{display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap;margin-bottom:.35rem;justify-content:center;}',
-  '.word-text{font-family:"Tiro Devanagari Hindi",serif;font-size:1.1rem;color:#fbbf24;}',
-  '.word-rom{color:#5eead4;font-size:.83rem;}',
-  // Meaning inside a darker rounded box — used in cross-lang
-  '.mean-box{background:#080d18;border:1px solid rgba(51,65,85,.5);border-radius:8px;padding:.35rem .75rem;margin-top:.35rem;display:inline-block;}',
-  '.mean-box span{color:#94a3b8;font-size:.82rem;}',
   '.item-note{font-size:.85rem;color:#cbd5e1;line-height:1.65;margin:.4rem 0 0 0;}',
-  // Pronunciation rows
-  '.pron-row{display:flex;gap:.75rem;align-items:flex-start;margin-bottom:.55rem;}',
-  '.syl-label{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:.88rem;color:#f1f5f9;min-width:3rem;flex-shrink:0;}',
-  '.syl-desc{font-size:.86rem;color:#cbd5e1;line-height:1.6;margin:0;}',
   // Syllables inline header
   '.syl-inline{font-size:1.1rem;font-weight:600;color:#5eead4;opacity:.6;font-family:monospace;letter-spacing:.15em;margin:0 0 .4rem 0;}',
   // Gender / transitivity badges

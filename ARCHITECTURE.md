@@ -24,17 +24,17 @@ _Generated 2026-04-07 by `npm run arch`._
 | `src/components/ui/TabBar.astro` | 28 | DaVinci Resolve-style bottom-fixed tab bar (Words | Sentences | Export) |
 | `src/components/MobileHeader.astro` | 13 | mobile-only page header with title and search input (hidden on lg+) |
 | `src/components/NavBar.astro` | 60 | sticky top nav bar with brand mark and page-switching buttons |
-| `src/components/SentenceCard.astro` | 112 | rendering a single sentence card with header and expandable detail sections |
+| `src/components/SentenceCard.astro` | 113 | rendering a single sentence card with header and expandable detail sections |
 | `src/components/SentenceList.astro` | 40 | chapter-grouped sentence list with group headers |
 | `src/components/WordCard.astro` | 164 | word card shell — header row + section delegation |
 | `src/layouts/Layout.astro` | 28 | root HTML shell — doctype, meta tags, font imports, global CSS, slot |
-| `src/pages/index.astro` | 108 | page entry point — loads vocab data, passes it to components, renders app shell |
+| `src/pages/index.astro` | 113 | page entry point — loads vocab data, passes it to components, renders app shell |
 | `src/scripts/anki/fields/category.js` | 25 | building the Anki Category HTML field |
 | `src/scripts/anki/fields/collocations.js` | 42 | building the Anki Collocations HTML field |
 | `src/scripts/anki/fields/etymology.js` | 53 | building the Anki Etymology HTML field |
 | `src/scripts/anki/fields/forms.js` | 36 | building the Anki Forms HTML field (inflected form chips) |
 | `src/scripts/anki/fields/gender.js` | 24 | building the Anki Gender HTML field |
-| `src/scripts/anki/fields/index.js` | 51 | assembling wordToAnkiFields() from all individual field builders |
+| `src/scripts/anki/fields/index.js` | 60 | assembling wordToAnkiFields() from all individual field builders |
 | `src/scripts/anki/fields/morphemes.js` | 49 | building the Anki Morphemes HTML field |
 | `src/scripts/anki/fields/relatedWords.js` | 42 | building the Anki RelatedWords HTML field |
 | `src/scripts/anki/fields/sentenceBreakdown.js` | 50 | WordBreakdown Anki field HTML for Hindi Sentence note type |
@@ -43,9 +43,9 @@ _Generated 2026-04-07 by `npm run arch`._
 | `src/scripts/anki/fields/transitivity.js` | 24 | building the Anki Transitivity HTML field |
 | `src/scripts/anki/fields/usageNotes.js` | 26 | building the Anki UsageNotes HTML field |
 | `src/scripts/anki/fields/utils.js` | 109 | shared HTML-building utilities for Anki card field builders |
-| `src/scripts/anki/connect.js` | 43 | AnkiConnect HTTP API wrapper and connection status check |
-| `src/scripts/anki/export.js` | 157 | orchestrating Anki deck creation, note type verification, and card addition |
-| `src/scripts/anki/noteType.js` | 105 | Anki note type definition — CSS, front/back card templates, field list |
+| `src/scripts/anki/connect.js` | 46 | AnkiConnect HTTP API wrapper and connection status check |
+| `src/scripts/anki/export.js` | 168 | orchestrating Anki deck creation, note type verification, and card addition |
+| `src/scripts/anki/noteType.js` | 87 | Anki note type definition — CSS, front/back card templates, field list |
 | `src/scripts/anki/sentenceNoteType.js` | 91 | Anki sentence note type definition — CSS, templates, field list |
 | `src/scripts/anki/tagUtils.js` | 35 | shared Anki tag-building utility used by export.js and txtFallback.js |
 | `src/scripts/anki/txtFallback.js` | 50 | generating and triggering browser download of a .txt file for manual Anki import |
@@ -63,7 +63,7 @@ _Generated 2026-04-07 by `npm run arch`._
 | `src/scripts/main.js` | 35 | bootstrapper — imports all modules and initialises them after DOMContentLoaded |
 | `src/utils/cardHelpers.ts` | 119 | pure helper functions shared across WordCard section components |
 | `src/utils/highlight.ts` | 121 | rich text highlighting for vocabulary card text content |
-| `src/utils/types.ts` | 45 | shared TypeScript interfaces used across Astro components and client scripts |
+| `src/utils/types.ts` | 89 | shared TypeScript interfaces used across Astro components and client scripts |
 | `scripts/aggregate-changelog.js` | 54 | aggregating individual changelog/ entries into CHANGELOG.md |
 | `scripts/arch.js` | 364 | scanning src/ source files and generating ARCHITECTURE.md |
 | `scripts/new-changelog.js` | 55 | creating a new individual changelog entry file in changelog/ |
@@ -108,7 +108,7 @@ _Generated 2026-04-07 by `npm run arch`._
 
 #### `SentenceCard.astro`
 **Responsibility:** rendering a single sentence card with header and expandable detail sections  
-**Lines:** 112
+**Lines:** 113
 **Depends on:** `../utils/cardHelpers`, `../utils/types`, `./cards/sections/WordBreakdownSection.astro`
 
 #### `SentenceList.astro`
@@ -205,7 +205,7 @@ _Generated 2026-04-07 by `npm run arch`._
 
 #### `index.astro`
 **Responsibility:** page entry point — loads vocab data, passes it to components, renders app shell  
-**Lines:** 108
+**Lines:** 113
 **Depends on:** `../layouts/Layout.astro`, `../components/NavBar.astro`, `../components/tabs/WordsTab.astro`, `../components/tabs/SentencesTab.astro`, `../components/tabs/ExportTab.astro`
 
 ### `src/scripts/`
@@ -231,7 +231,7 @@ _Generated 2026-04-07 by `npm run arch`._
 
 #### `connect.js`
 **Responsibility:** AnkiConnect HTTP API wrapper and connection status check  
-**Lines:** 43
+**Lines:** 46
 **Exports:** `ankiRequest`, `checkAnkiConnect`
 **Functions:**
 - `ankiRequest()` — Sends a JSON-RPC request to AnkiConnect and returns the result.
@@ -239,7 +239,7 @@ _Generated 2026-04-07 by `npm run arch`._
 
 #### `export.js`
 **Responsibility:** orchestrating Anki deck creation, note type verification, and card addition  
-**Lines:** 157
+**Lines:** 168
 **Depends on:** `./connect.js`, `./noteType.js`, `./fields/index.js`, `./fields/sentenceBreakdown.js`, `./tagUtils.js`, `./fields/utils.js`
 **Exports:** `ensureSentenceNoteType`, `overrideDeck`, `sendToAnki`, `sentenceToAnkiFields`
 **Functions:**
@@ -252,7 +252,7 @@ _Generated 2026-04-07 by `npm run arch`._
 
 #### `noteType.js`
 **Responsibility:** Anki note type definition — CSS, front/back card templates, field list  
-**Lines:** 105
+**Lines:** 87
 **Exports:** `ANKI_BACK`, `ANKI_CSS`, `ANKI_FIELDS`, `ANKI_FRONT`, `ANKI_NOTE_TYPE`
 
 #### `sentenceNoteType.js`
@@ -321,8 +321,8 @@ _Generated 2026-04-07 by `npm run arch`._
 
 #### `index.js`
 **Responsibility:** assembling wordToAnkiFields() from all individual field builders  
-**Lines:** 51
-**Depends on:** `./category.js`, `./gender.js`, `./transitivity.js`, `./syllables.js`, `./forms.js`, `./morphemes.js`, `./usageNotes.js`, `./collocations.js`, `./relatedWords.js`, `./soundAlikes.js`, `./etymology.js`, `./utils.js`
+**Lines:** 60
+**Depends on:** `../noteType.js`, `./category.js`, `./gender.js`, `./transitivity.js`, `./syllables.js`, `./forms.js`, `./morphemes.js`, `./usageNotes.js`, `./collocations.js`, `./relatedWords.js`, `./soundAlikes.js`, `./etymology.js`, `./utils.js`
 **Exports:** `wordToAnkiFields`
 **Functions:**
 - `wordToAnkiFields()` — Converts a vocabulary word object into a complete Anki fields object.
@@ -562,8 +562,8 @@ _Generated 2026-04-07 by `npm run arch`._
 
 #### `types.ts`
 **Responsibility:** shared TypeScript interfaces used across Astro components and client scripts  
-**Lines:** 45
-**Exports:** `Collocation`, `EtymologyStage`, `Form`, `HoverEntry`, `Morpheme`, `RelatedWord`, `SearchEntry`, `Sentence`, `SentenceChapter`, `SentenceWord`, `SoundAlike`, `WordGroup`
+**Lines:** 89
+**Exports:** `Collocation`, `EtymologyStage`, `Form`, `HoverEntry`, `Morpheme`, `RelatedWord`, `SearchEntry`, `Sentence`, `SentenceChapter`, `SentenceWord`, `SoundAlike`, `Word`, `WordGroup`
 
 ---
 
