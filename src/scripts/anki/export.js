@@ -37,6 +37,16 @@ async function ensureNoteType() {
       cardTemplates: [{ Name: 'Recognition', Front: ANKI_FRONT, Back: ANKI_BACK }],
     });
   } else {
+    // Add any fields that exist in ANKI_FIELDS but are missing from the note type
+    // (e.g. Morphemes added after the note type was first created in Anki).
+    // Must run BEFORE updateModelTemplates — Anki validates field names immediately
+    // when templates are updated and throws if a referenced field does not exist yet.
+    const existingFields = await ankiRequest('modelFieldNames', { modelName: ANKI_NOTE_TYPE });
+    for (const field of ANKI_FIELDS) {
+      if (!existingFields.includes(field)) {
+        await ankiRequest('modelFieldAdd', { modelName: ANKI_NOTE_TYPE, fieldName: field });
+      }
+    }
     // Always sync CSS and templates so design changes take effect on re-export
     await ankiRequest('updateModelStyling', { model: { name: ANKI_NOTE_TYPE, css: ANKI_CSS } });
     await ankiRequest('updateModelTemplates', {
@@ -128,7 +138,8 @@ export async function sendToAnki(words, deckName) {
   let added = 0;
   if (toAdd.length > 0) {
     const results = await ankiRequest('addNotes', { notes: toAdd });
-    added = results.filter(r => r !== null).length;
+    // Only count numeric IDs — newer AnkiConnect returns error strings for failed notes
+    added = Array.isArray(results) ? results.filter(r => typeof r === 'number').length : 0;
   }
   return { added, skipped };
 }
@@ -151,6 +162,6 @@ export async function overrideDeck(words, deckName) {
   // Duplicates allowed since we just cleared the deck
   const notes   = buildNotes(words, deckName, true);
   const results = await ankiRequest('addNotes', { notes });
-  const added   = results.filter(r => r !== null).length;
+  const added   = Array.isArray(results) ? results.filter(r => typeof r === 'number').length : 0;
   return { added, deleted: existingIds.length };
 }

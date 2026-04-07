@@ -279,7 +279,7 @@ async function sendSentencesToAnki(sentences, deckName) {
   let added = 0;
   if (toAdd.length > 0) {
     const results = await ankiRequest('addNotes', { notes: toAdd });
-    added = results.filter(r => r !== null).length;
+    added = Array.isArray(results) ? results.filter(r => typeof r === 'number').length : 0;
   }
   return { added, skipped };
 }

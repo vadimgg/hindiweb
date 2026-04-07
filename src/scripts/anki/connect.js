@@ -28,7 +28,10 @@ export async function ankiRequest(action, params) {
   });
   if (!resp.ok) throw new Error(`AnkiConnect HTTP ${resp.status}`);
   const json = await resp.json();
-  if (json.error) throw new Error(json.error);
+  // Only throw for top-level string errors. Array errors (per-note failures from
+  // addNotes in newer AnkiConnect versions) are returned as part of the result
+  // and handled by the caller.
+  if (json.error && typeof json.error === 'string') throw new Error(json.error);
   return json.result;
 }
 
