@@ -25,11 +25,11 @@ function renderSoundAlike(s) {
     ? `<span style="font-family:'Tiro Devanagari Hindi',serif;font-size:1.05rem;color:#fbbf24;">${esc(deva)}</span>`
     : `<span style="color:#94a3b8;font-size:.85rem;">${esc(s.part || '')}</span>`;
   const labelSpan = partLabel
-    ? `<span style="font-size:.6rem;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#475569;">${esc(partLabel)}</span>`
+    ? `<span style="font-size:.6rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#475569;">${esc(partLabel)}</span>`
     : '';
   const arrow     = `<span style="color:#334155;margin:0 .25rem;font-size:.85rem;">→</span>`;
   const langSpan  = s.language
-    ? `<span style="font-size:.58rem;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:${col};">${esc(s.language)}</span>`
+    ? `<span style="font-size:.58rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:${col};">${esc(s.language)}</span>`
     : '';
   const assocSpan = `<span style="font-size:.9rem;font-weight:600;color:#f1f5f9;">"${esc(s.association)}"</span>`;
   const romanSpan = (s.roman && s.roman !== s.association)

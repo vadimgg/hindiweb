@@ -1,0 +1,40 @@
+---
+/**
+ * WordCard section: Morphemes.
+ *
+ * Responsible for: rendering morpheme chips (word structure breakdown) as an
+ * expandable section inside a word card.
+ *
+ * Dependencies: types.ts (Morpheme interface).
+ */
+// Responsible for: Morphemes expandable section inside a word card
+import type { Morpheme } from '../../../utils/types';
+
+interface Props {
+  morphemes: Morpheme[];
+}
+const { morphemes } = Astro.props;
+---
+
+{morphemes.length > 0 && (
+  <details class="group/det">
+    <summary class="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
+      <span class="font-title text-xs sm:text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Morphemes</span>
+      <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
+    </summary>
+    <div class="px-4 sm:px-6 pb-4 pt-1">
+      <div class="flex flex-wrap gap-3">
+        {morphemes.map((m) => (
+          <div class="bg-slate-800/40 rounded-xl border border-slate-700/30 px-3 py-2.5 flex flex-col gap-0.5 min-w-[6rem]">
+            <span class="word-hindi text-lg leading-snug" lang="hi" style="font-family:'Tiro Devanagari Hindi',serif;">{m.part}</span>
+            <span class="text-teal-300/70 text-[13px] font-mono-dm">{m.roman}</span>
+            <span class="text-slate-400 text-[13px] leading-snug">{m.meaning}</span>
+            {m.origin && (
+              <span class="text-slate-600 text-[12px] italic mt-0.5">{m.origin}</span>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </details>
+)}

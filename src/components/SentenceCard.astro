@@ -13,13 +13,17 @@ import { registerStyle } from '../utils/cardHelpers';
 import type { Sentence } from '../utils/types';
 import WordBreakdownSection from './cards/sections/WordBreakdownSection.astro';
 
-interface Props extends Sentence { index: number; }
-const { index, hindi, romanisation, english, literal, register, words } = Astro.props;
+interface Props extends Sentence {
+  index: number;
+  /** When true, render a .sel-circle selection button in the header. */
+  selCircle?: boolean;
+}
+const { index, hindi, romanisation, english, literal, register, words, selCircle = false } = Astro.props;
 ---
 
 <article
   id={`sentence-card-${index}`}
-  class="bg-slate-900 border border-slate-700/40 rounded-2xl overflow-hidden
+  class="sc-card bg-slate-900 border border-slate-700/40 rounded-2xl overflow-hidden
          hover:border-slate-600/60 transition-colors is-collapsed"
 >
 
@@ -60,15 +64,23 @@ const { index, hindi, romanisation, english, literal, register, words } = Astro.
 
     </div>
 
-    <!-- Chevron -->
-    <div class="shrink-0 flex items-center">
-      <span
-        class="text-slate-600 transition-transform duration-200 text-xs"
-        aria-hidden="true"
-      >
-        ▾
-      </span>
-    </div>
+    <!-- Selection circle (new design) or chevron (legacy) -->
+    {selCircle ? (
+      <button
+        class="sel-circle"
+        aria-label={`Select sentence`}
+        data-sel-circle={index}
+      ></button>
+    ) : (
+      <div class="shrink-0 flex items-center">
+        <span
+          class="text-slate-600 transition-transform duration-200 text-xs"
+          aria-hidden="true"
+        >
+          ▾
+        </span>
+      </div>
+    )}
   </div>
 
   <!-- EXPANDABLE ZONE -->

@@ -22,7 +22,7 @@ function renderStage(stage, i) {
     : '';
   return arrow +
     `<div style="display:flex;flex-direction:column;gap:.1rem;min-width:5rem;">` +
-    `<span style="font-size:.55rem;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#475569;">${esc(stage.stage)}</span>` +
+    `<span style="font-size:.55rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#475569;">${esc(stage.stage)}</span>` +
     `<span style="font-family:'Tiro Devanagari Hindi',serif;font-size:1.05rem;color:#fbbf24;">${esc(stage.form)}</span>` +
     `<span style="font-size:.72rem;color:#5eead4;opacity:.65;font-family:monospace;letter-spacing:.04em;">${esc(stage.roman)}</span>` +
     `<span style="font-size:.75rem;color:#64748b;font-style:italic;">${esc(stage.meaning)}</span>` +

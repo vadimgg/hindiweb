@@ -1,6 +1,6 @@
 # Architecture
 
-_Generated 2026-04-05 by `npm run arch`._
+_Generated 2026-04-07 by `npm run arch`._
 
 ---
 
@@ -9,29 +9,33 @@ _Generated 2026-04-05 by `npm run arch`._
 | File | Lines | Responsible for |
 |---|---|---|
 | `src/components/cards/sections/CollocationsSection.astro` | 35 | Collocations expandable section inside a word card |
+| `src/components/cards/sections/DelhiNoteSection.astro` | 33 | Delhi Usage expandable section inside a word card |
 | `src/components/cards/sections/EtymologySection.astro` | 45 | Etymology expandable section inside a word card |
 | `src/components/cards/sections/FormsSection.astro` | 39 | forms chips row + usage note + grouped words inside a word card |
+| `src/components/cards/sections/MorphemesSection.astro` | 41 | Morphemes expandable section inside a word card |
 | `src/components/cards/sections/RelatedWordsSection.astro` | 35 | Related Words expandable section inside a word card |
 | `src/components/cards/sections/SoundAlikesSection.astro` | 48 | Sound Alikes expandable section inside a word card |
 | `src/components/cards/sections/UsageNotesSection.astro` | 27 | Usage Notes expandable section inside a word card, open by default |
 | `src/components/cards/sections/WordBreakdownSection.astro` | 130 | Word Breakdown expandable section inside a sentence card |
 | `src/components/sidebar/AppSidebar.astro` | 86 | desktop sidebar — logo, search bar, words index nav, sentences index nav |
-| `src/components/tabs/ExportTab.astro` | 81 | Export/Delivery pane HTML — word summary table and Anki settings panel |
-| `src/components/tabs/SentencesTab.astro` | 38 | Sentences tab content — sentence cards grid, empty states |
-| `src/components/tabs/WordsTab.astro` | 53 | Words tab content — meta line, word cards grid, empty state, footer |
+| `src/components/tabs/ExportTab.astro` | 141 | Deliver/Export page — AnkiConnect status, deck config, selected items, send button |
+| `src/components/tabs/SentencesTab.astro` | 154 | Sentences page content — header, filter panel, chapter dividers, sentence cards |
+| `src/components/tabs/WordsTab.astro` | 228 | Words page content — header, filter panel, group dividers, word cards |
 | `src/components/ui/TabBar.astro` | 28 | DaVinci Resolve-style bottom-fixed tab bar (Words | Sentences | Export) |
 | `src/components/MobileHeader.astro` | 13 | mobile-only page header with title and search input (hidden on lg+) |
-| `src/components/SentenceCard.astro` | 100 | rendering a single sentence card with header and expandable detail sections |
+| `src/components/NavBar.astro` | 60 | sticky top nav bar with brand mark and page-switching buttons |
+| `src/components/SentenceCard.astro` | 112 | rendering a single sentence card with header and expandable detail sections |
 | `src/components/SentenceList.astro` | 40 | chapter-grouped sentence list with group headers |
-| `src/components/WordCard.astro` | 131 | word card shell — header row + section delegation |
+| `src/components/WordCard.astro` | 164 | word card shell — header row + section delegation |
 | `src/layouts/Layout.astro` | 28 | root HTML shell — doctype, meta tags, font imports, global CSS, slot |
-| `src/pages/index.astro` | 120 | page entry point — loads vocab data, passes it to components, renders app shell |
+| `src/pages/index.astro` | 108 | page entry point — loads vocab data, passes it to components, renders app shell |
 | `src/scripts/anki/fields/category.js` | 25 | building the Anki Category HTML field |
 | `src/scripts/anki/fields/collocations.js` | 42 | building the Anki Collocations HTML field |
 | `src/scripts/anki/fields/etymology.js` | 53 | building the Anki Etymology HTML field |
 | `src/scripts/anki/fields/forms.js` | 36 | building the Anki Forms HTML field (inflected form chips) |
 | `src/scripts/anki/fields/gender.js` | 24 | building the Anki Gender HTML field |
-| `src/scripts/anki/fields/index.js` | 49 | assembling wordToAnkiFields() from all individual field builders |
+| `src/scripts/anki/fields/index.js` | 51 | assembling wordToAnkiFields() from all individual field builders |
+| `src/scripts/anki/fields/morphemes.js` | 49 | building the Anki Morphemes HTML field |
 | `src/scripts/anki/fields/relatedWords.js` | 42 | building the Anki RelatedWords HTML field |
 | `src/scripts/anki/fields/sentenceBreakdown.js` | 50 | WordBreakdown Anki field HTML for Hindi Sentence note type |
 | `src/scripts/anki/fields/soundAlikes.js` | 63 | building the Anki Sound Alikes HTML field |
@@ -41,24 +45,25 @@ _Generated 2026-04-05 by `npm run arch`._
 | `src/scripts/anki/fields/utils.js` | 109 | shared HTML-building utilities for Anki card field builders |
 | `src/scripts/anki/connect.js` | 43 | AnkiConnect HTTP API wrapper and connection status check |
 | `src/scripts/anki/export.js` | 157 | orchestrating Anki deck creation, note type verification, and card addition |
-| `src/scripts/anki/noteType.js` | 104 | Anki note type definition — CSS, front/back card templates, field list |
+| `src/scripts/anki/noteType.js` | 105 | Anki note type definition — CSS, front/back card templates, field list |
 | `src/scripts/anki/sentenceNoteType.js` | 91 | Anki sentence note type definition — CSS, templates, field list |
-| `src/scripts/anki/tagUtils.js` | 39 | shared Anki tag-building utility used by export.js and txtFallback.js |
+| `src/scripts/anki/tagUtils.js` | 35 | shared Anki tag-building utility used by export.js and txtFallback.js |
 | `src/scripts/anki/txtFallback.js` | 50 | generating and triggering browser download of a .txt file for manual Anki import |
-| `src/scripts/state/selection.js` | 141 | word and sentence selection state and change notifications via CustomEvents |
-| `src/scripts/state/tabs.js` | 88 | active tab state, DOM panel switching, and tabchange event dispatch |
+| `src/scripts/state/selection.js` | 136 | word and sentence selection state and change notifications via CustomEvents |
+| `src/scripts/state/tabs.js` | 87 | active tab state, DOM panel switching, and tabchange event dispatch |
 | `src/scripts/ui/cards.js` | 78 | word card collapse/expand toggling and deselect button handling |
-| `src/scripts/ui/exportPane.js` | 235 | export pane controller — word table, AnkiConnect status polling, export button |
+| `src/scripts/ui/exportPane.js` | 276 | deliver page controller — word list, AnkiConnect polling, export button |
 | `src/scripts/ui/indexSidebar.js` | 120 | sidebar interactions — drag-select checkboxes, group collapse, scroll-to-card |
-| `src/scripts/ui/search.js` | 192 | fuzzy search scoring and filtering word/sentence card visibility |
+| `src/scripts/ui/pageInteractions.js` | 421 | page-level interactions — filter panel, group collapse, sel-circle, drag-select |
+| `src/scripts/ui/search.js` | 199 | fuzzy search scoring and filtering word/sentence card visibility |
 | `src/scripts/ui/sentenceCards.js` | 29 | sentence card collapse/expand toggling |
 | `src/scripts/ui/tooltip.js` | 180 | vocab-hint span annotation in example cards and tooltip positioning |
 | `src/scripts/utils/stringUtils.js` | 52 | shared string utilities — norm(), extractDevanagari(), extractPartLabel() |
 | `src/scripts/data.js` | 43 | lazy read-only accessors for window.__APP_DATA__ (set by define:vars in index.astro) |
-| `src/scripts/main.js` | 36 | bootstrapper — imports all modules and initialises them after DOMContentLoaded |
+| `src/scripts/main.js` | 35 | bootstrapper — imports all modules and initialises them after DOMContentLoaded |
 | `src/utils/cardHelpers.ts` | 119 | pure helper functions shared across WordCard section components |
 | `src/utils/highlight.ts` | 121 | rich text highlighting for vocabulary card text content |
-| `src/utils/types.ts` | 44 | shared TypeScript interfaces used across Astro components and client scripts |
+| `src/utils/types.ts` | 45 | shared TypeScript interfaces used across Astro components and client scripts |
 | `scripts/aggregate-changelog.js` | 54 | aggregating individual changelog/ entries into CHANGELOG.md |
 | `scripts/arch.js` | 364 | scanning src/ source files and generating ARCHITECTURE.md |
 | `scripts/new-changelog.js` | 55 | creating a new individual changelog entry file in changelog/ |
@@ -97,9 +102,13 @@ _Generated 2026-04-05 by `npm run arch`._
 **Responsibility:** mobile-only page header with title and search input (hidden on lg+)  
 **Lines:** 13
 
+#### `NavBar.astro`
+**Responsibility:** sticky top nav bar with brand mark and page-switching buttons  
+**Lines:** 60
+
 #### `SentenceCard.astro`
 **Responsibility:** rendering a single sentence card with header and expandable detail sections  
-**Lines:** 100
+**Lines:** 112
 **Depends on:** `../utils/cardHelpers`, `../utils/types`, `./cards/sections/WordBreakdownSection.astro`
 
 #### `SentenceList.astro`
@@ -109,8 +118,8 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `WordCard.astro`
 **Responsibility:** word card shell — header row + section delegation  
-**Lines:** 131
-**Depends on:** `../utils/cardHelpers`, `../utils/types`, `./cards/sections/FormsSection.astro`, `./cards/sections/UsageNotesSection.astro`, `./cards/sections/CollocationsSection.astro`, `./cards/sections/RelatedWordsSection.astro`, `./cards/sections/SoundAlikesSection.astro`, `./cards/sections/EtymologySection.astro`
+**Lines:** 164
+**Depends on:** `../utils/cardHelpers`, `../utils/types`, `./cards/sections/FormsSection.astro`, `./cards/sections/MorphemesSection.astro`, `./cards/sections/UsageNotesSection.astro`, `./cards/sections/CollocationsSection.astro`, `./cards/sections/RelatedWordsSection.astro`, `./cards/sections/SoundAlikesSection.astro`, `./cards/sections/DelhiNoteSection.astro`, `./cards/sections/EtymologySection.astro`
 
 ### `src/components/cards/sections/`
 
@@ -118,6 +127,10 @@ _Generated 2026-04-05 by `npm run arch`._
 **Responsibility:** Collocations expandable section inside a word card  
 **Lines:** 35
 **Depends on:** `../../../utils/types`
+
+#### `DelhiNoteSection.astro`
+**Responsibility:** Delhi Usage expandable section inside a word card  
+**Lines:** 33
 
 #### `EtymologySection.astro`
 **Responsibility:** Etymology expandable section inside a word card  
@@ -128,6 +141,11 @@ _Generated 2026-04-05 by `npm run arch`._
 **Responsibility:** forms chips row + usage note + grouped words inside a word card  
 **Lines:** 39
 **Depends on:** `../../../utils/cardHelpers`, `../../../utils/types`
+
+#### `MorphemesSection.astro`
+**Responsibility:** Morphemes expandable section inside a word card  
+**Lines:** 41
+**Depends on:** `../../../utils/types`
 
 #### `RelatedWordsSection.astro`
 **Responsibility:** Related Words expandable section inside a word card  
@@ -158,18 +176,18 @@ _Generated 2026-04-05 by `npm run arch`._
 ### `src/components/tabs/`
 
 #### `ExportTab.astro`
-**Responsibility:** Export/Delivery pane HTML — word summary table and Anki settings panel  
-**Lines:** 81
+**Responsibility:** Deliver/Export page — AnkiConnect status, deck config, selected items, send button  
+**Lines:** 141
 
 #### `SentencesTab.astro`
-**Responsibility:** Sentences tab content — sentence cards grid, empty states  
-**Lines:** 38
-**Depends on:** `../SentenceList.astro`, `../../utils/types`
+**Responsibility:** Sentences page content — header, filter panel, chapter dividers, sentence cards  
+**Lines:** 154
+**Depends on:** `../SentenceCard.astro`, `../../utils/types`
 
 #### `WordsTab.astro`
-**Responsibility:** Words tab content — meta line, word cards grid, empty state, footer  
-**Lines:** 53
-**Depends on:** `../WordCard.astro`
+**Responsibility:** Words page content — header, filter panel, group dividers, word cards  
+**Lines:** 228
+**Depends on:** `../WordCard.astro`, `../../utils/cardHelpers`
 
 ### `src/components/ui/`
 
@@ -187,8 +205,8 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `index.astro`
 **Responsibility:** page entry point — loads vocab data, passes it to components, renders app shell  
-**Lines:** 120
-**Depends on:** `../layouts/Layout.astro`, `../components/sidebar/AppSidebar.astro`, `../components/tabs/WordsTab.astro`, `../components/tabs/SentencesTab.astro`, `../components/tabs/ExportTab.astro`, `../components/ui/TabBar.astro`, `../components/MobileHeader.astro`
+**Lines:** 108
+**Depends on:** `../layouts/Layout.astro`, `../components/NavBar.astro`, `../components/tabs/WordsTab.astro`, `../components/tabs/SentencesTab.astro`, `../components/tabs/ExportTab.astro`
 
 ### `src/scripts/`
 
@@ -205,8 +223,8 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `main.js`
 **Responsibility:** bootstrapper — imports all modules and initialises them after DOMContentLoaded  
-**Lines:** 36
-**Depends on:** `./state/selection.js`, `./state/tabs.js`, `./ui/search.js`, `./ui/cards.js`, `./ui/sentenceCards.js`, `./ui/indexSidebar.js`, `./ui/tooltip.js`, `./ui/exportPane.js`
+**Lines:** 35
+**Depends on:** `./state/selection.js`, `./state/tabs.js`, `./ui/search.js`, `./ui/pageInteractions.js`, `./ui/tooltip.js`, `./ui/exportPane.js`
 
 ### `src/scripts/anki/`
 
@@ -233,7 +251,7 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `noteType.js`
 **Responsibility:** Anki note type definition — CSS, front/back card templates, field list  
-**Lines:** 104
+**Lines:** 105
 **Exports:** `ANKI_BACK`, `ANKI_CSS`, `ANKI_FIELDS`, `ANKI_FRONT`, `ANKI_NOTE_TYPE`
 
 #### `sentenceNoteType.js`
@@ -244,7 +262,7 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `tagUtils.js`
 **Responsibility:** shared Anki tag-building utility used by export.js and txtFallback.js  
-**Lines:** 39
+**Lines:** 35
 **Exports:** `buildWordTags`
 **Functions:**
 - `buildWordTags()` — Builds the Anki tag list for a single vocabulary word.
@@ -302,11 +320,19 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `index.js`
 **Responsibility:** assembling wordToAnkiFields() from all individual field builders  
-**Lines:** 49
-**Depends on:** `./category.js`, `./gender.js`, `./transitivity.js`, `./syllables.js`, `./forms.js`, `./usageNotes.js`, `./collocations.js`, `./relatedWords.js`, `./soundAlikes.js`, `./etymology.js`, `./utils.js`
+**Lines:** 51
+**Depends on:** `./category.js`, `./gender.js`, `./transitivity.js`, `./syllables.js`, `./forms.js`, `./morphemes.js`, `./usageNotes.js`, `./collocations.js`, `./relatedWords.js`, `./soundAlikes.js`, `./etymology.js`, `./utils.js`
 **Exports:** `wordToAnkiFields`
 **Functions:**
 - `wordToAnkiFields()` — Converts a vocabulary word object into a complete Anki fields object.
+
+#### `morphemes.js`
+**Responsibility:** building the Anki Morphemes HTML field  
+**Lines:** 49
+**Depends on:** `./utils.js`
+**Exports:** `buildAnkiMorphemes`
+**Functions:**
+- `buildAnkiMorphemes()` — Builds the Anki Morphemes field HTML for a word.
 
 #### `relatedWords.js`
 **Responsibility:** building the Anki RelatedWords HTML field  
@@ -371,7 +397,7 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `selection.js`
 **Responsibility:** word and sentence selection state and change notifications via CustomEvents  
-**Lines:** 141
+**Lines:** 136
 **Depends on:** `../data.js`
 **Exports:** `getDefaultDeckName`, `getSelectedSentenceIndices`, `getSelectedWordIndices`, `getSelectedWordObjects`, `hasSentence`, `hasWord`, `initSelection`, `setSentenceSelected`, `setWordSelected`, `syncGroupCheckbox`
 **Functions:**
@@ -389,13 +415,13 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `tabs.js`
 **Responsibility:** active tab state, DOM panel switching, and tabchange event dispatch  
-**Lines:** 88
+**Lines:** 87
 **Exports:** `getActiveTab`, `initTabs`, `switchTab`
 **Functions:**
 - `getActiveTab()` — Returns the currently active tab name.
 - `initTabs()` — Wires click handlers on all [data-tab] buttons and activates the Words tab.
-- `updateTabBarButtons()` _(internal)_ — Updates [data-tab] button styling to reflect which tab is now active.
-- `switchTab()` — Activates a tab by name: shows its content panel, hides the others,
+- `updateNavButtons()` _(internal)_ — Updates nav bar [data-tab] button styling to reflect which tab is now active.
+- `switchTab()` — Activates a tab by name: shows its page panel, hides the others,
 
 ### `src/scripts/ui/`
 
@@ -409,22 +435,24 @@ _Generated 2026-04-05 by `npm run arch`._
 - `initCards()` — Initialises word card interactions:
 
 #### `exportPane.js`
-**Responsibility:** export pane controller — word table, AnkiConnect status polling, export button  
-**Lines:** 235
+**Responsibility:** deliver page controller — word list, AnkiConnect polling, export button  
+**Lines:** 276
 **Depends on:** `../anki/connect.js`, `../anki/export.js`, `../anki/txtFallback.js`, `../state/selection.js`
 **Exports:** `initExportPane`
 **Functions:**
-- `updateStatusBadge()` _(internal)_ — Updates the AnkiConnect status badge and export button state.
+- `getDeckName()` _(internal)_ — Returns the current deck name from the deck inputs (main::sub).
+- `syncDeckPreview()` _(internal)_ — Syncs the deck preview text and confirm-deck label to the current input values.
+- `updateStatusBadge()` _(internal)_ — Updates the AnkiConnect status bar and export button state.
 - `pollAnkiStatus()` _(internal)_ — Checks AnkiConnect status and updates the badge with the result.
 - `startPolling()` _(internal)_ — Starts polling AnkiConnect every 3 seconds. No-op if already polling.
 - `stopPolling()` _(internal)_ — Stops the AnkiConnect poll interval.
-- `populateWordTable()` _(internal)_ — Rebuilds the selected-word table in the export panel.
-- `showFeedback()` _(internal)_ — Displays a success or error message below the export buttons.
+- `populateWordTable()` _(internal)_ — Rebuilds the selected-word list in the deliver panel.
+- `showFeedback()` _(internal)_ — Displays a success or error message below the export button.
 - `buildSendMessage()` _(internal)_ — Builds the success feedback message for an incremental Anki export.
 - `handleExportClick()` _(internal)_ — Handles the export button click: validates, runs the export/override API call,
 - `wireWindowListeners()` _(internal)_ — Wires window-level event listeners for tab changes and selection changes.
-- `wireControlListeners()` _(internal)_ — Wires DOM element listeners for the deck input, override toggle, export button,
-- `initExportPane()` — Initialises the export pane.
+- `wireControlListeners()` _(internal)_ — Wires DOM element listeners for the deck inputs, override toggle, export button,
+- `initExportPane()` — Initialises the export/deliver pane.
 - `plural()` _(internal)_ — Returns 's' when n !== 1 — used for pluralising feedback messages.
 
 #### `indexSidebar.js`
@@ -436,19 +464,39 @@ _Generated 2026-04-05 by `npm run arch`._
 - `handleSidebarClick()` _(internal)_ — Handles a delegated click inside the words index sidebar.
 - `initSidebar()` — Initialises all sidebar event listeners on the #idx-words element.
 
+#### `pageInteractions.js`
+**Responsibility:** page-level interactions — filter panel, group collapse, sel-circle, drag-select  
+**Lines:** 421
+**Depends on:** `../state/selection.js`
+**Exports:** `initPageInteractions`
+**Functions:**
+- `wireFilterPanel()` _(internal)_ — Wires the open/close toggle for a filter panel button + panel pair.
+- `setViewMode()` _(internal)_ — Sets the view mode on a page (web or anki).
+- `wireViewMode()` _(internal)_ — Wires the Web/Anki view mode buttons for a given page prefix.
+- `toggleGroupCollapse()` _(internal)_ — Toggles the collapsed state of a card group.
+- `toggleSelCircle()` _(internal)_ — Toggles selection state on a word or sentence card.
+- `toggleGroupCheckbox()` _(internal)_ — Toggles all selection circles within a group's .card-list.
+- `updateSelectionBadges()` _(internal)_ — Updates the selection badge text and visibility.
+- `handleCardHeaderClick()` _(internal)_ — Handles clicks on a card header to toggle collapse state.
+- `initDragSelect()` _(internal)_ — Sets up the drag-to-select lasso on the document.
+- `handlePageClick()` _(internal)_ — Single delegated click handler for the entire document covering both pages.
+- `syncInitialSelection()` _(internal)_ — Syncs the sel-circle and article.is-selected state to match
+- `wireSelectionChangeListener()` _(internal)_ — Keeps sel-circles and badges in sync when selection changes externally
+- `initPageInteractions()` — Initialises all page-level interactions.
+
 #### `search.js`
 **Responsibility:** fuzzy search scoring and filtering word/sentence card visibility  
-**Lines:** 192
+**Lines:** 199
 **Depends on:** `../data.js`, `../state/selection.js`, `../state/tabs.js`, `../utils/stringUtils.js`
 **Exports:** `applyFilter`, `getWordRowMap`, `initSearch`
 **Functions:**
 - `fuzzyScore()` _(internal)_ — Scores how well a search needle fuzzy-matches a single haystack string.
 - `bestScore()` _(internal)_ — Returns the best fuzzy score for a needle against all searchable fields
-- `getWordRowMap()` — Returns the word-index → sidebar-row DOM map built during {@link initSearch}.
 - `initSearch()` — Initialises search by caching DOM elements and wiring input/clear event listeners.
-- `filterWords()` _(internal)_ — Applies the search filter to the words tab: shows/hides cards and sidebar rows,
-- `filterSentences()` _(internal)_ — Applies the search filter to the sentences tab: shows/hides cards and sidebar rows,
-- `applyFilter()` — Applies the current search query and selection state to show/hide cards and rows.
+- `getWordRowMap()` — Returns the exported word row DOM map — kept for compatibility with cards.js.
+- `filterWords()` _(internal)_ — Applies the search filter to the words page: shows/hides cards and
+- `filterSentences()` _(internal)_ — Applies the search filter to the sentences page: shows/hides cards and
+- `applyFilter()` — Applies the current search query to show/hide cards.
 
 #### `sentenceCards.js`
 **Responsibility:** sentence card collapse/expand toggling  
@@ -508,8 +556,8 @@ _Generated 2026-04-05 by `npm run arch`._
 
 #### `types.ts`
 **Responsibility:** shared TypeScript interfaces used across Astro components and client scripts  
-**Lines:** 44
-**Exports:** `Collocation`, `EtymologyStage`, `Form`, `HoverEntry`, `RelatedWord`, `SearchEntry`, `Sentence`, `SentenceChapter`, `SentenceWord`, `SoundAlike`, `WordGroup`
+**Lines:** 45
+**Exports:** `Collocation`, `EtymologyStage`, `Form`, `HoverEntry`, `Morpheme`, `RelatedWord`, `SearchEntry`, `Sentence`, `SentenceChapter`, `SentenceWord`, `SoundAlike`, `WordGroup`
 
 ---
 

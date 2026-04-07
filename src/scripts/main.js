@@ -8,28 +8,27 @@
  * Initialisation order matters:
  *   1. initSelection — seeds selection state before any UI reads it.
  *   2. initSearch    — builds DOM caches; needs selection state.
- *   3. initSidebar, initCards, initTooltip, initExportPane — order-independent.
- *   4. initTabs      — fires the initial 'tabchange' event last, after all
+ *   3. initPageInteractions — wires filter panels, group collapse, sel-circles,
+ *                             drag-to-select; needs selection state to be seeded.
+ *   4. initTooltip   — annotates example cards + tooltip positioning.
+ *   5. initExportPane — export pane AnkiConnect polling and send logic.
+ *   6. initTabs      — fires the initial 'tabchange' event last, after all
  *                      listeners are registered.
  */
 // Responsible for: bootstrapper — imports all modules and initialises them after DOMContentLoaded
 
-import { initSelection }  from './state/selection.js';
-import { initTabs }       from './state/tabs.js';
-import { initSearch }     from './ui/search.js';
-import { initCards }         from './ui/cards.js';
-import { initSentenceCards } from './ui/sentenceCards.js';
-import { initSidebar }       from './ui/indexSidebar.js';
-import { initTooltip }    from './ui/tooltip.js';
-import { initExportPane } from './ui/exportPane.js';
+import { initSelection }        from './state/selection.js';
+import { initTabs }             from './state/tabs.js';
+import { initSearch }           from './ui/search.js';
+import { initPageInteractions } from './ui/pageInteractions.js';
+import { initTooltip }          from './ui/tooltip.js';
+import { initExportPane }       from './ui/exportPane.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  initSelection();   // seed selection state from all words
-  initSearch();      // wire search inputs + build DOM caches
-  initSidebar();     // sidebar drag-select + collapse + scroll-to
-  initCards();          // word card collapse + deselect + intersection observer
-  initSentenceCards();  // sentence card collapse/expand
-  initTooltip();     // annotate example cards + tooltip positioning
-  initExportPane();  // export pane table + AnkiConnect polling
-  initTabs();        // last: fires initial tabchange event after all modules are ready
+  initSelection();          // seed selection state from all words
+  initSearch();             // wire search inputs + build DOM caches
+  initPageInteractions();   // filter panels, group collapse, sel-circles, drag-select
+  initTooltip();            // annotate example cards + tooltip positioning
+  initExportPane();         // export pane table + AnkiConnect polling
+  initTabs();               // last: fires initial tabchange event after all modules are ready
 });

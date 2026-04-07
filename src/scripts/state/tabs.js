@@ -2,23 +2,26 @@
  * Tab switching state and DOM coordination.
  *
  * Responsible for: tracking which tab is active, showing/hiding the correct
- * content panels and sidebar index, updating tab bar button styling, and
- * dispatching a 'tabchange' CustomEvent so other modules can react.
+ * page panels, updating the top nav bar button styling (is-active class),
+ * and dispatching a 'tabchange' CustomEvent so other modules can react.
  *
- * Note: the Export tab requires display:flex which conflicts with Tailwind's
- * .hidden (display:none), so it is controlled via inline style instead.
+ * Page panels are: #page-words, #page-sentences, #page-deliver.
+ * Each panel uses `.page` / `.page.is-active` (display:none → display:block).
+ *
+ * Nav buttons are `[data-tab]` buttons in NavBar.astro, identified by id:
+ *   #nav-words, #nav-sentences, #nav-deliver.
  *
  * No dependencies on other project modules.
  */
 // Responsible for: active tab state, DOM panel switching, and tabchange event dispatch
 
-/** @type {'words'|'sentences'|'export'} Currently active tab name. */
+/** @type {'words'|'sentences'|'deliver'} Currently active tab name. */
 let activeTab = 'words';
 
 /**
  * Returns the currently active tab name.
  *
- * @returns {'words'|'sentences'|'export'}
+ * @returns {'words'|'sentences'|'deliver'}
  */
 export function getActiveTab() { return activeTab; }
 
@@ -38,50 +41,46 @@ export function initTabs() {
 }
 
 /**
- * Updates [data-tab] button styling to reflect which tab is now active.
+ * Updates nav bar [data-tab] button styling to reflect which tab is now active.
+ * Adds `is-active` class to the active button and removes it from others.
+ * Also sets aria-current attribute for accessibility.
  *
- * @param {'words'|'sentences'|'export'} name - The newly active tab name.
+ * @param {'words'|'sentences'|'deliver'} name - The newly active tab name.
  * @returns {void}
  */
-function updateTabBarButtons(name) {
+function updateNavButtons(name) {
   document.querySelectorAll('[data-tab]').forEach(btn => {
     const isActive = btn.dataset.tab === name;
-    btn.classList.toggle('text-amber-400',     isActive);
-    btn.classList.toggle('border-amber-400',   isActive);
-    btn.classList.toggle('border-t-2',         isActive);
-    btn.classList.toggle('-mt-px',             isActive);
-    btn.classList.toggle('text-zinc-500',      !isActive);
-    btn.classList.toggle('border-transparent', !isActive);
+    btn.classList.toggle('is-active', isActive);
+    btn.setAttribute('aria-current', isActive ? 'page' : 'false');
   });
 }
 
 /**
- * Activates a tab by name: shows its content panel, hides the others,
- * updates sidebar visibility, refreshes tab bar styling, and dispatches
- * a 'tabchange' event.
+ * Activates a tab by name: shows its page panel, hides the others,
+ * updates the nav bar button styling, and dispatches a 'tabchange' event.
  *
- * @param {'words'|'sentences'|'export'} name - The tab to activate.
+ * Page panel IDs: #page-words, #page-sentences, #page-deliver.
+ *
+ * @param {'words'|'sentences'|'deliver'} name - The tab to activate.
  * @returns {void}
  */
 export function switchTab(name) {
   activeTab = name;
 
-  // Words and sentences panels use Tailwind's .hidden class (display:none)
-  document.getElementById('tab-words')?.classList.toggle('hidden', name !== 'words');
-  document.getElementById('tab-sentences')?.classList.toggle('hidden', name !== 'sentences');
+  const PAGES = ['words', 'sentences', 'deliver'];
+  PAGES.forEach(p => {
+    const pageEl = document.getElementById(`page-${p}`);
+    if (pageEl) pageEl.classList.toggle('is-active', p === name);
+  });
 
-  // Export panel needs display:flex; inline style avoids conflict with Tailwind .hidden
-  const exportPanel = document.getElementById('tab-export');
-  if (exportPanel) exportPanel.style.display = name === 'export' ? 'flex' : 'none';
+  updateNavButtons(name);
 
-  // Show the matching sidebar index; hide all when Export is active
-  document.getElementById('idx-words')?.classList.toggle('hidden', name !== 'words');
-  document.getElementById('idx-sentences')?.classList.toggle('hidden', name !== 'sentences');
-
-  updateTabBarButtons(name);
-
-  const placeholder = name === 'sentences' ? 'Search sentences…' : 'Search words…';
-  document.querySelectorAll('[data-search-input]').forEach(inp => { inp.placeholder = placeholder; });
+  // Sync search input placeholder to current page context
+  const placeholder = name === 'sentences' ? 'Search sentences…' : 'Search मैं, maĩ, I…';
+  document.querySelectorAll('[data-search-input]').forEach(inp => {
+    inp.placeholder = placeholder;
+  });
 
   window.dispatchEvent(new CustomEvent('tabchange', { detail: { tab: name } }));
 }

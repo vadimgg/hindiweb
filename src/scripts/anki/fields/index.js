@@ -13,6 +13,7 @@ import { buildAnkiGender }       from './gender.js';
 import { buildAnkiTransitivity } from './transitivity.js';
 import { buildAnkiSyllables }    from './syllables.js';
 import { buildAnkiForms }        from './forms.js';
+import { buildAnkiMorphemes }    from './morphemes.js';
 import { buildAnkiUsageNotes }   from './usageNotes.js';
 import { buildAnkiCollocations } from './collocations.js';
 import { buildAnkiRelatedWords } from './relatedWords.js';
@@ -39,6 +40,7 @@ export function wordToAnkiFields(word) {
     Gender:       buildAnkiGender(word),
     Transitivity: buildAnkiTransitivity(word),
     Forms:        buildAnkiForms(word),
+    Morphemes:    buildAnkiMorphemes(word),
     UsageNotes:   buildAnkiUsageNotes(word),
     Collocations: buildAnkiCollocations(word),
     RelatedWords: buildAnkiRelatedWords(word),

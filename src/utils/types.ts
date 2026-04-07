@@ -10,6 +10,7 @@
 // Responsible for: shared TypeScript interfaces used across Astro components and client scripts
 
 export interface Form { label: string; hindi: string; roman: string; }
+export interface Morpheme { part: string; roman: string; meaning: string; origin?: string; }
 export interface WordGroup { id: string; title: string; words: { w: any; i: number }[]; }
 export interface SearchEntry { i: number; h: string; r: string; e: string; d: string; }
 export interface HoverEntry { i: number; hindi: string; roman: string; english: string; forms: { h: string; r: string }[]; }

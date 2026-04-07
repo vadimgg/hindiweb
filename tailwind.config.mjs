@@ -4,8 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans:  ['Poppins', 'system-ui', 'sans-serif'],
-        title: ['Oswald', 'system-ui', 'sans-serif'],
+        sans:     ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        title:    ['Barlow Condensed', 'system-ui', 'sans-serif'],
+        'mono-dm': ['DM Mono', 'monospace'],
       },
     },
   },

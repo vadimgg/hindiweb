@@ -28,7 +28,7 @@ export const ANKI_SENTENCE_CSS = [
   '.literal-gloss{font-size:.85rem;color:#64748b;font-style:italic;line-height:1.65;margin:0;}',
   // Word breakdown table
   '.breakdown-table{width:100%;border-collapse:collapse;margin-top:.25rem;}',
-  '.breakdown-table th{font-family:"Oswald",sans-serif;font-size:.55rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:#475569;text-align:left;padding:.3rem .5rem .5rem;border-bottom:1px solid rgba(51,65,85,.6);}',
+  '.breakdown-table th{font-family:"Barlow Condensed",sans-serif;font-size:.55rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:#475569;text-align:left;padding:.3rem .5rem .5rem;border-bottom:1px solid rgba(51,65,85,.6);}',
   '.breakdown-table td{padding:.6rem .5rem;vertical-align:top;border-bottom:1px solid rgba(30,41,59,.8);}',
   '.breakdown-table tr:last-child td{border-bottom:none;}',
   '.breakdown-table tr:hover td{background:rgba(30,41,59,.4);}',
@@ -40,7 +40,7 @@ export const ANKI_SENTENCE_CSS = [
   '.bd-note{font-size:.75rem;color:#64748b;font-style:italic;line-height:1.55;margin-top:.25rem;display:block;}',
   '.bd-badges{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.3rem;}',
   // Chapter meta — recessive footer
-  '.chapter-meta{font-family:"Oswald",sans-serif;font-size:.55rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:#334155;text-align:center;margin-top:1.5rem;padding:.4rem;background:#080d18;border-radius:8px;}',
+  '.chapter-meta{font-family:"Barlow Condensed",sans-serif;font-size:.55rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:#334155;text-align:center;margin-top:1.5rem;padding:.4rem;background:#080d18;border-radius:8px;}',
   // Mobile
   '@media(max-width:520px){',
   '.bd-word{font-size:.9rem;}',

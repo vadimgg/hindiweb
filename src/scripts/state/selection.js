@@ -30,9 +30,7 @@ let selectedSentences = new Set();
 export function initSelection() {
   selectedWords     = new Set(getWordSearchIndex().map(w => w.i));
   selectedSentences = new Set(getSentenceIndex().map(s => s.i));
-  document.querySelectorAll('#idx-words .word-checkbox').forEach(cb => cb.classList.add('is-on'));
-  document.querySelectorAll('#idx-words .idx-row').forEach(r => r.classList.add('is-sel'));
-  document.querySelectorAll('#idx-words .group-checkbox').forEach(cb => cb.classList.add('is-on'));
+  // Note: sel-circle DOM sync is handled by pageInteractions.js after this runs.
 }
 
 /**
@@ -54,8 +52,6 @@ function notifySelectionChanged() {
  */
 export function setWordSelected(idx, on) {
   if (on) selectedWords.add(idx); else selectedWords.delete(idx);
-  document.querySelector(`#idx-words .word-checkbox[data-word-index="${idx}"]`)?.classList.toggle('is-on', on);
-  document.querySelector(`#idx-words .idx-row[data-index="${idx}"]`)?.classList.toggle('is-sel', on);
   notifySelectionChanged();
 }
 
@@ -68,7 +64,6 @@ export function setWordSelected(idx, on) {
  */
 export function setSentenceSelected(idx, on) {
   if (on) selectedSentences.add(idx); else selectedSentences.delete(idx);
-  document.querySelector(`#idx-sentences .sentence-checkbox[data-sentence-index="${idx}"]`)?.classList.toggle('is-on', on);
   notifySelectionChanged();
 }
 

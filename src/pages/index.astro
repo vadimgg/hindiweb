@@ -1,12 +1,10 @@
 ---
 // Responsible for: page entry point — loads vocab data, passes it to components, renders app shell
 import Layout      from '../layouts/Layout.astro';
-import AppSidebar  from '../components/sidebar/AppSidebar.astro';
+import NavBar      from '../components/NavBar.astro';
 import WordsTab    from '../components/tabs/WordsTab.astro';
 import SentencesTab from '../components/tabs/SentencesTab.astro';
 import ExportTab   from '../components/tabs/ExportTab.astro';
-import TabBar      from '../components/ui/TabBar.astro';
-import MobileHeader from '../components/MobileHeader.astro';
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
@@ -62,18 +60,6 @@ try {
   allSentences = sentenceChapters.flatMap(c => c.sentences);
 } catch { /* vocab/sentences/ dir doesn't exist yet */ }
 
-// ── Group sentences by date ───────────────────────────────────────────────────
-function fmtDate(iso: string): string {
-  const m = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const [y, mo, d] = iso.split('-');
-  return `${m[parseInt(mo) - 1]} ${parseInt(d)}, ${y}`;
-}
-const sentDateSet = [...new Set(allSentences.map(w => w.date_added).filter(Boolean) as string[])].sort((a, b) => b.localeCompare(a));
-const sentencesByDate = sentDateSet.map(date => ({
-  date, label: fmtDate(date),
-  items: allSentences.map((w, i) => ({ w, i })).filter(({ w }) => (w.date_added ?? '') === date),
-}));
-
 // ── Client-side search + hover payloads ──────────────────────────────────────
 const wordSearchIndex     = allWords.map((w, i) => ({ i, h: w.hindi, r: w.romanisation, e: w.english, d: w.date_added ?? '' }));
 const sentenceSearchIndex = allSentences.map((s, i) => ({ i, h: s.hindi ?? '', r: s.romanisation ?? '', e: s.english ?? '', d: s.date_added ?? '' }));
@@ -87,16 +73,20 @@ wordGroups.forEach(g => g.words.forEach(({ i }) => { wordGroupTitles[i] = g.titl
 ---
 
 <Layout title="Hindi Vocabulary">
-  <div class="lg:flex min-h-screen pb-14">
 
-    <AppSidebar wordGroups={wordGroups} totalWords={allWords.length} sentencesByDate={sentencesByDate} totalSentences={allSentences.length} />
+  <!-- Single-column app shell: sticky nav + centred page content -->
+  <div class="app-shell">
 
-    <main class="flex-1 min-w-0">
-      <MobileHeader />
-      <WordsTab allWords={allWords} vocabFilesCount={vocabFiles.length} />
-      <SentencesTab allSentences={allSentences} sentencesByDate={sentencesByDate} sentenceChapters={sentenceChapters} />
+    <NavBar />
+
+    <main class="page-content" id="page-content">
+
+      <WordsTab allWords={allWords} vocabFilesCount={vocabFiles.length} wordGroups={wordGroups} />
+      <SentencesTab allSentences={allSentences} sentenceChapters={sentenceChapters} />
       <ExportTab />
+
     </main>
+
   </div>
 
   <!-- Hover tooltip -->
@@ -108,12 +98,10 @@ wordGroups.forEach(g => g.words.forEach(({ i }) => { wordGroupTitles[i] = g.titl
     </div>
   </div>
 
-  <TabBar />
-</Layout>
-
 <script define:vars={{ __d: { allWords, wordGroupTitles, wordSearchIndex, sentenceSearchIndex, hoverData } }}>
   window.__APP_DATA__ = __d;
 </script>
 <script>
   import '../scripts/main.js';
 </script>
+</Layout>

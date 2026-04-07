@@ -1,80 +1,140 @@
 ---
-// Responsible for: Export/Delivery pane HTML — word summary table and Anki settings panel
+// Responsible for: Deliver/Export page — AnkiConnect status, deck config, selected items, send button
 ---
 
-<div id="tab-export" style="display:none; height:calc(100vh - 3.5rem);">
-  <div class="flex h-full">
+<div id="page-deliver" class="page">
+<div class="deliver-page">
 
-    <!-- Left panel: selected word table -->
-    <div class="flex-1 flex flex-col border-r border-zinc-800 min-w-0 bg-zinc-950">
-      <header class="flex items-center gap-3 px-6 py-4 border-b border-zinc-800/70 shrink-0">
-        <h2 class="font-title text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">Selected Words</h2>
-        <span id="export-word-count" class="text-xs font-semibold bg-zinc-800 text-zinc-300 px-2.5 py-0.5 rounded-full min-w-[1.5rem] text-center">0</span>
-      </header>
-      <div class="flex-1 overflow-y-auto">
-        <table class="w-full text-sm border-collapse">
-          <thead class="sticky top-0 bg-zinc-950/95 backdrop-blur border-b border-zinc-800/70">
-            <tr>
-              <th class="text-left py-2.5 px-4 text-[9px] font-title font-semibold uppercase tracking-widest text-zinc-600">Hindi</th>
-              <th class="text-left py-2.5 px-4 text-[9px] font-title font-semibold uppercase tracking-widest text-zinc-600">Roman</th>
-              <th class="text-left py-2.5 px-4 text-[9px] font-title font-semibold uppercase tracking-widest text-zinc-600">English</th>
-              <th class="text-left py-2.5 px-4 text-[9px] font-title font-semibold uppercase tracking-widest text-zinc-600">Category</th>
-              <th class="text-left py-2.5 px-4 text-[9px] font-title font-semibold uppercase tracking-widest text-zinc-600">Origin</th>
-            </tr>
-          </thead>
-          <tbody id="export-word-tbody"></tbody>
-        </table>
+  <!-- Page header -->
+  <div class="deliver-header">
+    <h1 class="deliver-title">Deliver</h1>
+    <p class="deliver-subtitle">Review your selection and send to Anki</p>
+  </div>
+
+  <!-- AnkiConnect status bar -->
+  <div class="anki-status-bar" id="deliver-status-bar">
+    <span class="anki-status-dot anki-status-dot-offline" id="deliver-status-dot"></span>
+    <span class="anki-status-label" id="deliver-status-label">
+      <strong>AnkiConnect</strong> &nbsp;Checking…
+    </span>
+    <span class="anki-status-spacer"></span>
+    <span class="anki-status-deck">localhost:8765</span>
+  </div>
+
+  <!-- Deck configuration -->
+  <div class="deck-config-section">
+    <span class="deck-config-section-title">Deck Configuration</span>
+    <div class="deck-config-grid">
+
+      <!-- Words deck -->
+      <div class="deck-config-block">
+        <span class="deck-config-label">Words Deck</span>
+        <div class="deck-config-inputs">
+          <div class="deck-input-wrap">
+            <span class="deck-input-sublabel">Main deck</span>
+            <input
+              class="deck-input"
+              id="export-deck-main"
+              type="text"
+              value="Hindi"
+              placeholder="Hindi"
+            />
+          </div>
+          <div class="deck-input-wrap">
+            <span class="deck-input-sublabel">Subdeck</span>
+            <input
+              class="deck-input"
+              id="export-deck-sub"
+              type="text"
+              value="Vocabulary"
+              placeholder="Vocabulary"
+            />
+          </div>
+        </div>
+        <div class="deck-config-preview" id="export-deck-preview">Hindi::Vocabulary</div>
       </div>
-    </div>
 
-    <!-- Right panel: settings -->
-    <div class="w-72 shrink-0 flex flex-col bg-zinc-950 border-l border-zinc-800">
-
-      <div class="p-6 border-b border-zinc-800/70">
-        <p class="text-[9px] font-title font-semibold uppercase tracking-[0.2em] text-zinc-600 mb-3">Deck Name</p>
-        <input
-          id="export-deck-input"
-          type="text"
-          placeholder="Hindi::Vocabulary"
-          class="w-full bg-zinc-900 border border-zinc-700/60 rounded-lg px-3 py-2 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-amber-500/50 transition-colors"
-        />
-        <p class="text-[11px] text-zinc-700 mt-1.5">Use <code class="text-zinc-600">::</code> for subdecks</p>
-      </div>
-
-      <div class="p-6 border-b border-zinc-800/70">
-        <p class="text-[9px] font-title font-semibold uppercase tracking-[0.2em] text-zinc-600 mb-3">AnkiConnect</p>
-        <span id="export-anki-status" class="text-sm font-semibold text-zinc-500">● Checking…</span>
-        <p class="text-[11px] text-zinc-700 mt-1.5">Requires Anki open + AnkiConnect add-on</p>
-      </div>
-
-      <div class="p-6 flex flex-col gap-3">
-        <label class="flex items-start gap-3 cursor-pointer group">
+      <!-- Options block -->
+      <div class="deck-config-block">
+        <span class="deck-config-label">Options</span>
+        <label class="flex items-start gap-3 cursor-pointer group" style="margin-top:0.25rem;">
           <div class="relative mt-0.5 shrink-0">
             <input id="export-override-toggle" type="checkbox" class="sr-only peer" />
-            <div class="w-9 h-5 rounded-full bg-zinc-700 peer-checked:bg-red-700/70 transition-colors"></div>
-            <div class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-zinc-400 peer-checked:bg-red-300 peer-checked:translate-x-4 transition-all"></div>
+            <div class="w-9 h-5 rounded-full bg-slate-700 peer-checked:bg-red-700/70 transition-colors"></div>
+            <div class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-slate-400 peer-checked:bg-red-300 peer-checked:translate-x-4 transition-all"></div>
           </div>
           <div>
-            <p class="text-xs font-semibold text-zinc-400 group-has-[:checked]:text-red-400 transition-colors leading-tight">Replace deck</p>
-            <p class="text-[10px] text-zinc-600 mt-0.5 leading-snug">Deletes all existing cards in the deck, then adds selected words</p>
+            <p class="text-xs font-semibold text-slate-400 group-has-[:checked]:text-red-400 transition-colors leading-tight">Replace deck</p>
+            <p class="text-[10px] text-slate-600 mt-0.5 leading-snug">Deletes existing cards, then adds selected</p>
           </div>
         </label>
         <button
-          id="export-btn"
-          disabled
-          class="w-full py-2.5 text-sm font-semibold rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 hover:bg-amber-500/30 transition-colors disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-amber-500/20"
-        >
-          Export to Anki
-        </button>
-        <button
           id="export-txt-btn"
-          class="w-full py-2 text-xs text-zinc-600 hover:text-zinc-300 transition-colors"
+          class="text-xs text-slate-600 hover:text-slate-300 transition-colors text-left mt-auto pt-2"
         >
           Download .txt for manual import
         </button>
-        <div id="export-feedback" class="hidden"></div>
       </div>
 
     </div>
   </div>
+
+  <!-- Populated state -->
+  <div id="deliver-main">
+
+    <!-- Selected items compact list -->
+    <div class="deliver-items" id="deliver-items-list">
+
+      <!-- Words section -->
+      <div class="deliver-items-section-header">
+        <span class="deliver-items-section-label">Words</span>
+        <span class="deliver-items-section-count" id="export-word-count">0</span>
+        <span class="deliver-items-section-line"></span>
+      </div>
+
+      <div class="deliver-row-list" id="export-word-rows">
+        <!-- Populated by exportPane.js -->
+      </div>
+
+    </div>
+
+    <!-- Send to Anki hero action -->
+    <div class="deliver-action">
+      <div class="deliver-confirm-lines" id="deliver-confirm-lines">
+        <div class="deliver-confirm-line">
+          <span class="deliver-confirm-count" id="deliver-confirm-word-count">0 word cards</span>
+          <span class="deliver-confirm-arrow">→</span>
+          <span class="deliver-confirm-deck" id="deliver-confirm-deck">Hindi::Vocabulary</span>
+        </div>
+      </div>
+      <button
+        id="export-btn"
+        disabled
+        class="send-btn"
+      >
+        <span class="send-btn-icon">⊙</span>
+        <span class="send-btn-text">Send to Anki</span>
+      </button>
+      <div id="export-feedback" class="hidden" style="margin-top:1rem;"></div>
+      <p class="deliver-action-meta" id="deliver-action-meta">
+        Select words on the Words page to begin
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Empty state (shown when nothing selected) -->
+  <div class="deliver-empty-state" id="deliver-empty" style="display:none;">
+    <div class="deliver-empty">
+      <span class="deliver-empty-icon">⊙</span>
+      <p class="deliver-empty-title">Nothing selected yet</p>
+      <p class="deliver-empty-body">
+        Go to <strong style="color:#64748b;">Words</strong> or
+        <strong style="color:#64748b;">Sentences</strong> and tap the
+        circle on any card to add it to your export.
+      </p>
+    </div>
+  </div>
+
+</div>
 </div>

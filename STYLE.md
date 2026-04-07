@@ -199,7 +199,7 @@ This formula recurs everywhere: the export button, the active tab, the checked c
 
 ### 3. The Small-Caps Label System
 
-Every structural label — section headers, column headers, group titles, field names — uses the same Oswald small-caps pattern:
+Every structural label — section headers, column headers, group titles, field names — uses the same Barlow Condensed small-caps pattern (formerly Oswald — see Font roles for deprecation note):
 
 ```
 font-title + font-semibold + uppercase + tracking-[...] + text-zinc-[...]
@@ -217,7 +217,7 @@ The tracking and colour vary by the label's level in the hierarchy:
 
 **Size floor reminder:** `text-[9px]` and `text-[10px]` are prohibited. Minimum is `text-[11px]` for any label or meta text. See the Visual Density & Readability Rules section.
 
-**The rule:** never use Oswald (`font-title`) for body copy, explanations, or anything the user reads for meaning — only for structure and taxonomy. Never use Poppins for a label or heading.
+**The rule:** never use Barlow Condensed (`font-title`) for body copy, explanations, or anything the user reads for meaning — only for structure and taxonomy. Never use Plus Jakarta Sans for a label or heading.
 
 ---
 
@@ -341,12 +341,22 @@ Pattern: `bg-{hue}-900/30 text-{hue}-400 border border-{hue}-700/40`
 
 ### Font roles
 
-| Family | Tailwind | Purpose |
-|---|---|---|
-| **Poppins** | `font-sans` (default) | Everything the user reads for meaning |
-| **Oswald** | `font-title` | Everything that labels or classifies |
-| **Tiro Devanagari Hindi** | auto via `[lang="hi"]` | All Devanagari script — never override |
-| PT Serif, Frank Ruhl Libre | `.hl-cyrillic`, `.hl-hebrew` | Inline script highlights only |
+| Family | Tailwind | Purpose | Status |
+|---|---|---|---|
+| **Plus Jakarta Sans** | `font-sans` (default) | Everything the user reads for meaning — warm humanist geometry, excellent at small weights | **Canonical** |
+| **Barlow Condensed** | `font-title` | Everything that labels or classifies — high tracking capacity at 11px label sizes | **Canonical** |
+| **DM Mono** | `font-mono` (or inline `font-family: 'DM Mono'`) | Romanisation in dense sections (collocations, etymology chain, form chips) | **Canonical** |
+| **Tiro Devanagari Hindi** | auto via `[lang="hi"]` | All Devanagari script — never override | **Canonical** |
+| Poppins | `font-sans` (legacy) | Former body font — deprecated, replace with Plus Jakarta Sans wherever encountered | **Deprecated** |
+| Oswald | `font-title` (legacy) | Former label font — deprecated, replace with Barlow Condensed wherever encountered | **Deprecated** |
+| PT Serif, Frank Ruhl Libre | `.hl-cyrillic`, `.hl-hebrew` | Inline script highlights only — unchanged | Unchanged |
+
+**Google Fonts import string (canonical):**
+```
+Tiro+Devanagari+Hindi | Barlow+Condensed:wght@400;600;700 | Plus+Jakarta+Sans:wght@400;500;600 | DM+Mono
+```
+
+**DM Mono usage:** Use DM Mono (not generic `font-mono`) for romanisation in dense sections — collocations, etymology chains, form chip romanisation, morpheme chip romanisation, sidebar de-emphasised romanisation. The monospace rhythm adds intentional visual separation from body copy at small sizes.
 
 ### Complete typography recipes
 
@@ -473,6 +483,69 @@ Tailwind's 4px grid. Key values:
 - Sidebar: `sticky top-0 h-screen overflow-y-auto`
 - Main: `flex-1 min-w-0` — never `overflow-hidden` (breaks sticky children)
 - Export tab: `height: calc(100vh - 3.5rem)`, toggled via `style.display` (not Tailwind `.hidden`) because it needs `display:flex`
+
+### Top sticky nav bar (target pattern)
+
+The demo introduces a top sticky navigation bar as the target replacement for the current bottom `TabBar`. The top nav provides better spatial orientation (navigation at the top of the visual hierarchy, above content) and follows conventional web navigation patterns.
+
+```
+┌─ sticky top nav bar (full width) ─────────────────────────────────────────┐
+│  [brand mark / logo]          [Words]  [Sentences]  [Export]              │
+└────────────────────────────────────────────────────────────────────────────┘
+┌─ AppSidebar (w-72 xl:w-80, hidden < lg) ─┬─ main (flex-1, min-w-0) ──────┐
+│  search bar                              │  WordsTab / SentencesTab       │
+│  words index nav                         │  ExportTab                     │
+│  sentences index nav                     │                                │
+└──────────────────────────────────────────┴────────────────────────────────┘
+```
+
+**Top nav bar visual spec:**
+- Position: `position: sticky; top: 0; z-index: 40`
+- Background: `rgba(2,6,23,0.95)` with `backdrop-filter: blur(12px)` — allows page content to scroll beneath while the bar remains legible
+- Brand mark: left-aligned, uses `font-title` (Barlow Condensed), amber colour
+- Nav items: right-aligned flex row, Barlow Condensed labels, `text-slate-400` inactive
+- Active tab state: amber underline tab (`border-bottom: 2px solid #fbbf24`) — note this is a *bottom* border on the nav item, not a top border as in the current bottom TabBar's `-mt-px` trick
+- Inactive hover: `color: #e2e8f0` text lightening, `transition-colors`
+
+```css
+/* Top nav bar shell */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(2,6,23,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(51,65,85,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 3.5rem;
+}
+
+/* Nav item — active */
+.nav-item.active {
+  color: #fbbf24;
+  border-bottom: 2px solid #fbbf24;
+}
+
+/* Nav item — inactive */
+.nav-item {
+  color: #64748b;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  padding: 0 0.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item:hover { color: #e2e8f0; }
+```
+
+This pattern replaces the bottom `TabBar` (`fixed bottom, h-14, z-30, bg-zinc-950`) in the main app. The bottom TabBar spec above is preserved for reference until the replacement is implemented.
+
+---
 
 ### Responsive breakpoints
 
@@ -709,6 +782,94 @@ The dot sits directly left of the Hindi token, vertically aligned to the cap-hei
 ```
 
 Corner radius rule: **card = `rounded-2xl`, inner box / input / button = `rounded-xl`, badge = `rounded-lg`, chip = `rounded-full`**.
+
+---
+
+### Word card section patterns — Morphemes and Delhi Note
+
+#### Canonical section order
+
+The following is the canonical section order inside a word card body. Web card and Anki card must always maintain the same order (see Web ↔ Anki parity rule in CLAUDE.md):
+
+1. **Forms** — inflected forms, always first when present
+2. **Morphemes** *(conditional — only when `word.morphemes` is non-empty)*
+3. **Usage Notes**
+4. **Related Words**
+5. **Sound Alikes**
+6. **Collocations**
+7. **Delhi Usage** *(conditional — only when `word.delhi_note` is non-empty)*
+8. **Etymology** — always last
+
+#### Morphemes section
+
+The Morphemes section shows the word's constituent morphemes — its grammatical or etymological parts. It uses the same chip layout as the Forms section.
+
+**Data key:** `word.morphemes` — array of `{ part, roman, meaning, origin? }`  
+**Visibility:** conditional — render only when `word.morphemes` exists and has at least one entry.  
+**Section label:** `MORPHEMES`
+
+Each chip displays:
+- `part` — the Devanagari morpheme fragment, amber, Tiro Devanagari Hindi
+- `roman` — romanisation, teal/60, DM Mono
+- `meaning` — English gloss, slate-400
+- `origin` — language of origin, italic, slate-500/60, smaller — rendered only when present
+
+```css
+/* Morpheme chip — same shell as form chip */
+.wc-morpheme-chip {
+  background: #1e293b;                    /* slate-800 */
+  border: 1px solid rgba(51,65,85,.5);
+  border-radius: 10px;                    /* ~rounded-xl */
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 6rem;
+}
+
+.wc-morpheme-part  { font-family: 'Tiro Devanagari Hindi', serif; font-size: 1.125rem; color: #fbbf24; line-height: 1.3; }
+.wc-morpheme-roman { font-family: 'DM Mono', monospace; font-size: 0.875rem; color: rgba(94,234,212,.7); }
+.wc-morpheme-meaning { font-size: 0.875rem; color: #94a3b8; }
+.wc-morpheme-origin  { font-size: 0.75rem; color: #475569; font-style: italic; margin-top: 0.1rem; }
+```
+
+Tailwind equivalent (Astro component):
+```html
+<!-- Morpheme chip -->
+<div class="bg-slate-800/40 rounded-xl p-3 border border-slate-700/30
+            flex flex-col gap-1 min-w-[6rem]">
+  <span class="text-[18px] text-amber-400 leading-snug" lang="hi">{m.part}</span>
+  <span class="font-mono text-[14px] text-teal-300/70">{m.roman}</span>
+  <span class="text-[14px] text-slate-400">{m.meaning}</span>
+  {m.origin && <span class="text-[12px] text-slate-500 italic">{m.origin}</span>}
+</div>
+```
+
+#### Delhi Note section
+
+The Delhi Note is a semantically distinct "local usage" callout — it documents how a word is used specifically in Delhi Hindi as distinct from standard Hindi. It is styled as a callout box with a subtle left amber accent.
+
+**Data key:** `word.delhi_note` — plain string  
+**Visibility:** conditional — render only when `word.delhi_note` is non-empty.  
+**Section label:** `DELHI USAGE`
+
+```css
+/* Delhi note callout box */
+.wc-delhi-note {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(51,65,85,.4);
+  border-left: 3px solid rgba(251,191,36,.35);
+  border-radius: 0 8px 8px 0;
+  padding: 0.875rem 1rem;
+  font-size: 0.9375rem;
+  color: #cbd5e1;
+  line-height: 1.75;
+}
+```
+
+**Colored left-border exception:** This is the **only** element in the word card permitted to use a colored `border-left`. The rationale: the Delhi Note is not a section divider accent (which the prohibition bans) — it is a content callout box communicating semantic information ("this note is about a specific dialect register"). The amber left bar is the visual signal for that semantic distinction, not mere decoration.
+
+The prohibition in "No colored left-border section accents" applies to `<details>` section wrappers used as structural dividers — not to content boxes inside a section body. This callout sits inside the Delhi Usage section body, not as a section wrapper.
 
 ---
 
@@ -1123,10 +1284,10 @@ When adding a new visual element to the website, check whether it also appears i
 ### Label text
 
 ```html
-<!-- WRONG: Poppins label, no uppercase, wrong tracking -->
+<!-- WRONG: Plus Jakarta Sans label, no uppercase, wrong tracking -->
 <p class="text-xs font-semibold text-slate-400">Section Name</p>
 
-<!-- RIGHT: Oswald, uppercase, correct tracking -->
+<!-- RIGHT: Barlow Condensed, uppercase, correct tracking -->
 <span class="font-title text-xs font-medium tracking-wider uppercase text-slate-400">
   Section Name
 </span>
@@ -1219,8 +1380,8 @@ Before marking any UI work as done, go through this list:
 - [ ] Do etymology chain ancestor forms use `text-slate-200` (not amber)?
 
 ### Typography
-- [ ] Are all labels and headings `font-title uppercase`?
-- [ ] Is all body copy Poppins (`font-sans`, the default)?
+- [ ] Are all labels and headings `font-title uppercase` (Barlow Condensed)?
+- [ ] Is all body copy Plus Jakarta Sans (`font-sans`, the default)?
 - [ ] Does every Devanagari element have `lang="hi"` (which auto-applies the correct font)?
 - [ ] Does any text field go through `highlight()` via `set:html` to get script colouring?
 - [ ] Does any text go below `text-[11px]`? If yes, fix it — `text-[11px]` is the absolute floor.
@@ -1277,9 +1438,11 @@ Quick list of the most common mistakes:
 - **New shades of grey** — there are exactly five text steps. Do not invent `text-slate-500`, `text-zinc-400`, or anything not in the table.
 - **Light backgrounds** — never `bg-white`, `bg-gray-100`, or anything lighter than `slate-800`.
 - **Shadows for depth** — depth comes from surface layering, not `shadow-*`. The tooltip is the only shadow in the app.
-- **Gradients** — none. Semi-transparent flat colours only.
+- **Gradients** — permitted only in specific, documented cases (see below). Anywhere else: semi-transparent flat colours only.
+  - **Permitted:** card background (`linear-gradient(145deg, #131f35, #0f172a)`), Hindi word gradient text fill (`linear-gradient(135deg, #fbbf24, #f97316)`), grammar badge directional fills, page background radial gradient, Anki flip divider gradient.
+  - **Not permitted:** decorative section backgrounds, hover overlays, any text colour other than the main Hindi word.
 - **`transition` without a property** — use `transition-colors` or `transition-all` explicitly.
-- **Poppins for labels** — all structural text (labels, headings, column headers) uses Oswald (`font-title`).
+- **Plus Jakarta Sans for labels** — all structural text (labels, headings, column headers) uses Barlow Condensed (`font-title`). (Legacy code may reference Poppins/Oswald — these are deprecated names for the same Tailwind class mappings; update them when encountered.)
 - **`rounded-3xl` or larger** — max corner radius is `rounded-2xl` (16px) on the outermost card.
 - **New accent colours without a semantic reason** — each colour means something. Adding a colour means adding a meaning.
 - **Decorative icons** — icons appear only in the tab bar and the collapse button. Not for decoration.
