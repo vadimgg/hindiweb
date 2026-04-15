@@ -269,10 +269,10 @@ window.WordCardStyles = `
     margin-bottom: 0.4rem;
   }
 
-  .wc-soundalike-hindi {
-    font-family: 'Tiro Devanagari Hindi', serif;
-    font-size: 1.125rem;
-    color: #fbbf24;
+  .wc-soundalike-part {
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+    color: rgba(94,234,212,.8);
   }
 
   .wc-soundalike-via {
@@ -280,11 +280,90 @@ window.WordCardStyles = `
     color: #64748b;
   }
 
+  .wc-soundalike-foreign {
+    font-size: 0.9375rem;
+    color: #e2e8f0;
+    font-style: italic;
+  }
+
   .wc-soundalike-assoc {
     font-size: 0.9375rem;
     color: #cbd5e1;
     font-style: italic;
     line-height: 1.7;
+  }
+
+  /* ── Example Sentence ───────────────────────────────────── */
+  .wc-ex-header {
+    margin-bottom: 0.875rem;
+  }
+
+  .wc-ex-hindi {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.125rem;
+    background: linear-gradient(135deg, #fbbf24, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.4;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .wc-ex-roman {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.875rem;
+    color: rgba(94,234,212,.8);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .wc-ex-english {
+    font-size: 0.9375rem;
+    color: #cbd5e1;
+    font-style: italic;
+    display: block;
+  }
+
+  .wc-ex-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(51,65,85,.3);
+  }
+
+  .wc-ex-token {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(51,65,85,.22);
+  }
+
+  .wc-ex-token:last-child {
+    border-bottom: none;
+  }
+
+  .wc-ex-token-hindi {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1rem;
+    color: #fbbf24;
+    min-width: 3.5rem;
+    flex-shrink: 0;
+  }
+
+  .wc-ex-token-roman {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8125rem;
+    color: rgba(94,234,212,.7);
+    min-width: 3.5rem;
+    flex-shrink: 0;
+  }
+
+  .wc-ex-token-meaning {
+    font-size: 0.875rem;
+    color: #64748b;
   }
 
   /* ── Collocations ───────────────────────────────────────── */
@@ -524,10 +603,10 @@ window.WordCard = function (word) {
   const soundalikesHtml = (word.sound_alikes || []).map(s => `
     <div class="wc-soundalike">
       <div class="wc-soundalike-top">
-        <span class="wc-soundalike-hindi">${s.part}</span>
+        <span class="wc-soundalike-part">${s.part}</span>
         <span class="wc-soundalike-via">sounds like</span>
-        <span class="wc-soundalike-hindi">${s.association}</span>
-        <span class="wc-soundalike-via">· ${s.language}</span>
+        <span class="wc-soundalike-foreign">${s.association}</span>
+        <span class="wc-soundalike-via">(${s.language})</span>
       </div>
       <p class="wc-soundalike-assoc">${s.note || s.association}</p>
     </div>
@@ -565,6 +644,25 @@ window.WordCard = function (word) {
       ${m.origin ? `<span class="wc-morpheme-origin">${m.origin}</span>` : ''}
     </div>
   `).join('');
+
+  const exHtml = word.example_sentence ? (() => {
+    const ex = word.example_sentence;
+    const breakdownHtml = (ex.breakdown || []).map(t => `
+      <div class="wc-ex-token">
+        <span class="wc-ex-token-hindi" lang="hi">${t.hindi}</span>
+        <span class="wc-ex-token-roman">${t.roman}</span>
+        <span class="wc-ex-token-meaning">— ${t.meaning}</span>
+      </div>
+    `).join('');
+    return `
+      <div class="wc-ex-header">
+        <span class="wc-ex-hindi" lang="hi">${ex.hindi}</span>
+        <span class="wc-ex-roman">${ex.roman}</span>
+        <span class="wc-ex-english">${ex.english}</span>
+      </div>
+      ${breakdownHtml ? `<div class="wc-ex-breakdown">${breakdownHtml}</div>` : ''}
+    `;
+  })() : '';
 
   const genderBadgeClass = word.gender === 'masculine'
     ? 'badge badge-masc'
@@ -662,6 +760,16 @@ window.WordCard = function (word) {
         <div class="wc-colloc-list">${collocsHtml}</div>
       </div>
     </details>
+
+    <!-- Example Sentence -->
+    ${word.example_sentence ? `
+    <details class="wc-section" open>
+      <summary>
+        <span class="wc-section-label">Example</span>
+        <span class="wc-section-chevron">▾</span>
+      </summary>
+      <div class="wc-section-body">${exHtml}</div>
+    </details>` : ''}
 
     <!-- Delhi Note -->
     ${word.delhi_note ? `

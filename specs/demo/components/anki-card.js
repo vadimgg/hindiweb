@@ -655,7 +655,10 @@ window.AnkiCard = function (word) {
   `;
 
   // ── Back panel ───────────────────────────────────────────
-  const usageNotesHtml = (word.usage_notes || []).map(n => `
+  const usageArr = Array.isArray(word.usage_notes)
+    ? word.usage_notes
+    : word.usage_notes ? [word.usage_notes] : [];
+  const usageNotesHtml = usageArr.map(n => `
     <div class="ex-card">
       <p class="item-note">${n}</p>
     </div>
@@ -675,9 +678,11 @@ window.AnkiCard = function (word) {
     <div class="clang-item">
       <span class="lang-label" style="color:#7dd3fc;">${s.language}</span>
       <div class="word-row">
-        <span class="word-text" lang="hi">${s.hindi}</span>
+        <span class="word-rom" style="font-family:'DM Mono',monospace;color:rgba(94,234,212,.8);">${s.part}</span>
+        <span style="color:#64748b;font-size:0.8125rem;">→</span>
+        <span style="color:#e2e8f0;font-style:italic;">${s.association}</span>
       </div>
-      <p class="item-note">${s.association}</p>
+      <p class="item-note">${s.note || s.association}</p>
     </div>
   `).join('');
 
@@ -691,10 +696,44 @@ window.AnkiCard = function (word) {
     </div>
   `).join('');
 
-  const etymHtml = (word.etymology || []).map(e => `
+  const morphemesHtml = (word.morphemes && word.morphemes.length)
+    ? word.morphemes.map(m => `
+    <div class="clang-item">
+      <div class="word-row">
+        <span class="word-text" lang="hi">${m.part}</span>
+        <span class="word-rom">${m.roman}</span>
+      </div>
+      <div class="mean-box"><span>${m.meaning}</span></div>
+      ${m.origin ? `<span style="color:#64748b;font-size:0.75rem;font-style:italic;">${m.origin}</span>` : ''}
+    </div>
+  `).join('')
+    : '';
+
+  const exSentenceHtml = word.example_sentence ? (() => {
+    const ex = word.example_sentence;
+    const breakdownRowsHtml = (ex.breakdown || []).map(b => `
+      <div style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;margin-top:0.25rem;">
+        <span style="font-family:'Tiro Devanagari Hindi',serif;color:#fbbf24;font-size:0.9375rem;" lang="hi">${b.hindi}</span>
+        <span style="font-family:'DM Mono',monospace;color:rgba(94,234,212,.8);font-size:0.8125rem;">${b.roman}</span>
+        <span style="color:#64748b;font-size:0.8125rem;font-style:italic;">— ${b.meaning}</span>
+      </div>
+    `).join('');
+    return `
+      <p class="hindi" lang="hi">${ex.hindi}</p>
+      <p class="roman">${ex.roman}</p>
+      <p class="meaning-reveal">${ex.english}</p>
+      ${breakdownRowsHtml}
+    `;
+  })() : '';
+
+  const delhiNoteHtml = word.delhi_note
+    ? `<p class="item-note">${word.delhi_note}</p>`
+    : '';
+
+  const etymHtml = (word.etymology_journey || word.etymology || []).map(e => `
     <div class="etym-stage">
-      <span class="etym-lang">${e.label}</span>
-      <span class="etym-word" lang="hi">${e.hindi}</span>
+      <span class="etym-lang">${e.stage || e.label}</span>
+      <span class="etym-word" lang="hi">${e.form || e.hindi}</span>
       <span class="etym-rom">${e.roman}</span>
     </div>
   `).join('');
@@ -705,7 +744,7 @@ window.AnkiCard = function (word) {
         <div class="card-wrap">
           <div class="answer-header">
             <p class="hindi" lang="hi">${word.hindi}</p>
-            <p class="roman">${word.roman}</p>
+            <p class="roman">${word.romanisation || word.roman}</p>
             <p class="syl-inline">${word.syllables}</p>
             <p class="meaning-reveal">${word.english}</p>
             <div class="header-chips">
@@ -713,6 +752,13 @@ window.AnkiCard = function (word) {
               <span class="badge-masc-anki">${word.gender}</span>
             </div>
           </div>
+
+          ${word.example_sentence ? `
+          <div class="field-sec">
+            <span class="field-label">Example</span>
+            ${exSentenceHtml}
+          </div>
+          ` : ''}
 
           <div class="field-sec">
             <span class="field-label">Usage Notes</span>
@@ -724,6 +770,13 @@ window.AnkiCard = function (word) {
             ${relatedHtml}
           </div>
 
+          ${(word.morphemes && word.morphemes.length) ? `
+          <div class="field-sec">
+            <span class="field-label">Morphemes</span>
+            ${morphemesHtml}
+          </div>
+          ` : ''}
+
           <div class="field-sec">
             <span class="field-label">Sound Alikes</span>
             ${soundAlikesHtml}
@@ -733,6 +786,13 @@ window.AnkiCard = function (word) {
             <span class="field-label">Collocations</span>
             ${collocHtml}
           </div>
+
+          ${word.delhi_note ? `
+          <div class="field-sec">
+            <span class="field-label">Delhi Usage</span>
+            ${delhiNoteHtml}
+          </div>
+          ` : ''}
 
           <div class="field-sec">
             <span class="field-label">Etymology</span>

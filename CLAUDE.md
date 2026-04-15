@@ -9,6 +9,7 @@ npm run dev       # dev server → localhost:4321
 npm run build     # verify the build compiles clean — run after every implementation
 npm run arch      # regenerate ARCHITECTURE.md — run after any JS/TS/Astro change
 npm run changelog # aggregate changelog/ entries into CHANGELOG.md
+npm run coverage  # regenerate FIELD_REGISTRY.md — run after any vocab format or demo change
 ```
 
 ---
@@ -62,7 +63,9 @@ You (Claude) are the **PM**. You coordinate two specialist agents:
 - Update `STYLE.md` when new patterns or rules emerge.
 - Does **not** write Astro, TypeScript, or any application code.
 
-**Output:** updated `STYLE.md` + (when applicable) a demo file in `specs/demo/` + a written summary of decisions.
+**After every demo change:** run `npm run coverage` — confirms no field is missing from the demo surface. Fix any ❌ before handing off to the Tech Lead.
+
+**Output:** updated `STYLE.md` + (when applicable) a demo file in `specs/demo/` + `npm run coverage` result + a written summary of decisions.
 
 ---
 
@@ -70,14 +73,14 @@ You (Claude) are the **PM**. You coordinate two specialist agents:
 
 **What they own:**
 - All source code under `src/` and any config files.
-- Keeping documentation in sync: after every change, runs `npm run build && npm run arch` and updates `BACKLOG.md` with any improvement suggestions.
+- Keeping documentation in sync: after every change, runs `npm run build && npm run arch && npm run coverage` and updates `BACKLOG.md` with any improvement suggestions.
 
 **What they do:**
 - Read `STYLE.md`, active specs, and the designer's demo (if one exists) before implementing UI changes.
 - Implement designs in Astro/Tailwind/TypeScript/vanilla JS.
 - Never change `STYLE.md` — that belongs to the designer.
 
-**Output:** files changed (every file) + `npm run build && npm run arch` result (non-optional) + acceptance criteria met + improvement suggestions (3–5 items).
+**Output:** files changed (every file) + `npm run build && npm run arch && npm run coverage` result (non-optional) + acceptance criteria met + improvement suggestions (3–5 items).
 
 ---
 
@@ -134,6 +137,7 @@ Acceptance criteria:
 Verify (Tech Lead only — non-optional):
 - npm run build
 - npm run arch
+- npm run coverage
 
 Output:
 - Files changed (list every file)
@@ -271,6 +275,7 @@ Different runtime environments; cannot share an import. Not a duplicate to fix.
 - [ ] `npm run arch` — no new warnings beyond the known flag?
 - [ ] Web card sections and Anki sections are in the same order?
 - [ ] Every new/removed section has a matching Anki field builder change?
+- [ ] `npm run coverage` — any ⚠️ parity gaps?
 - [ ] `BACKLOG.md` — completed items marked `done`, new suggestions added?
 - [ ] Any completed specs moved from `specs/active/` to `specs/archive/`?
 - [ ] Memory updated? (`/Users/vadimgagarin/.claude/projects/.../memory/`)

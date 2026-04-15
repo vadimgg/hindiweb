@@ -18,8 +18,10 @@ import { buildAnkiMorphemes }    from './morphemes.js';
 import { buildAnkiUsageNotes }   from './usageNotes.js';
 import { buildAnkiCollocations } from './collocations.js';
 import { buildAnkiRelatedWords } from './relatedWords.js';
-import { buildAnkiSoundAlikes }  from './soundAlikes.js';
-import { buildAnkiEtymology }    from './etymology.js';
+import { buildAnkiSoundAlikes }    from './soundAlikes.js';
+import { buildAnkiExampleSentence } from './exampleSentence.js';
+import { buildAnkiDelhiNote }      from './delhiNote.js';
+import { buildAnkiEtymology }      from './etymology.js';
 import { esc }                   from './utils.js';
 
 /**
@@ -40,13 +42,15 @@ export function wordToAnkiFields(word) {
     Category:     buildAnkiCategory(word),
     Gender:       buildAnkiGender(word),
     Transitivity: buildAnkiTransitivity(word),
-    Forms:        buildAnkiForms(word),
-    Morphemes:    buildAnkiMorphemes(word),
-    UsageNotes:   buildAnkiUsageNotes(word),
-    Collocations: buildAnkiCollocations(word),
-    RelatedWords: buildAnkiRelatedWords(word),
-    SoundAlikes:  buildAnkiSoundAlikes(word),
-    Etymology:    buildAnkiEtymology(word),
+    Forms:            buildAnkiForms(word),
+    ExampleSentence:  buildAnkiExampleSentence(word),
+    UsageNotes:       buildAnkiUsageNotes(word),
+    RelatedWords:     buildAnkiRelatedWords(word),
+    Morphemes:        buildAnkiMorphemes(word),
+    SoundAlikes:      buildAnkiSoundAlikes(word),
+    Collocations:     buildAnkiCollocations(word),
+    DelhiNote:        buildAnkiDelhiNote(word),
+    Etymology:        buildAnkiEtymology(word),
   };
 }
 

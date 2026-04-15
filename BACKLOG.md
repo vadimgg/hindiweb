@@ -34,6 +34,8 @@ These are the highest-value items to pick up in the next session:
 | Clean dead CSS from `noteType.js` (`.pron-row`, `.ex-card`, `.ex-hindi`, `.mean-box`, etc.) | Tech Lead | P2 | done |
 | Replace `font-mono` with `font-mono-dm` in Astro section components | Tech Lead | P2 | done |
 | Adopt `Word` type in `data.js` — `getAllWords()` still returns `any[]` | Tech Lead | P1 | open |
+| Add `DelhiNote` Anki field — `delhi_note` renders in web card but has no Anki field; breaks parity rule | Tech Lead | P1 | open |
+| Prune `devanagariFromPart` / `partLabel` from `cardHelpers.ts` and browser-side equivalents in `stringUtils.js` — dead after SoundAlike format change | Tech Lead | P2 | open |
 | Move `data-sentence-card` onto SentenceCard `<article>` — currently on wrapper in SentencesTab | Tech Lead | P2 | open |
 | Update `getSentenceIndex()` JSDoc in `data.js` to document `ch` field | Tech Lead | P2 | open |
 | Verify Anki card CSS in `noteType.js` uses DM Mono for romanisation — parity with web font migration | Tech Lead | P2 | open |

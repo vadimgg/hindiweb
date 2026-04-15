@@ -550,6 +550,147 @@ window.PageWordsStyles = `
   #page-words.mode-web  .anki-mode-area { display: none; }
   #page-words.mode-anki .web-card-area  { display: none; }
   #page-words.mode-anki .anki-mode-area { display: block; }
+
+  /* ── Morphemes (copied from WordCardStyles) ─────────────── */
+  .wc-morphemes-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .wc-morpheme-chip {
+    background: #1e293b;
+    border: 1px solid rgba(51,65,85,.5);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 6rem;
+  }
+
+  .wc-morpheme-part {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.125rem;
+    color: #fbbf24;
+    line-height: 1.3;
+  }
+
+  .wc-morpheme-roman {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.875rem;
+    color: rgba(94,234,212,.7);
+  }
+
+  .wc-morpheme-meaning {
+    font-size: 0.875rem;
+    color: #94a3b8;
+  }
+
+  .wc-morpheme-origin {
+    font-size: 0.75rem;
+    color: #475569;
+    font-style: italic;
+    margin-top: 0.1rem;
+  }
+
+  /* ── Delhi note ─────────────────────────────────────────── */
+  .wc-delhi-note {
+    background: rgba(30,41,59,0.6);
+    border: 1px solid rgba(51,65,85,.4);
+    border-left: 3px solid rgba(251,191,36,.35);
+    border-radius: 0 8px 8px 0;
+    padding: 0.875rem 1rem;
+    font-size: 0.9375rem;
+    color: #cbd5e1;
+    line-height: 1.75;
+  }
+
+  /* ── Sound-alikes (updated) ─────────────────────────────── */
+  .wc-soundalike-part {
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+    color: rgba(94,234,212,.8);
+  }
+
+  .wc-soundalike-foreign {
+    font-size: 0.9375rem;
+    color: #e2e8f0;
+    font-style: italic;
+  }
+
+  /* ── Example Sentence ───────────────────────────────────── */
+  .wc-ex-header {
+    margin-bottom: 0.875rem;
+  }
+
+  .wc-ex-hindi {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.125rem;
+    background: linear-gradient(135deg, #fbbf24, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.4;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .wc-ex-roman {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.875rem;
+    color: rgba(94,234,212,.8);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .wc-ex-english {
+    font-size: 0.9375rem;
+    color: #cbd5e1;
+    font-style: italic;
+    display: block;
+  }
+
+  .wc-ex-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(51,65,85,.3);
+  }
+
+  .wc-ex-token {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(51,65,85,.22);
+  }
+
+  .wc-ex-token:last-child {
+    border-bottom: none;
+  }
+
+  .wc-ex-token-hindi {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1rem;
+    color: #fbbf24;
+    min-width: 3.5rem;
+    flex-shrink: 0;
+  }
+
+  .wc-ex-token-roman {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8125rem;
+    color: rgba(94,234,212,.7);
+    min-width: 3.5rem;
+    flex-shrink: 0;
+  }
+
+  .wc-ex-token-meaning {
+    font-size: 0.875rem;
+    color: #64748b;
+  }
 `;
 
 /**
@@ -583,17 +724,45 @@ window.PageWords = function (word) {
     </div>
   `).join('');
 
+  const morphemesHtml = (word.morphemes || []).map(m => `
+    <div class="wc-morpheme-chip">
+      <span class="wc-morpheme-part" lang="hi">${m.part}</span>
+      <span class="wc-morpheme-roman">${m.roman}</span>
+      <span class="wc-morpheme-meaning">${m.meaning}</span>
+      ${m.origin ? `<span class="wc-morpheme-origin">${m.origin}</span>` : ''}
+    </div>
+  `).join('');
+
   const soundalikesHtml = (word.sound_alikes || []).map(s => `
     <div class="wc-soundalike">
       <div class="wc-soundalike-top">
-        <span class="wc-soundalike-hindi">${s.part}</span>
+        <span class="wc-soundalike-part">${s.part}</span>
         <span class="wc-soundalike-via">sounds like</span>
-        <span class="wc-soundalike-hindi">${s.association}</span>
-        <span class="wc-soundalike-via">· ${s.language}</span>
+        <span class="wc-soundalike-foreign">${s.association}</span>
+        <span class="wc-soundalike-via">(${s.language})</span>
       </div>
       <p class="wc-soundalike-assoc">${s.note || s.association}</p>
     </div>
   `).join('');
+
+  const exHtml = word.example_sentence ? (() => {
+    const ex = word.example_sentence;
+    const breakdownHtml = (ex.breakdown || []).map(t => `
+      <div class="wc-ex-token">
+        <span class="wc-ex-token-hindi" lang="hi">${t.hindi}</span>
+        <span class="wc-ex-token-roman">${t.roman}</span>
+        <span class="wc-ex-token-meaning">— ${t.meaning}</span>
+      </div>
+    `).join('');
+    return `
+      <div class="wc-ex-header">
+        <span class="wc-ex-hindi" lang="hi">${ex.hindi}</span>
+        <span class="wc-ex-roman">${ex.roman}</span>
+        <span class="wc-ex-english">${ex.english}</span>
+      </div>
+      ${breakdownHtml ? `<div class="wc-ex-breakdown">${breakdownHtml}</div>` : ''}
+    `;
+  })() : '';
 
   const collocsHtml = (word.collocations || []).map(c => `
     <div class="wc-colloc-row">
@@ -695,7 +864,7 @@ window.PageWords = function (word) {
       <div class="wc-header card-header" role="button" aria-expanded="true" data-card="pw-card-1">
         <div class="wc-header-content">
           <span class="wc-hindi" lang="hi">${word.hindi}</span>
-          <span class="wc-roman">${word.roman}</span>
+          <span class="wc-roman">${word.romanisation}</span>
           <span class="wc-syllables">${word.syllables}</span>
           <div class="wc-grammar-row">
             <span class="badge badge-noun">${word.pos}</span>
@@ -712,6 +881,7 @@ window.PageWords = function (word) {
       </div>
 
       <div class="wc-body">
+        ${(word.forms && word.forms.length) ? `
         <details class="wc-section" open>
           <summary>
             <span class="wc-section-label">Forms</span>
@@ -720,7 +890,17 @@ window.PageWords = function (word) {
           <div class="wc-section-body">
             <div class="wc-forms-row">${formsHtml}</div>
           </div>
-        </details>
+        </details>` : ''}
+        ${(word.morphemes && word.morphemes.length) ? `
+        <details class="wc-section" open>
+          <summary>
+            <span class="wc-section-label">Morphemes</span>
+            <span class="wc-section-chevron">▾</span>
+          </summary>
+          <div class="wc-section-body">
+            <div class="wc-morphemes-row">${morphemesHtml}</div>
+          </div>
+        </details>` : ''}
         <details class="wc-section" open>
           <summary>
             <span class="wc-section-label">Usage Notes</span>
@@ -755,6 +935,24 @@ window.PageWords = function (word) {
             <div class="wc-colloc-list">${collocsHtml}</div>
           </div>
         </details>
+        ${word.example_sentence ? `
+        <details class="wc-section" open>
+          <summary>
+            <span class="wc-section-label">Example</span>
+            <span class="wc-section-chevron">▾</span>
+          </summary>
+          <div class="wc-section-body">${exHtml}</div>
+        </details>` : ''}
+        ${word.delhi_note ? `
+        <details class="wc-section" open>
+          <summary>
+            <span class="wc-section-label">Delhi Usage</span>
+            <span class="wc-section-chevron">▾</span>
+          </summary>
+          <div class="wc-section-body">
+            <p class="wc-delhi-note">${word.delhi_note}</p>
+          </div>
+        </details>` : ''}
         <details class="wc-section" open>
           <summary>
             <span class="wc-section-label">Etymology</span>

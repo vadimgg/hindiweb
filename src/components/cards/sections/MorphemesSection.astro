@@ -17,15 +17,15 @@ const { morphemes } = Astro.props;
 ---
 
 {morphemes.length > 0 && (
-  <details class="group/det">
-    <summary class="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 cursor-pointer list-none select-none hover:bg-slate-800/30 transition-colors">
-      <span class="font-title text-xs sm:text-sm font-medium tracking-wider uppercase text-slate-400 group-open/det:text-slate-200 transition-colors">Morphemes</span>
+  <details class="group/det border-l-2 border-l-transparent hover:border-l-amber-400/20 hover:bg-white/[0.018] transition-colors">
+    <summary class="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 cursor-pointer list-none select-none transition-colors">
+      <span class="font-title text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-slate-400 group-open/det:text-slate-200 group-hover/det:text-slate-400 transition-colors">Morphemes</span>
       <span class="text-slate-600 group-open/det:rotate-180 transition-transform duration-200 text-xs">▾</span>
     </summary>
     <div class="px-4 sm:px-6 pb-4 pt-1">
       <div class="flex flex-wrap gap-3">
         {morphemes.map((m) => (
-          <div class="bg-slate-800/40 rounded-xl border border-slate-700/30 px-3 py-2.5 flex flex-col gap-0.5 min-w-[6rem]">
+          <div class="bg-[#1e293b] rounded-[10px] border border-slate-700/50 px-3 py-2.5 flex flex-col gap-0.5 min-w-[6rem]">
             <span class="word-hindi text-lg leading-snug" lang="hi" style="font-family:'Tiro Devanagari Hindi',serif;">{m.part}</span>
             <span class="text-teal-300/70 text-[13px] font-mono-dm">{m.roman}</span>
             <span class="text-slate-400 text-[13px] leading-snug">{m.meaning}</span>

@@ -19,6 +19,19 @@ export interface RelatedWord { hindi: string; roman: string; english: string; }
 export interface EtymologyStage { stage: string; form: string; roman: string; meaning: string; }
 export interface SoundAlike { part: string; association: string; roman?: string; language?: string; note?: string; }
 
+export interface ExampleSentenceToken {
+  hindi: string;
+  roman: string;
+  meaning: string;
+}
+
+export interface ExampleSentence {
+  hindi: string;
+  roman: string;
+  english: string;
+  breakdown?: ExampleSentenceToken[];
+}
+
 /**
  * A single vocabulary word as stored in the vocab JSON files.
  *
@@ -59,6 +72,8 @@ export interface Word {
   origin_note?: string;
   /** Delhi-specific usage note describing how the word is used in everyday Delhi speech. */
   delhi_note?: string;
+  /** Example sentence illustrating the word in context. */
+  example_sentence?: ExampleSentence;
   /** Anki tags to apply when exporting this word as a flashcard. */
   anki_tags?: string[];
 }

@@ -220,9 +220,12 @@ const dateChips = [...new Map(allDates.map(d => {
 
   </div><!-- /.web-card-area -->
 
-  <!-- Anki mode area -->
+  <!-- Anki mode area — populated by ankiPreview.js -->
   <div class="anki-mode-area" id="pw-anki-area">
-    <p class="anki-mode-notice">Anki preview — select words on the web view first.</p>
+    <!-- Empty state — shown when no words are selected -->
+    <p class="anki-mode-notice" id="pw-anki-notice">Switch to Web view to select words, then come back to preview Anki cards.</p>
+    <!-- Flip cards injected here by ankiPreview.js -->
+    <div id="pw-anki-cards"></div>
   </div>
 
 </div>

@@ -7,11 +7,12 @@
     "build": "astro build",
     "preview": "astro preview",
     "arch": "node scripts/arch.js",
-    "changelog": "node scripts/aggregate-changelog.js"
+    "changelog": "node scripts/aggregate-changelog.js",
+    "coverage": "node scripts/coverage.js"
   },
   "dependencies": {
-    "astro": "^5.0.0",
     "@astrojs/tailwind": "^5.1.0",
+    "astro": "^6.1.6",
     "tailwindcss": "^3.4.0"
   }
 }

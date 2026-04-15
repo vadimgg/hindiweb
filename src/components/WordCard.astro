@@ -5,21 +5,22 @@
  * Responsible for: rendering the full word card with header, grammar badges, and expandable sections.
  *
  * Dependencies: cardHelpers.ts (formatDate, categoryStyle),
- *               types.ts (Form, Morpheme, Collocation, RelatedWord, SoundAlike, EtymologyStage),
+ *               types.ts (Form, Morpheme, Collocation, RelatedWord, SoundAlike, EtymologyStage, ExampleSentence),
  *               FormsSection, MorphemesSection, UsageNotesSection, CollocationsSection,
- *               RelatedWordsSection, SoundAlikesSection, DelhiNoteSection, EtymologySection.
+ *               RelatedWordsSection, SoundAlikesSection, ExampleSentenceSection, DelhiNoteSection, EtymologySection.
  */
 // Responsible for: word card shell — header row + section delegation
 import { formatDate, categoryStyle } from '../utils/cardHelpers';
-import type { Form, Morpheme, Collocation, RelatedWord, SoundAlike, EtymologyStage } from '../utils/types';
-import FormsSection        from './cards/sections/FormsSection.astro';
-import MorphemesSection    from './cards/sections/MorphemesSection.astro';
-import UsageNotesSection   from './cards/sections/UsageNotesSection.astro';
-import CollocationsSection from './cards/sections/CollocationsSection.astro';
-import RelatedWordsSection from './cards/sections/RelatedWordsSection.astro';
-import SoundAlikesSection  from './cards/sections/SoundAlikesSection.astro';
-import DelhiNoteSection    from './cards/sections/DelhiNoteSection.astro';
-import EtymologySection    from './cards/sections/EtymologySection.astro';
+import type { Form, Morpheme, Collocation, RelatedWord, SoundAlike, EtymologyStage, ExampleSentence } from '../utils/types';
+import FormsSection           from './cards/sections/FormsSection.astro';
+import MorphemesSection       from './cards/sections/MorphemesSection.astro';
+import UsageNotesSection      from './cards/sections/UsageNotesSection.astro';
+import CollocationsSection    from './cards/sections/CollocationsSection.astro';
+import RelatedWordsSection    from './cards/sections/RelatedWordsSection.astro';
+import SoundAlikesSection     from './cards/sections/SoundAlikesSection.astro';
+import ExampleSentenceSection from './cards/sections/ExampleSentenceSection.astro';
+import DelhiNoteSection       from './cards/sections/DelhiNoteSection.astro';
+import EtymologySection       from './cards/sections/EtymologySection.astro';
 
 interface Props {
   hindi: string;
@@ -37,6 +38,7 @@ interface Props {
   usage_notes?: string;
   related_words?: RelatedWord[];
   sound_alikes?: SoundAlike[];
+  example_sentence?: ExampleSentence;
   etymology_journey?: EtymologyStage[];
   origin_note?: string;
   delhi_note?: string;
@@ -50,6 +52,7 @@ const {
   forms: _forms, morphemes: _morphemes, pos, gender, transitivity, syllables,
   collocations: _collocations, usage_notes,
   related_words: _related_words, sound_alikes: _sound_alikes,
+  example_sentence,
   etymology_journey: _etymology_journey, origin_note, delhi_note, index,
   innerOnly = false,
 } = Astro.props;
@@ -76,6 +79,7 @@ const secondaryMeanings = rest.join(', ');
       {related_words.length > 0     && <RelatedWordsSection relatedWords={related_words} />}
       {sound_alikes.length > 0      && <SoundAlikesSection sound_alikes={sound_alikes} />}
       {collocations.length > 0      && <CollocationsSection collocations={collocations} />}
+      {example_sentence             && <ExampleSentenceSection sentence={example_sentence} />}
       {delhi_note                   && <DelhiNoteSection delhiNote={delhi_note} />}
       {etymology_journey.length > 0 && <EtymologySection etymologyJourney={etymology_journey} originNote={origin_note} />}
     </div>
@@ -148,6 +152,7 @@ const secondaryMeanings = rest.join(', ');
         {related_words.length > 0     && <RelatedWordsSection relatedWords={related_words} />}
         {sound_alikes.length > 0      && <SoundAlikesSection sound_alikes={sound_alikes} />}
         {collocations.length > 0      && <CollocationsSection collocations={collocations} />}
+        {example_sentence             && <ExampleSentenceSection sentence={example_sentence} />}
         {delhi_note                   && <DelhiNoteSection delhiNote={delhi_note} />}
         {etymology_journey.length > 0 && <EtymologySection etymologyJourney={etymology_journey} originNote={origin_note} />}
       </div>

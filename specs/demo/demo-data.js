@@ -62,6 +62,17 @@ window.demoWord = {
       note: "The ending -tā sounds like 'ta' (British slang for 'thank you') — say 'ta' to your ma: mātā.",
     },
   ],
+  example_sentence: {
+    hindi: 'माता घर में हैं।',
+    roman: 'mātā ghar mẽ haĩ.',
+    english: 'Mother is at home.',
+    breakdown: [
+      { hindi: 'माता', roman: 'mātā', meaning: 'mother (formal)' },
+      { hindi: 'घर', roman: 'ghar', meaning: 'home / house' },
+      { hindi: 'में', roman: 'mẽ', meaning: 'in / at (postposition)' },
+      { hindi: 'हैं', roman: 'haĩ', meaning: 'are (formal/honorific form)' },
+    ],
+  },
   etymology_journey: [
     { stage: 'Proto-Indo-European', form: '*méh₂tēr', roman: '*méh₂tēr', meaning: 'mother' },
     { stage: 'Sanskrit', form: 'मातृ', roman: 'mātṛ', meaning: 'mother' },
