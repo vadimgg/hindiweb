@@ -11,10 +11,10 @@ import type { SentenceWord } from '../../../utils/types';
 
 interface Props {
   words: SentenceWord[];
-  /** Base audio path for this sentence — if present, renders hover-reveal play buttons per token. */
-  audioBase?: string;
+  /** Full audio src path for the sentence — kept for API compatibility but per-token audio is not rendered. */
+  audioSrc?: string;
 }
-const { words, audioBase } = Astro.props;
+const { words } = Astro.props;
 ---
 
 <details class="group/det border-t border-slate-700/40">
@@ -60,12 +60,12 @@ const { words, audioBase } = Astro.props;
 
     <!-- Word rows -->
     <div class="divide-y divide-slate-800/60">
-      {words.map((w, idx) => (
+      {words.map((w) => (
         <div
           class="sc-row flex items-start gap-4 py-3 px-2
                  hover:bg-slate-800/20 transition-colors rounded-lg -mx-2"
         >
-          <!-- Left: Hindi token + romanisation + hover play button -->
+          <!-- Left: Hindi token + romanisation -->
           <div class="w-[36%] shrink-0 flex flex-col gap-0.5">
             <span
               class="word-hindi text-base font-bold leading-snug"
@@ -76,14 +76,6 @@ const { words, audioBase } = Astro.props;
             <span class="text-teal-300/60 text-[13px] font-mono-dm">
               {w.roman}
             </span>
-            {audioBase && (
-              <button
-                class="sc-token-play"
-                data-src={`${audioBase}/word_${String(idx + 1).padStart(2, '0')}_${w.roman}.mp3`}
-                data-label=""
-                aria-label={`Play ${w.roman}`}
-              >▶</button>
-            )}
           </div>
 
           <!-- Right: meaning + supplementary -->
@@ -140,20 +132,3 @@ const { words, audioBase } = Astro.props;
   </div>
 </details>
 
-<style>
-  .sc-token-play {
-    font-size: 10px;
-    color: #475569;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
-    margin-top: 0.15rem;
-    opacity: 0;
-    transition: opacity 0.15s;
-    align-self: flex-start;
-  }
-  .sc-row:hover .sc-token-play {
-    opacity: 1;
-  }
-</style>

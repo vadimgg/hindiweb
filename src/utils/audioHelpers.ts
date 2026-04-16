@@ -8,23 +8,23 @@
 // Responsible for: resolving audio file paths for words and sentences from their JSON fields
 
 /**
- * Builds the base audio directory path for a word.
+ * Returns the full audio file path for a word.
  * @param audioBatch - vocab filename without extension (e.g. 'hindi_01_vocab_batch_01')
  * @param hindi - word's hindi field
  * @param romanisation - word's romanisation field
- * @returns path prefix like '/audio/words/hindi_01_vocab_batch_01/लड़का_laṛkā'
+ * @returns full path like '/audio/words/hindi_01_vocab_batch_01/लड़का_laṛkā/00_main.mp3'
  */
-export function wordAudioBase(audioBatch: string, hindi: string, romanisation: string): string {
-  return `/audio/words/${audioBatch}/${hindi}_${romanisation}`;
+export function wordAudioSrc(audioBatch: string, hindi: string, romanisation: string): string {
+  return `/audio/words/${audioBatch}/${hindi}_${romanisation}/00_main.mp3`;
 }
 
 /**
- * Builds the base audio directory path for a sentence.
+ * Returns the full audio file path for a sentence.
  * @param audioBatch - sentence filename without extension (e.g. 'hindi_01_batch_01')
  * @param english - sentence's english field
- * @returns path prefix like '/audio/sentences/hindi_01_batch_01/Are_you_Kamala'
+ * @returns full path like '/audio/sentences/hindi_01_batch_01/Are_you_Kamala/00_main.mp3'
  */
-export function sentenceAudioBase(audioBatch: string, english: string): string {
+export function sentenceAudioSrc(audioBatch: string, english: string): string {
   const sanitised = english.replace(/\s+/g, '_').replace(/[?!.,]/g, '');
-  return `/audio/sentences/${audioBatch}/${sanitised}`;
+  return `/audio/sentences/${audioBatch}/${sanitised}/00_main.mp3`;
 }

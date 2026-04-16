@@ -46,6 +46,7 @@ export function wordToAnkiFields(word) {
     Transitivity: buildAnkiTransitivity(word),
     Forms:            buildAnkiForms(word),
     ExampleSentence:  buildAnkiExampleSentence(word),
+    ExampleEnglish:   esc(word.example_sentence?.english ?? ''),
     UsageNotes:       buildAnkiUsageNotes(word),
     RelatedWords:     buildAnkiRelatedWords(word),
     Morphemes:        buildAnkiMorphemes(word),

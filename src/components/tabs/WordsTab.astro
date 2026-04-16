@@ -12,7 +12,7 @@
 // Responsible for: Words page content — header, filter panel, group dividers, word cards
 import WordCard from '../WordCard.astro';
 import { categoryStyle } from '../../utils/cardHelpers';
-import { wordAudioBase } from '../../utils/audioHelpers';
+import { wordAudioSrc } from '../../utils/audioHelpers';
 
 interface Props {
   allWords: any[];
@@ -145,11 +145,10 @@ const dateChips = [...new Map(allDates.map(d => {
                       </>
                     )}
                   </div>
-                  {/* Audio buttons (word pronunciation) */}
+                  {/* Audio button (word pronunciation) */}
                   {w.audioBatch && (
                     <div class="wc-audio-row">
-                      <button class="wc-audio-btn" data-src={`${wordAudioBase(w.audioBatch, w.hindi, w.romanisation)}/01_word.mp3`} data-label="Normal">🔊 Normal</button>
-                      <button class="wc-audio-btn" data-src={`${wordAudioBase(w.audioBatch, w.hindi, w.romanisation)}/02_word_slow.mp3`} data-label="Slow">🔊 Slow</button>
+                      <button class="wc-audio-btn" data-src={wordAudioSrc(w.audioBatch, w.hindi, w.romanisation)} data-label="Play">🔊 Play</button>
                     </div>
                   )}
                   <div class="flex flex-wrap items-center gap-1.5">

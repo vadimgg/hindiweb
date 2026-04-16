@@ -11,7 +11,7 @@
  */
 // Responsible for: word card shell — header row + section delegation
 import { formatDate, categoryStyle } from '../utils/cardHelpers';
-import { wordAudioBase } from '../utils/audioHelpers';
+import { wordAudioSrc } from '../utils/audioHelpers';
 import type { Form, Morpheme, Collocation, RelatedWord, SoundAlike, EtymologyStage, ExampleSentence } from '../utils/types';
 import FormsSection           from './cards/sections/FormsSection.astro';
 import MorphemesSection       from './cards/sections/MorphemesSection.astro';
@@ -61,7 +61,7 @@ const {
   innerOnly = false,
 } = Astro.props;
 
-const audioBase = audioBatch ? wordAudioBase(audioBatch, hindi, romanisation) : undefined;
+const audioSrc = audioBatch ? wordAudioSrc(audioBatch, hindi, romanisation) : undefined;
 
 const forms             = _forms             ?? [];
 const morphemes         = _morphemes         ?? [];
@@ -85,7 +85,7 @@ const secondaryMeanings = rest.join(', ');
       {related_words.length > 0     && <RelatedWordsSection relatedWords={related_words} />}
       {sound_alikes.length > 0      && <SoundAlikesSection sound_alikes={sound_alikes} />}
       {collocations.length > 0      && <CollocationsSection collocations={collocations} />}
-      {example_sentence             && <ExampleSentenceSection sentence={example_sentence} audioBase={audioBase} />}
+      {example_sentence             && <ExampleSentenceSection sentence={example_sentence} audioSrc={audioSrc} />}
       {delhi_note                   && <DelhiNoteSection delhiNote={delhi_note} />}
       {etymology_journey.length > 0 && <EtymologySection etymologyJourney={etymology_journey} originNote={origin_note} />}
     </div>
@@ -113,11 +113,10 @@ const secondaryMeanings = rest.join(', ');
             </>
           )}
         </div>
-        <!-- Audio buttons (word pronunciation) -->
-        {audioBase && (
+        <!-- Audio button (word pronunciation) -->
+        {audioSrc && (
           <div class="wc-audio-row">
-            <button class="wc-audio-btn" data-src={`${audioBase}/01_word.mp3`} data-label="Normal">🔊 Normal</button>
-            <button class="wc-audio-btn" data-src={`${audioBase}/02_word_slow.mp3`} data-label="Slow">🔊 Slow</button>
+            <button class="wc-audio-btn" data-src={audioSrc} data-label="Play">🔊 Play</button>
           </div>
         )}
         <!-- Row 2: meaning -->
@@ -165,7 +164,7 @@ const secondaryMeanings = rest.join(', ');
         {related_words.length > 0     && <RelatedWordsSection relatedWords={related_words} />}
         {sound_alikes.length > 0      && <SoundAlikesSection sound_alikes={sound_alikes} />}
         {collocations.length > 0      && <CollocationsSection collocations={collocations} />}
-        {example_sentence             && <ExampleSentenceSection sentence={example_sentence} audioBase={audioBase} />}
+        {example_sentence             && <ExampleSentenceSection sentence={example_sentence} audioSrc={audioSrc} />}
         {delhi_note                   && <DelhiNoteSection delhiNote={delhi_note} />}
         {etymology_journey.length > 0 && <EtymologySection etymologyJourney={etymology_journey} originNote={origin_note} />}
       </div>

@@ -114,6 +114,15 @@ window.AnkiCardStyles = `
     margin-bottom: 1rem;
   }
 
+  .front-sentence {
+    font-size: 1.1rem;
+    color: rgba(148,163,184,0.7);
+    text-align: center;
+    margin: .75rem 0 0;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
   .chips {
     display: flex;
     flex-wrap: wrap;
@@ -769,7 +778,8 @@ window.AnkiCard = function (word) {
           <div class="meaning-wrap">
             <p class="meaning">${word.english}</p>
           </div>
-          <div class="chips">
+          ${word.example_sentence ? `<p class="front-sentence">${word.example_sentence.english}</p>` : ''}
+          <div class="chips" style="margin-top:.75rem;">
             <span class="badge-neutral-anki">${word.pos}</span>
           </div>
         </div>

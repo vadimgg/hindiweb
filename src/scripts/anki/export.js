@@ -149,7 +149,7 @@ export function sentenceToAnkiFields(sentence, chapter) {
 export async function uploadSentenceAudio(sentence) {
   if (!sentence.audioBatch) return;
   const sanitised = (sentence.english ?? '').replace(/\s+/g, '_').replace(/[?!.,]/g, '');
-  const path = `/audio/sentences/${sentence.audioBatch}/${sanitised}/01_sentence_normal.mp3`;
+  const path = `/audio/sentences/${sentence.audioBatch}/${sanitised}/00_main.mp3`;
   const filename = `${sentence.audioBatch}__${sanitised}__sentence.mp3`;
   try {
     const response = await fetch(path);
@@ -179,7 +179,7 @@ export async function uploadSentenceAudio(sentence) {
  */
 async function uploadWordAudio(word) {
   if (!word.audioBatch) return;
-  const path = `/audio/words/${word.audioBatch}/${word.hindi}_${word.romanisation}/01_word.mp3`;
+  const path = `/audio/words/${word.audioBatch}/${word.hindi}_${word.romanisation}/00_main.mp3`;
   const filename = `${word.audioBatch}__${word.hindi}_${word.romanisation}__word.mp3`;
   try {
     const response = await fetch(path);

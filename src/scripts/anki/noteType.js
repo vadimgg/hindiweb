@@ -16,7 +16,7 @@ export const ANKI_NOTE_TYPE = 'Hindi Vocabulary';
 
 export const ANKI_FIELDS = [
   'English', 'Hindi', 'Audio', 'Romanisation', 'Syllables', 'Category', 'Gender', 'Transitivity',
-  'Forms', 'ExampleSentence', 'UsageNotes', 'RelatedWords', 'Morphemes', 'SoundAlikes', 'Collocations', 'DelhiNote', 'Etymology',
+  'Forms', 'ExampleSentence', 'ExampleEnglish', 'UsageNotes', 'RelatedWords', 'Morphemes', 'SoundAlikes', 'Collocations', 'DelhiNote', 'Etymology',
 ];
 
 export const ANKI_CSS = [
@@ -30,6 +30,7 @@ export const ANKI_CSS = [
   '.meaning{font-size:2.25rem;font-weight:600;color:#e2e8f0;text-shadow:0 0 60px rgba(226,232,240,0.08);margin:0 0 0.5rem 0;line-height:1.3;position:relative;display:inline-block;padding-bottom:0.5rem;}',
   '.meaning::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:3.5rem;height:2px;background:linear-gradient(90deg,transparent,rgba(251,191,36,0.5),transparent);border-radius:1px;}',
   '.meaning-wrap{margin-bottom:1rem;}',
+  '.front-sentence{font-size:1.1rem;color:rgba(148,163,184,0.7);text-align:center;margin:.75rem 0 0;line-height:1.6;font-style:italic;}',
   '.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;}',
   // Answer header — gradient divider via ::after, no solid border
   '.answer-header{border-bottom:none;position:relative;padding-bottom:1.75rem;margin-bottom:1.75rem;text-align:center;}',
@@ -101,7 +102,10 @@ export const ANKI_FRONT = `<div class="card-wrap front-face">
   <div class="meaning-wrap">
     <p class="meaning">{{English}}</p>
   </div>
-  {{#Category}}<div class="chips" style="margin-top:.5rem;">{{Category}}</div>{{/Category}}
+  {{#ExampleEnglish}}
+  <p class="front-sentence">{{ExampleEnglish}}</p>
+  {{/ExampleEnglish}}
+  {{#Category}}<div class="chips" style="margin-top:.75rem;">{{Category}}</div>{{/Category}}
 </div>`;
 
 export const ANKI_BACK = `<div class="card-wrap">

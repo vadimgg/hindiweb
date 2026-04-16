@@ -7,12 +7,12 @@
  * pattern as WordCard.
  *
  * Dependencies: cardHelpers.ts (registerStyle), types.ts (Sentence),
- *               audioHelpers.ts (sentenceAudioBase),
+ *               audioHelpers.ts (sentenceAudioSrc),
  *               cards/sections/WordBreakdownSection.astro.
  */
 // Responsible for: rendering a single sentence card with header and expandable detail sections
 import { registerStyle } from '../utils/cardHelpers';
-import { sentenceAudioBase } from '../utils/audioHelpers';
+import { sentenceAudioSrc } from '../utils/audioHelpers';
 import type { Sentence } from '../utils/types';
 import WordBreakdownSection from './cards/sections/WordBreakdownSection.astro';
 
@@ -25,7 +25,7 @@ interface Props extends Sentence {
 }
 const { index, hindi, romanisation, english, literal, register, words, selCircle = false, audioBatch } = Astro.props;
 
-const audioBase = audioBatch ? sentenceAudioBase(audioBatch, english) : undefined;
+const audioSrc = audioBatch ? sentenceAudioSrc(audioBatch, english) : undefined;
 ---
 
 <article
@@ -55,11 +55,10 @@ const audioBase = audioBatch ? sentenceAudioBase(audioBatch, english) : undefine
         {romanisation}
       </p>
 
-      <!-- Audio buttons (sentence pronunciation) -->
-      {audioBase && (
+      <!-- Audio button (sentence pronunciation) -->
+      {audioSrc && (
         <div class="wc-audio-row">
-          <button class="wc-audio-btn" data-src={`${audioBase}/01_sentence_normal.mp3`} data-label="Normal">🔊 Normal</button>
-          <button class="wc-audio-btn" data-src={`${audioBase}/02_sentence_slow.mp3`} data-label="Slow">🔊 Slow</button>
+          <button class="wc-audio-btn" data-src={audioSrc} data-label="Play">🔊 Play</button>
         </div>
       )}
 
@@ -119,7 +118,7 @@ const audioBase = audioBatch ? sentenceAudioBase(audioBatch, english) : undefine
 
     <!-- Word breakdown (if words present) -->
     {words && words.length > 0 && (
-      <WordBreakdownSection words={words} audioBase={audioBase} />
+      <WordBreakdownSection words={words} audioSrc={audioSrc} />
     )}
 
   </div>
