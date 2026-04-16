@@ -1,6 +1,6 @@
 # Field Registry
 
-_Generated 2026-04-15 by `npm run coverage`._
+_Generated 2026-04-16 by `npm run coverage`._
 
 Fields extracted from `vocab/words/` JSON files, cross-referenced against demo, web, and Anki rendering surfaces.
 

@@ -1603,4 +1603,37 @@ body {
   .field-sec { padding: .85rem .95rem 1rem; }
 }
 
+/* ── Audio playback buttons ─────────────────────────────────────────────── */
+.wc-audio-row {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.wc-audio-btn {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.65rem;
+  border-radius: 6px;
+  cursor: pointer;
+  background: rgba(30, 41, 59, 0.8);
+  color: #64748b;
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.wc-audio-btn:hover {
+  border-color: rgba(94, 234, 212, 0.3);
+  color: #5eead4;
+}
+
+.wc-audio-btn.is-playing {
+  background: #fbbf24;
+  color: #0f172a;
+  border-color: #fbbf24;
+}
+
 .deliver-empty-body { font-size: 0.875rem; color: #334155; line-height: 1.65; max-width: 22rem; }

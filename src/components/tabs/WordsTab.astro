@@ -12,6 +12,7 @@
 // Responsible for: Words page content — header, filter panel, group dividers, word cards
 import WordCard from '../WordCard.astro';
 import { categoryStyle } from '../../utils/cardHelpers';
+import { wordAudioBase } from '../../utils/audioHelpers';
 
 interface Props {
   allWords: any[];
@@ -144,6 +145,13 @@ const dateChips = [...new Map(allDates.map(d => {
                       </>
                     )}
                   </div>
+                  {/* Audio buttons (word pronunciation) */}
+                  {w.audioBatch && (
+                    <div class="wc-audio-row">
+                      <button class="wc-audio-btn" data-src={`${wordAudioBase(w.audioBatch, w.hindi, w.romanisation)}/01_word.mp3`} data-label="Normal">🔊 Normal</button>
+                      <button class="wc-audio-btn" data-src={`${wordAudioBase(w.audioBatch, w.hindi, w.romanisation)}/02_word_slow.mp3`} data-label="Slow">🔊 Slow</button>
+                    </div>
+                  )}
                   <div class="flex flex-wrap items-center gap-1.5">
                     <span class="text-slate-200 text-sm leading-none">{(w.english as string).split(',')[0].trim()}</span>
                     {(w.english as string).includes(',') && (
@@ -197,9 +205,11 @@ const dateChips = [...new Map(allDates.map(d => {
                   usage_notes={w.usage_notes}
                   related_words={w.related_words}
                   sound_alikes={w.sound_alikes}
+                  example_sentence={w.example_sentence}
                   etymology_journey={w.etymology_journey}
                   origin_note={w.origin_note}
                   delhi_note={w.delhi_note}
+                  audioBatch={w.audioBatch}
                   index={i}
                   innerOnly={true}
                 />

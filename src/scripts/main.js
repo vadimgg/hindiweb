@@ -24,6 +24,7 @@ import { initPageInteractions } from './ui/pageInteractions.js';
 import { initTooltip }          from './ui/tooltip.js';
 import { initExportPane }       from './ui/exportPane.js';
 import { initAnkiPreview }      from './ui/ankiPreview.js';
+import { initAudio }            from './ui/audio.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initSelection();          // seed selection state from all words
@@ -32,5 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initTooltip();            // annotate example cards + tooltip positioning
   initExportPane();         // export pane table + AnkiConnect polling
   initAnkiPreview();        // populate Anki flip-card preview on Words page
+  initAudio();              // delegated audio playback for .wc-audio-btn elements
   initTabs();               // last: fires initial tabchange event after all modules are ready
 });

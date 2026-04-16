@@ -91,6 +91,16 @@ export async function ensureSentenceNoteType() {
       cardTemplates: [{ Name: 'Production', Front: ANKI_SENTENCE_FRONT, Back: ANKI_SENTENCE_BACK }],
     });
   } else {
+    // Add any fields that exist in ANKI_SENTENCE_FIELDS but are missing from the note type
+    // (e.g. Audio added after the note type was first created in Anki).
+    // Must run BEFORE updateModelTemplates — Anki validates field names immediately.
+    const existingFields = await ankiRequest('modelFieldNames', { modelName: ANKI_SENTENCE_NOTE_TYPE });
+    for (const field of ANKI_SENTENCE_FIELDS) {
+      if (!existingFields.includes(field)) {
+        await ankiRequest('modelFieldAdd', { modelName: ANKI_SENTENCE_NOTE_TYPE, fieldName: field });
+      }
+    }
+    // Always sync CSS and templates so design changes take effect on re-export
     await ankiRequest('updateModelStyling', { model: { name: ANKI_SENTENCE_NOTE_TYPE, css: ANKI_SENTENCE_CSS } });
     await ankiRequest('updateModelTemplates', {
       model: {
@@ -109,9 +119,14 @@ export async function ensureSentenceNoteType() {
  * @returns {object} Fields object keyed by ANKI_SENTENCE_FIELDS names.
  */
 export function sentenceToAnkiFields(sentence, chapter) {
+  const sanitised = (sentence.english ?? '').replace(/\s+/g, '_').replace(/[?!.,]/g, '');
+  const audio = sentence.audioBatch
+    ? `[sound:${sentence.audioBatch}__${sanitised}__sentence.mp3]`
+    : '';
   return {
     English:       esc(sentence.english ?? ''),
     Hindi:         esc(sentence.hindi ?? ''),
+    Audio:         audio,
     Romanisation:  esc(sentence.romanisation ?? ''),
     Literal:       esc(sentence.literal ?? ''),
     Register:      esc(sentence.register ?? ''),
@@ -119,6 +134,67 @@ export function sentenceToAnkiFields(sentence, chapter) {
     Chapter:       esc(chapter ?? ''),
     Tags:          (sentence.anki_tags ?? []).join(' '),
   };
+}
+
+/**
+ * Fetches a sentence's audio file and uploads it to Anki's media store via
+ * AnkiConnect's storeMediaFile action. Returns silently on failure — audio is optional.
+ *
+ * The filename is namespaced (batch__sanitisedEnglish__sentence.mp3) so it is
+ * unique in Anki's flat media folder.
+ *
+ * @param {object} sentence - Sentence object with audioBatch and english fields.
+ * @returns {Promise<void>}
+ */
+export async function uploadSentenceAudio(sentence) {
+  if (!sentence.audioBatch) return;
+  const sanitised = (sentence.english ?? '').replace(/\s+/g, '_').replace(/[?!.,]/g, '');
+  const path = `/audio/sentences/${sentence.audioBatch}/${sanitised}/01_sentence_normal.mp3`;
+  const filename = `${sentence.audioBatch}__${sanitised}__sentence.mp3`;
+  try {
+    const response = await fetch(path);
+    if (!response.ok) return;
+    const buffer = await response.arrayBuffer();
+    const bytes = new Uint8Array(buffer);
+    let binary = '';
+    for (let i = 0; i < bytes.byteLength; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    const base64 = btoa(binary);
+    await ankiRequest('storeMediaFile', { filename, data: base64 });
+  } catch {
+    // Audio upload is optional — silently skip on any failure
+  }
+}
+
+/**
+ * Fetches a word's normal audio file and uploads it to Anki's media store via
+ * AnkiConnect's storeMediaFile action. Returns silently on failure — audio is optional.
+ *
+ * The filename is namespaced (batch__hindi_roman__word.mp3) so it is unique in
+ * Anki's flat media folder. Anki resolves [sound:filename] against this store.
+ *
+ * @param {object} word - Vocabulary word object with audioBatch, hindi, romanisation.
+ * @returns {Promise<void>}
+ */
+async function uploadWordAudio(word) {
+  if (!word.audioBatch) return;
+  const path = `/audio/words/${word.audioBatch}/${word.hindi}_${word.romanisation}/01_word.mp3`;
+  const filename = `${word.audioBatch}__${word.hindi}_${word.romanisation}__word.mp3`;
+  try {
+    const response = await fetch(path);
+    if (!response.ok) return;
+    const buffer = await response.arrayBuffer();
+    const bytes = new Uint8Array(buffer);
+    let binary = '';
+    for (let i = 0; i < bytes.byteLength; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    const base64 = btoa(binary);
+    await ankiRequest('storeMediaFile', { filename, data: base64 });
+  } catch {
+    // Audio upload is optional — silently skip on any failure
+  }
 }
 
 /**
@@ -131,6 +207,8 @@ export function sentenceToAnkiFields(sentence, chapter) {
 export async function sendToAnki(words, deckName) {
   await ankiRequest('createDeck', { deck: deckName });
   await ensureNoteType();
+  // Upload audio files before adding notes (failures are silently ignored)
+  await Promise.all(words.map(w => uploadWordAudio(w)));
   const notes   = buildNotes(words, deckName, false);
   const canAdd  = await ankiRequest('canAddNotes', { notes });
   const toAdd   = notes.filter((_, i) => canAdd[i]);
@@ -157,6 +235,8 @@ export async function sendToAnki(words, deckName) {
 export async function overrideDeck(words, deckName) {
   await ankiRequest('createDeck', { deck: deckName });
   await ensureNoteType();
+  // Upload audio files before replacing notes (failures are silently ignored)
+  await Promise.all(words.map(w => uploadWordAudio(w)));
   const existingIds = await ankiRequest('findNotes', { query: `deck:"${deckName}"` });
   if (existingIds.length > 0) await ankiRequest('deleteNotes', { notes: existingIds });
   // Duplicates allowed since we just cleared the deck

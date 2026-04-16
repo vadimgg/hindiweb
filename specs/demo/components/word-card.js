@@ -556,6 +556,27 @@ window.WordCardStyles = `
     margin-top: 0.1rem;
   }
 
+  /* ── Audio buttons ─────────────────────────────────────── */
+  .wc-audio-row { display:flex; gap:0.4rem; margin-bottom:0.5rem; }
+  .wc-audio-btn {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+    padding: 0.2rem 0.65rem; border-radius: 6px; cursor: pointer;
+    background: rgba(30,41,59,0.8); color: #64748b;
+    border: 1px solid rgba(51,65,85,0.5);
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .wc-audio-btn:hover { border-color: rgba(94,234,212,0.3); color: #5eead4; }
+  .wc-audio-btn.is-playing { background: #fbbf24; color: #0f172a; border-color: #fbbf24; }
+
+  /* ── Breakdown token play icon ──────────────────────────── */
+  .wc-ex-token-play {
+    font-size: 10px; color: #475569; cursor: pointer;
+    background: none; border: none; padding: 0 0.25rem;
+    opacity: 0; transition: opacity 0.15s;
+  }
+  .wc-ex-token:hover .wc-ex-token-play { opacity: 1; }
+
   /* ── Delhi note ─────────────────────────────────────────── */
   .wc-delhi-note {
     background: rgba(30,41,59,0.6);
@@ -647,11 +668,12 @@ window.WordCard = function (word) {
 
   const exHtml = word.example_sentence ? (() => {
     const ex = word.example_sentence;
-    const breakdownHtml = (ex.breakdown || []).map(t => `
+    const breakdownHtml = (ex.breakdown || []).map((t, i) => `
       <div class="wc-ex-token">
         <span class="wc-ex-token-hindi" lang="hi">${t.hindi}</span>
         <span class="wc-ex-token-roman">${t.roman}</span>
         <span class="wc-ex-token-meaning">— ${t.meaning}</span>
+        <button class="wc-ex-token-play" data-label="" onclick="playAudio(this,'audio/words/demo/माता_mātā/sentence/word_${String(i+1).padStart(2,'0')}_${t.roman}.mp3')">▶</button>
       </div>
     `).join('');
     return `
@@ -659,6 +681,10 @@ window.WordCard = function (word) {
         <span class="wc-ex-hindi" lang="hi">${ex.hindi}</span>
         <span class="wc-ex-roman">${ex.roman}</span>
         <span class="wc-ex-english">${ex.english}</span>
+      </div>
+      <div class="wc-audio-row">
+        <button class="wc-audio-btn" data-label="Normal" onclick="playAudio(this,'audio/words/demo/माता_mātā/sentence/01_sentence_normal.mp3')">🔊 Normal</button>
+        <button class="wc-audio-btn" data-label="Slow" onclick="playAudio(this,'audio/words/demo/माता_mātā/sentence/02_sentence_slow.mp3')">🔊 Slow</button>
       </div>
       ${breakdownHtml ? `<div class="wc-ex-breakdown">${breakdownHtml}</div>` : ''}
     `;
@@ -682,6 +708,10 @@ window.WordCard = function (word) {
     <div class="wc-header-content">
       <span class="wc-hindi" lang="hi">${word.hindi}</span>
       <span class="wc-roman">${word.romanisation}</span>
+      <div class="wc-audio-row">
+        <button class="wc-audio-btn" data-label="Normal" onclick="playAudio(this,'audio/words/demo/माता_mātā/01_word.mp3')">🔊 Normal</button>
+        <button class="wc-audio-btn" data-label="Slow" onclick="playAudio(this,'audio/words/demo/माता_mātā/02_word_slow.mp3')">🔊 Slow</button>
+      </div>
       <span class="wc-syllables">${word.syllables}</span>
       ${word.english ? `<span class="wc-english">${word.english}</span>` : ''}
       <div class="wc-grammar-row">
@@ -798,4 +828,18 @@ window.WordCard = function (word) {
   </div>
 </article>
   `.trim();
+};
+
+window.playAudio = function(btn, src) {
+  var audio = new Audio(src);
+  btn.classList.add('is-playing');
+  btn.textContent = '■ ' + btn.dataset.label;
+  audio.onended = function() {
+    btn.classList.remove('is-playing');
+    btn.textContent = '🔊 ' + btn.dataset.label;
+  };
+  audio.play().catch(function() {
+    btn.classList.remove('is-playing');
+    btn.textContent = '🔊 ' + btn.dataset.label;
+  });
 };

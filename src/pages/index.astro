@@ -14,11 +14,14 @@ const vocabFiles = (await readdir(vocabDir)).filter(f => f.endsWith('.json')).so
 
 const allFiles = await Promise.all(
   vocabFiles.map(async (f) => {
+    const audioBatch = f.replace('.json', '');
     const data  = JSON.parse(await readFile(join(vocabDir, f), 'utf-8'));
     const title = (typeof data === 'object' && !Array.isArray(data))
       ? (data.chapter ?? data.title ?? f.replace('.json', '').replace(/_/g, ' '))
       : f.replace('.json', '').replace(/_/g, ' ');
-    const words = Array.isArray(data) ? data : (data.words ?? []);
+    const rawWords = Array.isArray(data) ? data : (data.words ?? []);
+    // Stamp each word with its audioBatch so components can resolve audio paths
+    const words = rawWords.map((w: any) => ({ ...w, audioBatch }));
     return { title, words };
   })
 );
@@ -49,14 +52,20 @@ try {
   const sentDir   = join(process.cwd(), 'vocab', 'sentences');
   const sentFiles = (await readdir(sentDir)).filter(f => f.endsWith('.json')).sort();
   const rawSentenceFiles = await Promise.all(
-    sentFiles.map(async f => JSON.parse(await readFile(join(sentDir, f), 'utf-8')))
+    sentFiles.map(async f => ({ audioBatch: f.replace('.json', ''), data: JSON.parse(await readFile(join(sentDir, f), 'utf-8')) }))
   );
   // Each file is { chapter, sentences[] }
-  sentenceChapters = rawSentenceFiles.map(data =>
-    typeof data === 'object' && !Array.isArray(data) && data.sentences
-      ? { chapter: data.chapter ?? '', sentences: data.sentences }
-      : { chapter: '', sentences: Array.isArray(data) ? data : [] }
-  );
+  sentenceChapters = rawSentenceFiles.map(({ audioBatch, data }) => {
+    const chapter = (typeof data === 'object' && !Array.isArray(data) && data.sentences)
+      ? data.chapter ?? ''
+      : '';
+    const rawSentences = (typeof data === 'object' && !Array.isArray(data) && data.sentences)
+      ? data.sentences
+      : Array.isArray(data) ? data : [];
+    // Stamp each sentence with its audioBatch
+    const sentences = rawSentences.map((s: any) => ({ ...s, audioBatch }));
+    return { chapter, sentences };
+  });
   allSentences = sentenceChapters.flatMap(c => c.sentences);
 } catch { /* vocab/sentences/ dir doesn't exist yet */ }
 

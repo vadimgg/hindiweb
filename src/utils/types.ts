@@ -76,6 +76,8 @@ export interface Word {
   example_sentence?: ExampleSentence;
   /** Anki tags to apply when exporting this word as a flashcard. */
   anki_tags?: string[];
+  /** Vocab batch filename without extension, used to resolve audio paths. */
+  audioBatch?: string;
 }
 
 export interface SentenceWord {
@@ -95,6 +97,8 @@ export interface Sentence {
   register?: 'formal' | 'standard' | 'casual' | 'colloquial';
   words?: SentenceWord[];
   anki_tags?: string[];
+  /** Sentence batch filename without extension, used to resolve audio paths. */
+  audioBatch?: string;
 }
 
 export interface SentenceChapter {

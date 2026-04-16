@@ -203,6 +203,28 @@ window.SentenceCardStyles = `
     color: #475569;
     margin-top: 0.2rem;
   }
+
+  /* ── Audio buttons ─────────────────────────────────────── */
+  .wc-audio-row { display:flex; gap:0.4rem; margin-bottom:0.5rem; }
+  .wc-audio-btn {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+    padding: 0.2rem 0.65rem; border-radius: 6px; cursor: pointer;
+    background: rgba(30,41,59,0.8); color: #64748b;
+    border: 1px solid rgba(51,65,85,0.5);
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .wc-audio-btn:hover { border-color: rgba(94,234,212,0.3); color: #5eead4; }
+  .wc-audio-btn.is-playing { background: #fbbf24; color: #0f172a; border-color: #fbbf24; }
+
+  /* ── Breakdown token play icon ──────────────────────────── */
+  .sc-token-play {
+    font-size: 10px; color: #475569; cursor: pointer;
+    background: none; border: none; padding: 0 0.25rem;
+    opacity: 0; transition: opacity 0.15s;
+    align-self: center;
+  }
+  .sc-row:hover .sc-token-play { opacity: 1; }
 `;
 
 /**
@@ -211,7 +233,7 @@ window.SentenceCardStyles = `
  * @returns {string} HTML string
  */
 window.SentenceCard = function (sentence) {
-  const rowsHtml = (sentence.words || []).map(w => {
+  const rowsHtml = (sentence.words || []).map((w, i) => {
     const isMasc = w.gender === 'm' || w.gender === 'masculine';
     const isFem  = w.gender === 'f' || w.gender === 'feminine';
     const dotClass = isMasc
@@ -229,6 +251,7 @@ window.SentenceCard = function (sentence) {
     const numberHtml = w.number
       ? `<span class="sc-token-number">${w.number}</span>`
       : '';
+    const playPath = `audio/sentences/demo/Are_you_Kamala/word_${String(i+1).padStart(2,'0')}_${w.roman}.mp3`;
     return `
       <div class="sc-row">
         <div class="sc-token-cell">
@@ -238,6 +261,7 @@ window.SentenceCard = function (sentence) {
             <span class="sc-token-roman">${w.roman}</span>
             ${numberHtml}
           </div>
+          <button class="sc-token-play" data-label="" onclick="playAudio(this,'${playPath}')">▶</button>
         </div>
         <div class="sc-meaning-cell">
           <div>
@@ -256,6 +280,10 @@ window.SentenceCard = function (sentence) {
     <div class="sc-header-content">
       <span class="sc-hindi" lang="hi">${sentence.hindi}</span>
       <span class="sc-roman">${sentence.romanisation || sentence.roman}</span>
+      <div class="wc-audio-row">
+        <button class="wc-audio-btn" data-label="Normal" onclick="playAudio(this,'audio/sentences/demo/Are_you_Kamala/01_sentence_normal.mp3')">🔊 Normal</button>
+        <button class="wc-audio-btn" data-label="Slow" onclick="playAudio(this,'audio/sentences/demo/Are_you_Kamala/02_sentence_slow.mp3')">🔊 Slow</button>
+      </div>
       <span class="sc-english">${sentence.english}</span>
       <div class="sc-register-row">
         <span class="badge badge-standard">${sentence.register}</span>

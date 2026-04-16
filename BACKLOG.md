@@ -34,8 +34,10 @@ These are the highest-value items to pick up in the next session:
 | Clean dead CSS from `noteType.js` (`.pron-row`, `.ex-card`, `.ex-hindi`, `.mean-box`, etc.) | Tech Lead | P2 | done |
 | Replace `font-mono` with `font-mono-dm` in Astro section components | Tech Lead | P2 | done |
 | Adopt `Word` type in `data.js` — `getAllWords()` still returns `any[]` | Tech Lead | P1 | open |
-| Add `DelhiNote` Anki field — `delhi_note` renders in web card but has no Anki field; breaks parity rule | Tech Lead | P1 | open |
+| Add `DelhiNote` Anki field — `delhi_note` renders in web card but has no Anki field; breaks parity rule | Tech Lead | P1 | done |
 | Prune `devanagariFromPart` / `partLabel` from `cardHelpers.ts` and browser-side equivalents in `stringUtils.js` — dead after SoundAlike format change | Tech Lead | P2 | open |
+| Extract `prepareExport(words, deckName)` helper in `export.js` — create-deck / ensure-note-type / upload-audio preamble is now duplicated between `sendToAnki` and `overrideDeck` | Tech Lead | P3 | open |
+| Add `AbortSignal.timeout(10_000)` to `fetch` in `uploadWordAudio` — hung request currently stalls whole export silently | Tech Lead | P2 | open |
 | Move `data-sentence-card` onto SentenceCard `<article>` — currently on wrapper in SentencesTab | Tech Lead | P2 | open |
 | Update `getSentenceIndex()` JSDoc in `data.js` to document `ch` field | Tech Lead | P2 | open |
 | Verify Anki card CSS in `noteType.js` uses DM Mono for romanisation — parity with web font migration | Tech Lead | P2 | open |
@@ -88,6 +90,10 @@ These are the highest-value items to pick up in the next session:
 
 | Item | Resolved |
 |---|---|
+| Audio integration: Normal/Slow pills on word/sentence headers, hover-reveal ▶ on breakdown tokens, Anki `storeMediaFile` upload via `uploadWordAudio()`; `audioHelpers.ts`, `audio.js`, `ankiPreview.js` added | 2026-04-15 |
+| `DelhiNote` Anki field added: `buildAnkiDelhiNote()` in `fields/delhiNote.js`, wired into `ANKI_FIELDS` and `ANKI_BACK` | 2026-04-15 |
+| `ExampleSentence` Anki field added: `buildAnkiExampleSentence()` in `fields/exampleSentence.js` | 2026-04-15 |
+| Anki preview implemented: `ankiPreview.js` renders flip cards from selected words using `ANKI_FRONT`/`ANKI_BACK` templates | 2026-04-15 |
 | `extractDevanagari`/`extractPartLabel` arch flag — renamed to `devanagariFromPart`/`partLabel` in TS; JS versions kept in `stringUtils.js` | 2026-04-05 |
 | Implement new vocab format (web + Anki) per `DESIGN_SPEC_NEW_FORMAT.md` | 2026-04-05 |
 | `Word` interface defined in `types.ts` (16 fields, all optional except hindi/romanisation/english) | 2026-04-07 |

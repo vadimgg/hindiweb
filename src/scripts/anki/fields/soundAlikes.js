@@ -10,7 +10,7 @@
 import { esc, langHex, aSection } from './utils.js';
 
 /**
- * Renders a single sound-alike entry as a clang-item card.
+ * Renders a single sound-alike entry as a centred vertical .clang-item card.
  *
  * @param {object} s - Sound-alike object with { part, association, roman?, language?, note? }.
  * @returns {string} HTML div string for the item.
@@ -18,20 +18,24 @@ import { esc, langHex, aSection } from './utils.js';
 function renderSoundAlike(s) {
   const col = s.language ? langHex(s.language) : '#94a3b8';
 
-  const partSpan  = `<span style="font-family:'DM Mono',monospace;font-size:1rem;color:rgba(94,234,212,.8);">${esc(s.part || '')}</span>`;
-  const viaSpan   = `<span style="font-size:.85rem;color:#64748b;">sounds like</span>`;
-  const assocSpan = `<span style="font-size:.9375rem;color:#e2e8f0;font-style:italic;">${esc(s.association)}</span>`;
-  const langSpan  = s.language
-    ? `<span style="font-size:.58rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:${col};">(${esc(s.language)})</span>`
+  const langLabel = s.language
+    ? `<span class="lang-label" style="color:${col};">${esc(s.language)}</span>`
     : '';
+
+  const soundAlikeRow =
+    `<div class="sound-alike-row">` +
+    `<span class="sound-alike-part">${esc(s.part || '')}</span>` +
+    `<span class="sound-alike-arrow">→</span>` +
+    `<span class="sound-alike-assoc">${esc(s.association)}</span>` +
+    `</div>`;
+
   const noteP = s.note
-    ? `<p class="item-note">${esc(s.note)}</p>`
+    ? `<p class="sound-alike-note">${esc(s.note)}</p>`
     : '';
 
   return `<div class="clang-item">` +
-    `<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem;margin-bottom:.3rem;">` +
-    partSpan + viaSpan + assocSpan + langSpan +
-    `</div>` +
+    langLabel +
+    soundAlikeRow +
     noteP +
     `</div>`;
 }

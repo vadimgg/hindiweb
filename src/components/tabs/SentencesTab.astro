@@ -128,7 +128,7 @@ let globalIndex = 0;
                   const idx = globalIndex++;
                   return (
                     <div class="sc-card-wrapper" data-sentence-card={idx}>
-                      <SentenceCard index={idx} {...sentence} selCircle={true} />
+                      <SentenceCard index={idx} {...sentence} audioBatch={sentence.audioBatch} selCircle={true} />
                     </div>
                   );
                 })}

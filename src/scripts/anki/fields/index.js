@@ -22,6 +22,7 @@ import { buildAnkiSoundAlikes }    from './soundAlikes.js';
 import { buildAnkiExampleSentence } from './exampleSentence.js';
 import { buildAnkiDelhiNote }      from './delhiNote.js';
 import { buildAnkiEtymology }      from './etymology.js';
+import { buildAnkiAudio }         from './audio.js';
 import { esc }                   from './utils.js';
 
 /**
@@ -37,6 +38,7 @@ export function wordToAnkiFields(word) {
   return {
     English:      esc(word.english || ''),
     Hindi:        esc(word.hindi || ''),
+    Audio:        buildAnkiAudio(word),
     Romanisation: esc(word.romanisation || ''),
     Syllables:    buildAnkiSyllables(word),
     Category:     buildAnkiCategory(word),

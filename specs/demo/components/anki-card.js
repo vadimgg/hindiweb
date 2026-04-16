@@ -49,7 +49,7 @@ window.AnkiCardStyles = `
 
   /* ── Anki card shell — matches Anki renderer context ──── */
   .anki-shell {
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
     border: 1px solid rgba(51,65,85,.5);
     box-shadow: 0 0 0 1px rgba(51,65,85,0.5), 0 4px 24px rgba(0,0,0,0.4);
@@ -64,14 +64,14 @@ window.AnkiCardStyles = `
     color: #e2e8f0;
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
   }
 
   .card-wrap {
     max-width: 680px;
     margin: 0 auto;
-    padding: 1.5rem 1.25rem 2rem;
+    padding: 1.5rem 1.5rem 3rem;
   }
 
   /* Front */
@@ -87,10 +87,11 @@ window.AnkiCardStyles = `
 
   /* English word on front — larger, with amber underline decoration */
   .meaning {
-    font-size: 1.75rem;
+    font-size: 2.25rem;
     font-weight: 600;
     color: #e2e8f0;
-    margin: 0 0 0.4rem 0;
+    text-shadow: 0 0 60px rgba(226,232,240,0.08);
+    margin: 0 0 0.5rem 0;
     line-height: 1.3;
     position: relative;
     display: inline-block;
@@ -103,14 +104,14 @@ window.AnkiCardStyles = `
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 2.5rem;
+    width: 3.5rem;
     height: 2px;
     background: linear-gradient(90deg, transparent, rgba(251,191,36,0.5), transparent);
     border-radius: 1px;
   }
 
   .meaning-wrap {
-    margin-bottom: 1.1rem;
+    margin-bottom: 1rem;
   }
 
   .chips {
@@ -122,34 +123,47 @@ window.AnkiCardStyles = `
 
   /* Back answer header */
   .answer-header {
-    border-bottom: 1px solid rgba(148,163,184,.15);
-    padding-bottom: 1.5rem;
+    border-bottom: none;
+    position: relative;
+    padding-bottom: 1.75rem;
     margin-bottom: 1.75rem;
     text-align: center;
   }
 
+  .answer-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(251,191,36,0.2), transparent);
+  }
+
   .hindi {
     font-family: 'Tiro Devanagari Hindi', serif;
-    font-size: 3rem;
+    font-size: 3.5rem;
     background: linear-gradient(135deg, #fbbf24, #f97316);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin: 0 0 .4rem 0;
+    margin: 0 0 0.5rem 0;
     line-height: 1.2;
+    letter-spacing: 0.02em;
   }
 
   .roman {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #5eead4;
-    text-shadow: 0 0 20px rgba(94,234,212,0.2);
-    margin: 0 0 .55rem 0;
+    text-shadow: 0 0 30px rgba(94,234,212,0.3);
+    margin: 0 0 0.5rem 0;
   }
 
   .meaning-reveal {
-    font-size: 1rem;
+    font-size: 1.15rem;
     color: #94a3b8;
     margin: 0 0 1rem 0;
+    line-height: 1.6;
   }
 
   .header-chips {
@@ -166,16 +180,17 @@ window.AnkiCardStyles = `
     opacity: .6;
     font-family: 'DM Mono', monospace;
     letter-spacing: .15em;
-    margin: 0 0 .4rem 0;
+    margin: 0 0 .5rem 0;
   }
 
   /* Section boxes */
   .field-sec {
     border-top: 2px solid #334155;
-    padding: 1.25rem 1.25rem 1.5rem;
+    padding: 1.5rem;
     margin-bottom: 1.5rem;
     background: rgba(30,41,59,0.5);
-    border-radius: 12px;
+    border-radius: 14px;
+    box-shadow: 0 -1px 0 0 rgba(255,255,255,0.03);
   }
 
   .field-label {
@@ -183,7 +198,7 @@ window.AnkiCardStyles = `
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: .2em;
+    letter-spacing: .25em;
     margin: 0 0 1rem 0;
     color: #64748b;
     display: block;
@@ -194,8 +209,8 @@ window.AnkiCardStyles = `
     background: rgba(15,23,42,0.7);
     border: 1px solid rgba(51,65,85,.55);
     border-radius: 10px;
-    padding: .9rem 1rem;
-    margin-bottom: .7rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: .75rem;
     text-align: center;
   }
 
@@ -205,8 +220,8 @@ window.AnkiCardStyles = `
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: .35rem;
-    margin-bottom: .45rem;
+    gap: .5rem;
+    margin-bottom: .5rem;
   }
 
   .ex-hindi {
@@ -222,22 +237,26 @@ window.AnkiCardStyles = `
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: .2em;
     color: #64748b;
-    padding: .18rem .5rem;
+    padding: .25rem .65rem;
     border: 1px solid rgba(100,116,139,.35);
     border-radius: 6px;
     white-space: nowrap;
     order: -1;
   }
 
-  /* Cross-lang / sound-alikes */
+  /* Cross-lang / sound-alikes — vertical layout per entry, centre-aligned */
   .clang-item {
     margin-bottom: .75rem;
-    padding: .85rem 1rem;
+    padding: 1rem 1.25rem;
     background: rgba(15,23,42,0.7);
     border: 1px solid rgba(51,65,85,.55);
     border-radius: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .clang-item:last-child { margin-bottom: 0; }
@@ -249,9 +268,9 @@ window.AnkiCardStyles = `
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .1em;
-    padding: .2rem .55rem;
+    padding: .25rem .65rem;
     border-radius: 6px;
-    margin-bottom: .45rem;
+    margin-bottom: .5rem;
   }
 
   .lang-label {
@@ -261,48 +280,91 @@ window.AnkiCardStyles = `
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .12em;
-    margin-bottom: .3rem;
+    margin-bottom: .5rem;
   }
 
+  /* Sound alike part + association row — centred */
+  .sound-alike-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin-bottom: .5rem;
+  }
+
+  .sound-alike-part {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.1rem;
+    color: rgba(94,234,212,.9);
+    text-shadow: 0 0 12px rgba(94,234,212,0.25);
+  }
+
+  .sound-alike-arrow {
+    color: #64748b;
+    font-size: 1rem;
+    opacity: 0.5;
+  }
+
+  .sound-alike-assoc {
+    color: #e2e8f0;
+    font-style: italic;
+    font-size: 1rem;
+  }
+
+  /* Related words / morpheme word rows — centred */
   .word-row {
     display: flex;
     gap: .5rem;
     align-items: baseline;
-    flex-wrap: wrap;
-    margin-bottom: .35rem;
     justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: .5rem;
   }
 
   .word-text {
     font-family: 'Tiro Devanagari Hindi', serif;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: #fbbf24;
   }
 
   .word-rom {
     color: #5eead4;
-    font-size: .8125rem;
+    font-size: 1rem;
+  }
+
+  .word-eng {
+    color: #94a3b8;
+    font-size: 1rem;
   }
 
   .mean-box {
     background: rgba(8,13,24,0.8);
     border: 1px solid rgba(51,65,85,.5);
     border-radius: 8px;
-    padding: .35rem .75rem;
-    margin-top: .35rem;
+    padding: .25rem .75rem;
+    margin-top: .25rem;
     display: inline-block;
   }
 
   .mean-box span {
     color: #94a3b8;
-    font-size: .8125rem;
+    font-size: 1rem;
   }
 
   .item-note {
-    font-size: .9375rem;
+    font-size: 1rem;
     color: #cbd5e1;
     line-height: 1.65;
-    margin: .4rem 0 0 0;
+    margin: .5rem 0 0 0;
+  }
+
+  /* Sound-alike specific note */
+  .sound-alike-note {
+    font-size: 1rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin: .5rem 0 0 0;
   }
 
   /* Pronunciation */
@@ -310,20 +372,20 @@ window.AnkiCardStyles = `
     display: flex;
     gap: .75rem;
     align-items: flex-start;
-    margin-bottom: .55rem;
+    margin-bottom: .75rem;
   }
 
   .syl-label {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 600;
-    font-size: .88rem;
+    font-size: 1rem;
     color: #f1f5f9;
     min-width: 3rem;
     flex-shrink: 0;
   }
 
   .syl-desc {
-    font-size: .9375rem;
+    font-size: 1rem;
     color: #cbd5e1;
     line-height: 1.65;
     margin: 0;
@@ -338,8 +400,8 @@ window.AnkiCardStyles = `
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: .18em;
-    padding: .18rem .5rem;
+    letter-spacing: .2em;
+    padding: .25rem .65rem;
     border-radius: 6px;
     display: inline-block;
   }
@@ -352,8 +414,8 @@ window.AnkiCardStyles = `
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: .18em;
-    padding: .18rem .5rem;
+    letter-spacing: .2em;
+    padding: .25rem .65rem;
     border-radius: 6px;
     display: inline-block;
   }
@@ -372,34 +434,46 @@ window.AnkiCardStyles = `
 
   .coll-hindi {
     font-family: 'Tiro Devanagari Hindi', serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #fbbf24;
     line-height: 1.3;
   }
 
   .coll-rom {
     font-family: 'DM Mono', monospace;
-    font-size: .8125rem;
+    font-size: 1rem;
     color: rgba(94,234,212,.6);
   }
 
   .coll-eng {
-    font-size: .9375rem;
+    font-size: 1rem;
     color: #94a3b8;
     text-align: right;
     flex-shrink: 0;
   }
 
-  /* Etymology chain in Anki back */
-  .etym-stage {
+  /* ── Etymology chain — vertical card blocks, centre-aligned ── */
+  .etym-chain {
     display: flex;
-    align-items: center;
-    gap: .75rem;
-    padding: .75rem 0;
-    border-bottom: 1px solid rgba(51,65,85,.25);
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .etym-stage:last-child { border-bottom: none; }
+  .etym-stage {
+    padding: 1rem 1.25rem;
+    background: rgba(15,23,42,0.6);
+    border: 1px solid rgba(51,65,85,.4);
+    border-radius: 10px;
+    margin-bottom: .5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .etym-stage:last-child {
+    margin-bottom: 0;
+  }
 
   .etym-lang {
     font-family: 'Barlow Condensed', sans-serif;
@@ -408,25 +482,74 @@ window.AnkiCardStyles = `
     text-transform: uppercase;
     letter-spacing: .15em;
     color: #64748b;
-    min-width: 4.5rem;
-    flex-shrink: 0;
+    display: block;
+    margin-bottom: .25rem;
+  }
+
+  /* Last stage: lang label in amber */
+  .etym-stage:last-child .etym-lang {
+    color: #fbbf24;
   }
 
   .etym-word {
     font-family: 'Tiro Devanagari Hindi', serif;
-    font-size: 1rem;
-    color: #e2e8f0; /* ancestor — slate-200, NOT amber */
+    font-size: 1.25rem;
+    color: #e2e8f0;
     line-height: 1.3;
+    display: block;
+    margin-bottom: .25rem;
   }
 
+  /* Last stage: word in amber gradient */
   .etym-stage:last-child .etym-word {
-    color: #fbbf24; /* current Hindi — amber */
+    background: linear-gradient(135deg, #fbbf24, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .etym-sub {
+    font-size: 1rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: .5rem;
+    flex-wrap: wrap;
   }
 
   .etym-rom {
     font-family: 'DM Mono', monospace;
-    font-size: .8125rem;
-    color: rgba(94,234,212,.6);
+    font-size: 1rem;
+    color: rgba(94,234,212,.7);
+  }
+
+  .etym-sep {
+    color: #475569;
+    font-size: 0.75rem;
+  }
+
+  .etym-meaning {
+    color: #64748b;
+    font-style: italic;
+    font-size: 1rem;
+  }
+
+  /* Arrow connector between etymology stages — amber-tinted */
+  .etym-arrow {
+    text-align: center;
+    color: rgba(251,191,36,0.3);
+    font-size: 1.2rem;
+    line-height: 1;
+    margin: 0;
+    padding: .25rem 0;
+    display: block;
+  }
+
+  @media (max-width: 520px) {
+    .meaning     { font-size: 2rem; }
+    .hindi       { font-size: 3rem; }
+    .roman       { font-size: 1.2rem; }
+    .card-wrap   { padding: 1.5rem 1rem 2rem; }
   }
 `;
 
@@ -442,7 +565,7 @@ window.AnkiSentenceCardStyles = `
 
   /* Literal gloss */
   .literal-gloss {
-    font-size: .85rem;
+    font-size: 1rem;
     color: #64748b;
     font-style: italic;
     line-height: 1.65;
@@ -473,7 +596,7 @@ window.AnkiSentenceCardStyles = `
   /* Word token — left column */
   .bd-word {
     font-family: 'Tiro Devanagari Hindi', serif;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     color: #fbbf24;
     display: block;
     line-height: 1.3;
@@ -489,12 +612,12 @@ window.AnkiSentenceCardStyles = `
 
   /* Meaning column */
   .bd-meaning {
-    font-size: .85rem;
+    font-size: .95rem;
     color: #e2e8f0;
     line-height: 1.5;
   }
   .bd-note {
-    font-size: .75rem;
+    font-size: .8rem;
     color: #64748b;
     font-style: italic;
     line-height: 1.55;
@@ -519,9 +642,9 @@ window.AnkiSentenceCardStyles = `
   }
 
   @media (max-width: 520px) {
-    .bd-word    { font-size: .9rem; }
-    .bd-meaning { font-size: .8rem; }
-    .literal-gloss { font-size: .8rem; }
+    .bd-word    { font-size: 1rem; }
+    .bd-meaning { font-size: 1rem; }
+    .literal-gloss { font-size: 1rem; }
   }
 `;
 
@@ -543,7 +666,7 @@ window.AnkiSentenceCard = function (sentence, chapter) {
             <p class="meaning">${sentence.english}</p>
           </div>
           ${sentence.register ? `
-          <div class="chips" style="margin-top:.9rem;">
+          <div class="chips" style="margin-top:1rem;">
             <span class="reg reg-${sentence.register}">${sentence.register}</span>
           </div>` : ''}
         </div>
@@ -576,7 +699,7 @@ window.AnkiSentenceCard = function (sentence, chapter) {
         <div class="card-wrap">
           <div class="answer-header">
             <p class="hindi" lang="hi">${sentence.hindi}</p>
-            <p class="roman">${sentence.roman}</p>
+            <p class="roman">${sentence.roman || sentence.romanisation}</p>
             <p class="meaning-reveal">${sentence.english}</p>
             <div class="header-chips">
               ${sentence.register ? `<span class="reg reg-${sentence.register}">${sentence.register}</span>` : ''}
@@ -674,15 +797,16 @@ window.AnkiCard = function (word) {
     </div>
   `).join('');
 
+  // Sound Alikes — vertical layout per entry
   const soundAlikesHtml = (word.sound_alikes || []).map(s => `
     <div class="clang-item">
       <span class="lang-label" style="color:#7dd3fc;">${s.language}</span>
-      <div class="word-row">
-        <span class="word-rom" style="font-family:'DM Mono',monospace;color:rgba(94,234,212,.8);">${s.part}</span>
-        <span style="color:#64748b;font-size:0.8125rem;">→</span>
-        <span style="color:#e2e8f0;font-style:italic;">${s.association}</span>
+      <div class="sound-alike-row">
+        <span class="sound-alike-part">${s.part}</span>
+        <span class="sound-alike-arrow">→</span>
+        <span class="sound-alike-assoc">${s.association}</span>
       </div>
-      <p class="item-note">${s.note || s.association}</p>
+      <p class="sound-alike-note">${s.note || s.association}</p>
     </div>
   `).join('');
 
@@ -704,7 +828,7 @@ window.AnkiCard = function (word) {
         <span class="word-rom">${m.roman}</span>
       </div>
       <div class="mean-box"><span>${m.meaning}</span></div>
-      ${m.origin ? `<span style="color:#64748b;font-size:0.75rem;font-style:italic;">${m.origin}</span>` : ''}
+      ${m.origin ? `<span style="color:#64748b;font-size:1rem;font-style:italic;margin-top:0.25rem;">${m.origin}</span>` : ''}
     </div>
   `).join('')
     : '';
@@ -712,10 +836,10 @@ window.AnkiCard = function (word) {
   const exSentenceHtml = word.example_sentence ? (() => {
     const ex = word.example_sentence;
     const breakdownRowsHtml = (ex.breakdown || []).map(b => `
-      <div style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;margin-top:0.25rem;">
-        <span style="font-family:'Tiro Devanagari Hindi',serif;color:#fbbf24;font-size:0.9375rem;" lang="hi">${b.hindi}</span>
-        <span style="font-family:'DM Mono',monospace;color:rgba(94,234,212,.8);font-size:0.8125rem;">${b.roman}</span>
-        <span style="color:#64748b;font-size:0.8125rem;font-style:italic;">— ${b.meaning}</span>
+      <div style="display:flex;align-items:baseline;justify-content:center;gap:0.5rem;flex-wrap:wrap;margin-top:0.25rem;text-align:center;">
+        <span style="font-family:'Tiro Devanagari Hindi',serif;color:#fbbf24;font-size:1rem;" lang="hi">${b.hindi}</span>
+        <span style="font-family:'DM Mono',monospace;color:rgba(94,234,212,.8);font-size:1rem;">${b.roman}</span>
+        <span style="color:#64748b;font-size:1rem;font-style:italic;">— ${b.meaning}</span>
       </div>
     `).join('');
     return `
@@ -730,13 +854,22 @@ window.AnkiCard = function (word) {
     ? `<p class="item-note">${word.delhi_note}</p>`
     : '';
 
-  const etymHtml = (word.etymology_journey || word.etymology || []).map(e => `
+  // Etymology — vertical card blocks with arrow connectors
+  const etymStages = (word.etymology_journey || word.etymology || []);
+  const etymHtml = etymStages.map((e, i) => {
+    const isLast = i === etymStages.length - 1;
+    const stageBlock = `
     <div class="etym-stage">
       <span class="etym-lang">${e.stage || e.label}</span>
       <span class="etym-word" lang="hi">${e.form || e.hindi}</span>
-      <span class="etym-rom">${e.roman}</span>
-    </div>
-  `).join('');
+      <div class="etym-sub">
+        <span class="etym-rom">${e.roman}</span>
+        ${e.meaning ? `<span class="etym-sep">—</span><span class="etym-meaning">${e.meaning}</span>` : ''}
+      </div>
+    </div>`;
+    const arrow = !isLast ? `<div class="etym-arrow">↓</div>` : '';
+    return stageBlock + arrow;
+  }).join('');
 
   const backHtml = `
     <div class="anki-shell" style="overflow-y: auto; max-height: 600px;">
@@ -754,7 +887,7 @@ window.AnkiCard = function (word) {
           </div>
 
           ${word.example_sentence ? `
-          <div class="field-sec">
+          <div class="field-sec" style="text-align:center;">
             <span class="field-label">Example</span>
             ${exSentenceHtml}
           </div>
@@ -796,7 +929,9 @@ window.AnkiCard = function (word) {
 
           <div class="field-sec">
             <span class="field-label">Etymology</span>
-            ${etymHtml}
+            <div class="etym-chain">
+              ${etymHtml}
+            </div>
           </div>
         </div>
       </div>

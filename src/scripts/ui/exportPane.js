@@ -9,13 +9,14 @@
  * Does NOT perform the actual Anki API calls (anki/export.js) or selection
  * state management (state/selection.js) — it coordinates them.
  *
- * Dependencies: anki/connect.js, anki/export.js, anki/txtFallback.js,
- *               state/selection.js, data.js.
+ * Dependencies: anki/connect.js, anki/export.js (sendToAnki, overrideDeck,
+ *               ensureSentenceNoteType, sentenceToAnkiFields, uploadSentenceAudio),
+ *               anki/txtFallback.js, state/selection.js, data.js.
  */
 // Responsible for: deliver page controller — word list, sentence list, AnkiConnect polling, export button
 
 import { checkAnkiConnect, ankiRequest }                  from '../anki/connect.js';
-import { sendToAnki, overrideDeck, ensureSentenceNoteType, sentenceToAnkiFields } from '../anki/export.js';
+import { sendToAnki, overrideDeck, ensureSentenceNoteType, sentenceToAnkiFields, uploadSentenceAudio } from '../anki/export.js';
 import { downloadAnkiTxt }                               from '../anki/txtFallback.js';
 import { getSelectedWordObjects, getSelectedSentenceIndices } from '../state/selection.js';
 import { getAllSentences }                                from '../data.js';
@@ -266,6 +267,8 @@ function buildSendMessage(added, skipped, deckName) {
 async function sendSentencesToAnki(sentences, deckName) {
   await ankiRequest('createDeck', { deck: deckName });
   await ensureSentenceNoteType();
+  // Upload audio files before adding notes (failures are silently ignored)
+  await Promise.all(sentences.map(s => uploadSentenceAudio(s)));
   const notes  = sentences.map(s => ({
     deckName,
     modelName: 'Hindi Sentence',

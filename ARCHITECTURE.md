@@ -1,6 +1,6 @@
 # Architecture
 
-_Generated 2026-04-15 by `npm run arch`._
+_Generated 2026-04-16 by `npm run arch`._
 
 ---
 
@@ -11,52 +11,54 @@ _Generated 2026-04-15 by `npm run arch`._
 | `src/components/cards/sections/CollocationsSection.astro` | 35 | Collocations expandable section inside a word card |
 | `src/components/cards/sections/DelhiNoteSection.astro` | 33 | Delhi Usage expandable section inside a word card |
 | `src/components/cards/sections/EtymologySection.astro` | 64 | Etymology expandable section inside a word card |
-| `src/components/cards/sections/ExampleSentenceSection.astro` | 43 | Example Sentence expandable section inside a word card |
+| `src/components/cards/sections/ExampleSentenceSection.astro` | 76 | Example Sentence expandable section inside a word card |
 | `src/components/cards/sections/FormsSection.astro` | 44 | forms chips row + english usage note inside a word card |
 | `src/components/cards/sections/MorphemesSection.astro` | 41 | Morphemes expandable section inside a word card |
 | `src/components/cards/sections/RelatedWordsSection.astro` | 35 | Related Words expandable section inside a word card |
 | `src/components/cards/sections/SoundAlikesSection.astro` | 40 | Sound Alikes expandable section inside a word card |
 | `src/components/cards/sections/UsageNotesSection.astro` | 27 | Usage Notes expandable section inside a word card, open by default |
-| `src/components/cards/sections/WordBreakdownSection.astro` | 130 | Word Breakdown expandable section inside a sentence card |
+| `src/components/cards/sections/WordBreakdownSection.astro` | 160 | Word Breakdown expandable section inside a sentence card |
 | `src/components/sidebar/AppSidebar.astro` | 86 | desktop sidebar — logo, search bar, words index nav, sentences index nav |
 | `src/components/tabs/ExportTab.astro` | 184 | Deliver/Export page — AnkiConnect status, deck config, selected items, send button |
 | `src/components/tabs/SentencesTab.astro` | 154 | Sentences page content — header, filter panel, chapter dividers, sentence cards |
-| `src/components/tabs/WordsTab.astro` | 232 | Words page content — header, filter panel, group dividers, word cards |
+| `src/components/tabs/WordsTab.astro` | 242 | Words page content — header, filter panel, group dividers, word cards |
 | `src/components/ui/TabBar.astro` | 28 | DaVinci Resolve-style bottom-fixed tab bar (Words | Sentences | Export) |
 | `src/components/MobileHeader.astro` | 13 | mobile-only page header with title and search input (hidden on lg+) |
 | `src/components/NavBar.astro` | 60 | sticky top nav bar with brand mark and page-switching buttons |
-| `src/components/SentenceCard.astro` | 113 | rendering a single sentence card with header and expandable detail sections |
+| `src/components/SentenceCard.astro` | 128 | rendering a single sentence card with header and expandable detail sections |
 | `src/components/SentenceList.astro` | 40 | chapter-grouped sentence list with group headers |
-| `src/components/WordCard.astro` | 169 | word card shell — header row + section delegation |
+| `src/components/WordCard.astro` | 182 | word card shell — header row + section delegation |
 | `src/layouts/Layout.astro` | 28 | root HTML shell — doctype, meta tags, font imports, global CSS, slot |
-| `src/pages/index.astro` | 113 | page entry point — loads vocab data, passes it to components, renders app shell |
+| `src/pages/index.astro` | 122 | page entry point — loads vocab data, passes it to components, renders app shell |
+| `src/scripts/anki/fields/audio.js` | 30 | building the Anki Audio field with [sound:] syntax for word pronunciation |
 | `src/scripts/anki/fields/category.js` | 25 | building the Anki Category HTML field |
 | `src/scripts/anki/fields/collocations.js` | 42 | building the Anki Collocations HTML field |
 | `src/scripts/anki/fields/delhiNote.js` | 26 | building the Anki DelhiNote HTML field |
-| `src/scripts/anki/fields/etymology.js` | 57 | building the Anki Etymology HTML field |
+| `src/scripts/anki/fields/etymology.js` | 66 | building the Anki Etymology HTML field |
 | `src/scripts/anki/fields/exampleSentence.js` | 49 | building the Anki ExampleSentence HTML field |
 | `src/scripts/anki/fields/forms.js` | 36 | building the Anki Forms HTML field (inflected form chips) |
 | `src/scripts/anki/fields/gender.js` | 24 | building the Anki Gender HTML field |
-| `src/scripts/anki/fields/index.js` | 64 | assembling wordToAnkiFields() from all individual field builders |
-| `src/scripts/anki/fields/morphemes.js` | 49 | building the Anki Morphemes HTML field |
-| `src/scripts/anki/fields/relatedWords.js` | 42 | building the Anki RelatedWords HTML field |
+| `src/scripts/anki/fields/index.js` | 66 | assembling wordToAnkiFields() from all individual field builders |
+| `src/scripts/anki/fields/morphemes.js` | 50 | building the Anki Morphemes HTML field |
+| `src/scripts/anki/fields/relatedWords.js` | 44 | building the Anki RelatedWords HTML field |
 | `src/scripts/anki/fields/sentenceBreakdown.js` | 50 | WordBreakdown Anki field HTML for Hindi Sentence note type |
-| `src/scripts/anki/fields/soundAlikes.js` | 52 | building the Anki Sound Alikes HTML field |
+| `src/scripts/anki/fields/soundAlikes.js` | 56 | building the Anki Sound Alikes HTML field |
 | `src/scripts/anki/fields/syllables.js` | 19 | building the Anki Syllables plain-text field |
 | `src/scripts/anki/fields/transitivity.js` | 24 | building the Anki Transitivity HTML field |
 | `src/scripts/anki/fields/usageNotes.js` | 26 | building the Anki UsageNotes HTML field |
 | `src/scripts/anki/fields/utils.js` | 109 | shared HTML-building utilities for Anki card field builders |
 | `src/scripts/anki/connect.js` | 46 | AnkiConnect HTTP API wrapper and connection status check |
-| `src/scripts/anki/export.js` | 168 | orchestrating Anki deck creation, note type verification, and card addition |
-| `src/scripts/anki/noteType.js` | 112 | Anki note type definition — CSS, front/back card templates, field list |
-| `src/scripts/anki/sentenceNoteType.js` | 91 | Anki sentence note type definition — CSS, templates, field list |
+| `src/scripts/anki/export.js` | 248 | orchestrating Anki deck creation, note type verification, and card addition |
+| `src/scripts/anki/noteType.js` | 130 | Anki note type definition — CSS, front/back card templates, field list |
+| `src/scripts/anki/sentenceNoteType.js` | 96 | Anki sentence note type definition — CSS, templates, field list |
 | `src/scripts/anki/tagUtils.js` | 35 | shared Anki tag-building utility used by export.js and txtFallback.js |
 | `src/scripts/anki/txtFallback.js` | 50 | generating and triggering browser download of a .txt file for manual Anki import |
 | `src/scripts/state/selection.js` | 136 | word and sentence selection state and change notifications via CustomEvents |
 | `src/scripts/state/tabs.js` | 87 | active tab state, DOM panel switching, and tabchange event dispatch |
 | `src/scripts/ui/ankiPreview.js` | 131 | rendering Anki flip-card previews for selected words in the Words page Anki mode area |
+| `src/scripts/ui/audio.js` | 56 | delegated audio playback handler for .wc-audio-btn elements |
 | `src/scripts/ui/cards.js` | 78 | word card collapse/expand toggling and deselect button handling |
-| `src/scripts/ui/exportPane.js` | 406 | deliver page controller — word list, sentence list, AnkiConnect polling, export button |
+| `src/scripts/ui/exportPane.js` | 409 | deliver page controller — word list, sentence list, AnkiConnect polling, export button |
 | `src/scripts/ui/indexSidebar.js` | 120 | sidebar interactions — drag-select checkboxes, group collapse, scroll-to-card |
 | `src/scripts/ui/pageInteractions.js` | 518 | page-level interactions — filter panel, group collapse, sel-circle, drag-select |
 | `src/scripts/ui/search.js` | 198 | fuzzy search scoring and filtering word/sentence card visibility |
@@ -64,10 +66,11 @@ _Generated 2026-04-15 by `npm run arch`._
 | `src/scripts/ui/tooltip.js` | 180 | vocab-hint span annotation in example cards and tooltip positioning |
 | `src/scripts/utils/stringUtils.js` | 52 | shared string utilities — norm(), extractDevanagari(), extractPartLabel() |
 | `src/scripts/data.js` | 49 | lazy read-only accessors for window.__APP_DATA__ (set by define:vars in index.astro) |
-| `src/scripts/main.js` | 37 | bootstrapper — imports all modules and initialises them after DOMContentLoaded |
+| `src/scripts/main.js` | 39 | bootstrapper — imports all modules and initialises them after DOMContentLoaded |
+| `src/utils/audioHelpers.ts` | 31 | resolving audio file paths for words and sentences from their JSON fields |
 | `src/utils/cardHelpers.ts` | 119 | pure helper functions shared across WordCard section components |
 | `src/utils/highlight.ts` | 121 | rich text highlighting for vocabulary card text content |
-| `src/utils/types.ts` | 104 | shared TypeScript interfaces used across Astro components and client scripts |
+| `src/utils/types.ts` | 108 | shared TypeScript interfaces used across Astro components and client scripts |
 | `scripts/aggregate-changelog.js` | 54 | aggregating individual changelog/ entries into CHANGELOG.md |
 | `scripts/arch.js` | 364 | scanning src/ source files and generating ARCHITECTURE.md |
 | `scripts/coverage.js` | 295 | scanning vocab/words/ JSON files and generating FIELD_REGISTRY.md |
@@ -125,8 +128,8 @@ _Generated 2026-04-15 by `npm run arch`._
 
 #### `SentenceCard.astro`
 **Responsibility:** rendering a single sentence card with header and expandable detail sections  
-**Lines:** 113
-**Depends on:** `../utils/cardHelpers`, `../utils/types`, `./cards/sections/WordBreakdownSection.astro`
+**Lines:** 128
+**Depends on:** `../utils/cardHelpers`, `../utils/audioHelpers`, `../utils/types`, `./cards/sections/WordBreakdownSection.astro`
 
 #### `SentenceList.astro`
 **Responsibility:** chapter-grouped sentence list with group headers  
@@ -135,8 +138,8 @@ _Generated 2026-04-15 by `npm run arch`._
 
 #### `WordCard.astro`
 **Responsibility:** word card shell — header row + section delegation  
-**Lines:** 169
-**Depends on:** `../utils/cardHelpers`, `../utils/types`, `./cards/sections/FormsSection.astro`, `./cards/sections/MorphemesSection.astro`, `./cards/sections/UsageNotesSection.astro`, `./cards/sections/CollocationsSection.astro`, `./cards/sections/RelatedWordsSection.astro`, `./cards/sections/SoundAlikesSection.astro`, `./cards/sections/ExampleSentenceSection.astro`, `./cards/sections/DelhiNoteSection.astro`, `./cards/sections/EtymologySection.astro`
+**Lines:** 182
+**Depends on:** `../utils/cardHelpers`, `../utils/audioHelpers`, `../utils/types`, `./cards/sections/FormsSection.astro`, `./cards/sections/MorphemesSection.astro`, `./cards/sections/UsageNotesSection.astro`, `./cards/sections/CollocationsSection.astro`, `./cards/sections/RelatedWordsSection.astro`, `./cards/sections/SoundAlikesSection.astro`, `./cards/sections/ExampleSentenceSection.astro`, `./cards/sections/DelhiNoteSection.astro`, `./cards/sections/EtymologySection.astro`
 
 ### `src/components/cards/sections/`
 
@@ -156,7 +159,7 @@ _Generated 2026-04-15 by `npm run arch`._
 
 #### `ExampleSentenceSection.astro`
 **Responsibility:** Example Sentence expandable section inside a word card  
-**Lines:** 43
+**Lines:** 76
 **Depends on:** `../../../utils/types`
 
 #### `FormsSection.astro`
@@ -186,7 +189,7 @@ _Generated 2026-04-15 by `npm run arch`._
 
 #### `WordBreakdownSection.astro`
 **Responsibility:** Word Breakdown expandable section inside a sentence card  
-**Lines:** 130
+**Lines:** 160
 **Depends on:** `../../../utils/types`
 
 ### `src/components/sidebar/`
@@ -208,8 +211,8 @@ _Generated 2026-04-15 by `npm run arch`._
 
 #### `WordsTab.astro`
 **Responsibility:** Words page content — header, filter panel, group dividers, word cards  
-**Lines:** 232
-**Depends on:** `../WordCard.astro`, `../../utils/cardHelpers`
+**Lines:** 242
+**Depends on:** `../WordCard.astro`, `../../utils/cardHelpers`, `../../utils/audioHelpers`
 
 ### `src/components/ui/`
 
@@ -227,7 +230,7 @@ _Generated 2026-04-15 by `npm run arch`._
 
 #### `index.astro`
 **Responsibility:** page entry point — loads vocab data, passes it to components, renders app shell  
-**Lines:** 113
+**Lines:** 122
 **Depends on:** `../layouts/Layout.astro`, `../components/NavBar.astro`, `../components/tabs/WordsTab.astro`, `../components/tabs/SentencesTab.astro`, `../components/tabs/ExportTab.astro`
 
 ### `src/scripts/`
@@ -246,8 +249,8 @@ _Generated 2026-04-15 by `npm run arch`._
 
 #### `main.js`
 **Responsibility:** bootstrapper — imports all modules and initialises them after DOMContentLoaded  
-**Lines:** 37
-**Depends on:** `./state/selection.js`, `./state/tabs.js`, `./ui/search.js`, `./ui/pageInteractions.js`, `./ui/tooltip.js`, `./ui/exportPane.js`, `./ui/ankiPreview.js`
+**Lines:** 39
+**Depends on:** `./state/selection.js`, `./state/tabs.js`, `./ui/search.js`, `./ui/pageInteractions.js`, `./ui/tooltip.js`, `./ui/exportPane.js`, `./ui/ankiPreview.js`, `./ui/audio.js`
 
 ### `src/scripts/anki/`
 
@@ -261,25 +264,27 @@ _Generated 2026-04-15 by `npm run arch`._
 
 #### `export.js`
 **Responsibility:** orchestrating Anki deck creation, note type verification, and card addition  
-**Lines:** 168
+**Lines:** 248
 **Depends on:** `./connect.js`, `./noteType.js`, `./fields/index.js`, `./fields/sentenceBreakdown.js`, `./tagUtils.js`, `./fields/utils.js`
-**Exports:** `ensureSentenceNoteType`, `overrideDeck`, `sendToAnki`, `sentenceToAnkiFields`
+**Exports:** `ensureSentenceNoteType`, `overrideDeck`, `sendToAnki`, `sentenceToAnkiFields`, `uploadSentenceAudio`
 **Functions:**
 - `ensureNoteType()` _(internal)_ — Creates the note type if it does not exist, or syncs its CSS and templates if it does.
 - `buildNotes()` _(internal)_ — Converts an array of vocabulary words into Anki note objects ready for the API.
 - `ensureSentenceNoteType()` — Creates the Hindi Sentence note type if it does not exist, or syncs its CSS and
 - `sentenceToAnkiFields()` — Converts a sentence object into the Anki fields object for the Hindi Sentence note type.
+- `uploadSentenceAudio()` — Fetches a sentence's audio file and uploads it to Anki's media store via
+- `uploadWordAudio()` _(internal)_ — Fetches a word's normal audio file and uploads it to Anki's media store via
 - `sendToAnki()` — Exports selected words to Anki, skipping cards that already exist in the deck.
 - `overrideDeck()` — Replaces all cards in the target deck with the given words.
 
 #### `noteType.js`
 **Responsibility:** Anki note type definition — CSS, front/back card templates, field list  
-**Lines:** 112
+**Lines:** 130
 **Exports:** `ANKI_BACK`, `ANKI_CSS`, `ANKI_FIELDS`, `ANKI_FRONT`, `ANKI_NOTE_TYPE`
 
 #### `sentenceNoteType.js`
 **Responsibility:** Anki sentence note type definition — CSS, templates, field list  
-**Lines:** 91
+**Lines:** 96
 **Depends on:** `./noteType.js`
 **Exports:** `ANKI_SENTENCE_BACK`, `ANKI_SENTENCE_CSS`, `ANKI_SENTENCE_FIELDS`, `ANKI_SENTENCE_FRONT`, `ANKI_SENTENCE_NOTE_TYPE`
 
@@ -299,6 +304,13 @@ _Generated 2026-04-15 by `npm run arch`._
 - `downloadAnkiTxt()` — Builds a tab-separated Anki import file and triggers a browser download.
 
 ### `src/scripts/anki/fields/`
+
+#### `audio.js`
+**Responsibility:** building the Anki Audio field with [sound:] syntax for word pronunciation  
+**Lines:** 30
+**Exports:** `buildAnkiAudio`
+**Functions:**
+- `buildAnkiAudio()` — Builds the Anki Audio field value for a vocabulary word.
 
 #### `category.js`
 **Responsibility:** building the Anki Category HTML field  
@@ -327,11 +339,11 @@ _Generated 2026-04-15 by `npm run arch`._
 
 #### `etymology.js`
 **Responsibility:** building the Anki Etymology HTML field  
-**Lines:** 57
+**Lines:** 66
 **Depends on:** `./utils.js`
 **Exports:** `buildAnkiEtymology`
 **Functions:**
-- `renderStage()` _(internal)_ — Renders a single etymology stage as a flex row for the vertical chain.
+- `renderStage()` _(internal)_ — Renders a single etymology stage as a centred vertical card block.
 - `buildAnkiEtymology()` — Builds the Anki Etymology field HTML for a word.
 
 #### `exampleSentence.js`
@@ -360,15 +372,15 @@ _Generated 2026-04-15 by `npm run arch`._
 
 #### `index.js`
 **Responsibility:** assembling wordToAnkiFields() from all individual field builders  
-**Lines:** 64
-**Depends on:** `../noteType.js`, `./category.js`, `./gender.js`, `./transitivity.js`, `./syllables.js`, `./forms.js`, `./morphemes.js`, `./usageNotes.js`, `./collocations.js`, `./relatedWords.js`, `./soundAlikes.js`, `./exampleSentence.js`, `./delhiNote.js`, `./etymology.js`, `./utils.js`
+**Lines:** 66
+**Depends on:** `../noteType.js`, `./category.js`, `./gender.js`, `./transitivity.js`, `./syllables.js`, `./forms.js`, `./morphemes.js`, `./usageNotes.js`, `./collocations.js`, `./relatedWords.js`, `./soundAlikes.js`, `./exampleSentence.js`, `./delhiNote.js`, `./etymology.js`, `./audio.js`, `./utils.js`
 **Exports:** `wordToAnkiFields`
 **Functions:**
 - `wordToAnkiFields()` — Converts a vocabulary word object into a complete Anki fields object.
 
 #### `morphemes.js`
 **Responsibility:** building the Anki Morphemes HTML field  
-**Lines:** 49
+**Lines:** 50
 **Depends on:** `./utils.js`
 **Exports:** `buildAnkiMorphemes`
 **Functions:**
@@ -376,11 +388,11 @@ _Generated 2026-04-15 by `npm run arch`._
 
 #### `relatedWords.js`
 **Responsibility:** building the Anki RelatedWords HTML field  
-**Lines:** 42
+**Lines:** 44
 **Depends on:** `./utils.js`
 **Exports:** `buildAnkiRelatedWords`
 **Functions:**
-- `renderRelatedWord()` _(internal)_ — Renders a single related word as a chip card.
+- `renderRelatedWord()` _(internal)_ — Renders a single related word as a centred vertical .clang-item card.
 - `buildAnkiRelatedWords()` — Builds the Anki RelatedWords field HTML for a word.
 
 #### `sentenceBreakdown.js`
@@ -392,11 +404,11 @@ _Generated 2026-04-15 by `npm run arch`._
 
 #### `soundAlikes.js`
 **Responsibility:** building the Anki Sound Alikes HTML field  
-**Lines:** 52
+**Lines:** 56
 **Depends on:** `./utils.js`
 **Exports:** `buildAnkiSoundAlikes`
 **Functions:**
-- `renderSoundAlike()` _(internal)_ — Renders a single sound-alike entry as a clang-item card.
+- `renderSoundAlike()` _(internal)_ — Renders a single sound-alike entry as a centred vertical .clang-item card.
 - `buildAnkiSoundAlikes()` — Builds the Anki SoundAlikes field HTML for a word.
 
 #### `syllables.js`
@@ -477,6 +489,13 @@ _Generated 2026-04-15 by `npm run arch`._
 - `populateAnkiPreview()` _(internal)_ — Populates #pw-anki-cards with flip cards for currently selected words.
 - `initAnkiPreview()` — Initialises the Anki preview module.
 
+#### `audio.js`
+**Responsibility:** delegated audio playback handler for .wc-audio-btn elements  
+**Lines:** 56
+**Exports:** `initAudio`
+**Functions:**
+- `initAudio()` — Initialises the delegated audio click handler on the document.
+
 #### `cards.js`
 **Responsibility:** word card collapse/expand toggling and deselect button handling  
 **Lines:** 78
@@ -488,7 +507,7 @@ _Generated 2026-04-15 by `npm run arch`._
 
 #### `exportPane.js`
 **Responsibility:** deliver page controller — word list, sentence list, AnkiConnect polling, export button  
-**Lines:** 406
+**Lines:** 409
 **Depends on:** `../anki/connect.js`, `../anki/export.js`, `../anki/txtFallback.js`, `../state/selection.js`, `../data.js`
 **Exports:** `initExportPane`
 **Functions:**
@@ -589,6 +608,14 @@ _Generated 2026-04-15 by `npm run arch`._
 
 ### `src/utils/`
 
+#### `audioHelpers.ts`
+**Responsibility:** resolving audio file paths for words and sentences from their JSON fields  
+**Lines:** 31
+**Exports:** `sentenceAudioBase`, `wordAudioBase`
+**Functions:**
+- `wordAudioBase()` — Builds the base audio directory path for a word.
+- `sentenceAudioBase()` — Builds the base audio directory path for a sentence.
+
 #### `cardHelpers.ts`
 **Responsibility:** pure helper functions shared across WordCard section components  
 **Lines:** 119
@@ -613,7 +640,7 @@ _Generated 2026-04-15 by `npm run arch`._
 
 #### `types.ts`
 **Responsibility:** shared TypeScript interfaces used across Astro components and client scripts  
-**Lines:** 104
+**Lines:** 108
 **Exports:** `Collocation`, `EtymologyStage`, `ExampleSentence`, `ExampleSentenceToken`, `Form`, `HoverEntry`, `Morpheme`, `RelatedWord`, `SearchEntry`, `Sentence`, `SentenceChapter`, `SentenceWord`, `SoundAlike`, `Word`, `WordGroup`
 
 ---

@@ -3,7 +3,8 @@
  * WordCard section: Example Sentence.
  *
  * Responsible for: rendering the example sentence expandable section with
- * Hindi sentence, romanisation, English translation, and optional word breakdown.
+ * Hindi sentence, romanisation, English translation, optional audio buttons,
+ * and optional word breakdown with per-token hover-reveal play buttons.
  *
  * Dependencies: types.ts (ExampleSentence interface).
  */
@@ -12,8 +13,10 @@ import type { ExampleSentence } from '../../../utils/types';
 
 interface Props {
   sentence: ExampleSentence;
+  /** Base audio path for this sentence, e.g. '/audio/words/batch/लड़का_laṛkā'. If absent, no audio buttons rendered. */
+  audioBase?: string;
 }
-const { sentence } = Astro.props;
+const { sentence, audioBase } = Astro.props;
 ---
 
 <details class="group/det border-l-2 border-l-transparent hover:border-l-amber-400/20 hover:bg-white/[0.018] transition-colors">
@@ -27,16 +30,46 @@ const { sentence } = Astro.props;
       <span class="block font-mono-dm text-teal-300/80 text-sm mb-2">{sentence.roman}</span>
       <span class="block text-slate-300 italic" style="font-size:0.9375rem;">{sentence.english}</span>
     </div>
+    {audioBase && (
+      <div class="wc-audio-row">
+        <button class="wc-audio-btn" data-src={`${audioBase}/sentence/01_sentence_normal.mp3`} data-label="Normal">🔊 Normal</button>
+        <button class="wc-audio-btn" data-src={`${audioBase}/sentence/02_sentence_slow.mp3`} data-label="Slow">🔊 Slow</button>
+      </div>
+    )}
     {sentence.breakdown && sentence.breakdown.length > 0 && (
       <div class="border-t border-slate-700/30 mt-3">
-        {sentence.breakdown.map((token) => (
-          <div class="flex items-baseline gap-2 py-2.5 border-b border-slate-700/20 last:border-b-0">
+        {sentence.breakdown.map((token, index) => (
+          <div class="wc-ex-token flex items-baseline gap-2 py-2.5 border-b border-slate-700/20 last:border-b-0">
             <span class="font-hindi text-amber-400 shrink-0" lang="hi" style="font-size:1rem;min-width:3.5rem;">{token.hindi}</span>
             <span class="font-mono-dm text-teal-300/70 text-[13px] shrink-0" style="min-width:3.5rem;">{token.roman}</span>
             <span class="text-slate-400 text-sm">— {token.meaning}</span>
+            {audioBase && (
+              <button
+                class="wc-ex-token-play"
+                data-src={`${audioBase}/sentence/word_${String(index + 1).padStart(2, '0')}_${token.roman}.mp3`}
+                data-label=""
+                aria-label={`Play ${token.roman}`}
+              >▶</button>
+            )}
           </div>
         ))}
       </div>
     )}
   </div>
 </details>
+
+<style>
+  .wc-ex-token-play {
+    font-size: 10px;
+    color: #475569;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0 0.25rem;
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+  .wc-ex-token:hover .wc-ex-token-play {
+    opacity: 1;
+  }
+</style>
