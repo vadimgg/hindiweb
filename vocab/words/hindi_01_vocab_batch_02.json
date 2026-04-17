@@ -1,0 +1,787 @@
+{
+  "chapter": "Complete Hindi, Chapter 01",
+  "words": [
+    {
+      "hindi": "पिता",
+      "romanisation": "pitā",
+      "english": "father",
+      "pos": "noun",
+      "gender": "masculine",
+      "anki_tags": [
+        "family",
+        "noun"
+      ],
+      "syllables": "pi · tā",
+      "usage_notes": "पिता (pitā) is invariable — it does not change for number or case. Both singular and plural are पिता (pitā). Commonly used in formal or written contexts; in everyday Delhi speech, पापा (pāpā) or पिताजी (pitājī) are far more common.",
+      "related_words": [
+        {
+          "hindi": "पिताजी",
+          "roman": "pitājī",
+          "english": "father (respectful)"
+        },
+        {
+          "hindi": "पापा",
+          "roman": "pāpā",
+          "english": "dad (everyday)"
+        },
+        {
+          "hindi": "माता",
+          "roman": "mātā",
+          "english": "mother"
+        },
+        {
+          "hindi": "माँ",
+          "roman": "māṃ",
+          "english": "mum"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "pi · tā",
+          "association": "pita bread",
+          "roman": "pita",
+          "language": "English",
+          "note": "The whole word sounds like 'pita' — imagine your father handing you a pita bread."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "मेरे पिता दिल्ली में काम करते हैं।",
+        "roman": "mere pitā dillī meṃ kām karte haiṃ.",
+        "english": "My father works in Delhi.",
+        "breakdown": [
+          {
+            "hindi": "मेरे",
+            "roman": "mere",
+            "meaning": "my (masculine oblique)"
+          },
+          {
+            "hindi": "पिता",
+            "roman": "pitā",
+            "meaning": "father"
+          },
+          {
+            "hindi": "दिल्ली में",
+            "roman": "dillī meṃ",
+            "meaning": "in Delhi"
+          },
+          {
+            "hindi": "काम करते हैं",
+            "roman": "kām karte haiṃ",
+            "meaning": "works / does work"
+          }
+        ]
+      },
+      "etymology_journey": [
+        {
+          "stage": "Proto-Indo-European",
+          "form": "*ph₂tḗr",
+          "roman": "ph₂tēr",
+          "meaning": "father"
+        },
+        {
+          "stage": "Sanskrit",
+          "form": "पितृ",
+          "roman": "pitṛ",
+          "meaning": "father"
+        },
+        {
+          "stage": "Hindi",
+          "form": "पिता",
+          "roman": "pitā",
+          "meaning": "father"
+        }
+      ],
+      "origin_note": "From Sanskrit पितृ (pitṛ), sharing the same Proto-Indo-European root as English 'father', Latin 'pater', and Russian отец (otets)."
+    },
+    {
+      "hindi": "दादी",
+      "romanisation": "dādī",
+      "english": "grandmother (paternal)",
+      "pos": "noun",
+      "gender": "feminine",
+      "anki_tags": [
+        "family",
+        "noun"
+      ],
+      "syllables": "dā · dī",
+      "forms": [
+        {
+          "label": "direct plural",
+          "hindi": "दादियाँ",
+          "roman": "dādiyāṃ"
+        },
+        {
+          "label": "oblique plural",
+          "hindi": "दादियों",
+          "roman": "dādiyoṃ"
+        }
+      ],
+      "usage_notes": "Refers specifically to the father's mother. The mother's mother is नानी (nānī). This distinction is important in Hindi family vocabulary.",
+      "related_words": [
+        {
+          "hindi": "दादा",
+          "roman": "dādā",
+          "english": "grandfather (paternal)"
+        },
+        {
+          "hindi": "नानी",
+          "roman": "nānī",
+          "english": "grandmother (maternal)"
+        },
+        {
+          "hindi": "नाना",
+          "roman": "nānā",
+          "english": "grandfather (maternal)"
+        }
+      ],
+      "example_sentence": {
+        "hindi": "मेरी दादी बहुत अच्छा खाना बनाती हैं।",
+        "roman": "merī dādī bahut acchā khānā banātī haiṃ.",
+        "english": "My grandmother makes very good food.",
+        "breakdown": [
+          {
+            "hindi": "मेरी",
+            "roman": "merī",
+            "meaning": "my (feminine)"
+          },
+          {
+            "hindi": "दादी",
+            "roman": "dādī",
+            "meaning": "paternal grandmother"
+          },
+          {
+            "hindi": "बहुत",
+            "roman": "bahut",
+            "meaning": "very"
+          },
+          {
+            "hindi": "अच्छा खाना",
+            "roman": "acchā khānā",
+            "meaning": "good food"
+          },
+          {
+            "hindi": "बनाती हैं",
+            "roman": "banātī haiṃ",
+            "meaning": "makes (honorific feminine)"
+          }
+        ]
+      }
+    },
+    {
+      "hindi": "दादा",
+      "romanisation": "dādā",
+      "english": "grandfather (paternal)",
+      "pos": "noun",
+      "gender": "masculine",
+      "anki_tags": [
+        "family",
+        "noun"
+      ],
+      "syllables": "dā · dā",
+      "forms": [
+        {
+          "label": "direct plural / oblique singular",
+          "hindi": "दादे",
+          "roman": "dāde"
+        },
+        {
+          "label": "oblique plural",
+          "hindi": "दादों",
+          "roman": "dādoṃ"
+        }
+      ],
+      "usage_notes": "Refers specifically to the father's father. The mother's father is नाना (nānā). In Delhi, दादाजी (dādājī) is the more respectful form commonly used when addressing or referring to the grandfather.",
+      "delhi_note": "दादा (dādā) in street slang can also mean a local tough guy or strongman — context makes the meaning clear.",
+      "related_words": [
+        {
+          "hindi": "दादी",
+          "roman": "dādī",
+          "english": "grandmother (paternal)"
+        },
+        {
+          "hindi": "नाना",
+          "roman": "nānā",
+          "english": "grandfather (maternal)"
+        },
+        {
+          "hindi": "नानी",
+          "roman": "nānī",
+          "english": "grandmother (maternal)"
+        },
+        {
+          "hindi": "दादाजी",
+          "roman": "dādājī",
+          "english": "grandfather (respectful)"
+        }
+      ],
+      "example_sentence": {
+        "hindi": "मेरे दादा रोज़ सुबह टहलने जाते हैं।",
+        "roman": "mere dādā roz subah ṭahalne jāte haiṃ.",
+        "english": "My grandfather goes for a walk every morning.",
+        "breakdown": [
+          {
+            "hindi": "मेरे",
+            "roman": "mere",
+            "meaning": "my (masculine oblique)"
+          },
+          {
+            "hindi": "दादा",
+            "roman": "dādā",
+            "meaning": "paternal grandfather"
+          },
+          {
+            "hindi": "रोज़",
+            "roman": "roz",
+            "meaning": "every day"
+          },
+          {
+            "hindi": "सुबह",
+            "roman": "subah",
+            "meaning": "morning"
+          },
+          {
+            "hindi": "टहलने जाते हैं",
+            "roman": "ṭahalne jāte haiṃ",
+            "meaning": "goes for a walk (honorific)"
+          }
+        ]
+      }
+    },
+    {
+      "hindi": "चाचा",
+      "romanisation": "cācā",
+      "english": "uncle (father's younger brother)",
+      "pos": "noun",
+      "gender": "masculine",
+      "anki_tags": [
+        "family",
+        "noun"
+      ],
+      "syllables": "cā · cā",
+      "forms": [
+        {
+          "label": "direct plural / oblique singular",
+          "hindi": "चाचे",
+          "roman": "cāce"
+        },
+        {
+          "label": "oblique plural",
+          "hindi": "चाचों",
+          "roman": "cācoṃ"
+        }
+      ],
+      "usage_notes": "Specifically the father's younger brother. Hindi has distinct words for each type of uncle: ताऊ (tāū) is the father's elder brother, मामा (māmā) is the mother's brother, and फूफा (phūphā) is the father's sister's husband.",
+      "delhi_note": "चाचा (cācā) is widely used as a friendly address for any older man, even strangers — similar to calling someone 'uncle' in Indian English.",
+      "related_words": [
+        {
+          "hindi": "चाची",
+          "roman": "cācī",
+          "english": "aunt (wife of father's younger brother)"
+        },
+        {
+          "hindi": "ताऊ",
+          "roman": "tāū",
+          "english": "uncle (father's elder brother)"
+        },
+        {
+          "hindi": "मामा",
+          "roman": "māmā",
+          "english": "uncle (mother's brother)"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "cācā",
+          "association": "cha-cha (dance)",
+          "roman": "cācā",
+          "language": "English",
+          "note": "Sounds exactly like the cha-cha dance — imagine your uncle doing the cha-cha at a wedding."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "मेरे चाचा मुंबई में रहते हैं।",
+        "roman": "mere cācā mumbaī meṃ rahte haiṃ.",
+        "english": "My uncle lives in Mumbai.",
+        "breakdown": [
+          {
+            "hindi": "मेरे",
+            "roman": "mere",
+            "meaning": "my (masculine oblique)"
+          },
+          {
+            "hindi": "चाचा",
+            "roman": "cācā",
+            "meaning": "paternal uncle (younger)"
+          },
+          {
+            "hindi": "मुंबई में",
+            "roman": "mumbaī meṃ",
+            "meaning": "in Mumbai"
+          },
+          {
+            "hindi": "रहते हैं",
+            "roman": "rahte haiṃ",
+            "meaning": "lives / resides (honorific)"
+          }
+        ]
+      }
+    },
+    {
+      "hindi": "बहू",
+      "romanisation": "bahū",
+      "english": "daughter-in-law",
+      "pos": "noun",
+      "gender": "feminine",
+      "anki_tags": [
+        "family",
+        "noun"
+      ],
+      "syllables": "ba · hū",
+      "forms": [
+        {
+          "label": "direct plural",
+          "hindi": "बहुएँ",
+          "roman": "bahuẽ"
+        },
+        {
+          "label": "oblique plural",
+          "hindi": "बहुओं",
+          "roman": "bahuoṃ"
+        }
+      ],
+      "usage_notes": "Refers to a son's wife — the daughter-in-law of the household. In traditional Indian families, बहू (bahū) carries significant cultural weight as the woman who joins the husband's family.",
+      "related_words": [
+        {
+          "hindi": "दामाद",
+          "roman": "dāmād",
+          "english": "son-in-law"
+        },
+        {
+          "hindi": "सास",
+          "roman": "sās",
+          "english": "mother-in-law"
+        },
+        {
+          "hindi": "ससुर",
+          "roman": "sasur",
+          "english": "father-in-law"
+        }
+      ],
+      "example_sentence": {
+        "hindi": "हमारी बहू बहुत मेहनती है।",
+        "roman": "hamārī bahū bahut mehnatī hai.",
+        "english": "Our daughter-in-law is very hardworking.",
+        "breakdown": [
+          {
+            "hindi": "हमारी",
+            "roman": "hamārī",
+            "meaning": "our (feminine)"
+          },
+          {
+            "hindi": "बहू",
+            "roman": "bahū",
+            "meaning": "daughter-in-law"
+          },
+          {
+            "hindi": "बहुत",
+            "roman": "bahut",
+            "meaning": "very"
+          },
+          {
+            "hindi": "मेहनती",
+            "roman": "mehnatī",
+            "meaning": "hardworking"
+          },
+          {
+            "hindi": "है",
+            "roman": "hai",
+            "meaning": "is"
+          }
+        ]
+      }
+    },
+    {
+      "hindi": "बहुएँ",
+      "romanisation": "bahuẽ",
+      "english": "daughters-in-law",
+      "pos": "noun",
+      "gender": "feminine",
+      "anki_tags": [
+        "family",
+        "noun"
+      ],
+      "syllables": "ba · hu · eṃ",
+      "usage_notes": "Direct plural of बहू (bahū). In everyday speech the singular बहू (bahū) is far more common.",
+      "related_words": [
+        {
+          "hindi": "बहू",
+          "roman": "bahū",
+          "english": "daughter-in-law (singular)"
+        }
+      ],
+      "example_sentence": {
+        "hindi": "घर में तीन बहुएँ हैं।",
+        "roman": "ghar meṃ tīn bahuẽ haiṃ.",
+        "english": "There are three daughters-in-law in the house.",
+        "breakdown": [
+          {
+            "hindi": "घर में",
+            "roman": "ghar meṃ",
+            "meaning": "in the house"
+          },
+          {
+            "hindi": "तीन",
+            "roman": "tīn",
+            "meaning": "three"
+          },
+          {
+            "hindi": "बहुएँ",
+            "roman": "bahuẽ",
+            "meaning": "daughters-in-law"
+          },
+          {
+            "hindi": "हैं",
+            "roman": "haiṃ",
+            "meaning": "are"
+          }
+        ]
+      }
+    },
+    {
+      "hindi": "राजा",
+      "romanisation": "rājā",
+      "english": "king",
+      "pos": "noun",
+      "gender": "masculine",
+      "anki_tags": [
+        "society",
+        "noun"
+      ],
+      "syllables": "rā · jā",
+      "forms": [
+        {
+          "label": "direct plural / oblique singular",
+          "hindi": "राजे",
+          "roman": "rāje"
+        },
+        {
+          "label": "oblique plural",
+          "hindi": "राजों",
+          "roman": "rājoṃ"
+        }
+      ],
+      "morphemes": [
+        {
+          "part": "राज",
+          "roman": "rāj",
+          "meaning": "rule, reign, kingdom",
+          "origin": "Sanskrit"
+        }
+      ],
+      "usage_notes": "The historical word for a Hindu king or ruler. Also used in many Indian personal names. राज (rāj) as a standalone word means 'rule' or 'kingdom', as in ब्रिटिश राज (briṭiś rāj).",
+      "related_words": [
+        {
+          "hindi": "रानी",
+          "roman": "rānī",
+          "english": "queen"
+        },
+        {
+          "hindi": "राज",
+          "roman": "rāj",
+          "english": "rule, reign"
+        },
+        {
+          "hindi": "राजकुमार",
+          "roman": "rājkumār",
+          "english": "prince"
+        },
+        {
+          "hindi": "राजकुमारी",
+          "roman": "rājkumārī",
+          "english": "princess"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "rājā",
+          "association": "raja",
+          "roman": "raja",
+          "language": "English",
+          "note": "English borrowed 'raja' directly from this Hindi/Sanskrit word — you already know it."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "पुराने ज़माने में राजा महलों में रहते थे।",
+        "roman": "purāne zamāne meṃ rājā maholoṃ meṃ rahte the.",
+        "english": "In olden times, kings used to live in palaces.",
+        "breakdown": [
+          {
+            "hindi": "पुराने ज़माने में",
+            "roman": "purāne zamāne meṃ",
+            "meaning": "in olden times"
+          },
+          {
+            "hindi": "राजा",
+            "roman": "rājā",
+            "meaning": "kings"
+          },
+          {
+            "hindi": "महलों में",
+            "roman": "maholoṃ meṃ",
+            "meaning": "in palaces"
+          },
+          {
+            "hindi": "रहते थे",
+            "roman": "rahte the",
+            "meaning": "used to live"
+          }
+        ]
+      },
+      "etymology_journey": [
+        {
+          "stage": "Proto-Indo-European",
+          "form": "*h₃rḗǵs",
+          "roman": "h₃rēǵs",
+          "meaning": "king, ruler"
+        },
+        {
+          "stage": "Sanskrit",
+          "form": "राजन्",
+          "roman": "rājan",
+          "meaning": "king, ruler"
+        },
+        {
+          "stage": "Hindi",
+          "form": "राजा",
+          "roman": "rājā",
+          "meaning": "king"
+        }
+      ],
+      "origin_note": "From Sanskrit राजन् (rājan), sharing the same Proto-Indo-European root as Latin 'rex' (king) — all from *h₃rḗǵs, meaning 'one who rules'."
+    },
+    {
+      "hindi": "बूढ़ा",
+      "romanisation": "būṛhā",
+      "english": "elderly (masculine)",
+      "pos": "adjective",
+      "anki_tags": [
+        "description",
+        "adjective"
+      ],
+      "syllables": "būṛ · hā",
+      "forms": [
+        {
+          "label": "feminine",
+          "hindi": "बूढ़ी",
+          "roman": "būṛhī"
+        },
+        {
+          "label": "masculine oblique / masculine plural",
+          "hindi": "बूढ़े",
+          "roman": "būṛhe"
+        }
+      ],
+      "usage_notes": "Describes an elderly or old person. Can be used as an adjective (बूढ़ा आदमी — būṛhā ādmī — old man) or as a noun. Can sound blunt; बुज़ुर्ग (buzurg) is more respectful.",
+      "delhi_note": "In casual Delhi speech, बूढ़ा (būṛhā) can come across as dismissive. Use बुज़ुर्ग (buzurg) when speaking respectfully about or to elderly people.",
+      "related_words": [
+        {
+          "hindi": "बुज़ुर्ग",
+          "roman": "buzurg",
+          "english": "elderly (respectful)"
+        },
+        {
+          "hindi": "बुढ़ापा",
+          "roman": "buṛhāpā",
+          "english": "old age"
+        },
+        {
+          "hindi": "जवान",
+          "roman": "javān",
+          "english": "young"
+        }
+      ],
+      "example_sentence": {
+        "hindi": "वह बूढ़ा आदमी पार्क में बैठा है।",
+        "roman": "vah būṛhā ādmī pārk meṃ baiṭhā hai.",
+        "english": "That old man is sitting in the park.",
+        "breakdown": [
+          {
+            "hindi": "वह",
+            "roman": "vah",
+            "meaning": "that / he"
+          },
+          {
+            "hindi": "बूढ़ा",
+            "roman": "būṛhā",
+            "meaning": "old, elderly (masculine)"
+          },
+          {
+            "hindi": "आदमी",
+            "roman": "ādmī",
+            "meaning": "man"
+          },
+          {
+            "hindi": "पार्क में",
+            "roman": "pārk meṃ",
+            "meaning": "in the park"
+          },
+          {
+            "hindi": "बैठा है",
+            "roman": "baiṭhā hai",
+            "meaning": "is sitting"
+          }
+        ]
+      }
+    },
+    {
+      "hindi": "लोग",
+      "romanisation": "log",
+      "english": "people",
+      "pos": "noun",
+      "gender": "masculine",
+      "anki_tags": [
+        "society",
+        "noun"
+      ],
+      "syllables": "log",
+      "usage_notes": "लोग (log) is inherently plural and always takes plural verb agreement. There is no singular form — for 'person' use व्यक्ति (vyakti) or आदमी (ādmī). The oblique form is लोगों (logoṃ).",
+      "related_words": [
+        {
+          "hindi": "व्यक्ति",
+          "roman": "vyakti",
+          "english": "person, individual"
+        },
+        {
+          "hindi": "आदमी",
+          "roman": "ādmī",
+          "english": "man / person"
+        },
+        {
+          "hindi": "जनता",
+          "roman": "jantā",
+          "english": "the public, the people (collective)"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "log",
+          "association": "log (a record or list)",
+          "roman": "log",
+          "language": "English",
+          "note": "A ship's log records all the people on board — log = people."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "बाज़ार में बहुत लोग हैं।",
+        "roman": "bāzār meṃ bahut log haiṃ.",
+        "english": "There are a lot of people in the market.",
+        "breakdown": [
+          {
+            "hindi": "बाज़ार में",
+            "roman": "bāzār meṃ",
+            "meaning": "in the market / bazaar"
+          },
+          {
+            "hindi": "बहुत",
+            "roman": "bahut",
+            "meaning": "a lot of / very many"
+          },
+          {
+            "hindi": "लोग",
+            "roman": "log",
+            "meaning": "people"
+          },
+          {
+            "hindi": "हैं",
+            "roman": "haiṃ",
+            "meaning": "are"
+          }
+        ]
+      }
+    },
+    {
+      "hindi": "गाड़ी",
+      "romanisation": "gāṛī",
+      "english": "car",
+      "pos": "noun",
+      "gender": "feminine",
+      "anki_tags": [
+        "transport",
+        "noun"
+      ],
+      "syllables": "gā · ṛī",
+      "forms": [
+        {
+          "label": "direct plural",
+          "hindi": "गाड़ियाँ",
+          "roman": "gāṛiyāṃ"
+        },
+        {
+          "label": "oblique plural",
+          "hindi": "गाड़ियों",
+          "roman": "gāṛiyoṃ"
+        }
+      ],
+      "usage_notes": "गाड़ी (gāṛī) covers any wheeled vehicle — car, train, bicycle, or cart — depending on context. Alone it usually means car in urban speech. For a train, people say रेलगाड़ी (relgāṛī) or simply ट्रेन (ṭren).",
+      "delhi_note": "In Delhi, गाड़ी (gāṛī) almost always means a car in everyday conversation. कार (kār) is also used and understood.",
+      "related_words": [
+        {
+          "hindi": "कार",
+          "roman": "kār",
+          "english": "car (loanword)"
+        },
+        {
+          "hindi": "रेलगाड़ी",
+          "roman": "relgāṛī",
+          "english": "train"
+        },
+        {
+          "hindi": "बस",
+          "roman": "bas",
+          "english": "bus"
+        },
+        {
+          "hindi": "ड्राइवर",
+          "roman": "ḍrāivar",
+          "english": "driver"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "gāṛī",
+          "association": "гараж",
+          "roman": "garazh",
+          "language": "Russian",
+          "note": "गाड़ी (gāṛī) starts like гараж (garazh, garage) — the place where you keep the car."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "मेरी गाड़ी बाहर खड़ी है।",
+        "roman": "merī gāṛī bāhar khaṛī hai.",
+        "english": "My car is parked outside.",
+        "breakdown": [
+          {
+            "hindi": "मेरी",
+            "roman": "merī",
+            "meaning": "my (feminine)"
+          },
+          {
+            "hindi": "गाड़ी",
+            "roman": "gāṛī",
+            "meaning": "car"
+          },
+          {
+            "hindi": "बाहर",
+            "roman": "bāhar",
+            "meaning": "outside"
+          },
+          {
+            "hindi": "खड़ी है",
+            "roman": "khaṛī hai",
+            "meaning": "is standing / is parked (feminine)"
+          }
+        ]
+      }
+    }
+  ]
+}

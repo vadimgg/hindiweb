@@ -16,7 +16,7 @@ export const ANKI_NOTE_TYPE = 'Hindi Vocabulary';
 
 export const ANKI_FIELDS = [
   'English', 'Hindi', 'Audio', 'Romanisation', 'Syllables', 'Category', 'Gender', 'Transitivity',
-  'Forms', 'ExampleSentence', 'ExampleEnglish', 'UsageNotes', 'RelatedWords', 'Morphemes', 'SoundAlikes', 'Collocations', 'DelhiNote', 'Etymology',
+  'Forms', 'ExampleSentence', 'ExampleEnglish', 'UsageNotes', 'RelatedWords', 'Morphemes', 'SoundAlikes', 'DelhiNote', 'Etymology',
 ];
 
 export const ANKI_CSS = [
@@ -127,7 +127,6 @@ export const ANKI_BACK = `<div class="card-wrap">
   {{#RelatedWords}}<div>{{RelatedWords}}</div>{{/RelatedWords}}
   {{#Morphemes}}<div>{{Morphemes}}</div>{{/Morphemes}}
   {{#SoundAlikes}}<div>{{SoundAlikes}}</div>{{/SoundAlikes}}
-  {{#Collocations}}<div>{{Collocations}}</div>{{/Collocations}}
   {{#DelhiNote}}<div>{{DelhiNote}}</div>{{/DelhiNote}}
   {{#Etymology}}<div>{{Etymology}}</div>{{/Etymology}}
 </div>`;

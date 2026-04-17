@@ -56,12 +56,8 @@ export interface Word {
   syllables?: string;
   /** Inflected forms (feminine, plural, oblique, etc.). */
   forms?: Form[];
-  /** Morpheme / root breakdown for etymology display. */
-  morphemes?: Morpheme[];
   /** Prose usage note shown in the Usage Notes section. */
   usage_notes?: string;
-  /** Common collocations with Hindi, romanisation, and English gloss. */
-  collocations?: Collocation[];
   /** Related words with Hindi, romanisation, and English gloss. */
   related_words?: RelatedWord[];
   /** Sound-alike memory hooks linking the word to familiar sounds. */

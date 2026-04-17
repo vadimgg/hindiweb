@@ -3,9 +3,9 @@
 //
 // Word: माता (mother) — from Complete Hindi, Chapter 01, batch 01.
 //   Chosen because it has every field type: etymology_journey (3 stages),
-//   morphemes, sound_alikes, usage_notes, delhi_note, collocations,
-//   related_words, origin_note, forms (none, but the key is present), gender.
-//   Previously मैं was used but it lacks morphemes and delhi_note.
+//   sound_alikes, usage_notes, delhi_note, related_words, origin_note, gender.
+//   NOTE: morphemes are added manually for demo completeness — the real batch 01
+//   entry omits them, but batches 02–05 use this field and it must be exercised.
 //
 // Sentence: क्या आप कमला जी हैं? — from Complete Hindi, Chapter 01, Dialog 01.
 //   Chosen because it has a 5-token word breakdown with notes, a literal
@@ -14,7 +14,6 @@
 // Field mapping notes:
 //   All fields now use the exact names from the vocab JSON:
 //     romanisation, etymology_journey (.stage / .form / .roman / .meaning)
-//     morphemes (.part / .roman / .meaning / .origin)
 //     sound_alikes (.part / .association / .roman / .language / .note)
 //     usage_notes: string (JSON) — components accept string or string[]
 //     sentence.words.gender: "masculine" / "feminine" strings (match JSON)
@@ -22,63 +21,56 @@
 window.demoWord = {
   hindi: 'माता',
   romanisation: 'mātā',
-  syllables: 'mā · tā',
   english: 'mother',
   pos: 'noun',
   gender: 'feminine',
-  anki_tags: ['people', 'family', 'noun'],
-  forms: [],
+  anki_tags: ['family', 'noun'],
+  syllables: 'mā · tā',
   morphemes: [
     { part: 'मात', roman: 'māt', meaning: 'mother', origin: 'Sanskrit' },
-    { part: 'ā', roman: 'ā', meaning: 'feminine noun ending', origin: 'Sanskrit' },
+    { part: 'आ', roman: 'ā', meaning: 'feminine noun ending', origin: 'Sanskrit' },
   ],
-  usage_notes: 'माता is a respectful, slightly formal word for mother. In everyday Delhi speech, माँ (mā̃) or अम्मा (ammā) is far more common. माता is used in formal contexts, religious settings, or compound words like मातृभाषा.',
-  delhi_note: 'In everyday Delhi conversation, almost nobody says माता — people say माँ (mā̃). माता sounds formal or devotional, like something you would say in a prayer or a government document. Use माँ with family and friends.',
-  collocations: [
-    { hindi: 'माता-पिता', roman: 'mātā-pitā', english: 'parents (mother and father)' },
-    { hindi: 'माता जी', roman: 'mātā jī', english: 'mother (respectful address)' },
-    { hindi: 'माता का आशीर्वाद', roman: 'mātā kā āśīrvād', english: "mother's blessing" },
-    { hindi: 'माता रानी', roman: 'mātā rānī', english: 'divine mother (goddess, used in prayers)' },
-  ],
+  usage_notes: 'माता (mātā) is the formal or respectful word for mother, often used in religious, traditional, or literary contexts. In everyday Delhi speech, माँ (māṃ) or अम्मा (ammā) is far more common.',
+  delhi_note: 'In daily Delhi conversation, people almost always say माँ (māṃ) rather than माता (mātā). माता (mātā) sounds formal or old-fashioned in casual use but is common in religious contexts.',
   related_words: [
-    { hindi: 'माँ', roman: 'mā̃', english: 'mum / mom (everyday)' },
+    { hindi: 'माँ', roman: 'māṃ', english: 'mum, mom (everyday)' },
     { hindi: 'पिता', roman: 'pitā', english: 'father' },
     { hindi: 'माता-पिता', roman: 'mātā-pitā', english: 'parents' },
-    { hindi: 'मातृभाषा', roman: 'mātṛbhāṣā', english: 'mother tongue' },
   ],
   sound_alikes: [
     {
       part: 'mā',
-      association: 'ma',
-      roman: 'ma',
+      association: 'mama',
+      roman: 'mama',
       language: 'English',
-      note: "mā sounds exactly like 'ma' (informal English for mum) — the most direct sound-alike possible.",
+      note: "'mā' is universally the mother sound — mama, mum — found across dozens of languages including English, Russian мама (mama), and Hebrew אמא (ima)",
     },
     {
       part: 'tā',
       association: 'ta',
       roman: 'ta',
       language: 'English',
-      note: "The ending -tā sounds like 'ta' (British slang for 'thank you') — say 'ta' to your ma: mātā.",
+      note: "'tā' sounds like the informal British 'ta' (thank you) — mother is always there to thank",
     },
   ],
   example_sentence: {
-    hindi: 'माता घर में हैं।',
-    roman: 'mātā ghar mẽ haĩ.',
-    english: 'Mother is at home.',
+    hindi: 'मेरी माता जी घर पर हैं।',
+    roman: 'merī mātā jī ghar par haiṃ.',
+    english: 'My mother is at home.',
     breakdown: [
-      { hindi: 'माता', roman: 'mātā', meaning: 'mother (formal)' },
-      { hindi: 'घर', roman: 'ghar', meaning: 'home / house' },
-      { hindi: 'में', roman: 'mẽ', meaning: 'in / at (postposition)' },
-      { hindi: 'हैं', roman: 'haĩ', meaning: 'are (formal/honorific form)' },
+      { hindi: 'मेरी', roman: 'merī', meaning: 'my (feminine)' },
+      { hindi: 'माता जी', roman: 'mātā jī', meaning: 'mother (respectful)' },
+      { hindi: 'घर', roman: 'ghar', meaning: 'home' },
+      { hindi: 'पर', roman: 'par', meaning: 'on / at' },
+      { hindi: 'हैं', roman: 'haiṃ', meaning: 'are (respectful plural)' },
     ],
   },
   etymology_journey: [
     { stage: 'Proto-Indo-European', form: '*méh₂tēr', roman: '*méh₂tēr', meaning: 'mother' },
-    { stage: 'Sanskrit', form: 'मातृ', roman: 'mātṛ', meaning: 'mother' },
-    { stage: 'Hindi', form: 'माता', roman: 'mātā', meaning: 'mother (formal/respectful)' },
+    { stage: 'Sanskrit', form: 'माता', roman: 'mātā', meaning: 'mother' },
+    { stage: 'Hindi', form: 'माता', roman: 'mātā', meaning: 'mother (formal)' },
   ],
-  origin_note: "From Sanskrit मातृ (mātṛ), from the same Proto-Indo-European root as English 'mother', Latin 'mater', and Russian мать (mat') — one of the most ancient words in the language.",
+  origin_note: "From Sanskrit माता (mātā), from the Proto-Indo-European root *méh₂tēr — the same root as English 'mother', Russian мать (mat'), and Latin mater.",
 };
 
 window.demoSentence = {

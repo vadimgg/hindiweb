@@ -14,10 +14,9 @@ import { buildAnkiGender }       from './gender.js';
 import { buildAnkiTransitivity } from './transitivity.js';
 import { buildAnkiSyllables }    from './syllables.js';
 import { buildAnkiForms }        from './forms.js';
-import { buildAnkiMorphemes }    from './morphemes.js';
 import { buildAnkiUsageNotes }   from './usageNotes.js';
-import { buildAnkiCollocations } from './collocations.js';
 import { buildAnkiRelatedWords } from './relatedWords.js';
+import { buildAnkiMorphemes }    from './morphemes.js';
 import { buildAnkiSoundAlikes }    from './soundAlikes.js';
 import { buildAnkiExampleSentence } from './exampleSentence.js';
 import { buildAnkiDelhiNote }      from './delhiNote.js';
@@ -51,7 +50,6 @@ export function wordToAnkiFields(word) {
     RelatedWords:     buildAnkiRelatedWords(word),
     Morphemes:        buildAnkiMorphemes(word),
     SoundAlikes:      buildAnkiSoundAlikes(word),
-    Collocations:     buildAnkiCollocations(word),
     DelhiNote:        buildAnkiDelhiNote(word),
     Etymology:        buildAnkiEtymology(word),
   };

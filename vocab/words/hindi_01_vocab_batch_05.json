@@ -1,0 +1,992 @@
+{
+  "chapter": "Complete Hindi, Chapter 01",
+  "words": [
+    {
+      "hindi": "ख़ाली",
+      "romanisation": "khālī",
+      "english": "empty / vacant",
+      "pos": "adjective",
+      "anki_tags": [
+        "description",
+        "adjective",
+        "space"
+      ],
+      "syllables": "khā · lī",
+      "usage_notes": "Used for both physical emptiness (an empty cup, an empty room) and availability (a free seat, an unoccupied person). Very common in daily speech — e.g. ‘क्या यह सीट ख़ाली है? (kyā yah sīṭ khālī hai?)’ meaning ‘Is this seat free?’",
+      "delhi_note": "Extremely natural in Delhi speech. Also used to mean ‘free / available’ — as in ‘मैं अभी ख़ाली हूँ (maiṃ abhī khālī hūṃ)’ — ‘I’m free right now.’",
+      "related_words": [
+        {
+          "hindi": "भरा",
+          "roman": "bharā",
+          "english": "full / filled"
+        },
+        {
+          "hindi": "बंद",
+          "roman": "band",
+          "english": "closed / shut"
+        },
+        {
+          "hindi": "उपलब्ध",
+          "roman": "upalabdh",
+          "english": "available"
+        },
+        {
+          "hindi": "फ़ुर्सत",
+          "roman": "fursat",
+          "english": "free time / leisure"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "khā",
+          "association": "хала",
+          "roman": "khala",
+          "language": "Russian",
+          "note": "Russian ‘хала’ (khala — a braided bread loaf) sounds like the first syllable; picture a hollow, empty bread."
+        },
+        {
+          "part": "lī",
+          "association": "לי",
+          "roman": "li",
+          "language": "Hebrew",
+          "note": "Hebrew ‘לי’ (li — for me) echoes the ending; imagine an empty space reserved for me."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "कमरा ख़ाली है।",
+        "roman": "kamrā khālī hai.",
+        "english": "The room is empty.",
+        "breakdown": [
+          {
+            "hindi": "कमरा",
+            "roman": "kamrā",
+            "meaning": "room"
+          },
+          {
+            "hindi": "ख़ाली",
+            "roman": "khālī",
+            "meaning": "empty / vacant"
+          },
+          {
+            "hindi": "है",
+            "roman": "hai",
+            "meaning": "is (present tense copula)"
+          }
+        ]
+      },
+      "etymology_journey": [
+        {
+          "stage": "Arabic",
+          "form": "خالي",
+          "roman": "khālī",
+          "meaning": "empty, devoid, free of"
+        },
+        {
+          "stage": "Persian",
+          "form": "خالی",
+          "roman": "khālī",
+          "meaning": "empty, vacant"
+        },
+        {
+          "stage": "Hindi",
+          "form": "ख़ाली",
+          "roman": "khālī",
+          "meaning": "empty, vacant, free"
+        }
+      ],
+      "origin_note": "From Arabic خالي (khālī), meaning ‘empty or devoid of something’, which entered Hindi via Persian."
+    },
+    {
+      "hindi": "साफ़",
+      "romanisation": "sāf",
+      "english": "clean",
+      "pos": "adjective",
+      "anki_tags": [
+        "description",
+        "adjective",
+        "hygiene"
+      ],
+      "syllables": "sāf",
+      "usage_notes": "साफ़ (sāf) also means ‘clear’ or ‘frank’ in figurative use — e.g. ‘साफ़ बात करो (sāf bāt karo)’ means ‘speak plainly’. Very versatile word.",
+      "delhi_note": "One of the most common everyday adjectives in Delhi. Used constantly — for clean dishes, clean streets, clear speech, and honest dealings.",
+      "related_words": [
+        {
+          "hindi": "गंदा",
+          "roman": "gandā",
+          "english": "dirty"
+        },
+        {
+          "hindi": "स्वच्छ",
+          "roman": "svacch",
+          "english": "clean / pure (formal)"
+        },
+        {
+          "hindi": "साफ़-सुथरा",
+          "roman": "sāf-suthrā",
+          "english": "neat and clean"
+        },
+        {
+          "hindi": "धोना",
+          "roman": "dhonā",
+          "english": "to wash"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "sāf",
+          "association": "safe",
+          "roman": "safe",
+          "language": "English",
+          "note": "A clean place is a safe place — ‘sāf’ sounds almost exactly like ‘safe’, helping you link cleanliness with safety."
+        },
+        {
+          "part": "sāf",
+          "association": "сафьян",
+          "roman": "safyan",
+          "language": "Russian",
+          "note": "Russian ‘сафьян’ (safyan — fine polished Morocco leather) shares the ‘saf’ sound; picture smooth, clean leather."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "रसोई साफ़ है।",
+        "roman": "rasoī sāf hai.",
+        "english": "The kitchen is clean.",
+        "breakdown": [
+          {
+            "hindi": "रसोई",
+            "roman": "rasoī",
+            "meaning": "kitchen"
+          },
+          {
+            "hindi": "साफ़",
+            "roman": "sāf",
+            "meaning": "clean"
+          },
+          {
+            "hindi": "है",
+            "roman": "hai",
+            "meaning": "is (present tense copula)"
+          }
+        ]
+      },
+      "etymology_journey": [
+        {
+          "stage": "Arabic",
+          "form": "صاف",
+          "roman": "sāf",
+          "meaning": "clear, pure, clean"
+        },
+        {
+          "stage": "Persian",
+          "form": "صاف",
+          "roman": "sāf",
+          "meaning": "clean, clear"
+        },
+        {
+          "stage": "Hindi",
+          "form": "साफ़",
+          "roman": "sāf",
+          "meaning": "clean, clear, plain"
+        }
+      ],
+      "origin_note": "From Arabic صاف (sāf), meaning ‘clear and pure’, which passed into Hindi through Persian."
+    },
+    {
+      "hindi": "हवादार",
+      "romanisation": "havādār",
+      "english": "airy / well-ventilated",
+      "pos": "adjective",
+      "anki_tags": [
+        "description",
+        "adjective",
+        "home",
+        "weather"
+      ],
+      "syllables": "ha · vā · dār",
+      "morphemes": [
+        {
+          "part": "हवा",
+          "roman": "havā",
+          "meaning": "air / wind",
+          "origin": "Arabic"
+        },
+        {
+          "part": "दार",
+          "roman": "dār",
+          "meaning": "having / possessing (suffix)",
+          "origin": "Persian"
+        }
+      ],
+      "usage_notes": "Literally ‘having air’. Used to describe rooms, houses, or locations with good airflow. The suffix दार (dār) is a Persian possessive suffix appearing in many Hindi words.",
+      "delhi_note": "A very practical word in Delhi given the heat. People often ask ‘कमरा हवादार है? (kamrā havādār hai?)’ when viewing a flat.",
+      "related_words": [
+        {
+          "hindi": "हवा",
+          "roman": "havā",
+          "english": "air / breeze / wind"
+        },
+        {
+          "hindi": "बंद",
+          "roman": "band",
+          "english": "closed / stuffy"
+        },
+        {
+          "hindi": "ठंडा",
+          "roman": "ṭhaṇḍā",
+          "english": "cool / cold"
+        },
+        {
+          "hindi": "खुला",
+          "roman": "khulā",
+          "english": "open"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "havā",
+          "association": "הווה",
+          "roman": "hoveh",
+          "language": "Hebrew",
+          "note": "Hebrew ‘הווה’ (hoveh — present tense) sounds close to ‘havā’; picture the present moment filled with a fresh breeze."
+        },
+        {
+          "part": "dār",
+          "association": "дар",
+          "roman": "dar",
+          "language": "Russian",
+          "note": "Russian ‘дар’ (dar — gift) echoes the ending; a well-ventilated room is a gift in a hot city."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "यह कमरा बहुत हवादार है।",
+        "roman": "yah kamrā bahut havādār hai.",
+        "english": "This room is very airy.",
+        "breakdown": [
+          {
+            "hindi": "यह",
+            "roman": "yah",
+            "meaning": "this"
+          },
+          {
+            "hindi": "कमरा",
+            "roman": "kamrā",
+            "meaning": "room"
+          },
+          {
+            "hindi": "बहुत",
+            "roman": "bahut",
+            "meaning": "very / a lot"
+          },
+          {
+            "hindi": "हवादार",
+            "roman": "havādār",
+            "meaning": "airy / well-ventilated"
+          },
+          {
+            "hindi": "है",
+            "roman": "hai",
+            "meaning": "is (present tense copula)"
+          }
+        ]
+      },
+      "etymology_journey": [
+        {
+          "stage": "Arabic",
+          "form": "هواء",
+          "roman": "hawāʾ",
+          "meaning": "air, atmosphere"
+        },
+        {
+          "stage": "Persian",
+          "form": "هوا",
+          "roman": "havā",
+          "meaning": "air, weather"
+        },
+        {
+          "stage": "Hindi (compound)",
+          "form": "हवादार",
+          "roman": "havādār",
+          "meaning": "airy, having good airflow"
+        }
+      ],
+      "origin_note": "A Persian-style compound: هوا (havā — air, from Arabic) + the Persian suffix دار (dār — possessing)."
+    },
+    {
+      "hindi": "लाल",
+      "romanisation": "lāl",
+      "english": "red",
+      "pos": "adjective",
+      "anki_tags": [
+        "colour",
+        "adjective",
+        "description"
+      ],
+      "syllables": "lāl",
+      "usage_notes": "An invariable adjective — it never changes form regardless of the gender or number of the noun it modifies.",
+      "related_words": [
+        {
+          "hindi": "नारंगी",
+          "roman": "nāraṃgī",
+          "english": "orange (colour)"
+        },
+        {
+          "hindi": "गुलाबी",
+          "roman": "gulābī",
+          "english": "pink"
+        },
+        {
+          "hindi": "लाल बत्ती",
+          "roman": "lāl battī",
+          "english": "red light"
+        },
+        {
+          "hindi": "रक्त",
+          "roman": "rakt",
+          "english": "blood / red (formal)"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "lāl",
+          "association": "lull",
+          "roman": "lull",
+          "language": "English",
+          "note": "‘Lāl’ sounds like ‘lull’ — imagine being lulled to sleep under a glowing red lamp."
+        },
+        {
+          "part": "lāl",
+          "association": "לַלָּה",
+          "roman": "lala",
+          "language": "Hebrew",
+          "note": "Hebrew ‘לַלָּה’ (lala — a lullaby hum) echoes the doubled syllable; picture humming to a child wrapped in a red blanket."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "उसकी गाड़ी लाल है।",
+        "roman": "uskī gāṛī lāl hai.",
+        "english": "His / her car is red.",
+        "breakdown": [
+          {
+            "hindi": "उसकी",
+            "roman": "uskī",
+            "meaning": "his / her (feminine possessive)"
+          },
+          {
+            "hindi": "गाड़ी",
+            "roman": "gāṛī",
+            "meaning": "car / vehicle"
+          },
+          {
+            "hindi": "लाल",
+            "roman": "lāl",
+            "meaning": "red"
+          },
+          {
+            "hindi": "है",
+            "roman": "hai",
+            "meaning": "is (present tense copula)"
+          }
+        ]
+      },
+      "etymology_journey": [
+        {
+          "stage": "Sanskrit",
+          "form": "लाल",
+          "roman": "lāla",
+          "meaning": "red; also a term of endearment"
+        },
+        {
+          "stage": "Hindi",
+          "form": "लाल",
+          "roman": "lāl",
+          "meaning": "red"
+        }
+      ],
+      "origin_note": "From Sanskrit लाल (lāla), which meant both ‘red’ and a term of endearment; the colour sense is primary in modern Hindi."
+    },
+    {
+      "hindi": "सफ़ेद",
+      "romanisation": "safed",
+      "english": "white",
+      "pos": "adjective",
+      "anki_tags": [
+        "colour",
+        "adjective",
+        "description"
+      ],
+      "syllables": "sa · fed",
+      "usage_notes": "An invariable adjective — it does not change for gender or number. Contrast with शुभ्र (shubhra) or श्वेत (shvet), which are formal/literary words for white rarely used in conversation.",
+      "delhi_note": "The standard everyday word for white in Delhi. You will hear it constantly — सफ़ेद कपड़े (safed kapṛe — white clothes), सफ़ेद बाल (safed bāl — white hair), etc.",
+      "related_words": [
+        {
+          "hindi": "काला",
+          "roman": "kālā",
+          "english": "black"
+        },
+        {
+          "hindi": "हल्का",
+          "roman": "halkā",
+          "english": "light (in colour)"
+        },
+        {
+          "hindi": "सफ़ेदी",
+          "roman": "safedī",
+          "english": "whiteness / whitewash"
+        },
+        {
+          "hindi": "दूधिया",
+          "roman": "dūdhiyā",
+          "english": "milky white"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "sa · fed",
+          "association": "сафьян",
+          "roman": "safyan",
+          "language": "Russian",
+          "note": "Russian ‘сафьян’ (safyan — fine white Morocco leather) shares the opening ‘saf’ sound; picture crisp white leather."
+        },
+        {
+          "part": "fed",
+          "association": "fed",
+          "roman": "fed",
+          "language": "English",
+          "note": "‘Sa-fed’ ends in ‘fed’ — picture a well-fed white cow grazing in a field."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "उसका कुर्ता सफ़ेद है।",
+        "roman": "uskā kurtā safed hai.",
+        "english": "His kurta is white.",
+        "breakdown": [
+          {
+            "hindi": "उसका",
+            "roman": "uskā",
+            "meaning": "his / her (masculine possessive)"
+          },
+          {
+            "hindi": "कुर्ता",
+            "roman": "kurtā",
+            "meaning": "kurta (a long shirt)"
+          },
+          {
+            "hindi": "सफ़ेद",
+            "roman": "safed",
+            "meaning": "white"
+          },
+          {
+            "hindi": "है",
+            "roman": "hai",
+            "meaning": "is (present tense copula)"
+          }
+        ]
+      },
+      "etymology_journey": [
+        {
+          "stage": "Persian",
+          "form": "سفید",
+          "roman": "safed",
+          "meaning": "white"
+        },
+        {
+          "stage": "Hindi",
+          "form": "सफ़ेद",
+          "roman": "safed",
+          "meaning": "white"
+        }
+      ],
+      "origin_note": "Borrowed directly from Persian سفید (safed), meaning ‘white’."
+    },
+    {
+      "hindi": "गुजराती",
+      "romanisation": "gujarātī",
+      "english": "Gujarati (person or language from Gujarat)",
+      "pos": "adjective",
+      "anki_tags": [
+        "nationality",
+        "language",
+        "adjective",
+        "India"
+      ],
+      "syllables": "gu · ja · rā · tī",
+      "usage_notes": "Used both as an adjective (गुजराती खाना — gujarātī khānā — Gujarati food) and as a noun referring to a person from Gujarat or the Gujarati language.",
+      "delhi_note": "Very commonly heard in Delhi, which has a large Gujarati community. Often used to refer to the community, the cuisine, or the language.",
+      "related_words": [
+        {
+          "hindi": "गुजरात",
+          "roman": "gujarāt",
+          "english": "Gujarat (the state)"
+        },
+        {
+          "hindi": "पंजाबी",
+          "roman": "panjābī",
+          "english": "Punjabi"
+        },
+        {
+          "hindi": "राजस्थानी",
+          "roman": "rājasthānī",
+          "english": "Rajasthani"
+        },
+        {
+          "hindi": "मराठी",
+          "roman": "marāṭhī",
+          "english": "Marathi"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "guja",
+          "association": "gouache",
+          "roman": "gouache",
+          "language": "English",
+          "note": "‘Gu-ja’ sounds like the start of ‘gouache’ (the opaque paint) — picture painting a colourful Gujarati market scene."
+        },
+        {
+          "part": "rātī",
+          "association": "ראתי",
+          "roman": "rāʾtī",
+          "language": "Hebrew",
+          "note": "Hebrew ‘ראתי’ (rāʾtī — I saw) echoes the ending; picture spotting a Gujarati textile stall for the first time."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "वो गुजराती है।",
+        "roman": "vo gujarātī hai.",
+        "english": "She / he is Gujarati.",
+        "breakdown": [
+          {
+            "hindi": "वो",
+            "roman": "vo",
+            "meaning": "she / he / they (informal third person)"
+          },
+          {
+            "hindi": "गुजराती",
+            "roman": "gujarātī",
+            "meaning": "Gujarati (person)"
+          },
+          {
+            "hindi": "है",
+            "roman": "hai",
+            "meaning": "is (present tense copula)"
+          }
+        ]
+      },
+      "origin_note": "Derived from the place name Gujarat, itself from Sanskrit गुर्जरात्र (gurjarātra), the region of the Gurjara people."
+    },
+    {
+      "hindi": "जर्मन",
+      "romanisation": "jarman",
+      "english": "German (person or language)",
+      "pos": "adjective",
+      "anki_tags": [
+        "nationality",
+        "language",
+        "adjective",
+        "Europe"
+      ],
+      "syllables": "jar · man",
+      "usage_notes": "Used both as adjective and noun. Invariable — does not change for gender or number.",
+      "related_words": [
+        {
+          "hindi": "जर्मनी",
+          "roman": "jarmanī",
+          "english": "Germany"
+        },
+        {
+          "hindi": "फ्रेंच",
+          "roman": "french",
+          "english": "French"
+        },
+        {
+          "hindi": "अँग्रेज़",
+          "roman": "aṃgrez",
+          "english": "English person / Briton"
+        },
+        {
+          "hindi": "यूरोपीय",
+          "roman": "yūropīy",
+          "english": "European"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "jar",
+          "association": "jar",
+          "roman": "jar",
+          "language": "English",
+          "note": "Sounds exactly like the English word ‘jar’ — picture a jar of German mustard."
+        },
+        {
+          "part": "man",
+          "association": "ман",
+          "roman": "man",
+          "language": "Russian",
+          "note": "Russian ‘ман’ suffix (man — person, as in Roman, Turman) anchors the ending; picture a man presenting a jar of sauerkraut."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "वो जर्मन बोलता है।",
+        "roman": "vo jarman boltā hai.",
+        "english": "He speaks German.",
+        "breakdown": [
+          {
+            "hindi": "वो",
+            "roman": "vo",
+            "meaning": "he / she"
+          },
+          {
+            "hindi": "जर्मन",
+            "roman": "jarman",
+            "meaning": "German (language)"
+          },
+          {
+            "hindi": "बोलता",
+            "roman": "boltā",
+            "meaning": "speaks (masculine present habitual)"
+          },
+          {
+            "hindi": "है",
+            "roman": "hai",
+            "meaning": "is (present tense auxiliary)"
+          }
+        ]
+      },
+      "origin_note": "A loanword borrowed directly from English ‘German’, itself derived from Latin Germanus."
+    },
+    {
+      "hindi": "पंजाबी",
+      "romanisation": "panjābī",
+      "english": "Punjabi (person or language from Punjab)",
+      "pos": "adjective",
+      "anki_tags": [
+        "nationality",
+        "language",
+        "adjective",
+        "India"
+      ],
+      "syllables": "pan · jā · bī",
+      "morphemes": [
+        {
+          "part": "पंज",
+          "roman": "panj",
+          "meaning": "five",
+          "origin": "Persian"
+        },
+        {
+          "part": "आब",
+          "roman": "āb",
+          "meaning": "water / river",
+          "origin": "Persian"
+        },
+        {
+          "part": "ई",
+          "roman": "ī",
+          "meaning": "relating to (adjectival suffix)",
+          "origin": "Persian"
+        }
+      ],
+      "usage_notes": "Used both as adjective and noun. The name Punjab itself means ‘land of five rivers’ — a useful way to remember the word.",
+      "delhi_note": "Extremely common in Delhi, which has one of the largest Punjabi communities in India. पंजाबी (panjābī) food, music, and expressions are deeply embedded in Delhi culture.",
+      "related_words": [
+        {
+          "hindi": "पंजाब",
+          "roman": "panjāb",
+          "english": "Punjab (the state)"
+        },
+        {
+          "hindi": "गुजराती",
+          "roman": "gujarātī",
+          "english": "Gujarati"
+        },
+        {
+          "hindi": "सिख",
+          "roman": "sikh",
+          "english": "Sikh"
+        },
+        {
+          "hindi": "हरियाणवी",
+          "roman": "hariyāṇvī",
+          "english": "Haryanvi"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "panj",
+          "association": "פנג׳",
+          "roman": "panj",
+          "language": "Hebrew",
+          "note": "In Hebrew slang, ‘פנג׳’ (panj) is borrowed from the same Persian root for five; picture five rivers flowing through golden wheat fields."
+        },
+        {
+          "part": "ābī",
+          "association": "אבא",
+          "roman": "abā",
+          "language": "Hebrew",
+          "note": "Hebrew ‘אבא’ (abā — father) echoes the ‘āb’ sound; picture a Punjabi father standing by the river."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "मेरी दोस्त पंजाबी है।",
+        "roman": "merī dost panjābī hai.",
+        "english": "My friend is Punjabi.",
+        "breakdown": [
+          {
+            "hindi": "मेरी",
+            "roman": "merī",
+            "meaning": "my (feminine)"
+          },
+          {
+            "hindi": "दोस्त",
+            "roman": "dost",
+            "meaning": "friend"
+          },
+          {
+            "hindi": "पंजाबी",
+            "roman": "panjābī",
+            "meaning": "Punjabi"
+          },
+          {
+            "hindi": "है",
+            "roman": "hai",
+            "meaning": "is (present tense copula)"
+          }
+        ]
+      },
+      "etymology_journey": [
+        {
+          "stage": "Persian",
+          "form": "پنجاب",
+          "roman": "panjāb",
+          "meaning": "land of five rivers (panj = five, āb = water)"
+        },
+        {
+          "stage": "Hindi",
+          "form": "पंजाबी",
+          "roman": "panjābī",
+          "meaning": "of or relating to Punjab; a Punjabi person or the language"
+        }
+      ],
+      "origin_note": "From Persian پنجاب (panjāb — land of five rivers), with the adjectival suffix -ī added."
+    },
+    {
+      "hindi": "अँग्रेज़",
+      "romanisation": "aṃgrez",
+      "english": "English person / Briton",
+      "pos": "noun",
+      "gender": "masculine",
+      "anki_tags": [
+        "nationality",
+        "noun",
+        "people",
+        "Europe"
+      ],
+      "syllables": "aṃ · grez",
+      "forms": [
+        {
+          "label": "feminine",
+          "hindi": "अँग्रेज़न",
+          "roman": "aṃgrezan"
+        },
+        {
+          "label": "oblique plural",
+          "hindi": "अँग्रेज़ों",
+          "roman": "aṃgrezoṃ"
+        }
+      ],
+      "usage_notes": "Refers specifically to a British person (historically associated with the English / British). For the English language, use अँग्रेज़ी (aṃgrezī). Do not confuse the two.",
+      "delhi_note": "The word carries a strong colonial-era flavour. In modern Delhi, ‘English’ is commonly said instead when referring to the language. For people, अँग्रेज़ (aṃgrez) is still used colloquially, sometimes to refer loosely to any white Westerner.",
+      "related_words": [
+        {
+          "hindi": "अँग्रेज़ी",
+          "roman": "aṃgrezī",
+          "english": "English (language or adjective)"
+        },
+        {
+          "hindi": "इंग्लैंड",
+          "roman": "iṃglaind",
+          "english": "England"
+        },
+        {
+          "hindi": "विदेशी",
+          "roman": "videśī",
+          "english": "foreigner"
+        },
+        {
+          "hindi": "गोरा",
+          "roman": "gorā",
+          "english": "white-skinned person (colloquial)"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "aṃ",
+          "association": "ам",
+          "roman": "am",
+          "language": "Russian",
+          "note": "Russian ‘ам’ (am — chomp / bite, childlike) gives the opening nasal sound; imagine chomping on a British biscuit."
+        },
+        {
+          "part": "grez",
+          "association": "грёз",
+          "roman": "grëz",
+          "language": "Russian",
+          "note": "Russian ‘грёз’ (grëz — of dreams, genitive of грёза) sounds very close; picture dreaming of a rainy English afternoon."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "वो अँग्रेज़ है।",
+        "roman": "vo aṃgrez hai.",
+        "english": "He / she is English.",
+        "breakdown": [
+          {
+            "hindi": "वो",
+            "roman": "vo",
+            "meaning": "he / she"
+          },
+          {
+            "hindi": "अँग्रेज़",
+            "roman": "aṃgrez",
+            "meaning": "English person / Briton"
+          },
+          {
+            "hindi": "है",
+            "roman": "hai",
+            "meaning": "is (present tense copula)"
+          }
+        ]
+      },
+      "etymology_journey": [
+        {
+          "stage": "Portuguese",
+          "form": "Inglês",
+          "roman": "inglesh",
+          "meaning": "English / Englishman"
+        },
+        {
+          "stage": "Hindi",
+          "form": "अँग्रेज़",
+          "roman": "aṃgrez",
+          "meaning": "English person / Briton"
+        }
+      ],
+      "origin_note": "Borrowed into Hindi from Portuguese Inglês (Englishman), reflecting early Portuguese contact with the subcontinent."
+    },
+    {
+      "hindi": "हिन्दुस्तानी",
+      "romanisation": "hindustānī",
+      "english": "Indian / Hindustani",
+      "pos": "adjective",
+      "anki_tags": [
+        "nationality",
+        "adjective",
+        "India",
+        "language"
+      ],
+      "syllables": "hin · dus · tā · nī",
+      "morphemes": [
+        {
+          "part": "हिन्दु",
+          "roman": "hindu",
+          "meaning": "relating to the Indus / India",
+          "origin": "Persian"
+        },
+        {
+          "part": "स्तान",
+          "roman": "stān",
+          "meaning": "land / place",
+          "origin": "Persian"
+        },
+        {
+          "part": "ई",
+          "roman": "ī",
+          "meaning": "of or relating to (adjectival suffix)",
+          "origin": "Persian"
+        }
+      ],
+      "usage_notes": "हिन्दुस्तानी (hindustānī) can refer to an Indian person, the Hindustani language (the shared spoken base of Hindi and Urdu), or anything culturally Indian. Slightly old-fashioned as a demonym — भारतीय (bhāratīy) is more formal/official for ‘Indian’.",
+      "delhi_note": "Still warmly used in Delhi, especially by older speakers and in Bollywood contexts. ‘हिन्दुस्तानी संगीत (hindustānī saṃgīt)’ specifically means classical North Indian music.",
+      "related_words": [
+        {
+          "hindi": "हिन्दुस्तान",
+          "roman": "hindustān",
+          "english": "India (informal/historical name)"
+        },
+        {
+          "hindi": "भारतीय",
+          "roman": "bhāratīy",
+          "english": "Indian (formal/official)"
+        },
+        {
+          "hindi": "देसी",
+          "roman": "desī",
+          "english": "local / Indian (colloquial)"
+        },
+        {
+          "hindi": "भारत",
+          "roman": "bhārat",
+          "english": "India (official name)"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "hindu",
+          "association": "Hindu",
+          "roman": "Hindu",
+          "language": "English",
+          "note": "The first part sounds exactly like the English word ‘Hindu’, anchoring you to the Indian subcontinent immediately."
+        },
+        {
+          "part": "stānī",
+          "association": "стан",
+          "roman": "stan",
+          "language": "Russian",
+          "note": "Russian ‘стан’ (stan — camp, settlement, land) is the same Persian root in Kazakhstan, Pakistan, etc. — think ‘land of the Hindus’."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "मैं हिन्दुस्तानी हूँ।",
+        "roman": "maiṃ hindustānī hūṃ.",
+        "english": "I am Indian.",
+        "breakdown": [
+          {
+            "hindi": "मैं",
+            "roman": "maiṃ",
+            "meaning": "I"
+          },
+          {
+            "hindi": "हिन्दुस्तानी",
+            "roman": "hindustānī",
+            "meaning": "Indian / Hindustani"
+          },
+          {
+            "hindi": "हूँ",
+            "roman": "hūṃ",
+            "meaning": "am (first person copula)"
+          }
+        ]
+      },
+      "etymology_journey": [
+        {
+          "stage": "Old Persian",
+          "form": "हिन्दू",
+          "roman": "hindū",
+          "meaning": "relating to the Indus River and the land beyond it"
+        },
+        {
+          "stage": "Persian",
+          "form": "هندوستان",
+          "roman": "hindustān",
+          "meaning": "land of the Hindus / India"
+        },
+        {
+          "stage": "Hindi",
+          "form": "हिन्दुस्तानी",
+          "roman": "hindustānī",
+          "meaning": "Indian, of or relating to Hindustan"
+        }
+      ],
+      "origin_note": "From Persian هندوستان (hindustān — land of the Hindus), itself built on the Old Persian name for the Indus River region, with the adjectival suffix -ī."
+    }
+  ]
+}

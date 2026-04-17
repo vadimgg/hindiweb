@@ -1,6 +1,6 @@
 # Architecture
 
-_Generated 2026-04-16 by `npm run arch`._
+_Generated 2026-04-17 by `npm run arch`._
 
 ---
 
@@ -38,7 +38,7 @@ _Generated 2026-04-16 by `npm run arch`._
 | `src/scripts/anki/fields/exampleSentence.js` | 49 | building the Anki ExampleSentence HTML field |
 | `src/scripts/anki/fields/forms.js` | 36 | building the Anki Forms HTML field (inflected form chips) |
 | `src/scripts/anki/fields/gender.js` | 24 | building the Anki Gender HTML field |
-| `src/scripts/anki/fields/index.js` | 67 | assembling wordToAnkiFields() from all individual field builders |
+| `src/scripts/anki/fields/index.js` | 63 | assembling wordToAnkiFields() from all individual field builders |
 | `src/scripts/anki/fields/morphemes.js` | 50 | building the Anki Morphemes HTML field |
 | `src/scripts/anki/fields/relatedWords.js` | 44 | building the Anki RelatedWords HTML field |
 | `src/scripts/anki/fields/sentenceBreakdown.js` | 50 | WordBreakdown Anki field HTML for Hindi Sentence note type |
@@ -49,7 +49,7 @@ _Generated 2026-04-16 by `npm run arch`._
 | `src/scripts/anki/fields/utils.js` | 109 | shared HTML-building utilities for Anki card field builders |
 | `src/scripts/anki/connect.js` | 46 | AnkiConnect HTTP API wrapper and connection status check |
 | `src/scripts/anki/export.js` | 248 | orchestrating Anki deck creation, note type verification, and card addition |
-| `src/scripts/anki/noteType.js` | 134 | Anki note type definition — CSS, front/back card templates, field list |
+| `src/scripts/anki/noteType.js` | 132 | Anki note type definition — CSS, front/back card templates, field list |
 | `src/scripts/anki/sentenceNoteType.js` | 96 | Anki sentence note type definition — CSS, templates, field list |
 | `src/scripts/anki/tagUtils.js` | 35 | shared Anki tag-building utility used by export.js and txtFallback.js |
 | `src/scripts/anki/txtFallback.js` | 50 | generating and triggering browser download of a .txt file for manual Anki import |
@@ -70,7 +70,7 @@ _Generated 2026-04-16 by `npm run arch`._
 | `src/utils/audioHelpers.ts` | 31 | resolving audio file paths for words and sentences from their JSON fields |
 | `src/utils/cardHelpers.ts` | 119 | pure helper functions shared across WordCard section components |
 | `src/utils/highlight.ts` | 121 | rich text highlighting for vocabulary card text content |
-| `src/utils/types.ts` | 108 | shared TypeScript interfaces used across Astro components and client scripts |
+| `src/utils/types.ts` | 104 | shared TypeScript interfaces used across Astro components and client scripts |
 | `scripts/aggregate-changelog.js` | 54 | aggregating individual changelog/ entries into CHANGELOG.md |
 | `scripts/arch.js` | 364 | scanning src/ source files and generating ARCHITECTURE.md |
 | `scripts/coverage.js` | 295 | scanning vocab/words/ JSON files and generating FIELD_REGISTRY.md |
@@ -279,7 +279,7 @@ _Generated 2026-04-16 by `npm run arch`._
 
 #### `noteType.js`
 **Responsibility:** Anki note type definition — CSS, front/back card templates, field list  
-**Lines:** 134
+**Lines:** 132
 **Exports:** `ANKI_BACK`, `ANKI_CSS`, `ANKI_FIELDS`, `ANKI_FRONT`, `ANKI_NOTE_TYPE`
 
 #### `sentenceNoteType.js`
@@ -372,8 +372,8 @@ _Generated 2026-04-16 by `npm run arch`._
 
 #### `index.js`
 **Responsibility:** assembling wordToAnkiFields() from all individual field builders  
-**Lines:** 67
-**Depends on:** `../noteType.js`, `./category.js`, `./gender.js`, `./transitivity.js`, `./syllables.js`, `./forms.js`, `./morphemes.js`, `./usageNotes.js`, `./collocations.js`, `./relatedWords.js`, `./soundAlikes.js`, `./exampleSentence.js`, `./delhiNote.js`, `./etymology.js`, `./audio.js`, `./utils.js`
+**Lines:** 63
+**Depends on:** `../noteType.js`, `./category.js`, `./gender.js`, `./transitivity.js`, `./syllables.js`, `./forms.js`, `./usageNotes.js`, `./relatedWords.js`, `./soundAlikes.js`, `./exampleSentence.js`, `./delhiNote.js`, `./etymology.js`, `./audio.js`, `./utils.js`
 **Exports:** `wordToAnkiFields`
 **Functions:**
 - `wordToAnkiFields()` — Converts a vocabulary word object into a complete Anki fields object.
@@ -640,7 +640,7 @@ _Generated 2026-04-16 by `npm run arch`._
 
 #### `types.ts`
 **Responsibility:** shared TypeScript interfaces used across Astro components and client scripts  
-**Lines:** 108
+**Lines:** 104
 **Exports:** `Collocation`, `EtymologyStage`, `ExampleSentence`, `ExampleSentenceToken`, `Form`, `HoverEntry`, `Morpheme`, `RelatedWord`, `SearchEntry`, `Sentence`, `SentenceChapter`, `SentenceWord`, `SoundAlike`, `Word`, `WordGroup`
 
 ---

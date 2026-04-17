@@ -9,8 +9,7 @@
       "gender": "masculine",
       "anki_tags": [
         "people",
-        "noun",
-        "family"
+        "noun"
       ],
       "syllables": "laṛ · kā",
       "forms": [
@@ -22,29 +21,7 @@
         {
           "label": "oblique plural",
           "hindi": "लड़कों",
-          "roman": "laṛkõ"
-        }
-      ],
-      "collocations": [
-        {
-          "hindi": "छोटा लड़का",
-          "roman": "choṭā laṛkā",
-          "english": "little boy"
-        },
-        {
-          "hindi": "लड़का है",
-          "roman": "laṛkā hai",
-          "english": "it's a boy"
-        },
-        {
-          "hindi": "अच्छा लड़का",
-          "roman": "acchā laṛkā",
-          "english": "good boy"
-        },
-        {
-          "hindi": "लड़का पढ़ रहा है",
-          "roman": "laṛkā paṛh rahā hai",
-          "english": "the boy is studying"
+          "roman": "laṛkoṃ"
         }
       ],
       "related_words": [
@@ -56,43 +33,33 @@
         {
           "hindi": "बच्चा",
           "roman": "baccā",
-          "english": "child"
-        },
-        {
-          "hindi": "लड़कपन",
-          "roman": "laṛkapan",
-          "english": "boyhood, childhood"
-        },
-        {
-          "hindi": "जवान",
-          "roman": "javān",
-          "english": "young man"
+          "english": "child (masculine)"
         }
       ],
       "sound_alikes": [
         {
           "part": "laṛ",
-          "association": "ларь",
-          "roman": "lar'",
-          "language": "Russian",
-          "note": "Russian ларь (a wooden chest or bin) starts with the same sound — helps anchor the 'laṛ' opening of the word."
+          "association": "ladder",
+          "roman": "ladder",
+          "language": "English",
+          "note": "A boy climbs a ladder — the 'ladd' sound is very close to 'laṛ'"
         },
         {
           "part": "kā",
-          "association": "ка",
-          "roman": "ka",
-          "language": "Russian",
-          "note": "The common Russian diminutive suffix -ка echoes the ending, giving the whole word a familiar feel."
+          "association": "car",
+          "roman": "car",
+          "language": "English",
+          "note": "Boys love cars — 'kā' sounds like 'car' without the r"
         }
       ],
       "example_sentence": {
-        "hindi": "वो लड़का मेरे स्कूल में पढ़ता है।",
-        "roman": "vo laṛkā mere skūl mẽ paṛhtā hai.",
-        "english": "That boy studies at my school.",
+        "hindi": "वह लड़का स्कूल जाता है।",
+        "roman": "vah laṛkā skūl jātā hai.",
+        "english": "That boy goes to school.",
         "breakdown": [
           {
-            "hindi": "वो",
-            "roman": "vo",
+            "hindi": "वह",
+            "roman": "vah",
             "meaning": "that / he"
           },
           {
@@ -101,39 +68,29 @@
             "meaning": "boy"
           },
           {
-            "hindi": "मेरे",
-            "roman": "mere",
-            "meaning": "my (oblique)"
-          },
-          {
             "hindi": "स्कूल",
             "roman": "skūl",
             "meaning": "school"
           },
           {
-            "hindi": "में",
-            "roman": "mẽ",
-            "meaning": "in / at (postposition)"
-          },
-          {
-            "hindi": "पढ़ता है",
-            "roman": "paṛhtā hai",
-            "meaning": "studies (habitual present)"
+            "hindi": "जाता है",
+            "roman": "jātā hai",
+            "meaning": "goes (masculine habitual)"
           }
         ]
       },
       "etymology_journey": [
         {
           "stage": "Sanskrit",
-          "form": "रट्ट",
-          "roman": "raṭṭa",
-          "meaning": "to repeat, to wrestle"
+          "form": "राटक",
+          "roman": "rāṭaka",
+          "meaning": "boy, young man"
         },
         {
           "stage": "Prakrit/Apabhramsha",
           "form": "लड्ड",
           "roman": "laḍḍa",
-          "meaning": "boy, youngster"
+          "meaning": "boy"
         },
         {
           "stage": "Hindi",
@@ -141,8 +98,7 @@
           "roman": "laṛkā",
           "meaning": "boy"
         }
-      ],
-      "origin_note": "Derived from an old Indo-Aryan root related to youth and playfulness, evolving through Prakrit into modern Hindi."
+      ]
     },
     {
       "hindi": "लड़की",
@@ -152,42 +108,19 @@
       "gender": "feminine",
       "anki_tags": [
         "people",
-        "noun",
-        "family"
+        "noun"
       ],
       "syllables": "laṛ · kī",
       "forms": [
         {
           "label": "direct plural",
           "hindi": "लड़कियाँ",
-          "roman": "laṛkiyā̃"
+          "roman": "laṛkiyāṃ"
         },
         {
           "label": "oblique plural",
           "hindi": "लड़कियों",
-          "roman": "laṛkiyõ"
-        }
-      ],
-      "collocations": [
-        {
-          "hindi": "छोटी लड़की",
-          "roman": "choṭī laṛkī",
-          "english": "little girl"
-        },
-        {
-          "hindi": "अच्छी लड़की",
-          "roman": "acchī laṛkī",
-          "english": "good girl"
-        },
-        {
-          "hindi": "लड़की है",
-          "roman": "laṛkī hai",
-          "english": "it's a girl"
-        },
-        {
-          "hindi": "लड़की पढ़ रही है",
-          "roman": "laṛkī paṛh rahī hai",
-          "english": "the girl is studying"
+          "roman": "laṛkiyoṃ"
         }
       ],
       "related_words": [
@@ -199,43 +132,33 @@
         {
           "hindi": "बच्ची",
           "roman": "baccī",
-          "english": "female child"
-        },
-        {
-          "hindi": "औरत",
-          "roman": "aurat",
-          "english": "woman"
-        },
-        {
-          "hindi": "बेटी",
-          "roman": "beṭī",
-          "english": "daughter"
+          "english": "child (feminine)"
         }
       ],
       "sound_alikes": [
         {
           "part": "laṛ",
-          "association": "ларь",
-          "roman": "lar'",
-          "language": "Russian",
-          "note": "Same opening sound as Russian ларь — helps lock in the 'laṛ' part shared with लड़का."
+          "association": "ladder",
+          "roman": "ladder",
+          "language": "English",
+          "note": "'laṛ' sounds like the start of 'ladder' — the girl climbs a ladder"
         },
         {
           "part": "kī",
-          "association": "כִּי",
-          "roman": "ki",
-          "language": "Hebrew",
-          "note": "Hebrew כִּי (because / that) sounds identical — the short -kī ending is the only thing distinguishing girl from boy (laṛkā), so this highlights the key feminine suffix."
+          "association": "key",
+          "roman": "key",
+          "language": "English",
+          "note": "'kī' sounds just like 'key' — the girl holds the key"
         }
       ],
       "example_sentence": {
-        "hindi": "वो लड़की मेरी दोस्त है।",
-        "roman": "vo laṛkī merī dost hai.",
-        "english": "That girl is my friend.",
+        "hindi": "वह लड़की बहुत होशियार है।",
+        "roman": "vah laṛkī bahut hośiyār hai.",
+        "english": "That girl is very clever.",
         "breakdown": [
           {
-            "hindi": "वो",
-            "roman": "vo",
+            "hindi": "वह",
+            "roman": "vah",
             "meaning": "that / she"
           },
           {
@@ -244,14 +167,14 @@
             "meaning": "girl"
           },
           {
-            "hindi": "मेरी",
-            "roman": "merī",
-            "meaning": "my (feminine)"
+            "hindi": "बहुत",
+            "roman": "bahut",
+            "meaning": "very / a lot"
           },
           {
-            "hindi": "दोस्त",
-            "roman": "dost",
-            "meaning": "friend"
+            "hindi": "होशियार",
+            "roman": "hośiyār",
+            "meaning": "clever, smart"
           },
           {
             "hindi": "है",
@@ -260,7 +183,20 @@
           }
         ]
       },
-      "origin_note": "Feminine counterpart of लड़का, formed with the standard Hindi feminine suffix -ī, from the same Indo-Aryan root."
+      "etymology_journey": [
+        {
+          "stage": "Sanskrit",
+          "form": "राटका",
+          "roman": "rāṭakā",
+          "meaning": "girl, young female"
+        },
+        {
+          "stage": "Hindi",
+          "form": "लड़की",
+          "roman": "laṛkī",
+          "meaning": "girl (feminine of लड़का)"
+        }
+      ]
     },
     {
       "hindi": "लड़के",
@@ -270,34 +206,10 @@
       "gender": "masculine",
       "anki_tags": [
         "people",
-        "noun",
-        "family",
-        "plural"
+        "noun"
       ],
       "syllables": "laṛ · ke",
-      "usage_notes": "लड़के is both the direct plural (boys) and the oblique singular (of/to a boy). Context and postpositions make the meaning clear.",
-      "collocations": [
-        {
-          "hindi": "लड़के खेल रहे हैं",
-          "roman": "laṛke khel rahe haĩ",
-          "english": "the boys are playing"
-        },
-        {
-          "hindi": "सब लड़के",
-          "roman": "sab laṛke",
-          "english": "all the boys"
-        },
-        {
-          "hindi": "लड़के को",
-          "roman": "laṛke ko",
-          "english": "to the boy (oblique singular + ko)"
-        },
-        {
-          "hindi": "दो लड़के",
-          "roman": "do laṛke",
-          "english": "two boys"
-        }
-      ],
+      "usage_notes": "लड़के (laṛke) is the direct plural of लड़का (laṛkā), meaning 'boys'. It is also the oblique singular form used before postpositions (e.g. लड़के को — to the boy). Context tells you which meaning applies.",
       "related_words": [
         {
           "hindi": "लड़का",
@@ -305,102 +217,51 @@
           "english": "boy (singular)"
         },
         {
-          "hindi": "लड़कियाँ",
-          "roman": "laṛkiyā̃",
-          "english": "girls (plural)"
+          "hindi": "लड़की",
+          "roman": "laṛkī",
+          "english": "girl"
         },
         {
           "hindi": "बच्चे",
           "roman": "bacce",
-          "english": "children (plural)"
-        }
-      ],
-      "sound_alikes": [
-        {
-          "part": "laṛ",
-          "association": "ларь",
-          "roman": "lar'",
-          "language": "Russian",
-          "note": "The Russian word for a storage chest shares this opening sound — a useful anchor for the whole लड़क- family."
-        },
-        {
-          "part": "ke",
-          "association": "ке",
-          "roman": "ke",
-          "language": "Russian",
-          "note": "Sounds like the Russian dative/prepositional ending -ке, reminding you that this form also functions as the oblique case in Hindi."
+          "english": "children"
         }
       ],
       "example_sentence": {
-        "hindi": "तीन लड़के पार्क में हैं।",
-        "roman": "tīn laṛke pārk mẽ haĩ.",
-        "english": "Three boys are in the park.",
+        "hindi": "सब लड़के खेल रहे हैं।",
+        "roman": "sab laṛke khel rahe haiṃ.",
+        "english": "All the boys are playing.",
         "breakdown": [
           {
-            "hindi": "तीन",
-            "roman": "tīn",
-            "meaning": "three"
+            "hindi": "सब",
+            "roman": "sab",
+            "meaning": "all"
           },
           {
             "hindi": "लड़के",
             "roman": "laṛke",
-            "meaning": "boys (direct plural)"
+            "meaning": "boys"
           },
           {
-            "hindi": "पार्क",
-            "roman": "pārk",
-            "meaning": "park"
-          },
-          {
-            "hindi": "में",
-            "roman": "mẽ",
-            "meaning": "in (postposition)"
-          },
-          {
-            "hindi": "हैं",
-            "roman": "haĩ",
-            "meaning": "are (plural)"
+            "hindi": "खेल रहे हैं",
+            "roman": "khel rahe haiṃ",
+            "meaning": "are playing (masculine plural continuous)"
           }
         ]
-      },
-      "origin_note": "The direct plural and oblique singular of लड़का, following the standard masculine -ā → -e pattern of Hindi noun inflection."
+      }
     },
     {
       "hindi": "लड़कियाँ",
-      "romanisation": "laṛkiyā̃",
+      "romanisation": "laṛkiyāṃ",
       "english": "girls",
       "pos": "noun",
       "gender": "feminine",
       "anki_tags": [
         "people",
-        "noun",
-        "family",
-        "plural"
+        "noun"
       ],
-      "syllables": "laṛ · ki · yā̃",
-      "usage_notes": "लड़कियाँ is the direct plural of लड़की. The oblique plural is लड़कियों (laṛkiyõ). These two forms have different spellings and must not be confused.",
-      "collocations": [
-        {
-          "hindi": "लड़कियाँ खेल रही हैं",
-          "roman": "laṛkiyā̃ khel rahī haĩ",
-          "english": "the girls are playing"
-        },
-        {
-          "hindi": "सब लड़कियाँ",
-          "roman": "sab laṛkiyā̃",
-          "english": "all the girls"
-        },
-        {
-          "hindi": "दो लड़कियाँ",
-          "roman": "do laṛkiyā̃",
-          "english": "two girls"
-        },
-        {
-          "hindi": "लड़कियाँ और लड़के",
-          "roman": "laṛkiyā̃ aur laṛke",
-          "english": "girls and boys"
-        }
-      ],
+      "syllables": "laṛ · ki · yāṃ",
+      "usage_notes": "लड़कियाँ (laṛkiyāṃ) is the direct plural of लड़की (laṛkī). The oblique plural is लड़कियों (laṛkiyoṃ), used before postpositions.",
       "related_words": [
         {
           "hindi": "लड़की",
@@ -408,65 +269,43 @@
           "english": "girl (singular)"
         },
         {
-          "hindi": "लड़कियों",
-          "roman": "laṛkiyõ",
-          "english": "girls (oblique plural)"
-        },
-        {
           "hindi": "लड़के",
           "roman": "laṛke",
-          "english": "boys (plural)"
+          "english": "boys"
         },
         {
           "hindi": "बच्चियाँ",
-          "roman": "bacciyā̃",
-          "english": "female children (plural)"
-        }
-      ],
-      "sound_alikes": [
-        {
-          "part": "laṛki",
-          "association": "ларки",
-          "roman": "larki",
-          "language": "Russian",
-          "note": "Sounds almost like a Russian genitive plural — the familiar Slavic ending helps lock in the base लड़कि- before the nasal plural suffix."
-        },
-        {
-          "part": "yā̃",
-          "association": "יָן",
-          "roman": "yan",
-          "language": "Hebrew",
-          "note": "The nasal ending -yā̃ echoes Hebrew names ending in יָן (yan), giving a memorable hook for the feminine plural suffix."
+          "roman": "bacciyāṃ",
+          "english": "girls / female children (plural)"
         }
       ],
       "example_sentence": {
-        "hindi": "चार लड़कियाँ स्कूल जा रही हैं।",
-        "roman": "cār laṛkiyā̃ skūl jā rahī haĩ.",
-        "english": "Four girls are going to school.",
+        "hindi": "तीन लड़कियाँ बाज़ार गई।",
+        "roman": "tīn laṛkiyāṃ bāzār gaī.",
+        "english": "Three girls went to the market.",
         "breakdown": [
           {
-            "hindi": "चार",
-            "roman": "cār",
-            "meaning": "four"
+            "hindi": "तीन",
+            "roman": "tīn",
+            "meaning": "three"
           },
           {
             "hindi": "लड़कियाँ",
-            "roman": "laṛkiyā̃",
-            "meaning": "girls (direct plural)"
+            "roman": "laṛkiyāṃ",
+            "meaning": "girls"
           },
           {
-            "hindi": "स्कूल",
-            "roman": "skūl",
-            "meaning": "school"
+            "hindi": "बाज़ार",
+            "roman": "bāzār",
+            "meaning": "market"
           },
           {
-            "hindi": "जा रही हैं",
-            "roman": "jā rahī haĩ",
-            "meaning": "are going (feminine plural continuous)"
+            "hindi": "गई",
+            "roman": "gaī",
+            "meaning": "went (feminine plural)"
           }
         ]
-      },
-      "origin_note": "The direct plural of लड़की, formed by the standard Hindi feminine -ī → -iyā̃ plural pattern with nasalisation."
+      }
     },
     {
       "hindi": "आदमी",
@@ -479,30 +318,7 @@
         "noun"
       ],
       "syllables": "ād · mī",
-      "usage_notes": "आदमी is a non-inflecting masculine noun — its Devanagari spelling never changes across singular, plural, or oblique forms. It can also mean 'person' or 'human being' in a generic sense.",
-      "delhi_note": "आदमी is the everyday Delhi word for 'man' and 'person' — completely natural in conversation. मर्द (mard) also exists but sounds tougher or more emphatic.",
-      "collocations": [
-        {
-          "hindi": "अच्छा आदमी",
-          "roman": "acchā ādmī",
-          "english": "good man / good person"
-        },
-        {
-          "hindi": "बूढ़ा आदमी",
-          "roman": "būṛhā ādmī",
-          "english": "old man"
-        },
-        {
-          "hindi": "कोई आदमी",
-          "roman": "koī ādmī",
-          "english": "some man / someone"
-        },
-        {
-          "hindi": "आदमी आया",
-          "roman": "ādmī āyā",
-          "english": "a man came"
-        }
-      ],
+      "usage_notes": "आदमी (ādmī) is a non-inflecting noun — its form does not change in any grammatical context. It can also mean 'person' or 'human being' in a generic sense.",
       "related_words": [
         {
           "hindi": "औरत",
@@ -510,45 +326,40 @@
           "english": "woman"
         },
         {
-          "hindi": "मर्द",
-          "roman": "mard",
-          "english": "man (emphatic / tough connotation)"
+          "hindi": "लड़का",
+          "roman": "laṛkā",
+          "english": "boy"
         },
         {
           "hindi": "इंसान",
           "roman": "insān",
           "english": "human being, person"
-        },
-        {
-          "hindi": "लोग",
-          "roman": "log",
-          "english": "people"
         }
       ],
       "sound_alikes": [
         {
           "part": "ād",
-          "association": "אָדָם",
-          "roman": "ādām",
-          "language": "Hebrew",
-          "note": "Hebrew אָדָם (ādām) means 'man / human' — almost identical in sound and meaning, making this the most powerful mnemonic available for this word."
+          "association": "add",
+          "roman": "add",
+          "language": "English",
+          "note": "'ād' sounds like 'add' — a man adds things up"
         },
         {
           "part": "mī",
-          "association": "ми",
-          "roman": "mi",
-          "language": "Russian",
-          "note": "The ending -mī sounds like Russian ми (the musical note or informal 'we' in colloquial speech) — a light hook for the second syllable."
+          "association": "me",
+          "roman": "me",
+          "language": "English",
+          "note": "'mī' sounds like 'me' — the man says 'add me!'"
         }
       ],
       "example_sentence": {
-        "hindi": "वो आदमी दुकान पर काम करता है।",
-        "roman": "vo ādmī dukān par kām kartā hai.",
-        "english": "That man works at the shop.",
+        "hindi": "वह आदमी डॉक्टर है।",
+        "roman": "vah ādmī ḍŏkṭar hai.",
+        "english": "That man is a doctor.",
         "breakdown": [
           {
-            "hindi": "वो",
-            "roman": "vo",
+            "hindi": "वह",
+            "roman": "vah",
             "meaning": "that / he"
           },
           {
@@ -557,24 +368,14 @@
             "meaning": "man"
           },
           {
-            "hindi": "दुकान",
-            "roman": "dukān",
-            "meaning": "shop"
+            "hindi": "डॉक्टर",
+            "roman": "ḍŏkṭar",
+            "meaning": "doctor"
           },
           {
-            "hindi": "पर",
-            "roman": "par",
-            "meaning": "at / on (postposition)"
-          },
-          {
-            "hindi": "काम",
-            "roman": "kām",
-            "meaning": "work"
-          },
-          {
-            "hindi": "करता है",
-            "roman": "kartā hai",
-            "meaning": "does / works (habitual present, masculine)"
+            "hindi": "है",
+            "roman": "hai",
+            "meaning": "is"
           }
         ]
       },
@@ -582,23 +383,459 @@
         {
           "stage": "Arabic",
           "form": "آدم",
-          "roman": "Ādam",
-          "meaning": "Adam, the first man; mankind"
+          "roman": "ādam",
+          "meaning": "Adam; the first man, humanity"
         },
         {
           "stage": "Persian",
           "form": "آدمی",
-          "roman": "ādamī",
-          "meaning": "man, person, human being"
+          "roman": "ādmī",
+          "meaning": "man, human being"
         },
         {
           "stage": "Hindi",
           "form": "आदमी",
           "roman": "ādmī",
-          "meaning": "man, person"
+          "meaning": "man"
         }
       ],
-      "origin_note": "From Persian آدمی (ādamī), itself from Arabic آدم (Ādam) — the biblical Adam — meaning 'man' or 'human being'."
+      "origin_note": "From Arabic آدم (ādam), the biblical Adam, via Persian آدمی (ādmī) meaning 'human being'."
+    },
+    {
+      "hindi": "औरत",
+      "romanisation": "aurat",
+      "english": "woman",
+      "pos": "noun",
+      "gender": "feminine",
+      "anki_tags": [
+        "people",
+        "noun"
+      ],
+      "syllables": "au · rat",
+      "forms": [
+        {
+          "label": "direct plural",
+          "hindi": "औरतें",
+          "roman": "aurateṃ"
+        },
+        {
+          "label": "oblique plural",
+          "hindi": "औरतों",
+          "roman": "auratoṃ"
+        }
+      ],
+      "usage_notes": "औरत (aurat) is the common everyday word for woman.",
+      "related_words": [
+        {
+          "hindi": "आदमी",
+          "roman": "ādmī",
+          "english": "man"
+        },
+        {
+          "hindi": "लड़की",
+          "roman": "laṛkī",
+          "english": "girl"
+        },
+        {
+          "hindi": "महिला",
+          "roman": "mahilā",
+          "english": "woman (formal/respectful)"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "au",
+          "association": "ow",
+          "roman": "ow",
+          "language": "English",
+          "note": "'au' sounds like the English exclamation 'ow!' — imagine a woman saying 'ow!'"
+        },
+        {
+          "part": "rat",
+          "association": "rat",
+          "roman": "rat",
+          "language": "English",
+          "note": "'rat' sounds exactly like the English word — picture a woman chasing a rat"
+        }
+      ],
+      "example_sentence": {
+        "hindi": "वह औरत बाज़ार में है।",
+        "roman": "vah aurat bāzār meṃ hai.",
+        "english": "That woman is in the market.",
+        "breakdown": [
+          {
+            "hindi": "वह",
+            "roman": "vah",
+            "meaning": "that / she"
+          },
+          {
+            "hindi": "औरत",
+            "roman": "aurat",
+            "meaning": "woman"
+          },
+          {
+            "hindi": "बाज़ार",
+            "roman": "bāzār",
+            "meaning": "market"
+          },
+          {
+            "hindi": "में",
+            "roman": "meṃ",
+            "meaning": "in"
+          },
+          {
+            "hindi": "है",
+            "roman": "hai",
+            "meaning": "is"
+          }
+        ]
+      },
+      "etymology_journey": [
+        {
+          "stage": "Arabic",
+          "form": "عورة",
+          "roman": "'awra",
+          "meaning": "intimate parts; vulnerability"
+        },
+        {
+          "stage": "Persian/Urdu",
+          "form": "عورت",
+          "roman": "aurat",
+          "meaning": "woman"
+        },
+        {
+          "stage": "Hindi",
+          "form": "औरत",
+          "roman": "aurat",
+          "meaning": "woman"
+        }
+      ],
+      "origin_note": "From Arabic عورة ('awra), originally meaning 'vulnerability', which shifted in Persian and Urdu to mean 'woman'."
+    },
+    {
+      "hindi": "बच्चा",
+      "romanisation": "baccā",
+      "english": "child (masculine)",
+      "pos": "noun",
+      "gender": "masculine",
+      "anki_tags": [
+        "people",
+        "noun"
+      ],
+      "syllables": "bac · cā",
+      "forms": [
+        {
+          "label": "direct plural / oblique singular",
+          "hindi": "बच्चे",
+          "roman": "bacce"
+        },
+        {
+          "label": "oblique plural",
+          "hindi": "बच्चों",
+          "roman": "baccoṃ"
+        }
+      ],
+      "usage_notes": "बच्चा (baccā) is the masculine form for child. Its feminine counterpart is बच्ची (baccī). The plural बच्चे (bacce) can refer to a mixed-gender group of children.",
+      "related_words": [
+        {
+          "hindi": "बच्ची",
+          "roman": "baccī",
+          "english": "child (feminine)"
+        },
+        {
+          "hindi": "बच्चे",
+          "roman": "bacce",
+          "english": "children"
+        },
+        {
+          "hindi": "लड़का",
+          "roman": "laṛkā",
+          "english": "boy"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "bacc",
+          "association": "Bach",
+          "roman": "bakh",
+          "language": "English",
+          "note": "'bacc' sounds close to 'Bach' (the composer) — picture a child listening to Bach"
+        },
+        {
+          "part": "ā",
+          "association": "ah",
+          "roman": "ah",
+          "language": "English",
+          "note": "The long 'ā' is just a drawn-out 'ah' of surprise at seeing a baby"
+        }
+      ],
+      "example_sentence": {
+        "hindi": "यह बच्चा बहुत प्यारा है।",
+        "roman": "yah baccā bahut pyārā hai.",
+        "english": "This child is very cute.",
+        "breakdown": [
+          {
+            "hindi": "यह",
+            "roman": "yah",
+            "meaning": "this"
+          },
+          {
+            "hindi": "बच्चा",
+            "roman": "baccā",
+            "meaning": "child (masculine)"
+          },
+          {
+            "hindi": "बहुत",
+            "roman": "bahut",
+            "meaning": "very"
+          },
+          {
+            "hindi": "प्यारा",
+            "roman": "pyārā",
+            "meaning": "cute, dear (masculine)"
+          },
+          {
+            "hindi": "है",
+            "roman": "hai",
+            "meaning": "is"
+          }
+        ]
+      },
+      "etymology_journey": [
+        {
+          "stage": "Sanskrit",
+          "form": "वत्स",
+          "roman": "vatsa",
+          "meaning": "calf; term of endearment for a child"
+        },
+        {
+          "stage": "Prakrit",
+          "form": "वच्छ",
+          "roman": "vaccha",
+          "meaning": "young one, child"
+        },
+        {
+          "stage": "Hindi",
+          "form": "बच्चा",
+          "roman": "baccā",
+          "meaning": "child"
+        }
+      ]
+    },
+    {
+      "hindi": "बच्ची",
+      "romanisation": "baccī",
+      "english": "child (feminine)",
+      "pos": "noun",
+      "gender": "feminine",
+      "anki_tags": [
+        "people",
+        "noun"
+      ],
+      "syllables": "bac · cī",
+      "forms": [
+        {
+          "label": "direct plural",
+          "hindi": "बच्चियाँ",
+          "roman": "bacciyāṃ"
+        },
+        {
+          "label": "oblique plural",
+          "hindi": "बच्चियों",
+          "roman": "bacciyoṃ"
+        }
+      ],
+      "related_words": [
+        {
+          "hindi": "बच्चा",
+          "roman": "baccā",
+          "english": "child (masculine)"
+        },
+        {
+          "hindi": "बच्चे",
+          "roman": "bacce",
+          "english": "children"
+        },
+        {
+          "hindi": "लड़की",
+          "roman": "laṛkī",
+          "english": "girl"
+        }
+      ],
+      "example_sentence": {
+        "hindi": "वह बच्ची रो रही है।",
+        "roman": "vah baccī ro rahī hai.",
+        "english": "That little girl is crying.",
+        "breakdown": [
+          {
+            "hindi": "वह",
+            "roman": "vah",
+            "meaning": "that / she"
+          },
+          {
+            "hindi": "बच्ची",
+            "roman": "baccī",
+            "meaning": "child (feminine)"
+          },
+          {
+            "hindi": "रो रही है",
+            "roman": "ro rahī hai",
+            "meaning": "is crying (feminine continuous)"
+          }
+        ]
+      }
+    },
+    {
+      "hindi": "बच्चे",
+      "romanisation": "bacce",
+      "english": "children",
+      "pos": "noun",
+      "gender": "masculine",
+      "anki_tags": [
+        "people",
+        "noun"
+      ],
+      "syllables": "bac · ce",
+      "usage_notes": "बच्चे (bacce) is the direct plural of बच्चा (baccā) and refers to children of any gender mix. It is also the oblique singular used before postpositions (e.g. बच्चे को — to the child).",
+      "related_words": [
+        {
+          "hindi": "बच्चा",
+          "roman": "baccā",
+          "english": "child (masculine)"
+        },
+        {
+          "hindi": "बच्ची",
+          "roman": "baccī",
+          "english": "child (feminine)"
+        },
+        {
+          "hindi": "बच्चियाँ",
+          "roman": "bacciyāṃ",
+          "english": "girls / female children (plural)"
+        }
+      ],
+      "example_sentence": {
+        "hindi": "सब बच्चे सो गए।",
+        "roman": "sab bacce so gae.",
+        "english": "All the children fell asleep.",
+        "breakdown": [
+          {
+            "hindi": "सब",
+            "roman": "sab",
+            "meaning": "all"
+          },
+          {
+            "hindi": "बच्चे",
+            "roman": "bacce",
+            "meaning": "children"
+          },
+          {
+            "hindi": "सो गए",
+            "roman": "so gae",
+            "meaning": "fell asleep (masculine plural)"
+          }
+        ]
+      }
+    },
+    {
+      "hindi": "माता",
+      "romanisation": "mātā",
+      "english": "mother",
+      "pos": "noun",
+      "gender": "feminine",
+      "anki_tags": [
+        "family",
+        "noun"
+      ],
+      "syllables": "mā · tā",
+      "usage_notes": "माता (mātā) is the formal or respectful word for mother, often used in religious, traditional, or literary contexts. In everyday Delhi speech, माँ (māṃ) or अम्मा (ammā) is far more common.",
+      "delhi_note": "In daily Delhi conversation, people almost always say माँ (māṃ) rather than माता (mātā). माता (mātā) sounds formal or old-fashioned in casual use but is common in religious contexts.",
+      "related_words": [
+        {
+          "hindi": "माँ",
+          "roman": "māṃ",
+          "english": "mum, mom (everyday)"
+        },
+        {
+          "hindi": "पिता",
+          "roman": "pitā",
+          "english": "father"
+        },
+        {
+          "hindi": "माता-पिता",
+          "roman": "mātā-pitā",
+          "english": "parents"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "mā",
+          "association": "mama",
+          "roman": "mama",
+          "language": "English",
+          "note": "'mā' is universally the mother sound — mama, mum — found across dozens of languages including English, Russian мама (mama), and Hebrew אמא (ima)"
+        },
+        {
+          "part": "tā",
+          "association": "ta",
+          "roman": "ta",
+          "language": "English",
+          "note": "'tā' sounds like the informal British 'ta' (thank you) — mother is always there to thank"
+        }
+      ],
+      "example_sentence": {
+        "hindi": "मेरी माता जी घर पर हैं।",
+        "roman": "merī mātā jī ghar par haiṃ.",
+        "english": "My mother is at home.",
+        "breakdown": [
+          {
+            "hindi": "मेरी",
+            "roman": "merī",
+            "meaning": "my (feminine)"
+          },
+          {
+            "hindi": "माता जी",
+            "roman": "mātā jī",
+            "meaning": "mother (respectful)"
+          },
+          {
+            "hindi": "घर",
+            "roman": "ghar",
+            "meaning": "home"
+          },
+          {
+            "hindi": "पर",
+            "roman": "par",
+            "meaning": "on / at"
+          },
+          {
+            "hindi": "हैं",
+            "roman": "haiṃ",
+            "meaning": "are (respectful plural)"
+          }
+        ]
+      },
+      "etymology_journey": [
+        {
+          "stage": "Proto-Indo-European",
+          "form": "*méh₂tēr",
+          "roman": "*méh₂tēr",
+          "meaning": "mother"
+        },
+        {
+          "stage": "Sanskrit",
+          "form": "माता",
+          "roman": "mātā",
+          "meaning": "mother"
+        },
+        {
+          "stage": "Hindi",
+          "form": "माता",
+          "roman": "mātā",
+          "meaning": "mother (formal)"
+        }
+      ],
+      "origin_note": "From Sanskrit माता (mātā), from the Proto-Indo-European root *méh₂tēr — the same root as English 'mother', Russian мать (mat'), and Latin mater."
     }
   ]
 }

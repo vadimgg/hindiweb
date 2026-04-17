@@ -1,0 +1,109 @@
+{
+  "chapter": "Complete Hindi, Chapter 01",
+  "words": [
+    {
+      "hindi": "भारतीय",
+      "romanisation": "bhāratīy",
+      "english": "Indian",
+      "pos": "adjective",
+      "anki_tags": [
+        "identity-nationality",
+        "pos-adjective"
+      ],
+      "syllables": "bhā · ra · tīy",
+      "usage_notes": "Used for both people and things of Indian origin or character. As an invariable adjective it does not change form regardless of the gender or number of the noun it modifies — भारतीय लड़का (bhāratīy laṛkā), भारतीय लड़की (bhāratīy laṛkī), भारतीय लोग (bhāratīy log) all use the same form.",
+      "related_words": [
+        {
+          "hindi": "भारत",
+          "roman": "bhārat",
+          "english": "India"
+        },
+        {
+          "hindi": "हिंदुस्तानी",
+          "roman": "hindustānī",
+          "english": "Indian / Hindustani (more colloquial)"
+        },
+        {
+          "hindi": "देशी",
+          "roman": "deśī",
+          "english": "local / indigenous / desi"
+        }
+      ],
+      "sound_alikes": [
+        {
+          "part": "bhā",
+          "association": "бар",
+          "roman": "bar",
+          "language": "Russian",
+          "note": "Russian ‘бар’ (bar — a pub or bar) sounds like the opening syllable; picture an Indian bar with a tricolour flag on the wall."
+        },
+        {
+          "part": "ra · tīy",
+          "association": "ratty",
+          "roman": "ratty",
+          "language": "English",
+          "note": "‘Ra-tīy’ sounds like ‘ratty’ — picture a ratty old colonial poster labelling everything ‘Indian’."
+        }
+      ],
+      "example_sentence": {
+        "hindi": "वह एक भारतीय नागरिक है।",
+        "roman": "vah ek bhāratīy nāgrik hai.",
+        "english": "He is an Indian citizen.",
+        "breakdown": [
+          {
+            "hindi": "वह",
+            "roman": "vah",
+            "meaning": "he / she"
+          },
+          {
+            "hindi": "एक",
+            "roman": "ek",
+            "meaning": "one / a"
+          },
+          {
+            "hindi": "भारतीय",
+            "roman": "bhāratīy",
+            "meaning": "Indian"
+          },
+          {
+            "hindi": "नागरिक",
+            "roman": "nāgrik",
+            "meaning": "citizen"
+          },
+          {
+            "hindi": "है",
+            "roman": "hai",
+            "meaning": "is"
+          }
+        ]
+      },
+      "etymology_journey": [
+        {
+          "stage": "Sanskrit",
+          "form": "भरत",
+          "roman": "bharata",
+          "meaning": "Bharata — legendary king whose dynasty gave the subcontinent its Sanskrit name"
+        },
+        {
+          "stage": "Sanskrit",
+          "form": "भारत",
+          "roman": "bhārata",
+          "meaning": "of or relating to Bharata; name of the land"
+        },
+        {
+          "stage": "Sanskrit / Classical Hindi",
+          "form": "भारतीय",
+          "roman": "bhāratīya",
+          "meaning": "belonging to Bhārata — i.e. Indian"
+        },
+        {
+          "stage": "Modern Hindi",
+          "form": "भारतीय",
+          "roman": "bhāratīy",
+          "meaning": "Indian (person, thing, or quality)"
+        }
+      ],
+      "origin_note": "Derived from Sanskrit भरत (bharata), the legendary king whose name became the Sanskrit designation for the Indian subcontinent भारत (bhārat); the suffix -īy forms adjectives meaning 'belonging to'."
+    }
+  ]
+}
